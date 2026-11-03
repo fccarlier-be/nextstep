@@ -231,10 +231,30 @@ report[#report + 1] = ""
 report[#report + 1] = "Gardées dans les données ; `PlayerConditionID` ou `Flags` non nuls, à examiner pour le module."
 report[#report + 1] = ""
 if #conditional > 0 then
-    report[#report + 1] = "| ID | UiMapArtID | PlayerConditionID | Flags |"
-    report[#report + 1] = "|---|---|---|---|"
+    -- Regroupées par combinaison : la liste complète se retrouve dans overlays.tsv.
+    local groups, keys = {}, {}
     for _, o in ipairs(conditional) do
-        report[#report + 1] = ("| %d | %d | %d | %d |"):format(o.id, o.art, o.condition, o.flags)
+        local key = o.condition .. "|" .. o.flags
+        local group = groups[key]
+        if not group then
+            group = { condition = o.condition, flags = o.flags, count = 0, arts = {}, artList = {} }
+            groups[key] = group
+            keys[#keys + 1] = key
+        end
+        group.count = group.count + 1
+        if not group.arts[o.art] then
+            group.arts[o.art] = true
+            group.artList[#group.artList + 1] = o.art
+        end
+    end
+    table.sort(keys)
+    report[#report + 1] = "| PlayerConditionID | Flags | Superpositions | Cartes (UiMapArtID) |"
+    report[#report + 1] = "|---|---|---|---|"
+    for _, key in ipairs(keys) do
+        local group = groups[key]
+        table.sort(group.artList)
+        report[#report + 1] = ("| %d | %d | %d | %s |"):format(group.condition, group.flags, group.count,
+            table.concat(group.artList, ", "))
     end
     report[#report + 1] = ""
 end

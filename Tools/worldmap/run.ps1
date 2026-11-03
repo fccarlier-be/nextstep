@@ -100,7 +100,11 @@ foreach ($table in "WorldMapOverlay", "WorldMapOverlayTile") {
 
 # 4. Décodage
 $tsv = Join-Path $cache "tsv"
-& $dotnet run --project (Join-Path $PSScriptRoot "Export") -c Release --nologo -v quiet -- $db2 $defs $lock.build $tsv
+# Compilé puis lancé directement : Windows PowerShell retire le « -- » de « dotnet run -- ».
+$exportBin = Join-Path $cache "bin\Export"
+& $dotnet build (Join-Path $PSScriptRoot "Export") -c Release -o $exportBin --nologo -v quiet
+if ($LASTEXITCODE -ne 0) { throw "Export build failed" }
+& (Join-Path $exportBin "Export.exe") $db2 $defs $lock.build $tsv
 if ($LASTEXITCODE -ne 0) { throw "Export failed" }
 
 # 5. Données de l'addon, puis 6. vérifications
