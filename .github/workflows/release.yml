@@ -46,3 +46,4 @@ jobs:
           name: NextStep
           path: .release/*.zip
           if-no-files-found: error
+          include-hidden-files: true # .release est un dossier caché
