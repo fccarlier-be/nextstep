@@ -29,17 +29,7 @@ local UNIT_EVENTS = {
     TRAINER_SHOW = "npc",
 }
 
-local function usable(value)
-    return value ~= nil and not (issecretvalue and issecretvalue(value))
-end
-
--- GUID d'un PNJ : Creature-0-<serveur>-<instance>-<zone>-<id du PNJ>-<apparition>.
-local function npcID(guid)
-    local unitType, id = guid:match("^(%a+)%-%d+%-%d+%-%d+%-%d+%-(%d+)%-")
-    if unitType == "Creature" or unitType == "Vehicle" then
-        return tonumber(id)
-    end
-end
+local usable, npcID = ns.Usable, ns.NpcID
 
 local function validName(name)
     return usable(name) and type(name) == "string" and name ~= "" and name ~= UNKNOWNOBJECT

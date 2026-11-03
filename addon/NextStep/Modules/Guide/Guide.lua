@@ -1,9 +1,9 @@
 -- Module Guide : guide actif, progression sauvegardée du personnage et
--- recalcul par le moteur. L'interface (phase 4) affiche self.result et écoute
--- le message NEXTSTEP_GUIDE_UPDATED (result).
+-- recalcul par le moteur. L'interface (Window.lua, Arrow.lua) affiche self.result
+-- et écoute le message NEXTSTEP_GUIDE_UPDATED (result, nil sans guide suivi).
 --
--- L'état du joueur est fourni par SetState : une simulation dans les tests,
--- l'API du jeu en jeu (phase 4).
+-- L'état du joueur est fourni par SetState : l'API du jeu en jeu (State.lua, mis
+-- en place par Live.lua), une simulation dans les tests.
 
 local _, ns = ...
 local L = ns.L
@@ -13,7 +13,19 @@ local Engine = ns.GuideEngine
 local Guide = ns.Modules:New("Guide", {
     title = L["Leveling guide"],
     description = L["Step-by-step guide for your race, class and level, which accepts detours."],
+    defaults = {
+        window = {
+            shown = true,
+            collapsed = false,  -- réduite à la ligne de titre
+            locked = false,
+            scale = 1,
+            point = nil,        -- { point, point relatif, x, y } : position mémorisée
+        },
+        arrow = true,
+        hideTracker = true,     -- masque le suivi de quêtes Blizzard quand un guide est suivi
+    },
     charDefaults = {
+        taxi = {},         -- [point de vol] = true : points connus (relevés à la carte des vols)
         active = nil,      -- identifiant du guide suivi
         mode = "strict",   -- "strict" : une étape à la fois ; "free" : les objectifs du même endroit
         progress = {},     -- [identifiant du guide] = progression (Engine.NewProgress)
@@ -23,6 +35,7 @@ local Guide = ns.Modules:New("Guide", {
 })
 
 function Guide:OnInitialize()
+    self:AddCommands()
     self.seen = {}   -- [identifiant du guide] = { [clé d'objectif] = true } : session
     -- Guide remplacé dans Polestar : on n'y reste pas. (Un guide absent n'est pas
     -- forcément disparu : les guides de faction ne sont chargés qu'à la connexion.)
@@ -53,6 +66,10 @@ function Guide:Refresh()
     local guide = self:ActiveGuide()
     if not guide or not self.state then
         self.result = nil
+        if self.UpdateTracker then
+            self:UpdateTracker()
+        end
+        self:SendMessage("NEXTSTEP_GUIDE_UPDATED", nil)
         return nil
     end
     local progress = self:Progress(guide.id)
@@ -68,6 +85,9 @@ function Guide:Refresh()
         Engine.Commit(progress, result)
     end
     result.mode = self.char.mode
+    if self.Decorate then
+        self:Decorate(result)
+    end
     self.result = result
     self:SendMessage("NEXTSTEP_GUIDE_UPDATED", result)
     return result

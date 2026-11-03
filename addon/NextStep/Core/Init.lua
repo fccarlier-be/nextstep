@@ -33,3 +33,21 @@ function ns.SafeCall(fn, ...)
         return fn(unpack(args, 1, count))
     end, geterrorhandler())
 end
+
+-- Valeur lisible : ni absente, ni secrète (en combat, certaines valeurs ne
+-- supportent ni comparaison ni calcul ; voir docs/DESIGN.md, « Secret values »).
+function ns.Usable(value)
+    return value ~= nil and not (issecretvalue and issecretvalue(value))
+end
+
+-- Identifiant d'un PNJ d'après son GUID :
+-- Creature-0-<serveur>-<instance>-<zone>-<id du PNJ>-<apparition>.
+function ns.NpcID(guid)
+    if not ns.Usable(guid) or type(guid) ~= "string" then
+        return nil
+    end
+    local unitType, id = guid:match("^(%a+)%-%d+%-%d+%-%d+%-%d+%-(%d+)%-")
+    if unitType == "Creature" or unitType == "Vehicle" then
+        return tonumber(id)
+    end
+end

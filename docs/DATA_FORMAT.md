@@ -183,7 +183,7 @@ Les autres champs sont repris tels quels de Polestar et documentés au fur et à
 
 ### Coordonnées
 
-Les coordonnées marquées `f = "e"` sont exprimées dans le repère **era** des cartes du Classic. Quand Forever a modifié une carte, il faut les convertir **en jeu** : passage en coordonnées monde avec `DB.mapFrames.era[map]`, puis retour en pourcentage de la carte du client avec `C_Map.GetMapPosFromWorldPos`. Cette conversion ne peut pas se faire à l'import, car les repères du client ne sont connus qu'en jeu. Elle sera faite par le module Navigation (phase 4).
+Les coordonnées marquées `f = "e"` sont exprimées dans le repère **era** des cartes du Classic. Quand Forever a modifié une carte, il faut les convertir **en jeu** : passage en coordonnées monde avec `DB.mapFrames.era[map]`, puis retour en pourcentage de la carte du client avec `C_Map.GetMapPosFromWorldPos`. Cette conversion ne peut pas se faire à l'import, car les repères du client ne sont connus qu'en jeu. La distance et la flèche n'en ont pas besoin : elles travaillent directement en coordonnées monde (`Modules/Guide/Navigation.lua`). Seuls les points sur la carte (complément v0.1.x) feront le retour vers la carte du client.
 
 ## Import
 

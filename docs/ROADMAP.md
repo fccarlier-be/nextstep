@@ -20,7 +20,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | 2 | Import des données | — | ✅ |
 | 2b | Noms appris | — | ✅ |
 | 3 | Moteur du guide | — | ✅ |
-| 4 | Interface du guide, version minimale | **v0.1** | ⬜ |
+| 4 | Interface du guide, version minimale | **v0.1** | 🟨 |
 | 4b | Compléments du guide | v0.1.x | ⬜ |
 | 5 | Gains rapides du module UI | v0.2 | 🟨 |
 | 6 | Items | v0.3 | ⬜ |
@@ -98,6 +98,8 @@ Le plus petit guide jouable : tout ce qui sert à suivre la route, rien de plus.
 - Commande `/ns`, raccourcis clavier.
 
 **Terminé quand** : on peut monter un personnage du niveau 1 à 10 avec le guide.
+
+État : **écrit et testé hors jeu** : état du joueur lu dans l'API, recalcul sur les événements, validations automatiques (dialogue, marchand, maître, carte des vols, sort lancé), fenêtre, flèche, masquage du suivi Blizzard, `/ns guide`, `/ns arrow` et trois raccourcis. La conversion des coordonnées « era » n'est pas nécessaire pour la flèche (calcul en coordonnées monde, voir [DESIGN.md](DESIGN.md#flèche)). Reste : la vérification en jeu (monter un personnage du niveau 1 à 10), puis la publication de la v0.1.
 
 ## Phase 4b : Compléments du guide → v0.1.x
 

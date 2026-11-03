@@ -10,6 +10,24 @@ ns.Options = Options
 
 Options.checks = {}   -- [nom du module] = case à cocher
 
+-- Case à cocher d'un réglage de module, sous anchor ; get et set lisent et écrivent
+-- le réglage. Pour les BuildOptions des modules.
+function Options.AddCheck(panel, anchor, text, get, set)
+    local check = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
+    check:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -4)
+    check:SetChecked(get())
+    check:SetScript("OnClick", function(button)
+        set(button:GetChecked() and true or false)
+    end)
+    panel:HookScript("OnShow", function()
+        check:SetChecked(get())
+    end)
+    local label = check:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    label:SetPoint("LEFT", check, "RIGHT", 2, 0)
+    label:SetText(text)
+    return check
+end
+
 local function addModule(self, panel, anchor, name, module)
     local check = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
     check:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -16)

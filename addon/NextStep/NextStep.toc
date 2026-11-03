@@ -30,6 +30,12 @@ Modules\Guide\Conditions.lua
 Modules\Guide\Goals.lua
 Modules\Guide\Engine.lua
 Modules\Guide\Guide.lua
+Modules\Guide\State.lua
+Modules\Guide\Navigation.lua
+Modules\Guide\Labels.lua
+Modules\Guide\Live.lua
+Modules\Guide\Window.lua
+Modules\Guide\Arrow.lua
 Core\Factions.lua
 Core\Options.lua
 Core\Slash.lua
