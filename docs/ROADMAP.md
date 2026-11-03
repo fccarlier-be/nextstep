@@ -103,6 +103,7 @@ Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
 ## Phase 5 : Gains rapides du module UI → v0.2
 
 - Minimap : carrée, zoom à la molette, coordonnées, tiroir de boutons.
+- **Radar de récolte** : minimap en grand et en transparence au centre de l'écran, pour farmer les ressources.
 - Vente automatique de la camelote.
 - Horloge : alarmes, minuteurs, chronomètre.
 - **Fenêtres déplaçables** : personnage, grimoire, journal de quêtes, etc. ; positions mémorisées.
@@ -110,7 +111,7 @@ Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
 
 Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
-État : **carte sans brouillard avancée** : module `MapReveal` écrit et testé hors jeu, données extraites du client ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#carte-sans-brouillard)).
+État : **carte sans brouillard avancée** : module `MapReveal` écrit et testé hors jeu, données extraites du client ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#carte-sans-brouillard)). **Radar de récolte avancé** : module `Radar` écrit et testé hors jeu ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#radar-de-récolte)).
 
 ## Phase 6 : Items → v0.3
 

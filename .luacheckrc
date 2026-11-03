@@ -17,10 +17,12 @@ files["addon/**"] = {
         -- Écrites par l'addon
         "NextStep", "NextStepDB", "NextStepCharDB",
         "SLASH_NEXTSTEP1", "SLASH_NEXTSTEP2", "SlashCmdList",
+        "BINDING_HEADER_NEXTSTEP", "BINDING_NAME_NEXTSTEP_RADAR",
     },
     read_globals = {
         -- API du jeu utilisée (à compléter au fil des modules)
         "C_AddOns",
+        "C_CVar",
         "C_Item",
         "C_Map",
         "C_MapExplorationInfo",
@@ -31,14 +33,18 @@ files["addon/**"] = {
         "DEFAULT_CHAT_FRAME",
         "GetLocale",
         "geterrorhandler",
+        "GetMinimapShape",
+        "GetPlayerFacing",
         "hooksecurefunc",
         "InCombatLockdown",
         "issecretvalue",
+        "Minimap",
         "Settings",
         "UNKNOWNOBJECT",
         "UnitFactionGroup",
         "UnitGUID",
         "UnitName",
+        "UIParent",
         "WorldMapFrame",
     },
 }

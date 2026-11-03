@@ -49,6 +49,21 @@ L["Shows the unexplored areas of the world map, dimmed."] =
     "Affiche les zones inexplorées de la carte du monde, en plus sombre."
 L["Unexplored areas brightness: %d%%"] = "Luminosité des zones inexplorées : %d %%"
 
+-- Modules/UI/Radar.lua
+L["Farming radar"] = "Radar de récolte"
+L["Shows the minimap, large and see-through, around your character, to spot herbs, "
+    .. "ore and fish while gathering. Toggle it with /ns radar or a key (Key Bindings > NextStep)."] =
+    "Affiche la minimap, en grand et en transparence, autour de votre personnage, pour repérer herbes, "
+    .. "filons et poissons pendant la récolte. S'ouvre avec /ns radar ou une touche (Raccourcis > NextStep)."
+L["Show or hide the farming radar"] = "Affiche ou cache le radar de récolte"
+L["%s is disabled: enable it in the options."] = "%s est désactivé : activez-le dans les options."
+L["The radar will change after combat."] = "Le radar changera après le combat."
+L["Radar size: %d%% of the screen height"] = "Taille du radar : %d %% de la hauteur de l'écran"
+L["Radar opacity: %d%%"] = "Opacité du radar : %d %%"
+L["Show the terrain"] = "Afficher le terrain"
+L["Rotate with the camera"] = "Tourner avec la caméra"
+L["W"] = "O"
+
 -- Modules/Guide/Guide.lua
 L["Leveling guide"] = "Guide de leveling"
 L["Step-by-step guide for your race, class and level, which accepts detours."] =
