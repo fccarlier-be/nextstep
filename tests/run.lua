@@ -13,6 +13,9 @@ local SPECS = {
     "locale",
     "data",
     "names",
+    "engine",
+    "guide",
+    "autoplay",
 }
 
 local wow

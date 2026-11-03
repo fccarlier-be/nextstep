@@ -112,7 +112,7 @@ Ceux de `UnitRace` (champ `raceFile`), en majuscules : `HUMAN`, `DWARF`, `GNOME`
 
 Chaque condition est une table `{ k = genre, ... }`, `neg = true` l'inverse. Genres prévus par Polestar : `level` (`op`, `n`, `frac` : fraction du niveau), `onquest` (`q` : liste), `turnedin`, `complete`, `available`, `group` (quête de groupe, le joueur choisit), `done` (`label`), `money` (`op`, `n` en cuivre), `skill` (`n`, `skillLine`, `name`), `knows` (`spell`), `zone` (`area`, `name`), `has`, `dungeon`, `bound`, `cooldown`, `subzone`, `upgrade`, `rep`.
 
-Sémantique héritée de Polestar : **une fois l'étape passée, son résultat est conservé**, même si la condition change ensuite. Le détail de chaque genre sera fixé avec le moteur (phase 3).
+Sémantique héritée de Polestar : **une fois l'étape passée, son résultat est conservé**, même si la condition change ensuite. Le moteur les interprète tous ; un genre inconnu est considéré comme vrai (l'étape s'affiche, le joueur décide). Voir [DESIGN.md](DESIGN.md#conditions-et-sauts).
 
 ## Objectif
 
@@ -122,34 +122,36 @@ Une ligne par objectif ; `t` donne le type.
 { t = "accept", quest = 7, npc = 197, map = 1429, x = 48.92, y = 41.61, z = 82, f = "e", minLevel = 1, qlvl = 2, pre = { 783 } }
 ```
 
-| Type `t` | Nombre | Accompli quand… *(à préciser en phase 3)* |
+| Type `t` | Nombre | Accompli quand… |
 |---|---|---|
 | `accept` | 4 038 | quête dans le journal ou rendue |
 | `turnin` | 4 186 | quête rendue |
-| `collect` | 2 376 | objets dans les sacs, ou objectif de quête rempli |
-| `goto` | 1 725 | joueur dans le rayon `r` |
-| `kill` | 1 125 | objectif de quête rempli |
-| `explore` | 825 | zone découverte |
-| `level` | 461 | niveau atteint |
-| `train` | 358 | rang ou sorts appris |
-| `buy` | 328 | objet dans les sacs |
+| `collect` | 2 376 | avec `quest` : objectif de quête rempli, quête terminée ou rendue ; sinon objets dans les sacs (`count`) |
+| `goto` | 1 725 | joueur dans le rayon `r` (8 yards par défaut), ou signalé par l'interface |
+| `kill` | 1 125 | avec `quest` : objectif rempli ; sinon validation manuelle |
+| `explore` | 825 | région découverte ou joueur dedans (région tirée de `text`), sinon comme `goto` |
+| `level` | 461 | niveau atteint (avec la fraction `frac`) |
+| `train` | 358 | rang de métier atteint (`profLine`, `rankMax`) ; maître de classe ou PNJ : validation manuelle |
+| `buy` | 328 | objets dans les sacs |
 | `note` | 285 | jamais bloquant |
-| `fly` | 235 | arrivée |
-| `complete` | 234 | quête terminée |
-| `skill` | 173 | compétence atteinte |
-| `rep` | 162 | réputation atteinte |
-| `craft` | 139 | objets fabriqués ou compétence atteinte |
-| `talk` | 129 | dialogue |
-| `use` | 124 | objet utilisé |
-| `learn` | 116 | recette ou sort appris |
-| `getfp` | 95 | point de vol découvert |
-| `vendor` | 95 | passage chez un marchand |
-| `interact` | 75 | interaction avec un objet |
-| `sethome` | 74 | foyer lié |
-| `hearth` | 66 | pierre de foyer utilisée |
+| `fly` | 235 | joueur dans la région d'arrivée (`area`) |
+| `complete` | 234 | quête terminée ou rendue |
+| `skill` | 173 | rang de compétence atteint (`skillLine`, `level`) |
+| `rep` | 162 | réputation atteinte (`standing`) |
+| `craft` | 139 | `untilSkill` atteint ; sinon validation manuelle |
+| `talk` | 129 | validation manuelle |
+| `use` | 124 | avec `quest` : objectif rempli ; sinon validation manuelle |
+| `learn` | 116 | sort ou recette connu |
+| `getfp` | 95 | point de vol connu (`node`) ; sans `node`, validation manuelle |
+| `vendor` | 95 | validation manuelle |
+| `interact` | 75 | avec `quest` : objectif rempli ; sinon validation manuelle |
+| `sethome` | 74 | foyer lié à la région (`area`) |
+| `hearth` | 66 | joueur dans la région d'arrivée |
 | `money` | 13 | argent possédé |
 | `task` | 9 | validation manuelle |
-| `die` | 4 | mort volontaire (retour au cimetière) |
+| `die` | 4 | jamais : raccourci par la mort désactivé, objectif hors sujet |
+
+Les déplacements (`goto`, `fly`, `hearth`, `enter`, `explore`) sont aussi accomplis dès qu'un objectif suivant de leur étape l'est. Les validations manuelles pourront être faites automatiquement par des événements du jeu (phase 4 : dialogue ouvert, marchand visité…). Un type inconnu est traité en validation manuelle.
 
 *(Nombres au premier import, Polestar 0.3.0.)*
 

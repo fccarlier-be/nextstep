@@ -19,7 +19,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | 1 | Vérifications en jeu | — | ⬜ |
 | 2 | Import des données | — | ✅ |
 | 2b | Noms appris | — | ✅ |
-| 3 | Moteur du guide | — | ⬜ |
+| 3 | Moteur du guide | — | ✅ |
 | 4 | Interface du guide | **v0.1** | ⬜ |
 | 5 | Gains rapides du module UI | v0.2 | ⬜ |
 | 6 | Items | v0.3 | ⬜ |
@@ -83,8 +83,11 @@ Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
 
 **Terminé quand** : tous les scénarios de test passent.
 
+État : **terminé**. 23 scénarios du moteur, 10 tests d'intégration sur les vrais guides, et un joueur automatique qui termine chacun des guides importés, pour chaque faction. Changement de conception : une étape dépassée garde son résultat (sémantique de Polestar), et une quête abandonnée est signalée au lieu de faire reculer le guide (voir [DESIGN.md](DESIGN.md#5-moteur-du-guide)).
+
 ## Phase 4 : Interface du guide → v0.1
 
+- État du joueur lu dans le jeu (journal de quêtes, sacs, compétences, position, conversion des coordonnées « era ») et recalcul du guide sur les événements ; validations automatiques par événements (dialogue, marchand, maître).
 - Fenêtre du guide, journal (onglet Routes, « Choisis ton chemin »), flèche (version simple).
 - Points sur la carte et la minimap (HereBeDragons), masquage du suivi de quêtes Blizzard.
 - Commande `/ns`, raccourcis clavier.
