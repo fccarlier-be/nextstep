@@ -23,6 +23,7 @@ files["addon/**"] = {
         "C_AddOns",
         "C_Item",
         "C_Map",
+        "C_MapExplorationInfo",
         "C_QuestLog",
         "C_Spell",
         "C_TooltipInfo",
@@ -30,6 +31,7 @@ files["addon/**"] = {
         "DEFAULT_CHAT_FRAME",
         "GetLocale",
         "geterrorhandler",
+        "hooksecurefunc",
         "InCombatLockdown",
         "issecretvalue",
         "Settings",
@@ -37,6 +39,7 @@ files["addon/**"] = {
         "UnitFactionGroup",
         "UnitGUID",
         "UnitName",
+        "WorldMapFrame",
     },
 }
 

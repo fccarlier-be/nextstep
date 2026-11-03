@@ -21,7 +21,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | 2b | Noms appris | — | ✅ |
 | 3 | Moteur du guide | — | ✅ |
 | 4 | Interface du guide | **v0.1** | ⬜ |
-| 5 | Gains rapides du module UI | v0.2 | ⬜ |
+| 5 | Gains rapides du module UI | v0.2 | 🟨 |
 | 6 | Items | v0.3 | ⬜ |
 | 7 | Valeurs de vie et de ressources | v0.4 | ⬜ |
 | 8 | Sacs et banque | v0.5 | ⬜ |
@@ -109,6 +109,8 @@ Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
 - **Carte sans brouillard** : zones inexplorées affichées (désactivable).
 
 Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
+
+État : **carte sans brouillard avancée** : module `MapReveal` écrit et testé hors jeu, données extraites du client ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#carte-sans-brouillard)).
 
 ## Phase 6 : Items → v0.3
 
