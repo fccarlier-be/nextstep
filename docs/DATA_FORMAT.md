@@ -190,7 +190,7 @@ Les coordonnées marquées `f = "e"` sont exprimées dans le repère **era** des
 ```
 
 1. `fetch.ps1` télécharge le commit de Polestar indiqué dans `polestar.lock` (extraction partielle, en cache dans `Tools/import/cache/`, ignoré par git).
-2. `import.lua` exécute les fichiers compilés de Polestar dans un environnement isolé (sans accès aux fichiers ni au système, bytecode refusé), vérifie le numéro de format, convertit, écrit les fichiers, puis les relit pour comparer avec la source. Toute fonction `Polestar.*` inconnue arrête l'import : c'est le signe d'un changement de format.
+2. `import.lua` exécute les fichiers compilés de Polestar dans un environnement isolé (sans accès aux fichiers ni au système, bytecode refusé), vérifie le numéro de format, convertit, écrit les fichiers, puis les relit pour comparer avec la source. Toute fonction `Polestar.*` inconnue arrête l'import : c'est le signe d'un changement de format. Une licence de pack autre que GPL-3.0-only l'arrête aussi. Chaque fichier généré rappelle le copyright et la licence de Polestar, et l'import recopie sans modification les notices de Polestar dans un `LICENSE-DATA.txt` à côté des données (voir [DATA_SOURCES.md](DATA_SOURCES.md#obligations)).
 3. Le rapport [`Tools/import/last-import.md`](../Tools/import/last-import.md) donne les totaux, la couverture des noms et les avertissements.
 
 L'import est **reproductible** : deux exécutions sur le même commit produisent des fichiers identiques, ce qui rend les différences lisibles dans git.

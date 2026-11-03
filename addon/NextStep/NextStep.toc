@@ -4,7 +4,7 @@
 ## Notes-frFR: Addon tout-en-un : guide de leveling, métiers, équipement et améliorations de l'interface.
 ## Author: fccarlier-be
 ## Version: 0.0.0
-## X-License: GPL-3.0
+## X-License: GPL-3.0-only
 ## X-Website: https://github.com/fccarlier-be/nextstep
 ## IconTexture: Interface\AddOns\NextStep\Media\Icon
 ## SavedVariables: NextStepDB

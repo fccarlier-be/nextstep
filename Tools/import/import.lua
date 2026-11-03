@@ -198,6 +198,39 @@ local function checkFormat()
     return meta
 end
 
+-- Licence attendue des dossiers de Polestar lus. Si elle change, l'import s'arrête :
+-- CREDITS.md, docs/DATA_SOURCES.md et les notices doivent être revus d'abord.
+local POLESTAR_LICENSE = "GPL-3.0-only"
+
+local function checkLicences()
+    local dirs = {}
+    for _, pack in ipairs(GUIDE_PACKS) do
+        dirs[#dirs + 1] = pack.dir
+    end
+    for _, locale in ipairs(LOCALES) do
+        dirs[#dirs + 1] = "Polestar_" .. locale
+    end
+    for _, dir in ipairs(dirs) do
+        local license = tocMetadata(dir)["X-License"]
+        assert(license == POLESTAR_LICENSE, ("%s is licensed %s, the importer expects %s: "
+            .. "review CREDITS.md and docs/DATA_SOURCES.md first"):format(dir, tostring(license), POLESTAR_LICENSE))
+    end
+end
+
+-- Mention de copyright de Polestar (première ligne « Copyright » de son LICENSE), à conserver
+-- dans les fichiers produits (GPL-3.0, section 4).
+local function readCopyright()
+    for line in readFile(SOURCE .. "/LICENSE"):gmatch("[^\r\n]+") do
+        local notice = line:match("^%s*(Copyright .-)%s*$")
+        if notice then
+            return notice
+        end
+    end
+    error("no copyright line in Polestar's LICENSE")
+end
+
+local copyright = readCopyright()
+
 local function readGuides()
     local guides, retired = {}, {}
     for _, pack in ipairs(GUIDE_PACKS) do
@@ -548,13 +581,61 @@ end
 
 local HEADER = table.concat({
     "-- Généré par Tools/import/import.lua depuis Polestar %s (%s, %s). Ne pas modifier :",
-    "-- relancer Tools\\import\\run.ps1. Données sous licence GPL-3.0-only, voir CREDITS.md.",
-    "-- Format : docs/DATA_FORMAT.md.",
+    "-- relancer Tools\\import\\run.ps1.",
+    "-- %s. Données sous licence GPL-3.0-only ; sources tierces :",
+    "-- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.",
     "",
 }, "\n")
 
 local function header()
-    return HEADER:format(lock.version, lock.commit:sub(1, 12), lock.date)
+    return HEADER:format(lock.version, lock.commit:sub(1, 12), lock.date, copyright)
+end
+
+---------------------------------------------------------------------------
+-- Notices
+---------------------------------------------------------------------------
+
+-- Notices de Polestar recopiées à côté des données, sans modification : elles portent les
+-- mentions et licences de ses sources (dont la notice MIT de pfQuest, et les crédits de DingDB
+-- que la permission de son auteur demande de garder à côté de ses données).
+local NOTICES = {
+    common = { "Polestar_Guides/LICENSE-DATA.txt" },
+    Alliance = { "Polestar_Guides_Alliance/LICENSE-DATA.txt" },
+    Horde = { "Polestar_Guides_Horde/LICENSE-DATA.txt" },
+}
+for _, locale in ipairs(LOCALES) do
+    table.insert(NOTICES.common, "Polestar_" .. locale .. "/LICENSE-DATA.txt")
+    table.insert(NOTICES.common, "Polestar_" .. locale .. "/CREDITS.md")
+end
+
+local NOTICE_INTRO = table.concat({
+    "NextStep : données importées de Polestar",
+    "========================================",
+    "",
+    "Les fichiers de données de ce dossier sont générés par Tools/import/import.lua de",
+    "NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar %s",
+    "(https://github.com/fitzforge/polestar), puis convertis au format de NextStep.",
+    "Commit de Polestar : %s (%s).",
+    "",
+    "%s",
+    "Polestar est distribué sous la GNU General Public License, version 3",
+    "(GPL-3.0-only). Le texte de la licence est dans le fichier LICENSE.txt de l'addon",
+    "NextStep.",
+    "",
+    "Les notices de Polestar sur ses sources tierces sont reproduites ci-dessous sans",
+    "modification.",
+    "",
+}, "\n")
+
+local RULE = string.rep("-", 80)
+
+local function writeNotices(out)
+    local parts = { NOTICE_INTRO:format(lock.version, lock.commit, lock.date, copyright) }
+    for _, file in ipairs(NOTICES[out]) do
+        local text = readFile(SOURCE .. "/addon/" .. file):gsub("\r\n", "\n"):gsub("%s+$", "")
+        parts[#parts + 1] = table.concat({ RULE, "Polestar : addon/" .. file, RULE, "", text, "" }, "\n")
+    end
+    writeFile(OUT[out] .. "LICENSE-DATA.txt", table.concat(parts, "\n"))
 end
 
 local function writeGuideFile(path, guides)
@@ -691,6 +772,7 @@ end
 
 local function main()
     checkFormat()
+    checkLicences()
 
     local entries, retired = readGuides()
     local byOut = { common = {}, Alliance = {}, Horde = {} }
@@ -772,6 +854,9 @@ local function main()
             localeTexts[locale].shared, localeTexts[locale].perGuide)
     end
     writeMetaFile(OUT.common .. "Meta.lua", retired, readMapFrames())
+    for out in pairs(OUT) do
+        writeNotices(out)
+    end
 
     -- Relecture : les fichiers produits redonnent exactement les guides convertis.
     for out, list in pairs(byOut) do

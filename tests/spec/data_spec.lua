@@ -134,3 +134,56 @@ describe("Données importées", function()
         expect(DB.mapFrames.era[1429], "repère « era » de la forêt d'Elwynn")
     end)
 end)
+
+local function readText(path)
+    local file = assert(io.open(path, "rb"), "fichier manquant : " .. path)
+    local content = file:read("*a")
+    file:close()
+    return content
+end
+
+local function contains(text, part)
+    return text:find(part, 1, true) ~= nil
+end
+
+describe("Licences livrées avec l'addon", function()
+    it("inclut le texte de la GPL, identique à celui du dépôt", function()
+        expect(readText("addon/NextStep/LICENSE.txt") == readText("LICENSE"),
+            "addon/NextStep/LICENSE.txt doit être une copie de LICENSE")
+    end)
+
+    it("place les notices des sources à côté de chaque dossier de données importées", function()
+        local folders = {
+            "addon/NextStep/Data/Imported/Polestar/",
+            "addon/NextStep_Alliance/Data/",
+            "addon/NextStep_Horde/Data/",
+        }
+        for _, folder in ipairs(folders) do
+            local notice = readText(folder .. "LICENSE-DATA.txt")
+            expect(contains(notice, "Copyright (c) 2026 The Polestar authors"), folder .. " : copyright de Polestar")
+            expect(contains(notice, "Copyright (c) 2017-2021 Eric Mauser (Shagu)"),
+                folder .. " : notice MIT de pfQuest")
+            expect(contains(notice, "CMaNGOS"), folder .. " : crédit de CMaNGOS")
+        end
+        local common = readText(folders[1] .. "LICENSE-DATA.txt")
+        expect(contains(common, "Copyright Yendi"), "crédit de DingDB (noms frFR)")
+        expect(contains(common, "# Credits of Ding's game data"), "CREDITS.md de DingDB recopié")
+    end)
+
+    it("rappelle la licence et le copyright de Polestar en tête des fichiers générés", function()
+        local files = {
+            "addon/NextStep/Data/Imported/Polestar/Guides.lua",
+            "addon/NextStep/Data/Imported/Polestar/Meta.lua",
+            "addon/NextStep/Data/Imported/Polestar/Names_enUS.lua",
+            "addon/NextStep/Data/Imported/Polestar/Names_frFR.lua",
+            "addon/NextStep/Data/Imported/Polestar/Texts_frFR.lua",
+            "addon/NextStep_Alliance/Data/Guides.lua",
+            "addon/NextStep_Horde/Data/Guides.lua",
+        }
+        for _, path in ipairs(files) do
+            local head = readText(path):sub(1, 400)
+            expect(contains(head, "Copyright (c) 2026 The Polestar authors"), path .. " : copyright")
+            expect(contains(head, "GPL-3.0-only"), path .. " : licence")
+        end
+    end)
+end)

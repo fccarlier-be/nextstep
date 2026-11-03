@@ -6,11 +6,11 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 
 | Source | Contenu utilisé | Licence | Remarques |
 |---|---|---|---|
-| [Polestar](https://github.com/fitzforge/polestar) — guides compilés (`addon/Polestar_Guides*/Guides.lua`) | Routes de leveling, de classe et de métiers | GPL-3.0-only | Format compilé versionné (`format = 8` au 2026-11-03) ; l'import refuse un format inconnu |
+| [Polestar](https://github.com/fitzforge/polestar) — guides compilés (`addon/Polestar_Guides*/Guides.lua`) | Routes de leveling, de classe et de métiers | GPL-3.0-only ; faits repris de pfQuest (MIT) et de CMaNGOS classic-db (GPL-3.0), entre autres : voir le `LICENSE-DATA.txt` du pack | Format compilé versionné (`format = 8` au 2026-11-03) ; l'import refuse un format inconnu, ou une licence autre que GPL-3.0-only |
 | Polestar — `forever-db` | Quêtes, PNJ, objets, points d'apparition, cartes *(prévu en phase 10)* | GPL-3.0 (base), CC BY 4.0 (couche « étapes ») | JSON Lines avec schémas ; versions `data-vAAAA.MM.N` |
 | Polestar — `Polestar_ItemDB` | Statistiques et provenance des items *(prévu en phase 6)* | Données issues de *ForeverLevelingBiS* (MIT) | ~10 000 items ajustés pour Forever |
 | Polestar — poids de stats | Poids par classe, spécialisation et niveau *(prévu en phase 6)* | Données issues de *wowsims* (MIT) | |
-| Polestar — `Polestar_frFR` | Noms traduits (quêtes, PNJ, objets, zones) et textes des guides en français | Voir `LICENSE-DATA.txt` du pack | Noms extraits des tables du client |
+| Polestar — `Polestar_frFR` | Noms traduits (quêtes, PNJ, objets, zones) et textes des guides en français | GPL-3.0-only ; noms repris notamment de DingDB (GPL-3.0, Yendi) et de pfQuest (MIT) : voir le `LICENSE-DATA.txt` du pack | Noms extraits des tables du client |
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`) |
 | Le client du jeu | Noms localisés (dont les noms de PNJ appris), état du journal de quêtes, recettes connues | — | Lu en jeu, conservé dans les sauvegardes locales, jamais redistribué |
 
@@ -36,9 +36,12 @@ Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au f
 
 ## Obligations
 
-- NextStep est distribué sous GPL-3.0.
-- Polestar, forever-db (dont la mention CC BY 4.0), ForeverLevelingBiS, wowsims et HereBeDragons sont crédités dans [CREDITS.md](../CREDITS.md).
+- NextStep est distribué sous GPL-3.0-only, la licence des données de Polestar qu'il contient. Le texte de la licence est livré dans l'addon (`addon/NextStep/LICENSE.txt`, copie de `LICENSE`, vérifiée par les tests).
+- Polestar, pfQuest, Ding/DingDB et CMaNGOS classic-db (données intégrées), ainsi que forever-db (dont la mention CC BY 4.0), ForeverLevelingBiS, wowsims et HereBeDragons (prévus), sont crédités dans [CREDITS.md](../CREDITS.md).
+- Mentions conservées (GPL-3.0, section 4 ; licence MIT de pfQuest) : chaque fichier généré rappelle le copyright de Polestar et sa licence, et l'import recopie sans modification les notices de Polestar (`LICENSE-DATA.txt` des packs, `CREDITS.md` de DingDB) dans un `LICENSE-DATA.txt` à côté des données.
+- Si un pack de Polestar change de licence (`## X-License` de son TOC), l'import s'arrête jusqu'à ce que ces crédits soient revus.
 - Chaque import consigne la version exacte de la source utilisée.
+- Une bibliothèque intégrée (HereBeDragons, par exemple) garde son fichier de licence dans son dossier.
 
 ## Limites connues des données
 

@@ -14,8 +14,8 @@ Ce document contient le texte de la page CurseForge de NextStep et la liste des 
 | Images retouchées par IA qui pourraient tromper sur l'addon : mention visible | Le logo n'est pas une capture d'écran ; il est quand même signalé comme généré par IA en bas de page. Les captures de la galerie doivent être de vraies captures en jeu, sans retouche. |
 | Liens vers son site, son dépôt, ses dons : **uniquement en bas** de la description | Le lien GitHub n'apparaît que dans la dernière section. Aucun lien de don. |
 | Aucun lien de téléchargement externe | Aucun : le fichier est téléchargé sur CurseForge. |
-| Contenu réutilisé : sous licence ou avec permission (la permission est recommandée même sous licence), et crédité | Polestar (GPL-3.0), HereBeDragons (BSD) et les autres sources sont crédités et liés. **Contacter l'auteur de Polestar avant la publication** (prévu en phase 11 de la [feuille de route](ROADMAP.md)). |
-| Logiciel libre accepté si sa licence est respectée | NextStep est sous GPL-3.0, comme Polestar ; fichier `LICENSE` inclus dans le paquet. |
+| Contenu réutilisé : sous licence ou avec permission (la permission est recommandée même sous licence), et crédité | Polestar (GPL-3.0-only), pfQuest (MIT), Ding/DingDB (GPL-3.0) et les autres sources sont crédités et liés ; leurs notices sont livrées dans les `LICENSE-DATA.txt` de l'addon. **Contacter l'auteur de Polestar avant la publication** (prévu en phase 11 de la [feuille de route](ROADMAP.md)). |
+| Logiciel libre accepté si sa licence est respectée | NextStep est sous GPL-3.0-only, comme Polestar ; texte de la licence inclus dans le paquet (`NextStep/LICENSE.txt`), avec les notices des données (`LICENSE-DATA.txt`). |
 | Respect du jeu, de son éditeur et de ses conditions d'utilisation | Aucune automatisation interdite ; mention des marques de Blizzard. |
 | Proposer un canal de retour (bugs, idées) | Tickets GitHub et commentaires CurseForge, cités en bas de page. |
 | Un changelog pour chaque fichier envoyé | Coller la section de la version tirée de [CHANGELOG.md](../CHANGELOG.md) à chaque envoi. |
@@ -145,7 +145,10 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 
 NextStep builds on these open-source projects. Thanks to their authors! / NextStep s'appuie sur ces projets libres. Merci à leurs auteurs !
 
-- **[Polestar](https://github.com/fitzforge/polestar)**: leveling, class and profession guides, translated names and texts / guides, noms et textes traduits *(GPL-3.0)*
+- **[Polestar](https://github.com/fitzforge/polestar)**: leveling, class and profession guides, translated names and texts / guides, noms et textes traduits *(GPL-3.0-only)*
+- **[pfQuest](https://github.com/shagu/pfQuest)** by Shagu, via Polestar: quest, NPC, object and item facts, French names / faits de quêtes, PNJ, objets et items, noms français *(MIT)*
+- **[Ding!](https://github.com/moust4ki/DingGuideWoWForever)** and DingDB by Yendi, via Polestar: French names / noms français *(GPL-3.0)*
+- **[CMaNGOS classic-db](https://github.com/cmangos/classic-db)**, via Polestar: NPC spawn heights and walk areas, quest objective counts / hauteurs d'apparition et zones de déplacement des PNJ, nombre d'objectifs des quêtes *(GPL-3.0)*
 - **[HereBeDragons](https://github.com/Nevcairiel/HereBeDragons)** by Nevcairiel: map, minimap and coordinates / carte, minimap et coordonnées *(BSD)*
 
 🎨 The logo was generated with AI (FLUX.2 [klein], background removed with BiRefNet). / Le logo a été généré par IA (FLUX.2 [klein], détourage avec BiRefNet).
@@ -156,7 +159,7 @@ NextStep builds on these open-source projects. Thanks to their authors! / NextSt
 
 🐞 Un bug, une étape incorrecte, une idée ? **Laisse un commentaire ici** ou ouvre un ticket sur GitHub.
 
-📦 Source code, full credits and licence (GPL-3.0) / Code source, crédits complets et licence : **[github.com/fccarlier-be/nextstep](https://github.com/fccarlier-be/nextstep)**
+📦 Source code, full credits and licence (GPL-3.0-only) / Code source, crédits complets et licence : **[github.com/fccarlier-be/nextstep](https://github.com/fccarlier-be/nextstep)**
 
 ---
 
