@@ -30,6 +30,7 @@ WoW Forever est un client officiel Blizzard au contenu de style Classic, constru
 | Lua | 5.1 modifié : pas de `goto`, pas d'opérateurs bit à bit natifs (bibliothèque `bit`), pas de `io`, `os`, `require` |
 | API | Espaces de noms modernes (`C_Item`, `C_Spell`, `C_Map`, `C_Container`, `C_QuestLog`, `C_TooltipInfo`…). Beaucoup d'anciennes fonctions globales n'existent plus (`GetItemInfo`, `GetSpellInfo`, `GetItemStats`, `UnitAura`, `GetContainerItemInfo`…) |
 | Cartes | `uiMapID` du Classic (ex. forêt d'Elwynn = `1429`) |
+| Dossier du jeu | `World of Warcraft\_forever_\` ; addons dans `_forever_\Interface\AddOns\` (créé au premier lancement) |
 
 ### Secret values
 
