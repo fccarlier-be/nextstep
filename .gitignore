@@ -16,6 +16,11 @@ Tools/import/cache/
 # Outils locaux téléchargés par Tools/setup.ps1
 Tools/bin/
 
+# Essais de logo et images d'inspiration (seul img/logo/ est versionné)
+img/propositions/
+img/*.jpg
+img/*.png
+
 # Sorties de build et de packaging
 dist/
 .release/

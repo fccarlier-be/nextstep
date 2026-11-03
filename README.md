@@ -1,3 +1,5 @@
+<p align="center"><img src="img/logo/nextstep-curseforge-400.png" alt="Logo de NextStep : une arche de pierre moussue, une étoile dorée sur la clé de voûte, des marches qui mènent à une lumière dorée" width="200"></p>
+
 # NextStep
 
 > L'addon tout-en-un pour monter ses personnages sur **WoW Forever** : guide de leveling, métiers, équipement et améliorations de l'interface, dans un seul addon.

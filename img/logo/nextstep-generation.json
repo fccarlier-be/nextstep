@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-03T16:22:14.801Z",
+  "modele": {
+    "unet": "flux-2-klein-4b-fp8.safetensors",
+    "clip": "qwen_3_4b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "licence": "FLUX.2 Klein 4B : Apache 2.0 (annoncée)",
+  "reglages": {
+    "steps": 8,
+    "cfg": 1,
+    "sampler_name": "res_multistep",
+    "scheduler": "simple",
+    "shift": 3
+  },
+  "largeur": 1024,
+  "hauteur": 1024,
+  "graine": 52,
+  "prompt": "Exactly the same mossy stone archway as the reference image, same golden star on the keystone, same warm golden light glowing inside the doorway, same rocks and ivy on both sides. Replace the maze-like path in the foreground with a short flight of four wide straight stone steps climbing up to the doorway threshold. No maze, no winding path, no sword, no weapons, no text. Fantasy game icon in sticker style with a thick dark outline, hand-painted texture, centered, plain white background.",
+  "references": [
+    "img/propositions/D-arche-ref-g42.png"
+  ],
+  "dureeMs": 20319
+}

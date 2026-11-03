@@ -129,7 +129,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
 ## Phase 11 : Finitions et publication → v1.0
 
-- Graphismes définitifs (icône, flèche), relecture des traductions, options complètes.
+- Graphismes définitifs (flèche ; le logo est fait), relecture des traductions, options complètes.
 - Page CurseForge, documentation utilisateur, vérification des crédits et licences.
 - Prise de contact avec l'auteur de Polestar avant la publication.
 
