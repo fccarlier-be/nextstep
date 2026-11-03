@@ -42,6 +42,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 - **Valeurs de vie et de ressources** sur les cadres d'unité et les nameplates.
 - **Sacs et banque unifiés**, banque consultable à distance, vente automatique de la camelote.
 - **Minimap** carrée, zoom à la molette, coordonnées, boutons d'addons rangés, horloge avec **alarmes et minuteurs**.
+- **Radar de récolte** : la minimap en grand et en transparence autour de ton personnage, pour farmer herbes, minerais et poissons.
 
 ## Principes
 
@@ -80,4 +81,4 @@ NextStep est distribué sous la [GNU General Public License v3.0](LICENSE), vers
 
 ## English summary
 
-**NextStep** is an all-in-one addon for **WoW Forever**: a race/class-aware leveling guide that tolerates detours, profession advice and routes, gear upgrade hints, and light Blizzard UI improvements (unit values, unified bags and bank, square minimap, clock timers). One addon instead of fifteen. It never sends any data anywhere. **Status: design phase**, no playable release yet. Licensed under GPL-3.0-only.
+**NextStep** is an all-in-one addon for **WoW Forever**: a race/class-aware leveling guide that tolerates detours, profession advice and routes, gear upgrade hints, and light Blizzard UI improvements (unit values, unified bags and bank, square minimap, a farming radar, clock timers). One addon instead of fifteen. It never sends any data anywhere. **Status: design phase**, no playable release yet. Licensed under GPL-3.0-only.

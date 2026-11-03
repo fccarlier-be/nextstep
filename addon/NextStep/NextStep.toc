@@ -25,6 +25,7 @@ Data\Imported\Client\MapOverlays.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
+Modules\UI\Radar.lua
 Modules\Guide\Conditions.lua
 Modules\Guide\Goals.lua
 Modules\Guide\Engine.lua

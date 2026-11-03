@@ -14,6 +14,7 @@ local SPECS = {
     "data",
     "names",
     "map_reveal",
+    "radar",
     "engine",
     "guide",
     "autoplay",

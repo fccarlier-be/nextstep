@@ -1,0 +1,7 @@
+<!-- Raccourcis clavier de NextStep (menu Raccourcis > NextStep). Fichier chargé par le
+     client sans passer par le TOC. Les libellés sont dans Modules/UI/Radar.lua. -->
+<Bindings>
+    <Binding name="NEXTSTEP_RADAR" header="NEXTSTEP" category="ADDONS">
+        NextStep.Modules:Get("Radar"):Toggle()
+    </Binding>
+</Bindings>

@@ -383,6 +383,8 @@ Une arche de pierre moussue, une étoile dorée sur la clé de voûte, des march
 | `img/logo/nextstep-curseforge-400.png` | 400 × 400 | Page CurseForge, README |
 | `addon/NextStep/Media/Icon.tga` | 128 × 128 | Liste des addons (`## IconTexture` du TOC) |
 | `addon/NextStep/Media/IconSmall.tga` | 64 × 64 | Bouton de la minimap |
+| `addon/NextStep/Media/RadarRing.tga` | 256 × 256 | Anneau du radar de récolte (`Tools/radar/textures.py`) |
+| `addon/NextStep/Media/RadarMask.tga` | 64 × 64 | Masque transparent du radar : cache le terrain de la minimap (`Tools/radar/textures.py`) |
 
 Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puissances de 2. **[À vérifier]** l'affichage de `IconTexture` sur Forever. Si l'icône est trop chargée en 32 pixels sur la minimap, une version simplifiée (même arche, sans lierre ni rochers) sera faite.
 
@@ -390,7 +392,7 @@ Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puis
 
 ## 9. Module UI
 
-Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Clock`, `Windows`, `MapReveal`.
+Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Radar`, `Clock`, `Windows`, `MapReveal`.
 
 ### Valeurs de vie et de ressources
 
@@ -448,6 +450,17 @@ Inspiré de Leatrix Maps et de Mapster, tous deux « All Rights Reserved » : co
 - Module `MapReveal` (`Modules/UI/MapReveal.lua`), actif par défaut, mis de côté si Leatrix Maps ou Mapster est chargé. Il s'accroche (`hooksecurefunc`) à `RefreshOverlays` de la punaise d'exploration de `WorldMapFrame` (`MapExplorationPinTemplate`), ou attend `ADDON_LOADED` de `Blizzard_WorldMap` ; après chaque rafraîchissement, il dessine les superpositions inexplorées avec ses propres textures, sur la punaise, en couche `BORDER` (sous les textures explorées). Dernière tuile d'une rangée ou d'une colonne rognée (fichier à la puissance de 2 supérieure, 16 au minimum). Luminosité réglable de 20 à 100 % (60 % par défaut), par un curseur dans les options.
 - **[À vérifier]** En jeu : absence de souillure (*taint*) de la carte du monde, en combat compris ; couche `BORDER` bien sous les textures explorées ; curseur sans modèle du client lisible dans le panneau d'options.
 - **[À vérifier]** En jeu, avec le rapport de diagnostic (section « Carte : exploration ») : textures explorées identiques à celles de la table ; rôle du drapeau `Flags = 4`, porté par 555 superpositions de 43 cartes (aucune n'a de `PlayerConditionID`), voir `Tools/worldmap/last-import.md` : s'il correspond à `isShownByMouseOver` ou `isDrawOnTopLayer` de `GetExploredMapTextures`, l'ajouter à la table. 8 superpositions sans tuiles sont écartées.
+
+### Radar de récolte
+
+Aide au farm des ressources, sur le principe de FarmHud (code propre à NextStep) : la minimap s'affiche en grand et en transparence au centre de l'écran, autour du personnage, pour repérer herbes, filons et bancs de poissons sans quitter le personnage des yeux.
+
+- Le client ne laisse pas un addon dessiner le terrain : le module `Radar` (`Modules/UI/Radar.lua`) **emprunte le vrai cadre `Minimap`**. À l'ouverture, il mémorise tout ce qu'il change (parent, points, taille, échelle, couche, transparence, souris et molette, zoom, option `rotateMinimap`, enfants affichés) et le rétablit à la fermeture ; le masque rendu suit `GetMinimapShape` (carré ou rond).
+- Pendant le radar : minimap centrée, diamètre réglable (30 à 90 % de la hauteur de l'écran, 60 % par défaut), opacité réglable (20 à 100 %, 70 % par défaut), zoom le plus large, aucun clic intercepté, couche `BACKGROUND`. Le terrain est caché par un masque transparent (`Media/RadarMask.tga`) ; il peut être affiché en option. Les enfants de `Minimap` (boutons d'addons) sont cachés, sauf les cadres protégés.
+- Rotation avec la caméra (option, activée par défaut) ; anneau (`Media/RadarRing.tga`) et points cardinaux N, E, S, O placés d'après `GetPlayerFacing`, cachés si le cap est inconnu ou secret.
+- Ouverture et fermeture par `/ns radar` ou un raccourci clavier (`Bindings.xml`, Raccourcis > NextStep). Si `Minimap` est protégée en combat, le changement est différé à la sortie du combat. L'option `rotateMinimap` est rendue à la déconnexion. Actif par défaut, désactivable, mis de côté si FarmHud est chargé.
+- Plus tard : ouverture automatique sur une étape « farmer ici » d'une route de métier ; points de récolte de la base (phase 9) dessinés sur le radar.
+- **[À vérifier]** En jeu : `Minimap` déplaçable et redimensionnable sur Forever, en combat compris ; points de suivi toujours visibles quand le terrain est masqué ; masque rond d'origine (`Textures\MinimapMask`) ; zoom 0 bien le plus large ; raccourci affiché dans le menu des raccourcis.
 
 ---
 
