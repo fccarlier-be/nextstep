@@ -38,7 +38,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 - Le **butin des donjons**, avec les améliorations pour ta spécialisation.
 
 ### Interface
-- **Fenêtres Blizzard déplaçables** et **carte sans brouillard**.
+- **Fenêtres Blizzard déplaçables**, ouvertes côte à côte avec passage au premier plan, et **carte sans brouillard**.
 - **Valeurs de vie et de ressources** sur les cadres d'unité et les nameplates.
 - **Sacs et banque unifiés**, banque consultable à distance, vente automatique de la camelote.
 - **Minimap** carrée, zoom à la molette, coordonnées, boutons d'addons rangés, horloge avec **alarmes et minuteurs**.
