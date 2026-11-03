@@ -3,7 +3,8 @@ std = "lua51"
 max_line_length = 120
 -- Une méthode déclarée avec « : » qui n'utilise pas self n'est pas une erreur.
 self = false
-exclude_files = { "Tools/bin/**", "addon/NextStep/Libs/**" }
+-- .lua et .luarocks : installations de Lua faites par l'intégration continue.
+exclude_files = { "Tools/bin/**", "addon/NextStep/Libs/**", ".lua/**", ".luarocks/**" }
 
 -- Code de l'addon : seules les globales listées ici sont permises.
 files["addon/**"] = {

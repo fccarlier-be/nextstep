@@ -24,7 +24,7 @@ jobs:
         run: luarocks install luacheck
 
       - name: luacheck
-        run: luacheck . --codes
+        run: luacheck addon tests --codes
 
       - name: Tests hors jeu
         run: lua tests/run.lua
