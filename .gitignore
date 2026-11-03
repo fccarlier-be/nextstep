@@ -1,0 +1,21 @@
+# Éditeurs et systèmes
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuration locale (chemin du jeu, etc.)
+*.local.json
+.env
+
+# Sources téléchargées par le script d'import (seul le résultat est versionné)
+Tools/import/cache/
+
+# Sorties de build et de packaging
+dist/
+.release/
+
+# Lua / tests
+luacov.*.out

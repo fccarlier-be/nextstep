@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.tga binary
+*.blp binary
+*.png binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary

@@ -1,0 +1,29 @@
+name: Proposer une idée
+description: Une nouvelle fonctionnalité ou une amélioration.
+labels: ["idée"]
+body:
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module concerné
+      options:
+        - Guide
+        - Navigation (flèche, carte, minimap)
+        - Métiers
+        - Items
+        - Interface (vie, sacs, minimap, horloge)
+        - Autre
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Le besoin
+      description: Quel problème cette idée résout-elle ?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: La proposition
+      description: Comment imagines-tu la solution ?

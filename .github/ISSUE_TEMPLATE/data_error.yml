@@ -1,0 +1,27 @@
+name: Erreur dans les données du guide
+description: Une quête, un PNJ, une coordonnée ou une étape incorrecte.
+labels: ["données"]
+body:
+  - type: input
+    id: guide
+    attributes:
+      label: Guide et étape
+      placeholder: "Marche de l'Ouest, étape « Colline des sentinelles »"
+    validations:
+      required: true
+  - type: input
+    id: ids
+    attributes:
+      label: Identifiants
+      description: ID de quête, de PNJ ou d'objet si tu les connais.
+  - type: textarea
+    id: wrong
+    attributes:
+      label: Ce qui est faux
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: Ce qui serait juste
+      description: Avec les coordonnées en jeu si possible (/way, carte).

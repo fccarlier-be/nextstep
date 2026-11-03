@@ -1,0 +1,49 @@
+name: Signaler un bug
+description: Quelque chose ne fonctionne pas comme prévu.
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version de NextStep
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: character
+    attributes:
+      label: Personnage
+      description: Race, classe, niveau et faction.
+      placeholder: "Humain guerrier niveau 8, Alliance"
+    validations:
+      required: true
+  - type: input
+    id: step
+    attributes:
+      label: Guide et étape concernés
+      description: Si le bug concerne le guide.
+      placeholder: "Forêt d'Elwynn, étape « Le camp des kobolds »"
+  - type: textarea
+    id: what
+    attributes:
+      label: Ce qui se passe
+      description: Décris le problème, et ce que tu attendais à la place.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Comment le reproduire
+      placeholder: |
+        1. ...
+        2. ...
+  - type: textarea
+    id: errors
+    attributes:
+      label: Message d'erreur Lua
+      description: Copie le texte de l'erreur si le jeu en affiche une.
+      render: text
+  - type: textarea
+    id: addons
+    attributes:
+      label: Autres addons installés
