@@ -1,0 +1,25 @@
+# Empaquetage par le BigWigs packager (.github/workflows/release.yml).
+# Voir docs/RELEASE.md. Le dépôt contient trois addons dans addon/ ; seuls eux sont livrés.
+package-as: NextStep
+
+move-folders:
+  NextStep/addon/NextStep: NextStep
+  NextStep/addon/NextStep_Alliance: NextStep_Alliance
+  NextStep/addon/NextStep_Horde: NextStep_Horde
+
+# Tout le reste du dépôt est un outil de développement (dont l'addon de diagnostic,
+# dans Tools/) : jamais livré aux joueurs.
+ignore:
+  - Tools
+  - tests
+  - docs
+  - img
+  - README.md
+  - CONTRIBUTING.md
+  - CREDITS.md
+  - CHANGELOG.md
+  - LICENSE
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown

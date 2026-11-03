@@ -34,6 +34,7 @@ Les tests (`tests/spec/*_spec.lua`) s'appuient sur une simulation de l'API du je
 - `main` : toujours dans un état fonctionnel.
 - Les développements se font sur des branches dédiées, nommées par type : `feat/…`, `fix/…`, `docs/…`, `data/…` (import de données), `chore/…`.
 - Fusion dans `main` par pull request.
+- Publication d'une version : un tag annoté `vX.Y.Z` sur `main` (voir [docs/RELEASE.md](docs/RELEASE.md)).
 
 ## Messages de commit
 

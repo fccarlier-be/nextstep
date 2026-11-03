@@ -34,3 +34,6 @@ luacov.*.out
 
 # Réglages personnels de Claude Code
 .claude/settings.local.json
+
+# Archives construites en local par le BigWigs packager
+.release/
