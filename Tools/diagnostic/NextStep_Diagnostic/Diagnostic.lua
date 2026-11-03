@@ -176,7 +176,8 @@ local API = {
         "EJ_GetEncounterInfoByIndex", "EJ_GetLootInfoByIndex", "C_EncounterJournal", "EncounterJournal_LoadUI",
         "C_MapExplorationInfo.GetExploredMapTextures", "C_Map.GetMapArtID", "C_Map.GetMapArtLayers",
         "C_Map.GetMapArtLayerTextures", "MapExplorationDataProviderMixin", "UIPanelWindows",
-        "UpdateUIPanelPositions", "ShowUIPanel", "HideUIPanel", "PlaySound", "PlaySoundFile", "SOUNDKIT",
+        "UpdateUIPanelPositions", "ShowUIPanel", "HideUIPanel", "GetUIPanel", "UISpecialFrames",
+        "CloseSpecialWindows", "CloseAllWindows", "PlaySound", "PlaySoundFile", "SOUNDKIT",
         "LevelUpDisplay",
     },
 }
@@ -469,7 +470,8 @@ local function checkExploration()
     end, "taille, décalage, fichiers : champs que la table devra fournir")
 end
 
--- Fenêtres déplaçables : présence, protection et gestion par UIPanelWindows.
+-- Fenêtres déplaçables et ouvertes ensemble : présence, protection, gestion par
+-- UIPanelWindows, fermeture par Échap (UISpecialFrames), strate et premier plan.
 local WINDOWS = {
     "CharacterFrame", "SpellBookFrame", "PlayerSpellsFrame", "PlayerTalentFrame", "TalentFrame", "QuestLogFrame",
     "FriendsFrame", "GossipFrame", "QuestFrame", "MerchantFrame", "ClassTrainerFrame", "TradeSkillFrame",
@@ -480,6 +482,10 @@ local WINDOWS = {
 local function checkWindows()
     section("Fenêtres Blizzard")
     local panels = _G.UIPanelWindows or {}
+    local special = {}
+    for _, name in ipairs(_G.UISpecialFrames or {}) do
+        special[name] = true
+    end
     for _, name in ipairs(WINDOWS) do
         local frame = _G[name]
         if not frame then
@@ -487,8 +493,10 @@ local function checkWindows()
         else
             probe(name, function()
                 local panel = panels[name]
-                return ("protégée=%s, déplaçable=%s, UIPanelWindows=%s"):format(tostring(frame:IsProtected()),
-                    tostring(frame:IsMovable()), panel and tostring(panel.area) or "non")
+                return ("protégée=%s, déplaçable=%s, UIPanelWindows=%s, Échap=%s, strate=%s, premier plan=%s")
+                    :format(tostring(frame:IsProtected()), tostring(frame:IsMovable()),
+                        panel and tostring(panel.area) or "non", special[name] and "UISpecialFrames" or "non",
+                        tostring(frame:GetFrameStrata()), tostring(frame:IsToplevel()))
             end)
         end
     end

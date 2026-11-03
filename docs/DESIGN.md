@@ -452,7 +452,21 @@ Inspiré de BlizzMove, dont le code est « All Rights Reserved » : code propre 
 - Les fenêtres Blizzard (personnage, grimoire, talents, journal de quêtes, marchands, maîtres…) se déplacent en les faisant glisser ; positions mémorisées, réinitialisables. Le mode Édition natif reste utilisé pour les éléments du HUD.
 - Fenêtres chargées plus tard (`Blizzard_*`) prises en charge à leur chargement (`ADDON_LOADED`).
 - Jamais en combat pour les cadres protégés ; retrait du gestionnaire de positions de `UIParent` sans écrire d'attributs sécurisés.
-- **[À vérifier]** Liste des fenêtres déplaçables sans souillure (*taint*) sur Forever.
+
+**Plusieurs fenêtres ouvertes en même temps.** Le gestionnaire de Blizzard (`ShowUIPanel`, table `UIPanelWindows`) ne garde que deux ou trois fenêtres, rangées à gauche ou au centre : ouvrir une fenêtre ferme ou décale les autres. NextStep sort de ce gestionnaire les fenêtres qu'il gère, pour qu'elles restent ouvertes ensemble, chacune à sa position mémorisée.
+
+- **Fenêtres concernées** : seulement les fenêtres **non protégées**. Une fenêtre protégée garde le comportement de Blizzard (déplaçable hors combat seulement). Liste tenue dans les données, fenêtre par fenêtre, selon les résultats du diagnostic.
+- **Sortie du gestionnaire** : hors combat uniquement, au chargement de la fenêtre. La fenêtre est retirée de `UIPanelWindows` et ajoutée à `UISpecialFrames`, pour que Échap la ferme toujours. Désactiver l'option la remet dans le gestionnaire au rechargement de l'interface (`/reload`).
+- **Première ouverture** : une fenêtre sans position mémorisée s'ouvre en cascade, décalée par rapport à la précédente, pour ne pas en cacher une autre.
+- **Focus** :
+  - un clic n'importe où sur une fenêtre la passe au premier plan (`SetToplevel`, puis `Raise`) ;
+  - toutes les fenêtres gérées sont dans la même strate, pour pouvoir passer l'une devant l'autre ;
+  - une fenêtre qui s'ouvre prend le focus ;
+  - NextStep tient la pile des fenêtres ouvertes, de la plus récente à la plus ancienne.
+- **Échap** ferme seulement la fenêtre au premier plan, puis la suivante à chaque nouvel appui. En combat, ou si l'interception n'est pas possible, Échap garde le comportement de Blizzard et ferme toutes les fenêtres.
+- **Option** : « Plusieurs fenêtres ouvertes » est activée par défaut et peut être désactivée séparément du déplacement.
+- **Risque** : modifier `UIPanelWindows` peut souiller (*taint*) l'ouverture des fenêtres protégées. C'est la raison de la limite aux fenêtres non protégées et aux changements hors combat ; à tester fenêtre par fenêtre.
+- **[À vérifier]** Liste des fenêtres déplaçables sans souillure (*taint*) sur Forever ; fenêtres non protégées sorties du gestionnaire sans erreur à l'ouverture en combat ; interception d'Échap pour ne fermer que la fenêtre au premier plan.
 
 ### Carte sans brouillard
 

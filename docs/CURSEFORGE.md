@@ -88,7 +88,7 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | ❤️ **Unit values** | Health and resource numbers on unit frames and nameplates |
 | 🎒 **Bags and bank** | Unified bags and bank, bank viewable from anywhere, junk auto-sell |
 | 🧭 **Minimap and clock** | Square minimap, wheel zoom, coordinates, one button to reach every addon's settings (other addon buttons hidden), alarms and timers |
-| 🪟 **Windows and map** | Movable Blizzard windows, whole world map revealed (no more fog) |
+| 🪟 **Windows and map** | Movable Blizzard windows that stay open side by side, whole world map revealed (no more fog) |
 
 ---
 ---
@@ -142,7 +142,7 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | ❤️ **Valeurs** | Vie et ressources en chiffres sur les cadres d'unité et les barres de nom |
 | 🎒 **Sacs et banque** | Sacs et banque unifiés, banque consultable partout, vente de la camelote |
 | 🧭 **Minimap et horloge** | Minimap carrée, zoom à la molette, coordonnées, un seul bouton pour les paramètres de tous tes addons (les autres boutons masqués), alarmes et minuteurs |
-| 🪟 **Fenêtres et carte** | Fenêtres Blizzard déplaçables, carte du monde entièrement dévoilée (plus de brouillard) |
+| 🪟 **Fenêtres et carte** | Fenêtres Blizzard déplaçables et ouvertes côte à côte, carte du monde entièrement dévoilée (plus de brouillard) |
 
 ---
 ---

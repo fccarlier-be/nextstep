@@ -56,7 +56,7 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 - noms appris : `UnitGUID` et `UnitName` sur cible, survol, nameplates et dialogue ; infobulle d'un PNJ par `C_TooltipInfo.GetHyperlink` ; panneau d'options (`Settings`, `UICheckButtonTemplate`) ;
 - faction connue au chargement pour la race Skyborne ;
 - chargement des données importées : temps et mémoire ;
-- ajoutés après la conception : liste du maître de classe à l'ouverture (services, niveaux, coûts), textures d'exploration de la carte (`C_MapExplorationInfo`), fenêtres Blizzard à rendre déplaçables (protection, `UIPanelWindows`), journal des donjons natif (`EncounterJournal`), boutons de la minimap et options des addons (`AddonCompartmentFrame`, `SettingsPanel`, LibDBIcon), source d'un butin et détection d'une récolte (`GetLootSourceInfo`, dernier sort lancé).
+- ajoutés après la conception : liste du maître de classe à l'ouverture (services, niveaux, coûts), textures d'exploration de la carte (`C_MapExplorationInfo`), fenêtres Blizzard à rendre déplaçables et à ouvrir ensemble (protection, `UIPanelWindows`, `UISpecialFrames`, strate), journal des donjons natif (`EncounterJournal`), boutons de la minimap et options des addons (`AddonCompartmentFrame`, `SettingsPanel`, LibDBIcon), source d'un butin et détection d'une récolte (`GetLootSourceInfo`, dernier sort lancé).
 
 **Terminé quand** : un rapport de vérification est publié dans `docs/`, et la feuille de route est ajustée si nécessaire.
 
@@ -119,7 +119,7 @@ Chaque complément est indépendant des autres et ne dépend que de la v0.1 : il
 - **Radar de récolte** : minimap en grand et en transparence au centre de l'écran, pour farmer les ressources.
 - Vente automatique de la camelote.
 - Horloge : alarmes, minuteurs, chronomètre.
-- **Fenêtres déplaçables** : personnage, grimoire, journal de quêtes, etc. ; positions mémorisées.
+- **Fenêtres déplaçables** : personnage, grimoire, journal de quêtes, etc. ; positions mémorisées ; plusieurs fenêtres ouvertes en même temps, avec passage au premier plan au clic et Échap qui ferme la fenêtre au premier plan.
 - **Carte sans brouillard** : zones inexplorées affichées (désactivable).
 
 Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
