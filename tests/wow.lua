@@ -92,6 +92,9 @@ local function newFrame(game)
     function frame.SetText(self, text)
         self.text = text
     end
+    function frame.CreateTexture()
+        return stub()
+    end
     function frame.CreateFontString()
         local fontString = stub()
         rawset(fontString, "SetText", function(self, text)

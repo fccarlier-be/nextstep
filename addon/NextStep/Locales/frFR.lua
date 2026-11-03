@@ -43,6 +43,12 @@ L["Remembers the names of the NPCs you meet, in your game's language, to transla
 L["Forget learned names"] = "Oublier les noms appris"
 L["Learned names: %d"] = "Noms appris : %d"
 
+-- Modules/UI/MapReveal.lua
+L["Map without fog"] = "Carte sans brouillard"
+L["Shows the unexplored areas of the world map, dimmed."] =
+    "Affiche les zones inexplorées de la carte du monde, en plus sombre."
+L["Unexplored areas brightness: %d%%"] = "Luminosité des zones inexplorées : %d %%"
+
 -- Modules/Guide/Guide.lua
 L["Leveling guide"] = "Guide de leveling"
 L["Step-by-step guide for your race, class and level, which accepts detours."] =

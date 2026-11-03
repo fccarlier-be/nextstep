@@ -13,6 +13,7 @@ local SPECS = {
     "locale",
     "data",
     "names",
+    "map_reveal",
     "engine",
     "guide",
     "autoplay",
