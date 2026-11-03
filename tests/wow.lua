@@ -225,6 +225,7 @@ end
 --   disabled   { NextStep_Horde = true, ... } : addons désactivés dans la liste des addons
 --   beforeInit function(ns) : appelée après le chargement des fichiers, avant ADDON_LOADED
 --   login      false pour ne pas déclencher PLAYER_LOGIN
+--   metadata   { NextStep = { Version = "v0.1.0" }, ... } : remplace des métadonnées des TOC
 function wow.boot(options)
     options = options or {}
     wow.reset()
@@ -243,6 +244,9 @@ function wow.boot(options)
     }, Game)
     for _, name in ipairs(KNOWN_ADDONS) do
         game.tocs[name] = parseToc(name)
+        for key, value in pairs((options.metadata or {})[name] or {}) do
+            game.tocs[name].metadata[key] = value
+        end
     end
     for _, name in ipairs(options.loaded or {}) do
         game.loaded[name] = true

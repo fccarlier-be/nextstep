@@ -1,0 +1,49 @@
+# Empaquetage et publication de NextStep (voir docs/RELEASE.md).
+# - Tag v* poussé : archive publiée dans une release GitHub, et sur CurseForge si le TOC
+#   porte X-Curse-Project-ID et que le secret CF_API_KEY existe.
+# - Pull request touchant l'empaquetage, ou lancement manuel : archive construite sans
+#   aucun envoi, jointe à l'exécution (onglet Actions) pour vérification.
+name: Empaquetage
+
+on:
+  push:
+    tags: ["v*"]
+  pull_request:
+    paths:
+      - .pkgmeta
+      - .github/workflows/release.yml
+      - "addon/**/*.toc"
+  workflow_dispatch:
+
+permissions:
+  contents: write # création de la release GitHub
+
+jobs:
+  package:
+    name: Archive de l'addon
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # historique complet : numéro de version et changelog
+
+      - name: Construire l'archive (sans envoi)
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -d
+
+      - name: Construire et publier
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        uses: BigWigsMods/packager@v2
+        env:
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Joindre l'archive à l'exécution
+        uses: actions/upload-artifact@v7
+        with:
+          name: NextStep
+          path: .release/*.zip
+          if-no-files-found: error
+          include-hidden-files: true # .release est un dossier caché

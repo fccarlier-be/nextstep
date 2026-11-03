@@ -3,7 +3,7 @@
 ## Notes: NextStep data for the Horde faction. Loaded automatically, do not disable.
 ## Notes-frFR: Données NextStep de la faction Horde. Chargé automatiquement, ne pas désactiver.
 ## Author: fccarlier-be
-## Version: 0.0.0
+## Version: @project-version@
 ## X-License: GPL-3.0-only
 ## Dependencies: NextStep
 ## LoadOnDemand: 1

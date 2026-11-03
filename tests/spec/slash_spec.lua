@@ -12,9 +12,16 @@ describe("Commandes", function()
     end)
 
     it("affiche la version lue dans le TOC", function()
-        local game = wow.boot()
+        local game = wow.boot({ metadata = { NextStep = { Version = "v0.1.0" } } })
         run("version")
-        expect(game:chatText():find("Version " .. game.tocs.NextStep.metadata.Version, 1, true))
+        expect(game:chatText():find("Version v0.1.0", 1, true))
+    end)
+
+    it("affiche « dev » quand le TOC n'a pas été empaqueté", function()
+        local game = wow.boot()
+        expect_eq(game.tocs.NextStep.metadata.Version, "@project-version@")
+        run("version")
+        expect(game:chatText():find("Version dev", 1, true))
     end)
 
     it("affiche l'aide sans argument et pour une commande inconnue", function()

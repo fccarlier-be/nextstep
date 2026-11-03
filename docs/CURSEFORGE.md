@@ -21,7 +21,7 @@ Ce document contient le texte de la page CurseForge de NextStep et la liste des 
 | Un changelog pour chaque fichier envoyé | Coller la section de la version tirée de [CHANGELOG.md](../CHANGELOG.md) à chaque envoi. |
 | Pas de mises à jour vides ni de renvois pour gagner en visibilité | Ne publier que des versions qui changent quelque chose. |
 
-**À chaque version** : relire la description et retirer de « Planned » ce qui est devenu disponible (et l'inverse), pour que la page décrive toujours le fichier publié. La section du guide décrit le contenu de la v0.1 (phase 4 de la feuille de route), dont les sorts à apprendre et la célébration de niveau.
+**À chaque version** : relire la description et retirer de « Planned » ce qui est devenu disponible (et l'inverse), pour que la page décrive toujours le fichier publié. La section du guide décrit le guide complet : la v0.1 (phase 4 de la feuille de route) et ses compléments v0.1.x (phase 4b : carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal). Tant qu'un complément n'est pas publié, sa ligne passe dans « Planned ».
 
 ## Résumé (champ « Summary »)
 

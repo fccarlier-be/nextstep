@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- **Empaquetage automatique** (BigWigs packager, `.pkgmeta`, workflow « Empaquetage ») : un tag `v*` crée une release GitHub avec l'archive des trois addons, et l'envoie sur CurseForge une fois le projet configuré ; outils, tests et documentation exclus. Les pull requests qui touchent l'empaquetage construisent l'archive sans l'envoyer. Procédure : [docs/RELEASE.md](docs/RELEASE.md).
 - Module **Radar de récolte** (`Radar`) : la minimap, en grand et en transparence, au centre de l'écran autour du personnage, pour repérer herbes, filons et poissons ; s'ouvre avec `/ns radar` ou un raccourci clavier. Terrain caché par défaut, rotation avec la caméra et points cardinaux, taille et opacité réglables ; la minimap est rendue exactement dans son état d'origine. Actif par défaut, désactivable, mis de côté si FarmHud est chargé. Textures générées par `Tools/radar/textures.py`. À vérifier en jeu.
 - Module **Carte sans brouillard** (`MapReveal`) : les zones inexplorées de la carte du monde sont affichées, plus sombres (luminosité réglable dans les options, 60 % par défaut) ; actif par défaut, désactivable, mis de côté si Leatrix Maps ou Mapster est chargé. À vérifier en jeu.
 - **Données de la carte sans brouillard** : superpositions de la carte du monde, explorées ou non, extraites des tables du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`) dans `Data/Imported/Client/MapOverlays.lua` ; accès par `DB.mapOverlays[mapArtID]`. Script d'extraction reproductible et vérifié (`Tools/worldmap/`, TACTSharp et DBCD, versions figées), rapport `Tools/worldmap/last-import.md`.
@@ -33,5 +34,9 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Recensement des sources de données et de leurs licences ([docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)).
 - README, licence GPL-3.0, crédits, guide de contribution.
 - Configuration du dépôt : modèles de tickets et de pull request, fichiers `.gitignore`, `.gitattributes` et `.editorconfig`.
+
+### Modifié
+- **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
+- Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
 [Non publié]: https://github.com/fccarlier-be/nextstep/commits/main

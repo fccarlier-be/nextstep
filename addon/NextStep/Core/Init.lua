@@ -3,7 +3,13 @@
 local addonName, ns = ...
 
 ns.name = addonName
-ns.version = C_AddOns.GetAddOnMetadata(addonName, "Version") or "dev"
+-- Le TOC du dépôt porte @project-version@, remplacé par le numéro du tag à l'empaquetage
+-- (voir docs/RELEASE.md) : non remplacé, c'est une version de développement.
+local version = C_AddOns.GetAddOnMetadata(addonName, "Version")
+if not version or version:find("^@") then
+    version = "dev"
+end
+ns.version = version
 
 -- Seule variable globale de l'addon : utile aux addons de faction et au débogage (/dump NextStep).
 _G.NextStep = ns
