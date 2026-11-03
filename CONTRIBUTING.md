@@ -17,6 +17,8 @@ Une seule fois :
 
 `deploy.ps1` crée des jonctions : le jeu lit directement les fichiers du dépôt, un `/reload` suffit pour tester une modification. Le chemin du jeu par défaut est `C:\Program Files (x86)\World of Warcraft\_forever_` (option `-GamePath`) ; `-Remove` supprime les liens. Si l'accès est refusé, le lancer une fois en administrateur.
 
+Seulement pour régénérer les données de la carte sans brouillard (`Tools\worldmap\run.ps1`, voir [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md#extraction-de-la-carte)) : le SDK .NET 10 (`winget install Microsoft.DotNet.SDK.10`) et la source de paquets nuget.org (`dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org` si `dotnet nuget list source` n'en affiche aucune).
+
 `deploy.ps1` relie aussi l'addon de diagnostic (`Tools/diagnostic/NextStep_Diagnostic`), un outil de développement : voir [docs/reports/README.md](docs/reports/README.md).
 
 Avant chaque commit :

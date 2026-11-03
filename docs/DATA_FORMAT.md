@@ -13,8 +13,9 @@ Ce document décrit les fichiers de données de NextStep et la couche d'accès q
 | `addon/NextStep/Data/Imported/Polestar/Texts_frFR.lua` | Traductions des textes des guides | Client frFR uniquement |
 | `addon/NextStep_Alliance/Data/Guides.lua` | Guides Alliance | Personnage Alliance |
 | `addon/NextStep_Horde/Data/Guides.lua` | Guides Horde | Personnage Horde |
+| `addon/NextStep/Data/Imported/Client/MapOverlays.lua` | Superpositions de la carte du monde, explorées ou non (carte sans brouillard) | Toujours |
 
-Tous sont **générés** par `Tools/import/import.lua` (voir [l'import](#import)) et ne doivent jamais être modifiés à la main. Les corrections iront dans `Data/Overrides/`.
+Tous sont **générés** et ne doivent jamais être modifiés à la main : ceux de Polestar par `Tools/import/import.lua` (voir [l'import](#import)), celui de la carte par `Tools/worldmap/generate.lua` (voir [l'extraction de la carte](#extraction-de-la-carte)). Les corrections iront dans `Data/Overrides/`.
 
 ## Couche d'accès : `ns.DB`
 
@@ -26,10 +27,11 @@ Tous sont **générés** par `Tools/import/import.lua` (voir [l'import](#import)
 | `DB:Translate(text, guide)` | Traduction d'un texte de guide (anglais si absente) |
 | `DB:Render(text, guide)` | Texte prêt à afficher : traduit, puis `{genre:id}` remplacés par les noms (`?` si introuvable) |
 | `DB.mapFrames.era[uiMapID]` | Cadre « era » d'une carte (conversion des coordonnées) |
+| `DB.mapOverlays[mapArtID]` | Superpositions d'une carte (`C_Map.GetMapArtID`) : liste de `{ largeur, hauteur, décalage X, décalage Y, FileDataID… }`, tuiles de 256 pixels rangée par rangée, comme `C_MapExplorationInfo.GetExploredMapTextures` |
 | `DB.retired[id]` | Ancien identifiant de guide, remplacé dans Polestar |
 | `DB.sources` | Sources importées (nom, version, commit, date, format) |
 
-Fonctions de remplissage, appelées par les fichiers générés : `DB.AddGuide(build)`, `DB:AddNames(locale, kind, build)`, `DB:AddTexts(locale, guideID, build)`, `DB:AddMapFrames(frame, build)`, `DB:RetireGuides(list)`, `DB:SetSource(source)`. Chaque `build` est une fonction qui renvoie une table : en Lua 5.1, le nombre de constantes est limité **par fonction**, d'où un constructeur par guide et des tables de noms découpées par blocs de 2 000.
+Fonctions de remplissage, appelées par les fichiers générés : `DB.AddGuide(build)`, `DB:AddNames(locale, kind, build)`, `DB:AddTexts(locale, guideID, build)`, `DB:AddMapFrames(frame, build)`, `DB:AddMapOverlays(mapArtID, build)`, `DB:RetireGuides(list)`, `DB:SetSource(source)`. Chaque `build` est une fonction qui renvoie une table : en Lua 5.1, le nombre de constantes est limité **par fonction**, d'où un constructeur par guide et des tables de noms découpées par blocs de 2 000.
 
 ### Résolution des noms
 
@@ -196,6 +198,21 @@ Les coordonnées marquées `f = "e"` sont exprimées dans le repère **era** des
 L'import est **reproductible** : deux exécutions sur le même commit produisent des fichiers identiques, ce qui rend les différences lisibles dans git.
 
 Pour importer une nouvelle version de Polestar : modifier `commit`, `date` et `version` dans `polestar.lock`, relancer `run.ps1`, relire le rapport et la différence. Si le `format` change, revoir la conversion avant de modifier `polestar.lock`.
+
+### Extraction de la carte
+
+```powershell
+.\Tools\worldmap\run.ps1    # extrait, décode, génère, puis lance luacheck et les tests
+```
+
+Les textures des zones inexplorées viennent des tables `WorldMapOverlay` et `WorldMapOverlayTile` du client installé. Outils de développement, jamais livrés ; versions figées dans `Tools/worldmap/worldmap.lock` ; tout ce qui est téléchargé ou extrait va dans `Tools/worldmap/cache/` (ignoré par git). Nécessite le SDK .NET 10.
+
+1. Vérifie que la version installée (`.build.info`, produit `wowf`) est celle de `worldmap.lock` : les définitions de WoWDBDefs doivent la couvrir.
+2. Compile **TACTTool** ([TACTSharp](https://github.com/wowdev/TACTSharp), MIT), qui lit les deux tables dans le stockage CASC de l'installation, en lecture seule. Mettre en pause un téléchargement du jeu en cours est conseillé.
+3. `Export` ([DBCD](https://github.com/wowdev/DBCD), MIT, avec les définitions de [WoWDBDefs](https://github.com/wowdev/WoWDBDefs)) les décode en TSV.
+4. `generate.lua` vérifie que la grille de tuiles de chaque superposition est complète et conforme à sa taille, écrit `MapOverlays.lua`, le relit pour comparer, et écrit le rapport [`Tools/worldmap/last-import.md`](../Tools/worldmap/last-import.md) (superpositions sans tuiles, superpositions conditionnelles, avertissements).
+
+Après un patch du jeu : vérifier que WoWDBDefs couvre la nouvelle version, mettre à jour `build` (et au besoin `wowdbdefs_commit`) dans `worldmap.lock`, relancer `run.ps1` et relire la différence.
 
 ### Transformations
 

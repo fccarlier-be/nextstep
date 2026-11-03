@@ -15,7 +15,7 @@ try {
     $luacheck = Join-Path $PSScriptRoot "bin\luacheck.exe"
     if (-not (Test-Path $luacheck)) { throw "luacheck not found: run Tools\setup.ps1 first." }
     Write-Host "== luacheck"
-    & $luacheck addon tests Tools/diagnostic Tools/import --codes
+    & $luacheck addon tests Tools/diagnostic Tools/import Tools/worldmap --codes
     if ($LASTEXITCODE -ne 0) { $failed = $true }
 
     $luajit = (Get-Command luajit -ErrorAction SilentlyContinue).Source

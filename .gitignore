@@ -12,6 +12,10 @@ desktop.ini
 
 # Sources téléchargées par le script d'import (seul le résultat est versionné)
 Tools/import/cache/
+# Outils et tables du client téléchargés ou extraits par Tools/worldmap/run.ps1
+Tools/worldmap/cache/
+Tools/worldmap/Export/bin/
+Tools/worldmap/Export/obj/
 
 # Outils locaux téléchargés par Tools/setup.ps1
 Tools/bin/

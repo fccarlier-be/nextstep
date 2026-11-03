@@ -21,6 +21,7 @@ Data\Imported\Polestar\Guides.lua
 Data\Imported\Polestar\Names_enUS.lua
 Data\Imported\Polestar\Names_frFR.lua
 Data\Imported\Polestar\Texts_frFR.lua
+Data\Imported\Client\MapOverlays.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\Guide\Conditions.lua

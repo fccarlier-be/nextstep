@@ -133,6 +133,28 @@ describe("Données importées", function()
         expect(next(DB.retired), "des anciens identifiants de guides")
         expect(DB.mapFrames.era[1429], "repère « era » de la forêt d'Elwynn")
     end)
+
+    it("charge les superpositions de la carte sans brouillard", function()
+        local DB = wow.boot().ns.DB
+        local client
+        for _, source in ipairs(DB.sources) do
+            if source.name == "Client Forever" then
+                client = source
+            end
+        end
+        expect(client and client.version, "source « Client Forever » et sa version")
+        local maps, overlays = 0, 0
+        for mapArtID, list in pairs(DB.mapOverlays) do
+            maps = maps + 1
+            for _, overlay in ipairs(list) do
+                overlays = overlays + 1
+                local width, height = overlay[1], overlay[2]
+                local tiles = math.ceil(width / 256) * math.ceil(height / 256)
+                expect_eq(#overlay, 4 + tiles, ("tuiles de la carte %d (%dx%d)"):format(mapArtID, width, height))
+            end
+        end
+        expect(maps > 50 and overlays > 1000, ("%d cartes, %d superpositions"):format(maps, overlays))
+    end)
 end)
 
 local function readText(path)

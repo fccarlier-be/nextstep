@@ -24,7 +24,7 @@ jobs:
         run: luarocks install luacheck
 
       - name: luacheck
-        run: luacheck addon tests Tools/diagnostic Tools/import --codes
+        run: luacheck addon tests Tools/diagnostic Tools/import Tools/worldmap --codes
 
       - name: Tests hors jeu
         run: lua tests/run.lua
