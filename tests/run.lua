@@ -11,6 +11,7 @@ local SPECS = {
     "factions",
     "slash",
     "locale",
+    "data",
 }
 
 local wow

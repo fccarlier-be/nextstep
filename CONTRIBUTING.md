@@ -53,7 +53,7 @@ Exemples : `feat(guide): calcul de l'étape courante`, `data(polestar): import d
 
 ## Données
 
-- Ne jamais modifier `Data/Imported/` à la main : relancer le script d'import.
+- Ne jamais modifier les données générées (`addon/NextStep/Data/Imported/`, `addon/NextStep_*/Data/`) à la main : relancer `Tools\import\run.ps1` (voir [DATA_FORMAT.md](docs/DATA_FORMAT.md#import)). Type de commit : `data(polestar): …`.
 - Les corrections vont dans `Data/Overrides/`, avec la source de l'information en commentaire.
 - Toute nouvelle source de données doit avoir une licence compatible avec la GPL-3.0 et être ajoutée à [DATA_SOURCES.md](docs/DATA_SOURCES.md) et [CREDITS.md](CREDITS.md).
 

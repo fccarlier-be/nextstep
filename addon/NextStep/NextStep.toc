@@ -14,6 +14,12 @@ Core\Locale.lua
 Locales\frFR.lua
 Core\Events.lua
 Core\Storage.lua
+Core\DB.lua
+Data\Imported\Polestar\Meta.lua
+Data\Imported\Polestar\Guides.lua
+Data\Imported\Polestar\Names_enUS.lua
+Data\Imported\Polestar\Names_frFR.lua
+Data\Imported\Polestar\Texts_frFR.lua
 Core\Modules.lua
 Core\Factions.lua
 Core\Options.lua

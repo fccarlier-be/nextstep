@@ -97,6 +97,7 @@ Un seul fichier `NextStep.toc` par addon, **sans suffixe de version** (`_Camelot
 | `Core/Locale.lua`, `Locales/*.lua` | Table `ns.L` ; une clé sans traduction s'affiche telle quelle (anglais) |
 | `Core/Events.lua` | Un seul cadre écoute le jeu ; abonnés identifiés par un propriétaire ; messages internes ; erreur d'un abonné isolée des autres |
 | `Core/Storage.lua` | `NextStepDB` (compte) et `NextStepCharDB` (personnage), numéro de schéma, migrations, valeurs par défaut |
+| `Core/DB.lua` | Couche d'accès aux données : guides, noms, traductions, rendu des textes (voir [DATA_FORMAT.md](DATA_FORMAT.md)) |
 | `Core/Modules.lua` | Registre des modules : cycle `OnInitialize` → `OnEnable` / `OnDisable`, état mémorisé, détection des addons concurrents |
 | `Core/Factions.lua` | Chargement de l'addon de faction ; message `NEXTSTEP_FACTION_LOADED` |
 | `Core/Options.lua` | Panneau dans Options > AddOns (API `Settings`) |
@@ -111,7 +112,7 @@ Le cœur et les données communes (classes, métiers, réputations, zones, PNJ n
 
 ### Couche d'accès aux données
 
-Le moteur n'accède jamais directement aux tables de données ; il passe par `NS.DB` (`DB:GetQuest(id)`, `DB:GetGuide(id)`, `DB:GetNPC(id)`…). Changer de source, de format ou de stratégie de chargement ne touche que cette couche.
+Le moteur n'accède jamais directement aux tables de données ; il passe par `ns.DB` (`DB:GetGuide(id)`, `DB:IterateGuides(filter)`, `DB:GetName(kind, id)`, `DB:Render(text)`…). Changer de source, de format ou de stratégie de chargement ne touche que cette couche.
 
 ### Modules
 
@@ -123,66 +124,14 @@ Chaque module (et chaque sous-module UI) s'enregistre auprès du cœur, peut êt
 
 Les sources et licences sont détaillées dans [DATA_SOURCES.md](DATA_SOURCES.md).
 
-### Import
+Le format exact des fichiers, la couche d'accès `ns.DB` et la procédure d'import sont décrits dans [DATA_FORMAT.md](DATA_FORMAT.md). Les principes :
 
-Le script d'import charge les fichiers compilés de Polestar dans un environnement Lua **isolé** (aucun accès aux fichiers ni au système), remplace `Polestar.RegisterGuide` et les fonctions apparentées par des fonctions de capture, puis convertit les tables capturées vers le format NextStep. Il vérifie le numéro de format (`format = 8` au 2026-11-03) et **refuse** un format inconnu plutôt que de produire des données fausses. La version de la source importée est consignée.
-
-### Faits
-
-```lua
-NS.DB.quests[7] = {
-    level = 2, minLevel = 1,
-    races = nil, classes = nil,      -- nil = tous ; sinon jetons ("HUMAN", "WARRIOR")
-    start = { npc = 197 }, finish = { npc = 197 },
-    pre = { 783 },                   -- prérequis
-    closedBy = nil,                  -- quêtes exclusives
-}
-NS.DB.npcs[197] = { map = 1429, x = 48.92, y = 41.61 }   -- uiMapID + pourcentage 0-100
-```
-
-- **Races et classes en jetons**, jamais en masques de bits : les ID raciaux de Skyborne (95, 96) dépassent 32 bits, la limite de la bibliothèque `bit` de Lua 5.1.
-- **Coordonnées** en pourcentage de carte, déjà converties au repère Forever lors de l'import (forever-db stocke des mètres monde ; Polestar distingue les repères *era* et *live*).
-- **Pas de noms** dans les faits : ils viennent du client ou des tables de traduction.
-
-### Routes
-
-Une route est une liste d'**étapes** ; chaque étape regroupe des **objectifs** à accomplir ensemble au même endroit.
-
-```lua
-NS:RegisterRoute({
-    id = "forever/alliance/human/01-elwynn-forest",
-    faction = "Alliance", races = { "HUMAN" },
-    levels = { 1, 11 },
-    next = { "forever/alliance/02-westfall" },
-    steps = {
-        {
-            title = "Le camp des kobolds",
-            note = "...",
-            goals = {
-                { t = "kill", quest = 7, npc = 6, count = 10, spots = { ... } },
-                { t = "collect", item = 247834, count = 1, optional = true },
-            },
-        },
-    },
-})
-```
-
-Le vocabulaire des objectifs est aligné sur celui de Polestar pour que l'import soit quasi direct :
-
-| Type | Signification | Accompli quand… |
-|---|---|---|
-| `accept` | Accepter une quête | dans le journal, **ou** déjà rendue |
-| `complete` / `kill` / `collect` / `interact`… | Objectifs de quête | objectif rempli, **ou** quête rendue |
-| `turnin` | Rendre une quête | quête marquée terminée |
-| `goto` | Se rendre à un point | passage dans le rayon (mémorisé pour la session) |
-| `level` | Atteindre un niveau | niveau ≥ cible |
-| `train` | Maître de classe ou de métier | rang appris / validation manuelle |
-| `sethome`, `hearth`, `getfp`, `fly` | Déplacements | changement constaté |
-| `buy` | Acheter un objet | objet dans les sacs |
-| `craft`, `skill` | Métiers | compétence ≥ cible |
-| `note`, `task` | Texte / tâche manuelle | validation manuelle (`note` ne bloque jamais) |
-
-Options communes à un objectif ou une étape : `races`, `classes`, `optional`, conditions (`when` : niveau, quête en cours, terminée…), `reward` (choix de récompense).
+- **Import, pas dépendance** : les guides compilés de Polestar sont convertis par `Tools/import/import.lua`, exécutés dans un environnement isolé. Le numéro de format est vérifié (`format = 8` au 2026-11-03) : un format inconnu est refusé plutôt que de produire des données fausses. L'import est reproductible et consigne la version source.
+- **Structure** : guide → étapes → objectifs. Chaque étape regroupe les objectifs à accomplir ensemble au même endroit. Le vocabulaire (types d'objectifs `accept`, `turnin`, `kill`, `collect`, `goto`…, conditions `when`, restrictions `only`, `along`, `label`, `skipto`) est celui de Polestar, pour que l'import reste quasi direct.
+- **Races et classes en jetons** (`HUMAN`, `SCOURGE`, `WARRIOR`…), jamais en masques de bits : les ID raciaux de Skyborne (95, 96) dépassent 32 bits, la limite de la bibliothèque `bit` de Lua 5.1.
+- **Pas de noms dans les guides** : les textes contiennent des emplacements `{genre:id}`, remplacés à l'affichage par le nom dans la langue du client (traduction importée, puis nom fourni par le client, puis anglais).
+- **Coordonnées en pourcentage de carte, dans leur repère d'origine** : les coordonnées marquées `f = "e"` sont dans le repère *era* du Classic et sont **converties en jeu**, car les repères des cartes de Forever ne sont connus que du client. Les repères *era* sont importés (`DB.mapFrames.era`).
+- **Seules les données utilisées sont importées** : les guides, les noms qu'ils citent et leurs traductions. Les statistiques d'items (phase 6) et les faits de forever-db pour le mode conseil (phase 10) seront importés avec les modules qui en ont besoin.
 
 ---
 
@@ -191,7 +140,7 @@ Options communes à un objectif ou une étape : `races`, `classes`, `optional`, 
 ### Règles fondamentales
 
 1. **L'étape courante est calculée, jamais stockée.** À chaque changement d'état, le moteur prend la première étape qui n'est ni faite, ni ignorée, ni hors sujet. Une route modifiée ou un jeu sans l'addon ne désynchronise rien.
-2. **Seuls les choix du joueur sont sauvegardés** (étapes ignorées, validations manuelles), par **clé stable** (`"accept:783"`, ou un `id` explicite), jamais par position.
+2. **Seuls les choix du joueur sont sauvegardés** (étapes ignorées, validations manuelles), par **clé stable** (identifiant du guide, `label` de l'étape ou objectif comme `"accept:783"`), jamais par position.
 3. **Un objectif accompli le reste** : chaque objectif tient compte des états qui le suivent (`accept` est accompli si la quête est déjà rendue). Seul l'abandon d'une quête fait reculer le guide, avec un message.
 
 ### États d'une étape

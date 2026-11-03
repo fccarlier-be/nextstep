@@ -8,4 +8,5 @@
 ## Dependencies: NextStep
 ## LoadOnDemand: 1
 
+Data\Guides.lua
 Data.lua

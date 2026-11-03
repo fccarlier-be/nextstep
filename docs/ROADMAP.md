@@ -17,7 +17,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | — | Conception | — | ✅ |
 | 0 | Fondations | — | 🟨 |
 | 1 | Vérifications en jeu | — | ⬜ |
-| 2 | Import des données | — | ⬜ |
+| 2 | Import des données | — | ✅ |
 | 3 | Moteur du guide | — | ⬜ |
 | 4 | Interface du guide | **v0.1** | ⬜ |
 | 5 | Gains rapides du module UI | v0.2 | ⬜ |
@@ -50,16 +50,20 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 - options natives : texte de statut, sacs combinés, horloge et alarme, zoom de la carte du monde ;
 - position et orientation du joueur, possibilité d'équiper un objet par addon, nameplates ;
 - API des quêtes (`C_QuestLog`) ;
-- faction connue au chargement pour la race Skyborne.
+- noms fournis par le client (régions, zones, sorts, objets, quêtes) et `raceFile` de Skyborne ;
+- faction connue au chargement pour la race Skyborne ;
+- chargement des données importées : temps et mémoire.
 
 **Terminé quand** : un rapport de vérification est publié dans `docs/`, et la feuille de route est ajustée si nécessaire.
 
 ## Phase 2 : Import des données *(sans le jeu)*
 
-- Script d'import : chargement isolé des fichiers compilés de Polestar (guides, items, noms français), contrôle du numéro de format, conversion vers le format NextStep.
+- Script d'import : chargement isolé des fichiers compilés de Polestar (guides, noms et textes français), contrôle du numéro de format, conversion vers le format NextStep.
 - Couche d'accès aux données ; séparation commun / Alliance / Horde.
 
 **Terminé quand** : les guides importés sont fidèles aux originaux (nombre de guides et d'étapes, échantillons comparés automatiquement).
+
+État : **terminé**. 256 guides, 6 046 étapes et 17 450 objectifs importés, vérifiés objectif par objectif, et relus à l'identique ; import reproductible. Le format est décrit dans [DATA_FORMAT.md](DATA_FORMAT.md). Les statistiques d'items et les faits de forever-db seront importés avec les modules qui les utilisent (phases 6 et 10).
 
 ## Phase 3 : Moteur du guide *(sans le jeu)*
 
@@ -86,6 +90,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
 ## Phase 6 : Items → v0.3
 
+- Import des statistiques d'items et des poids de stats (Polestar_ItemDB).
 - Calcul du score, détection de la spécialisation (modifiable à la main).
 - Récompenses de quête mises en évidence, infobulles, alerte d'amélioration.
 
@@ -103,6 +108,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
 ## Phase 10 : Items à ne pas rater, jalons, mode libre → v0.7
 
+- Import des faits de forever-db (quêtes, PNJ) pour le mode conseil.
 - Items par tranche de niveaux intégrés à la route, jalons (sacs, monture, quêtes de classe), onglet Zones.
 
 ## Phase 11 : Finitions et publication → v1.0
