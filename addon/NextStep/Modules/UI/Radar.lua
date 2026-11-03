@@ -308,22 +308,6 @@ local function addSlider(panel, anchor, low, high, step, format, get, set)
     return label, slider
 end
 
-local function addCheck(panel, anchor, text, get, set)
-    local check = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
-    check:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -4)
-    check:SetChecked(get())
-    check:SetScript("OnClick", function(button)
-        set(button:GetChecked() and true or false)
-    end)
-    panel:HookScript("OnShow", function()
-        check:SetChecked(get())
-    end)
-    local label = check:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-    label:SetPoint("LEFT", check, "RIGHT", 2, 0)
-    label:SetText(text)
-    return check
-end
-
 function Radar:SetSizeSetting(value)
     self.db.size = clamp(value, MIN_SIZE, MAX_SIZE, 0.6)
     if self.active then
@@ -348,10 +332,10 @@ function Radar:BuildOptions(panel, anchor)
     local alphaLabel = addSlider(panel, sizeLabel, MIN_ALPHA, MAX_ALPHA, 0.05, L["Radar opacity: %d%%"],
         function() return self:GetAlpha() end,
         function(value) self:SetLook("alpha", clamp(value, MIN_ALPHA, MAX_ALPHA, 0.7)) end)
-    local terrain = addCheck(panel, alphaLabel, L["Show the terrain"],
+    local terrain = ns.Options.AddCheck(panel, alphaLabel, L["Show the terrain"],
         function() return self.db.terrain end,
         function(value) self:SetLook("terrain", value) end)
-    local rotate = addCheck(panel, terrain, L["Rotate with the camera"],
+    local rotate = ns.Options.AddCheck(panel, terrain, L["Rotate with the camera"],
         function() return self.db.rotate end,
         function(value) self:SetLook("rotate", value) end)
     return rotate

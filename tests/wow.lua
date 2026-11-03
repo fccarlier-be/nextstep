@@ -166,6 +166,56 @@ function Game:loadAddOn(name)
     return true
 end
 
+-- Personnage simulé, lu par l'API (UnitLevel, C_QuestLog, UnitPosition...).
+-- Quêtes : game:acceptQuest(q, { objectifs }), game:completeQuest(q), game:turnInQuest(q).
+local function newPlayer(options)
+    local player = {
+        level = 1, xp = 0, maxXP = 400, race = "Human", class = "WARRIOR", money = 0,
+        log = {},        -- liste { questID, complete, objectives = { { text, finished } } }
+        done = {},       -- [quête] = true
+        items = {},      -- [objet] = nombre
+        spells = {},     -- [sort] = true
+        position = nil,  -- { nord, ouest, instance }
+        facing = 0,
+        zone = "", subzone = "", bind = "",
+    }
+    for key, value in pairs(options or {}) do
+        player[key] = value
+    end
+    return player
+end
+
+function Game:findQuest(q)
+    for index, entry in ipairs(self.player.log) do
+        if entry.questID == q then
+            return entry, index
+        end
+    end
+end
+
+function Game:acceptQuest(q, objectives)
+    self.player.log[#self.player.log + 1] = { questID = q, complete = false, objectives = objectives or {} }
+    return self
+end
+
+function Game:completeQuest(q)
+    local entry = self:findQuest(q)
+    entry.complete = true
+    for _, objective in ipairs(entry.objectives) do
+        objective.finished = true
+    end
+    return self
+end
+
+function Game:turnInQuest(q)
+    local _, index = self:findQuest(q)
+    if index then
+        table.remove(self.player.log, index)
+    end
+    self.player.done[q] = true
+    return self
+end
+
 function Game:chatText()
     return table.concat(self.chat, "\n")
 end
@@ -202,6 +252,91 @@ local function install(game, options)
         return game.units[unit] and game.units[unit].name
     end
     _G.UNKNOWNOBJECT = "Unknown"
+
+    -- Personnage
+    local player = game.player
+    _G.UnitLevel = function()
+        return player.level
+    end
+    _G.UnitXP = function()
+        return player.xp
+    end
+    _G.UnitXPMax = function()
+        return player.maxXP
+    end
+    _G.UnitRace = function()
+        return player.race, player.race
+    end
+    _G.UnitClass = function()
+        return player.class, player.class
+    end
+    _G.GetMoney = function()
+        return player.money
+    end
+    _G.C_QuestLog = {
+        GetNumQuestLogEntries = function()
+            return #player.log
+        end,
+        GetInfo = function(index)
+            local entry = player.log[index]
+            return entry and { questID = entry.questID, isHeader = false }
+        end,
+        IsComplete = function(q)
+            local entry = game:findQuest(q)
+            return entry ~= nil and entry.complete
+        end,
+        IsQuestFlaggedCompleted = function(q)
+            return player.done[q] == true
+        end,
+        GetQuestObjectives = function(q)
+            local entry = game:findQuest(q)
+            return entry and entry.objectives
+        end,
+    }
+    _G.C_Item = {
+        GetItemCount = function(item)
+            return player.items[item] or 0
+        end,
+    }
+    _G.IsPlayerSpell = function(spell)
+        return player.spells[spell] == true
+    end
+    _G.C_Map = {
+        GetAreaInfo = function()
+            return nil
+        end,
+        GetBestMapForUnit = function()
+            return nil
+        end,
+    }
+    _G.GetZoneText = function()
+        return player.zone
+    end
+    _G.GetSubZoneText = function()
+        return player.subzone
+    end
+    _G.GetMinimapZoneText = function()
+        return player.subzone
+    end
+    _G.GetBindLocation = function()
+        return player.bind
+    end
+    _G.UnitPosition = function()
+        local position = player.position
+        if position then
+            return position[1], position[2], 0, position[3]
+        end
+    end
+    _G.GetPlayerFacing = function()
+        return player.facing
+    end
+    _G.hooksecurefunc = function(target, name, hook)
+        local original = target[name]
+        target[name] = function(...)
+            original(...)
+            hook(...)
+        end
+    end
     _G.SlashCmdList = {}
     _G.Settings = options.settings
     _G.C_AddOns = {
@@ -225,6 +360,7 @@ end
 --   disabled   { NextStep_Horde = true, ... } : addons désactivés dans la liste des addons
 --   beforeInit function(ns) : appelée après le chargement des fichiers, avant ADDON_LOADED
 --   login      false pour ne pas déclencher PLAYER_LOGIN
+--   player     { level = 5, class = "MAGE", position = { nord, ouest, instance }, ... } : personnage
 --   metadata   { NextStep = { Version = "v0.1.0" }, ... } : remplace des métadonnées des TOC
 function wow.boot(options)
     options = options or {}
@@ -241,6 +377,7 @@ function wow.boot(options)
         faction = options.faction or "Alliance",
         units = {},
         inCombat = false,
+        player = newPlayer(options.player),
     }, Game)
     for _, name in ipairs(KNOWN_ADDONS) do
         game.tocs[name] = parseToc(name)

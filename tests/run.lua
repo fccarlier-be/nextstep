@@ -17,6 +17,7 @@ local SPECS = {
     "radar",
     "engine",
     "guide",
+    "guide_live",
     "autoplay",
     "diagnostic",
 }

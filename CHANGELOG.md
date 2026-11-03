@@ -7,6 +7,14 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- **Guide en jeu** (phase 4, v0.1) : le guide suit le personnage pour de vrai. À vérifier en jeu.
+  - **État du joueur** lu dans l'API du jeu (journal de quêtes, objectifs, sacs, compétences, sorts, réputations, zone, foyer, points de vol, argent), avec un cache vidé selon les événements ; recalcul regroupé sur les événements du jeu.
+  - **Validations automatiques** : dialogue avec le bon PNJ, marchand, maître de classe proposé par le guide, carte des vols, sort lancé ; arrivée aux points de passage d'après la position.
+  - **Fenêtre du guide** : étape courante et objectifs (texte du client pour les objectifs de quête, avec la progression), conseil, objectifs en chemin, quêtes abandonnées à reprendre, étape suivante, détours ; boutons Ignorer, Valider, Strict / Libre ; guides proposés au personnage, guides suivants en fin de guide, quêtes de groupe. Déplaçable, réductible, verrouillable.
+  - **Flèche** (version simple) vers la cible de l'étape : premier objectif ouvert, ou le plus proche en mode libre, avec la zone de mobs ou le maître de classe le plus proche ; couleur selon la direction, distance, coche à l'arrivée. Calculs en coordonnées monde, sans conversion par la carte du client.
+  - Suivi de quêtes Blizzard **masqué** pendant un guide (option).
+  - Commandes `/ns guide` (fenêtre ; `list`, `start`, `stop`, `reset`, `skip`, `done`, `mode`) et `/ns arrow` ; raccourcis clavier : fenêtre, flèche, valider l'étape.
+  - Tests : simulation du personnage dans l'API simulée, 10 scénarios du guide en jeu, et un test qui vérifie que chaque texte de l'addon a sa traduction française.
 - Conception du **bouton NextStep et du menu des addons** (phase 5) : un seul bouton sur la minimap donne accès aux paramètres de chaque addon installé, et les boutons des autres addons sont masqués, de façon réversible ([docs/DESIGN.md](docs/DESIGN.md#bouton-nextstep-et-menu-des-addons)). L'addon de diagnostic relève le compartiment d'addons, les catégories d'options, les enfants de la minimap, LibDBIcon et LibDataBroker.
 - Conception des **fenêtres ouvertes ensemble** (phase 5) : les fenêtres Blizzard non protégées sortent du gestionnaire de Blizzard pour rester ouvertes côte à côte ; clic pour passer au premier plan, Échap qui ferme la fenêtre au premier plan, ouverture en cascade ([docs/DESIGN.md](docs/DESIGN.md#fenêtres-déplaçables)). L'addon de diagnostic relève la strate, le premier plan et la fermeture par Échap de chaque fenêtre.
 - **Empaquetage automatique** (BigWigs packager, `.pkgmeta`, workflow « Empaquetage ») : un tag `v*` crée une release GitHub avec l'archive des trois addons, et l'envoie sur CurseForge une fois le projet configuré ; outils, tests et documentation exclus. Les pull requests qui touchent l'empaquetage construisent l'archive sans l'envoyer. Procédure : [docs/RELEASE.md](docs/RELEASE.md).

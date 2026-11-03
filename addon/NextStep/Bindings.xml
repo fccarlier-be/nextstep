@@ -1,7 +1,17 @@
 <!-- Raccourcis clavier de NextStep (menu Raccourcis > NextStep). Fichier chargé par le
-     client sans passer par le TOC. Les libellés sont dans Modules/UI/Radar.lua. -->
+     client sans passer par le TOC. Les libellés sont dans Modules/Guide/Live.lua et Modules/UI/Radar.lua. -->
 <Bindings>
-    <Binding name="NEXTSTEP_RADAR" header="NEXTSTEP" category="ADDONS">
+    <Binding name="NEXTSTEP_GUIDE" header="NEXTSTEP" category="ADDONS">
+        NextStep.Modules:Get("Guide"):ToggleWindow()
+    </Binding>
+    <Binding name="NEXTSTEP_ARROW" category="ADDONS">
+        local guide = NextStep.Modules:Get("Guide")
+        guide:SetArrowShown(not guide.db.arrow)
+    </Binding>
+    <Binding name="NEXTSTEP_DONE" category="ADDONS">
+        NextStep.Modules:Get("Guide"):ValidateCurrent()
+    </Binding>
+    <Binding name="NEXTSTEP_RADAR" category="ADDONS">
         NextStep.Modules:Get("Radar"):Toggle()
     </Binding>
 </Bindings>

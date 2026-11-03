@@ -74,8 +74,7 @@ addon/                       -- les dossiers d'addon, seuls livrés aux joueurs
 │   │   ├── Imported/        -- généré par le script d'import, jamais modifié à la main
 │   │   └── Overrides/       -- corrections et ajouts NextStep, appliqués en dernier
 │   └── Modules/
-│       ├── Guide/           -- moteur et interface du guide
-│       ├── Navigation/      -- flèche, points sur carte et minimap
+│       ├── Guide/           -- moteur, état du joueur, navigation, fenêtre et flèche du guide
 │       ├── Professions/
 │       ├── Items/
 │       └── UI/
@@ -102,7 +101,7 @@ Un seul fichier `NextStep.toc` par addon, **sans suffixe de version** (`_Camelot
 | `Core/Modules.lua` | Registre des modules : cycle `OnInitialize` → `OnEnable` / `OnDisable`, état mémorisé, détection des addons concurrents |
 | `Core/Factions.lua` | Chargement de l'addon de faction ; message `NEXTSTEP_FACTION_LOADED` |
 | `Core/Options.lua` | Panneau dans Options > AddOns (API `Settings`) : une case par module, sa description et ses réglages (`module:BuildOptions`) |
-| `Core/Slash.lua` | `/ns` et `/nextstep` : `help`, `version`, `modules`, `enable`, `disable`, `options` ; les modules ajoutent leurs commandes |
+| `Core/Slash.lua` | `/ns` et `/nextstep` : `help`, `version`, `modules`, `enable`, `disable`, `options` ; les modules ajoutent leurs commandes (`guide`, `arrow`, `radar`) |
 | `Core/Boot.lua` | `ADDON_LOADED` → sauvegardes, modules, options ; `PLAYER_LOGIN` → faction, activation des modules |
 
 ### Chargement par faction
@@ -229,7 +228,11 @@ Les deux modes utilisent **le même moteur** ; seul l'affichage change.
 
 ### Recalcul
 
-`Guide:Refresh` évalue le guide actif, mémorise les étapes dépassées et envoie le message `NEXTSTEP_GUIDE_UPDATED` (le résultat complet) à l'interface. En phase 4, il sera déclenché par les événements du jeu : quêtes (acceptées, rendues, mises à jour), niveau, zone, sacs, compétences, argent. Un minuteur ne tournera que pendant un objectif `goto`.
+`Guide:Refresh` évalue le guide actif, mémorise les étapes dépassées et envoie le message `NEXTSTEP_GUIDE_UPDATED` (le résultat complet, ou `nil` sans guide suivi) à l'interface. Il est déclenché par les événements du jeu (`Modules/Guide/Live.lua`) : quêtes (acceptées, rendues, mises à jour), niveau, expérience, zone, sacs, compétences, sorts, réputations, argent. Les rafales d'événements sont regroupées en un seul calcul (0,1 s). Un minuteur d'une seconde ne recalcule le guide que si un objectif ouvert dépend de la position (`goto`, `explore`) ; sinon, il ne fait que mettre à jour la cible la plus proche.
+
+**État du joueur** (`Modules/Guide/State.lua`) : il répond au moteur avec l'API du jeu, comme le joueur simulé des tests. Journal de quêtes, objets, compétences et sorts sont gardés en cache, vidé par catégorie selon l'événement reçu. Le journal n'est considéré comme lu qu'après le premier `QUEST_LOG_UPDATE` : avant, rien n'est mémorisé. Les régions (`InArea`, `BoundAt`) sont comparées par leur nom, celui du client puis celui du guide. Les points de vol connus sont relevés à chaque ouverture de la carte des vols et sauvegardés par personnage. Toute valeur secrète est ignorée.
+
+**[À vérifier]** `C_QuestLog` (`GetInfo`, `GetQuestObjectives`, `IsQuestFlaggedCompleted`), `GetSkillLineInfo` et le nom des lignes de compétence, `C_Reputation`, `GetBindLocation`, `C_TaxiMap.GetAllTaxiNodes`, valeurs secrètes en combat.
 
 ### Vérification
 
@@ -334,12 +337,32 @@ Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la
 
 Déplaçable, redimensionnable, réductible à une ligne ; verrouillage, échelle, transparence, estompage en combat en option.
 
+**Version v0.1** (`Modules/Guide/Window.lua`) : déplaçable par la barre de titre, réductible à cette barre, verrouillable, position mémorisée. Contenu :
+
+- l'étape courante et ses objectifs (coche, case vide, croix pour un objectif bloqué avec la raison) ; en mode libre, les objectifs ouverts du même endroit ;
+- le conseil de l'étape, les objectifs à faire en chemin, les quêtes abandonnées (clic pour reprendre), l'étape suivante, le nombre de détours, l'avertissement « niveau dépassé » ;
+- un objectif « à valider » se valide d'un clic ;
+- **Ignorer** passe l'étape ; **Valider** valide ses objectifs « à valider », ou la passe s'il n'y en a pas ; **Strict / Libre** change de mode ;
+- sans guide suivi, les trois premiers guides adaptés au personnage (clic pour commencer) ; à la fin d'un guide, les guides suivants ; pour une quête de groupe, Oui / Non.
+
+**Libellés** (`Modules/Guide/Labels.lua`) : les objectifs importés n'ont presque jamais de texte. Le libellé est construit à partir du type et des noms (« Accepter … », « Tuer … »). Pour un objectif de quête, le texte du client est préféré : il est traduit et donne la progression (« Vermine kobold tuée : 6/10 »).
+
+Redimensionnement, échelle, transparence et estompage en combat viendront avec les compléments.
+
 ### Flèche
 
 - En haut au centre ; **désactivable**.
 - Dessin plat et épuré (chevron avec contour sombre), couleur passant du doré Blizzard au vert dans la bonne direction, rouge-orangé à l'opposé ; rotation fluide ; distance et temps estimé ; coche à l'arrivée.
 - Pour `kill` / `collect`, vise la zone de mobs la plus proche.
 - **[À vérifier]** Position et orientation du joueur indisponibles en instance : flèche masquée en donjon.
+
+**Version v0.1** (`Modules/Guide/Arrow.lua`) : texture de la flèche de la minimap, couleur verte (devant), dorée (de côté), rouge-orangé (derrière), distance, coche à moins de 5 mètres ; pas encore de temps estimé ni de dessin propre.
+
+**Cible** : en mode strict, le premier objectif ouvert qui a une position ; en mode libre, le plus proche de tous. Les points possibles d'un objectif sont sa position, les maîtres proposés au personnage (`candidates`, filtrés par classe et faction) et les zones d'apparition des mobs (`spotsPacked`) : le plus proche est choisi, et la cible est revue chaque seconde.
+
+**Calculs** (`Modules/Guide/Navigation.lua`) : distance et direction se calculent en coordonnées monde, celles de `UnitPosition`. Les coordonnées « era » y passent directement par les cadres importés de Polestar (`DB.mapFrames.era`), les autres par `C_Map.GetWorldPosFromMapPos`. La conversion vers la carte du client (`C_Map.GetMapPosFromWorldPos`) ne sert qu'aux points sur la carte (complément v0.1.x).
+
+**[À vérifier]** Axes de `UnitPosition` (nord, ouest) et cadres « era » des cartes que Forever a modifiées ; textures utilisées.
 
 ### Carte du monde et minimap
 
@@ -354,7 +377,8 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 
 ### Divers
 
-- Le suivi d'objectifs Blizzard est **masqué quand le guide est actif**.
+- Le suivi d'objectifs Blizzard est **masqué quand le guide est actif** (option). **[À vérifier]** Nom du cadre sur Forever (`ObjectiveTrackerFrame` ou `QuestWatchFrame`) et masquage sans souillure.
+- **Validations automatiques** des objectifs « à valider » de l'étape courante, des objectifs en chemin et du mode libre : `talk` à l'ouverture d'un dialogue avec le PNJ, `vendor` à l'ouverture d'un marchand, `train` à l'ouverture d'un des maîtres proposés, `getfp` (sans identifiant) à l'ouverture de la carte des vols, `cast` au sort lancé. Elles valent pour la session ; une fois l'étape passée, son résultat est mémorisé.
 - Commande `/ns`, raccourcis clavier, bouton minimap (voir [Bouton NextStep et menu des addons](#bouton-nextstep-et-menu-des-addons)).
 
 ### Sorts à apprendre
