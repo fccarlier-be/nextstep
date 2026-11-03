@@ -296,11 +296,17 @@ Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la
 | Alerte d'amélioration | Au **centre de l'écran, légèrement au-dessus du milieu**, déplaçable ; **jamais en combat** (différée) ; seuil minimal réglable ; améliorations successives regroupées ; fermeture automatique ou clic droit |
 | Items à ne pas rater | Par classe, spécialisation et tranche de niveaux, avec leur provenance ; mis en avant dans la route, proposés en détour, ou rattachés aux donjons recommandés |
 | Jalons | Sacs, quêtes de classe, monture, sorts à apprendre (voir [Sorts à apprendre](#sorts-à-apprendre)) ; seuils dans les données |
-| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal (« All Rights Reserved ») : code propre ; butin tiré de la provenance des items de `Polestar_ItemDB` et de forever-db. AtlasLootClassic est incompatible (GPL-2.0 seule) |
+| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal (« All Rights Reserved ») : code propre. AtlasLootClassic est incompatible (GPL-2.0 seule). Données : voir ci-dessous |
 
 **[À vérifier]** Possibilité d'équiper un objet depuis l'alerte. Sinon, le clic ouvre les sacs avec l'objet en surbrillance.
 
-**[À vérifier]** Présence du journal des donjons (`EncounterJournal`) sur Forever, et couverture du butin par boss dans `Polestar_ItemDB` et forever-db.
+**Données du butin des donjons** (vérifiées sur Polestar 0.3.0) :
+
+- `Polestar_ItemDB` (`Forever.lua`, provenance `d<pnj>x<chance>z<zone>`) : 411 butins de 135 boss dans 19 donjons, dont 4 propres à Forever, avec leur taux. Seuls les objets retenus par ForeverLevelingBiS y figurent (environ 3 par boss) : c'est une sélection, pas la table complète. Maraudon, le Temple englouti, les Profondeurs de Rochenoire et Haches-Tripes manquent ; Zul'Farrak n'a qu'un objet.
+- forever-db (`item_source.jsonl`) : 38 105 sources, mais pour les boss seulement les objets de quête, tissus et consommables, aucune pièce d'équipement ; aucun point d'apparition en donjon.
+- Conséquence : le module part de `Polestar_ItemDB`, l'objectif « améliorations pour ta spécialisation » étant couvert, et complète avec le **butin appris** : objets vus en ouvrant le butin d'un boss (`LOOT_OPENED`, PNJ source par `GetLootSourceInfo`), mémorisés au niveau du compte, comme les noms appris. La liste complète d'un donjon n'est donc pas garantie.
+
+**[À vérifier]** Présence du journal des donjons (`EncounterJournal`) sur Forever ; s'il existe, il fournit la liste complète.
 
 ---
 
@@ -436,7 +442,8 @@ Inspiré de Leatrix Maps et de Mapster, tous deux « All Rights Reserved » : co
 - Les zones inexplorées de la carte du monde sont affichées, dans une teinte atténuée réglable ; désactivable.
 - Le client ne fournit que les textures des zones explorées (`C_MapExplorationInfo`) : une table des textures de chaque carte est nécessaire, dans les données. Forever reprenant les cartes du Classic, une table du Classic devrait convenir.
 - Table générée par un script d'import (non livré) à partir des tables de superposition de cartes du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`), comme les noms extraits des tables du client.
-- **[À vérifier]** Extraction de ces tables pour la version de Forever, et format attendu par les textures de la carte.
+- Chaîne d'extraction (outils de développement, jamais livrés) : **TACTTool** de [TACTSharp](https://github.com/wowdev/TACTSharp) (MIT) lit le stockage CASC de l'installation locale (`-p wowf -d <dossier du jeu>`), **[DBCD](https://github.com/wowdev/DBCD)** (MIT) décode les DB2 avec les définitions de [WoWDBDefs](https://github.com/wowdev/WoWDBDefs), qui couvrent déjà la version de Forever installée (1.60.1.70707). Nécessite le SDK .NET sur le poste de développement.
+- **[À vérifier]** Premier essai de la chaîne d'extraction ; format attendu par les textures de la carte.
 
 ---
 

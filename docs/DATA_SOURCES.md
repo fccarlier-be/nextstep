@@ -14,7 +14,7 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`) |
 | [What's Training](https://github.com/fusionpit/WhatsTraining) | Sorts de chaque classe chez le maître : niveau, rang, coût *(prévu en phase 4)* | MIT | Prend en charge Forever ; tables `Classes/Vanilla/*.lua` à importer, notice MIT à conserver |
 | [GatherMate2](https://github.com/Nevcairiel/GatherMate2) | Code de détection des récoltes et identifiants des ressources *(prévu en phase 9)* | GPL-2.0-or-later, donc réutilisable sous GPL-3.0 | Prend en charge Forever (`16001`) ; seul le code est repris, pas les données |
-| Tables du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`) | Textures des zones inexplorées de la carte *(prévu en phase 5)* | — | Extraites par un script d'import, comme les noms ; **[À vérifier]** méthode d'extraction |
+| Tables du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`) | Textures des zones inexplorées de la carte *(prévu en phase 5)* | — | Extraites de l'installation locale (produit `wowf`) par TACTSharp et DBCD (MIT), avec les définitions de WoWDBDefs ; outils de développement, non livrés. Voir [DESIGN.md](DESIGN.md#carte-sans-brouillard) |
 | Le client du jeu | Noms localisés (dont les noms de PNJ appris), état du journal de quêtes, recettes connues | — | Lu en jeu, conservé dans les sauvegardes locales, jamais redistribué |
 
 ## Sources écartées
@@ -54,4 +54,5 @@ Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au f
 
 - **Contenu au-delà du niveau 30** : selon Polestar, certaines données (notamment l'emplacement des nodes de récolte) sont supposées identiques au Classic, faute de confirmation par la bêta.
 - **Noms français** : au premier import, Polestar ne fournit un nom français que pour environ la moitié des PNJ cités ; les autres s'affichent en anglais jusqu'à ce que le module Noms appris les rencontre en jeu. Régions, zones, sorts et compétences sont traduits par le client en jeu.
+- **Butin des donjons** : `Polestar_ItemDB` n'a qu'une sélection d'objets par boss (19 donjons) et forever-db aucun équipement de boss ; complété en jeu par le butin appris (voir [DESIGN.md](DESIGN.md#7-items)).
 - **Métiers** : `forever-db` ne documente ni maîtres de métier, ni recettes, ni nodes ; ces informations viennent des guides de métiers de Polestar et d'une table maintenue à la main.
