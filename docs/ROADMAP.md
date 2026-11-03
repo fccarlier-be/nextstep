@@ -8,6 +8,8 @@ Trois principes guident l'ordre :
 2. **Vérifier tôt les inconnues** (secret values, options natives du client) : leurs réponses peuvent modifier les phases suivantes.
 3. **Une version utilisable au plus vite** : le guide d'abord, c'est le cœur de l'addon.
 
+Chaque phase correspond à un [jalon GitHub](https://github.com/fccarlier-be/nextstep/milestones) qui regroupe ses tickets.
+
 Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 
 | Phase | Contenu | Version | État |
