@@ -22,3 +22,6 @@ dist/
 
 # Lua / tests
 luacov.*.out
+
+# Réglages personnels de Claude Code
+.claude/settings.local.json

@@ -1,4 +1,4 @@
--- Données propres à la faction Horde, chargées à la connexion d'un personnage
--- de cette faction. Le contenu sera généré par le script d'import (phase 2).
+-- Fin du chargement des données de la faction Horde : les guides sont dans
+-- Data\Guides.lua, généré par le script d'import.
 
-NextStep.Factions:Register("Horde", {})
+NextStep.Factions:Register("Horde")

@@ -12,12 +12,12 @@ local DATA_ADDONS = {
     Horde = "NextStep_Horde",
 }
 
--- [faction] = données enregistrées par l'addon de faction.
-Factions.data = {}
+-- [faction] = true une fois les données de la faction chargées.
+Factions.loaded = {}
 
--- Appelé par Data.lua de chaque addon de faction.
-function Factions:Register(faction, data)
-    self.data[faction] = data
+-- Appelé par Data.lua de chaque addon de faction, après ses fichiers de données.
+function Factions:Register(faction)
+    self.loaded[faction] = true
 end
 
 local function onFactionChanged(self, _, unit)

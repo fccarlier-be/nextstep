@@ -2,7 +2,7 @@
 
 > L'addon tout-en-un pour monter ses personnages sur **WoW Forever** : guide de leveling, métiers, équipement et améliorations de l'interface, dans un seul addon.
 
-**Statut : en développement (phase 0, fondations).** Aucune version jouable n'est encore publiée. Voir la [feuille de route](docs/ROADMAP.md).
+**Statut : en développement (fondations et import des données terminés, moteur du guide en préparation).** Aucune version jouable n'est encore publiée. Voir la [feuille de route](docs/ROADMAP.md).
 
 [![CI](https://github.com/fccarlier-be/nextstep/actions/workflows/ci.yml/badge.svg)](https://github.com/fccarlier-be/nextstep/actions/workflows/ci.yml)
 
@@ -51,6 +51,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Feuille de route et état d'avancement |
 | [docs/DESIGN.md](docs/DESIGN.md) | Conception : architecture, moteur du guide, modules |
 | [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Origine des données et licences |
+| [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md) | Format des données et procédure d'import |
 | [CHANGELOG.md](CHANGELOG.md) | Historique des versions |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Conventions pour contribuer |
 | [CREDITS.md](CREDITS.md) | Remerciements et projets réutilisés |

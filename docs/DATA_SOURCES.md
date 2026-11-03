@@ -7,9 +7,9 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Source | Contenu utilisé | Licence | Remarques |
 |---|---|---|---|
 | [Polestar](https://github.com/fitzforge/polestar) — guides compilés (`addon/Polestar_Guides*/Guides.lua`) | Routes de leveling, de classe et de métiers | GPL-3.0-only | Format compilé versionné (`format = 8` au 2026-11-03) ; l'import refuse un format inconnu |
-| Polestar — `forever-db` | Quêtes, PNJ, objets, points d'apparition, cartes | GPL-3.0 (base), CC BY 4.0 (couche « étapes ») | JSON Lines avec schémas ; versions `data-vAAAA.MM.N` |
-| Polestar — `Polestar_ItemDB` | Statistiques et provenance des items | Données issues de *ForeverLevelingBiS* (MIT) | ~10 000 items ajustés pour Forever |
-| Polestar — poids de stats | Poids par classe, spécialisation et niveau | Données issues de *wowsims* (MIT) | |
+| Polestar — `forever-db` | Quêtes, PNJ, objets, points d'apparition, cartes *(prévu en phase 10)* | GPL-3.0 (base), CC BY 4.0 (couche « étapes ») | JSON Lines avec schémas ; versions `data-vAAAA.MM.N` |
+| Polestar — `Polestar_ItemDB` | Statistiques et provenance des items *(prévu en phase 6)* | Données issues de *ForeverLevelingBiS* (MIT) | ~10 000 items ajustés pour Forever |
+| Polestar — poids de stats | Poids par classe, spécialisation et niveau *(prévu en phase 6)* | Données issues de *wowsims* (MIT) | |
 | Polestar — `Polestar_frFR` | Noms traduits (quêtes, PNJ, objets, zones) et textes des guides en français | Voir `LICENSE-DATA.txt` du pack | Noms extraits des tables du client |
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`) |
 | Le client du jeu | Noms localisés, état du journal de quêtes, recettes connues | — | Lu en jeu, jamais redistribué |
@@ -26,6 +26,10 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Guides payants (RestedXP, Zygor…) | Propriétaires |
 | Wowhead | Conditions d'utilisation : pas d'aspiration ; vérification manuelle uniquement |
 
+## Version importée
+
+La version de Polestar importée est fixée dans [`Tools/import/polestar.lock`](../Tools/import/polestar.lock), et le résultat du dernier import est décrit dans [`Tools/import/last-import.md`](../Tools/import/last-import.md). Procédure : [DATA_FORMAT.md](DATA_FORMAT.md#import).
+
 ## Corrections propres à NextStep
 
 Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au format Lua de NextStep. Ils sont appliqués **après** les données importées et survivent aux réimports.
@@ -39,4 +43,5 @@ Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au f
 ## Limites connues des données
 
 - **Contenu au-delà du niveau 30** : selon Polestar, certaines données (notamment l'emplacement des nodes de récolte) sont supposées identiques au Classic, faute de confirmation par la bêta.
+- **Noms français** : au premier import, Polestar ne fournit un nom français que pour environ la moitié des PNJ cités ; les autres s'affichent en anglais. Régions, zones, sorts et compétences sont traduits par le client en jeu.
 - **Métiers** : `forever-db` ne documente ni maîtres de métier, ni recettes, ni nodes ; ces informations viennent des guides de métiers de Polestar et d'une table maintenue à la main.
