@@ -21,11 +21,11 @@ Ce document contient le texte de la page CurseForge de NextStep et la liste des 
 | Un changelog pour chaque fichier envoyé | Coller la section de la version tirée de [CHANGELOG.md](../CHANGELOG.md) à chaque envoi. |
 | Pas de mises à jour vides ni de renvois pour gagner en visibilité | Ne publier que des versions qui changent quelque chose. |
 
-**À chaque version** : relire la description et retirer de « Planned » ce qui est devenu disponible (et l'inverse), pour que la page décrive toujours le fichier publié.
+**À chaque version** : relire la description et retirer de « Planned » ce qui est devenu disponible (et l'inverse), pour que la page décrive toujours le fichier publié. La section du guide décrit le contenu de la v0.1 (phase 4 de la feuille de route), dont les sorts à apprendre et la célébration de niveau.
 
 ## Résumé (champ « Summary »)
 
-> Leveling guide with detour support, map arrow and French translations, plus planned gear, profession and UI helpers, all in one addon.
+> Leveling guide with detour support, map arrow, trainer reminders and French translations, plus planned gear, profession and UI helpers, all in one addon.
 
 ## Description (champ « Description », Markdown)
 
@@ -50,7 +50,9 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 **256 guides** ready to go: leveling for both factions and every race, plus class, profession, reputation and collection guides.
 
 - 🎯 **Made for your character**: the route adapts to your **race, class and level**, and NextStep picks the right starting guide for you.
-- 🧭 **Arrow and map pins**: a navigation arrow, with pins on the world map and the minimap.
+- 🧭 **Arrow and map pins**: a navigation arrow, with pins on the world map and the minimap, and zone levels shown on the world map.
+- 📜 **Spells to learn**: what your class trainer has for you at your level, with the cost, and a reminder in the route when you pass by.
+- 🎉 **Level-up celebration**: a banner at each level with your new spells and the next zone to head to.
 - 🔀 **Detours are fine**: follow an off-route quest chain, and the guide catches up on its own when you come back.
 - 🚩 **No surprises**: an abandoned quest is flagged instead of sending the guide backwards.
 - 💡 **Tips along the way**: when you are ahead of the curve, when quests turn grey, and the next guide offered when you finish one.
@@ -81,11 +83,12 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 
 | Module | What's coming |
 |---|---|
-| ⚒️ **Professions** | Profession advisor and routes, woven into the leveling guide |
-| 🗡️ **Gear** | Recommended quest rewards, upgrade hints in tooltips, loot alerts |
+| ⚒️ **Professions** | Profession advisor and routes, woven into the leveling guide; gathering nodes recorded as you farm and shown on the map |
+| 🗡️ **Gear** | Recommended quest rewards, upgrade hints in tooltips, loot alerts, dungeon loot with the upgrades for your spec |
 | ❤️ **Unit values** | Health and resource numbers on unit frames and nameplates |
 | 🎒 **Bags and bank** | Unified bags and bank, bank viewable from anywhere, junk auto-sell |
 | 🧭 **Minimap and clock** | Square minimap, wheel zoom, coordinates, alarms and timers |
+| 🪟 **Windows and map** | Movable Blizzard windows, whole world map revealed (no more fog) |
 
 ---
 ---
@@ -101,7 +104,9 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 **256 guides** prêts à l'emploi : leveling des deux factions et de chaque race, et guides de classe, de métiers, de réputation et de collection.
 
 - 🎯 **Fait pour ton personnage** : la route s'adapte à ta **race, ta classe et ton niveau**, et NextStep choisit pour toi le bon guide de départ.
-- 🧭 **Flèche et points sur la carte** : une flèche de navigation, avec des points sur la carte du monde et la minimap.
+- 🧭 **Flèche et points sur la carte** : une flèche de navigation, avec des points sur la carte du monde et la minimap, et le niveau des zones affiché sur la carte.
+- 📜 **Sorts à apprendre** : ce que ton maître de classe a pour toi à ton niveau, avec le coût, et un rappel dans la route quand tu passes à côté.
+- 🎉 **Célébration de niveau** : un bandeau à chaque niveau, avec tes nouveaux sorts et la prochaine zone où aller.
 - 🔀 **Les détours ne posent pas de problème** : suis une suite de quêtes hors route, le guide se recale tout seul à ton retour.
 - 🚩 **Pas de mauvaise surprise** : une quête abandonnée est signalée, sans faire reculer le guide.
 - 💡 **Des conseils en chemin** : quand tu es en avance de niveau, quand les quêtes deviennent grises, et le guide suivant proposé à la fin.
@@ -132,11 +137,12 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 
 | Module | Ce qui arrive |
 |---|---|
-| ⚒️ **Métiers** | Conseiller et routes de métiers, intégrés au guide de leveling |
-| 🗡️ **Équipement** | Récompenses de quête conseillées, gains dans les infobulles, alerte au butin |
+| ⚒️ **Métiers** | Conseiller et routes de métiers, intégrés au guide de leveling ; points de récolte enregistrés pendant que tu farmes et affichés sur la carte |
+| 🗡️ **Équipement** | Récompenses de quête conseillées, gains dans les infobulles, alerte au butin, butin des donjons avec les améliorations pour ta spécialisation |
 | ❤️ **Valeurs** | Vie et ressources en chiffres sur les cadres d'unité et les barres de nom |
 | 🎒 **Sacs et banque** | Sacs et banque unifiés, banque consultable partout, vente de la camelote |
 | 🧭 **Minimap et horloge** | Minimap carrée, zoom à la molette, coordonnées, alarmes et minuteurs |
+| 🪟 **Fenêtres et carte** | Fenêtres Blizzard déplaçables, carte du monde entièrement dévoilée (plus de brouillard) |
 
 ---
 ---
@@ -150,6 +156,8 @@ NextStep builds on these open-source projects. Thanks to their authors! / NextSt
 - **[Ding!](https://github.com/moust4ki/DingGuideWoWForever)** and DingDB by Yendi, via Polestar: French names / noms français *(GPL-3.0)*
 - **[CMaNGOS classic-db](https://github.com/cmangos/classic-db)**, via Polestar: NPC spawn heights and walk areas, quest objective counts / hauteurs d'apparition et zones de déplacement des PNJ, nombre d'objectifs des quêtes *(GPL-3.0)*
 - **[HereBeDragons](https://github.com/Nevcairiel/HereBeDragons)** by Nevcairiel: map, minimap and coordinates / carte, minimap et coordonnées *(BSD)*
+- **[What's Training](https://github.com/fusionpit/WhatsTraining)** by Fusionpit: class trainer spells / sorts des maîtres de classe *(MIT)*
+- **[GatherMate2](https://github.com/Nevcairiel/GatherMate2)** by kagaro, Xinhuan and Nevcairiel: gathering detection / détection des récoltes *(GPL-2.0-or-later)*
 
 🎨 The logo was generated with AI (FLUX.2 [klein], background removed with BiRefNet). / Le logo a été généré par IA (FLUX.2 [klein], détourage avec BiRefNet).
 
