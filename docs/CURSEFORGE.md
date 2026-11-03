@@ -29,97 +29,137 @@ Ce document contient le texte de la page CurseForge de NextStep et la liste des 
 
 ## Description (champ « Description », Markdown)
 
-Copier tout ce qui se trouve entre les deux marques.
+Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pur (pas de HTML) : logo, emoji, citations, tableaux. Le logo est chargé depuis la branche `main` du dépôt. Après le collage, vérifier le rendu dans l'aperçu de CurseForge, et ajouter de vraies captures d'écran en jeu dans la galerie dès la v0.1.
 
 <!-- Début de la description -->
 
-# NextStep
+![NextStep](https://raw.githubusercontent.com/fccarlier-be/nextstep/main/img/logo/nextstep-curseforge-400.png)
 
-**One addon to take your characters from level 1 to the top on WoW Forever.**
+# ✨ NextStep
 
-*Version française plus bas.*
+> **One addon to take your characters from level 1 to the top on WoW Forever.**
+>
+> Follow the route, take any detour you like, and always know your next step.
 
-## What it does
+🇬🇧 **English** · 🇫🇷 *Version française plus bas*
 
-**Leveling guide**
-- **256 guides**: leveling for both factions and every race, plus class, profession, reputation and collection guides.
-- A **step-by-step route** tailored to your race, class and level. NextStep suggests the right starting guide for your character.
-- **Detours are fine**: follow an off-route quest chain and the guide catches up on its own when you come back.
-- An abandoned quest is **flagged** instead of sending the guide backwards.
-- **Tips** when you are ahead of the curve or when quests turn grey, and the **next guide** offered when you finish one.
-- A navigation **arrow**, and pins on the **world map** and **minimap**.
-- Progress saved **per character**.
+---
 
-**Translations**
+## 🗺️ Leveling guide
+
+**256 guides** ready to go: leveling for both factions and every race, plus class, profession, reputation and collection guides.
+
+- 🎯 **Made for your character**: the route adapts to your **race, class and level**, and NextStep picks the right starting guide for you.
+- 🧭 **Arrow and map pins**: a navigation arrow, with pins on the world map and the minimap.
+- 🔀 **Detours are fine**: follow an off-route quest chain, and the guide catches up on its own when you come back.
+- 🚩 **No surprises**: an abandoned quest is flagged instead of sending the guide backwards.
+- 💡 **Tips along the way**: when you are ahead of the curve, when quests turn grey, and the next guide offered when you finish one.
+- 💾 **Per character**: each character keeps their own progress.
+
+## 🌍 Speaks your language
+
 - Guides in **English and French**.
-- Where a French name is missing, NextStep **learns NPC names** as you meet them, in your client's language (target, mouseover, nameplates, dialogue). It never runs in combat, sends nothing, and can be turned off in the options.
+- 🧠 **Learns as you play**: where a French NPC name is missing, NextStep picks it up from your client as you meet the NPC (target, mouseover, nameplates, dialogue).
+- It never runs in combat, sends nothing anywhere, and can be turned off in one click.
 
-**Planned**: profession advisor and routes, quest reward and gear upgrade hints, health and resource values, unified bags and bank, minimap and clock improvements.
+## 🛡️ Built to stay out of your way
 
-## How to use it
+| | |
+|---|---|
+| 🔒 **Private** | No data leaves your PC. NextStep talks to no server. |
+| 🧩 **Blizzard-friendly** | Enhances the Blizzard UI instead of replacing it, to avoid errors and conflicts with other addons. |
+| 🪶 **Lightweight** | Only your faction's data is loaded. |
+| ☑️ **Modular** | Every module has its own checkbox in the options. |
 
-- Type `/ns` or `/nextstep` to open NextStep.
-- Options are under *Options → AddOns → NextStep*. Each module has its own checkbox.
+## ⌨️ Getting started
 
-## Good to know
+1. Install NextStep and log in.
+2. Type **`/ns`** (or `/nextstep`) to open it.
+3. Fine-tune it under *Options → AddOns → NextStep*.
 
-- **No data leaves your PC**: NextStep talks to no server.
-- It **enhances the Blizzard UI** rather than replacing it, to avoid errors and conflicts with other addons.
-- Only your faction's data is loaded.
-- Languages: English and French.
+## 🚧 On the road map
+
+| Module | What's coming |
+|---|---|
+| ⚒️ **Professions** | Profession advisor and routes, woven into the leveling guide |
+| 🗡️ **Gear** | Recommended quest rewards, upgrade hints in tooltips, loot alerts |
+| ❤️ **Unit values** | Health and resource numbers on unit frames and nameplates |
+| 🎒 **Bags and bank** | Unified bags and bank, bank viewable from anywhere, junk auto-sell |
+| 🧭 **Minimap and clock** | Square minimap, wheel zoom, coordinates, alarms and timers |
 
 ---
+---
 
-# NextStep (français)
+# ✨ NextStep (français)
 
-**Un seul addon pour monter tes personnages du niveau 1 jusqu'au sommet sur WoW Forever.**
+> **Un seul addon pour monter tes personnages du niveau 1 jusqu'au sommet sur WoW Forever.**
+>
+> Suis la route, fais tous les détours que tu veux, et sache toujours quelle est ta prochaine étape.
 
-## Ce que fait l'addon
+## 🗺️ Guide de leveling
 
-**Guide de leveling**
-- **256 guides** : leveling des deux factions et de chaque race, et guides de classe, de métiers, de réputation et de collection.
-- Une **route étape par étape**, adaptée à ta race, ta classe et ton niveau. NextStep te suggère le bon guide de départ.
-- **Les détours ne posent pas de problème** : suis une suite de quêtes hors route, le guide se recale tout seul à ton retour.
-- Une quête abandonnée est **signalée**, sans faire reculer le guide.
-- Des **conseils** quand tu es en avance de niveau ou que les quêtes deviennent grises, et le **guide suivant** proposé à la fin.
-- Une **flèche** de navigation, et des points sur la **carte du monde** et la **minimap**.
-- Progression enregistrée **par personnage**.
+**256 guides** prêts à l'emploi : leveling des deux factions et de chaque race, et guides de classe, de métiers, de réputation et de collection.
 
-**Traduction**
+- 🎯 **Fait pour ton personnage** : la route s'adapte à ta **race, ta classe et ton niveau**, et NextStep choisit pour toi le bon guide de départ.
+- 🧭 **Flèche et points sur la carte** : une flèche de navigation, avec des points sur la carte du monde et la minimap.
+- 🔀 **Les détours ne posent pas de problème** : suis une suite de quêtes hors route, le guide se recale tout seul à ton retour.
+- 🚩 **Pas de mauvaise surprise** : une quête abandonnée est signalée, sans faire reculer le guide.
+- 💡 **Des conseils en chemin** : quand tu es en avance de niveau, quand les quêtes deviennent grises, et le guide suivant proposé à la fin.
+- 💾 **Par personnage** : chaque personnage garde sa propre progression.
+
+## 🌍 En français dans le texte
+
 - Guides en **français et en anglais**.
-- Quand un nom français manque, NextStep **apprend le nom des PNJ** que tu croises, dans la langue de ton client (cible, survol, barres de nom, dialogue). Jamais en combat, rien n'est envoyé, et le module se désactive dans les options.
+- 🧠 **Apprend en jouant** : quand le nom français d'un PNJ manque, NextStep le récupère auprès de ton client quand tu le croises (cible, survol, barres de nom, dialogue).
+- Jamais en combat, rien n'est envoyé, et ça se désactive d'un clic.
 
-**Prévu** : conseiller et routes de métiers, récompenses de quête et améliorations d'équipement conseillées, valeurs de vie et de ressources, sacs et banque unifiés, minimap et horloge améliorées.
+## 🛡️ Conçu pour rester discret
 
-## Utilisation
+| | |
+|---|---|
+| 🔒 **Privé** | Aucune donnée ne quitte ton PC. NextStep ne communique avec aucun serveur. |
+| 🧩 **Respectueux de Blizzard** | Améliore l'interface Blizzard au lieu de la remplacer, pour éviter les erreurs et les conflits avec d'autres addons. |
+| 🪶 **Léger** | Seules les données de ta faction sont chargées. |
+| ☑️ **Modulaire** | Chaque module a sa case à cocher dans les options. |
 
-- Tape `/ns` ou `/nextstep` pour ouvrir NextStep.
-- Les options sont dans *Options → AddOns → NextStep*. Chaque module a sa case à cocher.
+## ⌨️ Pour commencer
 
-## Bon à savoir
+1. Installe NextStep et connecte-toi.
+2. Tape **`/ns`** (ou `/nextstep`) pour l'ouvrir.
+3. Règle-le dans *Options → AddOns → NextStep*.
 
-- **Aucune donnée ne quitte ton PC** : NextStep ne communique avec aucun serveur.
-- Il **améliore l'interface Blizzard** au lieu de la remplacer, pour éviter les erreurs et les conflits avec d'autres addons.
-- Seules les données de ta faction sont chargées.
-- Langues : français et anglais.
+## 🚧 Au programme
+
+| Module | Ce qui arrive |
+|---|---|
+| ⚒️ **Métiers** | Conseiller et routes de métiers, intégrés au guide de leveling |
+| 🗡️ **Équipement** | Récompenses de quête conseillées, gains dans les infobulles, alerte au butin |
+| ❤️ **Valeurs** | Vie et ressources en chiffres sur les cadres d'unité et les barres de nom |
+| 🎒 **Sacs et banque** | Sacs et banque unifiés, banque consultable partout, vente de la camelote |
+| 🧭 **Minimap et horloge** | Minimap carrée, zoom à la molette, coordonnées, alarmes et minuteurs |
 
 ---
+---
 
-## Credits / Crédits
+## 🙏 Credits / Crédits
 
-NextStep builds on these open-source projects. Thanks to their authors. / NextStep s'appuie sur ces projets libres. Merci à leurs auteurs.
+NextStep builds on these open-source projects. Thanks to their authors! / NextStep s'appuie sur ces projets libres. Merci à leurs auteurs !
 
-- **[Polestar](https://github.com/fitzforge/polestar)**: leveling, class and profession guides, translated names and texts / guides, noms et textes traduits (GPL-3.0).
-- **[HereBeDragons](https://github.com/Nevcairiel/HereBeDragons)** by Nevcairiel: map, minimap and coordinates / carte, minimap et coordonnées (BSD).
+- **[Polestar](https://github.com/fitzforge/polestar)**: leveling, class and profession guides, translated names and texts / guides, noms et textes traduits *(GPL-3.0)*
+- **[HereBeDragons](https://github.com/Nevcairiel/HereBeDragons)** by Nevcairiel: map, minimap and coordinates / carte, minimap et coordonnées *(BSD)*
 
-The logo was generated with AI (FLUX.2 [klein], background removed with BiRefNet). / Le logo a été généré par IA (FLUX.2 [klein], détourage avec BiRefNet).
+🎨 The logo was generated with AI (FLUX.2 [klein], background removed with BiRefNet). / Le logo a été généré par IA (FLUX.2 [klein], détourage avec BiRefNet).
+
+## 💬 Feedback / Retours
+
+🐞 Found a bug or a wrong guide step, or have an idea? **Leave a comment here** or open an issue on GitHub.
+
+🐞 Un bug, une étape incorrecte, une idée ? **Laisse un commentaire ici** ou ouvre un ticket sur GitHub.
+
+📦 Source code, full credits and licence (GPL-3.0) / Code source, crédits complets et licence : **[github.com/fccarlier-be/nextstep](https://github.com/fccarlier-be/nextstep)**
+
+---
 
 *World of Warcraft* and *WoW Forever* are trademarks of Blizzard Entertainment. NextStep is a fan project, not affiliated with Blizzard. / *World of Warcraft* et *WoW Forever* sont des marques de Blizzard Entertainment. NextStep est un projet de fans, sans lien avec Blizzard.
-
-## Feedback / Retours
-
-Found a bug or a wrong guide step, or have an idea? Leave a comment here or open an issue on GitHub. / Un bug, une étape incorrecte, une idée ? Laisse un commentaire ici ou ouvre un ticket sur GitHub.
-
-Source code, full credits and licence (GPL-3.0) / Code source, crédits complets et licence : [github.com/fccarlier-be/nextstep](https://github.com/fccarlier-be/nextstep)
 
 <!-- Fin de la description -->
