@@ -64,7 +64,7 @@ files["Tools/diagnostic/**"] = {
         "C_MapExplorationInfo", "EJ_GetInstanceByIndex", "EJ_GetNumTiers", "EJ_SelectTier", "GetLootSlotLink",
         "GetLootSlotType", "GetLootSourceInfo", "GetNumLootItems", "GetNumTrainerServices", "GetTime",
         "GetTrainerServiceCost", "GetTrainerServiceInfo", "GetTrainerServiceLevelReq", "GetTrainerServiceTypeFilter",
-        "IsInInstance", "date",
+        "IsInInstance", "date", "LibStub", "SettingsPanel",
     },
 }
 

@@ -41,7 +41,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 - **Fenêtres Blizzard déplaçables** et **carte sans brouillard**.
 - **Valeurs de vie et de ressources** sur les cadres d'unité et les nameplates.
 - **Sacs et banque unifiés**, banque consultable à distance, vente automatique de la camelote.
-- **Minimap** carrée, zoom à la molette, coordonnées, boutons d'addons rangés, horloge avec **alarmes et minuteurs**.
+- **Minimap** carrée, zoom à la molette, coordonnées, un seul bouton pour accéder aux paramètres de tous tes addons (les autres boutons sont masqués), horloge avec **alarmes et minuteurs**.
 - **Radar de récolte** : la minimap en grand et en transparence autour de ton personnage, pour farmer herbes, minerais et poissons.
 
 ## Principes

@@ -87,7 +87,7 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | 🗡️ **Gear** | Recommended quest rewards, upgrade hints in tooltips, loot alerts, dungeon loot with the upgrades for your spec |
 | ❤️ **Unit values** | Health and resource numbers on unit frames and nameplates |
 | 🎒 **Bags and bank** | Unified bags and bank, bank viewable from anywhere, junk auto-sell |
-| 🧭 **Minimap and clock** | Square minimap, wheel zoom, coordinates, alarms and timers |
+| 🧭 **Minimap and clock** | Square minimap, wheel zoom, coordinates, one button to reach every addon's settings (other addon buttons hidden), alarms and timers |
 | 🪟 **Windows and map** | Movable Blizzard windows, whole world map revealed (no more fog) |
 
 ---
@@ -141,7 +141,7 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | 🗡️ **Équipement** | Récompenses de quête conseillées, gains dans les infobulles, alerte au butin, butin des donjons avec les améliorations pour ta spécialisation |
 | ❤️ **Valeurs** | Vie et ressources en chiffres sur les cadres d'unité et les barres de nom |
 | 🎒 **Sacs et banque** | Sacs et banque unifiés, banque consultable partout, vente de la camelote |
-| 🧭 **Minimap et horloge** | Minimap carrée, zoom à la molette, coordonnées, alarmes et minuteurs |
+| 🧭 **Minimap et horloge** | Minimap carrée, zoom à la molette, coordonnées, un seul bouton pour les paramètres de tous tes addons (les autres boutons masqués), alarmes et minuteurs |
 | 🪟 **Fenêtres et carte** | Fenêtres Blizzard déplaçables, carte du monde entièrement dévoilée (plus de brouillard) |
 
 ---

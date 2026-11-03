@@ -355,7 +355,7 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 ### Divers
 
 - Le suivi d'objectifs Blizzard est **masqué quand le guide est actif**.
-- Commande `/ns`, raccourcis clavier, bouton minimap optionnel.
+- Commande `/ns`, raccourcis clavier, bouton minimap (voir [Bouton NextStep et menu des addons](#bouton-nextstep-et-menu-des-addons)).
 
 ### Sorts à apprendre
 
@@ -417,8 +417,25 @@ Vente automatique **activée par défaut** : objets gris uniquement, résumé da
 
 - **Carrée par défaut**, ronde en option (forme déclarée aux autres addons via `GetMinimapShape`).
 - Zoom à la molette (retour automatique au zoom par défaut en option), coordonnées, horloge et zone lisibles, taille réglable.
-- Tiroir regroupant les boutons d'addons.
 - Bascule rapide du suivi herbes / minerais.
+
+### Bouton NextStep et menu des addons
+
+Un seul bouton sur la minimap, celui de NextStep (`Media/IconSmall.tga`), donne accès aux paramètres de **chaque addon installé** ; les boutons des autres addons sont masqués.
+
+- **Clic gauche** : ouvre le menu des addons. **Clic droit** : options de NextStep. **Glisser** : déplace le bouton autour de la minimap (position mémorisée).
+- **Menu des addons** : une ligne par addon chargé (`C_AddOns.GetNumAddOns`, `GetAddOnInfo`), avec son icône (`## IconTexture` du TOC) et son titre, triée par ordre alphabétique, avec une recherche au-delà de 15 addons. Les addons désactivés ou non chargés n'apparaissent pas.
+- **Ce que fait un clic sur un addon**, dans cet ordre :
+  1. l'action de son propre bouton de minimap, s'il en a un : lanceur LibDataBroker (`OnClick` de l'objet de données) ou clic transmis au bouton masqué ;
+  2. sinon, son entrée du compartiment d'addons de Blizzard (`## AddonCompartmentFunc` du TOC), si ce compartiment existe sur Forever ;
+  3. sinon, sa page dans *Options → AddOns* (`Settings.OpenToCategory`), retrouvée par le titre de l'addon ;
+  4. sinon, la ligne est grisée, avec « Pas de paramètres » dans l'infobulle.
+- **Boutons masqués** : les boutons de LibDBIcon (`LibDBIcon10_*`) et les autres enfants de `Minimap` et de `MinimapCluster` qui ne sont pas de Blizzard. Ceux de Blizzard (zoom, suivi, courrier, file d'attente, horloge, calendrier) sont reconnus par une liste dans les données. Recherche au `PLAYER_LOGIN`, puis quelques secondes plus tard et à chaque `ADDON_LOADED`, pour les boutons créés tardivement.
+- **Masquage réversible** : NextStep cache les cadres (`Hide` et accroche sur `Show`) sans toucher aux réglages des autres addons ni à ceux de LibDBIcon. Désactiver l'option les fait réapparaître. Une liste d'exceptions dans les options garde visibles les boutons choisis.
+- **Compartiment d'addons de Blizzard** (`AddonCompartmentFrame`) : masqué aussi en option, puisque le menu de NextStep le remplace.
+- **Addons concurrents** (MinimapButtonButton, Bazooka, ButtonBin…) : le masquage se désactive et le signale ; le menu reste disponible.
+- Le bouton peut être caché (option) ; le menu reste alors accessible par `/ns addons`.
+- **[À vérifier]** Présence du compartiment d'addons (`AddonCompartmentFrame`) sur Forever ; catégories enregistrées dans les options (`SettingsPanel`) et moyen de retrouver celle d'un addon ; API de menu (`MenuUtil.CreateContextMenu`) ; liste des enfants de Blizzard de la minimap.
 
 ### Horloge
 

@@ -26,6 +26,7 @@ Les rapports de ce dossier sont produits par l'addon de développement **NextSte
 | NextStep | Chargement, mémoire de chaque addon, faction chargée, guides, rendu d'un texte, noms appris, panneau d'options |
 | Coordonnées | Écart entre le repère *era* importé et la position donnée par le client, sur la carte du joueur |
 | Carte : exploration | MapArtID, couches et tuiles, textures déjà explorées (taille, décalage, fichiers) : forme de la table de la carte sans brouillard |
+| Minimap et options des addons | Nombre d'addons installés, compartiment d'addons de Blizzard, catégories d'options enregistrées, enfants de `Minimap` et `MinimapCluster`, boutons LibDBIcon et lanceurs LibDataBroker |
 | Fenêtres Blizzard | Présence, protection, déplaçabilité et gestion par `UIPanelWindows` des fenêtres à rendre déplaçables |
 | Journal des donjons | Présence de `Blizzard_EncounterJournal` et des fonctions `EJ_*`, premier donjon listé |
 | Maître de classe | À l'ouverture : filtres, nombre de services, nom, rang, catégorie, coût et niveau des 10 premiers, identifiant du sort |
