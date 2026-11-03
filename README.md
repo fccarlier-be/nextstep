@@ -23,18 +23,22 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 - **Deux modes** : *strict* (une étape à la fois) et *libre* (tu choisis l'ordre des objectifs d'un même lieu).
 - **Les détours sont acceptés** : prends une suite de quêtes hors route, le guide se recale tout seul à ton retour.
 - Conseil de **zone suivante**, avec plusieurs chemins au choix.
-- Une **flèche** de navigation, des points sur la **carte** et la **minimap**.
+- Une **flèche** de navigation, des points sur la **carte** et la **minimap**, le **niveau des zones** sur la carte.
+- Les **sorts à apprendre** chez ton maître de classe, avec leur coût, et une **célébration** à chaque niveau.
 
 ### Métiers
 - Un **conseiller** qui suggère des métiers selon ta race, ta classe et ton objectif (leveling, or, end game).
 - Des **routes de métier** (où farmer, quoi fabriquer, quand voir le maître), intégrées au guide de leveling.
+- Les **points de récolte** enregistrés automatiquement et affichés sur la carte.
 
 ### Équipement
 - Les **récompenses de quête** conseillées, mises en évidence (jamais choisies à ta place).
 - Le gain ou la perte affiché dans les **infobulles**, et une **alerte** quand tu ramasses une amélioration.
 - Les **items à ne pas rater** à chaque tranche de niveaux, et les jalons importants (sacs, monture, quêtes de classe).
+- Le **butin des donjons**, avec les améliorations pour ta spécialisation.
 
 ### Interface
+- **Fenêtres Blizzard déplaçables** et **carte sans brouillard**.
 - **Valeurs de vie et de ressources** sur les cadres d'unité et les nameplates.
 - **Sacs et banque unifiés**, banque consultable à distance, vente automatique de la camelote.
 - **Minimap** carrée, zoom à la molette, coordonnées, boutons d'addons rangés, horloge avec **alarmes et minuteurs**.

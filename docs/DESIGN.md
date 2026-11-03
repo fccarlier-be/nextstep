@@ -15,6 +15,7 @@ Les points marqués **[À vérifier]** dépendent du comportement réel du clien
 7. [Items](#7-items)
 8. [Interface du guide](#8-interface-du-guide)
 9. [Module UI](#9-module-ui)
+10. [Idées à l'étude](#10-idées-à-létude)
 
 ---
 
@@ -265,6 +266,15 @@ Le moteur **assemble** à l'affichage la route de leveling et la route de métie
 
 Une session de farm peut basculer temporairement sur la route de métier ; le retour au leveling se fait là où le joueur en était.
 
+### Points de récolte
+
+Inspiré de GatherMate2, sans reprise de code ni de données.
+
+- Chaque récolte (herbe, minerai, coffre, banc de poissons…) est enregistrée automatiquement : carte, coordonnées, type de ressource. Les points très proches sont fusionnés.
+- Affichage sur la carte et la minimap (HereBeDragons), filtrable par type ; utilisé par les routes de métier pour « où farmer ».
+- Données au niveau du compte, partagées entre les personnages du joueur ; rien n'est envoyé.
+- **[À vérifier]** Détection fiable d'une récolte (sort lancé, butin, nom de l'objet ciblé).
+
 ---
 
 ## 7. Items
@@ -285,9 +295,12 @@ Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la
 | Infobulles | Gain ou perte par rapport à l'équipement porté |
 | Alerte d'amélioration | Au **centre de l'écran, légèrement au-dessus du milieu**, déplaçable ; **jamais en combat** (différée) ; seuil minimal réglable ; améliorations successives regroupées ; fermeture automatique ou clic droit |
 | Items à ne pas rater | Par classe, spécialisation et tranche de niveaux, avec leur provenance ; mis en avant dans la route, proposés en détour, ou rattachés aux donjons recommandés |
-| Jalons | Sacs, quêtes de classe, monture, sorts à apprendre ; seuils dans les données |
+| Jalons | Sacs, quêtes de classe, monture, sorts à apprendre (voir [Sorts à apprendre](#sorts-à-apprendre)) ; seuils dans les données |
+| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal |
 
 **[À vérifier]** Possibilité d'équiper un objet depuis l'alerte. Sinon, le clic ouvre les sacs avec l'objet en surbrillance.
+
+**[À vérifier]** Présence du journal des donjons (`EncounterJournal`) sur Forever, et butin par boss dans forever-db.
 
 ---
 
@@ -327,6 +340,7 @@ Déplaçable, redimensionnable, réductible à une ligne ; verrouillage, échell
 - Points via **HereBeDragons** : cibles de l'étape, zones de mobs, et en mode conseil les donneurs de quêtes adaptés.
 - Waypoint natif (`C_Map.SetUserWaypoint`) en option. Ne pas utiliser `C_SuperTrack.SetSuperTrackedUserWaypoint`.
 - **Zoom à la molette** sur la minimap et sur la carte du monde. **[À vérifier]** zoom natif de la carte sur Forever.
+- **Niveau des zones** affiché sur la carte du monde (tranche de niveaux, couleur selon le niveau du joueur), en appui du conseil de zone suivante.
 
 ### Journal
 
@@ -336,6 +350,22 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 
 - Le suivi d'objectifs Blizzard est **masqué quand le guide est actif**.
 - Commande `/ns`, raccourcis clavier, bouton minimap optionnel.
+
+### Sorts à apprendre
+
+Inspiré de What's Training.
+
+- Liste des sorts disponibles chez le maître de classe pour le niveau actuel et les suivants, selon la classe et la race, avec leur coût et le total.
+- Dans la route : étape « maître de classe » quand des sorts sont disponibles et qu'on passe dans une ville qui en a un ; avertissement si l'or ne suffit pas.
+- Données : table par classe (sort, rang, niveau, coût, race éventuelle) dans les données, complétée et corrigée par la liste lue chez le maître à chaque visite (mémorisée au niveau du compte, comme les [noms appris](#noms-appris)).
+- **[À vérifier]** Source de la table sous licence compatible (forever-db ne la contient pas) ; lecture des services du maître sur Forever.
+
+### Célébration de niveau
+
+Inspirée de SkyrimSong, dans le style de NextStep (aucune musique ni image d'un autre jeu).
+
+- À chaque niveau : bandeau au centre de l'écran, son tiré des fichiers du jeu, résumé de ce que le niveau apporte (sorts disponibles, jalons, zone suivante conseillée).
+- Jamais en combat (différée), désactivable, son désactivable séparément ; graphismes générés avec FLUX, comme le logo.
 
 ### Logo et icônes
 
@@ -354,7 +384,7 @@ Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puis
 
 ## 9. Module UI
 
-Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Clock`.
+Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Clock`, `Windows`, `MapReveal`.
 
 ### Valeurs de vie et de ressources
 
@@ -389,3 +419,37 @@ Panneau ouvert depuis l'horloge de la minimap :
 - **minuteurs** multiples et nommés ; **chronomètre** ;
 - signal sonore et alerte au centre de l'écran (affichée **même en combat**, en format réduit) ;
 - les minuteurs survivent au `/reload` et à la déconnexion (heure de fin sauvegardée) ; un minuteur terminé hors ligne est signalé à la connexion.
+
+### Fenêtres déplaçables
+
+Inspiré de BlizzMove.
+
+- Les fenêtres Blizzard (personnage, grimoire, talents, journal de quêtes, marchands, maîtres…) se déplacent en les faisant glisser ; positions mémorisées, réinitialisables. Le mode Édition natif reste utilisé pour les éléments du HUD.
+- Fenêtres chargées plus tard (`Blizzard_*`) prises en charge à leur chargement (`ADDON_LOADED`).
+- Jamais en combat pour les cadres protégés ; retrait du gestionnaire de positions de `UIParent` sans écrire d'attributs sécurisés.
+- **[À vérifier]** Liste des fenêtres déplaçables sans souillure (*taint*) sur Forever.
+
+### Carte sans brouillard
+
+Inspiré de Leatrix Maps.
+
+- Les zones inexplorées de la carte du monde sont affichées, dans une teinte atténuée réglable ; désactivable.
+- Le client ne fournit que les textures des zones explorées (`C_MapExplorationInfo`) : une table des textures de chaque carte est nécessaire, dans les données. Forever reprenant les cartes du Classic, une table du Classic devrait convenir.
+- **[À vérifier]** Source de la table sous licence compatible.
+
+---
+
+## 10. Idées à l'étude
+
+Idées retenues sur le principe, pas encore planifiées.
+
+### Prix de l'hôtel des ventes
+
+Inspiré d'Auctionator, en version légère : prix mémorisés lors des visites à l'hôtel des ventes, utilisés pour le choix des récompenses de quête, l'objectif « or » des métiers et les infobulles. Pas d'interface de vente. **[À vérifier]** Type d'hôtel des ventes sur Forever (Classic ou moderne).
+
+### Écartées
+
+- **Auras** (Forever Aura) et **options diverses** (Leatrix Plus) : peu prioritaires ; les auras sont en outre très limitées par les *secret values*.
+- **Refonte de l'interface** (EllesmereUI) : contraire au principe 3.
+- **Guide de leveling** (RestedXP) : c'est déjà le cœur de NextStep.
+- **Partage automatique des données entre joueurs NextStep** (noms appris, sorts des maîtres, points de récolte) : trop complexe (pas d'envoi « à proximité », protection contre les données fausses, limites des messages d'addon) et contraire au principe 2.
