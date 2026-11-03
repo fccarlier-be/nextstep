@@ -43,6 +43,11 @@ L["Remembers the names of the NPCs you meet, in your game's language, to transla
 L["Forget learned names"] = "Oublier les noms appris"
 L["Learned names: %d"] = "Noms appris : %d"
 
+-- Modules/Guide/Guide.lua
+L["Leveling guide"] = "Guide de leveling"
+L["Step-by-step guide for your race, class and level, which accepts detours."] =
+    "Guide pas à pas adapté à votre race, votre classe et votre niveau, qui accepte les détours."
+
 -- Core/Storage.lua
 L["Saved data comes from a newer version of NextStep: it was left untouched."] =
     "Les données sauvegardées viennent d'une version plus récente de NextStep : elles n'ont pas été modifiées."

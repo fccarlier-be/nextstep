@@ -151,50 +151,88 @@ Ce n'est pas un enregistrement d'activité : seule une correspondance identifian
 
 ## 5. Moteur du guide
 
+Fichiers : `Modules/Guide/Conditions.lua` (à qui s'adresse une étape, dans quel état), `Goals.lua` (état d'un objectif selon son type), `Engine.lua` (parcours du guide), `Guide.lua` (module : guide actif, progression sauvegardée). Le moteur est **pur** : il ne lit jamais le jeu, il interroge un objet « état du joueur ». Dans les tests, c'est une simulation (`tests/player.lua`) ; en jeu, ce sera l'API du client, branchée en phase 4 avec les événements.
+
 ### Règles fondamentales
 
-1. **L'étape courante est calculée, jamais stockée.** À chaque changement d'état, le moteur prend la première étape qui n'est ni faite, ni ignorée, ni hors sujet. Une route modifiée ou un jeu sans l'addon ne désynchronise rien.
-2. **Seuls les choix du joueur sont sauvegardés** (étapes ignorées, validations manuelles), par **clé stable** (identifiant du guide, `label` de l'étape ou objectif comme `"accept:783"`), jamais par position.
-3. **Un objectif accompli le reste** : chaque objectif tient compte des états qui le suivent (`accept` est accompli si la quête est déjà rendue). Seul l'abandon d'une quête fait reculer le guide, avec un message.
+1. **L'étape courante est calculée, jamais stockée.** À chaque recalcul, le moteur parcourt le guide depuis le début et s'arrête à la première étape qui retient le joueur.
+2. **Une étape dépassée garde son résultat** (faite, hors sujet, sautée, en chemin), comme dans Polestar : une étape « achète de l'eau » passée parce que les sacs étaient pleins ne revient pas quand l'eau est épuisée. Ces résultats sont mémorisés **par clé stable**, jamais par position : le `label` de l'étape, sinon la signature de ses premiers objectifs (type, quête, PNJ, objet). Ajouter ou déplacer une étape dans une nouvelle version d'un guide ne fausse donc pas la progression.
+3. **Les choix du joueur sont sauvegardés** de la même façon : étapes ignorées, validations manuelles, réponses aux quêtes de groupe.
+4. **Rien n'est mémorisé tant que le journal de quêtes n'est pas lu** (juste après la connexion), pour ne pas enregistrer des étapes comme hors sujet à tort.
 
 ### États d'une étape
 
-| État | Signification | Affichage |
-|---|---|---|
-| Faite | Tous les objectifs non facultatifs sont accomplis | Masquée |
-| Hors sujet | Ne concerne pas cette race, cette classe ou ces conditions | Masquée |
-| Ignorée | Choix du joueur, réversible | Masquée, restaurable |
-| Bloquée | Impossible pour l'instant (niveau, prérequis) | Raison affichée, propositions : farmer, ignorer, autre zone |
-| À faire | — | Affichée |
+| État | Signification |
+|---|---|
+| `current` | L'étape courante |
+| `ahead` | Après l'étape courante ; ses objectifs sont déjà évalués (étape faite en avance) |
+| `done` | Ses objectifs non facultatifs sont accomplis |
+| `na` | Hors sujet : autre race ou classe, condition `when` fausse au passage, ou tous ses objectifs hors sujet |
+| `skipped` | Ignorée par le joueur (réversible) |
+| `jumped` | Sautée par un `skipto` du guide (réversible) |
+| `along` | Étape « en chemin » : la route ne s'y arrête pas, ses objectifs ouverts sont listés sous l'étape courante, jusqu'à l'étape indiquée ou jusqu'à ce qu'ils soient faits |
+| `ask` | La route attend la réponse du joueur pour une quête de groupe (la faire ou la passer) |
 
-En mode strict, une étape bloquée **arrête** le guide au lieu d'être sautée en silence.
+### États d'un objectif
+
+| État | Signification | Retient l'étape |
+|---|---|---|
+| `done` | Accompli (ou implicite : un déplacement est accompli dès qu'un objectif suivant de l'étape l'est) | Non |
+| `todo` | À faire | Oui |
+| `blocked` | À faire mais impossible pour l'instant ; aujourd'hui, niveau insuffisant pour accepter une quête | Oui (l'étape affiche la raison) |
+| `manual` | Invisible pour l'addon (parler à un PNJ, voir un maître, utiliser un objet sans quête) : validé par le joueur ou par un événement du jeu | Oui |
+| `na` | Hors sujet ou plus disponible : quête fermée par une quête exclusive, prérequis manquant, quête dont l'acceptation a été ignorée ou sautée | Non |
+| `info` | Simple note | Non |
+
+Un objectif `optional` ne retient jamais l'étape.
+
+**Prérequis manquant ou quête fermée : hors sujet plutôt que bloqué.** Un prérequis que la route n'apporte plus ne viendra jamais : bloquer le guide indéfiniment serait pire. Seul le niveau bloque, car il finit toujours par venir.
+
+**Une quête écartée emporte ses objectifs** : si l'acceptation d'une quête est ignorée, sautée ou hors sujet, sa remise et ses objectifs plus loin le sont aussi, sauf si le joueur a quand même la quête dans son journal.
+
+### Quête abandonnée
+
+Le guide **ne recule pas tout seul** : une étape dépassée reste dépassée (règle 2), et un abandon peut être volontaire. Le moteur signale la quête abandonnée (acceptée dans une étape dépassée, absente du journal, et rendue plus loin dans le guide) ; l'interface propose de revenir à l'étape d'acceptation (`Guide:Reopen`).
+
+### Conditions et sauts
+
+Sémantique de Polestar (voir [DATA_FORMAT.md](DATA_FORMAT.md#conditions-when)) :
+- `only` (race, classe, faction) est vérifié à chaque recalcul ; `when` est vérifié tant que l'étape n'est pas dépassée, puis son résultat est gardé. Une étape réactivée par le joueur s'applique ensuite quelles que soient ses conditions `when`.
+- `skipto` est vérifié **à l'arrivée** sur l'étape, si elle n'est pas déjà faite : le bloc jusqu'à l'étape nommée est sauté, une fois pour toutes. Réactiver l'étape qui a déclenché le saut annule ce saut définitivement.
+- `when done <label>` est vrai si l'étape nommée a été réellement faite (ni ignorée, ni sautée, ni hors sujet).
+- Quête de groupe sans réponse : la route attend à l'étape et pose la question ; une étape « en chemin » n'attend pas ; une quête déjà rendue ne demande rien.
 
 ### Modes
 
 - **Strict** : une seule étape à la fois.
-- **Libre** : tous les objectifs à faire d'un même lieu, triés par distance.
+- **Libre** : les objectifs ouverts de l'étape courante et des étapes suivantes au même endroit (même carte), au plus 6 étapes, jusqu'à un trajet en vol ou par la pierre de foyer. L'interface les trie par distance.
 
 Les deux modes utilisent **le même moteur** ; seul l'affichage change.
 
-### Détours
+### Détours et conseils
 
 | Situation | Réaction |
 |---|---|
-| Quête hors route acceptée | Listée comme « détour », sans contredire le joueur |
-| Étape faite en avance | Validée automatiquement |
+| Quête du journal que le guide ne cite pas | Listée comme « détour », sans contredire le joueur |
+| Étape faite en avance | Validée automatiquement en y arrivant |
 | Retour après un détour | Reprise à la première étape non faite |
-| Niveaux pris pendant le détour | Proposition de sauter les quêtes devenues grises ou de passer à la zone suivante |
-| Niveau insuffisant | Proposition d'autres zones ou d'un spot de farm |
+| Personnage plus haut que le guide | Signalé (`advice.overleveled`), avec le nombre de quêtes grises à venir (`advice.greyAhead`, formule du Classic) |
+| Niveau insuffisant | Étape bloquée avec le niveau requis |
 
 ### Enchaînement
 
-- Le champ `next` peut proposer plusieurs routes (« Choisis ton chemin », avec arguments `pitch`, `pro`, `con`).
-- **Mode conseil** : sans route active, le guide propose les zones et les quêtes adaptées au niveau, à la race et à la classe, à partir des faits seuls.
-- **Donjons** : objectifs facultatifs recommandés au bon niveau, avec les quêtes à prendre avant.
+- En fin de guide, le moteur renvoie les guides suivants (`next`) ; l'interface les propose (« Choisis ton chemin »). Dans les données importées, chaque guide a au plus un suivant.
+- **Guide de départ** : `Guide:Suggest` propose les guides de leveling de la faction, de la race et de la classe du personnage, à son niveau ; ceux propres à la race d'abord.
+- Un guide actif remplacé dans Polestar (identifiant retiré) est abandonné à la connexion.
+- **Mode conseil** (phase 10) : sans route active, les zones et les quêtes adaptées au niveau, à la race et à la classe.
 
 ### Recalcul
 
-Déclenché par les événements : quêtes (acceptées, rendues, mises à jour), niveau, zone, sacs, compétences. Un minuteur ne tourne que pendant un objectif `goto`.
+`Guide:Refresh` évalue le guide actif, mémorise les étapes dépassées et envoie le message `NEXTSTEP_GUIDE_UPDATED` (le résultat complet) à l'interface. En phase 4, il sera déclenché par les événements du jeu : quêtes (acceptées, rendues, mises à jour), niveau, zone, sacs, compétences, argent. Un minuteur ne tournera que pendant un objectif `goto`.
+
+### Vérification
+
+En plus des scénarios unitaires (`tests/spec/engine_spec.lua`, `guide_spec.lua`), un **joueur automatique** (`tests/autoplay.lua`) parcourt chaque guide importé, pour chaque faction, en faisant ce que demande l'étape courante : chacun doit aller jusqu'au bout. C'est le garde-fou contre une régression du moteur ou un changement de données après un import.
 
 ---
 
