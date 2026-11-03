@@ -337,6 +337,19 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 - Le suivi d'objectifs Blizzard est **masqué quand le guide est actif**.
 - Commande `/ns`, raccourcis clavier, bouton minimap optionnel.
 
+### Logo et icônes
+
+Une arche de pierre moussue, une étoile dorée sur la clé de voûte, des marches qui montent vers une lumière dorée : la prochaine étape. Généré avec FLUX.2 [klein] 4B, détouré, puis décliné par `Tools/logo/prepare.py` (voir [CREDITS.md](../CREDITS.md#logo)) :
+
+| Fichier | Taille | Usage |
+|---|---|---|
+| `img/logo/nextstep-1024.png` | 1024 × 1024 | Maître détouré |
+| `img/logo/nextstep-curseforge-400.png` | 400 × 400 | Page CurseForge, README |
+| `addon/NextStep/Media/Icon.tga` | 128 × 128 | Liste des addons (`## IconTexture` du TOC) |
+| `addon/NextStep/Media/IconSmall.tga` | 64 × 64 | Bouton de la minimap |
+
+Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puissances de 2. **[À vérifier]** l'affichage de `IconTexture` sur Forever. Si l'icône est trop chargée en 32 pixels sur la minimap, une version simplifiée (même arche, sans lierre ni rochers) sera faite.
+
 ---
 
 ## 9. Module UI
