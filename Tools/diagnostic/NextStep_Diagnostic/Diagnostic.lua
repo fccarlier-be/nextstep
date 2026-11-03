@@ -162,6 +162,8 @@ local API = {
         "C_AddOns.LoadAddOn", "C_AddOns.IsAddOnLoaded", "C_AddOns.GetAddOnMetadata",
         "C_AddOns.GetAddOnMemoryUsage", "UpdateAddOnMemoryUsage", "GetAddOnMemoryUsage", "C_Timer.After",
         "C_CVar.GetCVar", "GetMinimapShape", "HandleModifiedItemClick", "C_AddOns.EnableAddOn",
+        "C_AddOns.GetNumAddOns", "C_AddOns.GetAddOnInfo", "SettingsPanel", "Settings.GetCategory",
+        "MenuUtil.CreateContextMenu", "AddonCompartmentFrame", "MinimapCluster", "LibStub",
     },
     ["Maîtres et butin"] = {
         "GetNumTrainerServices", "GetTrainerServiceInfo", "GetTrainerServiceCost", "GetTrainerServiceLevelReq",
@@ -174,7 +176,8 @@ local API = {
         "EJ_GetEncounterInfoByIndex", "EJ_GetLootInfoByIndex", "C_EncounterJournal", "EncounterJournal_LoadUI",
         "C_MapExplorationInfo.GetExploredMapTextures", "C_Map.GetMapArtID", "C_Map.GetMapArtLayers",
         "C_Map.GetMapArtLayerTextures", "MapExplorationDataProviderMixin", "UIPanelWindows",
-        "UpdateUIPanelPositions", "ShowUIPanel", "HideUIPanel", "PlaySound", "PlaySoundFile", "SOUNDKIT",
+        "UpdateUIPanelPositions", "ShowUIPanel", "HideUIPanel", "GetUIPanel", "UISpecialFrames",
+        "CloseSpecialWindows", "CloseAllWindows", "PlaySound", "PlaySoundFile", "SOUNDKIT",
         "LevelUpDisplay",
     },
 }
@@ -467,7 +470,8 @@ local function checkExploration()
     end, "taille, décalage, fichiers : champs que la table devra fournir")
 end
 
--- Fenêtres déplaçables : présence, protection et gestion par UIPanelWindows.
+-- Fenêtres déplaçables et ouvertes ensemble : présence, protection, gestion par
+-- UIPanelWindows, fermeture par Échap (UISpecialFrames), strate et premier plan.
 local WINDOWS = {
     "CharacterFrame", "SpellBookFrame", "PlayerSpellsFrame", "PlayerTalentFrame", "TalentFrame", "QuestLogFrame",
     "FriendsFrame", "GossipFrame", "QuestFrame", "MerchantFrame", "ClassTrainerFrame", "TradeSkillFrame",
@@ -478,6 +482,10 @@ local WINDOWS = {
 local function checkWindows()
     section("Fenêtres Blizzard")
     local panels = _G.UIPanelWindows or {}
+    local special = {}
+    for _, name in ipairs(_G.UISpecialFrames or {}) do
+        special[name] = true
+    end
     for _, name in ipairs(WINDOWS) do
         local frame = _G[name]
         if not frame then
@@ -485,8 +493,10 @@ local function checkWindows()
         else
             probe(name, function()
                 local panel = panels[name]
-                return ("protégée=%s, déplaçable=%s, UIPanelWindows=%s"):format(tostring(frame:IsProtected()),
-                    tostring(frame:IsMovable()), panel and tostring(panel.area) or "non")
+                return ("protégée=%s, déplaçable=%s, UIPanelWindows=%s, Échap=%s, strate=%s, premier plan=%s")
+                    :format(tostring(frame:IsProtected()), tostring(frame:IsMovable()),
+                        panel and tostring(panel.area) or "non", special[name] and "UISpecialFrames" or "non",
+                        tostring(frame:GetFrameStrata()), tostring(frame:IsToplevel()))
             end)
         end
     end
@@ -508,6 +518,60 @@ local function checkDungeonJournal()
         EJ_SelectTier(EJ_GetNumTiers())
         return EJ_GetInstanceByIndex(1, false)
     end, "id | nom")
+end
+
+-- Bouton NextStep et menu des addons : d'où viennent les boutons de la minimap, et
+-- comment retrouver les options d'un addon.
+local function childNames(parent)
+    local names = {}
+    for _, child in ipairs({ parent:GetChildren() }) do
+        names[#names + 1] = child:GetName() or "<sans nom>"
+    end
+    table.sort(names)
+    return #names, table.concat(names, ", ")
+end
+
+local function checkAddonMenu()
+    section("Minimap et options des addons")
+    probe("Addons installés (C_AddOns.GetNumAddOns)", function()
+        return C_AddOns.GetNumAddOns()
+    end)
+    probe("Compartiment d'addons (AddonCompartmentFrame)", function()
+        local frame = _G.AddonCompartmentFrame
+        return frame and ("présent, %s addon(s) inscrit(s), affiché=%s"):format(
+            tostring(frame.registeredAddons and #frame.registeredAddons), tostring(frame:IsShown())) or nil
+    end, "nil : absent de Forever")
+    probe("Catégories d'options (SettingsPanel)", function()
+        local categories = SettingsPanel:GetAllCategories()
+        local names = {}
+        for i = 1, math.min(#categories, 12) do
+            names[#names + 1] = describe(categories[i]:GetName())
+        end
+        return #categories, table.concat(names, ", ")
+    end, "nombre | premiers noms")
+    probe("Enfants de Minimap", function()
+        return childNames(Minimap)
+    end, "nombre | noms : Blizzard et boutons d'addons")
+    probe("Enfants de MinimapCluster", function()
+        return childNames(_G.MinimapCluster)
+    end)
+    probe("Boutons LibDBIcon", function()
+        local icon = LibStub("LibDBIcon-1.0", true)
+        return icon and #icon:GetButtonList()
+    end, "nil : aucun addon chargé ne l'utilise")
+    probe("Lanceurs LibDataBroker", function()
+        local ldb = LibStub("LibDataBroker-1.1", true)
+        if not ldb then
+            return nil
+        end
+        local launchers = 0
+        for _, data in ldb:DataObjectIterator() do
+            if data.type == "launcher" or data.OnClick then
+                launchers = launchers + 1
+            end
+        end
+        return launchers
+    end, "objets avec une action au clic")
 end
 
 local function count(results)
@@ -536,7 +600,7 @@ local function runAll()
     end
     report = newReport("general")
     for _, check in ipairs({ checkClient, checkAPIs, checkValues, checkNative, checkNextStep, checkCoordinates,
-        checkExploration, checkWindows, checkDungeonJournal }) do
+        checkExploration, checkWindows, checkDungeonJournal, checkAddonMenu }) do
         local ok, err = pcall(check)
         if not ok then
             section("Erreur")
