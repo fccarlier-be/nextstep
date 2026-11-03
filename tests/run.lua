@@ -16,6 +16,7 @@ local SPECS = {
     "engine",
     "guide",
     "autoplay",
+    "diagnostic",
 }
 
 local wow

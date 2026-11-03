@@ -4,8 +4,9 @@
 
 .DESCRIPTION
     Creates one directory junction per folder of addon\ (NextStep, NextStep_Alliance,
-    NextStep_Horde) in <GamePath>\Interface\AddOns. The game then reads the files
-    straight from the repository: a /reload is enough to test a change.
+    NextStep_Horde), plus the development addon Tools\diagnostic\NextStep_Diagnostic,
+    in <GamePath>\Interface\AddOns. The game then reads the files straight from the
+    repository: a /reload is enough to test a change.
     An existing folder that is not a junction is never touched.
     If access is denied (the game lives in Program Files), run once as administrator.
 
@@ -29,7 +30,8 @@ if (-not (Test-Path (Join-Path $GamePath "Wow.exe"))) {
     throw "WoW Forever not found in: $GamePath (use -GamePath)"
 }
 
-$sources = Get-ChildItem -Path (Join-Path $PSScriptRoot "..\addon") -Directory
+$sources = @(Get-ChildItem -Path (Join-Path $PSScriptRoot "..\addon") -Directory) +
+    @(Get-ChildItem -Path (Join-Path $PSScriptRoot "diagnostic") -Directory)
 $addOns = Join-Path $GamePath "Interface\AddOns"
 
 try {

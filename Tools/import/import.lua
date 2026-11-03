@@ -807,7 +807,8 @@ local function main()
         "",
         "Généré par `Tools/import/import.lua`. Ne pas modifier à la main.",
         "",
-        ("- Source : Polestar %s, commit `%s` (%s), format %s"):format(lock.version, lock.commit, lock.date, lock.format),
+        ("- Source : Polestar %s, commit `%s` (%s), format %s"):format(
+            lock.version, lock.commit, lock.date, lock.format),
         ("- Guides : %d (communs %d, Alliance %d, Horde %d)"):format(totals.guides, #byOut.common,
             #byOut.Alliance, #byOut.Horde),
         ("- Étapes : %d"):format(totals.steps),
@@ -828,7 +829,8 @@ local function main()
         for i, locale in ipairs(LOCALES) do
             cells[i] = tostring(row.translated[locale] or 0)
         end
-        lines[#lines + 1] = ("| %s | %d | %d | %s |"):format(row.kind, row.total, row.english, table.concat(cells, " | "))
+        lines[#lines + 1] = ("| %s | %d | %d | %s |"):format(
+            row.kind, row.total, row.english, table.concat(cells, " | "))
     end
     lines[#lines + 1] = ""
     lines[#lines + 1] = ("## Avertissements (%d)"):format(#report.warnings)

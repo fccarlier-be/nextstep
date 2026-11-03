@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: NextStep - Diagnostic
+## Notes: Development tool: checks the client APIs NextStep relies on. Not for players.
+## Notes-frFR: Outil de développement : vérifie les API du client utilisées par NextStep. Pas pour les joueurs.
+## Author: fccarlier-be
+## Version: 1.0.0
+## X-License: GPL-3.0
+## OptionalDeps: NextStep
+## SavedVariables: NextStepDiagDB
+
+Diagnostic.lua
