@@ -12,6 +12,7 @@ DB.order = {}       -- identifiants dans l'ordre de chargement
 DB.names = {}       -- [locale][genre][id] = nom
 DB.texts = {}       -- [locale] = { shared = { [anglais] = traduit }, guides = { [id] = { ... } } }
 DB.mapFrames = {}   -- [repère] = { [uiMapID] = cadre }
+DB.mapOverlays = {} -- [UiMapArtID] = { { largeur, hauteur, x, y, FileDataID... } } (carte sans brouillard)
 DB.retired = {}     -- [ancien identifiant de guide] = true
 DB.sources = {}
 DB.learned = nil    -- [genre][id] = nom vu en jeu (module Names), dans la langue du client
@@ -67,6 +68,12 @@ end
 
 function DB:AddMapFrames(frame, build)
     self.mapFrames[frame] = build()
+end
+
+-- Superpositions d'une carte, explorées ou non : taille, décalage et tuiles de 256 pixels,
+-- rangée par rangée (forme de C_MapExplorationInfo.GetExploredMapTextures).
+function DB:AddMapOverlays(mapArtID, build)
+    self.mapOverlays[mapArtID] = build()
 end
 
 function DB:RetireGuides(list)

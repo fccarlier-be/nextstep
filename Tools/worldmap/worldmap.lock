@@ -1,0 +1,14 @@
+# Outils et version du client utilisés par Tools\worldmap\run.ps1. Modifier puis relancer.
+# Produit TACT de WoW Forever, et sa région.
+product=wowf
+region=eu
+# Version du client attendue (.build.info) : les définitions de WoWDBDefs doivent la couvrir.
+build=1.60.1.70707
+# TACTSharp (MIT) : TACTTool lit le stockage CASC de l'installation locale.
+tactsharp=https://github.com/wowdev/TACTSharp.git
+tactsharp_commit=79f58445bc81d0d13f84540f1d1d52e94188cc08
+# WoWDBDefs : structure des tables (seuls les fichiers .dbd utiles sont téléchargés).
+wowdbdefs_commit=92bb4dc62114a0afdc2beda7e414383b47e34c85
+# FileDataID des tables lues.
+fdid_WorldMapOverlay=1134579
+fdid_WorldMapOverlayTile=1957212
