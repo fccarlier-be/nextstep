@@ -40,12 +40,13 @@ Ordre de recherche d'un nom :
 | Client | Ordre |
 |---|---|
 | Anglais | variante du guide → nom anglais importé → nom fourni par le client |
-| Autre langue | nom traduit importé → nom fourni par le client → variante du guide → nom anglais importé |
+| Autre langue | nom appris en jeu → nom traduit importé → nom fourni par le client → infobulle du client (PNJ) → variante du guide → nom anglais importé |
 
+- **Nom appris en jeu** : noms de PNJ retenus par le module Noms appris (voir [DESIGN.md](DESIGN.md#noms-appris)), fournis par `DB:SetLearnedNames`. Le dernier recours avant l'anglais est un résolveur par genre (`DB:SetResolver`), utilisé pour interroger l'infobulle d'un PNJ.
 - **Variante du guide** : un guide peut employer un nom anglais adapté à ses phrases, souvent sans article (« Slaughtered Lamb » pour pouvoir écrire « the {object:2164}'s cellar »). Elles sont dans `guide.names`.
 - **Nom fourni par le client** : `C_Map.GetAreaInfo` (area), `C_Map.GetMapInfo` (zone), `C_Spell.GetSpellName` (spell), `C_Item.GetItemNameByID` (item), `C_QuestLog.GetTitleForQuestID` (quest). **[À vérifier]** sur Forever. Les régions, zones, sorts et compétences n'ont pas de traduction importée : le client est leur seule source en français.
 
-La couverture des noms est publiée à chaque import dans [`Tools/import/last-import.md`](../Tools/import/last-import.md). Au premier import, la moitié des PNJ cités n'ont pas de nom français dans Polestar : ils s'affichent en anglais.
+La couverture des noms est publiée à chaque import dans [`Tools/import/last-import.md`](../Tools/import/last-import.md). Au premier import, la moitié des PNJ cités n'ont pas de nom français dans Polestar : ils s'affichent en anglais jusqu'à ce que le module Noms appris les rencontre.
 
 ## Guide
 

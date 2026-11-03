@@ -100,7 +100,7 @@ Un seul fichier `NextStep.toc` par addon, **sans suffixe de version** (`_Camelot
 | `Core/DB.lua` | Couche d'accès aux données : guides, noms, traductions, rendu des textes (voir [DATA_FORMAT.md](DATA_FORMAT.md)) |
 | `Core/Modules.lua` | Registre des modules : cycle `OnInitialize` → `OnEnable` / `OnDisable`, état mémorisé, détection des addons concurrents |
 | `Core/Factions.lua` | Chargement de l'addon de faction ; message `NEXTSTEP_FACTION_LOADED` |
-| `Core/Options.lua` | Panneau dans Options > AddOns (API `Settings`) |
+| `Core/Options.lua` | Panneau dans Options > AddOns (API `Settings`) : une case par module, sa description et ses réglages (`module:BuildOptions`) |
 | `Core/Slash.lua` | `/ns` et `/nextstep` : `help`, `version`, `modules`, `enable`, `disable`, `options` ; les modules ajoutent leurs commandes |
 | `Core/Boot.lua` | `ADDON_LOADED` → sauvegardes, modules, options ; `PLAYER_LOGIN` → faction, activation des modules |
 
@@ -132,6 +132,20 @@ Le format exact des fichiers, la couche d'accès `ns.DB` et la procédure d'impo
 - **Pas de noms dans les guides** : les textes contiennent des emplacements `{genre:id}`, remplacés à l'affichage par le nom dans la langue du client (traduction importée, puis nom fourni par le client, puis anglais).
 - **Coordonnées en pourcentage de carte, dans leur repère d'origine** : les coordonnées marquées `f = "e"` sont dans le repère *era* du Classic et sont **converties en jeu**, car les repères des cartes de Forever ne sont connus que du client. Les repères *era* sont importés (`DB.mapFrames.era`).
 - **Seules les données utilisées sont importées** : les guides, les noms qu'ils citent et leurs traductions. Les statistiques d'items (phase 6) et les faits de forever-db pour le mode conseil (phase 10) seront importés avec les modules qui en ont besoin.
+
+### Noms appris
+
+Polestar ne traduit qu'une partie des noms de PNJ. Le module **Noms appris** (`Modules/Names.lua`) complète les traductions avec les noms que le client affiche :
+
+- **Actif par défaut sur tous les clients non anglais**, désactivable dans les options. Sur un client anglais, il ne fait rien (les noms importés sont complets).
+- **Sources** : cible, survol, nameplates, dialogue avec un PNJ (dialogue, quête, marchand, maître). L'identifiant du PNJ est lu dans son GUID (`Creature-0-…-<id>-…`), le nom avec `UnitName`.
+- **À la demande** : le nom d'un PNJ jamais croisé est demandé au client par son infobulle (`C_TooltipInfo.GetHyperlink("unit:Creature-0-0-0-0-<id>-…")`), une seule fois par session. **[À vérifier]** sur Forever.
+- **Jamais en combat**, et toute valeur secrète est ignorée.
+- **Priorité** : le nom vu en jeu passe **avant** la traduction importée, car c'est celui que le jeu affiche réellement.
+- **Stockage** : sauvegardes du compte (`NextStepDB.modules.Names.learned[locale]`), partagées par tous les personnages. Rien n'est envoyé.
+- **Désactiver** arrête la collecte ; les noms déjà appris restent utilisés jusqu'à ce qu'on les efface (bouton « Oublier les noms appris »).
+
+Ce n'est pas un enregistrement d'activité : seule une correspondance identifiant → nom est conservée.
 
 ---
 

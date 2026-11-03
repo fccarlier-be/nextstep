@@ -21,6 +21,7 @@ Data\Imported\Polestar\Names_enUS.lua
 Data\Imported\Polestar\Names_frFR.lua
 Data\Imported\Polestar\Texts_frFR.lua
 Core\Modules.lua
+Modules\Names.lua
 Core\Factions.lua
 Core\Options.lua
 Core\Slash.lua
