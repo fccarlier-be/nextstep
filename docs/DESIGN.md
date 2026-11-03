@@ -268,7 +268,7 @@ Une session de farm peut basculer temporairement sur la route de métier ; le re
 
 ### Points de récolte
 
-Inspiré de GatherMate2, sans reprise de code ni de données.
+Code repris de GatherMate2 (GPL-2.0-or-later, donc réutilisable sous GPL-3.0), adapté au format de NextStep ; ses données (extraction de Wowhead) ne sont pas reprises.
 
 - Chaque récolte (herbe, minerai, coffre, banc de poissons…) est enregistrée automatiquement : carte, coordonnées, type de ressource. Les points très proches sont fusionnés.
 - Affichage sur la carte et la minimap (HereBeDragons), filtrable par type ; utilisé par les routes de métier pour « où farmer ».
@@ -296,7 +296,7 @@ Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la
 | Alerte d'amélioration | Au **centre de l'écran, légèrement au-dessus du milieu**, déplaçable ; **jamais en combat** (différée) ; seuil minimal réglable ; améliorations successives regroupées ; fermeture automatique ou clic droit |
 | Items à ne pas rater | Par classe, spécialisation et tranche de niveaux, avec leur provenance ; mis en avant dans la route, proposés en détour, ou rattachés aux donjons recommandés |
 | Jalons | Sacs, quêtes de classe, monture, sorts à apprendre (voir [Sorts à apprendre](#sorts-à-apprendre)) ; seuils dans les données |
-| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal |
+| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal ; AtlasLootClassic est incompatible (GPL-2.0 seule) |
 
 **[À vérifier]** Possibilité d'équiper un objet depuis l'alerte. Sinon, le clic ouvre les sacs avec l'objet en surbrillance.
 
@@ -353,12 +353,12 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 
 ### Sorts à apprendre
 
-Inspiré de What's Training.
+Données reprises de What's Training (MIT, prend en charge Forever), importées comme celles de Polestar.
 
 - Liste des sorts disponibles chez le maître de classe pour le niveau actuel et les suivants, selon la classe et la race, avec leur coût et le total.
 - Dans la route : étape « maître de classe » quand des sorts sont disponibles et qu'on passe dans une ville qui en a un ; avertissement si l'or ne suffit pas.
 - Données : table par classe (sort, rang, niveau, coût, race éventuelle) dans les données, complétée et corrigée par la liste lue chez le maître à chaque visite (mémorisée au niveau du compte, comme les [noms appris](#noms-appris)).
-- **[À vérifier]** Source de la table sous licence compatible (forever-db ne la contient pas) ; lecture des services du maître sur Forever.
+- **[À vérifier]** Exactitude des tables de What's Training pour Forever ; lecture des services du maître sur Forever.
 
 ### Célébration de niveau
 
@@ -422,7 +422,7 @@ Panneau ouvert depuis l'horloge de la minimap :
 
 ### Fenêtres déplaçables
 
-Inspiré de BlizzMove.
+Inspiré de BlizzMove, qui prend déjà en charge Forever mais dont le code est « All Rights Reserved » : permission à demander, sinon code propre.
 
 - Les fenêtres Blizzard (personnage, grimoire, talents, journal de quêtes, marchands, maîtres…) se déplacent en les faisant glisser ; positions mémorisées, réinitialisables. Le mode Édition natif reste utilisé pour les éléments du HUD.
 - Fenêtres chargées plus tard (`Blizzard_*`) prises en charge à leur chargement (`ADDON_LOADED`).
@@ -431,11 +431,11 @@ Inspiré de BlizzMove.
 
 ### Carte sans brouillard
 
-Inspiré de Leatrix Maps.
+Inspiré de Leatrix Maps et de Mapster. Mapster contient déjà la table de Forever (`FogClearDataForever.lua`), mais elle est « All Rights Reserved », comme Leatrix Maps : permission à demander à son auteur (celui de HereBeDragons).
 
 - Les zones inexplorées de la carte du monde sont affichées, dans une teinte atténuée réglable ; désactivable.
 - Le client ne fournit que les textures des zones explorées (`C_MapExplorationInfo`) : une table des textures de chaque carte est nécessaire, dans les données. Forever reprenant les cartes du Classic, une table du Classic devrait convenir.
-- **[À vérifier]** Source de la table sous licence compatible.
+- **[À vérifier]** Réponse de l'auteur de Mapster ; sinon, table à constituer autrement.
 
 ---
 

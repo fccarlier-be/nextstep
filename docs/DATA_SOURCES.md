@@ -12,6 +12,8 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Polestar — poids de stats | Poids par classe, spécialisation et niveau *(prévu en phase 6)* | Données issues de *wowsims* (MIT) | |
 | Polestar — `Polestar_frFR` | Noms traduits (quêtes, PNJ, objets, zones) et textes des guides en français | GPL-3.0-only ; noms repris notamment de DingDB (GPL-3.0, Yendi) et de pfQuest (MIT) : voir le `LICENSE-DATA.txt` du pack | Noms extraits des tables du client |
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`) |
+| [What's Training](https://github.com/fusionpit/WhatsTraining) | Sorts de chaque classe chez le maître : niveau, rang, coût *(prévu en phase 4)* | MIT | Prend en charge Forever ; tables `Classes/Vanilla/*.lua` à importer, notice MIT à conserver |
+| [GatherMate2](https://github.com/Nevcairiel/GatherMate2) | Code de détection des récoltes et identifiants des ressources *(prévu en phase 9)* | GPL-2.0-or-later, donc réutilisable sous GPL-3.0 | Prend en charge Forever (`16001`) ; seul le code est repris, pas les données |
 | Le client du jeu | Noms localisés (dont les noms de PNJ appris), état du journal de quêtes, recettes connues | — | Lu en jeu, conservé dans les sauvegardes locales, jamais redistribué |
 
 ## Sources écartées
@@ -25,6 +27,10 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Guides gratuits sans licence (ForeverWisp, PexGuide, Follow The Arrow…) | Gratuit ne signifie pas réutilisable |
 | Guides payants (RestedXP, Zygor…) | Propriétaires |
 | Wowhead | Conditions d'utilisation : pas d'aspiration ; vérification manuelle uniquement |
+| BlizzMove, Leatrix Maps, Mapster (dont la table `FogClearDataForever.lua`), Auctionator | « All Rights Reserved » : réutilisation impossible sans l'accord de l'auteur |
+| GatherMate2_Data | Extraction de Wowhead, sans licence ; données du jeu moderne, pas de Forever |
+| AtlasLootClassic | GPL-2.0 sans la mention « ou ultérieure », incompatible avec GPL-3.0-only ; pas de prise en charge de Forever |
+| Skyrim Level-Up (RGX) | Code sous MIT, mais le son vient de Skyrim (droits de Bethesda) |
 
 ## Version importée
 
