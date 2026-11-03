@@ -14,6 +14,8 @@ DB.texts = {}       -- [locale] = { shared = { [anglais] = traduit }, guides = {
 DB.mapFrames = {}   -- [repère] = { [uiMapID] = cadre }
 DB.retired = {}     -- [ancien identifiant de guide] = true
 DB.sources = {}
+DB.learned = nil    -- [genre][id] = nom vu en jeu (module Names), dans la langue du client
+DB.resolvers = {}   -- [genre] = function(id) -> nom ; dernier recours avant l'anglais
 
 local function clientLocale()
     local locale = GetLocale()
@@ -77,6 +79,14 @@ function DB:SetSource(source)
     self.sources[#self.sources + 1] = source
 end
 
+function DB:SetLearnedNames(names)
+    self.learned = names
+end
+
+function DB:SetResolver(kind, resolver)
+    self.resolvers[kind] = resolver
+end
+
 ---------------------------------------------------------------------------
 -- Lecture
 ---------------------------------------------------------------------------
@@ -138,16 +148,22 @@ local function clientName(kind, id)
     end
 end
 
+local function resolved(self, kind, id)
+    local resolver = self.resolvers[kind]
+    return resolver and resolver(id)
+end
+
 -- Nom d'une entité dans la langue du client. guide (facultatif) : un guide peut
 -- employer une variante anglaise adaptée à ses phrases (souvent sans article).
--- Ordre : traduction importée, nom du client, variante du guide, nom anglais importé.
--- En anglais, la variante du guide passe en premier.
+-- Ordre : nom vu en jeu, traduction importée, nom du client, résolveur (infobulle),
+-- variante du guide, nom anglais importé. En anglais, la variante du guide passe en premier.
 function DB:GetName(kind, id, guide)
     local variant = guide and guide.names and guide.names[kind .. ":" .. id]
     if self.locale == "enUS" then
         return variant or lookup(self.names.enUS, kind, id) or clientName(kind, id)
     end
-    return lookup(self.names[self.locale], kind, id) or clientName(kind, id)
+    return lookup(self.learned, kind, id) or lookup(self.names[self.locale], kind, id)
+        or clientName(kind, id) or resolved(self, kind, id)
         or variant or lookup(self.names.enUS, kind, id)
 end
 

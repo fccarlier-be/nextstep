@@ -18,6 +18,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | 0 | Fondations | — | 🟨 |
 | 1 | Vérifications en jeu | — | ⬜ |
 | 2 | Import des données | — | ✅ |
+| 2b | Noms appris | — | ✅ |
 | 3 | Moteur du guide | — | ⬜ |
 | 4 | Interface du guide | **v0.1** | ⬜ |
 | 5 | Gains rapides du module UI | v0.2 | ⬜ |
@@ -51,6 +52,7 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 - position et orientation du joueur, possibilité d'équiper un objet par addon, nameplates ;
 - API des quêtes (`C_QuestLog`) ;
 - noms fournis par le client (régions, zones, sorts, objets, quêtes) et `raceFile` de Skyborne ;
+- noms appris : `UnitGUID` et `UnitName` sur cible, survol, nameplates et dialogue ; infobulle d'un PNJ par `C_TooltipInfo.GetHyperlink` ; panneau d'options (`Settings`, `UICheckButtonTemplate`) ;
 - faction connue au chargement pour la race Skyborne ;
 - chargement des données importées : temps et mémoire.
 
@@ -64,6 +66,15 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 **Terminé quand** : les guides importés sont fidèles aux originaux (nombre de guides et d'étapes, échantillons comparés automatiquement).
 
 État : **terminé**. 256 guides, 6 046 étapes et 17 450 objectifs importés, vérifiés objectif par objectif, et relus à l'identique ; import reproductible. Le format est décrit dans [DATA_FORMAT.md](DATA_FORMAT.md). Les statistiques d'items et les faits de forever-db seront importés avec les modules qui les utilisent (phases 6 et 10).
+
+## Phase 2b : Noms appris *(sans le jeu)*
+
+Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
+
+- Module qui retient le nom des PNJ croisés, dans la langue du client (cible, survol, nameplates, dialogue), et interroge l'infobulle du client pour les PNJ jamais croisés.
+- Actif par défaut sur les clients non anglais, désactivable dans les options ; premières cases à cocher du panneau d'options.
+
+État : **terminé** ; les API concernées sont à vérifier en jeu (phase 1).
 
 ## Phase 3 : Moteur du guide *(sans le jeu)*
 

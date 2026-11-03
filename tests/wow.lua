@@ -61,7 +61,7 @@ local Game = {}
 Game.__index = Game
 
 local function newFrame(game)
-    local frame = { events = {}, scripts = {} }
+    local frame = { events = {}, scripts = {}, hooks = {} }
     function frame.RegisterEvent(self, event)
         self.events[event] = true
     end
@@ -71,14 +71,33 @@ local function newFrame(game)
     function frame.IsEventRegistered(self, event)
         return self.events[event] == true
     end
+    -- Comme dans le jeu, SetScript efface les fonctions ajoutées par HookScript.
     function frame.SetScript(self, name, fn)
         self.scripts[name] = fn
+        self.hooks[name] = nil
     end
     function frame.GetScript(self, name)
         return self.scripts[name]
     end
+    function frame.HookScript(self, name, fn)
+        self.hooks[name] = self.hooks[name] or {}
+        table.insert(self.hooks[name], fn)
+    end
+    function frame.SetChecked(self, checked)
+        self.checked = checked and true or false
+    end
+    function frame.GetChecked(self)
+        return self.checked
+    end
+    function frame.SetText(self, text)
+        self.text = text
+    end
     function frame.CreateFontString()
-        return stub()
+        local fontString = stub()
+        rawset(fontString, "SetText", function(self, text)
+            rawset(self, "text", text)
+        end)
+        return fontString
     end
     setmetatable(frame, getmetatable(stub()))
     game.frames[#game.frames + 1] = frame
@@ -96,6 +115,21 @@ function Game:fire(event, ...)
             frame.scripts.OnEvent(frame, event, ...)
         end
     end
+end
+
+-- Déclenche un script de cadre (OnShow, OnClick...) puis ses HookScript.
+function Game:runScript(frame, name, ...)
+    if frame.scripts[name] then
+        frame.scripts[name](frame, ...)
+    end
+    for _, hook in ipairs(frame.hooks[name] or {}) do
+        hook(frame, ...)
+    end
+end
+
+-- Place une unité du jeu : game:setUnit("target", { guid = ..., name = ... }), ou nil.
+function Game:setUnit(unit, info)
+    self.units[unit] = info
 end
 
 function Game:isEventRegistered(event)
@@ -156,8 +190,15 @@ local function install(game, options)
         end
     end
     _G.InCombatLockdown = function()
-        return false
+        return game.inCombat
     end
+    _G.UnitGUID = function(unit)
+        return game.units[unit] and game.units[unit].guid
+    end
+    _G.UnitName = function(unit)
+        return game.units[unit] and game.units[unit].name
+    end
+    _G.UNKNOWNOBJECT = "Unknown"
     _G.SlashCmdList = {}
     _G.Settings = options.settings
     _G.C_AddOns = {
@@ -194,6 +235,8 @@ function wow.boot(options)
         disabled = options.disabled or {},
         locale = options.locale or "enUS",
         faction = options.faction or "Alliance",
+        units = {},
+        inCombat = false,
     }, Game)
     for _, name in ipairs(KNOWN_ADDONS) do
         game.tocs[name] = parseToc(name)

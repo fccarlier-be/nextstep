@@ -5,7 +5,7 @@ describe("Sauvegardes", function()
         local game = wow.boot()
         expect_eq(NextStepDB.schema, game.ns.Storage.SCHEMA)
         expect_eq(NextStepCharDB.schema, game.ns.Storage.SCHEMA)
-        expect_eq(NextStepDB.modules, {})
+        expect_eq(type(NextStepDB.modules), "table")
         expect(game.ns.db == NextStepDB and game.ns.char == NextStepCharDB)
     end)
 

@@ -12,6 +12,7 @@ local SPECS = {
     "slash",
     "locale",
     "data",
+    "names",
 }
 
 local wow

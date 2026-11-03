@@ -12,7 +12,7 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Polestar — poids de stats | Poids par classe, spécialisation et niveau *(prévu en phase 6)* | Données issues de *wowsims* (MIT) | |
 | Polestar — `Polestar_frFR` | Noms traduits (quêtes, PNJ, objets, zones) et textes des guides en français | Voir `LICENSE-DATA.txt` du pack | Noms extraits des tables du client |
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`) |
-| Le client du jeu | Noms localisés, état du journal de quêtes, recettes connues | — | Lu en jeu, jamais redistribué |
+| Le client du jeu | Noms localisés (dont les noms de PNJ appris), état du journal de quêtes, recettes connues | — | Lu en jeu, conservé dans les sauvegardes locales, jamais redistribué |
 
 ## Sources écartées
 
@@ -43,5 +43,5 @@ Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au f
 ## Limites connues des données
 
 - **Contenu au-delà du niveau 30** : selon Polestar, certaines données (notamment l'emplacement des nodes de récolte) sont supposées identiques au Classic, faute de confirmation par la bêta.
-- **Noms français** : au premier import, Polestar ne fournit un nom français que pour environ la moitié des PNJ cités ; les autres s'affichent en anglais. Régions, zones, sorts et compétences sont traduits par le client en jeu.
+- **Noms français** : au premier import, Polestar ne fournit un nom français que pour environ la moitié des PNJ cités ; les autres s'affichent en anglais jusqu'à ce que le module Noms appris les rencontre en jeu. Régions, zones, sorts et compétences sont traduits par le client en jeu.
 - **Métiers** : `forever-db` ne documente ni maîtres de métier, ni recettes, ni nodes ; ces informations viennent des guides de métiers de Polestar et d'une table maintenue à la main.

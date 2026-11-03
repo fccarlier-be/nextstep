@@ -34,6 +34,15 @@ L["blocked by %s"] = "bloqué par %s"
 L["Module %s enabled."] = "Module %s activé."
 L["Module %s disabled."] = "Module %s désactivé."
 
+-- Modules/Names.lua
+L["Learned names"] = "Noms appris"
+L["Remembers the names of the NPCs you meet, in your game's language, to translate the guides. "
+    .. "Nothing is sent anywhere."] =
+    "Retient le nom des PNJ que vous croisez, dans la langue du jeu, pour traduire les guides. "
+    .. "Rien n'est envoyé nulle part."
+L["Forget learned names"] = "Oublier les noms appris"
+L["Learned names: %d"] = "Noms appris : %d"
+
 -- Core/Storage.lua
 L["Saved data comes from a newer version of NextStep: it was left untouched."] =
     "Les données sauvegardées viennent d'une version plus récente de NextStep : elles n'ont pas été modifiées."

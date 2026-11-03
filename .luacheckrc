@@ -24,12 +24,18 @@ files["addon/**"] = {
         "C_Map",
         "C_QuestLog",
         "C_Spell",
+        "C_TooltipInfo",
         "CreateFrame",
         "DEFAULT_CHAT_FRAME",
         "GetLocale",
         "geterrorhandler",
+        "InCombatLockdown",
+        "issecretvalue",
         "Settings",
+        "UNKNOWNOBJECT",
         "UnitFactionGroup",
+        "UnitGUID",
+        "UnitName",
     },
 }
 
