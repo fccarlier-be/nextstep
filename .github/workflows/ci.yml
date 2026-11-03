@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    name: luacheck et tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer Lua 5.1
+        uses: leafo/gh-actions-lua@v10
+        with:
+          luaVersion: "5.1.5"
+
+      - name: Installer LuaRocks
+        uses: leafo/gh-actions-luarocks@v4
+
+      - name: Installer luacheck
+        run: luarocks install luacheck
+
+      - name: luacheck
+        run: luacheck addon tests --codes
+
+      - name: Tests hors jeu
+        run: lua tests/run.lua

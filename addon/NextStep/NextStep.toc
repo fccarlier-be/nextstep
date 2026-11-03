@@ -1,0 +1,21 @@
+## Interface: 16001
+## Title: NextStep
+## Notes: All-in-one addon: leveling guide, professions, gear upgrades and UI improvements.
+## Notes-frFR: Addon tout-en-un : guide de leveling, métiers, équipement et améliorations de l'interface.
+## Author: fccarlier-be
+## Version: 0.0.0
+## X-License: GPL-3.0
+## X-Website: https://github.com/fccarlier-be/nextstep
+## SavedVariables: NextStepDB
+## SavedVariablesPerCharacter: NextStepCharDB
+
+Core\Init.lua
+Core\Locale.lua
+Locales\frFR.lua
+Core\Events.lua
+Core\Storage.lua
+Core\Modules.lua
+Core\Factions.lua
+Core\Options.lua
+Core\Slash.lua
+Core\Boot.lua

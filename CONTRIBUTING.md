@@ -6,6 +6,25 @@ Merci de l'intérêt que tu portes au projet. Voici les conventions à respecter
 
 Utilise les [tickets GitHub](https://github.com/fccarlier-be/nextstep/issues) et choisis le modèle adapté. Pour un bug, indique ta version de NextStep, ta race, ta classe, ton niveau et l'étape du guide concernée.
 
+## Environnement de développement (Windows)
+
+Une seule fois :
+
+```powershell
+.\Tools\setup.ps1     # installe LuaJIT (Lua 5.1, comme le jeu) et télécharge luacheck dans Tools\bin
+.\Tools\deploy.ps1    # relie addon\* au dossier AddOns de WoW Forever
+```
+
+`deploy.ps1` crée des jonctions : le jeu lit directement les fichiers du dépôt, un `/reload` suffit pour tester une modification. Le chemin du jeu par défaut est `C:\Program Files (x86)\World of Warcraft\_forever_` (option `-GamePath`) ; `-Remove` supprime les liens. Si l'accès est refusé, le lancer une fois en administrateur.
+
+Avant chaque commit :
+
+```powershell
+.\Tools\check.ps1     # luacheck + tests hors jeu, comme l'intégration continue
+```
+
+Les tests (`tests/spec/*_spec.lua`) s'appuient sur une simulation de l'API du jeu (`tests/wow.lua`) qui charge les addons depuis leurs fichiers TOC. Ils tournent aussi avec `lua tests/run.lua` sous Linux ou macOS.
+
 ## Branches
 
 - `main` : toujours dans un état fonctionnel.
