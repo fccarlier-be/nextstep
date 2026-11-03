@@ -7,6 +7,10 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Cœur de l'addon : espace de noms, répartition des événements et messages internes, sauvegardes avec schéma et migrations, registre de modules activables avec détection des addons concurrents, traductions (anglais par défaut, français), panneau d'options, commandes `/ns` et `/nextstep`.
+- Addons de données `NextStep_Alliance` et `NextStep_Horde`, chargés à la demande selon la faction du personnage.
+- Tests hors jeu avec simulation de l'API du jeu (26 tests), configuration luacheck et intégration continue GitHub.
+- Scripts de développement : installation des outils (`Tools/setup.ps1`), vérifications (`Tools/check.ps1`), liaison au dossier AddOns du jeu (`Tools/deploy.ps1`).
 - Documentation de conception : architecture, moteur du guide, modules Items, Métiers et UI ([docs/DESIGN.md](docs/DESIGN.md)).
 - Feuille de route en 12 phases jusqu'à la v1.0 ([docs/ROADMAP.md](docs/ROADMAP.md)).
 - Recensement des sources de données et de leurs licences ([docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)).

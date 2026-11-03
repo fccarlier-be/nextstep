@@ -63,25 +63,45 @@ Règles pour NextStep :
 ## 3. Architecture
 
 ```
-NextStep/                    -- cœur + données communes, toujours chargé
-├── NextStep_Camelot.toc
-├── Core/                    -- initialisation, événements, sauvegardes, modules, options
-├── Libs/                    -- LibStub, CallbackHandler, HereBeDragons
-├── Locales/                 -- frFR, enUS
-├── Data/
-│   ├── Imported/            -- généré par le script d'import, jamais modifié à la main
-│   └── Overrides/           -- corrections et ajouts NextStep, appliqués en dernier
-└── Modules/
-    ├── Guide/               -- moteur et interface du guide
-    ├── Navigation/          -- flèche, points sur carte et minimap
-    ├── Professions/
-    ├── Items/
-    └── UI/
-NextStep_Alliance/           -- données Alliance, chargées à la demande
-NextStep_Horde/              -- données Horde, chargées à la demande
-Tools/                       -- scripts d'import et de développement (non distribués)
-tests/                       -- tests hors jeu
+addon/                       -- les dossiers d'addon, seuls livrés aux joueurs
+├── NextStep/                -- cœur + données communes, toujours chargé
+│   ├── NextStep.toc
+│   ├── Core/                -- initialisation, événements, sauvegardes, modules, options, commandes
+│   ├── Libs/                -- LibStub, CallbackHandler, HereBeDragons
+│   ├── Locales/             -- traductions (les clés sont les textes anglais)
+│   ├── Data/
+│   │   ├── Imported/        -- généré par le script d'import, jamais modifié à la main
+│   │   └── Overrides/       -- corrections et ajouts NextStep, appliqués en dernier
+│   └── Modules/
+│       ├── Guide/           -- moteur et interface du guide
+│       ├── Navigation/      -- flèche, points sur carte et minimap
+│       ├── Professions/
+│       ├── Items/
+│       └── UI/
+├── NextStep_Alliance/       -- données Alliance, chargées à la demande
+└── NextStep_Horde/          -- données Horde, chargées à la demande
+Tools/                       -- scripts de développement et d'import (non livrés)
+tests/                       -- tests hors jeu et simulation de l'API du jeu
+docs/
 ```
+
+### Fichiers TOC
+
+Un seul fichier `NextStep.toc` par addon, **sans suffixe de version** (`_Camelot`) : NextStep ne vise que Forever, et un suffixe dont le nom pourrait changer avant la sortie serait un risque inutile. Polestar fait le même choix. `## Interface: 16001`.
+
+### Cœur
+
+| Fichier | Rôle |
+|---|---|
+| `Core/Init.lua` | Espace de noms `ns` (seule globale : `NextStep`), `ns:Print`, `ns.SafeCall` |
+| `Core/Locale.lua`, `Locales/*.lua` | Table `ns.L` ; une clé sans traduction s'affiche telle quelle (anglais) |
+| `Core/Events.lua` | Un seul cadre écoute le jeu ; abonnés identifiés par un propriétaire ; messages internes ; erreur d'un abonné isolée des autres |
+| `Core/Storage.lua` | `NextStepDB` (compte) et `NextStepCharDB` (personnage), numéro de schéma, migrations, valeurs par défaut |
+| `Core/Modules.lua` | Registre des modules : cycle `OnInitialize` → `OnEnable` / `OnDisable`, état mémorisé, détection des addons concurrents |
+| `Core/Factions.lua` | Chargement de l'addon de faction ; message `NEXTSTEP_FACTION_LOADED` |
+| `Core/Options.lua` | Panneau dans Options > AddOns (API `Settings`) |
+| `Core/Slash.lua` | `/ns` et `/nextstep` : `help`, `version`, `modules`, `enable`, `disable`, `options` ; les modules ajoutent leurs commandes |
+| `Core/Boot.lua` | `ADDON_LOADED` → sauvegardes, modules, options ; `PLAYER_LOGIN` → faction, activation des modules |
 
 ### Chargement par faction
 

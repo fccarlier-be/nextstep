@@ -13,6 +13,9 @@ desktop.ini
 # Sources téléchargées par le script d'import (seul le résultat est versionné)
 Tools/import/cache/
 
+# Outils locaux téléchargés par Tools/setup.ps1
+Tools/bin/
+
 # Sorties de build et de packaging
 dist/
 .release/

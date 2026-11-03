@@ -2,7 +2,9 @@
 
 > L'addon tout-en-un pour monter ses personnages sur **WoW Forever** : guide de leveling, métiers, équipement et améliorations de l'interface, dans un seul addon.
 
-**Statut : en conception.** Aucune version jouable n'est encore publiée. Voir la [feuille de route](docs/ROADMAP.md).
+**Statut : en développement (phase 0, fondations).** Aucune version jouable n'est encore publiée. Voir la [feuille de route](docs/ROADMAP.md).
+
+[![CI](https://github.com/fccarlier-be/nextstep/actions/workflows/ci.yml/badge.svg)](https://github.com/fccarlier-be/nextstep/actions/workflows/ci.yml)
 
 *English summary below.*
 

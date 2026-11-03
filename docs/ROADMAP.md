@@ -15,7 +15,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | Phase | Contenu | Version | État |
 |---|---|---|---|
 | — | Conception | — | ✅ |
-| 0 | Fondations | — | ⬜ |
+| 0 | Fondations | — | 🟨 |
 | 1 | Vérifications en jeu | — | ⬜ |
 | 2 | Import des données | — | ⬜ |
 | 3 | Moteur du guide | — | ⬜ |
@@ -38,6 +38,8 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 - Script reliant le dossier de développement au dossier AddOns du jeu (lien de répertoire, un `/reload` suffit pour tester).
 
 **Terminé quand** : l'addon se charge en jeu (vide) et les tests tournent en local et sur GitHub.
+
+État : tout est en place, et les tests passent en local. **Reste à confirmer** le chargement en jeu, dès la fin du téléchargement du client.
 
 ## Phase 1 : Vérifications en jeu *(dès la sortie du client)*
 

@@ -1,0 +1,25 @@
+local wow = require("wow")
+
+describe("Traductions", function()
+    it("affiche le texte anglais par défaut", function()
+        local game = wow.boot({ locale = "enUS" })
+        expect_eq(game.ns.L["Show this help"], "Show this help")
+    end)
+
+    it("traduit en français sur un client frFR", function()
+        local game = wow.boot({ locale = "frFR" })
+        expect_eq(game.ns.L["Show this help"], "Affiche cette aide")
+        expect_eq(game.ns.L["%s: %s"], "%s : %s")
+    end)
+
+    it("affiche la clé quand une traduction manque", function()
+        local game = wow.boot({ locale = "frFR" })
+        expect_eq(game.ns.L["Texte jamais traduit"], "Texte jamais traduit")
+    end)
+
+    it("traduit les messages de la commande /ns", function()
+        local game = wow.boot({ locale = "frFR" })
+        SlashCmdList.NEXTSTEP("inconnue")
+        expect(game:chatText():find("Commande inconnue : inconnue", 1, true))
+    end)
+end)
