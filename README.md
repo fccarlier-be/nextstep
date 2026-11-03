@@ -54,6 +54,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 | [docs/DESIGN.md](docs/DESIGN.md) | Conception : architecture, moteur du guide, modules |
 | [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Origine des données et licences |
 | [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md) | Format des données et procédure d'import |
+| [docs/CURSEFORGE.md](docs/CURSEFORGE.md) | Description de la page CurseForge (français et anglais) |
 | [CHANGELOG.md](CHANGELOG.md) | Historique des versions |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Conventions pour contribuer |
 | [CREDITS.md](CREDITS.md) | Remerciements et projets réutilisés |
