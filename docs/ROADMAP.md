@@ -20,7 +20,8 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | 2 | Import des données | — | ✅ |
 | 2b | Noms appris | — | ✅ |
 | 3 | Moteur du guide | — | ✅ |
-| 4 | Interface du guide | **v0.1** | ⬜ |
+| 4 | Interface du guide, version minimale | **v0.1** | ⬜ |
+| 4b | Compléments du guide | v0.1.x | ⬜ |
 | 5 | Gains rapides du module UI | v0.2 | 🟨 |
 | 6 | Items | v0.3 | ⬜ |
 | 7 | Valeurs de vie et de ressources | v0.4 | ⬜ |
@@ -88,17 +89,29 @@ Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
 
 État : **terminé**. 23 scénarios du moteur, 10 tests d'intégration sur les vrais guides, et un joueur automatique qui termine chacun des guides importés, pour chaque faction. Changement de conception : une étape dépassée garde son résultat (sémantique de Polestar), et une quête abandonnée est signalée au lieu de faire reculer le guide (voir [DESIGN.md](DESIGN.md#5-moteur-du-guide)).
 
-## Phase 4 : Interface du guide → v0.1
+## Phase 4 : Interface du guide, version minimale → v0.1
+
+Le plus petit guide jouable : tout ce qui sert à suivre la route, rien de plus. Les compléments (phase 4b) suivent aussitôt, en petites versions.
 
 - État du joueur lu dans le jeu (journal de quêtes, sacs, compétences, position, conversion des coordonnées « era ») et recalcul du guide sur les événements ; validations automatiques par événements (dialogue, marchand, maître).
-- Fenêtre du guide, journal (onglet Routes, « Choisis ton chemin »), flèche (version simple).
-- Points sur la carte et la minimap (HereBeDragons), masquage du suivi de quêtes Blizzard.
-- Niveau des zones affiché sur la carte du monde.
-- **Sorts à apprendre** : sorts disponibles chez le maître selon la classe, la race et le niveau, avec leur coût ; étape « maître de classe » dans la route ; liste mémorisée à chaque visite chez le maître.
-- **Célébration de montée de niveau** : bandeau, son du jeu, nouveaux sorts disponibles et zone suivante conseillée.
+- Fenêtre du guide (voir [DESIGN.md](DESIGN.md#fenêtre-du-guide)), flèche (version simple), masquage du suivi de quêtes Blizzard.
 - Commande `/ns`, raccourcis clavier.
 
-**Terminé quand** : on peut monter un personnage du niveau 1 à 10 avec le guide, et le guide signale les visites au maître de classe.
+**Terminé quand** : on peut monter un personnage du niveau 1 à 10 avec le guide.
+
+## Phase 4b : Compléments du guide → v0.1.x
+
+Chaque complément est indépendant des autres et ne dépend que de la v0.1 : il a sa branche, sa pull request et **sa propre version** (v0.1.1, v0.1.2…), publiée dès qu'il est prêt en poussant un tag (voir [RELEASE.md](RELEASE.md)). L'ordre ci-dessous est indicatif ; plusieurs peuvent avancer en parallèle.
+
+| Complément | Contenu |
+|---|---|
+| Carte et minimap | Points de l'étape sur la carte du monde et la minimap (HereBeDragons). |
+| Sorts à apprendre | Sorts disponibles chez le maître selon la classe, la race et le niveau, avec leur coût ; étape « maître de classe » dans la route ; liste mémorisée à chaque visite chez le maître. |
+| Célébration de niveau | Bandeau, son du jeu, nouveaux sorts disponibles et zone suivante conseillée. |
+| Niveau des zones | Niveau des zones affiché sur la carte du monde. |
+| Journal | Journal du guide : onglet Routes, « Choisis ton chemin ». |
+
+**Terminé quand** : tous les compléments sont publiés, et le guide signale les visites au maître de classe.
 
 ## Phase 5 : Gains rapides du module UI → v0.2
 
@@ -141,7 +154,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 ## Phase 11 : Finitions et publication → v1.0
 
 - Graphismes définitifs (flèche ; le logo est fait), relecture des traductions, options complètes.
-- Page CurseForge, documentation utilisateur, vérification des crédits et licences.
+- Page CurseForge (texte prêt, empaquetage automatique en place : [RELEASE.md](RELEASE.md)), documentation utilisateur, vérification des crédits et licences.
 - Prise de contact avec l'auteur de Polestar avant la publication.
 
 ## Après la v1.0 *(à l'étude)*
