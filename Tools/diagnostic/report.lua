@@ -19,7 +19,12 @@ chunk()
 local db = assert(env.NextStepDiagDB and env.NextStepDiagDB.reports, "no NextStepDiagDB.reports in " .. input)
 
 local ICONS = { ok = "✅", warn = "⚠️", missing = "❌", info = "ℹ️" }
-local TITLES = { general = "Vérifications hors combat", combat = "Capture en combat" }
+local TITLES = {
+    general = "Vérifications hors combat",
+    combat = "Capture en combat",
+    trainer = "Maître de classe (à l'ouverture)",
+    loot = "Derniers butins et récoltes",
+}
 
 local function cell(text)
     return (tostring(text or ""):gsub("|", "\\|"):gsub("\n", " "))
@@ -32,7 +37,7 @@ local lines = {
     "",
 }
 
-for _, kind in ipairs({ "general", "combat" }) do
+for _, kind in ipairs({ "general", "combat", "trainer", "loot" }) do
     local report = db[kind]
     if report then
         local client = report.client

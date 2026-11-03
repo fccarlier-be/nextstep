@@ -55,7 +55,7 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 - noms appris : `UnitGUID` et `UnitName` sur cible, survol, nameplates et dialogue ; infobulle d'un PNJ par `C_TooltipInfo.GetHyperlink` ; panneau d'options (`Settings`, `UICheckButtonTemplate`) ;
 - faction connue au chargement pour la race Skyborne ;
 - chargement des données importées : temps et mémoire ;
-- ajoutés après la conception (à intégrer à l'addon de diagnostic) : liste du maître de classe à l'ouverture (services, niveaux, coûts), textures d'exploration de la carte (`C_MapExplorationInfo`), déplacement des fenêtres Blizzard hors combat, présence du journal des donjons natif (`EncounterJournal`).
+- ajoutés après la conception : liste du maître de classe à l'ouverture (services, niveaux, coûts), textures d'exploration de la carte (`C_MapExplorationInfo`), fenêtres Blizzard à rendre déplaçables (protection, `UIPanelWindows`), journal des donjons natif (`EncounterJournal`), source d'un butin et détection d'une récolte (`GetLootSourceInfo`, dernier sort lancé).
 
 **Terminé quand** : un rapport de vérification est publié dans `docs/`, et la feuille de route est ajustée si nécessaire.
 
