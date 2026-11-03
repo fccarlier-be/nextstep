@@ -50,6 +50,11 @@ files["Tools/diagnostic/**"] = {
         "UnitClass", "UnitExists", "UnitFactionGroup", "UnitGUID", "UnitHealth", "UnitHealthMax",
         "UnitHealthPercent", "UnitLevel", "UnitName", "UnitPower", "UnitRace", "UnitXP", "UnitXPMax",
         "UpdateAddOnMemoryUsage", "WorldMapFrame", "time",
+        -- Maîtres, butin, exploration de la carte, journal des donjons.
+        "C_MapExplorationInfo", "EJ_GetInstanceByIndex", "EJ_GetNumTiers", "EJ_SelectTier", "GetLootSlotLink",
+        "GetLootSlotType", "GetLootSourceInfo", "GetNumLootItems", "GetNumTrainerServices", "GetTime",
+        "GetTrainerServiceCost", "GetTrainerServiceInfo", "GetTrainerServiceLevelReq", "GetTrainerServiceTypeFilter",
+        "IsInInstance", "date",
     },
 }
 

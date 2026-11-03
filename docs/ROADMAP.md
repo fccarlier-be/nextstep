@@ -54,7 +54,8 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 - noms fournis par le client (régions, zones, sorts, objets, quêtes) et `raceFile` de Skyborne ;
 - noms appris : `UnitGUID` et `UnitName` sur cible, survol, nameplates et dialogue ; infobulle d'un PNJ par `C_TooltipInfo.GetHyperlink` ; panneau d'options (`Settings`, `UICheckButtonTemplate`) ;
 - faction connue au chargement pour la race Skyborne ;
-- chargement des données importées : temps et mémoire.
+- chargement des données importées : temps et mémoire ;
+- ajoutés après la conception : liste du maître de classe à l'ouverture (services, niveaux, coûts), textures d'exploration de la carte (`C_MapExplorationInfo`), fenêtres Blizzard à rendre déplaçables (protection, `UIPanelWindows`), journal des donjons natif (`EncounterJournal`), source d'un butin et détection d'une récolte (`GetLootSourceInfo`, dernier sort lancé).
 
 **Terminé quand** : un rapport de vérification est publié dans `docs/`, et la feuille de route est ajustée si nécessaire.
 
@@ -92,15 +93,20 @@ Ajoutée après l'import : Polestar ne traduit qu'environ la moitié des PNJ.
 - État du joueur lu dans le jeu (journal de quêtes, sacs, compétences, position, conversion des coordonnées « era ») et recalcul du guide sur les événements ; validations automatiques par événements (dialogue, marchand, maître).
 - Fenêtre du guide, journal (onglet Routes, « Choisis ton chemin »), flèche (version simple).
 - Points sur la carte et la minimap (HereBeDragons), masquage du suivi de quêtes Blizzard.
+- Niveau des zones affiché sur la carte du monde.
+- **Sorts à apprendre** : sorts disponibles chez le maître selon la classe, la race et le niveau, avec leur coût ; étape « maître de classe » dans la route ; liste mémorisée à chaque visite chez le maître.
+- **Célébration de montée de niveau** : bandeau, son du jeu, nouveaux sorts disponibles et zone suivante conseillée.
 - Commande `/ns`, raccourcis clavier.
 
-**Terminé quand** : on peut monter un personnage du niveau 1 à 10 avec le guide.
+**Terminé quand** : on peut monter un personnage du niveau 1 à 10 avec le guide, et le guide signale les visites au maître de classe.
 
 ## Phase 5 : Gains rapides du module UI → v0.2
 
 - Minimap : carrée, zoom à la molette, coordonnées, tiroir de boutons.
 - Vente automatique de la camelote.
 - Horloge : alarmes, minuteurs, chronomètre.
+- **Fenêtres déplaçables** : personnage, grimoire, journal de quêtes, etc. ; positions mémorisées.
+- **Carte sans brouillard** : zones inexplorées affichées (désactivable).
 
 Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
@@ -121,17 +127,23 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 ## Phase 9 : Métiers → v0.6
 
 - Conseiller de métiers, routes de métiers, intégration dans la route de leveling, onglet Métiers.
+- **Points de récolte** : enregistrement automatique des herbes, minerais et autres ressources récoltés, affichés sur la carte et la minimap.
 
 ## Phase 10 : Items à ne pas rater, jalons, mode libre → v0.7
 
 - Import des faits de forever-db (quêtes, PNJ) pour le mode conseil.
 - Items par tranche de niveaux intégrés à la route, jalons (sacs, monture, quêtes de classe), onglet Zones.
+- **Butin des donjons** : récompenses de chaque donjon, améliorations pour la spécialisation du joueur mises en évidence (enrichit le journal natif s'il existe).
 
 ## Phase 11 : Finitions et publication → v1.0
 
 - Graphismes définitifs (flèche ; le logo est fait), relecture des traductions, options complètes.
 - Page CurseForge, documentation utilisateur, vérification des crédits et licences.
 - Prise de contact avec l'auteur de Polestar avant la publication.
+
+## Après la v1.0 *(à l'étude)*
+
+- **Prix de l'hôtel des ventes** : prix mémorisés lors des visites, utilisés pour les récompenses de quête, l'objectif « or » des métiers et les infobulles (voir [DESIGN.md](DESIGN.md#10-idées-à-létude)).
 
 ---
 

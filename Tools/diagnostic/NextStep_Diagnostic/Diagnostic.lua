@@ -6,6 +6,9 @@
 --   /nsdiag combat   arme la capture : attaquer ensuite un monstre (secret values)
 --   /nsdiag show     affiche le dernier rapport dans une fenêtre, pour le copier
 --
+-- Captures automatiques : la liste d'un maître à son ouverture, et les derniers
+-- butins (monstres, boss, récoltes) avec leur source et le dernier sort lancé.
+--
 -- Le rapport est écrit dans NextStepDiagDB (sauvegardé au /reload ou à la
 -- déconnexion), puis converti par Tools/diagnostic/report.ps1.
 --
@@ -160,11 +163,25 @@ local API = {
         "C_AddOns.GetAddOnMemoryUsage", "UpdateAddOnMemoryUsage", "GetAddOnMemoryUsage", "C_Timer.After",
         "C_CVar.GetCVar", "GetMinimapShape", "HandleModifiedItemClick", "C_AddOns.EnableAddOn",
     },
+    ["Maîtres et butin"] = {
+        "GetNumTrainerServices", "GetTrainerServiceInfo", "GetTrainerServiceCost", "GetTrainerServiceLevelReq",
+        "GetTrainerServiceSkillReq", "GetTrainerServiceTypeFilter", "SetTrainerServiceTypeFilter",
+        "C_TooltipInfo.GetTrainerService", "GetNumLootItems", "GetLootSlotInfo", "GetLootSlotLink",
+        "GetLootSlotType", "GetLootSourceInfo", "C_Loot",
+    },
+    ["Donjons, carte, fenêtres, sons"] = {
+        "EJ_GetNumTiers", "EJ_SelectTier", "EJ_GetInstanceByIndex", "EJ_SelectInstance",
+        "EJ_GetEncounterInfoByIndex", "EJ_GetLootInfoByIndex", "C_EncounterJournal", "EncounterJournal_LoadUI",
+        "C_MapExplorationInfo.GetExploredMapTextures", "C_Map.GetMapArtID", "C_Map.GetMapArtLayers",
+        "C_Map.GetMapArtLayerTextures", "MapExplorationDataProviderMixin", "UIPanelWindows",
+        "UpdateUIPanelPositions", "ShowUIPanel", "HideUIPanel", "PlaySound", "PlaySoundFile", "SOUNDKIT",
+        "LevelUpDisplay",
+    },
 }
 
 local API_ORDER = {
     "Quêtes", "Cartes et position", "Objets et sacs", "Sorts, métiers, réputation", "Unités et combat",
-    "Interface et addons",
+    "Interface et addons", "Maîtres et butin", "Donjons, carte, fenêtres, sons",
 }
 
 local function checkClient()
@@ -419,6 +436,80 @@ local function checkCoordinates()
         gap < 5 and "carte identique au Classic" or "carte modifiée : la conversion en jeu est nécessaire")
 end
 
+-- Carte sans brouillard : le client ne donne que les textures déjà explorées ; leur
+-- forme dit ce que la table extraite des DB2 devra fournir.
+local function checkExploration()
+    section("Carte : exploration")
+    local map = C_Map.GetBestMapForUnit("player")
+    info("Carte du joueur (uiMapID)", map)
+    if not map then
+        return
+    end
+    probe("MapArtID (C_Map.GetMapArtID)", function()
+        return C_Map.GetMapArtID(map)
+    end, "clé des tables WorldMapOverlay")
+    probe("Couches (C_Map.GetMapArtLayers)", function()
+        local layer = C_Map.GetMapArtLayers(map)[1]
+        return ("%dx%d, tuiles %dx%d"):format(layer.layerWidth, layer.layerHeight, layer.tileWidth,
+            layer.tileHeight)
+    end, "taille de la carte | taille des tuiles")
+    probe("Textures explorées (nombre)", function()
+        return #C_MapExplorationInfo.GetExploredMapTextures(map)
+    end)
+    probe("Première texture explorée", function()
+        local t = C_MapExplorationInfo.GetExploredMapTextures(map)[1]
+        if not t then
+            return nil
+        end
+        local ids = t.fileDataIDs or {}
+        return ("%dx%d en %d,%d, %d fichier(s), premier %s"):format(t.textureWidth, t.textureHeight, t.offsetX,
+            t.offsetY, #ids, tostring(ids[1]))
+    end, "taille, décalage, fichiers : champs que la table devra fournir")
+end
+
+-- Fenêtres déplaçables : présence, protection et gestion par UIPanelWindows.
+local WINDOWS = {
+    "CharacterFrame", "SpellBookFrame", "PlayerSpellsFrame", "PlayerTalentFrame", "TalentFrame", "QuestLogFrame",
+    "FriendsFrame", "GossipFrame", "QuestFrame", "MerchantFrame", "ClassTrainerFrame", "TradeSkillFrame",
+    "ProfessionsFrame", "MailFrame", "BankFrame", "AuctionHouseFrame", "AuctionFrame", "WorldMapFrame",
+    "EncounterJournal", "DressUpFrame", "TaxiFrame", "LootFrame",
+}
+
+local function checkWindows()
+    section("Fenêtres Blizzard")
+    local panels = _G.UIPanelWindows or {}
+    for _, name in ipairs(WINDOWS) do
+        local frame = _G[name]
+        if not frame then
+            info(name, nil, "absente (chargée à la demande ?)")
+        else
+            probe(name, function()
+                local panel = panels[name]
+                return ("protégée=%s, déplaçable=%s, UIPanelWindows=%s"):format(tostring(frame:IsProtected()),
+                    tostring(frame:IsMovable()), panel and tostring(panel.area) or "non")
+            end)
+        end
+    end
+end
+
+local function checkDungeonJournal()
+    section("Journal des donjons")
+    probe("Blizzard_EncounterJournal", function()
+        local name, _, _, loadable, reason = C_AddOns.GetAddOnInfo("Blizzard_EncounterJournal")
+        return name and ("présent, chargeable=%s %s"):format(tostring(loadable), tostring(reason or "")) or nil
+    end, "nil : absent du client")
+    probe("Cadre EncounterJournal", function()
+        return tostring(_G.EncounterJournal ~= nil)
+    end, "false : pas encore chargé")
+    probe("Tiers (EJ_GetNumTiers)", function()
+        return EJ_GetNumTiers()
+    end)
+    probe("Premier donjon du dernier tier", function()
+        EJ_SelectTier(EJ_GetNumTiers())
+        return EJ_GetInstanceByIndex(1, false)
+    end, "id | nom")
+end
+
 local function count(results)
     local counts = {}
     for _, status in ipairs(STATUS_ORDER) do
@@ -444,7 +535,8 @@ local function runAll()
         return
     end
     report = newReport("general")
-    for _, check in ipairs({ checkClient, checkAPIs, checkValues, checkNative, checkNextStep, checkCoordinates }) do
+    for _, check in ipairs({ checkClient, checkAPIs, checkValues, checkNative, checkNextStep, checkCoordinates,
+        checkExploration, checkWindows, checkDungeonJournal }) do
         local ok, err = pcall(check)
         if not ok then
             section("Erreur")
@@ -545,6 +637,81 @@ local function captureCombat()
 end
 
 ---------------------------------------------------------------------------
+-- Captures à l'ouverture d'un maître et d'un butin (automatiques)
+---------------------------------------------------------------------------
+
+local MAX_LOOTS = 6
+local lastSpell -- dernier sort réussi du joueur : { id, name, time }
+
+local function captureTrainer()
+    report = newReport("trainer")
+    section("Maître : " .. describe(UnitName("npc")))
+    info("GUID du maître", UnitGUID("npc"))
+    for _, filter in ipairs({ "available", "unavailable", "used" }) do
+        probe("Filtre " .. filter, function()
+            return tostring(GetTrainerServiceTypeFilter(filter))
+        end)
+    end
+    local ok, total = pcall(GetNumTrainerServices)
+    add("Services listés", ok and "ok" or "warn", ok and total or nil, not ok and describe(total) or nil)
+    for index = 1, math.min(ok and total or 0, 10) do
+        probe("Service " .. index, function()
+            local name, rank, category = GetTrainerServiceInfo(index)
+            local cost = GetTrainerServiceCost(index)
+            local level = GetTrainerServiceLevelReq(index)
+            return ("%s (%s) [%s] coût=%s niveau=%s"):format(describe(name), describe(rank), describe(category),
+                describe(cost), describe(level))
+        end, "nom (rang) [catégorie] coût niveau")
+    end
+    probe("Identifiant du sort (C_TooltipInfo.GetTrainerService)", function()
+        local data = C_TooltipInfo.GetTrainerService(1)
+        return data and (data.id or data.hyperlink), data and data.type
+    end, "id | type de données")
+    store("trainer")
+    print("liste du maître enregistrée.")
+end
+
+local function lootSection(r)
+    local x, y
+    local map = C_Map.GetBestMapForUnit("player")
+    local position = map and C_Map.GetPlayerMapPosition(map, "player")
+    if position then
+        x, y = position:GetXY()
+    end
+    local items = GetNumLootItems()
+    current = { name = ("Butin du %s : %d objet(s)"):format(date("%H:%M:%S"), items), results = {} }
+    r.sections[#r.sections + 1] = current
+    info("Carte et position", map and ("%s %s"):format(map, x and ("%.2f, %.2f"):format(x * 100, y * 100) or "?"))
+    info("En instance", tostring(IsInInstance()))
+    if lastSpell and GetTime() - lastSpell.time < 10 then
+        info("Dernier sort du joueur", lastSpell.id, lastSpell.name)
+    end
+    for slot = 1, math.min(items, 8) do
+        probe("Emplacement " .. slot, function()
+            local sources = { GetLootSourceInfo(slot) }
+            return ("%s (type %s), source %s"):format(describe(GetLootSlotLink(slot)), describe(GetLootSlotType(slot)),
+                describe(sources[1]))
+        end, "objet (type), GUID de la source : Creature-… ou GameObject-…")
+    end
+end
+
+local function captureLoot()
+    NextStepDiagDB = NextStepDiagDB or {}
+    NextStepDiagDB.reports = NextStepDiagDB.reports or {}
+    local r = NextStepDiagDB.reports.loot or newReport("loot")
+    report = r
+    local ok, err = pcall(lootSection, r)
+    if not ok then
+        section("Erreur")
+        add("Capture du butin interrompue", "warn", nil, describe(err))
+    end
+    while #r.sections > MAX_LOOTS do
+        table.remove(r.sections, 1)
+    end
+    NextStepDiagDB.reports.loot = r
+end
+
+---------------------------------------------------------------------------
 -- Fenêtre d'export
 ---------------------------------------------------------------------------
 
@@ -552,7 +719,7 @@ local exportFrame
 
 local function reportText()
     local lines = {}
-    for _, kind in ipairs({ "general", "combat" }) do
+    for _, kind in ipairs({ "general", "combat", "trainer", "loot" }) do
         local r = NextStepDiagDB and NextStepDiagDB.reports and NextStepDiagDB.reports[kind]
         if r then
             lines[#lines + 1] = ("== %s (%s, build %s)"):format(kind, tostring(r.client.version),
@@ -620,7 +787,25 @@ end
 local events = CreateFrame("Frame")
 events:RegisterEvent("ADDON_LOADED")
 events:RegisterEvent("PLAYER_REGEN_DISABLED")
-events:SetScript("OnEvent", function(_, event, name)
+events:RegisterEvent("TRAINER_SHOW")
+events:RegisterEvent("LOOT_OPENED")
+events:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+events:SetScript("OnEvent", function(_, event, name, ...)
+    if event == "TRAINER_SHOW" then
+        pcall(captureTrainer)
+        return
+    elseif event == "LOOT_OPENED" then
+        captureLoot()
+        return
+    elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
+        if name == "player" then
+            local _, spellID = ...
+            pcall(function()
+                lastSpell = { id = spellID, name = C_Spell.GetSpellName(spellID), time = GetTime() }
+            end)
+        end
+        return
+    end
     if event == "ADDON_LOADED" and name == ADDON then
         factionAtLoad = describe(UnitFactionGroup("player"))
         local _, raceFile = UnitRace("player")

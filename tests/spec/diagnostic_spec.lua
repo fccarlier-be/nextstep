@@ -52,10 +52,49 @@ describe("Addon de diagnostic", function()
         expect(game:chatText():find("capture armée", 1, true))
     end)
 
+    it("capture la liste d'un maître à son ouverture", function()
+        local game = wow.boot({ locale = "frFR" })
+        loadDiagnostic(game)
+        _G.GetNumTrainerServices = function()
+            return 2
+        end
+        _G.GetTrainerServiceInfo = function(index)
+            return "Sort " .. index, "Rang 1", "available"
+        end
+        _G.GetTrainerServiceCost = function()
+            return 100
+        end
+        _G.GetTrainerServiceLevelReq = function()
+            return 4
+        end
+        game:fire("TRAINER_SHOW")
+        local report = NextStepDiagDB.reports.trainer
+        expect(report, "liste du maître enregistrée")
+        local text = ""
+        for _, r in ipairs(report.sections[1].results) do
+            text = text .. tostring(r.value) .. "\n"
+        end
+        expect(text:find("Sort 2 (Rang 1) [available] coût=100 niveau=4", 1, true), text)
+        expect_eq(#game.errors, 0, "aucune erreur remontée au jeu")
+    end)
+
+    it("garde les derniers butins, même quand les API manquent", function()
+        local game = wow.boot({ locale = "frFR" })
+        loadDiagnostic(game)
+        for _ = 1, 8 do
+            game:fire("LOOT_OPENED")
+        end
+        local report = NextStepDiagDB.reports.loot
+        expect(report, "butin enregistré")
+        expect(#report.sections <= 6, "au plus 6 butins : " .. #report.sections)
+        expect_eq(#game.errors, 0, "aucune erreur remontée au jeu")
+    end)
+
     it("convertit les sauvegardes en rapport Markdown", function()
         local game = wow.boot({ locale = "frFR" })
         loadDiagnostic(game)
         SlashCmdList.NEXTSTEPDIAG("")
+        game:fire("LOOT_OPENED")
         -- Sauvegarde telle que le jeu l'écrirait, puis conversion.
         local saved = os.tmpname()
         local out = os.tmpname()
@@ -86,5 +125,6 @@ describe("Addon de diagnostic", function()
         os.remove(out)
         expect(markdown:find("# Rapport de diagnostic", 1, true))
         expect(markdown:find("C_QuestLog.IsOnQuest", 1, true), "les API vérifiées sont listées")
+        expect(markdown:find("Derniers butins et récoltes", 1, true), "les butins capturés sont inclus")
     end)
 end)

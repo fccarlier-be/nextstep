@@ -8,6 +8,8 @@ Les rapports de ce dossier sont produits par l'addon de développement **NextSte
 2. En jeu, avec un personnage :
    - cibler un PNJ, puis taper `/nsdiag` : vérifications hors combat, résumé dans le chat ;
    - taper `/nsdiag combat`, puis attaquer un monstre : capture du comportement des *secret values* en combat ;
+   - ouvrir un maître de classe : sa liste est capturée automatiquement ;
+   - ramasser le butin d'un monstre, récolter une herbe ou un minerai, et si possible piller un boss de donjon : les 6 derniers butins sont capturés automatiquement, avec leur source ;
    - taper `/reload` : le jeu écrit le rapport dans les sauvegardes.
 3. Sur le PC : `.\Tools\diagnostic\report.ps1` écrit `docs/reports/diagnostic-<date>.md`.
 
@@ -23,6 +25,11 @@ Les rapports de ce dossier sont produits par l'addon de développement **NextSte
 | Interface native | Texte de statut, sacs combinés, horloge, zoom de la carte et de la minimap, modèles de cadres, suivi d'objectifs |
 | NextStep | Chargement, mémoire de chaque addon, faction chargée, guides, rendu d'un texte, noms appris, panneau d'options |
 | Coordonnées | Écart entre le repère *era* importé et la position donnée par le client, sur la carte du joueur |
+| Carte : exploration | MapArtID, couches et tuiles, textures déjà explorées (taille, décalage, fichiers) : forme de la table de la carte sans brouillard |
+| Fenêtres Blizzard | Présence, protection, déplaçabilité et gestion par `UIPanelWindows` des fenêtres à rendre déplaçables |
+| Journal des donjons | Présence de `Blizzard_EncounterJournal` et des fonctions `EJ_*`, premier donjon listé |
+| Maître de classe | À l'ouverture : filtres, nombre de services, nom, rang, catégorie, coût et niveau des 10 premiers, identifiant du sort |
+| Butins et récoltes | Aux 6 derniers butins : carte, position, instance, dernier sort lancé (récolte), objets et GUID de leur source |
 | Combat | Valeurs secrètes ou non (santé, ressource, nom, GUID), opérations permises (calcul, comparaison, `string.format`, `SetText`, barres, fonctions de formatage), nameplates |
 
 L'addon de diagnostic n'est jamais livré aux joueurs.
