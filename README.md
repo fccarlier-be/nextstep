@@ -44,7 +44,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 - **Un seul addon** à installer.
 - **Aucune donnée envoyée** nulle part : NextStep ne communique avec aucun serveur. Tout reste sur ton PC.
 - **Améliorer l'interface Blizzard plutôt que la remplacer**, pour limiter les erreurs et les conflits avec d'autres addons.
-- **Libre et open source** sous licence GPL-3.0.
+- **Libre et open source** sous licence GPL-3.0-only.
 
 ## Documentation
 
@@ -70,10 +70,10 @@ Pas encore disponible. NextStep sera publié sur CurseForge une fois la premièr
 
 ## Licence
 
-NextStep est distribué sous la [GNU General Public License v3.0](LICENSE). Il réutilise des données et des bibliothèques d'autres projets libres, crédités dans [CREDITS.md](CREDITS.md).
+NextStep est distribué sous la [GNU General Public License v3.0](LICENSE), version 3 uniquement (GPL-3.0-only), comme les données de Polestar qu'il contient. Il réutilise des données et des bibliothèques d'autres projets libres, crédités dans [CREDITS.md](CREDITS.md).
 
 ---
 
 ## English summary
 
-**NextStep** is an all-in-one addon for **WoW Forever**: a race/class-aware leveling guide that tolerates detours, profession advice and routes, gear upgrade hints, and light Blizzard UI improvements (unit values, unified bags and bank, square minimap, clock timers). One addon instead of fifteen. It never sends any data anywhere. **Status: design phase**, no playable release yet. Licensed under GPL-3.0.
+**NextStep** is an all-in-one addon for **WoW Forever**: a race/class-aware leveling guide that tolerates detours, profession advice and routes, gear upgrade hints, and light Blizzard UI improvements (unit values, unified bags and bank, square minimap, clock timers). One addon instead of fifteen. It never sends any data anywhere. **Status: design phase**, no playable release yet. Licensed under GPL-3.0-only.

@@ -4,7 +4,7 @@
 ## Notes-frFR: Outil de développement : vérifie les API du client utilisées par NextStep. Pas pour les joueurs.
 ## Author: fccarlier-be
 ## Version: 1.0.0
-## X-License: GPL-3.0
+## X-License: GPL-3.0-only
 ## OptionalDeps: NextStep
 ## SavedVariables: NextStepDiagDB
 

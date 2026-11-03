@@ -1,6 +1,7 @@
 -- Généré par Tools/import/import.lua depuis Polestar 0.3.0 (d48e609ecdac, 2026-11-03). Ne pas modifier :
--- relancer Tools\import\run.ps1. Données sous licence GPL-3.0-only, voir CREDITS.md.
--- Format : docs/DATA_FORMAT.md.
+-- relancer Tools\import\run.ps1.
+-- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
+-- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB
 

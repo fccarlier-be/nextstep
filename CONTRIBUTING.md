@@ -67,4 +67,4 @@ Exemples : `feat(guide): calcul de l'étape courante`, `data(polestar): import d
 
 ## Licence
 
-En contribuant, tu acceptes que ta contribution soit distribuée sous la licence [GPL-3.0](LICENSE) du projet.
+En contribuant, tu acceptes que ta contribution soit distribuée sous la licence [GPL-3.0-only](LICENSE) du projet.
