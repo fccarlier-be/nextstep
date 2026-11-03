@@ -85,7 +85,7 @@ G(function() return {
 
 ### Jetons de race
 
-Ceux de `UnitRace` (champ `raceFile`), en majuscules : `HUMAN`, `DWARF`, `GNOME`, `NIGHTELF`, `ORC`, `TROLL`, `TAUREN`, `SCOURGE` (mort-vivant), `SKYBORNE`. **[À vérifier]** le `raceFile` exact de Skyborne. Jamais de masques de bits : les ID raciaux de Skyborne dépassent 32 bits.
+Ceux de `UnitRace` (champ `raceFile`, qui est en casse mixte : `Human`, `NightElf`, `Scourge`), mis en majuscules : `HUMAN`, `DWARF`, `GNOME`, `NIGHTELF`, `ORC`, `TROLL`, `TAUREN`, `SCOURGE` (mort-vivant), `SKYBORNE`. **[À vérifier]** le `raceFile` exact de Skyborne. Jamais de masques de bits : les ID raciaux de Skyborne dépassent 32 bits.
 
 ## Étape
 

@@ -17,6 +17,8 @@ Une seule fois :
 
 `deploy.ps1` crée des jonctions : le jeu lit directement les fichiers du dépôt, un `/reload` suffit pour tester une modification. Le chemin du jeu par défaut est `C:\Program Files (x86)\World of Warcraft\_forever_` (option `-GamePath`) ; `-Remove` supprime les liens. Si l'accès est refusé, le lancer une fois en administrateur.
 
+`deploy.ps1` relie aussi l'addon de diagnostic (`Tools/diagnostic/NextStep_Diagnostic`), un outil de développement : voir [docs/reports/README.md](docs/reports/README.md).
+
 Avant chaque commit :
 
 ```powershell

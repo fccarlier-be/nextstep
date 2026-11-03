@@ -39,6 +39,20 @@ files["addon/**"] = {
     },
 }
 
+-- Addon de diagnostic (outil de développement, jamais livré).
+files["Tools/diagnostic/**"] = {
+    globals = { "NextStepDiagDB", "SLASH_NEXTSTEPDIAG1", "SlashCmdList" },
+    read_globals = {
+        "C_AddOns", "C_CVar", "C_Item", "C_Map", "C_NamePlate", "C_QuestLog", "C_Spell", "C_TaxiMap", "C_Timer",
+        "C_TooltipInfo", "AbbreviateNumbers", "ChatFontNormal", "CLOSE", "CreateFrame", "DEFAULT_CHAT_FRAME",
+        "GetAddOnMemoryUsage", "GetBindLocation", "GetBuildInfo", "GetLocale", "GetMoney", "GetNumSkillLines",
+        "GetPlayerFacing", "GetSubZoneText", "GetZoneText", "InCombatLockdown", "Minimap", "UIParent",
+        "UnitClass", "UnitExists", "UnitFactionGroup", "UnitGUID", "UnitHealth", "UnitHealthMax",
+        "UnitHealthPercent", "UnitLevel", "UnitName", "UnitPower", "UnitRace", "UnitXP", "UnitXPMax",
+        "UpdateAddOnMemoryUsage", "WorldMapFrame", "time",
+    },
+}
+
 -- Tests : la simulation du jeu définit et remplace des globales à volonté.
 files["tests/**"] = {
     ignore = { "11." },

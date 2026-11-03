@@ -16,7 +16,7 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 |---|---|---|---|
 | — | Conception | — | ✅ |
 | 0 | Fondations | — | 🟨 |
-| 1 | Vérifications en jeu | — | ⬜ |
+| 1 | Vérifications en jeu | — | 🟨 |
 | 2 | Import des données | — | ✅ |
 | 2b | Noms appris | — | ✅ |
 | 3 | Moteur du guide | — | ✅ |
@@ -57,6 +57,8 @@ Un addon de diagnostic temporaire, qui teste et consigne les points marqués « 
 - chargement des données importées : temps et mémoire.
 
 **Terminé quand** : un rapport de vérification est publié dans `docs/`, et la feuille de route est ajustée si nécessaire.
+
+État : l'addon de diagnostic est **prêt** (`Tools/diagnostic/`, commande `/nsdiag`) ; il reste à le lancer en jeu à la sortie du client. Procédure : [docs/reports/README.md](reports/README.md).
 
 ## Phase 2 : Import des données *(sans le jeu)*
 
