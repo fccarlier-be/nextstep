@@ -14,6 +14,7 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`) |
 | [What's Training](https://github.com/fusionpit/WhatsTraining) | Sorts de chaque classe chez le maître : niveau, rang, coût *(prévu en phase 4)* | MIT | Prend en charge Forever ; tables `Classes/Vanilla/*.lua` à importer, notice MIT à conserver |
 | [GatherMate2](https://github.com/Nevcairiel/GatherMate2) | Code de détection des récoltes et identifiants des ressources *(prévu en phase 9)* | GPL-2.0-or-later, donc réutilisable sous GPL-3.0 | Prend en charge Forever (`16001`) ; seul le code est repris, pas les données |
+| Tables du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`) | Textures des zones inexplorées de la carte *(prévu en phase 5)* | — | Extraites par un script d'import, comme les noms ; **[À vérifier]** méthode d'extraction |
 | Le client du jeu | Noms localisés (dont les noms de PNJ appris), état du journal de quêtes, recettes connues | — | Lu en jeu, conservé dans les sauvegardes locales, jamais redistribué |
 
 ## Sources écartées
@@ -27,7 +28,7 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Guides gratuits sans licence (ForeverWisp, PexGuide, Follow The Arrow…) | Gratuit ne signifie pas réutilisable |
 | Guides payants (RestedXP, Zygor…) | Propriétaires |
 | Wowhead | Conditions d'utilisation : pas d'aspiration ; vérification manuelle uniquement |
-| BlizzMove, Leatrix Maps, Mapster (dont la table `FogClearDataForever.lua`), Auctionator | « All Rights Reserved » : réutilisation impossible sans l'accord de l'auteur |
+| BlizzMove, Leatrix Maps, Mapster (dont la table `FogClearDataForever.lua`), DungeonJournal, Auctionator | « All Rights Reserved » : ni code ni données repris ; NextStep écrit ses propres équivalents |
 | GatherMate2_Data | Extraction de Wowhead, sans licence ; données du jeu moderne, pas de Forever |
 | AtlasLootClassic | GPL-2.0 sans la mention « ou ultérieure », incompatible avec GPL-3.0-only ; pas de prise en charge de Forever |
 | Skyrim Level-Up (RGX) | Code sous MIT, mais le son vient de Skyrim (droits de Bethesda) |

@@ -296,11 +296,11 @@ Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la
 | Alerte d'amélioration | Au **centre de l'écran, légèrement au-dessus du milieu**, déplaçable ; **jamais en combat** (différée) ; seuil minimal réglable ; améliorations successives regroupées ; fermeture automatique ou clic droit |
 | Items à ne pas rater | Par classe, spécialisation et tranche de niveaux, avec leur provenance ; mis en avant dans la route, proposés en détour, ou rattachés aux donjons recommandés |
 | Jalons | Sacs, quêtes de classe, monture, sorts à apprendre (voir [Sorts à apprendre](#sorts-à-apprendre)) ; seuils dans les données |
-| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal ; AtlasLootClassic est incompatible (GPL-2.0 seule) |
+| Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal (« All Rights Reserved ») : code propre ; butin tiré de la provenance des items de `Polestar_ItemDB` et de forever-db. AtlasLootClassic est incompatible (GPL-2.0 seule) |
 
 **[À vérifier]** Possibilité d'équiper un objet depuis l'alerte. Sinon, le clic ouvre les sacs avec l'objet en surbrillance.
 
-**[À vérifier]** Présence du journal des donjons (`EncounterJournal`) sur Forever, et butin par boss dans forever-db.
+**[À vérifier]** Présence du journal des donjons (`EncounterJournal`) sur Forever, et couverture du butin par boss dans `Polestar_ItemDB` et forever-db.
 
 ---
 
@@ -422,7 +422,7 @@ Panneau ouvert depuis l'horloge de la minimap :
 
 ### Fenêtres déplaçables
 
-Inspiré de BlizzMove, qui prend déjà en charge Forever mais dont le code est « All Rights Reserved » : permission à demander, sinon code propre.
+Inspiré de BlizzMove, dont le code est « All Rights Reserved » : code propre à NextStep.
 
 - Les fenêtres Blizzard (personnage, grimoire, talents, journal de quêtes, marchands, maîtres…) se déplacent en les faisant glisser ; positions mémorisées, réinitialisables. Le mode Édition natif reste utilisé pour les éléments du HUD.
 - Fenêtres chargées plus tard (`Blizzard_*`) prises en charge à leur chargement (`ADDON_LOADED`).
@@ -431,11 +431,12 @@ Inspiré de BlizzMove, qui prend déjà en charge Forever mais dont le code est 
 
 ### Carte sans brouillard
 
-Inspiré de Leatrix Maps et de Mapster. Mapster contient déjà la table de Forever (`FogClearDataForever.lua`), mais elle est « All Rights Reserved », comme Leatrix Maps : permission à demander à son auteur (celui de HereBeDragons).
+Inspiré de Leatrix Maps et de Mapster, tous deux « All Rights Reserved » : code et table propres à NextStep.
 
 - Les zones inexplorées de la carte du monde sont affichées, dans une teinte atténuée réglable ; désactivable.
 - Le client ne fournit que les textures des zones explorées (`C_MapExplorationInfo`) : une table des textures de chaque carte est nécessaire, dans les données. Forever reprenant les cartes du Classic, une table du Classic devrait convenir.
-- **[À vérifier]** Réponse de l'auteur de Mapster ; sinon, table à constituer autrement.
+- Table générée par un script d'import (non livré) à partir des tables de superposition de cartes du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`), comme les noms extraits des tables du client.
+- **[À vérifier]** Extraction de ces tables pour la version de Forever, et format attendu par les textures de la carte.
 
 ---
 
