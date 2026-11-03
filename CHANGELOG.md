@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Texte de la page CurseForge, en anglais et en français, et règles de modération de CurseForge appliquées à NextStep ([docs/CURSEFORGE.md](docs/CURSEFORGE.md)).
 - **Logo** : une arche de pierre, une étoile dorée et des marches vers la lumière. Icônes en jeu (`Media/Icon.tga`, `Media/IconSmall.tga`, `## IconTexture` dans le TOC), icône CurseForge, script de préparation `Tools/logo/prepare.py`.
 - Addon de développement **NextStep - Diagnostic** (`Tools/diagnostic/`, commande `/nsdiag`) : vérifie en jeu les API, les valeurs, les options natives, la conversion des coordonnées et le comportement des *secret values* en combat ; `Tools/diagnostic/report.ps1` convertit le résultat en rapport Markdown dans `docs/reports/`. Jamais livré aux joueurs.
 - **Moteur du guide** (`Modules/Guide/`) : conditions (`only`, `when`), état des 26 types d'objectifs, étape courante calculée, étapes dépassées mémorisées par clé stable, sauts (`skipto`), objectifs en chemin (`along`), quêtes de groupe, modes strict et libre, détours, quêtes abandonnées signalées, conseils (personnage en avance, quêtes grises), guides suivants.
