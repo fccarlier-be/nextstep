@@ -8,7 +8,7 @@ local _, ns = ...
 local L = ns.L
 
 local Guide = ns.Modules:Get("Guide")
-local Navigation, Labels = ns.Navigation, ns.GuideLabels
+local Navigation = ns.Navigation
 
 local SIZE = 48
 local UPDATE_PERIOD = 0.05   -- secondes
@@ -86,8 +86,7 @@ function Guide:SetArrowTarget(target)
         frame:Hide()
         return
     end
-    local guide = self.result.guide
-    frame.label:SetText(Labels.Goal(guide.steps[target.step].goals[target.goal], guide, self.state))
+    frame.label:SetText(self:GoalLabel(self.result, target.step, target.goal))
     frame:Show()
     self:UpdateArrowDirection()
 end
@@ -133,13 +132,16 @@ function Guide:CreateInterface()
     if not self.arrowFrame then
         self:CreateArrow()
     end
+    self:CreatePins()
     self.window:SetShown(self.db.window.shown)
     self:RegisterMessage("NEXTSTEP_GUIDE_UPDATED", function(_, _, result)
         self:UpdateWindow(result)
         self:SetArrowTarget(result and result.target)
+        self:UpdatePins()
     end)
     self:RegisterMessage("NEXTSTEP_TARGET_UPDATED", function(_, _, target)
         self:SetArrowTarget(target)
+        self:UpdatePins()
     end)
 end
 
@@ -150,4 +152,5 @@ function Guide:HideInterface()
     if self.arrowFrame then
         self.arrowFrame:Hide()
     end
+    self:HidePins()
 end

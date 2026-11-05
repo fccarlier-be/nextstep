@@ -26,6 +26,9 @@ Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
 Modules\UI\Radar.lua
+Modules\UI\Minimap.lua
+Modules\UI\AddonsMenu.lua
+Modules\UI\QuestItems.lua
 Modules\Guide\Conditions.lua
 Modules\Guide\Goals.lua
 Modules\Guide\Engine.lua
@@ -36,6 +39,7 @@ Modules\Guide\Labels.lua
 Modules\Guide\Live.lua
 Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
+Modules\Guide\Pins.lua
 Core\Factions.lua
 Core\Options.lua
 Core\Slash.lua

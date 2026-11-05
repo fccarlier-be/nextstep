@@ -129,7 +129,9 @@ function Guide:CreateWindow()
     -- Corps : lignes réutilisées d'une mise à jour à l'autre.
     local body = CreateFrame("Frame", nil, frame)
     body:SetPoint("TOPLEFT", PADDING, -HEADER_HEIGHT)
-    body:SetPoint("TOPRIGHT", -PADDING, -HEADER_HEIGHT)
+    -- Ancré aussi en bas : sans hauteur, le corps mesure 0 × 0 et Forever n'affiche
+    -- pas les lignes qu'il contient.
+    body:SetPoint("BOTTOMRIGHT", -PADDING, FOOTER_HEIGHT)
     frame.body = body
     frame.lines = {}
 
@@ -247,6 +249,15 @@ local function addGoal(self, view, result, i, j, status)
     if goal.optional then
         text = L["(optional) %s"]:format(text)
     end
+    local level = self.state and self.state:Level()
+    local levelTag = Labels.LevelTag(goal, guide, level)
+    if levelTag then
+        text = levelTag .. " " .. text
+    end
+    local group = Labels.GroupTag(goal, guide)
+    if group then
+        text = ("%s |cffff8040(%s)|r"):format(text, group)
+    end
     local note = Labels.GoalNote(goal, guide)
     if note then
         text = ("%s |cffa0a0a0- %s|r"):format(text, note)
@@ -336,6 +347,25 @@ local function addFooterLines(view, result)
     end
 end
 
+-- Quêtes de classe à faire : une ligne cliquable chacune (au plus deux).
+local MAX_CLASS_GUIDES = 2
+
+local function addClassGuides(self, view)
+    local list = self:ClassGuides()
+    for index = 1, math.min(#list, MAX_CLASS_GUIDES) do
+        local guide = list[index]
+        if index == 1 then
+            addGap(view)
+        end
+        addLine(view, L["Class quest: %s"]:format(Labels.Guide(guide)), COLORS.action, {
+            onClick = function()
+                self:StartClassGuide(guide.id)
+            end,
+            tooltip = guide.why and ns.DB:Render(guide.why, guide) or nil,
+        })
+    end
+end
+
 local function addChoices(self, view, list, format)
     for _, guide in ipairs(list) do
         addLine(view, format:format(Labels.Guide(guide)), COLORS.action, {
@@ -366,10 +396,20 @@ local function addSuggestions(self, view)
         return
     end
     addChoices(self, view, list, L["Start: %s"])
+    addClassGuides(self, view)
 end
 
 local function addFinished(self, view, result)
     addLine(view, L["Guide complete!"], COLORS.title)
+    local back = self.char.returnTo and ns.DB:GetGuide(self.char.returnTo)
+    if back then
+        addLine(view, L["Back to: %s"]:format(Labels.Guide(back)), COLORS.action, {
+            indent = INDENT,
+            onClick = function()
+                self:Resume()
+            end,
+        })
+    end
     local list = {}
     for _, id in ipairs(result.next or {}) do
         local guide = ns.DB:GetGuide(id)
@@ -417,6 +457,7 @@ function Guide:UpdateWindow(result)
         addAlong(self, view, result)
         addAbandoned(self, view, result)
         addFooterLines(view, result)
+        addClassGuides(self, view)
     end
     for index = view.count + 1, #frame.lines do
         frame.lines[index]:Hide()

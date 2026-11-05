@@ -40,4 +40,4 @@ Le packager détecte la version du jeu à partir de `## Interface`. Si CurseForg
 
 ## Bibliothèques
 
-Les bibliothèques (LibStub, HereBeDragons…) seront déclarées dans la section `externals` de `.pkgmeta`, au moment où un module en aura besoin (complément « Carte et minimap »). Le packager les télécharge à chaque empaquetage. Elles ne sont pas copiées dans le dépôt : pour jouer depuis le dépôt, `Tools/setup.ps1` devra les télécharger aux mêmes versions (dossier ignoré par git).
+NextStep n'utilise aucune bibliothèque pour l'instant (les repères de la carte et de la minimap sont du code propre, sans HereBeDragons). Si un module en a besoin un jour, elle sera déclarée dans la section `externals` de `.pkgmeta`. Le packager les télécharge à chaque empaquetage. Elles ne sont pas copiées dans le dépôt : pour jouer depuis le dépôt, `Tools/setup.ps1` devra les télécharger aux mêmes versions (dossier ignoré par git).

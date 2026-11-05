@@ -22,6 +22,8 @@ local Guide = ns.Modules:New("Guide", {
             point = nil,        -- { point, point relatif, x, y } : position mémorisée
         },
         arrow = true,
+        minimapPins = true,     -- points de l'étape sur la minimap
+        mapPins = true,         -- points de l'étape sur la carte du monde
         hideTracker = true,     -- masque le suivi de quêtes Blizzard quand un guide est suivi
     },
     charDefaults = {
@@ -31,6 +33,9 @@ local Guide = ns.Modules:New("Guide", {
         progress = {},     -- [identifiant du guide] = progression (Engine.NewProgress)
         answers = {},      -- [quête de groupe] = true (la faire) / false (la passer)
         dungeons = {},     -- [nom du donjon] = true : donjons choisis
+        completed = {},    -- [identifiant du guide] = true : guides terminés
+        returnTo = nil,    -- guide de leveling à reprendre après une quête de classe
+        trainedLevel = nil, -- niveau du personnage à sa dernière visite au maître de classe
     },
 })
 
@@ -79,6 +84,7 @@ function Guide:Refresh()
         seen = self.seen[guide.id] or {},
         answers = self.char.answers,
         dungeons = self.char.dungeons,
+        trainedLevel = self.char.trainedLevel,
     })
     -- Tant que le journal de quêtes n'est pas lu, rien n'est mémorisé.
     if self.state:Ready() ~= false then
@@ -87,6 +93,9 @@ function Guide:Refresh()
     result.mode = self.char.mode
     if self.Decorate then
         self:Decorate(result)
+    end
+    if result.finished and result.ready ~= false and self.state:Ready() ~= false then
+        self.char.completed[guide.id] = true
     end
     self.result = result
     self:SendMessage("NEXTSTEP_GUIDE_UPDATED", result)
@@ -186,24 +195,36 @@ local function contains(list, value)
     return false
 end
 
--- Guides de leveling adaptés au personnage : faction, race, classe et niveau.
--- Les guides propres à la race passent en premier, puis par niveau croissant.
+-- Guides de leveling adaptés au personnage : faction, classe et niveau. La race
+-- n'exclut aucun guide (un elfe de la nuit peut commencer chez les humains).
+-- Ordre : guide de la zone où se trouve le joueur, puis guides de sa race, guides
+-- communs, guides des autres races ; à rang égal, par niveau croissant.
 function Guide:Suggest(state)
     state = state or self.state
     local level, race = state:Level(), state:Race()
+    local maps = state.Maps and state:Maps() or {}
+    local rank = {}
     local list = {}
     for _, guide in ns.DB:IterateGuides() do
         if guide.category == "Leveling"
             and (not guide.faction or guide.faction == state:Faction())
-            and (not guide.races or contains(guide.races, race))
             and (not guide.classes or contains(guide.classes, state:Class()))
             and (guide.minLevel or 1) <= level and level <= (guide.maxLevel or 60) then
             list[#list + 1] = guide
+            if guide.zone and maps[guide.zone] then
+                rank[guide] = 1
+            elseif guide.races and contains(guide.races, race) then
+                rank[guide] = 2
+            elseif not guide.races then
+                rank[guide] = 3
+            else
+                rank[guide] = 4
+            end
         end
     end
     table.sort(list, function(a, b)
-        if (a.races ~= nil) ~= (b.races ~= nil) then
-            return a.races ~= nil
+        if rank[a] ~= rank[b] then
+            return rank[a] < rank[b]
         end
         if (a.minLevel or 1) ~= (b.minLevel or 1) then
             return (a.minLevel or 1) < (b.minLevel or 1)
@@ -211,4 +232,71 @@ function Guide:Suggest(state)
         return a.id < b.id
     end)
     return list
+end
+
+-- Quêtes de classe à faire (guides de la catégorie Class) : classe, faction et race
+-- du personnage, à partir de leur niveau minimal et jusqu'à 5 niveaux au-delà du
+-- maximal. Une quête est faite quand son guide est terminé, ou quand le personnage
+-- connaît déjà les sorts qu'elle apprend (reward).
+local CLASS_LEVEL_MARGIN = 5
+
+local function rewardKnown(guide, state)
+    local any = false
+    for _, reward in ipairs(guide.reward or {}) do
+        if reward.spell then
+            any = true
+            if not state:Knows(reward.spell) then
+                return false
+            end
+        end
+    end
+    return any
+end
+
+function Guide:ClassGuides(state)
+    state = state or self.state
+    local list = {}
+    if not state then
+        return list
+    end
+    local level, race, class = state:Level(), state:Race(), state:Class()
+    for _, guide in ns.DB:IterateGuides() do
+        if guide.category == "Class"
+            and guide.id ~= self.char.active
+            and not self.char.completed[guide.id]
+            and (not guide.faction or guide.faction == state:Faction())
+            and (not guide.classes or contains(guide.classes, class))
+            and (not guide.races or contains(guide.races, race))
+            and (guide.minLevel or 1) <= level
+            and level <= (guide.maxLevel or 60) + CLASS_LEVEL_MARGIN
+            and not rewardKnown(guide, state) then
+            list[#list + 1] = guide
+        end
+    end
+    table.sort(list, function(a, b)
+        if (a.minLevel or 1) ~= (b.minLevel or 1) then
+            return (a.minLevel or 1) < (b.minLevel or 1)
+        end
+        return a.id < b.id
+    end)
+    return list
+end
+
+-- Commence une quête de classe ; le guide de leveling suivi sera repris à la fin.
+function Guide:StartClassGuide(id)
+    local current = self:ActiveGuide()
+    if current and current.category ~= "Class" then
+        self.char.returnTo = current.id
+    end
+    return self:Start(id)
+end
+
+-- Reprend le guide de leveling interrompu par une quête de classe.
+function Guide:Resume()
+    local id = self.char.returnTo
+    self.char.returnTo = nil
+    if id and ns.DB:GetGuide(id) then
+        return self:Start(id)
+    end
+    return self:Stop()
 end

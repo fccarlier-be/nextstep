@@ -39,6 +39,7 @@ local function run(Engine, g, player, progress, extra)
         seen = extra.seen or {},
         answers = extra.answers or {},
         dungeons = extra.dungeons or {},
+        trainedLevel = extra.trainedLevel,
     })
     Engine.Commit(progress, result)
     return result
@@ -278,6 +279,36 @@ describe("Moteur du guide", function()
         expect_eq(r.abandoned, { { quest = 1, step = 1 } })
         Engine.Reopen(progress, g, 1)
         expect_eq(run(Engine, g, player, progress).current, 1, "retour à l'étape sur demande")
+    end)
+
+    it("ne signale pas comme abandonnée une quête que le personnage ne peut pas reprendre", function()
+        local Engine, progress = setup()
+        local g = guide({
+            step({ accept(1), accept(2, { only = { races = { "HUMAN" } } }), accept(3, { optional = true }) }),
+            step({ accept(4) }),
+            step({ turnin(1), turnin(2), turnin(3) }),
+        })
+        local player = Player.new({ race = "NIGHTELF" }):accept(1):accept(3)
+        run(Engine, g, player, progress)
+        player:abandon(3)
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 2)
+        expect_eq(r.abandoned, {}, "quête réservée aux humains, ou facultative : rien à reprendre")
+    end)
+
+    it("ne renvoie pas chez le maître de classe s'il n'y a rien de nouveau", function()
+        local Engine, progress = setup()
+        local g = guide({ step({ { t = "train", class = true } }), step({ accept(1) }) })
+        local function current(level, trainedLevel)
+            local p = Engine.NewProgress()
+            local r = run(Engine, g, Player.new({ level = level }), p, { trainedLevel = trainedLevel })
+            return r.current
+        end
+        expect_eq(current(10, nil), 1, "jamais vu : il faut y aller")
+        expect_eq(current(10, 10), 2, "déjà vu à ce niveau")
+        expect_eq(current(11, 10), 2, "niveau impair : rien de nouveau depuis le 10")
+        expect_eq(current(12, 10), 1, "niveau pair suivant : nouveaux sorts")
+        expect(progress ~= nil)
     end)
 
     it("liste en détour les quêtes que le guide ne cite pas", function()

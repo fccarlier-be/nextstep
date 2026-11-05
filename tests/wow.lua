@@ -63,6 +63,10 @@ Game.__index = Game
 local function newFrame(game)
     local frame = { events = {}, scripts = {}, hooks = {} }
     function frame.RegisterEvent(self, event)
+        -- Comme le client : erreur sur un événement qu'il ne connaît pas.
+        if game.unknownEvents[event] then
+            error(('Attempt to register unknown event "%s"'):format(event))
+        end
         self.events[event] = true
     end
     function frame.UnregisterEvent(self, event)
@@ -178,6 +182,8 @@ local function newPlayer(options)
         position = nil,  -- { nord, ouest, instance }
         facing = 0,
         zone = "", subzone = "", bind = "",
+        map = nil,       -- uiMapID de la carte où se trouve le personnage
+        mapParents = {}, -- [uiMapID] = carte parente
     }
     for key, value in pairs(options or {}) do
         player[key] = value
@@ -306,7 +312,10 @@ local function install(game, options)
             return nil
         end,
         GetBestMapForUnit = function()
-            return nil
+            return player.map
+        end,
+        GetMapInfo = function(map)
+            return { mapID = map, parentMapID = player.mapParents[map] or 0 }
         end,
     }
     _G.GetZoneText = function()
@@ -362,6 +371,8 @@ end
 --   login      false pour ne pas déclencher PLAYER_LOGIN
 --   player     { level = 5, class = "MAGE", position = { nord, ouest, instance }, ... } : personnage
 --   metadata   { NextStep = { Version = "v0.1.0" }, ... } : remplace des métadonnées des TOC
+--   unknownEvents { EVENT = true } : événements inconnus du client (par défaut, ceux
+--              absents de Forever, comme LEARNED_SPELL_IN_TAB)
 function wow.boot(options)
     options = options or {}
     wow.reset()
@@ -373,6 +384,7 @@ function wow.boot(options)
         loaded = {},
         tocs = {},
         disabled = options.disabled or {},
+        unknownEvents = options.unknownEvents or { LEARNED_SPELL_IN_TAB = true },
         locale = options.locale or "enUS",
         faction = options.faction or "Alliance",
         units = {},

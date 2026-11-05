@@ -183,8 +183,27 @@ local function isCandidate(goal, guide, npc)
     return false
 end
 
+-- Le PNJ est-il un maître de classe ? D'après le client (un maître de métier
+-- répond vrai à IsTradeskillTrainer), sinon d'après les maîtres de classe du guide.
+local function classTrainer(guide, npc)
+    if IsTradeskillTrainer then
+        return not IsTradeskillTrainer()
+    end
+    for _, entry in ipairs(guide and guide.pool or {}) do
+        if entry.npc == npc and entry.classes then
+            return true
+        end
+    end
+    return false
+end
+
 -- Une fenêtre de PNJ s'ouvre (dialogue, marchand, maître, vols).
 function Guide:OnNpcWindow(kind, npc)
+    if kind == "train" and classTrainer(self:ActiveGuide(), npc) then
+        -- Retenu d'une session à l'autre : l'étape « maître de classe » ne renvoie
+        -- pas chez le maître tant qu'il n'y a rien de nouveau à apprendre.
+        self.char.trainedLevel = (self.state and self.state:Level()) or self.char.trainedLevel
+    end
     self:Validate(function(goal, guide)
         if goal.t ~= kind then
             return false
@@ -221,24 +240,30 @@ local function contains(list, value)
 end
 
 -- Points possibles d'un objectif : sa position, les maîtres proposés au personnage,
--- les zones d'apparition des mobs.
+-- les zones d'apparition des mobs. kind : "place" (position, maître) ou "zone".
 local function pointsOf(goal, guide, state)
     local points = {}
     if goal.map and goal.x and goal.y then
-        points[#points + 1] = { map = goal.map, x = goal.x, y = goal.y, f = goal.f }
+        points[#points + 1] = { map = goal.map, x = goal.x, y = goal.y, f = goal.f, kind = "place" }
     end
     for _, index in ipairs(goal.candidates or {}) do
         local entry = guide.pool and guide.pool[index]
         if entry and entry.map
             and (not entry.classes or contains(entry.classes, state:Class()))
             and (not entry.faction or (FACTIONS[entry.faction] or {})[state:Faction()]) then
-            points[#points + 1] = { map = entry.map, x = entry.x, y = entry.y, f = entry.f, npc = entry.npc }
+            points[#points + 1] = { map = entry.map, x = entry.x, y = entry.y, f = entry.f, npc = entry.npc,
+                kind = "place" }
         end
     end
     for _, spot in ipairs(Navigation.Spots(goal) or {}) do
-        points[#points + 1] = { map = goal.map, x = spot.x, y = spot.y, f = goal.f }
+        points[#points + 1] = { map = goal.map, x = spot.x, y = spot.y, f = goal.f, kind = "zone" }
     end
     return points
+end
+
+-- Points d'un objectif, pour les repères de la carte et de la minimap.
+function Guide:GoalPoints(goal, guide)
+    return pointsOf(goal, guide, self.state)
 end
 
 -- Point le plus proche (le premier si aucune distance n'est connue).
@@ -253,37 +278,79 @@ local function nearest(points)
     return best or points[1], bestDistance
 end
 
--- Cible : mode strict, le premier objectif ouvert qui a une position ; mode libre,
--- le plus proche de tous.
-function Guide:FindTarget(result)
-    if not (result and result.current) then
-        return nil
+-- Libellé d'un objectif pour la flèche et la carte. Un déplacement dit pourquoi on
+-- y va : le premier objectif suivant de l'étape encore à faire (« Aller à
+-- Comté-de-l'Or, pour : Aller voir votre maître de classe »).
+local SETTLED = { done = true, na = true, info = true }
+
+function Guide:GoalLabel(result, i, j)
+    local guide = result.guide
+    local goals = guide.steps[i].goals
+    local text = ns.GuideLabels.Goal(goals[j], guide, self.state)
+    if not ns.GuideGoals.TRAVEL[goals[j].t] then
+        return text
     end
-    local guide, state = result.guide, self.state
-    local best
-    for _, entry in ipairs(self:OpenGoals(result)) do
-        local goal = guide.steps[entry.step].goals[entry.goal]
-        local points = pointsOf(goal, guide, state)
+    local statuses = result.steps[i] and result.steps[i].goals or {}
+    for k = j + 1, #goals do
+        local status = statuses[k] and statuses[k].status
+        if not ns.GuideGoals.TRAVEL[goals[k].t] and not SETTLED[status] then
+            return ns.L["%s, for: %s"]:format(text, ns.GuideLabels.Goal(goals[k], guide, self.state))
+        end
+    end
+    return text
+end
+
+-- Point le plus proche parmi des objectifs ouverts : { step, goal, choices, ... }, où
+-- choices compte tous les points possibles (plus d'un : la cible change en route).
+local function nearestGoal(entries, guide, state)
+    local best, total = nil, 0
+    for _, entry in ipairs(entries) do
+        local points = pointsOf(guide.steps[entry.step].goals[entry.goal], guide, state)
         if #points > 0 then
+            total = total + #points
             local point, distance = nearest(points)
-            if result.mode ~= "free" then
-                return {
-                    step = entry.step, goal = entry.goal, choices = #points,
-                    map = point.map, x = point.x, y = point.y, f = point.f, distance = distance,
-                }
-            end
             if not best or (distance and (not best.distance or distance < best.distance)) then
                 best = {
-                    step = entry.step, goal = entry.goal, choices = #points,
+                    step = entry.step, goal = entry.goal,
                     map = point.map, x = point.x, y = point.y, f = point.f, distance = distance,
                 }
             end
         end
     end
     if best then
-        best.choices = math.max(best.choices, 2)   -- en mode libre, la plus proche change
+        best.choices = total
     end
     return best
+end
+
+-- Cible : mode strict, l'objectif ouvert le plus proche de l'étape courante (les
+-- objectifs facultatifs seulement s'il ne reste qu'eux), puis les objectifs en
+-- chemin ; mode libre, le plus proche de tous.
+function Guide:FindTarget(result)
+    if not (result and result.current) then
+        return nil
+    end
+    local guide, state = result.guide, self.state
+    local open = self:OpenGoals(result)
+    if result.mode == "free" then
+        local best = nearestGoal(open, guide, state)
+        if best then
+            best.choices = math.max(best.choices, 2)   -- en mode libre, la plus proche change
+        end
+        return best
+    end
+    local required, optional, along = {}, {}, {}
+    for _, entry in ipairs(open) do
+        if entry.step ~= result.current then
+            along[#along + 1] = entry
+        elseif entry.optional then
+            optional[#optional + 1] = entry
+        else
+            required[#required + 1] = entry
+        end
+    end
+    return nearestGoal(required, guide, state) or nearestGoal(optional, guide, state)
+        or nearestGoal(along, guide, state)
 end
 
 -- Appelé par Guide:Refresh avant l'envoi du résultat.
@@ -405,6 +472,75 @@ function SUBCOMMANDS.mode(self)
     self:SetMode(self.char.mode == "free" and "strict" or "free")
 end
 
+-- /ns debug : état du guide et de sa fenêtre, pour diagnostiquer en jeu sans /run.
+-- Texte technique, non traduit.
+function Guide:PrintDebug()
+    local function out(...)
+        local parts = {}
+        for i = 1, select("#", ...) do
+            parts[i] = tostring((select(i, ...)))
+        end
+        DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99NS debug|r " .. table.concat(parts, " "))
+    end
+    local function try(label, fn)
+        local ok, a, b, c = pcall(fn)
+        if ok then
+            out(label, a, b, c)
+        else
+            out(label, "ERREUR", a)
+        end
+    end
+    out("version", ns.version, "module", self.enabled, "actif", self.char and self.char.active)
+    local refused = {}
+    for event in pairs(ns.Events.refused) do
+        refused[#refused + 1] = event
+    end
+    table.sort(refused)
+    out("événements refusés", #refused > 0 and table.concat(refused, ", ") or "aucun")
+    out("écoute QUEST_LOG_UPDATE", ns.Events:IsListening("QUEST_LOG_UPDATE"),
+        "PLAYER_ENTERING_WORLD", ns.Events:IsListening("PLAYER_ENTERING_WORLD"))
+    local live = self.live
+    out("état réel", live ~= nil, "état utilisé = réel", self.state == live)
+    if live then
+        try("prêt", function() return live:Ready(), "questsSeen", live.questsSeen end)
+        try("niveau/race/classe", function() return live:Level(), live:Race(), live:Class() end)
+        try("faction", function() return live:Faction() end)
+        try("cartes", function()
+            local list = {}
+            for map in pairs(live:Maps()) do
+                list[#list + 1] = map
+            end
+            return table.concat(list, ",")
+        end)
+        try("quêtes du journal", function() return #live:LogQuests() end)
+        try("quête 783 rendue", function() return live:TurnedIn(783) end)
+    end
+    try("suggestions", function()
+        local list = self:Suggest()
+        return #list, list[1] and list[1].id
+    end)
+    local result = self.result
+    out("résultat", result ~= nil, "prêt", result and result.ready, "étape", result and result.current)
+    out("repères", self.pinPoints and #self.pinPoints, "minimap", self.minimapPins ~= nil,
+        "carte du monde", self.mapProvider ~= nil,
+        "rayon minimap", Minimap and Minimap.GetViewRadius and Minimap:GetViewRadius())
+    local frame = self.window
+    if not frame then
+        out("fenêtre absente")
+        return
+    end
+    out("fenêtre", frame:IsShown(), frame:IsVisible(), "hauteur", frame:GetHeight(),
+        "échelle", frame:GetEffectiveScale())
+    out("corps", frame.body:IsShown(), frame.body:IsVisible(), frame.body:GetWidth(), frame.body:GetHeight())
+    out("textes", self.windowTexts and #self.windowTexts, "lignes", #frame.lines)
+    for i = 1, math.min(#frame.lines, 4) do
+        local line = frame.lines[i]
+        local _, _, _, a = line.text:GetTextColor()
+        out("ligne", i, line:IsShown(), line:IsVisible(), line:GetHeight(), "alpha", line.text:GetAlpha(), a,
+            "police", line.text:GetFont(), "texte", line.text:GetText())
+    end
+end
+
 function Guide:AddCommands()
     ns.Slash:Add("guide", function(input)
         local name, argument = input:match("^(%S*)%s*(.-)$")
@@ -422,6 +558,9 @@ function Guide:AddCommands()
     ns.Slash:Add("arrow", function()
         self:SetArrowShown(not self.db.arrow)
     end, ns.L["Show or hide the arrow"])
+    ns.Slash:Add("debug", function()
+        self:PrintDebug()
+    end, ns.L["Show debugging information"])
 end
 
 function Guide:BuildOptions(panel, anchor)
@@ -435,7 +574,13 @@ function Guide:BuildOptions(panel, anchor)
             self.db.hideTracker = value
             self:UpdateTracker()
         end)
-    local locked = Options.AddCheck(panel, tracker, ns.L["Lock the guide window"],
+    local minimap = Options.AddCheck(panel, tracker, ns.L["Show the step's points on the minimap"],
+        function() return self.db.minimapPins end,
+        function(value) self:SetMinimapPinsShown(value) end)
+    local map = Options.AddCheck(panel, minimap, ns.L["Show the step's points on the world map"],
+        function() return self.db.mapPins end,
+        function(value) self:SetMapPinsShown(value) end)
+    local locked = Options.AddCheck(panel, map, ns.L["Lock the guide window"],
         function() return self.db.window.locked end,
         function(value) self:SetWindowLocked(value) end)
     return locked

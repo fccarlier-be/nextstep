@@ -75,6 +75,19 @@ L["Saved data comes from a newer version of NextStep: it was left untouched."] =
 
 -- Modules/Guide/Labels.lua
 L["Accept %s"] = "Accepter %s"
+L["%s, for: %s"] = "%s, pour : %s"
+L["Accept %s from %s"] = "Accepter %s auprès de %s"
+L["Accept %s (object: %s)"] = "Accepter %s (objet : %s)"
+L["Accept %s (item: %s)"] = "Accepter %s (objet du sac : %s)"
+L["Turn in %s to %s"] = "Rendre %s à %s"
+L["Turn in %s (object: %s)"] = "Rendre %s (objet : %s)"
+L["Turn in %s (item: %s)"] = "Rendre %s (objet du sac : %s)"
+L["elite"] = "élite"
+L["group of %d"] = "groupe de %d"
+L["group"] = "groupe"
+L["dungeon: %s"] = "donjon : %s"
+L["dungeon"] = "donjon"
+L["raid"] = "raid"
 L["Turn in %s"] = "Rendre %s"
 L["Complete %s"] = "Terminer %s"
 L["Kill %s"] = "Tuer %s"
@@ -135,6 +148,7 @@ L["%d yd"] = "%d m"
 -- Modules/Guide/Live.lua
 L["Show or hide the guide window"] = "Affiche ou cache la fenêtre du guide"
 L["Show or hide the arrow"] = "Affiche ou cache la flèche"
+L["Show debugging information"] = "Affiche des informations de débogage"
 L["Mark the current step as done"] = "Valide l'étape en cours"
 L["Guides for your character:"] = "Guides pour votre personnage :"
 L["Unknown guide: %s"] = "Guide inconnu : %s"
@@ -144,6 +158,42 @@ L["Usage: /ns guide [list | start <number or id> | stop | reset | skip | done | 
 L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, mode"] =
     "Affiche ou cache le guide ; /ns guide list, start, stop, reset, skip, done, mode"
 L["Show the arrow"] = "Afficher la flèche"
+L["Class quest: %s"] = "Quête de classe : %s"
+L["Back to: %s"] = "Reprendre : %s"
+L["Show the step's points on the minimap"] = "Afficher les points de l'étape sur la minimap"
+L["Show the step's points on the world map"] = "Afficher les points de l'étape sur la carte du monde"
 L["Hide the Blizzard quest tracker while following a guide"] =
     "Masquer le suivi de quêtes de Blizzard pendant un guide"
 L["Lock the guide window"] = "Verrouiller la fenêtre du guide"
+
+-- Modules/UI/Minimap.lua
+L["Minimap"] = "Minimap"
+L["Square minimap (round as an option) and zoom with the mouse wheel."] =
+    "Minimap carrée (ronde en option) et zoom à la molette."
+L["Square minimap"] = "Minimap carrée"
+L["Zoom with the mouse wheel"] = "Zoom à la molette"
+
+-- Modules/UI/AddonsMenu.lua
+L["NextStep button"] = "Bouton NextStep"
+L["A single minimap button for the farming radar, NextStep's options and the settings "
+    .. "of every add-on; other add-ons' minimap buttons are hidden."] =
+    "Un seul bouton sur la minimap pour le radar de récolte, les options de NextStep et les "
+    .. "paramètres de chaque addon ; les boutons des autres addons sont masqués."
+L["NextStep options"] = "Options de NextStep"
+L["Add-ons"] = "Addons"
+L["No other add-on loaded."] = "Aucun autre addon chargé."
+L["No settings"] = "Pas de paramètres"
+L["Left-click: add-ons menu"] = "Clic gauche : menu des addons"
+L["Right-click: NextStep options"] = "Clic droit : options de NextStep"
+L["Middle-click: farming radar"] = "Clic milieu : radar de récolte"
+L["Drag: move the button"] = "Glisser : déplacer le bouton"
+L["Open the add-ons menu"] = "Ouvre le menu des addons"
+L["Hide other add-ons' minimap buttons"] = "Masquer les boutons de minimap des autres addons"
+
+-- Modules/UI/QuestItems.lua
+L["Quest items"] = "Objets de quête"
+L["Marks the items in your bags that a quest in your log needs, and names the quest "
+    .. "in their tooltip."] =
+    "Marque dans les sacs les objets utiles à une quête du journal, et nomme la quête dans leur infobulle."
+L["Quest item"] = "Objet de quête"
+L["Quest item: %s"] = "Objet de quête : %s"

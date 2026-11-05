@@ -15,9 +15,12 @@ local SPECS = {
     "names",
     "map_reveal",
     "radar",
+    "minimap",
+    "quest_items",
     "engine",
     "guide",
     "guide_live",
+    "pins",
     "autoplay",
     "diagnostic",
 }

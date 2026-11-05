@@ -23,6 +23,15 @@ describe("Événements", function()
         expect(not game:isEventRegistered("NEXTSTEP_TEST_EVENT"), "plus personne n'écoute")
     end)
 
+    it("ignore sans erreur un événement inconnu du client", function()
+        local game = wow.boot({ unknownEvents = { NEXTSTEP_UNKNOWN = true } })
+        local ok = game.ns.Events:Register("NEXTSTEP_UNKNOWN", "test", function() end)
+        expect_eq(ok, false, "inscription refusée")
+        expect(not game:isEventRegistered("NEXTSTEP_UNKNOWN"))
+        expect_eq(#game.errors, 0)
+        expect_eq(game.ns.Events:Register("PLAYER_LEVEL_UP", "test", function() end), true)
+    end)
+
     it("isole l'erreur d'un abonné des autres", function()
         local game = wow.boot()
         local called = false

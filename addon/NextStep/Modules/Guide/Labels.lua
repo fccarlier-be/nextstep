@@ -58,12 +58,41 @@ local function withCount(text, goal, state)
     return text
 end
 
+-- Qui donne ou reprend la quête : PNJ, objet du monde (un alambic, une affiche...)
+-- ou objet du sac. Le PNJ n'est pas répété si la note de l'objectif le nomme déjà.
+local function questGiver(goal, guide)
+    if goal.npc then
+        if goal.note and goal.note:find("{npc:" .. goal.npc .. "}", 1, true) then
+            return nil
+        end
+        return "npc", name("npc", goal.npc, guide)
+    elseif goal.object then
+        return "object", name("object", goal.object, guide)
+    elseif goal.item then
+        return "item", name("item", goal.item, guide)
+    end
+end
+
+local GIVER_FORMATS = {
+    accept = { npc = "Accept %s from %s", object = "Accept %s (object: %s)", item = "Accept %s (item: %s)" },
+    turnin = { npc = "Turn in %s to %s", object = "Turn in %s (object: %s)", item = "Turn in %s (item: %s)" },
+}
+
+local function questAction(goal, guide, plain)
+    local quest = name("quest", goal.quest, guide)
+    local kind, giver = questGiver(goal, guide)
+    if kind and giver and giver ~= "?" then
+        return L[GIVER_FORMATS[goal.t][kind]]:format(quest, giver)
+    end
+    return L[plain]:format(quest)
+end
+
 local BUILDERS = {
     accept = function(goal, guide)
-        return L["Accept %s"]:format(name("quest", goal.quest, guide))
+        return questAction(goal, guide, "Accept %s")
     end,
     turnin = function(goal, guide)
-        return L["Turn in %s"]:format(name("quest", goal.quest, guide))
+        return questAction(goal, guide, "Turn in %s")
     end,
     complete = function(goal, guide)
         return L["Complete %s"]:format(name("quest", goal.quest, guide))
@@ -175,6 +204,122 @@ function Labels.GoalNote(goal, guide)
     if goal.note and (goal.text or BUILDERS[goal.t]) then
         return ns.DB:Render(goal.note, guide)
     end
+end
+
+-- Contenu de groupe (champ group des données : élite, groupe de N, donjon, raid).
+-- Une quête est marquée sur tous ses objectifs (accepter, rendre…) dès que l'un
+-- d'eux porte l'information. Priorité : raid, donjon, groupe, élite.
+local GROUP_PRIORITY = { raid = 4, dungeon = 3, group = 2, elite = 1 }
+local questGroups = setmetatable({}, { __mode = "k" })   -- [guide] = { [quête] = group }
+
+local function groupsOf(guide)
+    local groups = questGroups[guide]
+    if not groups then
+        groups = {}
+        for _, step in ipairs(guide.steps or {}) do
+            for _, goal in ipairs(step.goals or {}) do
+                local group = goal.group
+                if goal.quest and group and GROUP_PRIORITY[group.kind] then
+                    local known = groups[goal.quest]
+                    if not known or GROUP_PRIORITY[group.kind] > GROUP_PRIORITY[known.kind] then
+                        groups[goal.quest] = group
+                    end
+                end
+            end
+        end
+        questGroups[guide] = groups
+    end
+    return groups
+end
+
+-- Mention du contenu de groupe d'un objectif (« élite », « groupe de 2 »…), ou nil.
+function Labels.GroupTag(goal, guide)
+    local group = goal.group
+    if goal.quest and guide then
+        group = groupsOf(guide)[goal.quest] or group
+    end
+    local kind = group and group.kind
+    if kind == "elite" then
+        return L["elite"]
+    elseif kind == "group" then
+        return group.size and L["group of %d"]:format(group.size) or L["group"]
+    elseif kind == "dungeon" then
+        return group.name and L["dungeon: %s"]:format(group.name) or L["dungeon"]
+    elseif kind == "raid" then
+        return L["raid"]
+    end
+end
+
+-- Niveau des quêtes (qlvl, porté par l'objectif « accepter ») : une quête garde
+-- son niveau sur tous ses objectifs.
+local questLevels = setmetatable({}, { __mode = "k" })   -- [guide] = { [quête] = niveau }
+
+local function levelsOf(guide)
+    local levels = questLevels[guide]
+    if not levels then
+        levels = {}
+        for _, step in ipairs(guide.steps or {}) do
+            for _, goal in ipairs(step.goals or {}) do
+                if goal.quest and goal.qlvl and not levels[goal.quest] then
+                    levels[goal.quest] = goal.qlvl
+                end
+            end
+        end
+        questLevels[guide] = levels
+    end
+    return levels
+end
+
+function Labels.QuestLevel(goal, guide)
+    if goal.qlvl then
+        return goal.qlvl
+    end
+    return goal.quest and guide and levelsOf(guide)[goal.quest] or nil
+end
+
+-- Difficulté d'une quête selon l'écart de niveau, comme les couleurs du jeu :
+-- "trivial" (grise, plus d'expérience), "easy" (verte), "normal" (jaune : de 2
+-- niveaux en dessous à 2 au-dessus), "hard" (orange : 3 ou 4 au-dessus),
+-- "impossible" (rouge : 5 ou plus au-dessus).
+function Labels.Difficulty(questLevel, level)
+    local diff = questLevel - level
+    if diff >= 5 then
+        return "impossible"
+    elseif diff >= 3 then
+        return "hard"
+    elseif diff >= -2 then
+        return "normal"
+    end
+    -- Niveau gris du jeu classique (quêtes et monstres).
+    local gray
+    if level <= 5 then
+        gray = 0
+    elseif level <= 39 then
+        gray = level - 5 - math.floor(level / 10)
+    elseif level <= 59 then
+        gray = level - 1 - math.floor(level / 5)
+    else
+        gray = level - 9
+    end
+    return questLevel <= gray and "trivial" or "easy"
+end
+
+Labels.DIFFICULTY_COLORS = {
+    trivial = "808080",
+    easy = "40c040",
+    normal = "ffd100",
+    hard = "ff8040",
+    impossible = "ff1a1a",
+}
+
+-- Niveau de la quête d'un objectif, coloré selon sa difficulté (« [10] »), ou nil.
+function Labels.LevelTag(goal, guide, level)
+    local questLevel = Labels.QuestLevel(goal, guide)
+    if not (questLevel and level) then
+        return nil
+    end
+    local color = Labels.DIFFICULTY_COLORS[Labels.Difficulty(questLevel, level)]
+    return ("|cff%s[%d]|r"):format(color, questLevel)
 end
 
 function Labels.Step(step, guide)

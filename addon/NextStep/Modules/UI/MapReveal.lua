@@ -52,7 +52,13 @@ end
 local function tileSize(pin, mapID)
     local layers = C_Map.GetMapArtLayers and C_Map.GetMapArtLayers(mapID)
     local container = pin:GetMap().GetCanvasContainer and pin:GetMap():GetCanvasContainer()
-    local index = container and container.GetCurrentLayerIndex and container:GetCurrentLayerIndex() or 1
+    -- Protégé : avant le premier affichage de la carte, le conteneur n'a pas encore
+    -- ses niveaux de zoom et GetCurrentLayerIndex lève une erreur.
+    local ok, index = false, nil
+    if container and container.GetCurrentLayerIndex then
+        ok, index = pcall(container.GetCurrentLayerIndex, container)
+    end
+    index = ok and index or 1
     local layer = layers and layers[index]
     return layer and layer.tileWidth or TILE_SIZE, layer and layer.tileHeight or TILE_SIZE
 end
@@ -131,7 +137,8 @@ end
 function MapReveal:Refresh()
     self:Release()
     local pin = self.pin
-    if not (self.enabled and pin) then
+    -- Carte fermée : rien à dessiner, le crochet de RefreshOverlays redessine à l'ouverture.
+    if not (self.enabled and pin and pin:GetMap():IsShown()) then
         return
     end
     local mapID = pin:GetMap():GetMapID()
