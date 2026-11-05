@@ -124,11 +124,29 @@ end
 
 -- Cadre du radar : centré, sans souris, sous le reste de l'interface.
 function Radar:CreateFrame()
-    local frame = CreateFrame("Frame", nil, UIParent)
+    local frame = CreateFrame("Frame", "NextStepRadarFrame", UIParent)
     frame:SetPoint("CENTER")
     frame:SetFrameStrata("BACKGROUND")
     frame:EnableMouse(false)
     frame:Hide()
+
+    -- Fermeture : la croix (seul élément qui prend la souris) et Échap, qui cache le
+    -- cadre (UISpecialFrames) ; le radar se ferme alors pour de bon.
+    local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+    close:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -8, -8)
+    close:SetFrameStrata("LOW")
+    close:SetScript("OnClick", function()
+        self:SetShown(false)
+    end)
+    frame.close = close
+    frame:SetScript("OnHide", function()
+        if self.active then
+            self:SetShown(false)
+        end
+    end)
+    if UISpecialFrames then
+        table.insert(UISpecialFrames, "NextStepRadarFrame")
+    end
 
     local ring = frame:CreateTexture(nil, "OVERLAY")
     ring:SetTexture(MEDIA .. "RadarRing")

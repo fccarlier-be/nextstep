@@ -7,7 +7,9 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
-- **Sorts à apprendre** (phase 4b) : les sorts que le maître de classe a pour le personnage, d'après les tables de What's Training pour Forever (MIT, importées par `Tools/trainer/`), selon la classe, la race, la faction, les talents et les compétences, avec leur coût. Affichés sur l'étape « maître de classe » et en rappel sous l'étape (orange si l'argent manque), détail dans l'infobulle, prochain niveau à nouveaux sorts ; commande `/ns spells`.
+- **Sorts à apprendre** (phase 4b) : les sorts que le maître de classe a pour le personnage, d'après les tables de What's Training pour Forever (MIT, importées par `Tools/trainer/`), selon la classe, la race, la faction, les talents et les compétences, avec leur coût. Affichés sur l'étape « maître de classe » et en rappel sous l'étape (orange si l'argent manque), détail dans l'infobulle, prochain niveau à nouveaux sorts.
+- **Fenêtre des sorts de classe** (menu du bouton NextStep, ou `/ns spells`) : ce que le maître a maintenant, puis chaque niveau à venir jusqu'au 60 avec ses nouveaux sorts, le prix de chacun et le total du niveau ; vert si l'argent suffit, orange sinon ; Échap pour fermer. `/ns spells list` donne la liste dans le chat.
+- Radar de récolte : il se ferme aussi par **Échap** ou par la **croix** en haut à droite de l'anneau.
 
 ### Modifié
 - L'étape « maître de classe » est validée d'office quand il n'y a rien de nouveau à apprendre (règle des niveaux pairs en secours si la classe n'a pas de données).

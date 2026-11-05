@@ -76,6 +76,7 @@ files["addon/**"] = {
         "SettingsPanel",
         "TooltipDataProcessor",
         "UIParent",
+        "UISpecialFrames",
         "UnitClass",
         "UnitFactionGroup",
         "UnitGUID",

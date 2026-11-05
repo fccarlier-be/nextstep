@@ -208,4 +208,7 @@ L["Missing: %s"] = "Il manque : %s"
 L["Level %d: %d new spells"] = "Niveau %d : %d nouveaux sorts"
 L["No trainer data for your class."] = "Pas de données de maître pour ta classe."
 L["Nothing to learn at your trainer for now."] = "Rien à apprendre chez ton maître pour l'instant."
-L["List the spells to learn at your class trainer"] = "Liste les sorts à apprendre chez ton maître de classe"
+L["Show your class spells, now and at the next levels (list: in the chat)"] =
+    "Affiche tes sorts de classe, maintenant et aux niveaux suivants (list : dans le chat)"
+L["Class spells"] = "Sorts de classe"
+L["Now: %d spells"] = "Maintenant : %d sorts"

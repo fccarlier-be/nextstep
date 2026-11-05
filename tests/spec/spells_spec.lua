@@ -128,13 +128,48 @@ describe("Sorts à apprendre", function()
         expect_eq(Guide:Refresh().current, 2, "tout est appris : étape faite")
     end)
 
+    it("prévoit les sorts des niveaux à venir, avec leur prix", function()
+        local game, Guide = boot()
+        local hunter = Player.new({ class = "HUNTER", level = 10, spells = knownUpTo(game.ns, "HUNTER", 10) })
+        local plan = Guide:SpellPlan(hunter)
+        expect_eq(plan[1].level, nil, "d'abord ce qui est possible maintenant")
+        expect_eq(#plan[1].spells, 0)
+        expect_eq(plan[2].level, 12, "puis le niveau 12")
+        local set = ids(plan[2].spells)
+        expect(set[14281], "rang 2 de Tir des arcanes au 12 (rang 1 connu)")
+        local sum = 0
+        for _, spell in ipairs(plan[2].spells) do
+            sum = sum + spell.cost
+        end
+        expect_eq(plan[2].total, sum)
+        expect_eq(plan[#plan].level <= 60, true)
+        -- Un rang à venir dont le rang précédent arrive plus tôt dans le plan est prévu aussi.
+        local fresh = Guide:SpellPlan(Player.new({ class = "HUNTER", level = 1 }))
+        local later = {}
+        for _, group in ipairs(fresh) do
+            for _, spell in ipairs(group.spells) do
+                later[spell.id] = group.level or 1
+            end
+        end
+        expect(later[1978] and later[13549] and later[1978] < later[13549], "Morsure de serpent 1 puis 2")
+
+        Guide:SetState(hunter)
+        local rows = Guide:SpellsWindowRows()
+        expect(rows[1].header, "titre de groupe")
+        expect(rows[1].text:find("Nothing to learn", 1, true), "rien maintenant")
+        expect(rows[2].text:find("Level 12", 1, true), "niveau 12 ensuite")
+        expect(rows[3].cost ~= nil, "prix de chaque sort")
+        SlashCmdList.NEXTSTEP("spells")
+        expect_eq(#game.errors, 0, "la fenêtre s'ouvre sans erreur")
+    end)
+
     it("affiche le coût et liste les sorts avec /ns spells", function()
         local game, Guide = boot()
         expect_eq(Guide.FormatMoney(12345), "1 g 23 s 45 c")
         expect_eq(Guide.FormatMoney(0), "0 c")
         Guide:SetState(Player.new({ class = "HUNTER", level = 4 }))
         local before = #game.chat
-        SlashCmdList.NEXTSTEP("spells")
+        SlashCmdList.NEXTSTEP("spells list")
         local text = table.concat(game.chat, " ", before + 1)
         expect(text:find("spells to learn", 1, true), "résumé dans le chat")
         expect(text:find("Level 6", 1, true), "prochain niveau")

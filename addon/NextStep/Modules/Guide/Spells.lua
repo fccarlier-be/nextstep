@@ -45,7 +45,7 @@ local function knownSet(byLevel, state)
     return known, levels
 end
 
-local function applies(spell, state, known)
+local function applies(spell, state, known, future)
     if spell.races and not contains(spell.races, state:Race()) then
         return false
     end
@@ -55,29 +55,21 @@ local function applies(spell, state, known)
     if spell.talent and not known[spell.talent] and not state:Knows(spell.talent) then
         return false
     end
-    if spell.skill and (state:Skill(spell.skill[1]) or 0) < spell.skill[2] then
+    if spell.skill and not future and (state:Skill(spell.skill[1]) or 0) < spell.skill[2] then
         return false
     end
     return true
 end
 
--- Sorts à apprendre jusqu'au niveau maxLevel (niveau du personnage par défaut) :
--- liste { id, cost, level } triée par niveau, et coût total. nil si la classe n'a
--- pas de données.
-function Guide:SpellsToLearn(state, maxLevel)
-    state = state or self.state
-    local byLevel = state and ns.DB.trainerSpells[state:Class()]
-    if not byLevel then
-        return nil, 0
-    end
-    maxLevel = maxLevel or state:Level()
-    local known, levels = knownSet(byLevel, state)
-    table.sort(levels)
+-- Sorts qui deviennent possibles entre minLevel et maxLevel, en apprenant tout au
+-- fur et à mesure (known est complété). future : les compétences (poisons) ne sont
+-- pas vérifiées, on ne peut pas prévoir leur rang.
+local function learnable(byLevel, levels, state, known, minLevel, maxLevel, future)
     local list, total = {}, 0
     for _, level in ipairs(levels) do
-        if level <= maxLevel then
+        if level >= minLevel and level <= maxLevel then
             for _, spell in ipairs(byLevel[level]) do
-                if not known[spell.id] and applies(spell, state, known) then
+                if not known[spell.id] and applies(spell, state, known, future) then
                     local ready = true
                     for _, req in ipairs(spell.req or {}) do
                         -- Prérequis absent des tables (talent, quête) : le client le dit.
@@ -98,22 +90,59 @@ function Guide:SpellsToLearn(state, maxLevel)
     return list, total
 end
 
--- Prochain niveau où le maître aura de nouveaux sorts, et leur nombre.
-function Guide:NextTrainerLevel(state)
-    state = state or self.state
+local function classData(state)
     local byLevel = state and ns.DB.trainerSpells[state:Class()]
     if not byLevel then
         return nil
     end
+    local known, levels = knownSet(byLevel, state)
+    table.sort(levels)
+    return byLevel, levels, known
+end
+
+-- Sorts à apprendre jusqu'au niveau maxLevel (niveau du personnage par défaut) :
+-- liste { id, cost, level } triée par niveau, et coût total. nil si la classe n'a
+-- pas de données.
+function Guide:SpellsToLearn(state, maxLevel)
+    state = state or self.state
+    local byLevel, levels, known = classData(state)
+    if not byLevel then
+        return nil, 0
+    end
+    return learnable(byLevel, levels, state, known, 1, maxLevel or state:Level(), false)
+end
+
+-- Plan des sorts : ce qui est possible maintenant, puis chaque niveau à venir qui
+-- apporte de nouveaux sorts, jusqu'à maxLevel (60 par défaut). Liste de groupes
+-- { level (nil : maintenant), spells, total }.
+local MAX_LEVEL = 60
+
+function Guide:SpellPlan(state, maxLevel)
+    state = state or self.state
+    local byLevel, levels, known = classData(state)
+    if not byLevel then
+        return nil
+    end
     local level = state:Level()
-    local now = #(self:SpellsToLearn(state, level))
-    for next = level + 1, level + 10 do
+    local spells, total = learnable(byLevel, levels, state, known, 1, level, false)
+    local plan = { { level = nil, spells = spells, total = total } }
+    for next = level + 1, maxLevel or MAX_LEVEL do
         if byLevel[next] then
-            local count = #(self:SpellsToLearn(state, next)) - now
-            if count > 0 then
-                return next, count
+            spells, total = learnable(byLevel, levels, state, known, next, next, true)
+            if #spells > 0 then
+                plan[#plan + 1] = { level = next, spells = spells, total = total }
             end
         end
+    end
+    return plan
+end
+
+-- Prochain niveau où le maître aura de nouveaux sorts, et leur nombre.
+function Guide:NextTrainerLevel(state)
+    local plan = self:SpellPlan(state)
+    local next = plan and plan[2]
+    if next then
+        return next.level, #next.spells
     end
 end
 
