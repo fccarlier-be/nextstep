@@ -152,6 +152,25 @@ function Style.Button(parent, label, width, height, onClick)
     function button.SetLabel(self, text)
         self.text:SetText(text)
     end
+    -- Désactivé : texte et icône estompés.
+    local setEnabled = button.SetEnabled
+    function button.SetEnabled(self, enabled)
+        setEnabled(self, enabled)
+        self.text:SetAlpha(enabled and 1 or 0.35)
+        if rawget(self, "icon") then
+            self.icon:SetAlpha(enabled and 1 or 0.35)
+        end
+    end
+    return button
+end
+
+-- Bouton plat avec une icône au centre (barre de titre).
+function Style.IconButton(parent, texture, size, onClick)
+    local button = Style.Button(parent, "", size, size, onClick)
+    button.icon = button:CreateTexture(nil, "ARTWORK")
+    button.icon:SetTexture(texture)
+    button.icon:SetPoint("TOPLEFT", 3, -3)
+    button.icon:SetPoint("BOTTOMRIGHT", -3, 3)
     return button
 end
 

@@ -13,10 +13,10 @@ local L = ns.L
 local Guide = ns.Modules:Get("Guide")
 local Labels = ns.GuideLabels
 
-local WIDTH = 320
+local WIDTH = 330
 local PADDING = 10
-local HEADER_HEIGHT = 24
-local FOOTER_HEIGHT = 30
+local HEADER_HEIGHT = 30
+local FOOTER_HEIGHT = 36
 local LINE_GAP = 3
 local INDENT = 14
 
@@ -28,13 +28,14 @@ local ICONS = {
     note = "|TInterface\\FriendsFrame\\InformationIcon:14:14|t",
 }
 
+local Style = ns.Style
 local COLORS = {
-    title = { 1, 0.82, 0 },
-    text = { 1, 1, 1 },
+    title = Style.COLORS.gold,
+    text = Style.COLORS.text,
     done = { 0.5, 0.5, 0.5 },
-    muted = { 0.65, 0.65, 0.65 },
-    action = { 0.4, 0.8, 1 },
-    warning = { 1, 0.5, 0.25 },
+    muted = Style.COLORS.muted,
+    action = Style.COLORS.blue,
+    warning = Style.COLORS.orange,
 }
 
 ---------------------------------------------------------------------------
@@ -59,38 +60,41 @@ local function restorePosition(self)
     end
 end
 
+-- Bouton plat du style commun (Core/Style.lua), avec SetText comme un bouton du jeu.
 local function smallButton(parent, text, width, onClick)
-    local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
-    button:SetSize(width, 20)
-    button:SetText(text)
-    button:SetScript("OnClick", onClick)
+    local button = Style.Button(parent, text, width, 24, onClick)
+    button.text:SetFontObject("GameFontNormalSmall")
+    button.SetText = button.SetLabel
+    return button
+end
+
+-- Petit bouton d'icône de la barre de titre (texte doré, éclairé au survol).
+local function headerButton(parent, label, onClick)
+    local button = Style.Button(parent, label, 22, 22, onClick)
+    button.text:SetFontObject("GameFontNormal")
     return button
 end
 
 function Guide:CreateWindow()
-    local frame = CreateFrame("Frame", "NextStepGuideFrame", UIParent,
-        BackdropTemplateMixin and "BackdropTemplate" or nil)
+    local frame = CreateFrame("Frame", "NextStepGuideFrame", UIParent)
     frame:SetSize(WIDTH, HEADER_HEIGHT + FOOTER_HEIGHT)
     frame:SetFrameStrata("MEDIUM")
     frame:SetClampedToScreen(true)
     frame:SetMovable(true)
     frame:EnableMouse(true)
-    if frame.SetBackdrop then
-        frame:SetBackdrop({
-            bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-            tile = true, tileSize = 16, edgeSize = 14,
-            insets = { left = 3, right = 3, top = 3, bottom = 3 },
-        })
-        frame:SetBackdropColor(0.05, 0.05, 0.08, 0.85)
-        frame:SetBackdropBorderColor(0.6, 0.5, 0.3, 1)
-    end
+    -- Style sombre et doré, comme le journal.
+    frame.bg = Style.Fill(frame, Style.COLORS.background)
+    Style.Border(frame, Style.COLORS.goldDim)
 
-    -- Barre de titre : déplacement, guide suivi, options, réduction.
+    -- Barre de titre : déplacement, guide suivi, journal, options, réduction.
     local header = CreateFrame("Frame", nil, frame)
-    header:SetPoint("TOPLEFT", 0, 0)
-    header:SetPoint("TOPRIGHT", 0, 0)
+    header:SetPoint("TOPLEFT", 1, -1)
+    header:SetPoint("TOPRIGHT", -1, -1)
     header:SetHeight(HEADER_HEIGHT)
+    Style.Fill(header, Style.COLORS.header)
+    local underline = Style.Line(header, Style.COLORS.gold)
+    underline:SetPoint("BOTTOMLEFT")
+    underline:SetPoint("BOTTOMRIGHT")
     header:EnableMouse(true)
     header:RegisterForDrag("LeftButton")
     header:SetScript("OnDragStart", function()
@@ -103,28 +107,37 @@ function Guide:CreateWindow()
         savePosition(self)
     end)
 
-    local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    title:SetPoint("LEFT", PADDING, 0)
-    title:SetPoint("RIGHT", -50, 0)
+    local logo = header:CreateTexture(nil, "ARTWORK")
+    logo:SetTexture("Interface\\AddOns\\NextStep\\Media\\IconSmall")
+    logo:SetSize(20, 20)
+    logo:SetPoint("LEFT", 6, 0)
+
+    local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    title:SetPoint("LEFT", logo, "RIGHT", 6, 0)
+    title:SetPoint("RIGHT", -80, 0)
     title:SetJustifyH("LEFT")
+    if title.SetWordWrap then
+        title:SetWordWrap(false)
+    end
     frame.title = title
 
-    local collapse = CreateFrame("Button", nil, header)
-    collapse:SetSize(16, 16)
-    collapse:SetPoint("RIGHT", -6, 0)
-    collapse:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-Up")
-    collapse:SetScript("OnClick", function()
+    local collapse = headerButton(header, "-", function()
         self:SetWindowCollapsed(not self.db.window.collapsed)
     end)
+    collapse:SetPoint("RIGHT", -4, 0)
     frame.collapse = collapse
 
-    local options = CreateFrame("Button", nil, header)
-    options:SetSize(16, 16)
-    options:SetPoint("RIGHT", collapse, "LEFT", -4, 0)
-    options:SetNormalTexture("Interface\\Buttons\\UI-OptionsButton")
-    options:SetScript("OnClick", function()
+    local options = Style.IconButton(header, "Interface\\Buttons\\UI-OptionsButton", 22, function()
         ns.Options:Open()
     end)
+    options:SetPoint("RIGHT", collapse, "LEFT", -3, 0)
+
+    local journal = Style.IconButton(header, "Interface\\Icons\\INV_Misc_Book_09", 22, function()
+        self:ToggleJournal("routes")
+    end)
+    journal.icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+    journal:SetPoint("RIGHT", options, "LEFT", -3, 0)
+    frame.journalButton = journal
 
     -- Corps : lignes réutilisées d'une mise à jour à l'autre.
     local body = CreateFrame("Frame", nil, frame)
@@ -137,9 +150,13 @@ function Guide:CreateWindow()
 
     -- Pied : Ignorer, Valider, mode.
     local footer = CreateFrame("Frame", nil, frame)
-    footer:SetPoint("BOTTOMLEFT", PADDING, 6)
-    footer:SetPoint("BOTTOMRIGHT", -PADDING, 6)
-    footer:SetHeight(FOOTER_HEIGHT - 6)
+    footer:SetPoint("BOTTOMLEFT", PADDING, 7)
+    footer:SetPoint("BOTTOMRIGHT", -PADDING, 7)
+    footer:SetHeight(FOOTER_HEIGHT - 10)
+    local separator = Style.Line(frame, Style.COLORS.goldDim)
+    separator:SetPoint("BOTTOMLEFT", 1, FOOTER_HEIGHT - 2)
+    separator:SetPoint("BOTTOMRIGHT", -1, FOOTER_HEIGHT - 2)
+    frame.separator = separator
     frame.skip = smallButton(footer, L["Skip"], 70, function()
         local result = self.result
         if result and result.current then
@@ -494,8 +511,8 @@ function Guide:UpdateWindow(result)
     local collapsed = self.db.window.collapsed
     frame.body:SetShown(not collapsed)
     frame.footer:SetShown(not collapsed)
-    frame.collapse:SetNormalTexture(collapsed and "Interface\\Buttons\\UI-PlusButton-Up"
-        or "Interface\\Buttons\\UI-MinusButton-Up")
+    frame.collapse:SetLabel(collapsed and "+" or "-")
+    frame.separator:SetShown(not collapsed)
     if collapsed then
         frame:SetHeight(HEADER_HEIGHT)
     else

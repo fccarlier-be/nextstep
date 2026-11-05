@@ -460,7 +460,7 @@ local function fillCard(self, card, row)
         card.bar:SetValue(row.progress or 0)
         card.bar:Show()
     elseif status == "done" then
-        card.badge:SetText(L["Done"])
+        card.badge:SetText(L["Finished"])
         setColor(card.badge, C.green)
         card.bar:SetValue(1)
         card.bar:Show()

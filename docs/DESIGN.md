@@ -391,7 +391,7 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 
 ### Style des fenêtres
 
-Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 2026-11-05) : fond presque noir, barre de titre avec le logo et un liseré doré, panneaux un peu plus clairs, cartes avec survol et sélection teintés d'or, boutons plats (onglet actif souligné d'or), barres d'avancement dorées, icônes du jeu aux coins rognés. Aucun modèle XML du client : seulement des aplats d'une texture blanche teintée, pour ne dépendre d'aucune texture propre à une version du jeu. Le journal l'utilise ; la fenêtre du guide et les autres y passeront.
+Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 2026-11-05) : fond presque noir, barre de titre avec le logo et un liseré doré, panneaux un peu plus clairs, cartes avec survol et sélection teintés d'or, boutons plats (onglet actif souligné d'or), barres d'avancement dorées, icônes du jeu aux coins rognés. Aucun modèle XML du client : seulement des aplats d'une texture blanche teintée, pour ne dépendre d'aucune texture propre à une version du jeu. Le journal et la fenêtre du guide l'utilisent (barre de titre avec le logo, boutons Journal, Options et Réduire ; boutons Ignorer, Valider et Strict / Libre plats, estompés quand ils sont désactivés) ; les autres fenêtres y passeront.
 
 ### Divers
 
