@@ -5,7 +5,7 @@ max_line_length = 120
 self = false
 -- .lua et .luarocks : installations de Lua faites par l'intégration continue.
 exclude_files = {
-    "Tools/bin/**", "Tools/import/cache/**", "Tools/worldmap/cache/**", "addon/NextStep/Libs/**",
+    "Tools/bin/**", "Tools/import/cache/**", "Tools/trainer/cache/**", "Tools/worldmap/cache/**", "addon/NextStep/Libs/**",
     ".lua/**", ".luarocks/**",
     -- Données générées par Tools/import/import.lua et Tools/worldmap/generate.lua
     "addon/NextStep/Data/Imported/**", "addon/NextStep_Alliance/Data/**", "addon/NextStep_Horde/Data/**",
@@ -44,6 +44,7 @@ files["addon/**"] = {
         "Enum",
         "GameTooltip",
         "GetBindLocation",
+        "GetCoinTextureString",
         "GetCursorPosition",
         "GetCVar",
         "geterrorhandler",

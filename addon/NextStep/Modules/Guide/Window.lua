@@ -273,6 +273,14 @@ local function addGoal(self, view, result, i, j, status)
         end
         options.tooltip = L["Click to mark it as done."]
     end
+    -- Maître de classe : les sorts à apprendre et leur coût.
+    if goal.t == "train" and goal.class and status ~= "done" then
+        local summary = self:SpellsSummary()
+        if summary then
+            text = ("%s |cffa0a0a0- %s|r"):format(text, summary)
+            options.tooltip = self:SpellsTooltip()
+        end
+    end
     local color = status == "done" and COLORS.done or COLORS.text
     addLine(view, (ICONS[status] or ICONS.todo) .. " " .. text, color, options)
 end
@@ -344,6 +352,20 @@ local function addFooterLines(view, result)
     end
     if result.advice.overleveled then
         addLine(view, L["You are above the level of this guide."], COLORS.warning)
+    end
+end
+
+-- Rappel des sorts à apprendre, sauf si l'étape courante mène déjà au maître.
+local function addSpellsReminder(self, view, result)
+    for _, goal in ipairs(result.guide.steps[result.current].goals) do
+        if goal.t == "train" and goal.class then
+            return
+        end
+    end
+    local summary, _, total = self:SpellsSummary()
+    if summary then
+        local short = (self.state:Money() or 0) < total
+        addLine(view, summary, short and COLORS.warning or COLORS.muted, { tooltip = self:SpellsTooltip() })
     end
 end
 
@@ -457,6 +479,7 @@ function Guide:UpdateWindow(result)
         addAlong(self, view, result)
         addAbandoned(self, view, result)
         addFooterLines(view, result)
+        addSpellsReminder(self, view, result)
         addClassGuides(self, view)
     end
     for index = view.count + 1, #frame.lines do

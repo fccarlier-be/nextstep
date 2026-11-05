@@ -238,9 +238,14 @@ local EVALUATORS = {
             end
             return TODO
         end
-        -- Maître de classe déjà vu à ce niveau, ou au niveau pair précédent (les
-        -- nouveaux sorts de classe arrivent aux niveaux pairs) : rien à apprendre.
-        if goal.class and ctx.trainedLevel then
+        -- Maître de classe : rien à apprendre d'après les sorts de la classe (What's
+        -- Training), l'étape est faite. Sans ces données : maître déjà vu à ce niveau,
+        -- ou au niveau pair précédent (les nouveaux sorts arrivent aux niveaux pairs).
+        local toLearn = goal.class and ctx.spellsToLearn and ctx.spellsToLearn()
+        if toLearn == 0 then
+            return DONE
+        end
+        if goal.class and toLearn == nil and ctx.trainedLevel then
             local level = state:Level()
             if ctx.trainedLevel >= level or (level % 2 == 1 and ctx.trainedLevel >= level - 1) then
                 return DONE

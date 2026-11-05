@@ -6,6 +6,12 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+### Ajouté
+- **Sorts à apprendre** (phase 4b) : les sorts que le maître de classe a pour le personnage, d'après les tables de What's Training pour Forever (MIT, importées par `Tools/trainer/`), selon la classe, la race, la faction, les talents et les compétences, avec leur coût. Affichés sur l'étape « maître de classe » et en rappel sous l'étape (orange si l'argent manque), détail dans l'infobulle, prochain niveau à nouveaux sorts ; commande `/ns spells`.
+
+### Modifié
+- L'étape « maître de classe » est validée d'office quand il n'y a rien de nouveau à apprendre (règle des niveaux pairs en secours si la classe n'a pas de données).
+
 ## [0.1.0] - 2026-11-05
 
 ### Ajouté

@@ -12,6 +12,8 @@ desktop.ini
 
 # Sources téléchargées par le script d'import (seul le résultat est versionné)
 Tools/import/cache/
+# Sources de What's Training téléchargées par Tools/trainer/fetch.ps1
+Tools/trainer/cache/
 # Outils et tables du client téléchargés ou extraits par Tools/worldmap/run.ps1
 Tools/worldmap/cache/
 Tools/worldmap/Export/bin/

@@ -14,6 +14,7 @@ DB.texts = {}       -- [locale] = { shared = { [anglais] = traduit }, guides = {
 DB.mapFrames = {}   -- [repère] = { [uiMapID] = cadre }
 DB.mapOverlays = {} -- [UiMapArtID] = { { largeur, hauteur, x, y, FileDataID... } } (carte sans brouillard)
 DB.retired = {}     -- [ancien identifiant de guide] = true
+DB.trainerSpells = {} -- [classe] = { [niveau] = { { id, cost, req, talent, races, faction, skill } } }
 DB.sources = {}
 DB.learned = nil    -- [genre][id] = nom vu en jeu (module Names), dans la langue du client
 DB.resolvers = {}   -- [genre] = function(id) -> nom ; dernier recours avant l'anglais
@@ -74,6 +75,11 @@ end
 -- rangée par rangée (forme de C_MapExplorationInfo.GetExploredMapTextures).
 function DB:AddMapOverlays(mapArtID, build)
     self.mapOverlays[mapArtID] = build()
+end
+
+-- Sorts du maître de classe, par niveau (tables de What's Training).
+function DB:AddTrainerSpells(class, build)
+    self.trainerSpells[class] = build()
 end
 
 function DB:RetireGuides(list)

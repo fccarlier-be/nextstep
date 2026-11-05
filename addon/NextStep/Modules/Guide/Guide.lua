@@ -85,6 +85,10 @@ function Guide:Refresh()
         answers = self.char.answers,
         dungeons = self.char.dungeons,
         trainedLevel = self.char.trainedLevel,
+        spellsToLearn = function()
+            local list = self.SpellsToLearn and self:SpellsToLearn()
+            return list and #list
+        end,
     })
     -- Tant que le journal de quêtes n'est pas lu, rien n'est mémorisé.
     if self.state:Ready() ~= false then
