@@ -2,8 +2,8 @@
 
     python Tools/radar/textures.py
 
-- Media/RadarRing.tga (256 x 256) : anneau blanc adouci et deux cercles discrets,
-  teintés en jeu ;
+- Media/RadarRing.tga (512 x 512) : anneau blanc fin et adouci et deux cercles
+  discrets, teintés en jeu (assez de pixels pour rester net à 60 % de l'écran) ;
 - Media/RadarMask.tga (64 x 64) : masque entièrement transparent, qui cache le
   terrain de la minimap et ne laisse que les points de suivi.
 
@@ -33,20 +33,20 @@ def band(distance, radius, width):
     return max(0.0, 1.0 - abs(distance - radius) / width)
 
 
-def ring(x, y, size=256):
+def ring(x, y, size=512):
     center = (size - 1) / 2
     distance = math.hypot(x - center, y - center)
     outer = size / 2 - 3
     alpha = max(
-        band(distance, outer, 2.5),                 # bord
-        0.25 * band(distance, outer * 2 / 3, 1.5),  # cercles intérieurs, discrets
-        0.25 * band(distance, outer / 3, 1.5),
+        0.85 * band(distance, outer, 1.6),          # bord, fin
+        0.18 * band(distance, outer * 2 / 3, 1.2),  # cercles intérieurs, discrets
+        0.18 * band(distance, outer / 3, 1.2),
     )
     return 255, 255, 255, int(round(255 * min(1.0, alpha)))
 
 
 def main():
-    write_tga(os.path.join(MEDIA, "RadarRing.tga"), 256, ring)
+    write_tga(os.path.join(MEDIA, "RadarRing.tga"), 512, ring)
     write_tga(os.path.join(MEDIA, "RadarMask.tga"), 64, lambda x, y: (0, 0, 0, 0))
 
 

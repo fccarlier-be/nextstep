@@ -61,6 +61,7 @@ files["addon/**"] = {
         "GetSubZoneText",
         "GetTaxiMapID",
         "GetZoneText",
+        "HideUIPanel",
         "hooksecurefunc",
         "InCombatLockdown",
         "IsIndoors",

@@ -250,3 +250,8 @@ L["Open the guide journal"] = "Ouvre le journal du guide"
 L["Click to open it in the quest log."] = "Clic : l'ouvrir dans le journal de quêtes."
 L["Not in your quest log."] = "Pas dans ton journal de quêtes."
 L["Not in combat."] = "Pas en combat."
+
+-- Core/Options.lua
+L["Open NextStep options"] = "Ouvrir les options de NextStep"
+L["Also with /ns options or a right-click on the NextStep minimap button."] =
+    "Aussi avec /ns options ou un clic droit sur le bouton NextStep de la minimap."

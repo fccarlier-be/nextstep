@@ -394,7 +394,7 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 
 ### Style des fenêtres
 
-Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 2026-11-05) : fond presque noir, barre de titre avec le logo et un liseré doré, panneaux un peu plus clairs, cartes avec survol et sélection teintés d'or, boutons plats (onglet actif souligné d'or), barres d'avancement dorées, icônes du jeu aux coins rognés. Aucun modèle XML du client : seulement des aplats d'une texture blanche teintée, pour ne dépendre d'aucune texture propre à une version du jeu. Le journal et la fenêtre du guide l'utilisent (barre de titre avec le logo, boutons Journal, Options et Réduire ; boutons Ignorer, Valider et Strict / Libre plats, estompés quand ils sont désactivés) ; les autres fenêtres y passeront.
+Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 2026-11-05) : fond presque noir, barre de titre avec le logo et un liseré doré, panneaux un peu plus clairs, cartes avec survol et sélection teintés d'or, boutons plats (onglet actif souligné d'or), barres d'avancement dorées, icônes du jeu aux coins rognés. Aucun modèle XML du client : seulement des aplats d'une texture blanche teintée, pour ne dépendre d'aucune texture propre à une version du jeu. Le journal, la fenêtre du guide et la **fenêtre des options** l'utilisent. Options (`Core/Options.lua`) : fenêtre défilante, une section par module (interrupteur doré, description, réglages alignés en retrait, séparateur), cases, curseurs et boutons au même style (`Options.AddCheck`, `AddSlider`, `AddButton`) ; la page NextStep des options du jeu n'a plus qu'un bouton qui ouvre cette fenêtre. Ils (barre de titre avec le logo, boutons Journal, Options et Réduire ; boutons Ignorer, Valider et Strict / Libre plats, estompés quand ils sont désactivés) ; les autres fenêtres y passeront.
 
 ### Divers
 
@@ -429,7 +429,7 @@ Une arche de pierre moussue, une étoile dorée sur la clé de voûte, des march
 | `img/logo/nextstep-curseforge-400.png` | 400 × 400 | Page CurseForge, README |
 | `addon/NextStep/Media/Icon.tga` | 128 × 128 | Liste des addons (`## IconTexture` du TOC) |
 | `addon/NextStep/Media/IconSmall.tga` | 64 × 64 | Bouton de la minimap |
-| `addon/NextStep/Media/RadarRing.tga` | 256 × 256 | Anneau du radar de récolte (`Tools/radar/textures.py`) |
+| `addon/NextStep/Media/RadarRing.tga` | 512 × 512 | Anneau du radar de récolte (`Tools/radar/textures.py`) |
 | `addon/NextStep/Media/RadarMask.tga` | 64 × 64 | Masque transparent du radar : cache le terrain de la minimap (`Tools/radar/textures.py`) |
 
 Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puissances de 2. **[À vérifier]** l'affichage de `IconTexture` sur Forever. Si l'icône est trop chargée en 32 pixels sur la minimap, une version simplifiée (même arche, sans lierre ni rochers) sera faite.

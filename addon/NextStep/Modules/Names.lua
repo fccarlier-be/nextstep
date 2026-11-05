@@ -123,13 +123,11 @@ function Names:Clear()
 end
 
 function Names:BuildOptions(panel, anchor)
-    local count = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-    count:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -8)
+    local count = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+    count:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -14)
 
-    local clear = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
-    clear:SetSize(200, 22)
+    local clear = ns.Options.AddButton(panel, L["Forget learned names"], 200)
     clear:SetPoint("LEFT", count, "RIGHT", 12, 0)
-    clear:SetText(L["Forget learned names"])
 
     local function refresh()
         count:SetText(L["Learned names: %d"]:format(self:Count()))

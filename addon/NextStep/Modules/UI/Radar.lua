@@ -65,12 +65,49 @@ function Radar:OnInitialize()
     end, L["Show or hide the farming radar"])
 end
 
+-- Événements après lesquels le client peut rétablir la minimap (masque, parent,
+-- transparence) : le radar réapplique alors ses réglages.
+local REAPPLY_EVENTS = {
+    "PLAYER_ENTERING_WORLD", "ZONE_CHANGED", "ZONE_CHANGED_INDOORS", "ZONE_CHANGED_NEW_AREA",
+    "UI_SCALE_CHANGED", "DISPLAY_SIZE_CHANGED",
+}
+
 function Radar:OnEnable()
     -- L'option de rotation est sauvegardée par le client : on la rend avant de partir.
     self:RegisterEvent("PLAYER_LOGOUT", function()
         if self.saved then
             C_CVar.SetCVar("rotateMinimap", self.saved.rotate)
         end
+    end)
+    for _, event in ipairs(REAPPLY_EVENTS) do
+        self:RegisterEvent(event, "RequestReapply")
+    end
+    -- Quelqu'un d'autre (le client, un addon) change la minimap pendant le radar.
+    if not self.hooked and Minimap and hooksecurefunc then
+        self.hooked = true
+        for _, method in ipairs({ "SetMaskTexture", "SetAlpha", "SetParent" }) do
+            hooksecurefunc(Minimap, method, function()
+                if self.active and not self.applying then
+                    self:RequestReapply()
+                end
+            end)
+        end
+    end
+end
+
+-- Réapplication groupée, juste après l'événement (le client finit d'abord son travail).
+function Radar:RequestReapply()
+    if not self.active or self.reapplyPending then
+        return
+    end
+    if not (C_Timer and C_Timer.After) then
+        self:Reapply()
+        return
+    end
+    self.reapplyPending = true
+    C_Timer.After(0.1, function()
+        self.reapplyPending = false
+        self:Reapply()
     end)
 end
 
@@ -162,8 +199,20 @@ function Radar:CreateFrame()
         frame.letters[#frame.letters + 1] = letter
     end
 
-    frame:SetScript("OnUpdate", function()
+    -- Chaque seconde, le radar vérifie qu'il a toujours la minimap (parent, taille,
+    -- transparence) et la reprend sinon.
+    local elapsed = 0
+    frame:SetScript("OnUpdate", function(_, delta)
         self:UpdateCompass()
+        elapsed = elapsed + (delta or 0)
+        if elapsed >= 1 then
+            elapsed = 0
+            if self.active and (Minimap:GetParent() ~= frame
+                or math.abs((Minimap:GetAlpha() or 0) - self:GetAlpha()) > 0.01
+                or math.abs((Minimap:GetWidth() or 0) - (frame:GetWidth() or 0)) > 1) then
+                self:Reapply()
+            end
+        end
     end)
     self.frame = frame
     return frame
@@ -232,6 +281,20 @@ function Radar:Open()
     self.saved = saved
     hideChildren(saved.children)
 
+    -- Actif avant le masque : le module Minimap laisse alors le masque du radar en place.
+    self.active = true
+    self:Place()
+    Minimap:SetZoom(0)
+    frame:Show()
+    self:UpdateCompass()
+end
+
+-- Minimap au centre du radar, à sa taille, sans souris, avec le masque et la
+-- transparence du radar.
+function Radar:Place()
+    local frame = self.frame
+    local size = frame:GetWidth()
+    self.applying = true
     Minimap:SetParent(frame)
     Minimap:ClearAllPoints()
     Minimap:SetPoint("CENTER", frame, "CENTER")
@@ -241,12 +304,22 @@ function Radar:Open()
     Minimap:SetFrameLevel(frame:GetFrameLevel())
     Minimap:EnableMouse(false)
     Minimap:EnableMouseWheel(false)
-    Minimap:SetZoom(0)
-    -- Actif avant le masque : le module Minimap laisse alors le masque du radar en place.
-    self.active = true
     self:ApplyLook()
-    frame:Show()
-    self:UpdateCompass()
+    self.applying = false
+end
+
+-- Le client a rétabli la minimap (changement de zone, chargement) : on remet tout,
+-- puis un aller-retour de zoom force le terrain à se redessiner.
+function Radar:Reapply()
+    if not self.active or blocked() then
+        return
+    end
+    self:Place()
+    local zoom = Minimap:GetZoom()
+    self.applying = true
+    Minimap:SetZoom(zoom > 0 and zoom - 1 or zoom + 1)
+    Minimap:SetZoom(zoom)
+    self.applying = false
 end
 
 -- Terrain, transparence et rotation, d'après les réglages.
@@ -290,40 +363,10 @@ function Radar:Close()
     end
 end
 
--- Curseur sans modèle du client ([À vérifier] modèles de curseur sur Forever),
--- comme celui de la carte sans brouillard.
 local function addSlider(panel, anchor, low, high, step, format, get, set)
-    local label = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-    label:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -10)
-
-    local slider = CreateFrame("Slider", nil, panel)
-    slider:SetOrientation("HORIZONTAL")
-    slider:SetSize(200, 16)
-    slider:SetPoint("LEFT", label, "RIGHT", 12, 0)
-    slider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizontal")
-    local track = slider:CreateTexture(nil, "BACKGROUND")
-    track:SetColorTexture(0.3, 0.3, 0.3, 0.8)
-    track:SetPoint("LEFT", 0, 0)
-    track:SetPoint("RIGHT", 0, 0)
-    track:SetHeight(4)
-    slider:SetMinMaxValues(low, high)
-    slider:SetValueStep(step)
-    slider:SetObeyStepOnDrag(true)
-
-    local function show()
-        label:SetText(format:format(math.floor(get() * 100 + 0.5)))
-    end
-    slider:SetScript("OnValueChanged", function(_, value)
-        set(value)
-        show()
-    end)
-    panel:HookScript("OnShow", function()
-        slider:SetValue(get())
-        show()
-    end)
-    slider:SetValue(get())
-    show()
-    return label, slider
+    return ns.Options.AddSlider(panel, anchor, low, high, step, function(value)
+        return format:format(math.floor(value * 100 + 0.5))
+    end, get, set)
 end
 
 function Radar:SetSizeSetting(value)

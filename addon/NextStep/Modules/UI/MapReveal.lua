@@ -196,38 +196,14 @@ function MapReveal:SetBrightness(value)
     end
 end
 
--- Réglage dans le panneau d'options : curseur de luminosité, sans modèle du client
--- ([À vérifier] modèles de curseur disponibles sur Forever).
+-- Réglage dans les options : curseur de luminosité (style commun, Core/Options.lua).
 function MapReveal:BuildOptions(panel, anchor)
-    local label = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-    label:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -10)
-
-    local slider = CreateFrame("Slider", nil, panel)
-    slider:SetOrientation("HORIZONTAL")
-    slider:SetSize(200, 16)
-    slider:SetPoint("LEFT", label, "RIGHT", 12, 0)
-    slider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizontal")
-    local track = slider:CreateTexture(nil, "BACKGROUND")
-    track:SetColorTexture(0.3, 0.3, 0.3, 0.8)
-    track:SetPoint("LEFT", 0, 0)
-    track:SetPoint("RIGHT", 0, 0)
-    track:SetHeight(4)
-    slider:SetMinMaxValues(MIN_BRIGHTNESS, MAX_BRIGHTNESS)
-    slider:SetValueStep(0.05)
-    slider:SetObeyStepOnDrag(true)
-
-    local function refresh()
-        local brightness = self:GetBrightness()
-        label:SetText(L["Unexplored areas brightness: %d%%"]:format(math.floor(brightness * 100 + 0.5)))
-        slider:SetValue(brightness)
-    end
-    slider:SetScript("OnValueChanged", function(_, value)
-        self:SetBrightness(value)
-        label:SetText(L["Unexplored areas brightness: %d%%"]:format(math.floor(self:GetBrightness() * 100 + 0.5)))
-    end)
-    panel:HookScript("OnShow", refresh)
-    refresh()
-
+    local below, slider, label = ns.Options.AddSlider(panel, anchor, MIN_BRIGHTNESS, MAX_BRIGHTNESS, 0.05,
+        function(value)
+            return L["Unexplored areas brightness: %d%%"]:format(math.floor(value * 100 + 0.5))
+        end,
+        function() return self:GetBrightness() end,
+        function(value) self:SetBrightness(value) end)
     self.brightnessSlider, self.brightnessLabel = slider, label
-    return label
+    return below
 end
