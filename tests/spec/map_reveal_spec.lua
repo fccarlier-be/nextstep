@@ -39,9 +39,12 @@ end
 local function installMap(world)
     world.textures = {}
     world.explored = world.explored or {}
-    local map = { mapID = MAP_ID }
+    local map = { mapID = MAP_ID, shown = not world.hidden }
     function map.GetMapID(self)
         return self.mapID
+    end
+    function map.IsShown(self)
+        return self.shown
     end
     local pin = {}
     function pin.GetMap()
@@ -211,6 +214,16 @@ describe("Carte sans brouillard", function()
         _G.WorldMapFrame = world.map
         game:fire("ADDON_LOADED", "Blizzard_WorldMap")
         expect_eq(#shown(world), tileCount(game.ns.DB, ART_ID))
+    end)
+
+    it("ne dessine rien tant que la carte est fermée", function()
+        local world = { hidden = true }
+        local game = boot(world)
+        expect_eq(#shown(world), 0, "carte fermée")
+        expect_eq(#game.errors, 0, "aucune erreur à la connexion")
+        world.map.shown = true
+        world.pin:RefreshOverlays()
+        expect_eq(#shown(world), tileCount(game.ns.DB, ART_ID), "dessinée à l'ouverture")
     end)
 
     it("se met de côté si Leatrix Maps est chargé", function()

@@ -24,6 +24,7 @@ function Player.new(options)
         spells = options.spells or {},
         standings = options.standings or {},
         area = options.area,
+        maps = options.maps or {},   -- [uiMapID] = true : carte du joueur et ses parentes
         bound = options.bound,
         taxi = options.taxi or {},
         explored = options.explored or {},
@@ -66,6 +67,9 @@ function Player:Race()
 end
 function Player:Class()
     return self.class
+end
+function Player:Maps()
+    return self.maps
 end
 function Player:Faction()
     return self.faction

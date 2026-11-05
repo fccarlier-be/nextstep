@@ -92,6 +92,8 @@ local function boot(world, options)
         installWorld(world)
     end
     local game = wow.boot(options)
+    -- Minimap ronde, celle du client : le module Minimap (carrée) est testé à part.
+    game.ns.Modules:SetEnabled("Minimap", false)
     return game, game.ns.Modules:Get("Radar")
 end
 

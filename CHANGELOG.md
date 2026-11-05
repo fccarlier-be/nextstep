@@ -6,14 +6,16 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.1.0] - 2026-11-05
+
 ### Ajouté
-- **Guide en jeu** (phase 4, v0.1) : le guide suit le personnage pour de vrai. À vérifier en jeu.
+- **Guide en jeu** (phase 4, v0.1) : le guide suit le personnage pour de vrai. Vérifié en jeu sur un personnage du niveau 1 à 11.
   - **État du joueur** lu dans l'API du jeu (journal de quêtes, objectifs, sacs, compétences, sorts, réputations, zone, foyer, points de vol, argent), avec un cache vidé selon les événements ; recalcul regroupé sur les événements du jeu.
   - **Validations automatiques** : dialogue avec le bon PNJ, marchand, maître de classe proposé par le guide, carte des vols, sort lancé ; arrivée aux points de passage d'après la position.
   - **Fenêtre du guide** : étape courante et objectifs (texte du client pour les objectifs de quête, avec la progression), conseil, objectifs en chemin, quêtes abandonnées à reprendre, étape suivante, détours ; boutons Ignorer, Valider, Strict / Libre ; guides proposés au personnage, guides suivants en fin de guide, quêtes de groupe. Déplaçable, réductible, verrouillable.
-  - **Flèche** (version simple) vers la cible de l'étape : premier objectif ouvert, ou le plus proche en mode libre, avec la zone de mobs ou le maître de classe le plus proche ; couleur selon la direction, distance, coche à l'arrivée. Calculs en coordonnées monde, sans conversion par la carte du client.
+  - **Flèche** (version simple) vers la cible de l'étape : objectif le plus proche de l'étape, ou de tout le guide en mode libre, avec la zone de mobs ou le maître de classe le plus proche ; couleur selon la direction, distance, coche à l'arrivée. Calculs en coordonnées monde, sans conversion par la carte du client.
   - Suivi de quêtes Blizzard **masqué** pendant un guide (option).
-  - Commandes `/ns guide` (fenêtre ; `list`, `start`, `stop`, `reset`, `skip`, `done`, `mode`) et `/ns arrow` ; raccourcis clavier : fenêtre, flèche, valider l'étape.
+  - Commandes `/ns guide` (fenêtre ; `list`, `start`, `stop`, `reset`, `skip`, `done`, `mode`), `/ns arrow` et `/ns debug` (état du guide et de sa fenêtre, événements refusés par le client) ; raccourcis clavier : fenêtre, flèche, valider l'étape.
   - Tests : simulation du personnage dans l'API simulée, 10 scénarios du guide en jeu, et un test qui vérifie que chaque texte de l'addon a sa traduction française.
 - Conception du **bouton NextStep et du menu des addons** (phase 5) : un seul bouton sur la minimap donne accès aux paramètres de chaque addon installé, et les boutons des autres addons sont masqués, de façon réversible ([docs/DESIGN.md](docs/DESIGN.md#bouton-nextstep-et-menu-des-addons)). L'addon de diagnostic relève le compartiment d'addons, les catégories d'options, les enfants de la minimap, LibDBIcon et LibDataBroker.
 - Conception des **fenêtres ouvertes ensemble** (phase 5) : les fenêtres Blizzard non protégées sortent du gestionnaire de Blizzard pour rester ouvertes côte à côte ; clic pour passer au premier plan, Échap qui ferme la fenêtre au premier plan, ouverture en cascade ([docs/DESIGN.md](docs/DESIGN.md#fenêtres-déplaçables)). L'addon de diagnostic relève la strate, le premier plan et la fermeture par Échap de chaque fenêtre.
@@ -45,8 +47,34 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - README, licence GPL-3.0, crédits, guide de contribution.
 - Configuration du dépôt : modèles de tickets et de pull request, fichiers `.gitignore`, `.gitattributes` et `.editorconfig`.
 
+- **Repères de l'étape sur la minimap et la carte du monde** (phase 4b) : tous les points des objectifs ouverts (lieux, maîtres, zones de mobs), la cible de la flèche en doré ; sur la minimap, la cible reste au bord quand elle est loin ; sur la carte, infobulle avec l'objectif. Deux options, actives par défaut. Code propre à NextStep, sans HereBeDragons. À vérifier en jeu.
+
+- Module **Minimap** (phase 5) : minimap carrée par défaut (ronde en option), forme déclarée aux autres addons, zoom à la molette ; tout est rétabli à la désactivation. À vérifier en jeu.
+- Module **Bouton NextStep** (`AddonsMenu`, phase 5) : un bouton sur la minimap ; clic gauche : menu avec le radar de récolte, les options de NextStep et les paramètres de chaque addon chargé ; clic droit : options ; clic milieu : radar ; déplaçable autour de la minimap. Les boutons LibDBIcon des autres addons sont masqués (option). Commande `/ns addons`. À vérifier en jeu.
+- Repères de la minimap : une cible hors de vue devient une **flèche dorée** au bord de la minimap, tournée vers elle (carrée ou ronde).
+
+- **Quêtes de classe** proposées dans la fenêtre du guide quand le personnage a le niveau (par exemple la quête du familier du chasseur au niveau 10) ; à la fin, le guide de leveling interrompu est proposé pour reprendre la route.
+
+- Fenêtre du guide : **niveau des quêtes coloré** devant chaque objectif, comme dans le jeu : gris (plus d'expérience), vert, jaune (de 2 niveaux en dessous à 2 au-dessus), orange (3 ou 4 au-dessus), rouge (5 ou plus au-dessus).
+
+- Module **Objets de quête** (`QuestItems`) : les objets des sacs utiles à une quête du journal portent une marque dorée, et leur infobulle nomme la quête. Selon le client, ou d'après les objets à ramasser du guide suivi. À vérifier en jeu.
+
+### Corrigé
+- Flèche et carte : un déplacement dit maintenant pourquoi on y va, d'après l'objectif suivant de l'étape encore à faire (« Aller à Comté-de-l'Or, pour : Aller voir votre maître de classe »).
+- Étape « maître de classe » : le guide renvoyait chez le maître même sans rien de nouveau à apprendre (et après chaque rechargement). Le niveau de la dernière visite à un maître de classe est retenu : l'étape est validée si le personnage y est passé à ce niveau, ou au niveau pair précédent quand son niveau est impair (les nouveaux sorts arrivent aux niveaux pairs).
+- Libellés « Accepter » et « Rendre » : ils nomment maintenant qui donne ou reprend la quête, PNJ (« auprès de… », « à… »), objet du monde (un alambic, une affiche) ou objet du sac ; le PNJ n'est pas répété si la note de l'objectif le cite déjà.
+- Quêtes abandonnées : le guide signalait aussi des quêtes que le personnage n'avait jamais pu prendre (réservées à une autre race ou classe, fermées, sans leur prérequis) ou facultatives, et le clic « reprendre » ne changeait rien ; seules les quêtes réellement à reprendre sont signalées.
+- Minimap carrée : le client remettait son masque rond (connexion, changement de zone) ; le masque carré est remis aussitôt après, sauf pendant le radar.
+- Flèche : en mode strict, elle visait le premier objectif ouvert de l'étape, même loin (la hache d'« En aval » n'était jamais montrée tant que les rôdeurs restaient à tuer) ; elle vise maintenant l'objectif le plus proche de l'étape.
+- Fenêtre du guide : les quêtes d'élite, de groupe (avec la taille conseillée), de donjon et de raid sont signalées sur chacun de leurs objectifs, dès l'acceptation.
+- Fenêtre du guide vide sur Forever : le corps de la fenêtre n'avait pas de hauteur (0 × 0) et le client n'affichait pas ses lignes ; il occupe maintenant tout l'espace entre la barre de titre et les boutons.
+- Guide de départ : la race n'exclut plus aucun guide. Le guide de la zone où se trouve le joueur est proposé en premier (un elfe de la nuit à Comté-de-l'Or se voit proposer la forêt d'Elwynn), puis ceux de sa race.
+- Guide inactif sur Forever : l'événement `LEARNED_SPELL_IN_TAB`, inconnu du client, interrompait l'activation du module. Les événements inconnus du client sont désormais ignorés sans erreur.
+- Carte sans brouillard : erreur Lua à la connexion (`MapCanvas_ScrollContainerMixin`) ; le module ne dessine plus tant que la carte du monde est fermée.
+
 ### Modifié
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/commits/main
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/fccarlier-be/nextstep/releases/tag/v0.1.0

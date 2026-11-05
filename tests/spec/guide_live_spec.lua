@@ -109,9 +109,11 @@ describe("Guide en jeu", function()
         game:setUnit("npc", { guid = npcGUID(555) })
         game:fire("TRAINER_SHOW")
         expect_eq(Guide.result.current, 4, "maître absent de la liste du guide")
+        expect_eq(Guide.char.trainedLevel, nil, "pas un maître de classe connu")
         game:setUnit("npc", { guid = npcGUID(911) })
         game:fire("TRAINER_SHOW")
         expect_eq(Guide.result.current, 5, "maître de classe proposé")
+        expect_eq(Guide.char.trainedLevel, 1, "visite retenue d'une session à l'autre")
     end)
 
     it("constate l'arrivée au point de passage", function()
@@ -144,6 +146,115 @@ describe("Guide en jeu", function()
         game:fire("QUEST_LOG_UPDATE")
         Guide:Tick(3, 1)
         expect_eq({ Guide.result.current, Guide.result.target.x }, { 4, 50.24 }, "le maître des guerriers")
+    end)
+
+    it("vise, en mode strict, l'objectif le plus proche de l'étape", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/river", title = "River", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "River", goals = {
+                    { t = "goto", map = MAP, x = 30, y = 30, f = "e", r = 5 },
+                    { t = "goto", map = MAP, x = 70, y = 70, f = "e", r = 5, optional = true },
+                    { t = "goto", map = MAP, x = 60, y = 60, f = "e", r = 5 },
+                } },
+            },
+        } end)
+        game.player.position = worldOf(game.ns, 62, 62)
+        game:fire("QUEST_LOG_UPDATE")
+        local r = Guide:Start("test/river")
+        expect_eq({ r.target.goal, r.target.x }, { 3, 60 }, "le dernier objectif, le plus proche")
+        expect_eq(r.target.choices, 2, "deux objectifs obligatoires : la cible peut changer")
+    end)
+
+    it("signale les quêtes de groupe et d'élite sur tous leurs objectifs", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/group", title = "Group", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Accept", goals = {
+                    { t = "accept", quest = 900, npc = 1 },
+                    { t = "accept", quest = 901, npc = 1 },
+                } },
+                { title = "Do", goals = {
+                    { t = "collect", quest = 900, item = 2, group = { kind = "elite", rank = 1 } },
+                    { t = "kill", quest = 901, npc = 3, group = { kind = "group", size = 3 } },
+                } },
+            },
+        } end)
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start("test/group")
+        expect(hasText(Guide, "(elite)"), "quête d'élite signalée dès l'acceptation")
+        expect(hasText(Guide, "(group of 3)"), "taille du groupe")
+        local Labels = game.ns.GuideLabels
+        local guide = game.ns.DB:GetGuide("test/group")
+        expect_eq(Labels.GroupTag({ t = "accept", quest = 902 }, guide), nil, "quête solo")
+        expect_eq(Labels.GroupTag({ group = { kind = "dungeon", name = "Stockade" } }, guide), "dungeon: Stockade")
+    end)
+
+    it("colore le niveau des quêtes selon leur difficulté", function()
+        local game, Guide = boot()
+        local Labels = game.ns.GuideLabels
+        expect_eq(Labels.Difficulty(10, 10), "normal")
+        expect_eq(Labels.Difficulty(12, 10), "normal", "2 au-dessus : encore jaune")
+        expect_eq(Labels.Difficulty(13, 10), "hard")
+        expect_eq(Labels.Difficulty(15, 10), "impossible")
+        expect_eq(Labels.Difficulty(7, 10), "easy")
+        expect_eq(Labels.Difficulty(4, 10), "trivial", "gris à 10 : niveau 4 et moins")
+        expect_eq(Labels.Difficulty(1, 3), "normal", "rien n'est gris avant le niveau 6")
+        expect_eq(Labels.Difficulty(36, 45), "easy")
+        expect_eq(Labels.Difficulty(35, 45), "trivial", "gris à 45 : niveau 35 et moins")
+
+        game.ns.DB.AddGuide(function() return {
+            id = "test/levels", title = "Levels", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Quests", goals = {
+                    { t = "accept", quest = 910, npc = 1, qlvl = 6 },
+                    { t = "turnin", quest = 911, npc = 1 },
+                } },
+            },
+        } end)
+        local guide = game.ns.DB:GetGuide("test/levels")
+        expect_eq(Labels.QuestLevel({ t = "kill", quest = 910 }, guide), 6, "niveau repris de l'acceptation")
+        expect_eq(Labels.LevelTag({ t = "turnin", quest = 911 }, guide, 1), nil, "niveau inconnu")
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start("test/levels")
+        expect(hasText(Guide, "|cffff1a1a[6]|r"), "niveau 6 en rouge pour un personnage de niveau 1")
+    end)
+
+    it("dit qui donne et qui reprend la quête", function()
+        local game = boot()
+        local Labels = game.ns.GuideLabels
+        local guide = game.ns.DB:GetGuide("forever/alliance/human/01-elwynn-forest")
+        expect_eq(Labels.Goal({ t = "accept", quest = 91736, object = 562131 }, guide),
+            "Accept Applejack Still (object: Applejack Still)", "quête donnée par un objet du monde")
+        expect_eq(Labels.Goal({ t = "turnin", quest = 783, npc = 197 }, guide),
+            "Turn in A Threat Within to Marshal McBride")
+        expect_eq(Labels.Goal({ t = "accept", quest = 91741, item = 247834 }, guide),
+            "Accept " .. game.ns.DB:GetName("quest", 91741, guide) .. " (item: Nibbled-On Book)")
+        expect_eq(Labels.Goal({ t = "turnin", quest = 783, npc = 197, note = "{npc:197}, inside" }, guide),
+            "Turn in A Threat Within", "PNJ déjà nommé par la note")
+    end)
+
+    it("dit pourquoi la flèche envoie vers un lieu", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/purpose", title = "Purpose", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Goldshire", goals = {
+                    { t = "goto", map = MAP, x = 42, y = 65, f = "e", r = 10, text = "{area:87}" },
+                    { t = "turnin", quest = 999, npc = 1, only = { races = { "DWARF" } } },
+                    { t = "train", class = true },
+                } },
+            },
+        } end)
+        game.player.position = worldOf(game.ns, 48, 42)
+        game:fire("QUEST_LOG_UPDATE")
+        local r = Guide:Start("test/purpose")
+        expect_eq(r.target.goal, 1, "la flèche vise le déplacement")
+        local label = Guide.arrowFrame.label.text
+        expect(label:find(", for: ", 1, true), "le but est annoncé : " .. tostring(label))
+        expect(label:find("class trainer", 1, true), "le maître de classe, pas la quête d'une autre race")
     end)
 
     it("calcule distance et direction en coordonnées monde", function()
@@ -183,6 +294,37 @@ describe("Guide en jeu", function()
             end
         end
         expect_eq(Guide.char.active, Guide:Suggest()[1].id)
+    end)
+
+    it("propose le guide de la zone du joueur, sous-zone comprise", function()
+        -- Elfe de la nuit dans une sous-carte (9999) de la forêt d'Elwynn.
+        local _, Guide = boot({ race = "NightElf", map = 9999, mapParents = { [9999] = MAP, [MAP] = 1415 } })
+        local maps = Guide.live:Maps()
+        expect(maps[9999] and maps[MAP] and maps[1415], "carte et parentes")
+        expect_eq(Guide:Suggest()[1].id, "forever/alliance/human/01-elwynn-forest")
+    end)
+
+    it("propose de nouveau les guides après /ns guide stop", function()
+        local game, Guide = boot({ race = "NightElf", map = MAP, level = 3 })
+        game:fire("QUEST_LOG_UPDATE")
+        SlashCmdList.NEXTSTEP("guide start 1")
+        expect_eq(Guide.char.active, "forever/alliance/human/01-elwynn-forest")
+        SlashCmdList.NEXTSTEP("guide stop")
+        expect(hasText(Guide, "No guide followed."))
+        expect(hasText(Guide, "Start: Elwynn Forest"), "guide de la zone proposé")
+        expect_eq(#game.errors, 0)
+    end)
+
+    it("affiche l'état du guide avec /ns debug", function()
+        local game = boot({ unknownEvents = nil })
+        game:fire("QUEST_LOG_UPDATE")
+        local before = #game.chat
+        SlashCmdList.NEXTSTEP("debug")
+        expect(#game.chat > before + 5, "plusieurs lignes dans le chat")
+        local all = table.concat(game.chat, " ", before + 1)
+        expect(all:find("LEARNED_SPELL_IN_TAB", 1, true), "événement refusé signalé")
+        expect(all:find("prêt true", 1, true), "journal lu")
+        expect_eq(#game.errors, 0)
     end)
 
     it("masque le suivi de quêtes Blizzard pendant un guide", function()

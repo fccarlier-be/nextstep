@@ -3,6 +3,7 @@ local Player = require("player")
 
 local ELWYNN = "forever/alliance/human/01-elwynn-forest"
 local WESTFALL = "forever/alliance/02-westfall"
+local TELDRASSIL = "forever/alliance/nightelf/01-teldrassil"
 
 local function start(options)
     options = options or {}
@@ -27,6 +28,49 @@ describe("Module Guide", function()
             races[race] = true
         end
         expect(races.ORC, "propre à la race : " .. orc[1].id)
+    end)
+
+    it("suggère d'abord le guide de la zone où se trouve le personnage", function()
+        local _, Guide = start()
+        -- Elfe de la nuit à la forêt d'Elwynn (1429) : le guide humain d'abord.
+        local list = Guide:Suggest(Player.new({ race = "NIGHTELF", maps = { [1429] = true, [1415] = true } }))
+        expect_eq(list[1].id, ELWYNN)
+        expect_eq(list[2].id, TELDRASSIL, "puis le guide de sa race")
+
+        -- Ailleurs : sa race d'abord, mais les autres zones de départ restent proposées.
+        list = Guide:Suggest(Player.new({ race = "NIGHTELF" }))
+        expect_eq(list[1].id, TELDRASSIL)
+        local ids = {}
+        for _, guide in ipairs(list) do
+            ids[guide.id] = true
+        end
+        expect(ids[ELWYNN], "la race n'exclut aucun guide")
+    end)
+
+    it("propose la quête du familier au chasseur de niveau 10, puis reprend la route", function()
+        local TAMING = "forever/class/hunter/taming-the-beast-alliance"
+        local player = Player.new({ race = "NIGHTELF", class = "HUNTER", level = 10 })
+        local _, Guide = start({ player = player })
+        local function ids(list)
+            local set = {}
+            for _, guide in ipairs(list) do
+                set[guide.id] = true
+            end
+            return set
+        end
+        expect(ids(Guide:ClassGuides())[TAMING], "quête du familier proposée")
+        expect(not ids(Guide:ClassGuides(Player.new({ class = "HUNTER", level = 9 })))[TAMING], "pas avant 10")
+        expect(not ids(Guide:ClassGuides(Player.new({ class = "MAGE", level = 10 })))[TAMING], "pas pour un mage")
+        expect(not ids(Guide:ClassGuides(Player.new({ class = "HUNTER", level = 10, spells = { [1515] = true,
+            [5149] = true } })))[TAMING], "sorts déjà appris : faite")
+
+        Guide:Start(ELWYNN)
+        Guide:StartClassGuide(TAMING)
+        expect_eq(Guide.char.active, TAMING)
+        expect_eq(Guide.char.returnTo, ELWYNN, "la route sera reprise")
+        Guide:Resume()
+        expect_eq(Guide.char.active, ELWYNN)
+        expect_eq(Guide.char.returnTo, nil)
     end)
 
     it("ne suggère que des guides du niveau du personnage", function()

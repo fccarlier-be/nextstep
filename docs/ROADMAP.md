@@ -20,8 +20,8 @@ Légende : ⬜ à faire · 🟨 en cours · ✅ terminé
 | 2 | Import des données | — | ✅ |
 | 2b | Noms appris | — | ✅ |
 | 3 | Moteur du guide | — | ✅ |
-| 4 | Interface du guide, version minimale | **v0.1** | 🟨 |
-| 4b | Compléments du guide | v0.1.x | ⬜ |
+| 4 | Interface du guide, version minimale | **v0.1** | ✅ |
+| 4b | Compléments du guide | v0.1.x | 🟨 |
 | 5 | Gains rapides du module UI | v0.2 | 🟨 |
 | 6 | Items | v0.3 | ⬜ |
 | 7 | Valeurs de vie et de ressources | v0.4 | ⬜ |
@@ -99,7 +99,7 @@ Le plus petit guide jouable : tout ce qui sert à suivre la route, rien de plus.
 
 **Terminé quand** : on peut monter un personnage du niveau 1 à 10 avec le guide.
 
-État : **écrit et testé hors jeu** : état du joueur lu dans l'API, recalcul sur les événements, validations automatiques (dialogue, marchand, maître, carte des vols, sort lancé), fenêtre, flèche, masquage du suivi Blizzard, `/ns guide`, `/ns arrow` et trois raccourcis. La conversion des coordonnées « era » n'est pas nécessaire pour la flèche (calcul en coordonnées monde, voir [DESIGN.md](DESIGN.md#flèche)). Reste : la vérification en jeu (monter un personnage du niveau 1 à 10), puis la publication de la v0.1.
+État : **écrit et testé hors jeu** : état du joueur lu dans l'API, recalcul sur les événements, validations automatiques (dialogue, marchand, maître, carte des vols, sort lancé), fenêtre, flèche, masquage du suivi Blizzard, `/ns guide`, `/ns arrow` et trois raccourcis. La conversion des coordonnées « era » n'est pas nécessaire pour la flèche (calcul en coordonnées monde, voir [DESIGN.md](DESIGN.md#flèche)). Vérifié en jeu le 2026-11-05 (un elfe de la nuit chasseur a fini le guide d'Elwynn et commencé le suivant) ; les problèmes relevés en jeu sont corrigés. **Terminé** : publiée en v0.1.0.
 
 ## Phase 4b : Compléments du guide → v0.1.x
 
@@ -107,7 +107,7 @@ Chaque complément est indépendant des autres et ne dépend que de la v0.1 : il
 
 | Complément | Contenu |
 |---|---|
-| Carte et minimap | Points de l'étape sur la carte du monde et la minimap (HereBeDragons). |
+| Carte et minimap | Points de l'étape sur la carte du monde et la minimap : écrit et testé hors jeu (`Modules/Guide/Pins.lua`), à vérifier en jeu. |
 | Sorts à apprendre | Sorts disponibles chez le maître selon la classe, la race et le niveau, avec leur coût ; étape « maître de classe » dans la route ; liste mémorisée à chaque visite chez le maître. |
 | Célébration de niveau | Bandeau, son du jeu, nouveaux sorts disponibles et zone suivante conseillée. |
 | Niveau des zones | Niveau des zones affiché sur la carte du monde. |
@@ -126,7 +126,7 @@ Chaque complément est indépendant des autres et ne dépend que de la v0.1 : il
 
 Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
-État : **carte sans brouillard avancée** : module `MapReveal` écrit et testé hors jeu, données extraites du client ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#carte-sans-brouillard)). **Radar de récolte avancé** : module `Radar` écrit et testé hors jeu ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#radar-de-récolte)).
+État : **carte sans brouillard avancée** : module `MapReveal` écrit et testé hors jeu, données extraites du client ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#carte-sans-brouillard)). **Radar de récolte avancé** : module `Radar` écrit et testé hors jeu ; reste à le vérifier en jeu (voir [DESIGN.md](DESIGN.md#radar-de-récolte)). **Minimap et bouton NextStep avancés** : modules `Minimap` (carrée, molette) et `AddonsMenu` (bouton, menu des addons, radar, boutons LibDBIcon masqués) écrits et testés hors jeu ; restent les coordonnées et la vérification en jeu.
 
 ## Phase 6 : Items → v0.3
 

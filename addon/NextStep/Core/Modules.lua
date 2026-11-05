@@ -134,7 +134,7 @@ local function resolve(handler)
 end
 
 function Module:RegisterEvent(event, handler)
-    ns.Events:Register(event, self, resolve(handler or event))
+    return ns.Events:Register(event, self, resolve(handler or event))
 end
 
 function Module:UnregisterEvent(event)

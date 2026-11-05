@@ -222,7 +222,8 @@ Les deux modes utilisent **le même moteur** ; seul l'affichage change.
 ### Enchaînement
 
 - En fin de guide, le moteur renvoie les guides suivants (`next`) ; l'interface les propose (« Choisis ton chemin »). Dans les données importées, chaque guide a au plus un suivant.
-- **Guide de départ** : `Guide:Suggest` propose les guides de leveling de la faction, de la race et de la classe du personnage, à son niveau ; ceux propres à la race d'abord.
+- **Guide de départ** : `Guide:Suggest` propose les guides de leveling de la faction et de la classe du personnage, à son niveau. La race n'exclut aucun guide : on peut commencer dans la zone de départ d'une autre race. Ordre : le guide de la zone où se trouve le joueur (carte actuelle ou l'une de ses parentes), puis ceux de sa race, les guides communs, et ceux des autres races.
+- **Quêtes de classe** : `Guide:ClassGuides` retient les guides de la catégorie `Class` de la classe, de la faction et de la race du personnage, de leur niveau minimal jusqu'à 5 niveaux au-delà du maximal, sauf ceux terminés (`char.completed`) ou dont le personnage connaît déjà les sorts appris (`reward`). La fenêtre en propose deux au plus, sous l'étape (ou sous les guides de départ) ; un clic lance la quête de classe et mémorise le guide de leveling (`char.returnTo`), proposé à la fin (« Reprendre : … »). Exemple : « Dresser une bête » du chasseur au niveau 10.
 - Un guide actif remplacé dans Polestar (identifiant retiré) est abandonné à la connexion.
 - **Mode conseil** (phase 10) : sans route active, les zones et les quêtes adaptées au niveau, à la race et à la classe.
 
@@ -342,6 +343,8 @@ Déplaçable, redimensionnable, réductible à une ligne ; verrouillage, échell
 - l'étape courante et ses objectifs (coche, case vide, croix pour un objectif bloqué avec la raison) ; en mode libre, les objectifs ouverts du même endroit ;
 - le conseil de l'étape, les objectifs à faire en chemin, les quêtes abandonnées (clic pour reprendre), l'étape suivante, le nombre de détours, l'avertissement « niveau dépassé » ;
 - un objectif « à valider » se valide d'un clic ;
+- devant chaque objectif de quête, le **niveau de la quête coloré** selon l'écart avec celui du personnage, comme dans le jeu (`Labels.Difficulty`) : gris sous le niveau gris du jeu classique (aucun avant le niveau 6), vert, jaune de 2 niveaux en dessous à 2 au-dessus, orange à 3 ou 4 au-dessus, rouge à 5 ou plus ; le niveau vient du `qlvl` de l'objectif « accepter » de la quête ;
+- la mention du contenu de groupe (élite, groupe de N, donjon, raid) ; les quêtes de classe disponibles, avec le retour au guide de leveling à leur fin ;
 - **Ignorer** passe l'étape ; **Valider** valide ses objectifs « à valider », ou la passe s'il n'y en a pas ; **Strict / Libre** change de mode ;
 - sans guide suivi, les trois premiers guides adaptés au personnage (clic pour commencer) ; à la fin d'un guide, les guides suivants ; pour une quête de groupe, Oui / Non.
 
@@ -358,7 +361,7 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 
 **Version v0.1** (`Modules/Guide/Arrow.lua`) : texture de la flèche de la minimap, couleur verte (devant), dorée (de côté), rouge-orangé (derrière), distance, coche à moins de 5 mètres ; pas encore de temps estimé ni de dessin propre.
 
-**Cible** : en mode strict, le premier objectif ouvert qui a une position ; en mode libre, le plus proche de tous. Les points possibles d'un objectif sont sa position, les maîtres proposés au personnage (`candidates`, filtrés par classe et faction) et les zones d'apparition des mobs (`spotsPacked`) : le plus proche est choisi, et la cible est revue chaque seconde.
+**Cible** : en mode strict, l'objectif ouvert le plus proche de l'étape courante (les facultatifs seulement s'il ne reste qu'eux, puis les objectifs en chemin) ; en mode libre, le plus proche de tous. Les points possibles d'un objectif sont sa position, les maîtres proposés au personnage (`candidates`, filtrés par classe et faction) et les zones d'apparition des mobs (`spotsPacked`) : le plus proche est choisi, et la cible est revue chaque seconde.
 
 **Calculs** (`Modules/Guide/Navigation.lua`) : distance et direction se calculent en coordonnées monde, celles de `UnitPosition`. Les coordonnées « era » y passent directement par les cadres importés de Polestar (`DB.mapFrames.era`), les autres par `C_Map.GetWorldPosFromMapPos`. La conversion vers la carte du client (`C_Map.GetMapPosFromWorldPos`) ne sert qu'aux points sur la carte (complément v0.1.x).
 
@@ -366,7 +369,11 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 
 ### Carte du monde et minimap
 
-- Points via **HereBeDragons** : cibles de l'étape, zones de mobs, et en mode conseil les donneurs de quêtes adaptés.
+- **Repères de l'étape** (`Modules/Guide/Pins.lua`, code propre à NextStep) : tous les points des objectifs ouverts (position, maîtres proposés, zones d'apparition des mobs), jusqu'à 80 ; la cible de la flèche en doré et plus grande, les lieux en bleu, les zones de mobs en rouge (`Media/Pin.tga`, teinté, généré par `Tools/pins/textures.py`). Deux options, actives par défaut : minimap, carte du monde.
+  - **Minimap** : calcul en coordonnées monde, comme la flèche ; échelle par `Minimap:GetViewRadius` (en secours, diamètres du client selon le zoom, dehors et en intérieur) ; rotation selon le regard si `rotateMinimap` est actif ; minimap ronde. Les points hors de la minimap sont cachés, sauf la cible, collée au bord. Mise à jour toutes les 0,05 s.
+  - **Carte du monde** : fournisseur de données ajouté à `WorldMapFrame` (`MapCanvasDataProviderMixin`), rafraîchi à chaque changement de carte et de zoom ; boutons sur le canevas, de taille constante à l'écran, avec le libellé de l'objectif en infobulle. Projection par les bornes de la carte affichée, lues une fois par carte avec `C_Map.GetWorldPosFromMapPos`.
+  - HereBeDragons n'est pas utilisé : le guide calcule déjà tout en coordonnées monde, et l'addon reste sans bibliothèque. **[À vérifier]** sur Forever : `Minimap:GetViewRadius`, minimap carrée, ajout d'un fournisseur à la carte du monde.
+- En mode conseil (plus tard) : les donneurs de quêtes adaptés.
 - Waypoint natif (`C_Map.SetUserWaypoint`) en option. Ne pas utiliser `C_SuperTrack.SetSuperTrackedUserWaypoint`.
 - **Zoom à la molette** sur la minimap et sur la carte du monde. **[À vérifier]** zoom natif de la carte sur Forever.
 - **Niveau des zones** affiché sur la carte du monde (tranche de niveaux, couleur selon le niveau du joueur), en appui du conseil de zone suivante.
@@ -432,6 +439,7 @@ Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Mini
 - Marques : améliorations (module Items), objets de quête et objets demandés par le guide, composants de métier, camelote ; niveau d'objet en option.
 - **Banque unifiée**, **consultable à distance en lecture seule** (contenu mémorisé à chaque visite, avec la date).
 - Mémoire des sacs et banques des autres personnages du compte ; compteurs dans les infobulles.
+- **Réalisé en avance** (`Modules/UI/QuestItems.lua`, module `QuestItems`, actif par défaut) : marque dorée (`Media/Pin.tga`) en haut à gauche des objets utiles à une quête du journal, dans les sacs du client, et ligne « Objet de quête : <quête> » dans leur infobulle (`TooltipDataProcessor`). Objet de quête : selon le client (`C_Container.GetContainerItemQuestInfo`, quête du journal), ou demandé par un objectif « ramasser » du guide suivi pour une quête du journal. Accroches sur `UpdateItems` des cadres de sacs (`ContainerFrameCombinedBags`, `ContainerFrameN`), ou `ContainerFrame_Update` ; liste refaite à chaque mise à jour du journal et du guide. **[À vérifier]** sur Forever : boutons des sacs et `GetContainerItemQuestInfo`.
 
 ### Camelote
 
@@ -442,6 +450,7 @@ Vente automatique **activée par défaut** : objets gris uniquement, résumé da
 - **Carrée par défaut**, ronde en option (forme déclarée aux autres addons via `GetMinimapShape`).
 - Zoom à la molette (retour automatique au zoom par défaut en option), coordonnées, horloge et zone lisibles, taille réglable.
 - Bascule rapide du suivi herbes / minerais.
+- **Réalisé** (`Modules/UI/Minimap.lua`, module `Minimap`, actif par défaut, mis de côté si SexyMap, BasicMinimap ou Chinchilla est chargé) : masque carré (`Interface\ChatFrame\ChatFrameBackground`) et liseré noir, décorations rondes cachées (`MinimapBorder`, `MinimapBorderTop`, `MinimapCompassTexture`, si elles existent), `GetMinimapShape` déclarée (la déclaration d'un autre addon est rendue en repassant en rond) ; zoom à la molette. Tout est rétabli à la désactivation ; changements différés après le combat si la minimap est protégée ; le radar ouvert garde son masque. Restent : coordonnées, horloge et zone, taille, retour au zoom par défaut, suivi herbes / minerais.
 
 ### Bouton NextStep et menu des addons
 
@@ -459,6 +468,7 @@ Un seul bouton sur la minimap, celui de NextStep (`Media/IconSmall.tga`), donne 
 - **Compartiment d'addons de Blizzard** (`AddonCompartmentFrame`) : masqué aussi en option, puisque le menu de NextStep le remplace.
 - **Addons concurrents** (MinimapButtonButton, Bazooka, ButtonBin…) : le masquage se désactive et le signale ; le menu reste disponible.
 - Le bouton peut être caché (option) ; le menu reste alors accessible par `/ns addons`.
+- **Réalisé** (`Modules/UI/AddonsMenu.lua`, module `AddonsMenu`) : bouton sur la minimap, sur le cercle ou le bord du carré selon `GetMinimapShape` ; clic gauche : menu (`MenuUtil.CreateContextMenu`) avec en tête le **radar de récolte** et les options de NextStep, puis les addons chargés (hors NextStep) ; clic droit : options ; **clic milieu : radar** ; glisser : déplacement autour de la minimap. Action d'un addon : bouton LibDBIcon (`LibDBIcon10_<nom>`), puis `## AddonCompartmentFunc`, puis la page des options dont le nom est le nom ou le titre de l'addon (`SettingsPanel:GetAllCategories`) ; sinon ligne grisée. Masquage limité pour l'instant aux boutons `LibDBIcon10_*` (les enfants de Blizzard de la minimap n'ont pas de nom sur Forever), à la connexion, 5 s après et à chaque `ADDON_LOADED`. Restent : recherche au-delà de 15 addons, liste d'exceptions, option pour cacher le bouton, compartiment de Blizzard, addons concurrents.
 - **[À vérifier]** Présence du compartiment d'addons (`AddonCompartmentFrame`) sur Forever ; catégories enregistrées dans les options (`SettingsPanel`) et moyen de retrouver celle d'un addon ; API de menu (`MenuUtil.CreateContextMenu`) ; liste des enfants de Blizzard de la minimap.
 
 ### Horloge

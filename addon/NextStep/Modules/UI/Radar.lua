@@ -224,9 +224,9 @@ function Radar:Open()
     Minimap:EnableMouse(false)
     Minimap:EnableMouseWheel(false)
     Minimap:SetZoom(0)
-    self:ApplyLook()
-
+    -- Actif avant le masque : le module Minimap laisse alors le masque du radar en place.
     self.active = true
+    self:ApplyLook()
     frame:Show()
     self:UpdateCompass()
 end

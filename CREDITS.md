@@ -22,7 +22,6 @@ Ces projets seront utilisés dans les prochaines phases (voir la [feuille de rou
 | [forever-db](https://github.com/fitzforge/polestar/tree/next/forever-db) (Polestar) | Faits du jeu : quêtes, PNJ, objets, cartes | GPL-3.0 ; couche « mécaniques et étapes » sous CC BY 4.0 |
 | ForeverLevelingBiS, par Thunder (via Polestar) | Statistiques et provenance des items de leveling | MIT |
 | [wowsims](https://github.com/wowsims) (via Polestar) | Poids de stats par spécialisation | MIT |
-| [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons), par Nevcairiel | Points sur la carte et la minimap, coordonnées | BSD |
 | [What's Training](https://github.com/fusionpit/WhatsTraining), par Fusionpit | Sorts de chaque classe chez le maître (niveau, rang, coût) | MIT |
 | [GatherMate2](https://github.com/Nevcairiel/GatherMate2), par kagaro, Xinhuan et Nevcairiel | Code de détection des récoltes | GPL-2.0-or-later |
 

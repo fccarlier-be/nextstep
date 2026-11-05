@@ -15,7 +15,9 @@ local State = {}
 State.__index = State
 ns.GuideState = State
 
--- Événement du jeu -> catégories du cache à vider.
+-- Événement du jeu -> catégories du cache à vider. Les événements inconnus du
+-- client sont ignorés (LEARNED_SPELL_IN_TAB n'existe pas sur Forever, son
+-- équivalent récent est LEARNED_SPELL_IN_SKILL_LINE ; SPELLS_CHANGED suffit).
 State.EVENTS = {
     QUEST_LOG_UPDATE = { "quests" },
     QUEST_ACCEPTED = { "quests" },
@@ -25,6 +27,7 @@ State.EVENTS = {
     BAG_UPDATE_DELAYED = { "items" },
     SKILL_LINES_CHANGED = { "skills" },
     LEARNED_SPELL_IN_TAB = { "spells" },
+    LEARNED_SPELL_IN_SKILL_LINE = { "spells" },
     SPELLS_CHANGED = { "spells" },
     UPDATE_FACTION = { "standings" },
     PLAYER_LEVEL_UP = {},
@@ -113,6 +116,19 @@ end
 function State:Class()
     local _, class = UnitClass("player")
     return class
+end
+
+-- Carte où se trouve le joueur, puis ses cartes parentes (sous-zone, zone,
+-- continent) : { [uiMapID] = true }. Sert à proposer le guide de la zone.
+function State:Maps()
+    local maps = {}
+    local map = C_Map and C_Map.GetBestMapForUnit and C_Map.GetBestMapForUnit("player")
+    while usable(map) and map ~= 0 and not maps[map] do
+        maps[map] = true
+        local info = C_Map.GetMapInfo and C_Map.GetMapInfo(map)
+        map = info and info.parentMapID
+    end
+    return maps
 end
 
 function State:Faction()

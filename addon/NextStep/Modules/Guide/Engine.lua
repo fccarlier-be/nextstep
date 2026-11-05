@@ -161,6 +161,7 @@ function Engine.Evaluate(guide, ctx)
 
     local goalCtx = {
         droppedQuests = droppedQuests,
+        trainedLevel = ctx.trainedLevel,   -- niveau de la dernière visite au maître de classe
         seen = function(goal)
             local key = keys.byGoal[goal]
             return key ~= nil and (ctx.seen[key] or progress.ticks[key]) == true
@@ -350,12 +351,15 @@ function Engine.Evaluate(guide, ctx)
     end
 
     -- Quêtes acceptées dans une étape dépassée, absentes du journal et pas rendues,
-    -- alors que le guide les rend plus loin : abandonnées.
+    -- alors que le guide les rend plus loin : abandonnées. Seulement celles que le
+    -- personnage peut reprendre et qui retiendraient l'étape rouverte : pas une quête
+    -- réservée à une autre race ou classe, fermée, sans son prérequis, ou facultative
+    -- (sinon le clic « reprendre » ne changerait rien).
     if current then
         local handedInAhead = {}
         for i = current, #guide.steps do
             for _, goal in ipairs(guide.steps[i].goals) do
-                if goal.t == "turnin" and goal.quest then
+                if goal.t == "turnin" and goal.quest and Conditions.Matches(goal.only, state) then
                     handedInAhead[goal.quest] = true
                 end
             end
@@ -364,7 +368,8 @@ function Engine.Evaluate(guide, ctx)
             if outcomeOf(i) == "done" then
                 for _, goal in ipairs(guide.steps[i].goals) do
                     local q = goal.t == "accept" and goal.quest
-                    if q and handedInAhead[q] and not state:InLog(q) and not state:TurnedIn(q) then
+                    if q and handedInAhead[q] and not state:InLog(q) and not state:TurnedIn(q)
+                        and Goals.Holds(goal, Goals.Evaluate(goal, state, goalCtx).status) then
                         result.abandoned[#result.abandoned + 1] = { quest = q, step = i }
                     end
                 end
