@@ -203,11 +203,16 @@ local function acquireLine(frame, index)
             end
         end)
         line:SetScript("OnEnter", function(button)
-            if button.tooltip and GameTooltip then
-                GameTooltip:SetOwner(button, "ANCHOR_LEFT")
-                GameTooltip:SetText(button.tooltip, 1, 1, 1, 1, true)
-                GameTooltip:Show()
+            if not (button.tooltip and GameTooltip) then
+                return
             end
+            GameTooltip:SetOwner(button, "ANCHOR_LEFT")
+            if type(button.tooltip) == "function" then
+                button.tooltip(GameTooltip)
+            else
+                GameTooltip:SetText(button.tooltip, 1, 1, 1, 1, true)
+            end
+            GameTooltip:Show()
         end)
         line:SetScript("OnLeave", function()
             if GameTooltip then
@@ -289,6 +294,19 @@ local function addGoal(self, view, result, i, j, status)
             self:Tick(i, j)
         end
         options.tooltip = L["Click to mark it as done."]
+    end
+    -- Objectif de quête : son texte au survol ; un clic l'ouvre dans le journal de
+    -- quêtes si elle y est (un objectif « à valider » garde son clic).
+    if goal.quest and not options.onClick then
+        local quest = goal.quest
+        options.tooltip = function(tooltip)
+            self:FillQuestTooltip(tooltip, quest, guide)
+        end
+        if self.state and self.state:InLog(quest) then
+            options.onClick = function()
+                self:OpenQuestLog(quest)
+            end
+        end
     end
     -- Maître de classe : les sorts à apprendre et leur coût.
     if goal.t == "train" and goal.class and status ~= "done" then
@@ -517,6 +535,86 @@ function Guide:UpdateWindow(result)
         frame:SetHeight(HEADER_HEIGHT)
     else
         frame:SetHeight(HEADER_HEIGHT + view.height + FOOTER_HEIGHT)
+    end
+end
+
+---------------------------------------------------------------------------
+-- Quêtes : texte au survol, ouverture dans le journal de quêtes
+---------------------------------------------------------------------------
+
+-- Texte d'une quête du journal : description et objectifs, lus en la sélectionnant
+-- un instant (la sélection du joueur est rendue aussitôt).
+function Guide:QuestText(quest)
+    if not (C_QuestLog.GetLogIndexForQuestID and C_QuestLog.GetLogIndexForQuestID(quest)) then
+        return nil
+    end
+    if not (C_QuestLog.SetSelectedQuest and GetQuestLogQuestText) then
+        return nil
+    end
+    local previous = C_QuestLog.GetSelectedQuest and C_QuestLog.GetSelectedQuest()
+    C_QuestLog.SetSelectedQuest(quest)
+    local description, objectives = GetQuestLogQuestText()
+    if previous and previous ~= quest then
+        C_QuestLog.SetSelectedQuest(previous)
+    end
+    return description, objectives
+end
+
+-- Infobulle d'une quête : titre et niveau, objectifs du client, description.
+function Guide:FillQuestTooltip(tooltip, quest, guide)
+    local name = ns.DB:GetName("quest", quest, guide) or ("#" .. quest)
+    local level = Labels.QuestLevel({ quest = quest }, guide)
+    local levelTag = level and Labels.LevelTag({ quest = quest }, guide, self.state and self.state:Level())
+    tooltip:SetText((levelTag and (levelTag .. " ") or "") .. name, 1, 0.82, 0, 1, true)
+    local inLog = self.state and self.state:InLog(quest)
+    for _, objective in ipairs(inLog and self.state:Objectives(quest) or {}) do
+        if objective.text and objective.text ~= "" then
+            local done = objective.finished
+            tooltip:AddLine((done and "|cff808080- " or "- ") .. objective.text .. (done and "|r" or ""), 1, 1, 1, true)
+        end
+    end
+    local description, objectives = self:QuestText(quest)
+    if objectives and objectives ~= "" then
+        tooltip:AddLine(" ")
+        tooltip:AddLine(objectives, 1, 1, 1, true)
+    end
+    if description and description ~= "" then
+        tooltip:AddLine(" ")
+        tooltip:AddLine(description, 0.75, 0.75, 0.75, true)
+    end
+    if inLog then
+        tooltip:AddLine(" ")
+        tooltip:AddLine(L["Click to open it in the quest log."], 0.4, 0.8, 1, true)
+    elseif not description then
+        tooltip:AddLine(L["Not in your quest log."], 0.6, 0.6, 0.6, true)
+    end
+end
+
+-- Ouvre le journal de quêtes du jeu sur la quête : journal intégré à la carte
+-- (QuestMapFrame), ou journal classique (QuestLogFrame).
+function Guide:OpenQuestLog(quest)
+    if InCombatLockdown and InCombatLockdown() then
+        ns:Print(L["Not in combat."])
+        return
+    end
+    if QuestMapFrame_OpenToQuestDetails then
+        QuestMapFrame_OpenToQuestDetails(quest)
+        return
+    end
+    if C_QuestLog.SetSelectedQuest then
+        C_QuestLog.SetSelectedQuest(quest)
+    end
+    local index = C_QuestLog.GetLogIndexForQuestID and C_QuestLog.GetLogIndexForQuestID(quest)
+    if index and SelectQuestLogEntry then
+        SelectQuestLogEntry(index)
+    end
+    if QuestLogFrame and ShowUIPanel then
+        ShowUIPanel(QuestLogFrame)
+        if QuestLog_Update then
+            QuestLog_Update()
+        end
+    elseif ToggleQuestLog then
+        ToggleQuestLog()
     end
 end
 

@@ -257,6 +257,42 @@ describe("Guide en jeu", function()
         expect(label:find("class trainer", 1, true), "le maître de classe, pas la quête d'une autre race")
     end)
 
+    it("montre le texte d'une quête au survol et l'ouvre dans le journal de quêtes", function()
+        local game, Guide = boot()
+        game:acceptQuest(783, { kill() })
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start(GUIDE_ID)
+        Guide:Refresh()
+        -- Ligne de l'objectif « tuer » de la quête 783 (étape 2) : infobulle et clic.
+        local line
+        for _, candidate in ipairs(Guide.window.lines) do
+            if type(rawget(candidate, "tooltip")) == "function" and rawget(candidate, "onClick") then
+                line = candidate
+            end
+        end
+        expect(line, "ligne de quête avec infobulle et clic")
+        local texts = {}
+        local tooltip = {
+            SetText = function(_, text) texts[#texts + 1] = text end,
+            AddLine = function(_, text) texts[#texts + 1] = text end,
+        }
+        line.tooltip(tooltip)
+        local all = table.concat(texts, " ")
+        expect(all:find("Kobold Vermin slain", 1, true), "objectif du client dans l'infobulle")
+        expect(all:find("quest log", 1, true), "invitation à cliquer")
+        local opened
+        _G.QuestMapFrame_OpenToQuestDetails = function(quest) opened = quest end
+        line.onClick()
+        expect_eq(opened, 783, "journal de quêtes ouvert sur la quête")
+        _G.QuestMapFrame_OpenToQuestDetails = nil
+
+        -- Quête absente du journal : infobulle, mais pas de clic.
+        texts = {}
+        Guide:FillQuestTooltip(tooltip, 999999, Guide.result.guide)
+        expect(table.concat(texts, " "):find("Not in your quest log", 1, true))
+        expect_eq(#game.errors, 0)
+    end)
+
     it("calcule distance et direction en coordonnées monde", function()
         local game = boot()
         local Navigation = game.ns.Navigation

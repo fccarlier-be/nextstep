@@ -243,3 +243,8 @@ L["Finished"] = "Terminé"
 L["Reward"] = "Récompense"
 L["Levels %s"] = "Niveaux %s"
 L["Open the guide journal"] = "Ouvre le journal du guide"
+
+-- Modules/Guide/Window.lua (quêtes)
+L["Click to open it in the quest log."] = "Clic : l'ouvrir dans le journal de quêtes."
+L["Not in your quest log."] = "Pas dans ton journal de quêtes."
+L["Not in combat."] = "Pas en combat."
