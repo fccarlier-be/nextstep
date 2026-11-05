@@ -18,7 +18,7 @@ files["addon/**"] = {
         "NextStep", "NextStepDB", "NextStepCharDB",
         "SLASH_NEXTSTEP1", "SLASH_NEXTSTEP2", "SlashCmdList",
         "BINDING_HEADER_NEXTSTEP", "BINDING_NAME_NEXTSTEP_RADAR",
-        "BINDING_NAME_NEXTSTEP_GUIDE", "BINDING_NAME_NEXTSTEP_ARROW", "BINDING_NAME_NEXTSTEP_DONE",
+        "BINDING_NAME_NEXTSTEP_GUIDE", "BINDING_NAME_NEXTSTEP_ARROW", "BINDING_NAME_NEXTSTEP_DONE", "BINDING_NAME_NEXTSTEP_JOURNAL",
     },
     read_globals = {
         -- API du jeu utilisée (à compléter au fil des modules)

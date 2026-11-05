@@ -40,6 +40,7 @@ Modules\Guide\Labels.lua
 Modules\Guide\Live.lua
 Modules\Guide\Spells.lua
 Modules\Guide\SpellsWindow.lua
+Modules\Guide\Journal.lua
 Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
 Modules\Guide\Pins.lua

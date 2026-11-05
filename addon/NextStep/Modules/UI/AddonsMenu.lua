@@ -121,10 +121,16 @@ end
 function Menu:Fill(root)
     root:CreateTitle("NextStep")
     root:CreateButton(L["Farming radar"], toggleRadar)
+    root:CreateButton(L["Guide journal"], function()
+        local guide = ns.Modules:Get("Guide")
+        if guide then
+            guide:ToggleJournal("routes")
+        end
+    end)
     root:CreateButton(L["Class spells"], function()
         local guide = ns.Modules:Get("Guide")
         if guide then
-            guide:ToggleSpellsWindow()
+            guide:ToggleJournal("spells")
         end
     end)
     root:CreateButton(L["NextStep options"], function()

@@ -22,6 +22,7 @@ local SPECS = {
     "guide_live",
     "pins",
     "spells",
+    "journal",
     "autoplay",
     "diagnostic",
 }

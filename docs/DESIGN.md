@@ -382,6 +382,13 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 
 Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Métiers**, **Items**, **Zones**, **Options**.
 
+**Réalisé** (`Modules/Guide/Journal.lua`), ouvert par le menu du bouton NextStep (« Journal du guide », « Sorts de classe »), `/ns journal` ou un raccourci ; déplaçable, Échap ou la croix pour fermer, listes à la molette :
+
+- **Routes** : à gauche les catégories qui ont des guides pour le personnage (Leveling, Classe, Métiers, Réputation, Collection, Exploration, Divers, Ancien contenu), avec leur nombre ; au milieu les guides de la catégorie, rangés par dossier puis par niveau, avec la tranche de niveaux colorée comme le niveau des quêtes (gris en dessous, jaune dedans, orange ou rouge au-dessus) et l'avancement (suivi, terminé, ou pourcentage d'étapes passées) ; à droite le détail du guide choisi (zone, argument, récompense, guide suivant, avancement) et **Suivre ce guide** (une quête de classe garde la route à reprendre). En tête du leveling, **Choisis ton chemin** : les guides suivants du guide suivi, puis les guides conseillés (`Guide:Suggest`). Filtre : faction et classe toujours, race hors leveling, guides retirés jamais.
+- **Sorts de classe** : le plan des sorts (voir [Sorts à apprendre](#sorts-à-apprendre)).
+- **Options** : bouton vers les options de NextStep.
+- Restent : onglets Métiers, Items et Zones (phases suivantes), recherche.
+
 ### Divers
 
 - Le suivi d'objectifs Blizzard est **masqué quand le guide est actif** (option). **[À vérifier]** Nom du cadre sur Forever (`ObjectiveTrackerFrame` ou `QuestWatchFrame`) et masquage sans souillure.

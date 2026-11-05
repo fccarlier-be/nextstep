@@ -111,7 +111,7 @@ Chaque complément est indépendant des autres et ne dépend que de la v0.1 : il
 | Sorts à apprendre | Sorts disponibles chez le maître selon la classe, la race et le niveau, avec leur coût ; étape « maître de classe » dans la route ; liste mémorisée à chaque visite chez le maître. **Écrit et testé hors jeu** (tables de What's Training, coût, étape « maître de classe » validée quand il n'y a rien à apprendre) ; restent la liste lue chez le maître et l'étape ajoutée dans les villes. |
 | Célébration de niveau | Bandeau, son du jeu, nouveaux sorts disponibles et zone suivante conseillée. |
 | Niveau des zones | Niveau des zones affiché sur la carte du monde. |
-| Journal | Journal du guide : onglet Routes, « Choisis ton chemin ». |
+| Journal | Journal du guide : onglet Routes, « Choisis ton chemin ». **Écrit et testé hors jeu** (onglets Routes et Sorts de classe) ; à vérifier en jeu. |
 
 **Terminé quand** : tous les compléments sont publiés, et le guide signale les visites au maître de classe.
 

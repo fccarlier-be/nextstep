@@ -419,6 +419,7 @@ end
 BINDING_NAME_NEXTSTEP_GUIDE = ns.L["Show or hide the guide window"]
 BINDING_NAME_NEXTSTEP_ARROW = ns.L["Show or hide the arrow"]
 BINDING_NAME_NEXTSTEP_DONE = ns.L["Mark the current step as done"]
+BINDING_NAME_NEXTSTEP_JOURNAL = ns.L["Open the guide journal"]
 
 local SUBCOMMANDS = {}
 
@@ -558,6 +559,9 @@ function Guide:AddCommands()
     ns.Slash:Add("arrow", function()
         self:SetArrowShown(not self.db.arrow)
     end, ns.L["Show or hide the arrow"])
+    ns.Slash:Add("journal", function()
+        self:ToggleJournal("routes")
+    end, ns.L["Open the guide journal"])
     ns.Slash:Add("spells", function(input)
         if input == "list" then
             self:PrintSpells()
