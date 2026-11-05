@@ -17,6 +17,7 @@ Core\Events.lua
 Core\Storage.lua
 Core\Style.lua
 Core\DB.lua
+Locales\GuideTexts_frFR.lua
 Data\Imported\Polestar\Meta.lua
 Data\Imported\Polestar\Guides.lua
 Data\Imported\Polestar\Names_enUS.lua

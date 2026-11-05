@@ -349,6 +349,8 @@ Déplaçable, redimensionnable, réductible à une ligne ; verrouillage, échell
 - **Ignorer** passe l'étape ; **Valider** valide ses objectifs « à valider », ou la passe s'il n'y en a pas ; **Strict / Libre** change de mode ;
 - sans guide suivi, les trois premiers guides adaptés au personnage (clic pour commencer) ; à la fin d'un guide, les guides suivants ; pour une quête de groupe, Oui / Non.
 
+**Formules traduites par modèle** (`Locales/GuideTexts_frFR.lua`, `DB:AddTemplates`) : quand un texte de guide n'a pas de traduction de Polestar, ses noms (`{npc:123}`…) deviennent `{1}`, `{2}`…, le modèle est cherché dans une table de formules récurrentes, puis les noms reprennent leur place (l'ordre peut changer). La liste vient des textes non traduits les plus fréquents (environ 7 000 textes de guide sans traduction au 2026-11-05) ; vouvoiement, comme Polestar.
+
 **Libellés** (`Modules/Guide/Labels.lua`) : les objectifs importés n'ont presque jamais de texte. Le libellé est construit à partir du type et des noms (« Accepter … », « Tuer … »). Pour un objectif de quête, le texte du client est préféré : il est traduit et donne la progression (« Vermine kobold tuée : 6/10 »).
 
 Redimensionnement, échelle, transparence et estompage en combat viendront avec les compléments.

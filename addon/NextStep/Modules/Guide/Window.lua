@@ -280,6 +280,10 @@ local function addGoal(self, view, result, i, j, status)
     if group then
         text = ("%s |cffff8040(%s)|r"):format(text, group)
     end
+    local source = status ~= "done" and Labels.CollectSource(goal, guide)
+    if source then
+        text = ("%s |cffa0a0a0(%s)|r"):format(text, source)
+    end
     local note = Labels.GoalNote(goal, guide)
     if note then
         text = ("%s |cffa0a0a0- %s|r"):format(text, note)

@@ -75,6 +75,8 @@ L["Saved data comes from a newer version of NextStep: it was left untouched."] =
 
 -- Modules/Guide/Labels.lua
 L["Accept %s"] = "Accepter %s"
+L["on: %s"] = "sur : %s"
+L["in: %s"] = "dans : %s"
 L["%s, for: %s"] = "%s, pour : %s"
 L["Accept %s from %s"] = "Accepter %s auprès de %s"
 L["Accept %s (object: %s)"] = "Accepter %s (objet : %s)"
