@@ -185,6 +185,20 @@ Les autres champs sont repris tels quels de Polestar et documentés au fur et à
 
 Les coordonnées marquées `f = "e"` sont exprimées dans le repère **era** des cartes du Classic. Quand Forever a modifié une carte, il faut les convertir **en jeu** : passage en coordonnées monde avec `DB.mapFrames.era[map]`, puis retour en pourcentage de la carte du client avec `C_Map.GetMapPosFromWorldPos`. Cette conversion ne peut pas se faire à l'import, car les repères du client ne sont connus qu'en jeu. La distance et la flèche n'en ont pas besoin : elles travaillent directement en coordonnées monde (`Modules/Guide/Navigation.lua`). Seuls les points sur la carte (complément v0.1.x) feront le retour vers la carte du client.
 
+## Sorts des maîtres de classe
+
+`Data/Imported/WhatsTraining/Spells.lua`, généré par `Tools/trainer/import.lua` depuis les tables `Classes/Camelot` de What's Training (MIT) :
+
+```lua
+DB:AddTrainerSpells("HUNTER", function() return {
+	[10] = {
+		{ id = 13549, cost = 400, req = { 1978 } },
+	},
+} end)
+```
+
+Par classe (jeton de `UnitClass`), puis par niveau requis, chaque sort : `id` (identifiant du sort), `cost` (prix en pièces de cuivre), et si besoin `req` (sorts à connaître avant : rang précédent), `talent` (talent requis), `races` (jetons de race), `faction` (`"Alliance"` ou `"Horde"`), `skill` (`{ ligne de compétence, rang }`, comme les poisons du voleur). L'import refuse tout autre champ.
+
 ## Import
 
 ```powershell

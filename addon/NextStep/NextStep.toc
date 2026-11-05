@@ -22,6 +22,7 @@ Data\Imported\Polestar\Names_enUS.lua
 Data\Imported\Polestar\Names_frFR.lua
 Data\Imported\Polestar\Texts_frFR.lua
 Data\Imported\Client\MapOverlays.lua
+Data\Imported\WhatsTraining\Spells.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
@@ -37,6 +38,8 @@ Modules\Guide\State.lua
 Modules\Guide\Navigation.lua
 Modules\Guide\Labels.lua
 Modules\Guide\Live.lua
+Modules\Guide\Spells.lua
+Modules\Guide\SpellsWindow.lua
 Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
 Modules\Guide\Pins.lua

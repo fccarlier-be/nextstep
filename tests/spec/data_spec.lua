@@ -192,6 +192,15 @@ describe("Licences livrées avec l'addon", function()
         expect(contains(common, "# Credits of Ding's game data"), "CREDITS.md de DingDB recopié")
     end)
 
+    it("livre la notice MIT de What's Training à côté des sorts importés", function()
+        local folder = "addon/NextStep/Data/Imported/WhatsTraining/"
+        local notice = readText(folder .. "LICENSE-DATA.txt")
+        expect(contains(notice, "MIT License"), "licence MIT")
+        expect(contains(notice, "Permission is hereby granted"), "texte complet de la licence")
+        local head = readText(folder .. "Spells.lua"):sub(1, 400)
+        expect(contains(head, "What's Training") and contains(head, "MIT"), "source et licence en tête")
+    end)
+
     it("rappelle la licence et le copyright de Polestar en tête des fichiers générés", function()
         local files = {
             "addon/NextStep/Data/Imported/Polestar/Guides.lua",

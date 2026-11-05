@@ -162,6 +162,7 @@ function Engine.Evaluate(guide, ctx)
     local goalCtx = {
         droppedQuests = droppedQuests,
         trainedLevel = ctx.trainedLevel,   -- niveau de la dernière visite au maître de classe
+        spellsToLearn = ctx.spellsToLearn, -- nombre de sorts à apprendre (nil sans données)
         seen = function(goal)
             local key = keys.byGoal[goal]
             return key ~= nil and (ctx.seen[key] or progress.ticks[key]) == true

@@ -157,6 +157,20 @@ describe("Radar de récolte", function()
         expect(not world.hiddenButton.shown, "un cadre déjà caché le reste")
     end)
 
+    it("se ferme par Échap ou la croix", function()
+        local world = {}
+        local game, radar = boot(world)
+        radar:Toggle()
+        expect(radar.active, "radar ouvert")
+        -- Échap cache le cadre (UISpecialFrames) : le radar se ferme pour de bon.
+        game:runScript(radar.frame, "OnHide")
+        expect(not radar.active, "fermé par Échap")
+        expect_eq(world.minimap.parent, world.cluster, "minimap rendue")
+        radar:Toggle()
+        game:runScript(radar.frame.close, "OnClick")
+        expect(not radar.active, "fermé par la croix")
+    end)
+
     it("rétablit exactement la minimap à la fermeture", function()
         local world = {}
         local _, radar = boot(world)

@@ -197,3 +197,18 @@ L["Marks the items in your bags that a quest in your log needs, and names the qu
     "Marque dans les sacs les objets utiles à une quête du journal, et nomme la quête dans leur infobulle."
 L["Quest item"] = "Objet de quête"
 L["Quest item: %s"] = "Objet de quête : %s"
+
+-- Modules/Guide/Spells.lua
+L["%d g"] = "%d po"
+L["%d s"] = "%d pa"
+L["%d c"] = "%d pc"
+L["%d spells to learn (%s)"] = "%d sorts à apprendre (%s)"
+L["Total: %s"] = "Total : %s"
+L["Missing: %s"] = "Il manque : %s"
+L["Level %d: %d new spells"] = "Niveau %d : %d nouveaux sorts"
+L["No trainer data for your class."] = "Pas de données de maître pour ta classe."
+L["Nothing to learn at your trainer for now."] = "Rien à apprendre chez ton maître pour l'instant."
+L["Show your class spells, now and at the next levels (list: in the chat)"] =
+    "Affiche tes sorts de classe, maintenant et aux niveaux suivants (list : dans le chat)"
+L["Class spells"] = "Sorts de classe"
+L["Now: %d spells"] = "Maintenant : %d sorts"

@@ -558,6 +558,13 @@ function Guide:AddCommands()
     ns.Slash:Add("arrow", function()
         self:SetArrowShown(not self.db.arrow)
     end, ns.L["Show or hide the arrow"])
+    ns.Slash:Add("spells", function(input)
+        if input == "list" then
+            self:PrintSpells()
+        else
+            self:ToggleSpellsWindow()
+        end
+    end, ns.L["Show your class spells, now and at the next levels (list: in the chat)"])
     ns.Slash:Add("debug", function()
         self:PrintDebug()
     end, ns.L["Show debugging information"])

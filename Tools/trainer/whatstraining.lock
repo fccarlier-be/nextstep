@@ -1,0 +1,4 @@
+# Version de What's Training importée. Modifier ces valeurs puis relancer Tools\trainer\run.ps1.
+repository=https://github.com/fusionpit/WhatsTraining.git
+commit=d7f41ef5e2ca0ff6a28c9e8f8a47dd6dfdec74dd
+date=2026-11-04
