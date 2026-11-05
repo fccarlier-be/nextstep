@@ -55,7 +55,9 @@ function Guide:SpellsWindowRows(state)
             color = money >= group.total and COLORS.now or COLORS.short
         end
         for _, spell in ipairs(group.spells) do
-            rows[#rows + 1] = { text = spellLabel(spell.id), cost = Guide.FormatMoney(spell.cost), color = color }
+            rows[#rows + 1] = {
+                id = spell.id, text = spellLabel(spell.id), cost = Guide.FormatMoney(spell.cost), color = color,
+            }
         end
     end
     return rows

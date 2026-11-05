@@ -37,6 +37,7 @@ files["addon/**"] = {
         "C_Timer",
         "C_TooltipInfo",
         "C_TradeSkillUI",
+        "CLASS_ICON_TCOORDS",
         "CreateFrame",
         "CreateFromMixins",
         "CreateVector2D",

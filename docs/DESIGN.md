@@ -389,6 +389,10 @@ Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Méti
 - **Options** : bouton vers les options de NextStep.
 - Restent : onglets Métiers, Items et Zones (phases suivantes), recherche.
 
+### Style des fenêtres
+
+Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 2026-11-05) : fond presque noir, barre de titre avec le logo et un liseré doré, panneaux un peu plus clairs, cartes avec survol et sélection teintés d'or, boutons plats (onglet actif souligné d'or), barres d'avancement dorées, icônes du jeu aux coins rognés. Aucun modèle XML du client : seulement des aplats d'une texture blanche teintée, pour ne dépendre d'aucune texture propre à une version du jeu. Le journal l'utilise ; la fenêtre du guide et les autres y passeront.
+
 ### Divers
 
 - Le suivi d'objectifs Blizzard est **masqué quand le guide est actif** (option). **[À vérifier]** Nom du cadre sur Forever (`ObjectiveTrackerFrame` ou `QuestWatchFrame`) et masquage sans souillure.

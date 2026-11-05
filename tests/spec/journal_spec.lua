@@ -91,13 +91,18 @@ describe("Journal du guide", function()
 
         -- Dessin des deux onglets (le cadre simulé se dit affiché).
         rawset(Guide.journal, "IsShown", function() return true end)
+        rawset(Guide.journal.list, "GetHeight", function() return 440 end)
+        rawset(Guide.journal.spells, "GetHeight", function() return 440 end)
         Guide.journalSelected = TAMING
         Guide:ShowJournalTab("routes")
         expect(#Guide.journalRows > 0, "liste dessinée")
         Guide.journalCategory = "Class"
         Guide:UpdateJournal()
         expect(has(guideIDs(Guide.journalRows), TAMING))
+        expect(#Guide.journal.cards > 0, "cartes de guides dessinées")
         Guide:ShowJournalTab("spells")
         expect(#Guide.spellsWindowRows > 0, "sorts dessinés")
+        expect(#Guide.journal.spells.lines > 0, "lignes de sorts dessinées")
+        expect_eq(#game.errors, 0)
     end)
 end)
