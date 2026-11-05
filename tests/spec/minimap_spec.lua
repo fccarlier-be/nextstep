@@ -79,6 +79,26 @@ describe("Minimap", function()
         expect_eq(GetMinimapShape(), "ROUND")
     end)
 
+    it("pose l'icône jour / nuit sur le coin du carré, et la rend en rond", function()
+        local icon = { points = { { "TOPRIGHT", "MinimapCluster", "TOPRIGHT", -10, -5 } }, scale = 1 }
+        function icon.GetNumPoints(self) return #self.points end
+        function icon.GetPoint(self, index) return unpack(self.points[index]) end
+        function icon.ClearAllPoints(self) self.points = {} end
+        function icon.SetPoint(self, ...) self.points[#self.points + 1] = { ... } end
+        function icon.GetScale(self) return self.scale end
+        function icon.SetScale(self, scale) self.scale = scale end
+        local _, module, _, world = boot()
+        _G.GameTimeFrame = icon
+        module:Apply()
+        expect_eq(icon.points[1][1], "CENTER")
+        expect_eq(icon.points[1][2], world.minimap, "sur la minimap")
+        expect_eq(icon.points[1][3], "TOPRIGHT", "coin en haut à droite")
+        module:SetSquare(false)
+        expect_eq(icon.points, { { "TOPRIGHT", "MinimapCluster", "TOPRIGHT", -10, -5 } }, "place d'origine rendue")
+        expect_eq(icon.scale, 1)
+        _G.GameTimeFrame = nil
+    end)
+
     it("zoome à la molette, dans les limites", function()
         local _, module, _, world = boot()
         expect_eq(world.minimap.wheel, true, "molette active")

@@ -7,7 +7,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
-- **Notes des guides de leveling de l'Alliance traduites en français** : les 585 textes que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de classe, de réputation, de métiers et de la Horde.
+- **Notes des guides de l'Alliance traduites en français** : les 1 038 textes des guides de leveling (585) et de classe (453) que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ, familier du chasseur, poisons, totems…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de réputation, de métiers, de collection et de la Horde.
+- Minimap carrée : l'icône jour / nuit est posée sur le coin en haut à droite, un peu plus petite ; sa place d'origine est rendue en rond.
 - Journal, onglet Sorts de classe : **infobulle du sort** au survol, avec son prix chez le maître.
 - **Formules des guides traduites** : environ 120 formules récurrentes que les traductions de Polestar ne couvrent pas (« à tuer en chemin », « Maître de vol de… », « à l'intérieur », « Vol vers… »…), traduites par modèle (`Locales/GuideTexts_frFR.lua`) ; la traduction de Polestar reste prioritaire.
 - Objets à ramasser : la fenêtre du guide dit **sur quels monstres** les trouver (ou dans quel objet).

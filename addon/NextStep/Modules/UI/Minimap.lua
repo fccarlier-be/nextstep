@@ -114,6 +114,7 @@ function MinimapModule:Apply()
     end
     self:UpdateBorder()
     self:PlaceMenuButton()
+    self:PlaceDayNight(square)
     if self.savedWheel == nil then
         self.savedWheel = Minimap:IsMouseWheelEnabled() == true
     end
@@ -138,9 +139,41 @@ function MinimapModule:Restore()
         self.border:Hide()
     end
     self:PlaceMenuButton()
+    self:PlaceDayNight(false)
     if self.savedWheel ~= nil then
         Minimap:EnableMouseWheel(self.savedWheel)
         self.savedWheel = nil
+    end
+end
+
+-- Icône jour / nuit (calendrier, GameTimeFrame) : prévue pour le bord d'une minimap
+-- ronde, elle tombe sur la carte en carré. Elle est posée sur le coin en haut à
+-- droite du carré, un peu plus petite ; sa place d'origine est rendue en rond.
+local DAY_NIGHT_SCALE = 0.85
+
+function MinimapModule:PlaceDayNight(square)
+    local icon = _G.GameTimeFrame
+    if not (icon and icon.GetNumPoints and icon.ClearAllPoints) then
+        return
+    end
+    if square then
+        if not self.dayNight then
+            local saved = { scale = icon:GetScale(), points = {} }
+            for index = 1, icon:GetNumPoints() do
+                saved.points[index] = { icon:GetPoint(index) }
+            end
+            self.dayNight = saved
+        end
+        icon:ClearAllPoints()
+        icon:SetPoint("CENTER", Minimap, "TOPRIGHT", 2, 2)
+        icon:SetScale(DAY_NIGHT_SCALE)
+    elseif self.dayNight then
+        icon:ClearAllPoints()
+        for _, point in ipairs(self.dayNight.points) do
+            icon:SetPoint(unpack(point))
+        end
+        icon:SetScale(self.dayNight.scale)
+        self.dayNight = nil
     end
 end
 
