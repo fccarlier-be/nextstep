@@ -179,6 +179,20 @@ describe("Formules des guides traduites par NextStep", function()
         expect_eq(DB:Translate("Texte jamais vu {npc:1}"), "Texte jamais vu {npc:1}", "inconnu : l'anglais")
     end)
 
+    it("traduit les notes des guides que Polestar ne traduit pas", function()
+        local DB = wow.boot({ locale = "frFR", faction = "Alliance" }).ns.DB
+        -- Note de deux paragraphes (étape de Ruisselune, Marche de l'Ouest).
+        local note = "Defias Pathstalkers and Knuckledusters walk {area:20}; Highwaymen (level 17) patrol the "
+            .. "hills south and east of it in pairs: pull them apart. {area:1581} entrance in the smithy is a "
+            .. "group dungeon.\nCareful: The camps in the hills hold mixed groups of Defias, so it is easy to "
+            .. "pull more than one at a time if you are low level."
+        local french = DB:Translate(note)
+        expect(french ~= note, "note traduite")
+        expect(french:find("Attention", 1, true) and french:find("{area:1581}", 1, true), french)
+        expect_eq(DB:Translate("Sacks of Oats in the fields around the farm"),
+            "Sacs d'avoine dans les champs autour de la ferme")
+    end)
+
     it("remet les noms à leur place, même dans un autre ordre", function()
         local game = wow.boot({ locale = "frFR" })
         local DB = game.ns.DB

@@ -8,7 +8,7 @@ exclude_files = {
     "Tools/bin/**", "Tools/import/cache/**", "Tools/trainer/cache/**", "Tools/worldmap/cache/**", "addon/NextStep/Libs/**",
     ".lua/**", ".luarocks/**",
     -- Données générées par Tools/import/import.lua et Tools/worldmap/generate.lua
-    "addon/NextStep/Data/Imported/**", "addon/NextStep_Alliance/Data/**", "addon/NextStep_Horde/Data/**",
+    "addon/NextStep/Data/Imported/**", "addon/NextStep/Locales/GuideNotes_frFR.lua", "addon/NextStep_Alliance/Data/**", "addon/NextStep_Horde/Data/**",
 }
 
 -- Code de l'addon : seules les globales listées ici sont permises.

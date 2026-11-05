@@ -244,6 +244,7 @@ L["Following"] = "Suivi"
 L["Finished"] = "Terminé"
 L["Reward"] = "Récompense"
 L["Levels %s"] = "Niveaux %s"
+L["Trainer cost: %s"] = "Prix chez le maître : %s"
 L["Open the guide journal"] = "Ouvre le journal du guide"
 
 -- Modules/Guide/Window.lua (quêtes)

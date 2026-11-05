@@ -7,6 +7,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- **Notes des guides de leveling de l'Alliance traduites en français** : les 585 textes que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de classe, de réputation, de métiers et de la Horde.
+- Journal, onglet Sorts de classe : **infobulle du sort** au survol, avec son prix chez le maître.
 - **Formules des guides traduites** : environ 120 formules récurrentes que les traductions de Polestar ne couvrent pas (« à tuer en chemin », « Maître de vol de… », « à l'intérieur », « Vol vers… »…), traduites par modèle (`Locales/GuideTexts_frFR.lua`) ; la traduction de Polestar reste prioritaire.
 - Objets à ramasser : la fenêtre du guide dit **sur quels monstres** les trouver (ou dans quel objet).
 - Fenêtre du guide : au **survol d'un objectif de quête**, son texte (niveau, objectifs du client, objectifs et description du journal) ; un **clic l'ouvre dans le journal de quêtes** du jeu, sur la bonne quête.

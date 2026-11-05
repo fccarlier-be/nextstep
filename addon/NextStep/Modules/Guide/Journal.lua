@@ -801,8 +801,33 @@ function Guide:UpdateJournalSpells()
             line.text:SetPoint("LEFT", line.icon, "RIGHT", 8, 0)
             line.cost = Style.Text(line, "GameFontHighlightSmall", C.text, "RIGHT")
             line.cost:SetPoint("RIGHT", -10, 1)
+            -- Infobulle du sort au survol.
+            line:EnableMouse(true)
+            line:SetScript("OnEnter", function(frame)
+                setFill(frame.bg, C.cardHover)
+                if frame.spellID and GameTooltip then
+                    GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+                    if GameTooltip.SetSpellByID then
+                        GameTooltip:SetSpellByID(frame.spellID)
+                    else
+                        GameTooltip:SetHyperlink("spell:" .. frame.spellID)
+                    end
+                    if frame.costText then
+                        GameTooltip:AddLine(" ")
+                        GameTooltip:AddLine(L["Trainer cost: %s"]:format(frame.costText), 1, 0.82, 0)
+                    end
+                    GameTooltip:Show()
+                end
+            end)
+            line:SetScript("OnLeave", function(frame)
+                setFill(frame.bg, C.card)
+                if GameTooltip then
+                    GameTooltip:Hide()
+                end
+            end)
             spells.lines[lines] = line
         end
+        line.spellID, line.costText = row.id, row.cost
         line.icon:SetTexture(row.id and spellIcon(row.id) or nil)
         line.text:SetText(row.text)
         setColor(line.text, row.color)
