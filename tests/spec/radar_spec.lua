@@ -79,7 +79,8 @@ local function installWorld(world)
         rawset(frame, "CreateFontString", function()
             local letter = newWidget({ shown = false })
             function letter.SetText(self, text) self.text = text end
-            return letter
+            -- Les autres méthodes des textes (autres modules) ne font rien.
+            return setmetatable(letter, { __index = function() return function() end end })
         end)
         world.radarFrame = frame
         return frame
@@ -155,6 +156,25 @@ describe("Radar de récolte", function()
         radar:Toggle()
         expect(world.button.shown)
         expect(not world.hiddenButton.shown, "un cadre déjà caché le reste")
+    end)
+
+    it("reprend la minimap quand le client la rétablit", function()
+        local world = {}
+        local game, radar = boot(world)
+        radar:Toggle()
+        local minimap = world.minimap
+        -- Le client rend la minimap à son cadre et change sa transparence (changement de zone).
+        minimap:SetParent(world.cluster)
+        expect_eq(minimap.parent, radar.frame, "minimap reprise par le radar")
+        minimap:SetAlpha(1)
+        expect_eq(minimap.alpha, radar:GetAlpha(), "transparence du radar rétablie")
+        game:fire("ZONE_CHANGED_NEW_AREA")
+        expect_eq(minimap.parent, radar.frame)
+        radar:Toggle()
+        expect_eq(minimap.parent, world.cluster, "fermé : la minimap revient à sa place")
+        minimap:SetAlpha(0.5)
+        expect_eq(minimap.alpha, 0.5, "radar fermé : plus rien n'est forcé")
+        expect_eq(#game.errors, 0)
     end)
 
     it("se ferme par Échap ou la croix", function()

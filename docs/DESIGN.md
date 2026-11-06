@@ -343,10 +343,13 @@ Déplaçable, redimensionnable, réductible à une ligne ; verrouillage, échell
 - l'étape courante et ses objectifs (coche, case vide, croix pour un objectif bloqué avec la raison) ; en mode libre, les objectifs ouverts du même endroit ;
 - le conseil de l'étape, les objectifs à faire en chemin, les quêtes abandonnées (clic pour reprendre), l'étape suivante, le nombre de détours, l'avertissement « niveau dépassé » ;
 - un objectif « à valider » se valide d'un clic ;
+- au survol d'un objectif de quête, une infobulle donne son niveau, ses objectifs (texte du client, barrés une fois faits), le résumé et la description du journal de quêtes (lus en sélectionnant la quête un instant, la sélection du joueur est rendue) ; un clic ouvre le journal de quêtes du jeu sur la quête (`QuestMapFrame_OpenToQuestDetails`, sinon `QuestLogFrame`), hors combat. **[À vérifier]** journal de quêtes de Forever ;
 - devant chaque objectif de quête, le **niveau de la quête coloré** selon l'écart avec celui du personnage, comme dans le jeu (`Labels.Difficulty`) : gris sous le niveau gris du jeu classique (aucun avant le niveau 6), vert, jaune de 2 niveaux en dessous à 2 au-dessus, orange à 3 ou 4 au-dessus, rouge à 5 ou plus ; le niveau vient du `qlvl` de l'objectif « accepter » de la quête ;
 - la mention du contenu de groupe (élite, groupe de N, donjon, raid) ; les quêtes de classe disponibles, avec le retour au guide de leveling à leur fin ;
 - **Ignorer** passe l'étape ; **Valider** valide ses objectifs « à valider », ou la passe s'il n'y en a pas ; **Strict / Libre** change de mode ;
 - sans guide suivi, les trois premiers guides adaptés au personnage (clic pour commencer) ; à la fin d'un guide, les guides suivants ; pour une quête de groupe, Oui / Non.
+
+**Formules traduites par modèle** (`Locales/GuideTexts_frFR.lua`, `DB:AddTemplates`) : quand un texte de guide n'a pas de traduction de Polestar, ses noms (`{npc:123}`…) deviennent `{1}`, `{2}`…, le modèle est cherché dans une table de formules récurrentes, puis les noms reprennent leur place (l'ordre peut changer). Les textes uniques (conseils, notes) sont traduits par NextStep dans `Locales/GuideNotes_frFR.lua` : `Tools/translate/export.lua` exporte, par faction et catégorie, les textes encore en anglais et leurs paragraphes ; chaque paragraphe est traduit à la même ligne d'un fichier `.fr.txt` ; `Tools/translate/build.py` recompose les notes à plusieurs paragraphes et refuse toute traduction qui ne garde pas exactement les mêmes noms (`{npc:123}`…). Fait au 2026-11-05 : leveling (585 textes) et classes (453) de l'Alliance. La liste des formules vient des textes non traduits les plus fréquents (environ 7 000 textes de guide sans traduction au 2026-11-05) ; vouvoiement, comme Polestar.
 
 **Libellés** (`Modules/Guide/Labels.lua`) : les objectifs importés n'ont presque jamais de texte. Le libellé est construit à partir du type et des noms (« Accepter … », « Tuer … »). Pour un objectif de quête, le texte du client est préféré : il est traduit et donne la progression (« Vermine kobold tuée : 6/10 »).
 
@@ -382,6 +385,17 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 
 Grande fenêtre à onglets : **Routes** (dont « Choisis ton chemin »), **Métiers**, **Items**, **Zones**, **Options**.
 
+**Réalisé** (`Modules/Guide/Journal.lua`), ouvert par le menu du bouton NextStep (« Journal du guide », « Sorts de classe »), `/ns journal` ou un raccourci ; déplaçable, Échap ou la croix pour fermer, listes à la molette :
+
+- **Routes** : à gauche les catégories qui ont des guides pour le personnage (Leveling, Classe, Métiers, Réputation, Collection, Exploration, Divers, Ancien contenu), avec leur nombre ; au milieu les guides de la catégorie, rangés par dossier puis par niveau, avec la tranche de niveaux colorée comme le niveau des quêtes (gris en dessous, jaune dedans, orange ou rouge au-dessus) et l'avancement (suivi, terminé, ou pourcentage d'étapes passées) ; à droite le détail du guide choisi (zone, argument, récompense, guide suivant, avancement) et **Suivre ce guide** (une quête de classe garde la route à reprendre). En tête du leveling, **Choisis ton chemin** : les guides suivants du guide suivi, puis les guides conseillés (`Guide:Suggest`). Filtre : faction et classe toujours, race hors leveling, guides retirés jamais.
+- **Sorts de classe** : le plan des sorts (voir [Sorts à apprendre](#sorts-à-apprendre)).
+- **Options** : bouton vers les options de NextStep.
+- Restent : onglets Métiers, Items et Zones (phases suivantes), recherche.
+
+### Style des fenêtres
+
+Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 2026-11-05) : fond presque noir, barre de titre avec le logo et un liseré doré, panneaux un peu plus clairs, cartes avec survol et sélection teintés d'or, boutons plats (onglet actif souligné d'or), barres d'avancement dorées, icônes du jeu aux coins rognés. Aucun modèle XML du client : seulement des aplats d'une texture blanche teintée, pour ne dépendre d'aucune texture propre à une version du jeu. Le journal, la fenêtre du guide et la **fenêtre des options** l'utilisent. Options (`Core/Options.lua`) : fenêtre défilante, une section par module (interrupteur doré, description, réglages alignés en retrait, séparateur), cases, curseurs et boutons au même style (`Options.AddCheck`, `AddSlider`, `AddButton`) ; la page NextStep des options du jeu n'a plus qu'un bouton qui ouvre cette fenêtre. Ils (barre de titre avec le logo, boutons Journal, Options et Réduire ; boutons Ignorer, Valider et Strict / Libre plats, estompés quand ils sont désactivés) ; les autres fenêtres y passeront.
+
 ### Divers
 
 - Le suivi d'objectifs Blizzard est **masqué quand le guide est actif** (option). **[À vérifier]** Nom du cadre sur Forever (`ObjectiveTrackerFrame` ou `QuestWatchFrame`) et masquage sans souillure.
@@ -415,7 +429,7 @@ Une arche de pierre moussue, une étoile dorée sur la clé de voûte, des march
 | `img/logo/nextstep-curseforge-400.png` | 400 × 400 | Page CurseForge, README |
 | `addon/NextStep/Media/Icon.tga` | 128 × 128 | Liste des addons (`## IconTexture` du TOC) |
 | `addon/NextStep/Media/IconSmall.tga` | 64 × 64 | Bouton de la minimap |
-| `addon/NextStep/Media/RadarRing.tga` | 256 × 256 | Anneau du radar de récolte (`Tools/radar/textures.py`) |
+| `addon/NextStep/Media/RadarRing.tga` | 512 × 512 | Anneau du radar de récolte (`Tools/radar/textures.py`) |
 | `addon/NextStep/Media/RadarMask.tga` | 64 × 64 | Masque transparent du radar : cache le terrain de la minimap (`Tools/radar/textures.py`) |
 
 Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puissances de 2. **[À vérifier]** l'affichage de `IconTexture` sur Forever. Si l'icône est trop chargée en 32 pixels sur la minimap, une version simplifiée (même arche, sans lierre ni rochers) sera faite.
@@ -451,7 +465,7 @@ Vente automatique **activée par défaut** : objets gris uniquement, résumé da
 - **Carrée par défaut**, ronde en option (forme déclarée aux autres addons via `GetMinimapShape`).
 - Zoom à la molette (retour automatique au zoom par défaut en option), coordonnées, horloge et zone lisibles, taille réglable.
 - Bascule rapide du suivi herbes / minerais.
-- **Réalisé** (`Modules/UI/Minimap.lua`, module `Minimap`, actif par défaut, mis de côté si SexyMap, BasicMinimap ou Chinchilla est chargé) : masque carré (`Interface\ChatFrame\ChatFrameBackground`) et liseré noir, décorations rondes cachées (`MinimapBorder`, `MinimapBorderTop`, `MinimapCompassTexture`, si elles existent), `GetMinimapShape` déclarée (la déclaration d'un autre addon est rendue en repassant en rond) ; zoom à la molette. Tout est rétabli à la désactivation ; changements différés après le combat si la minimap est protégée ; le radar ouvert garde son masque. Restent : coordonnées, horloge et zone, taille, retour au zoom par défaut, suivi herbes / minerais.
+- **Réalisé** (`Modules/UI/Minimap.lua`, module `Minimap`, actif par défaut, mis de côté si SexyMap, BasicMinimap ou Chinchilla est chargé) : masque carré (`Interface\ChatFrame\ChatFrameBackground`) et liseré noir, décorations rondes cachées (`MinimapBorder`, `MinimapBorderTop`, `MinimapCompassTexture`, si elles existent), icône jour / nuit (`GameTimeFrame`) posée sur le coin en haut à droite du carré, `GetMinimapShape` déclarée (la déclaration d'un autre addon est rendue en repassant en rond) ; zoom à la molette. Tout est rétabli à la désactivation ; changements différés après le combat si la minimap est protégée ; le radar ouvert garde son masque. Restent : coordonnées, horloge et zone, taille, retour au zoom par défaut, suivi herbes / minerais.
 
 ### Bouton NextStep et menu des addons
 

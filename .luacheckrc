@@ -8,7 +8,7 @@ exclude_files = {
     "Tools/bin/**", "Tools/import/cache/**", "Tools/trainer/cache/**", "Tools/worldmap/cache/**", "addon/NextStep/Libs/**",
     ".lua/**", ".luarocks/**",
     -- Données générées par Tools/import/import.lua et Tools/worldmap/generate.lua
-    "addon/NextStep/Data/Imported/**", "addon/NextStep_Alliance/Data/**", "addon/NextStep_Horde/Data/**",
+    "addon/NextStep/Data/Imported/**", "addon/NextStep/Locales/GuideNotes_frFR.lua", "addon/NextStep_Alliance/Data/**", "addon/NextStep_Horde/Data/**",
 }
 
 -- Code de l'addon : seules les globales listées ici sont permises.
@@ -18,7 +18,7 @@ files["addon/**"] = {
         "NextStep", "NextStepDB", "NextStepCharDB",
         "SLASH_NEXTSTEP1", "SLASH_NEXTSTEP2", "SlashCmdList",
         "BINDING_HEADER_NEXTSTEP", "BINDING_NAME_NEXTSTEP_RADAR",
-        "BINDING_NAME_NEXTSTEP_GUIDE", "BINDING_NAME_NEXTSTEP_ARROW", "BINDING_NAME_NEXTSTEP_DONE",
+        "BINDING_NAME_NEXTSTEP_GUIDE", "BINDING_NAME_NEXTSTEP_ARROW", "BINDING_NAME_NEXTSTEP_DONE", "BINDING_NAME_NEXTSTEP_JOURNAL",
     },
     read_globals = {
         -- API du jeu utilisée (à compléter au fil des modules)
@@ -37,6 +37,7 @@ files["addon/**"] = {
         "C_Timer",
         "C_TooltipInfo",
         "C_TradeSkillUI",
+        "CLASS_ICON_TCOORDS",
         "CreateFrame",
         "CreateFromMixins",
         "CreateVector2D",
@@ -55,10 +56,12 @@ files["addon/**"] = {
         "GetMoney",
         "GetNumSkillLines",
         "GetPlayerFacing",
+        "GetQuestLogQuestText",
         "GetSkillLineInfo",
         "GetSubZoneText",
         "GetTaxiMapID",
         "GetZoneText",
+        "HideUIPanel",
         "hooksecurefunc",
         "InCombatLockdown",
         "IsIndoors",
@@ -71,9 +74,15 @@ files["addon/**"] = {
         "Minimap",
         "MinimapCluster",
         "ObjectiveTrackerFrame",
+        "QuestLog_Update",
+        "QuestLogFrame",
+        "QuestMapFrame_OpenToQuestDetails",
         "QuestWatchFrame",
+        "SelectQuestLogEntry",
         "Settings",
         "SettingsPanel",
+        "ShowUIPanel",
+        "ToggleQuestLog",
         "TooltipDataProcessor",
         "UIParent",
         "UISpecialFrames",

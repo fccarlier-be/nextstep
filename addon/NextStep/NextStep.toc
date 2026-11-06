@@ -15,7 +15,10 @@ Core\Locale.lua
 Locales\frFR.lua
 Core\Events.lua
 Core\Storage.lua
+Core\Style.lua
 Core\DB.lua
+Locales\GuideTexts_frFR.lua
+Locales\GuideNotes_frFR.lua
 Data\Imported\Polestar\Meta.lua
 Data\Imported\Polestar\Guides.lua
 Data\Imported\Polestar\Names_enUS.lua
@@ -40,6 +43,7 @@ Modules\Guide\Labels.lua
 Modules\Guide\Live.lua
 Modules\Guide\Spells.lua
 Modules\Guide\SpellsWindow.lua
+Modules\Guide\Journal.lua
 Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
 Modules\Guide\Pins.lua

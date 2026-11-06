@@ -75,6 +75,8 @@ L["Saved data comes from a newer version of NextStep: it was left untouched."] =
 
 -- Modules/Guide/Labels.lua
 L["Accept %s"] = "Accepter %s"
+L["on: %s"] = "sur : %s"
+L["in: %s"] = "dans : %s"
 L["%s, for: %s"] = "%s, pour : %s"
 L["Accept %s from %s"] = "Accepter %s auprès de %s"
 L["Accept %s (object: %s)"] = "Accepter %s (objet : %s)"
@@ -212,3 +214,45 @@ L["Show your class spells, now and at the next levels (list: in the chat)"] =
     "Affiche tes sorts de classe, maintenant et aux niveaux suivants (list : dans le chat)"
 L["Class spells"] = "Sorts de classe"
 L["Now: %d spells"] = "Maintenant : %d sorts"
+
+-- Modules/Guide/Journal.lua
+L["Leveling"] = "Leveling"
+L["Class"] = "Classe"
+L["Professions"] = "Métiers"
+L["Reputation"] = "Réputation"
+L["Collectibles"] = "Collection"
+L["Exploration"] = "Exploration"
+L["Miscellaneous"] = "Divers"
+L["Legacy content"] = "Ancien contenu"
+L["(following)"] = "(suivi)"
+L["(done)"] = "(terminé)"
+L["Choose your path"] = "Choisis ton chemin"
+L["All guides"] = "Tous les guides"
+L["Zone: %s"] = "Zone : %s"
+L["Reward: %s"] = "Récompense : %s"
+L["Then: %s"] = "Ensuite : %s"
+L["You are following this guide."] = "Tu suis ce guide."
+L["You finished this guide."] = "Tu as terminé ce guide."
+L["Progress: %d %%"] = "Avancement : %d %%"
+L["NextStep journal"] = "Journal de NextStep"
+L["Routes"] = "Routes"
+L["Options"] = "Options"
+L["Follow this guide"] = "Suivre ce guide"
+L["Pick a guide in the list."] = "Choisis un guide dans la liste."
+L["Guide journal"] = "Journal du guide"
+L["Following"] = "Suivi"
+L["Finished"] = "Terminé"
+L["Reward"] = "Récompense"
+L["Levels %s"] = "Niveaux %s"
+L["Trainer cost: %s"] = "Prix chez le maître : %s"
+L["Open the guide journal"] = "Ouvre le journal du guide"
+
+-- Modules/Guide/Window.lua (quêtes)
+L["Click to open it in the quest log."] = "Clic : l'ouvrir dans le journal de quêtes."
+L["Not in your quest log."] = "Pas dans ton journal de quêtes."
+L["Not in combat."] = "Pas en combat."
+
+-- Core/Options.lua
+L["Open NextStep options"] = "Ouvrir les options de NextStep"
+L["Also with /ns options or a right-click on the NextStep minimap button."] =
+    "Aussi avec /ns options ou un clic droit sur le bouton NextStep de la minimap."

@@ -322,6 +322,39 @@ function Labels.LevelTag(goal, guide, level)
     return ("|cff%s[%d]|r"):format(color, questLevel)
 end
 
+-- D'où vient un objet à ramasser : « Broche-tripes, Jeune broche-tripes » (au plus
+-- trois monstres), ou l'objet du monde qui le contient. nil si inconnu.
+local MAX_SOURCES = 3
+
+function Labels.CollectSource(goal, guide)
+    if goal.t ~= "collect" then
+        return nil
+    end
+    if goal.fromKind == "object" and goal.fromId then
+        local object = ns.DB:GetName("object", goal.fromId, guide)
+        return object and object ~= "?" and L["in: %s"]:format(object) or nil
+    end
+    local names, seen = {}, {}
+    for _, source in ipairs(goal.fromNpcs or {}) do
+        local npcName = ns.DB:GetName("npc", source.npc, guide)
+        if not npcName or npcName == "?" then
+            npcName = source.npcName
+        end
+        if npcName and not seen[npcName] then
+            seen[npcName] = true
+            names[#names + 1] = npcName
+        end
+    end
+    if #names == 0 then
+        return nil
+    end
+    local more = #names > MAX_SOURCES
+    while #names > MAX_SOURCES do
+        table.remove(names)
+    end
+    return L["on: %s"]:format(table.concat(names, ", ") .. (more and "…" or ""))
+end
+
 function Labels.Step(step, guide)
     return ns.DB:Render(step.title, guide) or ""
 end

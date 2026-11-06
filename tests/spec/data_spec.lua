@@ -168,6 +168,51 @@ local function contains(text, part)
     return text:find(part, 1, true) ~= nil
 end
 
+describe("Formules des guides traduites par NextStep", function()
+    it("traduit une formule récurrente que Polestar ne traduit pas", function()
+        local DB = wow.boot({ locale = "frFR", faction = "Alliance" }).ns.DB
+        local guide = DB:GetGuide("forever/alliance/02-westfall")
+        local zone = DB:GetName("zone", 1436, guide)
+        expect_eq(DB:Render("{zone:1436}: kill these as you meet them", guide), zone .. " : à tuer en chemin")
+        expect_eq(DB:Translate("Fly to {zone:1453}"), "Volez jusqu'à {zone:1453}", "traduction de Polestar d'abord")
+        expect_eq(DB:Translate("Hearth to {zone:99999}"), "Pierre de foyer vers {zone:99999}")
+        expect_eq(DB:Translate("Texte jamais vu {npc:1}"), "Texte jamais vu {npc:1}", "inconnu : l'anglais")
+    end)
+
+    it("traduit les notes des guides que Polestar ne traduit pas", function()
+        local DB = wow.boot({ locale = "frFR", faction = "Alliance" }).ns.DB
+        -- Note de deux paragraphes (étape de Ruisselune, Marche de l'Ouest).
+        local note = "Defias Pathstalkers and Knuckledusters walk {area:20}; Highwaymen (level 17) patrol the "
+            .. "hills south and east of it in pairs: pull them apart. {area:1581} entrance in the smithy is a "
+            .. "group dungeon.\nCareful: The camps in the hills hold mixed groups of Defias, so it is easy to "
+            .. "pull more than one at a time if you are low level."
+        local french = DB:Translate(note)
+        expect(french ~= note, "note traduite")
+        expect(french:find("Attention", 1, true) and french:find("{area:1581}", 1, true), french)
+        expect_eq(DB:Translate("Sacks of Oats in the fields around the farm"),
+            "Sacs d'avoine dans les champs autour de la ferme")
+    end)
+
+    it("remet les noms à leur place, même dans un autre ordre", function()
+        local game = wow.boot({ locale = "frFR" })
+        local DB = game.ns.DB
+        DB:AddTemplates("frFR", function() return { ["{1} gives {2}"] = "{2} vient de {1}" } end)
+        expect_eq(DB:Translate("{npc:1} gives {item:2}"), "{item:2} vient de {npc:1}")
+    end)
+
+    it("dit sur quels monstres trouver un objet à ramasser", function()
+        local DB = wow.boot({ faction = "Alliance" }).ns
+        local guide = DB.DB:GetGuide("forever/alliance/02-westfall")
+        local goal = { t = "collect", item = 731, fromNpcs = {
+            { npc = 454, npcName = "Young Goretusk" }, { npc = 157, npcName = "Goretusk" } } }
+        local source = DB.GuideLabels.CollectSource(goal, guide)
+        expect(source:find("Young Goretusk", 1, true) and source:find("Goretusk", 1, true), source)
+        local object = DB.GuideLabels.CollectSource({ t = "collect", fromKind = "object", fromId = 562103 }, guide)
+        expect(object and object:find("Waterlogged Saw", 1, true), tostring(object))
+        expect_eq(DB.GuideLabels.CollectSource({ t = "kill", npc = 1 }, guide), nil)
+    end)
+end)
+
 describe("Licences livrées avec l'addon", function()
     it("inclut le texte de la GPL, identique à celui du dépôt", function()
         expect(readText("addon/NextStep/LICENSE.txt") == readText("LICENSE"),

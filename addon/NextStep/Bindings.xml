@@ -11,6 +11,9 @@
     <Binding name="NEXTSTEP_DONE" category="ADDONS">
         NextStep.Modules:Get("Guide"):ValidateCurrent()
     </Binding>
+    <Binding name="NEXTSTEP_JOURNAL" category="ADDONS">
+        NextStep.Modules:Get("Guide"):ToggleJournal("routes")
+    </Binding>
     <Binding name="NEXTSTEP_RADAR" category="ADDONS">
         NextStep.Modules:Get("Radar"):Toggle()
     </Binding>

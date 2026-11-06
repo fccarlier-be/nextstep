@@ -12,6 +12,23 @@ describe("Traductions", function()
         expect_eq(game.ns.L["%s: %s"], "%s : %s")
     end)
 
+    it("ne traduit jamais deux fois la même clé", function()
+        -- Une seconde traduction écraserait la première (« Done » : Valider, pas Terminé).
+        local seen, doubles = {}, {}
+        local handle = assert(io.open("addon/NextStep/Locales/frFR.lua", "r"))
+        for line in handle:lines() do
+            local key = line:match('^L%["([^"]+)"%]%s*=')
+            if key then
+                if seen[key] then
+                    doubles[#doubles + 1] = key
+                end
+                seen[key] = true
+            end
+        end
+        handle:close()
+        expect_eq(doubles, {}, "clés en double")
+    end)
+
     it("affiche la clé quand une traduction manque", function()
         local game = wow.boot({ locale = "frFR" })
         expect_eq(game.ns.L["Texte jamais traduit"], "Texte jamais traduit")

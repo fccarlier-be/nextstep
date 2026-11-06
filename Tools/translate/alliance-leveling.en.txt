@@ -1,0 +1,707 @@
+Follow the road from Elwynn into {area:40}: the Furlbrows sit by their burned farm, the first one on the road. Pick up oats from any {object:2724} you pass on the loop: the rest are gathered in the fields here on the way back.
+North of Molsen Farm. Defias Trappers and Smugglers camp outside the mine. {object:290} stands by the ruined house east of the mine.
+West of Saldean's. Harvest Watchers and Golems work the fields; they drop the isosprings, gyrostabilizers, {item:732} and sometimes a {item:255155}. {npc:573}, a level 20 rare, walks here: leave it alone. Keep killing Goretusks and Fleshrippers on every leg of this loop.
+Riverpaw Gnolls and Scouts (level 11-13) roam the hills south of the coast, from above {area:111} east to the {area:916}. The gnolls further south and west are 13-19: stay in the north hills.
+Murloc Coastrunners and Raiders line the beach north of the mine. They flee at low health: pull one at a time.
+Careful: Gnolls that stand close together tend to join a fight as a group. Pulling one at a time is safer.
+Careful: Two Defias stand guard inside the house, one of them the level 15 named {npc:502}. They are linked, so attacking either one brings both.
+Sacks of Oats in the fields around the farm
+Defias Pillagers and Looters hold the farms west of {area:108}, between the coast road and {area:20}.
+Careful: The {area:113} cave holds many Defias packed together, so it is easy to pull several at once there.
+Defias Pathstalkers and Knuckledusters walk {area:20}; Highwaymen (level 17) patrol the hills south and east of it in pairs: pull them apart. {area:1581} entrance in the smithy is a group dungeon.
+Careful: The camps in the hills hold mixed groups of Defias, so it is easy to pull more than one at a time if you are low level.
+{npc:6171} and {npc:6173} are in the Cathedral of Light; {npc:6174} stands in the {object:2096} and asks for ten {item:2589} (humanoids drop it; the Auction House sells it).
+Right-click the {item:6775} he gives you
+{npc:6172}, by {area:86} in Elwynn, on the road to Redridge
+While you're here: learn {spell:202} from {npc:11867} ({object:2096}, 10 silver); two-handers level a Warrior fastest.
+While you're here: learn {spell:202} from {npc:11867} ({object:2096}, 10 silver); two-handers level a Paladin fastest.
+While you're here: learn Staves from {npc:11867} ({object:2096}, 10 silver); a Hunter's melee weapon is mostly its stats, and two-handers carry the most.
+While you're here: learn Swords from {npc:11867} ({object:2096}, 10 silver); a sword in the main hand levels a Rogue steadily.
+While you're here: learn Staves from {npc:11867} ({object:2096}, 10 silver); a staff carries more spell stats than a one-hander while you level.
+{item:12289}, on the beach west of the docks; underwater
+the Rabid Thistle Bears nearest {npc:3701}
+Cast {spell:18960}. {npc:11802} is in {area:2361}. Shrine Baubles lie in the containers on the floor of {area:656}, below {area:2361}: take one to the {area:2362} in the north-west, use it there and speak to {npc:11799}. Then fly back to {area:442} from {area:2361}.
+{item:12347}: fill the {item:12346} at the {object:174795}
+Thresher Eyes; underwater
+Two wrecks lie on the sea floor in the bay north of {area:442}; each holds a lockbox. Reef Crawlers and Encrusted Tide Crawlers line this shore.
+Careful: The murlocs inside the wrecks are close together and fast. They often swim through the hull walls and holes, so you will usually pull extra murlocs.
+Scaber Stalks; below ground
+The northern Blackwood camp
+The furbolg camp south of the {area:456} keeps its Nut, Fruit and Grain Stores by the bonfires. With a sample of each and the {item:12347} in your bags (the {item:12346} is filled at the {object:174795}), use the bowl by the bonfire closest to the river: it summons Xabraxxis, the satyr corruptor, and the {item:12355} lies in his Demon Bag.
+By the bonfire closest to the river: summons Xabraxxis
+Careful: If you attack one cub, the other cubs and often the mother join the fight, so expect to take on several at the same time.
+{quest:948} is the ancient at the Grove; {npc:270269} and {npc:11218} sleep beside him.
+{area:450} lies on the coast south of {npc:10323}'s beach. Protect the prospector while he searches for the fossil.
+Careful: Ambushers appear as he passes certain spots: a scout comes out from under the board ramp, and more scouts come out when he checks the tent.
+Level 18.47
+Top up here to level 18.47 before the hand-ins at {quest:952}: they take you to level 19.
+Level 20
+Top up here to level 20 before the hand-ins at {zone:1453}: they take you to level 21.
+Cast {spell:18960}. {npc:11802} is in {area:2361}; learn the flight path there if you do not have it.
+Back to {npc:11802} in {area:2361}, then {npc:11800} there flies Druids straight to {area:702}.
+The {area:442} boat docks at {area:17203}. Walk up into the city for training and {npc:1646}, then leave by the main gate and follow the road east through {area:12}.
+Only once {quest:97914} is handed in: for {npc:3649}, back in {area:442} (06-ashenvale)
+While you're here: learn Polearms from {npc:11867} ({object:2096}, 1 gold); two-handers level a Warrior fastest.
+While you're here: learn Polearms from {npc:11867} ({object:2096}, 1 gold); a Hunter's melee weapon is mostly its stats, and two-handers carry the most.
+Fly to {area:108} and head north-west to the coast: the {object:177790} lies on the sea floor off the shore. Then head east along the road through Elwynn to Redridge.
+On the road east, past the {area:91}, head north from the bridge to {area:86}. {npc:6172} lies south of the lake: use the {item:6866} on him. The Defias Rogue Wizards around him carry the {item:6846}.
+Use the {item:6866} on {npc:6172}
+{item:6846}: Defias Rogue Wizards
+{npc:266}, by the docks; upstairs
+Redridge Mongrels and other gnolls hold the hills east of {area:1002}, north of the road; Redridge Thrashers prowl among them, Poachers camp south of the road. Redridge Brutes, for the Iron Pikes and Rivets, hold the hills further north; Dire Condors and Great Goretusks roam the hills east of them.
+{npc:345} (level 24) roots around the pen just west of {area:69}. Pull him away from the other boars and fight at full health.
+Murloc Flesheaters and Tidecallers line the south shore east of the bridge. Any of them can carry a {item:1467} or a fin.
+Greater Tarantulas crawl on the slopes around the mill north-east of the lake.
+East past the mill and across the river. Shadowhide gnolls fill the valley; {npc:703} (26, well above you) leads them at its north end: clear his escort first and fight him at full health. Stay out of {area:2099} to the south: its orcs are elite.
+Careful: Two gnoll guards stay with him and join the fight whenever he is attacked, even if he has wandered a short way off; other gnolls stand close by and wander through the area.
+Blackrock camps
+South down the valley's east side to the Blackrock camps east of {area:2099}. Renegades, Grunts and Outrunners fill them; keep east of the keep, whose orcs are elite.
+Follow the road south from {area:1002} into {area:10}; {area:42} lies on the east side of the forest.
+{npc:265}, in her house by the tavern; inside
+No {item:4371} for {quest:174}? {npc:3133} sells it in the house beside {npc:276}, in limited stock; {npc:1448} in {area:150} sells it too.
+{npc:276}'s house stands at the east end of town. {npc:3133} sells engineering goods in the house beside it.
+{npc:633}, at the south end of town; inside
+{npc:663}, by the town hall
+Skeletal Warriors and Skeletal Mages walk among the graves south-east of {area:42}, below {npc:302}'s house on the hill. Every skeleton in {area:10} can drop a {item:2378}.
+Careful: Because the skeletons stand near each other, running straight in tends to pull several at once.
+Rabid Dire Wolves roam the woods around the cemetery and {npc:289}, Starving Dire Wolves the hills north-east of him. Pygmy Venom Web Spiders crawl east of the cemetery and drop the venom. Every ghoul of the cemetery's northern half can drop a fang.
+Careful: Wolves and other spider types share the area along the {area:40} border, so you can easily pull several mobs at once.
+Head back east along the road to the {area:245}.
+{quest:337}: a rare drop from {area:10}'s mobs
+Head west along the road once more.
+Head back east to {area:42}.
+Head west to the hermit once more.
+Every ghoul of the {area:492}'s northern half can drop a rib: Flesh Eaters, Bone Chewers, Plague Spreaders and Brain Eaters.
+Careful: A {npc:948} casts {spell:3428} as it dies, which brings extra adds.
+Head west along the road out of {area:94} into {area:40}. {npc:7024} watches {npc:7053}'s tower from the hills just inside the border. The {npc:7051} (level 23) guarding the tower carries its key; Klaven's journal is in the chest at the top.
+Head north through Elwynn to {zone:1453}; Mathias Shaw is at SI:7 in {object:2100}.
+{npc:6173} and {npc:6171} are in the Cathedral of Light.
+{npc:6171}: Redemption
+Rogue training
+Train here, in {zone:1453}, before you go on.
+Take the boat from {area:17203} to {area:442}. Join the two half pendants into the {item:15885} and cast {spell:18960}: {npc:11802} is in {area:2361}. Then {npc:11800} in {area:2361} flies Druids straight to {area:702}.
+From {area:17203} take the boat to {area:442}; {npc:3649} stands at the north end of the village. Then head south along the road through {zone:1439}.
+{npc:3649}: Alexston's reply, if you took it in {zone:1453}
+Kerlonian sleeps at the {area:448} in southern {zone:1439}. Use the {item:13536} to wake him and lead him south along the road into {area:331} to {npc:11219} at {area:413}; blow the horn again whenever he falls asleep.
+Careful: Scripted ambushes of three mobs each attack along the road: furbolgs on the {zone:1439} stretch and undead nearer {area:413}.
+{object:176634}, beside him
+Escort Kerlonian to {area:413} in {area:331}.
+{npc:3970}: for {npc:1480} in Menethil, at the end of this guide; inside
+The two stand together at the western end of the road.
+South of the murlocs, {npc:3585} waits at the {area:416}.
+Head west to the shore of {area:441}. Teronis lies among the Saltspittle murlocs; any murloc can drop the {item:5463}.
+{npc:3987} (25) leads the Thistlefur furbolgs at the camp north of {area:415}. Clear his guards first, one at a time.
+Careful: The furbolgs near him usually join in when he is pulled. Killing the ones along his path first lets you fight him alone.
+Follow the road east to the {area:419}; {npc:3916} stands by the moonwell.
+The moonwell lies in the hills north-east of {area:415}.
+{npc:210995} may not offer these to every class; if he doesn't, carry on.; walks around {area:1276}: the map marks where to look
+{npc:4276} mines in the {area:2160} at the east end of the crag. Talk to him and fend off the Venture Co. raiders while he mines.
+Careful: The kobolds arrive in waves. The first wave is melee fighters, and the second adds casters to the mix. Regular mobs in the mine respawn quickly and can join the fight while the waves are coming. A group is recommended.
+Head south past {area:421} into the {area:1276} tunnel; it comes out in Stonetalon's {area:461}. {npc:4080} and {npc:4077} camp on the {area:1076} south-west of the crag.
+{npc:4201}, in the hut north of them; inside
+{npc:5082}, Mikhail and Tapoke Jahn are all at Menethil's inn; Tapoke fights you when you talk to Mikhail, but gives up once beaten. {npc:1480} stands a short walk north-east of the inn.
+{npc:2104} stands in {area:2103}, a short walk from {npc:1242}.
+{npc:2104} stands in {area:2103}.
+{npc:1217}, upstairs in the inn
+{npc:2086}, by the keep; inside
+{npc:2104}, by the keep
+{npc:2096}: he won't offer 305 while you carry it
+{npc:2094} stands by the north gate.
+The excavation site sits on the hill south of the road.
+A new {item:279996}, for the four titan watchers around the {zone:1437}; below ground
+For {npc:2916} in {zone:1455}, at the end of this guide
+The raptor hills
+Mottled Raptors and Screechers roam the hills west of the excavation site.
+Careful: Once a {npc:1021} drops to 30% health, it calls for help from creatures within 20 yd. Mottled Screechers frequently come in packs of three, and raptors summoned by their calls for help may also join the fight.
+{npc:1244}: {quest:98283}, an elite raptor
+Black, Crimson and Monstrous Oozes fill {area:309}, just west of the road to {area:205} and north of Einar's camp. Any ooze there may hold {npc:2111}'s bag.
+Mosshide Fenrunners and Mistweavers roam the riverbanks just west and south of {npc:1244}; almost every one drops flint.
+Red whelps fill the hills west of the gates, Maddened Rotclaws the {area:1025}, Razormaws the northern slopes; Neru stands in the north-east (use the {item:279996}).
+{quest:98283} is elite: grouping up is advised.
+Fen Creepers hide in the marsh pools north-west of the {area:1025}.
+Careful: When out of combat, Fen Creepers cast Sneak from time to time, so they are stealthed and hard to see.
+Menethil
+{npc:2092}'s quest in {zone:1455} needs level 28. If you are short of it after these hand-ins, grind the Dragonmaw orcs at the camps along the road east to {area:836} before you go on.
+Head east along the {zone:1437} road, south through {area:836} into {zone:1432} and west through the tunnel into {zone:1426} to {area:1537}.
+While you're here: learn {spell:197} from {npc:11865} ({object:32359}, 10 silver); two-handers level a Warrior fastest.
+While you're here: learn {spell:199} from {npc:11865} ({object:32359}, 10 silver); two-handers level a Warrior fastest.
+While you're here: learn {spell:197} from {npc:11865} ({object:32359}, 10 silver); two-handers level a Paladin fastest.
+{npc:840}, at the north entrance of town; walks around {area:42}: look inside the circle on the map
+{npc:276}, at the east end of town; inside
+Nightbane Shadow Weavers
+The strongest worgen roam the woods south of {area:42}, west and south of the {area:121}. The {npc:511} hides in the small crypt by the cemetery.
+Careful: {spell:8282} lasts 10 minutes and adds 13 to each hit of physical damage you take.
+Careful: Some worgen outside the cave stand in groups, including one camp of four. To avoid adds, pull them one at a time from the raised ground next to the cave entrance.
+{npc:661}, by {npc:633}'s house; inside
+Head east to the ogre mound. {object:119} sits in the camp at its entrance; Splinter Fist ogres guard it.
+The Defias camp lies in the south-west of {area:10}, south of {area:94} near the {zone:1436} border. The strongbox stands among the tents.
+The Plague Spreaders walk the northern half of the {area:492}. {npc:522}, an elite, wanders the graves: keep away from him.
+Skeletal Raiders, Healers and Warders hold the west part of the cemetery, just east of {npc:311}'s camp.
+Careful: The skeletons in the catacombs are packed close together, so you can easily pull extra mobs.
+Follow the coast north to the wrecked ship. Cursed Sailors walk the beach, Cursed Marines the deck; {npc:1159} stands on the beach by the bow. Giant Wetlands Crocolisks lurk on the coast just north of it.
+Careful: Fen Creepers hide in stealth where the river splits close to the ghost ship, and they can join a fight.
+{item:2658} along the way to {npc:1078} and Whelgar
+{item:2659} along the way to {npc:1078} and Whelgar
+{item:2660} along the way to {npc:1078} and Whelgar
+{item:2661} along the way to {npc:1078} and Whelgar
+The Goaz Warders stand just west of Whelgar's camp: use the {item:279996} he gave you beside one.
+The relics lie in the dig itself. {npc:1353}, a big Razormaw, prowls the raptor valley just west of it.
+The Dragonmaw orcs camp east of the excavation site. Raiders and Swamprunners carry the war banners.
+Head east again to the Dragonmaw camp. The four sets of Attack Plans lie in the {area:1036}; {npc:2091}, an elite, stands in the camp too.
+{npc:2104}, in {area:2103}; on the top floor
+For the Dragonmaw catapult, on the {zone:1437} loop of the next guide
+On the road south through the {zone:1413}, {npc:6244} camps east of the road, north-east of {area:378}; come in from the east and keep clear of the Horde guards.
+{npc:2104}: for {npc:270637}; on the top floor
+The next step, {quest:474}, pits you against an elite chieftain: skip it.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:2091} is a level 32 elite: most classes solo it at level 34, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+Careful: Shadowcasters stand on either side of him, and at least one is linked to him, so it joins when he is pulled. Non-elite centurions and captains are spread around his ring of tents.
+North-east to the {area:1038}: {npc:271338} stands at the gates (use the {item:279996}).
+The Villards
+{npc:5683} waits north of {area:205} by the {area:880}; {npc:271322} a short walk further north-east.
+{npc:1071} stands in the dwarves' camp.
+Follow the road south over the bridge to {area:205} at the {zone:1437} end, where {npc:1075} waits.
+Level 31.23
+If you skipped {quest:474}, grind here to level 31.23 to stay on the route's plan.
+Pick up everything in town before heading out. {npc:2381} and {npc:2438} stand between the flight master and the inn, Farren and {npc:2366} at the inn, Maleb in the town hall.
+The Torn Fin murlocs crowd the {area:295}, south-west of {area:271}.
+Careful: One camp holds a tight cluster of Oracles that all aggro together.
+A report for {object:2117}; inside
+Off the boat, {npc:251493} is the first you meet, north-west of the flight master.
+{npc:2784}, the {object:171709}
+{npc:211033}: only offered once you have handed in library books (the Library Books guide)
+The Hatefury satyrs hold the ruins of {area:603}, east of {area:608}.
+Careful: Hatefury Rogues spawn stealthed, and Hatefury Tricksters have a poison proc on their attacks.
+{quest:5741}; on the top floor
+Follow the road west out of {area:415}; {area:413} lies north of it.
+From {area:415} head north-west into the hills: the {quest:1738} is a glowing tree north of the road to {area:413}. If you took {quest:65602}, the {item:190309} lies in a house among the trees north of {area:413} (26.6,22.0). Then back past {area:415} to the {area:1276}.
+The Forsaken's camp lies in the woods south of {area:2358}.
+Rusty chests lie around the Shadethicket furbolg camps west of the Forsaken; open them until one holds the pommel.
+Careful: Non-elite Forsaken of about level 28-30 guard the camp. Some of them are stealthed, and the ones around the table often aggro together.
+The {npc:3931} walks the shore of {quest:1035}, south-west of the chests; the {object:669176} lies north of the lake, on the way.
+Careful: Other mobs, some of them underwater, sit near the island. Clear them first so they don't join the fight when you pull the Oracle.
+Insane druids
+The three druids stand together at the Forsaken camp south of {area:2358}.
+Careful: The den has many mobs that respawn quickly, including stealthed undead and patrols, so extra mobs often join a fight.
+The {object:19901} stands in the satyr camp of {area:430}, further east along the road.
+Careful: The Felmusk Rogues in {area:428} often go stealthed, and {area:430} has satyr casters.
+{npc:3696} and his guards camp just east of {npc:3897}.
+Careful: Wolves and spiders roam near the camp and can join a fight. Some of the wolves come in pairs.
+{npc:1217} stands on the upper floor of Menethil's keep.
+The wreck of the Flying Osprey lies in the shallows south of the keep.
+{zone:1455} has no druid trainer: take the {area:2257} from {object:171524} to {zone:1453} and train with {npc:5504}.
+Careful: Troll camps are close to the tiger area, and trolls can join a fight if you pull carelessly.
+Careful: The raptor nest has young raptors that join the fight when you attack the adults.
+{npc:2495}, by the bank; inside
+{npc:6807}, {object:56910}; upstairs
+{npc:2832}, in the {object:56910}; upstairs
+{npc:773}, in the tavern; upstairs
+Walk back north; the {area:310} lies west of the road in the middle of the jungle. The Crystal Spine Basilisks there drop the shards.
+The Bloodscalp trolls hold the ruins on the coast west of Nesingwary's camp.
+Headshrinkers stand deeper in the compound; the Commandos lurk stealthed around it and in the cave. Pick up Green Hills pages as they drop.
+Careful: Kurzen Commandos are level 34-35, not elite, and often spawn stealthed; near death they use {spell:7964}.
+{item:2006}: {object:58}; underwater
+{object:56910} is the tall building over the harbour; most of the quest givers are on its floors or the docks below.
+"Sea Wolf" MacKinley, on the top floor
+{npc:5476} guards the road junction in the west of the swamp. {npc:217412} stands a short way north of him.
+The wrecked caravan lies off the road near Biggs.
+Careful: The camp is full of Lost Ones around level 38. They stand in linked groups of 2-3, many are casters, and they respawn quickly.
+Back west through {zone:1430} to {area:42}.
+The Syndicate hold the farm north-west of {area:320}. A {npc:217589} crawls about the farm: catch one with {npc:217412}'s Entomology Starter Kit, then tick it off.
+Careful: Syndicate Highwaymen are level 30-31 and can cast Sneak while out of combat, so they are often stealthed and hard to spot.
+Escort the professor to the beach north of the cove and guard him while he works; naga attack in waves.
+Careful: The ambush is two level 40 water elementals, and they are immune to frost. If the fight happens inside the cave, the professor joins in instead of working and further elementals keep appearing; holding the elementals at the cave entrance, away from him, lets him finish with only the first two to deal with.
+{npc:2595}, underwater
+{npc:2596}, underwater
+Ebenezer Rustlocke
+Walk back onto the span: Ebenezer lies under its Arathi end.
+The Drywhisker kobolds dig in the gorge east of {area:321} (Horde); skirt the town to the north. They drop both the motes and Krazek's ore.
+Careful: Every kobold type runs off for help when low on health (Kobolds at 30%, Surveyors and Diggers at 15%), which can pull more of them.
+Each key lies at one of the Highlands' standing-stone circles: east of the shards, near {area:320} and in the west. The {object:2702} stands west of {area:320}.
+Careful: Each center stone is guarded by around three elementals near level 39 that attack together if you click the stone without clearing them: Burning Exiles at West, Thundering Exiles at Outer, Cresting Exiles at East.
+Head back north-east past {area:320}; {npc:2712} and {npc:2713} camp in the hills north of {area:314}.
+Stay with {npc:2713} while she sneaks into {area:314} and back; Horde orcs jump you on the way.
+Careful: Orcs that drop to low health run away. {npc:2713} follows them and can pull more mobs, so kill or slow runners fast.
+Follow the road north out of {area:271} into the mountains. Mountain lions roam the slopes; the Syndicate in {area:280} wear the signet rings, and {npc:2306} walks the manor grounds on the north side of town.
+The tomes lie in the ruined keep west of {area:280}; Argus Shadow Mages hold the ruins.
+Careful: Crushridge Warmongers call nearby allies within 15 yd once they fall below half health.
+{item:3659}: the {object:1760}; inside
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:2417} is a level 40 elite: most classes solo it at level 42, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+Careful: Syndicate Spies and Assassins can be stealthed. Assassins also poison you.
+Careful: About three stealthed Syndicate mobs are inside {npc:2320}'s house. {npc:2320} does not join when they are pulled, and a ranged attack through the doorway brings him out by himself.
+South-west to the Kirin Tor camp on the lake shore west of {area:279}, just over the border into {area:130}: the {npc:269127} stands there. Archmage Ansirem stands south-east of it, by the dome.
+From {zone:1455} take the tunnel east through {zone:1426} into {area:38} and follow the road to {area:144}.
+Head back west to the road and follow it south out of {zone:1432} through the pass into the {area:3}. {npc:2910} and {npc:2860} camp side by side at the dig.
+Head north-east to the abandoned dig; the supply crate lies there among the Dustbelcher ogres.
+{npc:4618} and {npc:2817} camp together in the {area:1877}, in the middle of the {area:3}.
+The battered skeleton lies just east of the ogres, at the edge of the Stonevault trogg camp; the Bonesnappers and Shamans around it drop the flakes. Theldurin sits by the ruined camp further south.
+Head west into the {area:1878}; {npc:2921} works by his machines in the middle of it.
+The Dustbelcher ogres camp just south of the valley; any of them drops scrap. Buzzards circle the plain to the east.
+The battered skeleton lies at the edge of the Stonevault trogg camp; {quest:739}, Agmond's killer, walks among the Bonesnappers.
+The Lesser Rock Elementals wander the {area:1878} west of {npc:2921}.
+Careful: Dustbelcher Lords are level 44-45. They use {spell:5242} and {spell:1160}, and below 50% health they call for help from allies within 15 yd. Seven of them stand about 750 yd south of {area:340}.
+The skeleton's next task, {quest:739}, waits until the later {area:3} guide at 43.
+Head north-east to the dwarven ruins in the north of the {area:3}; the chest sits among the Shadowforge dwarves. {npc:2745} nearby is elite: give him room.
+Head south to {area:345}.
+{npc:1470}, in the inn; below ground
+The flight master stands by the gate of {area:514}; {npc:5083} and {npc:4964} are inside the citadel.
+{npc:12277} is held in the centaur camp west of the graveyard. Free her and keep her alive on the walk out; she stops by the graveyard.
+Careful: The scripted groups are linked and only appear during the escort, so you cannot clear them in advance or pull them one at a time. Clearing the normal centaurs on the path before you start does help.
+The demons gather at the {area:602} in southern {zone:1443}: felhounds (Mana Eaters, Mage and Ley Hunters), Nether Maidens and Sisters, and Doomwarder Captains around the pit.
+Careful: Most of the mobs here walk patrol routes, so you can easily pull extra mobs.
+The next guide starts in Theramore.
+{quest:1260} stands near the inn; {npc:4897}, a trade supplier a few steps south, sells the spices Jarl wants.
+{item:3713}, for "Swamp Eye" Jarl
+Follow the road north-west out of Theramore to the watchtower at {area:503}. Mudrock Burrowers roam the marsh around it.
+Back in Theramore: Tervosh waits with Lady Jaina in the tower of {area:514}.
+{quest:1218}, for "Swamp Eye" Jarl
+{npc:4966} holds the tower with a few deserters. He turns on you: beat him until he yields.
+Careful: Hendel has two guards who join the fight when he turns hostile. The guards flee once he surrenders.
+The Darkmist spiders nest around the cavern in the north-west of the marsh; every spider drops eyes.
+Careful: Darkmist Lurkers move about stealthed and use poison once in combat. The spiders stand close together, so adds are common; pulling single targets from the outer edge cuts down on them.
+The burned inn stands on the road west, toward the {area:17}; the guard's badge lies in the ashes and the hoofprints are in the mud beside the inn.
+At 40 with 100 gold you can learn to ride, and learning it gives you a mount. {npc:4732} teaches Humans at {area:88} in eastern {area:12}, beside {npc:384}'s horses. Forever may let any race learn from any riding trainer (unconfirmed). Collectibles, Mounts · Level 40 lists every colour.
+At 40 with 100 gold you can learn to ride, and learning it gives you a mount. Skyborne learn it from {npc:265756}, the stablemaster and riding trainer at the {area:17684} in {area:16638} on Zephras Isle, who also sells the Galestriders: the skyboat to the isle leaves the north side of {area:279} about every five minutes. Collectibles, Mounts · Level 40 lists the Galestriders.
+Riding and Galestriders: {npc:265756}, at the {area:17684} in {area:16638} on Zephras Isle.
+Skyboat to Zephras Isle: the north side of {area:279}, about every five minutes.
+for Stoley in {zone:1446}: keep it; on the top floor
+for the {area:8} later
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:728} is a level 40 elite: most classes solo it at level 42, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+The Skullsplitter trolls hold the ruins just east of the mine; any of them can drop tusks, their panthers always do.
+Follow the road north-east to the Venture Co. camp at the {area:310}; the miners, surveyors and foremen drop the crystals.
+Careful: Stealthed Shadowmaw Panthers and Stranglethorn Tigresses roam the area around the camp.
+Level 42.23
+If you skipped {quest:193}, grind here to level 42.23 to stay on the route's plan.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:730} is a level 43 elite: most classes solo it at level 45, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+Level 42.27
+If you skipped {quest:196}, grind here to level 42.27 to stay on the route's plan.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:731} is a level 43 elite: most classes solo it at level 45, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+Careful: Tigers and stealthed shadowmaw panthers roam close to him. Clear them before you pull him. When he is pulled, {npc:731} calls for help from creatures within 20 yd.
+Level 42.33
+If you skipped {quest:208}, grind here to level 42.33 to stay on the route's plan.
+Level 42.46
+If you skipped {quest:543}, grind here to level 42.46 to stay on the route's plan.
+{npc:5476} stands by the road junction in the west of the swamp.
+At 40 with 100 gold you can learn to ride, and learning it gives you a mount. {npc:4753} teaches Night Elves in {zone:1457}, beside {npc:4730}'s sabers: the boat from {area:17203} to {area:442}, then the flight to {area:702}. Forever may let any race learn from any riding trainer (unconfirmed), such as {npc:4732} at {area:88} in {area:12}. Collectibles, Mounts · Level 40 lists every colour.
+Ride south out of {zone:1432} through the pass into the {area:3}; {npc:2860} camps at the dig.
+{npc:2888} camps by himself in {area:1898}, south-east of the digsite.
+for {npc:4454} in the {area:439}: the {zone:1446} guide crosses them at 45, keep it
+Ride west across the {area:3} to the Dustbelcher camp at {area:342}. {npc:2944} stands in its middle with Wyrmhunters and Maulers around him.
+Ride north-east out of {area:271} on the road into the {area:47}; {area:348} sits just past the border. {npc:5635} holds court at the top, {quest:1450} tends the aviary and {npc:7884} stands by the inn.
+{npc:7744}: the last guide binds here, so this usually ticks at once; below ground
+{npc:5636}, beside the flight master at the top; inside
+Talonaxe's next task waits for a later {area:47} guide.
+Theramore flight master
+{area:1116} stands on {area:1120}, off the {area:1108}: the boat from the coast's dock crosses to it.
+The {area:1121} is the island just south of {area:1120}: swim over. Hatecrest Serpent Guards and Sorceresses hold it; {npc:8136} (level 47) waits in the cave at its south end. Pull his guards first.
+Feathermoon flight master
+Boat to the {area:1108} and ride east across {area:357} to the Grimtotem camp north of the road. {npc:7956} waits outside it; free the Sprite Darters from the pen in the middle and keep {npc:7956} and at least six of them alive.
+{npc:7765}'s camp
+The {area:2240} lies on the {area:439} in south-east {area:400}. {npc:4454} and {npc:4630} are in the camps beside the track.
+{npc:4709} stands by the goblin camp.
+While {npc:4709} keeps Rizzle talking, his plans lie unguarded in the gnome camp across the track.
+Ride south-east off the {area:439} into {area:440}. {area:976} is just inside the border.
+{npc:7881}, in the port's tavern; inside
+Ride back west toward {area:976}. The Wastewander bandits and thieves hold the dunes on the way; any of them can carry a water pouch.
+Careful: Wastewander Rogues (level 43-44) move stealthed, so they can approach unseen.
+The tougher Wastewander rogues, shadow mages and assassins camp south-east of {area:976}, south of the bandits. Leave {npc:7847} in the middle of the southern camp for later.
+Careful: Wastewander Rogues keep Sneak up while out of combat, so hidden rogues can join a fight you start at a camp.
+Follow the coast south to the pirate cove. Southsea pirates crowd the beach and the boats: work along the edge and pull one at a time. {npc:7883} stands on the far side; {npc:7881}'s stolen cargo lies in the camp.
+Careful: Two or three pirates stand with {npc:7883}, and many more pirates from the town join the fight once it starts.
+{quest:2873}; upstairs
+Careful: Thieves cast Disarm. Rogues stay hidden with Sneak. Assassins use Execute when your health is at 20% or lower.
+Ride north-west to the Centipaar hive in the dunes. Any Centipaar can drop insect parts.
+Careful: Centipaar Swarmers cast {npc:4196} both in and out of combat, which brings small adds that interrupt you.
+Ride south into {quest:3362}. The Dew Collectors drop the glands; only some are full, so keep the Laden one. Gnarled Thistleshrubs and Rootshapers share the valley. The Thistleshrubs are 48-50, above you: pull one at a time.
+Careful: The other thistleshrub mobs in the area are level 49-50 and wander a lot, so you can easily pull extra mobs.
+{npc:7583}'s next ingredient grows in the {area:47}, and the route never brings it back: skip it.
+Ride south-east to {area:985}. {npc:7847} stands in the middle of the southern Wastewander camp: clear around him first.
+Careful: Two stealthed Wastewander Rogues travel with him wherever he goes. At his spawn camp, two shadowmages and their minions are close enough to join a fight with him. Out by the towers you can fight him without them.
+Ride south past the {area:1938} to the {area:981}, the Hazzali tunnels; Scrimshank's gear lies deep inside.
+Careful: One bug guards the gear. Many bugs patrol the tunnels, some of them level 50, so fights often pull extra adds.
+Ride south-east to the {area:355}, the stepped Vilebranch temple in the south of the {zone:1425}, and climb to the top. Qiaga and {npc:8636} (elite, 50) stand up there: touch the top and come straight back down.
+Careful: Elite trolls guard the top platform, including {npc:7996} and {npc:8636}, along with several Vilebranch Soothsayers. The soothsayers cast spells and are linked to the rest of the group.
+Ride north to {area:351} in the middle of the {zone:1425}. Green Sludges and Jade Oozes crawl all around it.
+Careful: Panthers move around the area in stealth.
+Ride south through the pass into the {area:3}' northern edge: the Stonevault troggs dig outside {area:1517} there. The carved urns and the magenta mushroom clusters sit in their caves and tunnels, outside the dungeon itself.
+The bloodmages' camp is the first stop beside the road into the {area:4}, north-west of {area:1438}.
+Ride west: Starving Snickerfangs roam the dry hills just south of the bloodmages' camp; Scorpok Stingers (level 50) scuttle across the middle of the north. {npc:5982} vultures circle over all of it. Pull one at a time.
+Ashmane Boars and Redstone Basilisks share the slopes south-west of the keep. Keep clear of the Helboars further south: they are level 52.
+Careful: Scorpok Stingers use {spell:5416}; {npc:8301} adds Knockdown.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {quest:8552} needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:1494} (level 52 elite) needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+Ride east across the Cauldron to the {area:247} in the south-east. The prisoner in the wooden outhouse wants 15 {item:4306} and eight dead Dark Iron Geologists from the dig site around it. The outhouse also opens with the key, if you found one.
+The dwarf stands by the road at the dig site. When it is over, read the {object:175704} he leaves on the road in {area:1959}.
+Level 48.27
+If you skipped The {item:3985} or Facing Negolash, grind here to level 48.27 to stay on the route's plan.
+From {area:144} ride south into the {zone:1418}, then west past the Horde town of {area:340} (give it room) and up the trail into {area:51}. {area:1446} is the scaffolded camp on the north-west rim.
+The spiders roam the plateaus and lava pools in the south-west of the gorge.
+Heavy War Golems patrol the floor of the Cauldron below Kalaran; Magma Elementals drift among them. Golems and elementals drop the oil, elementals the hearts.
+Taskmasters and Slavers drive the slaves all over the Cauldron, and any of them can carry a {item:10551}. The Steamsmiths work at the furnaces in the middle (the {item:18959}), the Lookouts stand on the southern ridges (the Spyglass). Any {object:147516} may drop the {item:11818}: keep it.
+Careful: Dark Iron Slavers (level 45-46) call for help from allies within 15 yd when pulled, cast Net from up to 15 yd, and use Rend in melee.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:14621} is a level 50 elite: most classes solo it at level 52, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+Level 48.66
+If you skipped {quest:7701}, grind here to level 48.66 to stay on the route's plan.
+{object:147516} dwarves
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:5860} (level 50 elite) needs a group of 3. Skip it if you are alone: the route has you grind the XP back.
+Level 48.98
+If you skipped {quest:3452}, grind here to level 48.98 to stay on the route's plan.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {quest:3181} needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+For {npc:8256} in {area:1537}, later
+From {area:392}, fly to {area:976}.
+Ride west out of {area:976} to the long ramp down into {area:490}. {npc:9619} camps at the foot of the ramp, in the south-east corner of the crater.
+Ride west back to the refuge.
+Give the elite devilsaurs and stegodons a wide berth. Pick up every Power Crystal and {object:157936} you pass from here on.
+{npc:9117}, at the back of the cave; below ground
+{area:537} and the eastern jungle
+{object:161504}, underwater
+The pylon stands on the slope east of the refuge. Pterrordax circle the slopes around it: they count for Spraggle and drop {npc:9998}'s scales.
+Level 49.51
+Top up here to level 49.51 before the hand-ins at {area:541}: they take you to level 50.
+grind on Pterrordax
+Ride west from {npc:9619}: the silithid hive fills the south of the crater. Use the Scraping Vial on a hatchery, a chamber with hanging larvae. Gorishi wasps and workers drop {quest:3764}; Pterrordax nest on the southern cliffs if you still need kills.
+Careful: Gorishi silithids are level 51-54 and cast {spell:8137} or {spell:14120} in melee; Gorishi Workers have a 50% chance to call for help within 25 yd once they fall below 45% health.
+Level 50.4
+Top up here to level 50.4 before the hand-ins at {area:3137}: they take you to level 51.
+The shrine lies in the south-west corner of {area:16}, south of {area:3137}.
+Swim to the small island off the southern tip of {area:16}: {npc:8392} waits by the monument.
+Level 50.89
+Top up here to level 50.89 before the hand-ins at {zone:1426}: they take you to level 51.
+{area:2418} sits in the south-east of the Steppes, at the top of the pass up from Redridge.
+Level 51.39
+Top up here to level 51.39 before the hand-ins at {area:251}: they take you to level 52.
+Level 52
+Top up here to level 52 before the hand-ins at {area:251}: they take you to level 53.
+The relics are the carved stones scattered through the {area:250} around {area:251}: click them until the information is recovered.
+Read the tablet in the {object:147516} camp among the ruins, south-west of {area:251}, to copy the transcript.
+Use the {item:12284} on a {npc:7047} on the slopes east of {area:251} just before it dies, then loot the essence it leaves.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:9461} is a level 54 elite: most classes solo it at level 56, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+Level 52.08
+If you skipped {quest:4022}, grind here to level 52.08 to stay on the route's plan.
+{npc:9176} and the Blackrock orcs hold the camps and the stronghold at the foot of {area:254}, west of {area:251}. Pull them one at a time; every orc and worg may drop a medallion, so kill them until you have fifty.
+Careful: {npc:9176} has a guard linked to him that joins the fight, and a second soldier patrols close by; clear the patrol before pulling.
+Kum'isha waits at the {area:2517}, the hill south-west of the keep. The {zone:1419} mobs on the way drop the Imperfect Draenethyst Fragments; bring her what you have.
+Careful: Felcular, {npc:7664} and Ilifar are all level 60 elites. Razelikh casts {spell:2691}, {spell:8255} and Decimate, and as its health drops it adds {object:141891}, {spell:10854} and then Enrage at 15%.
+The Wildkin Feathers lie on the ground across the {area:47}, south and east of {area:348}, where the owlbeasts roam; the mobs here are well below you now.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:7977} (level 48 elite) needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+Ride north out of {area:415} into {area:361}. {npc:11554} the furbolg stands by the road just south of the {area:2479}.
+Level 52.58
+If you skipped The Horn of the Beast or The {item:9328}, grind here to level 52.58 to stay on the route's plan.
+{npc:15395} waits at the north end of {area:361}
+Level 52.69
+Top up here to level 52.69 before the hand-ins at {area:1763}: they take you to level 53.
+The Jadefire satyrs hold the glen west of the road, with {npc:9454} at its back.
+Careful: Jadefire Shadowstalkers (level 51-52) use Sneak and {spell:7992} and are stealthed, so they often join fights uninvited.
+{npc:11016}, in {area:1770}; below ground
+Level 52.9
+Top up here to level 52.9 before the hand-ins at {area:2479}: they take you to level 53.
+The Deadwood furbolgs of {area:1762} fill the hills west of the cave. The Avengers can drop a {quest:8470}.
+Careful: Den Watchers are level 53-54; they call nearby allies within 25 yd once below 50% health and run off for help below 15%.
+{npc:11558}: the Timbermaw speak to you only from Neutral; walks around here: look inside the circle on the map
+{npc:11557}: thirty {quest:6031}, handed in when you pass through again at 57; below ground
+Use the {item:12922} at the corrupted moonwell in the middle of {area:1763}. If you freed {npc:11018}, go back into {area:1770} for the succubus {npc:9518}.
+Trey Lightforge's remains lie beside her.
+The vial is filled in {zone:1457}: keep it; inside
+{npc:11629}: keep it for {area:2262}; inside
+{npc:10431}: keep both for the Plaguelands; inside
+Level 55.05
+Top up here to level 55.05 before the hand-ins at {area:2255}: they take you to level 56.
+{npc:11616}: the termites come later, in {area:2627}
+Follow the southern road east into the {area:139}; the ruins of {area:2262} lie south of it. {npc:10926}'s ghost plays by the ruined house at the south end.
+{quest:5152}, in the {area:28}: keep it
+{npc:11038}: Zaeldarr is a level 54 elite
+{npc:11038}, by the graves south of the chapel
+Zaeldarr is elite: grouping up is advised. He waits at the bottom of the {area:2261}, the crypt in the south-west of the zone.
+Careful: {npc:10411} goes invisible when out of combat and calls Rockwing Gargoyles once a fight starts. Only 3 exist and they respawn every 15 min.
+Skeletal Flayers and Slavering Ghouls roam the fields north of the camp; all the Scourge here drop Scourgestones.
+Careful: These undead notice you from far away, and other undead nearby join the fight when one is pulled.
+Careful: The {npc:10411} (3 spawns, 15 min respawn) turns invisible when out of combat and calls in Rockwing Gargoyles once a fight starts.
+{object:175924}, in the farmhouse; inside
+{npc:1852} is elite: grouping up is advised. He guards his phylactery in the middle of Andorhal.
+Small lockboxes lie in the rubble all over Andorhal; each holds a watch.
+Careful: Ghouls and skeletons usually stand next to the boxes and attack when you come close. Searing ghouls also hurt anyone nearby and will break stealth.
+{npc:11613} walks the Northridge camp east of {npc:11610}; {npc:11611} guards the tower at {area:190}'s southern approach.
+Careful: Guards stand at the tower's base and one more circles it on patrol. Clear them before you engage Durgen so they don't join the fight.
+Climb the hill west of {area:190} to look down on the town.
+Careful: Sentinels posted at the gate can detect stealthed players. Additional sentinels are found within the town, and an elite walks a patrol route nearby.
+Ride north to {area:2627}. {npc:12384} lives in the ruined hut, and his receipt book lies in the ruined inn nearby.
+{npc:11140} stands by {npc:12384}' hut in {area:2627}.
+Cross the river east to the {area:2261}, the crypt in the south-west of the zone. The {object:177667} lies inside: its key is on {npc:12248} in the far north-east, done in the next guide.
+The portal in {area:702} leads up to {zone:1457}.
+{quest:6762} in {area:493}: keep it
+Ranshalla in {area:618}: keep it
+{npc:7900}: keep it for {area:440}
+{npc:8496}: keep it for Un'Goro; inside
+{npc:9299} in {area:976}: keep it
+Walk into {area:1769} and take the {area:493} branch of the tunnel to {area:2361}.
+For {area:1377}: keep it
+On {npc:7583}
+For {area:3197}: keep it
+{npc:9299} waits at the graveyard just east of town; the gravestone stands nearby.
+{quest:3444} is in {area:392}
+Fly from {area:976} to {area:541}. {npc:8737}'s hut stands at the {area:538}, west of the refuge; J.D.
+{npc:9997}'s friend {npc:9999} has gone missing.
+The wooden sign beside {npc:9997}
+Ride out of the crater's north-western pass into {area:1377} and on to {area:3425}.
+Dredge Strikers dig in the dunes north-west of the hold; Stonelash Scorpids and Sand Skitterers roam all around.
+Level 56.89
+If you skipped The {item:9328}, grind here to level 56.89 to stay on the route's plan.
+Follow the road south-west out of the pass to {area:3425}.
+{npc:17082}, at the Alliance tents
+Dredge Crushers dig further west; Stonelash Pincers, Flayers and Rock Stalkers hunt the same sands.
+Ride east to {npc:13220}.
+The tortured druids and sentinels haunt the ruined village south-west of {npc:13220}.
+The {area:2742} tower
+Ride east to the {area:2742} tower in {area:2738}; climb it and kill the ambushers that rise for the encrusted object.
+Umber in {area:493}: keep it
+Ride west past {area:541} and south down the western side to {area:543}: {npc:10302} the goblin sits by the water.
+Ride east to {area:537}, climb it and use {npc:10541} at the lava vents near the top.
+Ends with {npc:9298} in {area:618}: keep it
+Collie is up the hill behind it.
+The crater
+Tar Beasts wallow in the {area:538}; the fire elementals of {area:537} in the middle carry the ash; the Gorishi wasps of the {area:540} in the south carry the gland. Every creature in the crater can drop {item:11018}.
+Careful: Gorishi Workers that drop below 45% health have a 50% chance to call for help from allies within 25 yd.
+Ride down the ramp into the crater: {npc:9619} camps at its foot.
+The pelts come after loop 2, on the gorilla plateau
+The gorillas live on {area:1943}, east of {area:541}. Keep their pelts for {npc:9619}. Stay out of the deepest cave: {npc:9622} is level 55.
+Careful: Un'Goro Gorillas (level 50-51) call for help from allies within 20 yd once they drop to 25% health. There is a cave full of apes in the area, and fighting there brings many adds.
+Ride north along the east side to the gorilla plateau. {npc:9622}, a level 55 gorilla, sits in its deepest cave: clear the gorillas at the cave mouth first.
+{npc:9684}'s lair lies in the jungle north of {npc:9619}, below the eastern cliffs: use {item:11568} there. {npc:9684} is level 56: start at full health.
+Cross the south of the crater to {npc:9619} by the ramp.
+{npc:9999} sits on the south-east slope of {area:537}, in the middle of the crater.
+Escort {npc:9999}
+Lead {npc:9999} north to {area:541}. When he faints, use {item:11804} on him to wake him.
+Ride back to {area:3425} and fly to {area:392}.
+Take the {area:2257} to {zone:1455}.
+Take the boat from {area:392} to {area:35} and fly to {zone:1453}.
+{npc:3520}, who walks the canals
+For {npc:10778}: keep it
+{npc:332}, in SI:7
+{quest:6184} at {area:3197}: keep it
+Its jars are filled on the next Un'Goro visit
+{npc:14724}, by the tram
+Ride on north to {area:3197} and fly to {area:2268}.
+Scourge Champions (59) roam the {area:2270}, north of {area:2268}. Pass {npc:11063}'s {item:13156} over each one you kill: the skulls that resonate are the ones he wants. Pull them one at a time.
+{item:13155}, from the Scourge Champions
+Chromie in Andorhal: keep it
+Ride north to the {area:2277}'s north-eastern edge.
+Careful: The trolls along the path to {area:2273} are level 57-59. They run away at low health and call for help, so they often bring adds with them.
+Ride south-west to the {area:2261}. The mound of dirt lies inside. {npc:11886} is elite: grouping up is advised.
+Careful: About four non-elite adds come with Mercutio. They walk to the grave instead of appearing on the spot.
+{zone:1451}, {area:361}, {area:618} & the Plaguelands
+Ride north out of {area:415} into {area:361} to the druids' camp on the road just past the border.
+{area:1770} is the cave at the back of {area:1763}, west of the road. Use the {item:12906} on the four braziers inside. Kill the Angerclaw bears and Felpaw wolves you pass for the {item:11172}.
+Careful: Shadow Council mobs of level 53-55 fill the cave and often come in large linked groups, many with stuns. A group of 2-3 players is recommended.
+{npc:9598} waits in {area:1767}. Escort her out of the woods and keep her alive.
+Careful: Three {quest:5086} ambush you soon after the escort starts.
+{object:176091}, if you found the Firewater flask in {area:618}
+{quest:5085}: {npc:9298} in {area:618}, keep it
+Back into {area:1770}: {npc:9861} and {npc:9860} guard {npc:9517} in its deepest chamber.
+Careful: The three bosses fight as a group. Kill the nearby mobs first so you don't pull extra enemies.
+Climb {area:537} in the middle of the crater and use the {item:14644} by the lava lake at the top, with two Thorium Bars in your bags. Fill {npc:9616}'s Empty Pure Sample Jars on the Primal Oozes in the pools around the ridge.
+{npc:17080} camps outside {area:2743}, the western hive. Pick up a Silithyst at one of the red geysers nearby and carry it to the Alliance extractor at his camp.
+Careful: You lose the Silithyst if you mount, stealth, use {spell:642}, {spell:5384} or Vanish. Blink and {spell:17} do not drop it.
+Fly to {area:3137} in {area:16} and ride west along the road to {area:2358}, just over the {zone:1440} border.
+{npc:10300} waits at {area:2250}, south of {area:2255}.
+Protect {npc:10300} while she lights the torches on the way to the {object:177404}.
+{npc:10300}: her escort comes later on the route
+Follow {npc:9298}'s directions to the mouth of {area:2256}, past the Frostmaul giants: pass them one at a time.
+{npc:11558}, just inside the cave: only from Neutral with the Timbermaw; walks around here: look inside the circle on the map
+{npc:11557}, if you have thirty {quest:6031}; below ground
+The western Winterfall furbolgs drop the beads.
+Careful: Turning in spawns three or four level 56-57 Winterfall ambushers that attack you; you can escape them while mounted, in stealth or with {spell:5384}, and they then gather by the lake so you can take the next quest.
+Take the {area:1769} tunnel from its {area:618} mouth, west of {npc:9298}, and follow the {area:493} branch to {area:2361}. {npc:11939} studies by the lake shore.
+{npc:14722} takes sixty Silk, sixty Mageweave and sixty {quest:6031}: hand in what you carry (or buy at the Auction House), skip the rest.
+Take the {area:2257} to {zone:1455}. {npc:14724} and {npc:14723} each take sixty Wool, sixty Silk and sixty Mageweave, then sixty {item:14047}: hand in what you carry (or buy at the Auction House), skip the rest.
+Careful: Jadefire Shadowstalkers are level 51-52 and move stealthed. They use {spell:7992} and are found about 550 yd south of {area:1997}.
+Careful: Jadefire Shadowstalkers sneak around and use {spell:7992}.
+Sixty {item:2592}, if you carry them
+Running {area:2057} ({area:2298}, south-east {area:28}) or {area:2279} instead of grinding gets you there faster in a group. Skip this step to grind solo.
+{npc:912}, the warrior trainer; inside
+{npc:8416}, by the door of {area:77}; inside
+{npc:836}, inside {area:77}; below ground
+{npc:8416}, at the door on the way out; inside
+Follow the road through the tunnel and north-east to {area:131}. Start outside: {npc:1252} and Eric's campfire are in front of the {area:2102}.
+Sit by Eric's campfire (type /sit) and wait for the buff.
+{npc:1872} works the forge west of the distillery.
+Then go in: {npc:6806}, the innkeeper, {npc:1226} and {npc:1267}. {npc:1699}'s {skill:185} lesson waits for the return with the ribs, when the copper is there for it.
+Last: some classes' trainers stand outside
+{npc:1694}, beside him
+Gretchen camps just outside the {area:136}, the wendigo cave south-west of {area:131}.
+Flintfire's shipments lie on the cave floor, and {object:460004} is missing somewhere inside.
+Careful: Wendigos stand close together inside the cave, so fights easily pull several at once; drawing them out one at a time with ranged attacks from outside avoids this.
+The {object:176785} sits next to {npc:271546}, south of the {area:136}.
+{npc:1243} camps south-west of it, by the road to Coldridge.
+{item:2894}, from {npc:1247}; upstairs
+Kill the Crag Boars on the way: their ribs drop before you have {npc:1267}'s quest and count toward it. Back in the distillery: {npc:1699} teaches {skill:185}, then the ribs go to {npc:1267}.
+{npc:1699}: Camping 101 asks you to learn it; below ground
+{npc:1269}, by the depot; below ground
+{area:137} sits on the lake west of {area:131}. {npc:8508}'s dock is the first stop; {npc:1374} and {npc:1375} are in the village beyond it.
+{npc:8508}, on the dock
+{npc:1196}, on the way to the Hold
+{npc:1127}, on the way
+{npc:1201}, on the way
+{area:135} is the troll cave in the hills south-west of {area:137}. Ice Claw Bears, Elder Crag Boars and Snow Leopards you kill on the way count for {npc:1374}. Kill Headhunters at its mouth and walk through to its far end.
+{npc:1373} guards the {item:2686} barrels in the distillery basement. Buy a {item:2686} from {npc:1247}, click the guarded barrel, then hand the ale to {npc:1373} from his quest window (there is no quest to accept); after that, the unguarded barrel takes the {spell:8553}.
+{npc:1252}: {npc:1274} in {zone:1455} takes it
+{item:2686}, from {npc:1247} in the distillery; upstairs
+{npc:1373}, beside the barrel; below ground
+The {object:270} in the distillery; below ground
+The {item:2676} grows in baskets up on {area:802}, the snowy slope north of the road between {area:131} and Brewnall: climb from the road west of {area:131}. The Frostmane Seers camped on the ridge drop it too.
+{npc:1266} camps in {area:801}, south of the road back east from Brewnall to {area:131}. His meats are in the locker in {npc:1271}'s cave, east of his camp. {npc:1271} is an elite yeti: wait out of sight until he wanders off on his patrol, then take the meats and leave before he comes back. You don't need to fight him.
+{item:2667}: the meat locker; below ground
+Back east through {area:131}: the class quests here wait for level 10.
+Follow the road north-east from {area:131} to the depot: the whole east of {area:1} is one sweep from here.
+The three rifles lie in the snow around the frozen lake by the refuge. Minor Ice Elementals drift around the lake and along the way: kill them as you go for {quest:99160}.
+Finish off the Minor Ice Elementals around the small lake just west of the refuge if you are still short.
+{npc:276003}, around the small lake
+The quarry lies just east of Farsen's ridge.
+Rockjaw Ambushers by {area:212}, north of the quarry, and Rockjaw Backbreakers further east drop the {quest:95214}. Rockjaw Bonesnappers prowl the quarry and the lake; Dark Iron Spies sneak around the lake shore. One spy drops the {item:274268}.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:1388} is a level 12 elite: most classes solo it at level 14, but you may need help. Skip it if you are alone: the route has you grind the XP back.
+On the road back west to {zone:1455}.
+Level 11.6
+If you skipped {quest:314}, grind here to level 11.6 to stay on the route's plan.
+Follow the road all the way east to the {area:806} at the {area:38} tunnel.
+Go through the tunnel into {area:38}. Just past it, a path marked by stones climbs the hills on the right of the road north to {npc:257808}'s camp.
+{npc:1960} waits at the {area:808}, north of the South Gate; the dwarven corpse lies up the pass to the west of him.
+Instead of walking back up to {area:1537}, go east through the South Gate tunnel into {area:38} and follow the road north to {area:144}. {npc:1681} stands on the east side of town, past the {area:2101}; his errand pays for a flight back to {area:1537}.
+{npc:1572}, the gryphon master
+{npc:1573}, the gryphon master where you landed
+Inn and flight master
+Follow the road up to {zone:1455} and take the {object:32362}: {npc:5149}, {npc:6179} and {npc:6178} are in the {object:32386}, {npc:6179} and {npc:6178} on its upper floor: the stairs up start just north-east of {npc:5149}. {npc:6175}, a beggar, wanders the city. He asks for ten {item:2589}: the troggs and trolls of {area:1} drop it, and the Auction House sells it.
+Head back out of {zone:1455} and east along the road to {area:212}. {npc:6177} lies dead by its shore: use the {item:6866} on him. The Dark Iron Spies sneaking around the lake carry the script.
+{npc:10090} is in the {object:32390}, {npc:258785} in the {object:32386}, {npc:6120} in the {object:32383}.
+{npc:270459} in {zone:1416}; {area:1} has no druid trainer
+{npc:1274}, in the {object:171709} with King Magni
+{npc:376} is in the Cathedral of Light.
+Back to {npc:6122}. Use the {item:6928} at the summoning circle in the {object:2164}'s cellar and defeat the voidwalker it calls. {area:40} is next, west of {area:87}.
+Follow the road through the tunnel and north-east to {area:131}. Start outside: {npc:1252} and Eric's campfire are in front of the {area:2102}.
+{npc:1872} works the forge west of the distillery.
+Then go in: {npc:6806}, the innkeeper, {npc:1226} and {npc:1267}. {npc:1699}'s {skill:185} lesson waits for the return with the ribs, when the copper is there for it.
+Level 11.41
+If you skipped {quest:314}, grind here to level 11.41 to stay on the route's plan.
+Follow the road up to {zone:1455} and take the {object:32362}: {npc:5149}, {npc:6179} and {npc:6178} are in the {object:32386}, Tiza and Muiredon on its upper floor: the stairs up start just north-east of {npc:5149}. {npc:6175}, a beggar, wanders the city. He asks for ten {item:2589}: the troggs and trolls of {area:1} drop it, and the Auction House sells it.
+Leave {zone:1453} by the main gate. The {quest:1861} waterfall is south-west of the gates, on the way west to {area:40}: fill {item:7207} at its base.
+{npc:247229}, in the library; inside
+{npc:911}, the warrior trainer; inside
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:248362} (level 3 elite) needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+Level 5.48
+If you skipped {quest:91752}, grind here to level 5.48 to stay on the route's plan.
+Level 5.77
+If you skipped {quest:91752}, grind here to level 5.77 to stay on the route's plan.
+Sit (/sit) by his campfire until you have {spell:1229451}
+{npc:6306}: skinners only, the pelts are skinned; inside
+{npc:1430}: Camping 101 asks you to learn it; below ground
+The Stonefield farm is west of the mine. Ma and "Auntie" Bernice stand by the house.
+She sits inside the farmhouse.
+{object:694855} grows in the fields around the vineyards and the Stonefield farm; Stonetusk Boars around them give the blood.
+Stonetusk Boars graze between the vineyards and the farm.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:248464} (level 6 elite) needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+Level 8.39
+If you skipped {quest:91775}, grind here to level 8.39 to stay on the route's plan.
+{npc:257446} in {zone:1426}; {area:87} has no shaman trainer
+{npc:270459} in {zone:1416}; {area:87} has no druid trainer
+The {item:247813}, Axe and Toolbox lie in the river south of the bridge. {npc:330}, a big boar, roots in the {area:62} west of the river with her {npc:390}: pull the piglets away first. Kill Prowlers and Young Forest Bears on the way. {npc:248278} roams the murloc shore along the river too: right-click the head it drops. {npc:248278} is elite: grouping up is advised.
+These are elite mobs: grouping up is encouraged, look for people to do it with. {quest:91740} needs a group of 2. Skip it if you are alone: the route has you grind the XP back.
+Level 8.85
+If you skipped {quest:91740}, grind here to level 8.85 to stay on the route's plan.
+Follow the road east past the {area:91} to the bridge. Finish the Prowlers and Young Forest Bears around the river south of it.
+{npc:240}, while William brews
+{npc:377}: {npc:376} in {zone:1453} takes both
+Riverpaw Runts and Outrunners hold the hills south of the garrison, along the {zone:1436} border.
+{npc:258930}, beside her: {spell:5149}
+{npc:955}: he wants your {item:247824}; inside
+{npc:1984} along the way to Back at {area:256}
+{npc:3593}, the warrior trainer; inside
+{npc:3595}, the priest trainer: in at the tree's front entrance and up the ramp
+{npc:3595}: in at the tree's front entrance and up the ramp; upstairs
+{quest:97979}: cast {spell:1259799} and Shadowmeld, then hand it back to {npc:3595}
+Mangy Nightsabers and Thistle Boars roam north of {area:256}, on the way to the cave. {npc:1994} sits deep inside.
+{npc:8584} waits in the trees west of the cave mouth.
+Webwood Spiders; below ground
+The moonwell sits north of {area:256}.
+{npc:8584} is a little further north-west. {quest:3522} lasts five minutes: fill the phial and go straight on to him.
+/sit by {npc:265811}'s campfire until you get {spell:1229451}
+{npc:6286}, south of the inn: Camping 101 asks you to learn it
+Nightsabers, Strigid Owls and Webwood Lurkers roam all around {area:186} and along the road east; the lurkers also drop the recipe's spider legs. The moonwell is at the west edge of {area:260}.
+North from the lake to {npc:2150}, on the road back to {area:186}.
+{npc:2107} stands in the village, east of the moonwell. {object:126158} is in the house on the hill at the east end of the village.
+South-west of Starbreeze, south of {npc:2150}. {npc:2080} tends his saplings on the shore; Lasher Sproutlings and Timberlings wander around him, and the {quest:919} grow among them.
+{npc:7318}, in the den; walks around {area:736}: look inside the circle on the map
+Fel Cones lie under the trees all around {area:186} and {npc:2150}: pick them up on the road east and hand them to {npc:2150} on the way to {npc:7234}.
+Gnarlpine Mystics and {npc:7234} camp north-east of {area:260}. {npc:7234} drops the {item:8049}: open it for the jewel.
+Careful: {npc:7234} waits near the camp fire with mystics around him, so pulling him without adds is hard.
+The Bloodfeather harpies nest on the slopes west and north of the glade.
+Careful: The harpies stand packed together, so extra ones often join a fight. Casters are mixed in among them.
+Use the {item:18152} at the moonwell
+the same {object:673378}: Fandral in {zone:1457} takes it
+Walk south along the west side of the island. Ursal prowls the far south, below the {area:478}.
+Careful: Gnarlpine of roughly level 9-12 crowd the camp and sit close together, so it is easy to pull several at once. Take them on singly before you engage Ursal.
+{npc:3598}, the warrior trainer: {quest:1684} in {zone:1457} takes it
+{npc:3567}, back in {area:186}; upstairs
+{npc:6094} takes a {item:159} with the fronds and the vial: if you drank yours, buy another from {npc:6736} in this inn before you hand in.
+{quest:1684} stands on the {area:1660}, just inside the city.
+Back out of the city gate and east along the road: {quest:1683} stands south of it, by {area:736}. Bring his horn back to {quest:1684}.
+{npc:4088}, on the {area:1660}: {spell:71}
+{npc:4146}, in the {area:1658}: {spell:5149}
+While you're here: learn Staves from {npc:11866} ({area:1660}, 10 silver); a Hunter's melee weapon is mostly its stats, and two-handers carry the most.
+While you're here: learn Staves from {npc:11866} ({area:1660}, 10 silver); a staff carries more spell stats than a one-hander while you level.
+Take the portal down to {area:702}. {npc:10118} stands on the dock, {npc:3838} by the hippogryphs. Once you have {quest:6342}, talk to {npc:3838} again and choose the flight to {area:442}: it is free and lands beside {npc:4200}. If the flight map opens instead, close it and talk to him again holding Shift.
+talk to {npc:3838} again: free with {quest:6342}
+Learn the flight path from {npc:3841} where you land. {npc:4200}'s fish stall is just north of her, by the docks.
+The boat docks west of the village. The flight master stands on the hill south of the inn; the quest givers are spread along the main street.
+Fly back to {area:702} from {npc:3841}, hand {item:16263} to {npc:10118} on the dock, then fly back to {area:442} for the boat.
+Tide Crawlers scuttle along the shore below the village; {object:17182} stands on the beach just south of the docks. Darkshore Threshers swim in the shallows. The {object:175207} lies on the shore just south of the village.
+Cast {spell:18960}. {npc:11802} is in {area:2361}; the {quest:5929} sits in the woods to the north-west. Then {npc:11800} in {area:2361} flies Druids straight to {area:702}, no flight path needed.
+{npc:10118} stands on the Rut'theran dock where you land. Then take the portal up to {npc:4217} in the {area:1658}.
+Take the boat to {zone:1453} from {area:442}'s docks.
+From {area:17203}, head through the city gates into {zone:1429} and follow the road west to {zone:1436}.
+Rabid Thistle Bears roam the hills just east of {area:442}. Use {item:7586} on one and lead it back to him.
+North along the hills. {npc:3650} waits in the ruins of {quest:954}; Wild Grells and Vile Sprites fill them, Deth'ryll Satyrs the eastern edge. {object:17183} stands by the road west of the ruins; a {quest:4723} lies on the shore on the way to him.
+Follow the road south. Onu is the ancient at the Grove; {npc:270269} and {npc:11218} sleep beside him.
+Follow the coast north-east to the {area:443}. Mathystra Relics lie among the ruins; Stormscale Myrmidons, Sorceresses and Warriors hold them, and Stormscale Beastmistresses walk the shore.
+Hearthstone on cooldown? Follow the coast road back south.
+{npc:257554} and {npc:263113} stand at the top of the watchtower, a few steps north-east of {npc:251368}.
+Jump off the top of the watchtower and use {spell:1259416} to float down to {npc:251361}, west of the tower.
+{npc:249363} keeps watch east of the grove. The {npc:251143} and Al'Aketh Converts gather just north of her; the {object:460002} rises further north: cast your {spell:1259705} racial ability at it.
+Cast {spell:1259705} at the {object:460002}
+{npc:252095} camps south of the Ursera den. The Al'Aketh thugs hold the camp south-west of her; {npc:256935} stands in its middle.
+Careful: {npc:256935} casts shocks; drag him clear of the other cultists before fighting so they don't join in.
+/sit by {npc:263664}'s campfire until you get {spell:1229451}
+{npc:251905}: Camping 101 asks you to learn it
+{npc:251918} along the way to Shen'dar turn-ins
+"Badwind" Bennic, below ground
+{npc:5148} in {zone:1455}; {area:16624} has no paladin trainer
+Priest trainer
+Lariia in {zone:1438}; {area:16624} has no priest trainer
+{npc:258098} in {zone:1455}; {area:16624} has no shaman trainer
+Warlock trainer
+{item:2450} in {zone:1455}; {area:16624} has no warlock trainer
+{npc:257065} waits at the entrance to {quest:92529}, south of Shen'dar. The {spell:1254832} lets you walk in among the faithful.
+Head north-west to the hippogryph nests on the western cliffs. {item:263493} lies around the nests; the Matriarch patrols among them.
+The Novice Seers practise in the clearing west of Shen'dar.
+{npc:257006} and {npc:252448} stand on {area:16638}'s west side, beside the inn; {npc:252377} and {npc:252389} train just west of {npc:257006}. Windsong Crawlers line the shore further west, around 51,70.
+{npc:252377}, beside {npc:257006}: {npc:257196} holds the Bulwark at the {area:16629}
+{npc:252389}, beside {npc:257006}: the first {item:15908}
+Innkeeper {npc:255940}, by the west gate
+The {object:581822} lies by the path west of {area:16638}.
+{npc:254588}, among the crabs: tame one with {npc:252389}'s first {item:15908} while you are there
+Fillion's camp is north-west of it, and the Shriekling Matriarchs nest just west of the camp.
+{npc:252389} takes back the first {item:15908} and hands you two more, one at a time: Ornery Galestriders and Vuldren Alphas roam the fields just north of her. Tame each with its rod and bring the rod back to her. {npc:254411}, beside her, teaches {spell:5149}.
+{item:262668}: by the formations
+{npc:252359}, the druid trainer, stands between the west gate and Valennia's house.
+{npc:252359}: {quest:94006} (level 10)
+{npc:5148} in {zone:1455}; {area:16638} has no paladin trainer
+{npc:5141} in {zone:1455}; {area:16638} has no priest trainer
+{npc:258098} in {zone:1455}; {area:16638} has no shaman trainer
+{item:2450} in {zone:1455}; {area:16638} has no warlock trainer
+Meet {npc:253844} at the gate
+{npc:255853}, by the falls north-east of {area:16638}, on the way north: {spell:5487}
+{npc:254151}, {npc:258130} and {npc:258134} are north-east of {npc:257944}; {npc:253622} stands east of them. Haalien also drops a {quest:94490}. For {quest:94489}, enter the Nightfang Den, heal 7 injured druids and find {npc:258130}.
+{item:263993}: {npc:257196} holds it, west of the shrine's approach; defeat him for it on the way in
+{npc:253590}, in the sanctum; upstairs
+Lorthuna waits up on the {area:16630}, east of the shrine: take the Portal to {area:16630} in the inner sanctum, beside Valennia, and cross the heights east to {npc:252475}. When she falls, the {object:617084} beside her takes you back to town.
+{npc:252475} sends you on to {area:279}. Once you have trained, take the skycutter from the dock tower just south of {area:16638}: it lands by the Kirin Tor camp west of {area:279}, beside {npc:259084} and the Skyborne Portal.
+Leave {zone:2521} to {zone:1416}
+{npc:259084} stands beside the Skyborne Portal, where the skycutter lands by the Kirin Tor camp west of {area:279}. The portal takes you to {zone:1453}.
+Bolvar Fordragon stands in the throne room of {object:2117}, at the north end of the city. Then leave by the main gate for {area:40}.
+{npc:5504}, {zone:1453}'s druid trainer, teaches you {spell:18960}. {npc:11802}'s welcome waits for your {spell:499} trip at the end of {zone:1439}.

@@ -7,12 +7,23 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- **Notes des guides de l'Alliance traduites en français** : les 1 038 textes des guides de leveling (585) et de classe (453) que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ, familier du chasseur, poisons, totems…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de réputation, de métiers, de collection et de la Horde.
+- Minimap carrée : l'icône jour / nuit est posée sur le coin en haut à droite, un peu plus petite ; sa place d'origine est rendue en rond.
+- Journal, onglet Sorts de classe : **infobulle du sort** au survol, avec son prix chez le maître.
+- **Formules des guides traduites** : environ 120 formules récurrentes que les traductions de Polestar ne couvrent pas (« à tuer en chemin », « Maître de vol de… », « à l'intérieur », « Vol vers… »…), traduites par modèle (`Locales/GuideTexts_frFR.lua`) ; la traduction de Polestar reste prioritaire.
+- Objets à ramasser : la fenêtre du guide dit **sur quels monstres** les trouver (ou dans quel objet).
+- Fenêtre du guide : au **survol d'un objectif de quête**, son texte (niveau, objectifs du client, objectifs et description du journal) ; un **clic l'ouvre dans le journal de quêtes** du jeu, sur la bonne quête.
+- **Journal du guide** (phase 4b) : grande fenêtre à onglets, ouverte par le menu du bouton NextStep, `/ns journal` ou un raccourci clavier. **Routes** : tous les guides du personnage par catégorie, « Choisis ton chemin » en tête du leveling, niveau coloré selon le personnage, avancement, détail du guide et bouton pour le suivre. **Sorts de classe** : la fenêtre des sorts devient un onglet du journal. Style sombre et doré (`Core/Style.lua`) : catégories avec icônes, cartes de guides avec barre d'avancement, détail avec les récompenses et leurs icônes, sorts avec leur icône. La fenêtre du guide adopte le même style, avec un bouton pour ouvrir le journal.
 - **Sorts à apprendre** (phase 4b) : les sorts que le maître de classe a pour le personnage, d'après les tables de What's Training pour Forever (MIT, importées par `Tools/trainer/`), selon la classe, la race, la faction, les talents et les compétences, avec leur coût. Affichés sur l'étape « maître de classe » et en rappel sous l'étape (orange si l'argent manque), détail dans l'infobulle, prochain niveau à nouveaux sorts.
 - **Fenêtre des sorts de classe** (menu du bouton NextStep, ou `/ns spells`) : ce que le maître a maintenant, puis chaque niveau à venir jusqu'au 60 avec ses nouveaux sorts, le prix de chacun et le total du niveau ; vert si l'argent suffit, orange sinon ; Échap pour fermer. `/ns spells list` donne la liste dans le chat.
 - Radar de récolte : il se ferme aussi par **Échap** ou par la **croix** en haut à droite de l'anneau.
 
 ### Modifié
 - L'étape « maître de classe » est validée d'office quand il n'y a rien de nouveau à apprendre (règle des niveaux pairs en secours si la classe n'a pas de données).
+
+### Corrigé
+- **Options** : le panneau débordait (pas de défilement) et chaque module était décalé un peu plus à droite. Les options sont maintenant une fenêtre NextStep au style sombre et doré, avec défilement, sections alignées et réglages au même style ; la page des options du jeu ouvre cette fenêtre.
+- **Radar de récolte** : la carte disparaissait parfois (changement de zone, chargement) et ne revenait qu'en touchant à l'opacité. Le radar réapplique ses réglages après ces événements, dès qu'un autre code change la minimap, et vérifie chaque seconde qu'il l'a toujours. Anneau plus fin et plus net (texture de 512 pixels).
 
 ## [0.1.0] - 2026-11-05
 

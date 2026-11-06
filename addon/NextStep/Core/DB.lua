@@ -11,6 +11,7 @@ DB.guides = {}      -- [id] = guide
 DB.order = {}       -- identifiants dans l'ordre de chargement
 DB.names = {}       -- [locale][genre][id] = nom
 DB.texts = {}       -- [locale] = { shared = { [anglais] = traduit }, guides = { [id] = { ... } } }
+DB.templates = {}   -- [locale] = { [modèle anglais avec {1}, {2}...] = modèle traduit }
 DB.mapFrames = {}   -- [repère] = { [uiMapID] = cadre }
 DB.mapOverlays = {} -- [UiMapArtID] = { { largeur, hauteur, x, y, FileDataID... } } (carte sans brouillard)
 DB.retired = {}     -- [ancien identifiant de guide] = true
@@ -64,6 +65,16 @@ function DB:AddTexts(locale, guideID, build)
     end
     for english, translated in pairs(build()) do
         target[english] = translated
+    end
+end
+
+-- Formules récurrentes des guides (Locales/GuideTexts_*.lua) : les noms y sont
+-- remplacés par {1}, {2}... dans l'ordre du texte.
+function DB:AddTemplates(locale, build)
+    local templates = self.templates[locale] or {}
+    self.templates[locale] = templates
+    for english, translated in pairs(build()) do
+        templates[english] = translated
     end
 end
 
@@ -180,14 +191,39 @@ function DB:GetName(kind, id, guide)
         or variant or lookup(self.names.enUS, kind, id)
 end
 
--- Traduction d'un texte de guide (anglais si aucune traduction).
+-- Traduction par modèle : les noms deviennent {1}, {2}..., le modèle est traduit,
+-- puis les noms reprennent leur place (éventuellement dans un autre ordre).
+local function translateTemplate(templates, text)
+    local names = {}
+    local template = text:gsub("{%a+:%d+}", function(name)
+        names[#names + 1] = name
+        return "{" .. #names .. "}"
+    end)
+    local translated = templates[template]
+    if not translated then
+        return nil
+    end
+    return (translated:gsub("{(%d+)}", function(index)
+        return names[tonumber(index)] or ""
+    end))
+end
+
+-- Traduction d'un texte de guide : traduction de Polestar, sinon formule récurrente
+-- traduite par NextStep, sinon l'anglais.
 function DB:Translate(text, guide)
-    local texts = self.texts[self.locale]
-    if not texts or not text then
+    if not text then
         return text
     end
-    local own = guide and texts.guides[guide.id]
-    return own and own[text] or texts.shared[text] or text
+    local texts = self.texts[self.locale]
+    if texts then
+        local own = guide and texts.guides[guide.id]
+        local translated = own and own[text] or texts.shared[text]
+        if translated then
+            return translated
+        end
+    end
+    local templates = self.templates[self.locale]
+    return templates and translateTemplate(templates, text) or text
 end
 
 -- Texte prêt à afficher : traduit, puis {genre:id} remplacés par les noms.

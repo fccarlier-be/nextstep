@@ -13,10 +13,10 @@ local L = ns.L
 local Guide = ns.Modules:Get("Guide")
 local Labels = ns.GuideLabels
 
-local WIDTH = 320
+local WIDTH = 330
 local PADDING = 10
-local HEADER_HEIGHT = 24
-local FOOTER_HEIGHT = 30
+local HEADER_HEIGHT = 30
+local FOOTER_HEIGHT = 36
 local LINE_GAP = 3
 local INDENT = 14
 
@@ -28,13 +28,14 @@ local ICONS = {
     note = "|TInterface\\FriendsFrame\\InformationIcon:14:14|t",
 }
 
+local Style = ns.Style
 local COLORS = {
-    title = { 1, 0.82, 0 },
-    text = { 1, 1, 1 },
+    title = Style.COLORS.gold,
+    text = Style.COLORS.text,
     done = { 0.5, 0.5, 0.5 },
-    muted = { 0.65, 0.65, 0.65 },
-    action = { 0.4, 0.8, 1 },
-    warning = { 1, 0.5, 0.25 },
+    muted = Style.COLORS.muted,
+    action = Style.COLORS.blue,
+    warning = Style.COLORS.orange,
 }
 
 ---------------------------------------------------------------------------
@@ -59,38 +60,41 @@ local function restorePosition(self)
     end
 end
 
+-- Bouton plat du style commun (Core/Style.lua), avec SetText comme un bouton du jeu.
 local function smallButton(parent, text, width, onClick)
-    local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
-    button:SetSize(width, 20)
-    button:SetText(text)
-    button:SetScript("OnClick", onClick)
+    local button = Style.Button(parent, text, width, 24, onClick)
+    button.text:SetFontObject("GameFontNormalSmall")
+    button.SetText = button.SetLabel
+    return button
+end
+
+-- Petit bouton d'icône de la barre de titre (texte doré, éclairé au survol).
+local function headerButton(parent, label, onClick)
+    local button = Style.Button(parent, label, 22, 22, onClick)
+    button.text:SetFontObject("GameFontNormal")
     return button
 end
 
 function Guide:CreateWindow()
-    local frame = CreateFrame("Frame", "NextStepGuideFrame", UIParent,
-        BackdropTemplateMixin and "BackdropTemplate" or nil)
+    local frame = CreateFrame("Frame", "NextStepGuideFrame", UIParent)
     frame:SetSize(WIDTH, HEADER_HEIGHT + FOOTER_HEIGHT)
     frame:SetFrameStrata("MEDIUM")
     frame:SetClampedToScreen(true)
     frame:SetMovable(true)
     frame:EnableMouse(true)
-    if frame.SetBackdrop then
-        frame:SetBackdrop({
-            bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-            tile = true, tileSize = 16, edgeSize = 14,
-            insets = { left = 3, right = 3, top = 3, bottom = 3 },
-        })
-        frame:SetBackdropColor(0.05, 0.05, 0.08, 0.85)
-        frame:SetBackdropBorderColor(0.6, 0.5, 0.3, 1)
-    end
+    -- Style sombre et doré, comme le journal.
+    frame.bg = Style.Fill(frame, Style.COLORS.background)
+    Style.Border(frame, Style.COLORS.goldDim)
 
-    -- Barre de titre : déplacement, guide suivi, options, réduction.
+    -- Barre de titre : déplacement, guide suivi, journal, options, réduction.
     local header = CreateFrame("Frame", nil, frame)
-    header:SetPoint("TOPLEFT", 0, 0)
-    header:SetPoint("TOPRIGHT", 0, 0)
+    header:SetPoint("TOPLEFT", 1, -1)
+    header:SetPoint("TOPRIGHT", -1, -1)
     header:SetHeight(HEADER_HEIGHT)
+    Style.Fill(header, Style.COLORS.header)
+    local underline = Style.Line(header, Style.COLORS.gold)
+    underline:SetPoint("BOTTOMLEFT")
+    underline:SetPoint("BOTTOMRIGHT")
     header:EnableMouse(true)
     header:RegisterForDrag("LeftButton")
     header:SetScript("OnDragStart", function()
@@ -103,28 +107,37 @@ function Guide:CreateWindow()
         savePosition(self)
     end)
 
-    local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    title:SetPoint("LEFT", PADDING, 0)
-    title:SetPoint("RIGHT", -50, 0)
+    local logo = header:CreateTexture(nil, "ARTWORK")
+    logo:SetTexture("Interface\\AddOns\\NextStep\\Media\\IconSmall")
+    logo:SetSize(20, 20)
+    logo:SetPoint("LEFT", 6, 0)
+
+    local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    title:SetPoint("LEFT", logo, "RIGHT", 6, 0)
+    title:SetPoint("RIGHT", -80, 0)
     title:SetJustifyH("LEFT")
+    if title.SetWordWrap then
+        title:SetWordWrap(false)
+    end
     frame.title = title
 
-    local collapse = CreateFrame("Button", nil, header)
-    collapse:SetSize(16, 16)
-    collapse:SetPoint("RIGHT", -6, 0)
-    collapse:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-Up")
-    collapse:SetScript("OnClick", function()
+    local collapse = headerButton(header, "-", function()
         self:SetWindowCollapsed(not self.db.window.collapsed)
     end)
+    collapse:SetPoint("RIGHT", -4, 0)
     frame.collapse = collapse
 
-    local options = CreateFrame("Button", nil, header)
-    options:SetSize(16, 16)
-    options:SetPoint("RIGHT", collapse, "LEFT", -4, 0)
-    options:SetNormalTexture("Interface\\Buttons\\UI-OptionsButton")
-    options:SetScript("OnClick", function()
+    local options = Style.IconButton(header, "Interface\\Buttons\\UI-OptionsButton", 22, function()
         ns.Options:Open()
     end)
+    options:SetPoint("RIGHT", collapse, "LEFT", -3, 0)
+
+    local journal = Style.IconButton(header, "Interface\\Icons\\INV_Misc_Book_09", 22, function()
+        self:ToggleJournal("routes")
+    end)
+    journal.icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+    journal:SetPoint("RIGHT", options, "LEFT", -3, 0)
+    frame.journalButton = journal
 
     -- Corps : lignes réutilisées d'une mise à jour à l'autre.
     local body = CreateFrame("Frame", nil, frame)
@@ -137,9 +150,13 @@ function Guide:CreateWindow()
 
     -- Pied : Ignorer, Valider, mode.
     local footer = CreateFrame("Frame", nil, frame)
-    footer:SetPoint("BOTTOMLEFT", PADDING, 6)
-    footer:SetPoint("BOTTOMRIGHT", -PADDING, 6)
-    footer:SetHeight(FOOTER_HEIGHT - 6)
+    footer:SetPoint("BOTTOMLEFT", PADDING, 7)
+    footer:SetPoint("BOTTOMRIGHT", -PADDING, 7)
+    footer:SetHeight(FOOTER_HEIGHT - 10)
+    local separator = Style.Line(frame, Style.COLORS.goldDim)
+    separator:SetPoint("BOTTOMLEFT", 1, FOOTER_HEIGHT - 2)
+    separator:SetPoint("BOTTOMRIGHT", -1, FOOTER_HEIGHT - 2)
+    frame.separator = separator
     frame.skip = smallButton(footer, L["Skip"], 70, function()
         local result = self.result
         if result and result.current then
@@ -186,11 +203,16 @@ local function acquireLine(frame, index)
             end
         end)
         line:SetScript("OnEnter", function(button)
-            if button.tooltip and GameTooltip then
-                GameTooltip:SetOwner(button, "ANCHOR_LEFT")
-                GameTooltip:SetText(button.tooltip, 1, 1, 1, 1, true)
-                GameTooltip:Show()
+            if not (button.tooltip and GameTooltip) then
+                return
             end
+            GameTooltip:SetOwner(button, "ANCHOR_LEFT")
+            if type(button.tooltip) == "function" then
+                button.tooltip(GameTooltip)
+            else
+                GameTooltip:SetText(button.tooltip, 1, 1, 1, 1, true)
+            end
+            GameTooltip:Show()
         end)
         line:SetScript("OnLeave", function()
             if GameTooltip then
@@ -258,6 +280,10 @@ local function addGoal(self, view, result, i, j, status)
     if group then
         text = ("%s |cffff8040(%s)|r"):format(text, group)
     end
+    local source = status ~= "done" and Labels.CollectSource(goal, guide)
+    if source then
+        text = ("%s |cffa0a0a0(%s)|r"):format(text, source)
+    end
     local note = Labels.GoalNote(goal, guide)
     if note then
         text = ("%s |cffa0a0a0- %s|r"):format(text, note)
@@ -272,6 +298,19 @@ local function addGoal(self, view, result, i, j, status)
             self:Tick(i, j)
         end
         options.tooltip = L["Click to mark it as done."]
+    end
+    -- Objectif de quête : son texte au survol ; un clic l'ouvre dans le journal de
+    -- quêtes si elle y est (un objectif « à valider » garde son clic).
+    if goal.quest and not options.onClick then
+        local quest = goal.quest
+        options.tooltip = function(tooltip)
+            self:FillQuestTooltip(tooltip, quest, guide)
+        end
+        if self.state and self.state:InLog(quest) then
+            options.onClick = function()
+                self:OpenQuestLog(quest)
+            end
+        end
     end
     -- Maître de classe : les sorts à apprendre et leur coût.
     if goal.t == "train" and goal.class and status ~= "done" then
@@ -494,12 +533,92 @@ function Guide:UpdateWindow(result)
     local collapsed = self.db.window.collapsed
     frame.body:SetShown(not collapsed)
     frame.footer:SetShown(not collapsed)
-    frame.collapse:SetNormalTexture(collapsed and "Interface\\Buttons\\UI-PlusButton-Up"
-        or "Interface\\Buttons\\UI-MinusButton-Up")
+    frame.collapse:SetLabel(collapsed and "+" or "-")
+    frame.separator:SetShown(not collapsed)
     if collapsed then
         frame:SetHeight(HEADER_HEIGHT)
     else
         frame:SetHeight(HEADER_HEIGHT + view.height + FOOTER_HEIGHT)
+    end
+end
+
+---------------------------------------------------------------------------
+-- Quêtes : texte au survol, ouverture dans le journal de quêtes
+---------------------------------------------------------------------------
+
+-- Texte d'une quête du journal : description et objectifs, lus en la sélectionnant
+-- un instant (la sélection du joueur est rendue aussitôt).
+function Guide:QuestText(quest)
+    if not (C_QuestLog.GetLogIndexForQuestID and C_QuestLog.GetLogIndexForQuestID(quest)) then
+        return nil
+    end
+    if not (C_QuestLog.SetSelectedQuest and GetQuestLogQuestText) then
+        return nil
+    end
+    local previous = C_QuestLog.GetSelectedQuest and C_QuestLog.GetSelectedQuest()
+    C_QuestLog.SetSelectedQuest(quest)
+    local description, objectives = GetQuestLogQuestText()
+    if previous and previous ~= quest then
+        C_QuestLog.SetSelectedQuest(previous)
+    end
+    return description, objectives
+end
+
+-- Infobulle d'une quête : titre et niveau, objectifs du client, description.
+function Guide:FillQuestTooltip(tooltip, quest, guide)
+    local name = ns.DB:GetName("quest", quest, guide) or ("#" .. quest)
+    local level = Labels.QuestLevel({ quest = quest }, guide)
+    local levelTag = level and Labels.LevelTag({ quest = quest }, guide, self.state and self.state:Level())
+    tooltip:SetText((levelTag and (levelTag .. " ") or "") .. name, 1, 0.82, 0, 1, true)
+    local inLog = self.state and self.state:InLog(quest)
+    for _, objective in ipairs(inLog and self.state:Objectives(quest) or {}) do
+        if objective.text and objective.text ~= "" then
+            local done = objective.finished
+            tooltip:AddLine((done and "|cff808080- " or "- ") .. objective.text .. (done and "|r" or ""), 1, 1, 1, true)
+        end
+    end
+    local description, objectives = self:QuestText(quest)
+    if objectives and objectives ~= "" then
+        tooltip:AddLine(" ")
+        tooltip:AddLine(objectives, 1, 1, 1, true)
+    end
+    if description and description ~= "" then
+        tooltip:AddLine(" ")
+        tooltip:AddLine(description, 0.75, 0.75, 0.75, true)
+    end
+    if inLog then
+        tooltip:AddLine(" ")
+        tooltip:AddLine(L["Click to open it in the quest log."], 0.4, 0.8, 1, true)
+    elseif not description then
+        tooltip:AddLine(L["Not in your quest log."], 0.6, 0.6, 0.6, true)
+    end
+end
+
+-- Ouvre le journal de quêtes du jeu sur la quête : journal intégré à la carte
+-- (QuestMapFrame), ou journal classique (QuestLogFrame).
+function Guide:OpenQuestLog(quest)
+    if InCombatLockdown and InCombatLockdown() then
+        ns:Print(L["Not in combat."])
+        return
+    end
+    if QuestMapFrame_OpenToQuestDetails then
+        QuestMapFrame_OpenToQuestDetails(quest)
+        return
+    end
+    if C_QuestLog.SetSelectedQuest then
+        C_QuestLog.SetSelectedQuest(quest)
+    end
+    local index = C_QuestLog.GetLogIndexForQuestID and C_QuestLog.GetLogIndexForQuestID(quest)
+    if index and SelectQuestLogEntry then
+        SelectQuestLogEntry(index)
+    end
+    if QuestLogFrame and ShowUIPanel then
+        ShowUIPanel(QuestLogFrame)
+        if QuestLog_Update then
+            QuestLog_Update()
+        end
+    elseif ToggleQuestLog then
+        ToggleQuestLog()
     end
 end
 
