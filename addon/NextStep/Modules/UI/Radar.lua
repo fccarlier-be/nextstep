@@ -243,11 +243,21 @@ end
 
 -- Enfants de Minimap (boutons d'addons, cadres de Blizzard) : cachés pendant le radar.
 -- Les cadres protégés sont laissés tels quels, pour ne rien bloquer en combat.
+-- Les enfants de la minimap (boutons du jeu et des addons) deviennent transparents et
+-- ne prennent plus la souris : jamais Hide ni Show, qui lanceraient leurs scripts
+-- depuis le code de l'addon et souilleraient l'interface de Blizzard.
 local function hideChildren(saved)
     for _, child in ipairs({ Minimap:GetChildren() }) do
         if child:IsShown() and not child:IsProtected() then
-            child:Hide()
-            saved[#saved + 1] = child
+            saved[#saved + 1] = {
+                frame = child,
+                alpha = child:GetAlpha(),
+                mouse = child.IsMouseEnabled and child:IsMouseEnabled(),
+            }
+            child:SetAlpha(0)
+            if child.EnableMouse then
+                child:EnableMouse(false)
+            end
         end
     end
 end
@@ -359,7 +369,10 @@ function Radar:Close()
     Minimap:SetMaskTexture(shape == "SQUARE" and MASK_SQUARE or MASK_ROUND)
     C_CVar.SetCVar("rotateMinimap", saved.rotate)
     for _, child in ipairs(saved.children) do
-        child:Show()
+        child.frame:SetAlpha(child.alpha or 1)
+        if child.frame.EnableMouse and child.mouse ~= nil then
+            child.frame:EnableMouse(child.mouse)
+        end
     end
 end
 

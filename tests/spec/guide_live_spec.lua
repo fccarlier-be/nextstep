@@ -365,19 +365,25 @@ describe("Guide en jeu", function()
 
     it("masque le suivi de quêtes Blizzard pendant un guide", function()
         local game, Guide = boot()
-        local tracker = { shown = true }
-        function tracker.Show(self) self.shown = true end
-        function tracker.Hide(self) self.shown = false end
+        -- Show et Hide sont interdits : ils souilleraient le suivi de Blizzard.
+        local tracker = { alpha = 1, mouse = true }
+        function tracker.Show() error("Show souillerait le suivi") end
+        function tracker.Hide() error("Hide souillerait le suivi") end
         function tracker.IsProtected() return false end
+        function tracker.GetAlpha(self) return self.alpha end
+        function tracker.SetAlpha(self, alpha) self.alpha = alpha end
+        function tracker.IsMouseEnabled(self) return self.mouse end
+        function tracker.EnableMouse(self, enabled) self.mouse = enabled end
         _G.ObjectiveTrackerFrame = tracker
         game:fire("QUEST_LOG_UPDATE")
 
         Guide:Start(GUIDE_ID)
-        expect_eq(tracker.shown, false)
-        tracker:Show()
-        expect_eq(tracker.shown, false, "Blizzard le réaffiche : il reste caché")
+        expect_eq(tracker.alpha, 0, "transparent")
+        expect_eq(tracker.mouse, false, "ne prend plus la souris")
         Guide:Stop()
-        expect_eq(tracker.shown, true)
+        expect_eq(tracker.alpha, 1)
+        expect_eq(tracker.mouse, true)
+        expect_eq(#game.errors, 0)
     end)
 
     it("répond aux commandes /ns guide et /ns arrow", function()

@@ -394,20 +394,26 @@ function Guide:UpdateTracker()
         end
         return
     end
-    if not self.trackerHooked then
-        hooksecurefunc(frame, "Show", function(shown)
-            if self.trackerHidden then
-                shown:Hide()
-            end
-        end)
-        self.trackerHooked = true
-    end
-    if hide and not self.trackerHidden then
-        self.trackerHidden = true
-        frame:Hide()
-    elseif not hide and self.trackerHidden then
+    -- Jamais Hide ni Show : ils lanceraient les scripts du suivi (OnShow, OnHide) depuis
+    -- le code de l'addon, ce qui souille le suivi et le mode Édition (erreurs « tainted »
+    -- sur les auras secrètes). Le suivi devient seulement transparent et ne prend plus
+    -- la souris ; il continue de se mettre à jour normalement.
+    if hide then
+        if not self.trackerHidden then
+            self.trackerHidden = true
+            self.trackerAlpha = frame:GetAlpha()
+            self.trackerMouse = frame.IsMouseEnabled and frame:IsMouseEnabled()
+        end
+        frame:SetAlpha(0)
+        if frame.EnableMouse then
+            frame:EnableMouse(false)
+        end
+    elseif self.trackerHidden then
         self.trackerHidden = false
-        frame:Show()
+        frame:SetAlpha(self.trackerAlpha or 1)
+        if frame.EnableMouse and self.trackerMouse ~= nil then
+            frame:EnableMouse(self.trackerMouse)
+        end
     end
 end
 

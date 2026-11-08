@@ -398,7 +398,7 @@ Sombre et doré, commun aux fenêtres de NextStep (`Core/Style.lua`, choix du 20
 
 ### Divers
 
-- Le suivi d'objectifs Blizzard est **masqué quand le guide est actif** (option). **[À vérifier]** Nom du cadre sur Forever (`ObjectiveTrackerFrame` ou `QuestWatchFrame`) et masquage sans souillure.
+- Le suivi d'objectifs Blizzard est **masqué quand le guide est actif** (option). **[À vérifier]** Nom du cadre sur Forever (`ObjectiveTrackerFrame` ou `QuestWatchFrame`) et masquage sans souillure. **Réglé** : jamais `Hide`/`Show` sur un cadre de Blizzard (ils lancent ses scripts depuis le code de l'addon et le souillent, d'où des erreurs sur les auras secrètes) ; le suivi devient transparent (`SetAlpha(0)`) et ne prend plus la souris.
 - **Validations automatiques** des objectifs « à valider » de l'étape courante, des objectifs en chemin et du mode libre : `talk` à l'ouverture d'un dialogue avec le PNJ, `vendor` à l'ouverture d'un marchand, `train` à l'ouverture d'un des maîtres proposés, `getfp` (sans identifiant) à l'ouverture de la carte des vols, `cast` au sort lancé. Elles valent pour la session ; une fois l'étape passée, son résultat est mémorisé.
 - Commande `/ns`, raccourcis clavier, bouton minimap (voir [Bouton NextStep et menu des addons](#bouton-nextstep-et-menu-des-addons)).
 
