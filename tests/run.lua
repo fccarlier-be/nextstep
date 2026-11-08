@@ -21,6 +21,7 @@ local SPECS = {
     "junk",
     "clock",
     "unit_text",
+    "inventory",
     "windows",
     "engine",
     "guide",

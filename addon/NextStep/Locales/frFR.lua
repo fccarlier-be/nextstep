@@ -491,3 +491,26 @@ L["Show values on unit frames (Blizzard's status text)"] =
 L["Unit frames: %s"] = "Cadres d'unité : %s"
 L["Show health on nameplates"] = "Vie sur les barres de nom"
 L["Nameplates: %s"] = "Barres de nom : %s"
+
+-- Modules/UI/Inventory.lua
+L["Bags and bank"] = "Sacs et banque"
+L["Marks upgrades and junk in your bags, remembers the bags and bank of all your "
+    .. "characters, counts items in tooltips, and shows any bank from anywhere."] =
+    "Marque les améliorations et la camelote dans vos sacs, retient les sacs et la banque de tous vos "
+    .. "personnages, les compte dans les infobulles et montre n'importe quelle banque, de n'importe où."
+L["bags %d"] = "sacs %d"
+L["bank %d"] = "banque %d"
+L["Total: %d"] = "Total : %d"
+L["Free slots: %d"] = "Places libres : %d"
+L["Nothing here."] = "Rien ici."
+L["Bags"] = "Sacs"
+L["Bank"] = "Banque"
+L["seen %s"] = "vue le %s"
+L["never visited"] = "jamais visitée"
+L["No character yet"] = "Aucun personnage pour l'instant"
+L["Bags and bank of all your characters, from anywhere"] =
+    "Sacs et banque de tous vos personnages, de n'importe où"
+L["Mark upgrades in your bags"] = "Marquer les améliorations dans les sacs"
+L["Mark junk in your bags"] = "Marquer la camelote dans les sacs"
+L["Show the item level of gear in your bags"] = "Niveau d'objet de l'équipement dans les sacs"
+L["Count items of all your characters in tooltips"] = "Compter les objets de tous vos personnages dans les infobulles"
