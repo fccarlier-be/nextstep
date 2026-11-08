@@ -146,6 +146,8 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
 - Sacs et banque unifiés, banque consultable à distance, mémoire des autres personnages, marques sur les objets.
 
+État : **écrit et testé hors jeu** (module `Inventory`) : marques (améliorations, camelote, niveau d'objet), places libres, mémoire des sacs et banques de tous les personnages, compteurs dans les infobulles, fenêtre consultable à distance avec recherche ; sacs natifs enrichis plutôt que remplacés. Reste la vérification en jeu.
+
 ## Phase 9 : Métiers → v0.6
 
 - Conseiller de métiers, routes de métiers, intégration dans la route de leveling, onglet Métiers.

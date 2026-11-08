@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Module **Sacs et banque** : flèche verte sur les améliorations et pièce grise sur la camelote dans vos sacs, niveau d'objet en option, places libres ; sacs et banque de tous vos personnages retenus, comptés dans les infobulles, et consultables de n'importe où (`/ns bank`, avec une recherche).
 - Guide : les quêtes **élites**, de groupe, de donjon ou de raid sont signalées sur toutes leurs lignes, même quand le guide ne le dit pas (d'après le type de la quête et le rang des monstres visés, forever-db) : plus de longue marche pour une quête qu'on ne fera pas seul.
 - Module **Valeurs de vie et de ressources** : valeurs sur les cadres d'unité (texte de statut de Blizzard : valeur et pourcentage, valeur, ou pourcentage) et vie sous les barres de nom (court, complet ou pourcentage) ; vos réglages d'origine sont rendus si vous le désactivez.
 - Fenêtres déplaçables : un clic sur une fenêtre la passe devant les autres (fenêtres de Blizzard prises en charge et fenêtres de NextStep).

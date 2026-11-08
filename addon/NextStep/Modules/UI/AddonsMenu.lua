@@ -145,6 +145,12 @@ function Menu:Fill(root)
             guide:ToggleJournal("gear")
         end
     end)
+    root:CreateButton(L["Bags and bank"], function()
+        local inventory = ns.Modules:Get("Inventory")
+        if inventory and inventory.enabled then
+            inventory:Toggle()
+        end
+    end)
     root:CreateButton(L["Clock"], function()
         local clock = ns.Modules:Get("Clock")
         if clock and clock.enabled then

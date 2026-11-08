@@ -71,6 +71,7 @@ files["addon/**"] = {
         "GetNumTrainerServices",
         "GetPlayerFacing",
         "GetQuestItemInfo",
+        "GetRealmName",
         "GetQuestItemLink",
         "GetQuestLogQuestText",
         "GetSkillLineInfo",
