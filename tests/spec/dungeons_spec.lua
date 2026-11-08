@@ -135,6 +135,34 @@ describe("Donjons : quêtes et suites", function()
         expect_eq(guide.pointTarget, nil)
         expect_eq(#game.errors, 0)
     end)
+
+    it("rend la flèche au guide : second clic, clic droit ou /ns arrow", function()
+        local game, items = boot()
+        local guide = game.ns.Modules:Get("Guide")
+        local rows = items:DungeonDetailRows(items.DungeonByKey("deadmines"), items:QuestFacts())
+        local click
+        for _, row in ipairs(rows) do
+            click = click or row.onClick
+        end
+        click()
+        expect(guide.pointTarget, "flèche vers le donneur")
+        expect(game:chatText():find("Right-click it to go back", 1, true), "le chat dit comment revenir")
+        click()
+        expect_eq(guide.pointTarget, nil, "second clic : retour au guide")
+        expect(game:chatText():find("follows the guide again", 1, true))
+
+        click()
+        local arrow = guide.arrowFrame
+        arrow.scripts.OnMouseUp(arrow, "RightButton")
+        expect_eq(guide.pointTarget, nil, "clic droit sur la flèche")
+
+        click()
+        local shown = guide.db.arrow
+        SlashCmdList.NEXTSTEP("arrow")
+        expect_eq(guide.pointTarget, nil, "/ns arrow rend la flèche au guide")
+        expect_eq(guide.db.arrow, shown, "sans la cacher")
+        expect_eq(#game.errors, 0)
+    end)
 end)
 
 describe("Donjons : butin et équipement", function()

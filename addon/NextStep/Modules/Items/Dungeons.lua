@@ -373,8 +373,14 @@ end
 local function pointRow(row, place, label)
     if place and place.map and place.x and place.y and Guide and Guide.enabled then
         row.onClick = function()
+            -- Second clic sur le même lieu : la flèche revient au guide.
+            if Guide:IsPointing(place) then
+                Guide:BackToGuide()
+                return
+            end
             Guide:PointTo(place, label)
-            ns:Print(L["The arrow points to %s."]:format(Items.PlaceText(place)))
+            ns:Print(L["The arrow points to %s. Right-click it to go back to the guide."]:format(
+                Items.PlaceText(place)))
         end
     end
     return row

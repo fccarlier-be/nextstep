@@ -258,8 +258,13 @@ function Items:GearRows(facts)
             if entry.place and Guide and Guide.enabled then
                 local place = entry.place
                 sourceRow.onClick = function()
+                    if Guide:IsPointing(place) then
+                        Guide:BackToGuide()
+                        return
+                    end
                     Guide:PointTo(place, name)
-                    ns:Print(L["The arrow points to %s."]:format(Items.PlaceText(place)))
+                    ns:Print(L["The arrow points to %s. Right-click it to go back to the guide."]:format(
+                        Items.PlaceText(place)))
                 end
             end
             rows[#rows + 1] = sourceRow
