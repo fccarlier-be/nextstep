@@ -319,7 +319,7 @@ Réalisé (v0.3, `Modules/Items/`) : infobulles (« NextStep (Armes) : +12 % »,
 - **Équipement à ne pas rater** : les objets de leveling (ForeverLevelingBiS) portables d'ici cinq niveaux qui amélioreraient l'équipement porté, triés par gain, avec leur provenance (quête et donneur, boss et donjon avec le taux, artisanat) ; un clic sur une quête pointe la flèche vers son donneur.
 - **Dans la route** : sur les lignes « accepter » et « rendre » du guide, la récompense qui améliore l'équipement est signalée (« récompense +12 % »).
 
-Les objets que le client n'a pas encore en cache sont notés avec les caractéristiques importées (`DB.itemStats`), le client prenant le relais dès qu'il les connaît.
+Les objets que le client n'a pas encore en cache sont notés avec les caractéristiques importées (`DB.itemStats`), le client prenant le relais dès qu'il les connaît. Aucune requête n'est envoyée au serveur pour un objet hors cache pendant un calcul (`C_Item.IsItemDataCachedByID`) : seules les lignes affichées demandent leurs objets. La liste « à ne pas rater » est calculée une fois (équipement, niveau, spécialisation ou quête rendue la refont, pas les objets reçus) ; une quête n'y compte que si son niveau est au plus 8 au-dessus du personnage, un donjon que s'il est à sa portée d'ici cinq niveaux, l'artisanat que pour les métiers du personnage.
 
 **[À vérifier]** sur Forever : équiper depuis l'alerte (`C_Item.EquipItemByName`) ; noms des boutons de récompense (`QuestInfoRewardsFrameQuestInfoItem<n>`) ; signature de `GetTalentTabInfo` ; clés de `C_Item.GetItemStats` pour le toucher et le critique.
 

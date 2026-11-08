@@ -20,6 +20,7 @@ local Guide = ns.Modules:Get("Guide")
 local C = ns.Style.COLORS
 
 local AHEAD = 5          -- niveaux d'avance pour « à ne pas rater »
+local QUEST_AHEAD = 3    -- quête : niveau de la quête au plus AHEAD + QUEST_AHEAD au-dessus
 local MAX_UPGRADES = 25
 
 -- Seuils des jalons. [À vérifier] sur Forever : niveau et prix de la monte.
@@ -68,8 +69,8 @@ function Items:QuestRewardTag(quest)
     for _, item in ipairs(rewardsByQuest()[quest] or {}) do
         if not seen[item] then
             seen[item] = true
-            local up, _, pct = Score.IsUpgrade(Score.LinkOf(item), self.db.threshold)
-            local result = up and Score.Compare(Score.LinkOf(item))
+            local up, _, pct = Score.IsUpgrade("item:" .. item, self.db.threshold)
+            local result = up and Score.Compare("item:" .. item)
             if up then
                 local value = result.empty and math.huge or (pct or 0)
                 if not best or value > best then
@@ -92,6 +93,22 @@ local function dungeonOfZone(zone)
     end
 end
 
+-- Métiers du personnage (noms en minuscules, dans la langue du client), ou nil si le
+-- client ne les donne pas : l'artisanat n'est proposé que pour ses métiers.
+local function knownProfessions()
+    if not (GetNumSkillLines and GetSkillLineInfo) then
+        return nil
+    end
+    local known = {}
+    for index = 1, GetNumSkillLines() or 0 do
+        local name, header = GetSkillLineInfo(index)
+        if ns.Usable(name) and type(name) == "string" and not header then
+            known[name:lower()] = true
+        end
+    end
+    return known
+end
+
 -- Textes de provenance d'un objet, et lieu à pointer (donneur de la quête).
 function Items:SourceTexts(item, facts)
     local texts, place = {}, nil
@@ -105,14 +122,16 @@ function Items:SourceTexts(item, facts)
             local data = (ns.DB.dungeonQuests or {})[quest]
             local side = info and info[3]
             local sideOK = not side or side == 3 or not facts.side or side == facts.side
-            if sideOK and not facts.done[quest] then
+            local reachable = not info or (info[2] or 0) <= facts.level + AHEAD + QUEST_AHEAD
+            if sideOK and reachable and not facts.done[quest] then
                 local title = ns.DB:GetName("quest", quest) or (info and info[1]) or ("#" .. quest)
                 local where = data and data.st and Items.PlaceText(data.st)
                     or (info and Items.AreaName(info[4]))
                 texts[#texts + 1] = where and L["Quest: %s, %s"]:format(title, where) or L["Quest: %s"]:format(title)
                 place = place or (data and data.st and data.st.map and data.st)
             end
-        elseif npc then
+        elseif npc and (not dungeonOfZone(tonumber(zone))
+            or dungeonOfZone(tonumber(zone)).min <= facts.level + AHEAD) then
             local dungeon = dungeonOfZone(tonumber(zone))
             local name = ns.DB:GetName("npc", tonumber(npc))
             if not name and dungeon then
@@ -125,7 +144,10 @@ function Items:SourceTexts(item, facts)
             texts[#texts + 1] = L["Drop: %s, %s (%d %%)"]:format(name or ("#" .. npc),
                 Items.AreaName(tonumber(zone)), math.floor(tonumber(chance) / 10 + 0.5))
         elseif spell then
-            texts[#texts + 1] = L["Crafted: %s (%d)"]:format(PROFESSIONS[tonumber(profession)] or "?", tonumber(skill))
+            local name = PROFESSIONS[tonumber(profession)] or "?"
+            if not facts.professions or facts.professions[name:lower()] then
+                texts[#texts + 1] = L["Crafted: %s (%d)"]:format(name, tonumber(skill))
+            end
         end
     end
     return texts, place
@@ -133,11 +155,31 @@ end
 
 -- Objets de leveling à ne pas rater : portables d'ici AHEAD niveaux, meilleurs que
 -- l'équipement porté. -> { { item, pct, empty, req, sources, place } }, triés par gain.
+-- Caractéristiques importées, lues une fois.
+local parsed = {}
+local function importedInfo(item)
+    local info = parsed[item]
+    if info == nil then
+        local text = (ns.DB.itemStats or {})[item]
+        info = text and Score.ParseStats(text) or false
+        parsed[item] = info
+    end
+    return info or nil
+end
+
 function Items:UpcomingUpgrades(facts)
     local level = Score.Player().level
+    -- Calculé une fois : l'équipement, le niveau, la spécialisation ou une quête rendue
+    -- refont la liste (Items:Invalidate), pas les objets reçus du serveur.
+    if self.upcoming and self.upcoming.level == level then
+        return self.upcoming.list
+    end
     local list = {}
+    facts.professions = knownProfessions()
     for item in pairs(ns.DB.itemSources or {}) do
-        local result = Score.Compare(Score.LinkOf(item))
+        local imported = importedInfo(item)
+        local result = imported and (imported.req or 0) <= level + AHEAD
+            and Score.Compare("item:" .. item)
         if result and result.usable and not result.equipped and result.delta and result.delta > 0
             and (result.minLevel or 0) <= level + AHEAD
             and (result.empty or (result.pct or 0) >= (self.db.threshold or 0)) then
@@ -157,6 +199,7 @@ function Items:UpcomingUpgrades(facts)
     for index = #list, MAX_UPGRADES + 1, -1 do
         list[index] = nil
     end
+    self.upcoming = { level = level, list = list }
     return list
 end
 
