@@ -470,6 +470,55 @@ with open(OUT_DIR + "QuestGroups.lua", "w", encoding="utf-8", newline="\n") as f
     f.write("\n".join(group_lines) + "\n")
 print("quêtes élites ou de groupe : %d" % len(groups))
 
+# ---------------------------------------------------------------------------
+# Mode conseil (phase 10) : toutes les quêtes qu'on prend hors instance, en chaînes
+# compactes, et le nom anglais de leurs donneurs.
+#   "<niveau> <niveau min> <faction> <races> <classes> <zone> <carte> <x> <y>|<tous>|<l'un>|<titre>|<k> <donneur>"
+# ---------------------------------------------------------------------------
+
+advice_lines = []
+givers = {}
+for qid in sorted(quests):
+    q = quests[qid]
+    if q.get("repeatable") or not q.get("level") or q["level"] > 60 or not starts.get(qid):
+        continue
+    start = starts[qid][0]
+    if start["kind"] not in ("npc", "object"):
+        continue
+    point = map_point(start["kind"], start["id"])
+    if not point:
+        continue
+    pre_all = [str(r["pre"]) for r in prereqs.get(qid, []) if r["mode"] == "all" and not r.get("breadcrumb")
+               and r["pre"] in quests]
+    pre_any = [str(r["pre"]) for r in prereqs.get(qid, []) if r["mode"] == "any" and not r.get("breadcrumb")
+               and r["pre"] in quests]
+    head = "%d %d %d %d %d %d %d %s %s" % (q["level"], q.get("min_level", 0), q.get("side", 0), q.get("races", 0),
+                                         q.get("classes", 0), q.get("zone_area", 0), point[0], point[1], point[2])
+    title = (q.get("title") or "").replace("|", "/")
+    advice_lines.append('\t[%d] = %s,' % (qid, lua_string("%s|%s|%s|%s|%s %d" % (
+        head, ",".join(pre_all), ",".join(pre_any), title, start["kind"][0], start["id"]))))
+    if start["kind"] == "npc":
+        givers[start["id"]] = (npcs.get(start["id"]) or {}).get("name")
+    else:
+        givers[-start["id"]] = (objects.get(start["id"]) or {}).get("name")
+
+advice_out = [
+    "-- Généré par Tools/import/dungeons.py depuis forever-db de Polestar %s (%s). Ne pas modifier."
+    % (lock.get("version", "?"), commit),
+    "-- Mode conseil : quêtes prises hors instance. GPL-3.0 : ForeverDB-NOTICE.md. Format : docs/DATA_FORMAT.md.",
+    "",
+    "local DB = NextStep.DB",
+    "",
+    "DB.adviceQuests = {",
+] + advice_lines + ["}", "", "-- Donneurs : [PNJ] = nom anglais ; [-objet] = nom de l'objet.", "DB.adviceGivers = {"]
+for ident in sorted(givers):
+    if givers[ident]:
+        advice_out.append("\t[%d] = %s," % (ident, lua_string(givers[ident])))
+advice_out.append("}")
+with open(OUT_DIR + "AdviceQuests.lua", "w", encoding="utf-8", newline="\n") as f:
+    f.write("\n".join(advice_out) + "\n")
+print("mode conseil : %d quêtes, %d donneurs" % (len(advice_lines), len(givers)))
+
 with open(OUT_DIR + "Dungeons.lua", "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(out) + "\n")
 with open(OUT_DIR + "ItemDB-LICENSE-DATA.txt", "w", encoding="utf-8", newline="\n") as f:

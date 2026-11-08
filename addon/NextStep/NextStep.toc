@@ -29,6 +29,7 @@ Data\Imported\WhatsTraining\Spells.lua
 Data\Imported\Polestar\Gear.lua
 Data\Imported\Polestar\Dungeons.lua
 Data\Imported\Polestar\QuestGroups.lua
+Data\Imported\Polestar\AdviceQuests.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
@@ -53,6 +54,8 @@ Modules\Guide\Live.lua
 Modules\Guide\Spells.lua
 Modules\Guide\SpellsWindow.lua
 Modules\Guide\Journal.lua
+Modules\Guide\Advice.lua
+Modules\Guide\Zones.lua
 Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
 Modules\Guide\Pins.lua

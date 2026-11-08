@@ -20,7 +20,7 @@ local L = ns.L
 local Guide = ns.Modules:Get("Guide")
 local Labels = ns.GuideLabels
 
-local WIDTH, HEIGHT = 780, 520
+local WIDTH, HEIGHT = 880, 520
 local PADDING = 12
 local CATEGORY_WIDTH = 180
 local LIST_WIDTH = 330
