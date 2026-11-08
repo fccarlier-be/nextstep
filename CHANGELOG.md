@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+### Ajouté
+- Fenêtre du guide : **« Ici aussi »**, quand un PNJ est tout proche (40 mètres), les quêtes que le guide prévoit plus loin chez lui et qu'on peut faire tout de suite : accepter une quête désormais disponible, rendre une quête terminée. Évite les allers-retours quand on ne suit pas le guide à la lettre. Avertissement quand les sacs sont presque pleins (4 places ou moins).
+- Module **Camelote** (`Junk`, phase 5) : les objets gris sont vendus à l'ouverture d'un marchand, douze au plus pour rester rachetables, avec un résumé dans le chat ; exceptions avec `/ns keep <objet>` ; Maj enfoncée à l'ouverture pour ne rien vendre.
+- Module **Fenêtres déplaçables** (`Windows`, phase 5) : les fenêtres de Blizzard se déplacent en les faisant glisser, leur position est retenue et rendue à chaque ouverture ; Alt + clic droit pour la remettre à sa place ; bouton de réinitialisation dans les options. Sans souillure de l'interface (ni Show/Hide, ni table UIPanelWindows).
+
 ## [0.1.1] - 2026-11-08
 
 ### Ajouté

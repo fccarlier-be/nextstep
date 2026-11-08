@@ -343,6 +343,7 @@ Déplaçable, redimensionnable, réductible à une ligne ; verrouillage, échell
 - l'étape courante et ses objectifs (coche, case vide, croix pour un objectif bloqué avec la raison) ; en mode libre, les objectifs ouverts du même endroit ;
 - le conseil de l'étape, les objectifs à faire en chemin, les quêtes abandonnées (clic pour reprendre), l'étape suivante, le nombre de détours, l'avertissement « niveau dépassé » ;
 - un objectif « à valider » se valide d'un clic ;
+- **Ici aussi** : quand un PNJ est à moins de 40 mètres, les objectifs « accepter » (quête disponible, prérequis rendus) et « rendre » (quête terminée) que le guide place plus loin chez lui, pour les faire sans revenir ; la liste suit la position (vérifiée chaque seconde). Avertissement « sacs presque pleins » à 4 places libres ou moins ;
 - au survol d'un objectif de quête, une infobulle donne son niveau, ses objectifs (texte du client, barrés une fois faits), le résumé et la description du journal de quêtes (lus en sélectionnant la quête un instant, la sélection du joueur est rendue) ; un clic ouvre le journal de quêtes du jeu sur la quête (`QuestMapFrame_OpenToQuestDetails`, sinon `QuestLogFrame`), hors combat. **[À vérifier]** journal de quêtes de Forever ;
 - devant chaque objectif de quête, le **niveau de la quête coloré** selon l'écart avec celui du personnage, comme dans le jeu (`Labels.Difficulty`) : gris sous le niveau gris du jeu classique (aucun avant le niveau 6), vert, jaune de 2 niveaux en dessous à 2 au-dessus, orange à 3 ou 4 au-dessus, rouge à 5 ou plus ; le niveau vient du `qlvl` de l'objectif « accepter » de la quête ;
 - la mention du contenu de groupe (élite, groupe de N, donjon, raid) ; les quêtes de classe disponibles, avec le retour au guide de leveling à leur fin ;
@@ -460,6 +461,8 @@ Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Mini
 
 Vente automatique **activée par défaut** : objets gris uniquement, résumé dans le chat, liste d'exceptions. Les objets restent rachetables chez le marchand.
 
+**Réalisé** (`Modules/UI/Junk.lua`, module `Junk`) : à `MERCHANT_SHOW`, les objets gris des sacs (qualité 0, avec une valeur) sont vendus par `C_Container.UseContainerItem`, douze au plus par visite (taille de l'onglet Rachat), les autres signalés ; prix de vente lu dans `C_Item.GetItemInfo` ; exceptions par `/ns keep <lien ou identifiant>` ; Maj enfoncée à l'ouverture : rien n'est vendu. Mis de côté si Scrap, Peddler ou AutoVendor est chargé.
+
 ### Minimap
 
 - **Carrée par défaut**, ronde en option (forme déclarée aux autres addons via `GetMinimapShape`).
@@ -502,7 +505,9 @@ Inspiré de BlizzMove, dont le code est « All Rights Reserved » : code propre 
 - Fenêtres chargées plus tard (`Blizzard_*`) prises en charge à leur chargement (`ADDON_LOADED`).
 - Jamais en combat pour les cadres protégés ; retrait du gestionnaire de positions de `UIParent` sans écrire d'attributs sécurisés.
 
-**Plusieurs fenêtres ouvertes en même temps.** Le gestionnaire de Blizzard (`ShowUIPanel`, table `UIPanelWindows`) ne garde que deux ou trois fenêtres, rangées à gauche ou au centre : ouvrir une fenêtre ferme ou décale les autres. NextStep sort de ce gestionnaire les fenêtres qu'il gère, pour qu'elles restent ouvertes ensemble, chacune à sa position mémorisée.
+**Réalisé** (`Modules/UI/Windows.lua`, module `Windows`), sans la partie « plusieurs fenêtres » : les fenêtres de la liste (toujours chargées, puis celles des addons de Blizzard chargés à la demande) deviennent déplaçables (`SetMovable`, `RegisterForDrag`, accroches `OnDragStart`/`OnDragStop`) ; la position est retenue par fenêtre et rendue à l'ouverture (`OnShow`) et après chaque placement de Blizzard (`hooksecurefunc("UpdateUIPanelPositions")`) ; Alt + clic droit l'oublie ; réinitialisation dans les options. Jamais `Show`/`Hide`, ni `UIPanelWindows`, ni attribut sécurisé : c'est ce qui souille l'interface (voir les erreurs « tainted » de la v0.1.1). Les cadres protégés ne bougent pas en combat.
+
+**Plusieurs fenêtres ouvertes en même temps** *(pas encore fait : demande de modifier `UIPanelWindows`, à étudier sans souillure)*. Le gestionnaire de Blizzard (`ShowUIPanel`, table `UIPanelWindows`) ne garde que deux ou trois fenêtres, rangées à gauche ou au centre : ouvrir une fenêtre ferme ou décale les autres. NextStep sort de ce gestionnaire les fenêtres qu'il gère, pour qu'elles restent ouvertes ensemble, chacune à sa position mémorisée.
 
 - **Fenêtres concernées** : seulement les fenêtres **non protégées**. Une fenêtre protégée garde le comportement de Blizzard (déplaçable hors combat seulement). Liste tenue dans les données, fenêtre par fenêtre, selon les résultats du diagnostic.
 - **Sortie du gestionnaire** : hors combat uniquement, au chargement de la fenêtre. La fenêtre est retirée de `UIPanelWindows` et ajoutée à `UISpecialFrames`, pour que Échap la ferme toujours. Désactiver l'option la remet dans le gestionnaire au rechargement de l'interface (`/reload`).

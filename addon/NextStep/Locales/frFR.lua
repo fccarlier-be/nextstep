@@ -161,6 +161,10 @@ L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, mode"
     "Affiche ou cache le guide ; /ns guide list, start, stop, reset, skip, done, mode"
 L["Show the arrow"] = "Afficher la flèche"
 L["Class quest: %s"] = "Quête de classe : %s"
+L["Here too (planned later in the guide):"] = "Ici aussi (prévu plus loin dans le guide) :"
+L["Bags almost full: %d free slots."] = "Sacs presque pleins : %d places libres."
+L["Sell your grey items, or hand in finished quests nearby, before picking up more."] =
+    "Vendez vos objets gris, ou rendez les quêtes terminées tout près, avant d'en ramasser d'autres."
 L["In a group? Free mode follows the quests you do together."] =
     "En groupe ? Le mode Libre suit les quêtes que vous faites ensemble."
 L["Free mode shows the open objectives around you, in any order, instead of one step at a time."] =
