@@ -15,6 +15,9 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Module **Camelote** (`Junk`, phase 5) : les objets gris sont vendus à l'ouverture d'un marchand, douze au plus pour rester rachetables, avec un résumé dans le chat ; exceptions avec `/ns keep <objet>` ; Maj enfoncée à l'ouverture pour ne rien vendre.
 - Module **Fenêtres déplaçables** (`Windows`, phase 5) : les fenêtres de Blizzard se déplacent en les faisant glisser, leur position est retenue et rendue à chaque ouverture ; Alt + clic droit pour la remettre à sa place ; bouton de réinitialisation dans les options. Sans souillure de l'interface (ni Show/Hide, ni table UIPanelWindows).
 
+### Corrigé
+- Flèche et repères : le rendu d'une quête pas encore acceptée n'est plus visé. Dans une étape « rendre A, accepter B, rendre B », la flèche montrait déjà le destinataire de B, s'il était plus près, avant même que A soit rendue.
+
 ## [0.1.1] - 2026-11-08
 
 ### Ajouté
