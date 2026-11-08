@@ -7,8 +7,13 @@
 -- être signalé comme connu : un sort est donc tenu pour connu dès qu'un sort connu
 -- l'exige (rang suivant). Un prérequis appris pendant la même visite compte aussi.
 --
+-- Liste lue chez le maître : à chaque visite (TRAINER_SHOW, TRAINER_UPDATE), les sorts
+-- « disponibles » de la fenêtre du maître sont retenus (char.trainerList). Tant que le
+-- personnage n'a pas changé de niveau, cette liste remplace celle des tables : elle est
+-- celle de Forever, et elle se vide à mesure que les sorts sont appris.
+--
 -- [À vérifier] sur Forever : exactitude des tables pour chaque classe ; rangs
--- inférieurs vus par IsPlayerSpell.
+-- inférieurs vus par IsPlayerSpell ; catégorie « available » de GetTrainerServiceInfo.
 
 local _, ns = ...
 local L = ns.L
@@ -100,11 +105,59 @@ local function classData(state)
     return byLevel, levels, known
 end
 
+-- Liste lue chez le maître, si elle vaut encore (même niveau, personnage en jeu).
+function Guide:TrainerList(state)
+    state = state or self.state
+    local seen = self.char and self.char.trainerList
+    if seen and state and state == self.live and seen.level == state:Level() then
+        return seen
+    end
+end
+
+-- Lit les sorts disponibles dans la fenêtre du maître de classe ouverte.
+function Guide:ReadTrainer()
+    if not (GetNumTrainerServices and GetTrainerServiceInfo and self.state) then
+        return
+    end
+    if IsTradeskillTrainer and IsTradeskillTrainer() then
+        return
+    end
+    local byLevel = ns.DB.trainerSpells[self.state:Class()] or {}
+    -- Identifiant d'après le nom et le rang, pour le nom traduit et l'icône.
+    local function match(name, rank)
+        for _, spells in pairs(byLevel) do
+            for _, spell in ipairs(spells) do
+                local spellName = C_Spell and C_Spell.GetSpellName and C_Spell.GetSpellName(spell.id)
+                local subtext = C_Spell and C_Spell.GetSpellSubtext and C_Spell.GetSpellSubtext(spell.id)
+                if spellName == name and (not rank or rank == "" or subtext == rank) then
+                    return spell.id
+                end
+            end
+        end
+    end
+    local list, total = {}, 0
+    for index = 1, GetNumTrainerServices() or 0 do
+        local name, rank, category = GetTrainerServiceInfo(index)
+        if category == "available" and ns.Usable(name) then
+            local cost = GetTrainerServiceCost and tonumber(GetTrainerServiceCost(index)) or 0
+            local level = GetTrainerServiceLevelReq and tonumber(GetTrainerServiceLevelReq(index)) or 0
+            list[#list + 1] = { id = match(name, rank), name = rank and rank ~= "" and ("%s (%s)"):format(name, rank)
+                or name, cost = cost, level = level }
+            total = total + cost
+        end
+    end
+    self.char.trainerList = { level = self.state:Level(), spells = list, total = total }
+end
+
 -- Sorts à apprendre jusqu'au niveau maxLevel (niveau du personnage par défaut) :
--- liste { id, cost, level } triée par niveau, et coût total. nil si la classe n'a
--- pas de données.
+-- liste { id, cost, level, name } triée par niveau, et coût total. nil si la classe n'a
+-- pas de données. Au niveau du personnage, la liste lue chez le maître l'emporte.
 function Guide:SpellsToLearn(state, maxLevel)
     state = state or self.state
+    local seen = not maxLevel and self:TrainerList(state)
+    if seen then
+        return seen.spells, seen.total
+    end
     local byLevel, levels, known = classData(state)
     if not byLevel then
         return nil, 0
@@ -125,6 +178,10 @@ function Guide:SpellPlan(state, maxLevel)
     end
     local level = state:Level()
     local spells, total = learnable(byLevel, levels, state, known, 1, level, false)
+    local seen = self:TrainerList(state)
+    if seen then
+        spells, total = seen.spells, seen.total
+    end
     local plan = { { level = nil, spells = spells, total = total } }
     for next = level + 1, maxLevel or MAX_LEVEL do
         if byLevel[next] then
@@ -169,9 +226,12 @@ function Guide.FormatMoney(copper)
     return table.concat(parts, " ")
 end
 
-local function spellName(id)
+local function spellName(id, fallback)
+    if not id then
+        return fallback or "?"
+    end
     local name = C_Spell and C_Spell.GetSpellName and C_Spell.GetSpellName(id)
-    return name or ns.DB:GetName("spell", id) or ("#" .. id)
+    return name or ns.DB:GetName("spell", id) or fallback or ("#" .. id)
 end
 
 -- Résumé : « 3 sorts à apprendre (1 po 20 pa) », ou nil s'il n'y a rien.
@@ -189,7 +249,7 @@ function Guide:SpellsTooltip(state)
     local list, total = self:SpellsToLearn(state)
     local lines = {}
     for _, spell in ipairs(list or {}) do
-        lines[#lines + 1] = ("%s - %s"):format(spellName(spell.id), Guide.FormatMoney(spell.cost))
+        lines[#lines + 1] = ("%s - %s"):format(spellName(spell.id, spell.name), Guide.FormatMoney(spell.cost))
     end
     if list and #list > 0 then
         lines[#lines + 1] = L["Total: %s"]:format(Guide.FormatMoney(total))

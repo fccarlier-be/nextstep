@@ -167,6 +167,40 @@ describe("Guide en jeu", function()
         expect_eq(r.target.choices, 2, "deux objectifs obligatoires : la cible peut changer")
     end)
 
+    it("retient les sorts lus chez le maître, et signale le maître tout près", function()
+        local game, Guide = boot({ level = 4, class = "WARRIOR" })
+        local services = {
+            { "Battle Shout", "Rank 1", "available", 10, 1 },
+            { "Rend", "Rank 1", "available", 10, 4 },
+            { "Thunder Clap", "Rank 1", "unavailable", 100, 6 },
+        }
+        _G.IsTradeskillTrainer = function() return false end
+        _G.GetNumTrainerServices = function() return #services end
+        _G.GetTrainerServiceInfo = function(i) return services[i][1], services[i][2], services[i][3] end
+        _G.GetTrainerServiceCost = function(i) return services[i][4] end
+        _G.GetTrainerServiceLevelReq = function(i) return services[i][5] end
+        game:fire("TRAINER_SHOW")
+        local list, total = Guide:SpellsToLearn()
+        expect_eq(#list, 2, "les sorts disponibles chez le maître")
+        expect_eq(total, 20)
+        expect_eq(list[2].name, "Rend (Rank 1)")
+        services = {}
+        game:fire("TRAINER_UPDATE")
+        expect_eq(#Guide:SpellsToLearn(), 0, "tout appris")
+        expect(Guide:SpellsToLearn(nil, 10), "au-delà du niveau : les tables")
+
+        -- En ville : le maître des guerriers du guide est à quelques mètres.
+        Guide.char.trainerList = nil
+        game.player.position = worldOf(game.ns, 50.3, 42.3)
+        Guide:Start(GUIDE_ID)
+        local trainer, distance = Guide:NearbyClassTrainer()
+        expect(trainer and trainer.npc == 911, "maître des guerriers")
+        expect(distance < 400)
+        game.player.position = worldOf(game.ns, 20, 80)
+        expect_eq(Guide:NearbyClassTrainer(), nil, "loin de la ville")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("ne vise pas le rendu d'une quête pas encore acceptée", function()
         local game, Guide = boot()
         game.ns.DB.AddGuide(function() return {

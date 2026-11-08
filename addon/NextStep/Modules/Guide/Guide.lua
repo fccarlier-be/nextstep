@@ -38,6 +38,7 @@ local Guide = ns.Modules:New("Guide", {
         completed = {},    -- [identifiant du guide] = true : guides terminés
         returnTo = nil,    -- guide de leveling à reprendre après un guide annexe (classe, collection...)
         trainedLevel = nil, -- niveau du personnage à sa dernière visite au maître de classe
+        trainerList = nil,  -- { level, spells, total } : sorts disponibles lus chez le maître (Spells.lua)
     },
 })
 

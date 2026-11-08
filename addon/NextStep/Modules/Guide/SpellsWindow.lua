@@ -16,7 +16,10 @@ local COLORS = {
     muted = { 0.65, 0.65, 0.65 },
 }
 
-local function spellLabel(id)
+local function spellLabel(id, fallback)
+    if not id then
+        return fallback or "?"
+    end
     local name = C_Spell and C_Spell.GetSpellName and C_Spell.GetSpellName(id)
     name = name or ns.DB:GetName("spell", id) or ("#" .. id)
     local rank = C_Spell and C_Spell.GetSpellSubtext and C_Spell.GetSpellSubtext(id)
@@ -56,7 +59,8 @@ function Guide:SpellsWindowRows(state)
         end
         for _, spell in ipairs(group.spells) do
             rows[#rows + 1] = {
-                id = spell.id, text = spellLabel(spell.id), cost = Guide.FormatMoney(spell.cost), color = color,
+                id = spell.id, text = spellLabel(spell.id, spell.name), cost = Guide.FormatMoney(spell.cost),
+                color = color,
             }
         end
     end

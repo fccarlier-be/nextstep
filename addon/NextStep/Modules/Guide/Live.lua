@@ -60,6 +60,13 @@ function Guide:OnEnable()
         self:RequestRefresh()
         self:OnLevelUp(level)
     end)
+    -- Sort appris chez le maître : la liste lue se met à jour.
+    self:RegisterEvent("TRAINER_UPDATE", function()
+        if not (IsTradeskillTrainer and IsTradeskillTrainer()) then
+            self:ReadTrainer()
+            self:RequestRefresh()
+        end
+    end)
     self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED", function(_, _, unit, _, spell)
         if unit == "player" and ns.Usable(spell) then
             self:Validate(function(goal)
@@ -264,6 +271,7 @@ end
 -- Une fenêtre de PNJ s'ouvre (dialogue, marchand, maître, vols).
 function Guide:OnNpcWindow(kind, npc)
     if kind == "train" and classTrainer(self:ActiveGuide(), npc) then
+        self:ReadTrainer()
         -- Retenu d'une session à l'autre : l'étape « maître de classe » ne renvoie
         -- pas chez le maître tant qu'il n'y a rien de nouveau à apprendre.
         self.char.trainedLevel = (self.state and self.state:Level()) or self.char.trainedLevel
@@ -301,6 +309,29 @@ local function contains(list, value)
         end
     end
     return false
+end
+
+-- Maître de classe tout près (dans une ville) : le plus proche des maîtres connus des
+-- guides chargés, à moins de TRAINER_YARDS. -> { map, x, y, f, npc }, distance
+local TRAINER_YARDS = 400
+function Guide:NearbyClassTrainer()
+    local state = self.state
+    if not state then
+        return nil
+    end
+    local best, bestDistance
+    for _, guide in ns.DB:IterateGuides() do
+        for _, entry in ipairs(guide.pool or {}) do
+            if entry.map and entry.classes and contains(entry.classes, state:Class())
+                and (not entry.faction or (FACTIONS[entry.faction] or {})[state:Faction()]) then
+                local distance = Navigation.DistanceTo(entry.map, entry.x, entry.y, entry.f)
+                if distance and distance <= TRAINER_YARDS and (not bestDistance or distance < bestDistance) then
+                    best, bestDistance = entry, distance
+                end
+            end
+        end
+    end
+    return best, bestDistance
 end
 
 -- Points possibles d'un objectif : sa position, les maîtres proposés au personnage,

@@ -443,3 +443,7 @@ L["Play a sound for the celebration"] = "Jouer un son pour la célébration"
 L["Zone levels"] = "Niveau des zones"
 L["Shows each zone's level range on the world map."] =
     "Affiche la tranche de niveaux de chaque zone sur la carte du monde."
+
+-- Sorts : maître de classe tout près
+L["your class trainer"] = "votre maître de classe"
+L["Class trainer nearby (%s, %d yd): %s"] = "Maître de classe tout près (%s, %d m) : %s"
