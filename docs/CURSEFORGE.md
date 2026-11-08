@@ -53,6 +53,8 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 - 🧭 **Arrow and map pins**: a navigation arrow that tells you why you are heading somewhere, with every point of the step on the world map and the minimap.
 - 🎨 **Quest levels in color**: grey, green, yellow, orange or red, like in the game, so you know when to gain a level first; elite, group and dungeon quests are flagged.
 - 🏹 **Class quests**: offered when you reach their level (like the hunter's pet at 10), then back to your route.
+- 📜 **Spells to learn**: what your class trainer has for you now and at every coming level, with the cost; the trainer step is ticked once there is nothing new.
+- 📖 **Guide journal**: every guide for your character by category, "Choose your path" at the top, progress, details and one click to follow.
 - 🔀 **Detours are fine**: follow an off-route quest chain, and the guide catches up on its own when you come back.
 - 🚩 **No surprises**: an abandoned quest is flagged instead of sending the guide backwards.
 - 💡 **Tips along the way**: when you are ahead of the curve, when quests turn grey, and the next guide offered when you finish one.
@@ -93,7 +95,7 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | ⚒️ **Professions** | Profession advisor and routes, woven into the leveling guide; gathering nodes recorded as you farm and shown on the map |
 | 🗡️ **Gear** | Recommended quest rewards, upgrade hints in tooltips, loot alerts, dungeon loot with the upgrades for your spec |
 | ❤️ **Unit values** | Health and resource numbers on unit frames and nameplates |
-| 📜 **Guide extras** | Spells to learn at your trainer, level-up celebration, zone levels on the world map, guide journal |
+| 📜 **Guide extras** | Level-up celebration, zone levels on the world map |
 | 🎒 **Bags and bank** | Unified bags and bank, bank viewable from anywhere, junk auto-sell |
 | 🧭 **Minimap and clock** | Coordinates, alarms and timers |
 | 🪟 **Windows** | Movable Blizzard windows that stay open side by side |
@@ -115,6 +117,8 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 - 🧭 **Flèche et points sur la carte** : une flèche de navigation qui dit pourquoi elle t'envoie quelque part, avec tous les points de l'étape sur la carte du monde et la minimap.
 - 🎨 **Niveau des quêtes en couleur** : gris, vert, jaune, orange ou rouge, comme dans le jeu, pour savoir quand prendre un niveau avant ; quêtes d'élite, de groupe et de donjon signalées.
 - 🏹 **Quêtes de classe** : proposées quand tu atteins leur niveau (comme le familier du chasseur au 10), puis retour à ta route.
+- 📜 **Sorts à apprendre** : ce que ton maître de classe a pour toi maintenant et à chaque niveau à venir, avec le prix ; l'étape « maître de classe » se valide quand il n'y a rien de nouveau.
+- 📖 **Journal du guide** : tous les guides de ton personnage par catégorie, « Choisis ton chemin » en tête, avancement, détail et un clic pour suivre.
 - 🔀 **Les détours ne posent pas de problème** : suis une suite de quêtes hors route, le guide se recale tout seul à ton retour.
 - 🚩 **Pas de mauvaise surprise** : une quête abandonnée est signalée, sans faire reculer le guide.
 - 💡 **Des conseils en chemin** : quand tu es en avance de niveau, quand les quêtes deviennent grises, et le guide suivant proposé à la fin.
@@ -155,7 +159,7 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | ⚒️ **Métiers** | Conseiller et routes de métiers, intégrés au guide de leveling ; points de récolte enregistrés pendant que tu farmes et affichés sur la carte |
 | 🗡️ **Équipement** | Récompenses de quête conseillées, gains dans les infobulles, alerte au butin, butin des donjons avec les améliorations pour ta spécialisation |
 | ❤️ **Valeurs** | Vie et ressources en chiffres sur les cadres d'unité et les barres de nom |
-| 📜 **Compléments du guide** | Sorts à apprendre chez le maître, célébration de niveau, niveau des zones sur la carte, journal du guide |
+| 📜 **Compléments du guide** | Célébration de niveau, niveau des zones sur la carte |
 | 🎒 **Sacs et banque** | Sacs et banque unifiés, banque consultable partout, vente de la camelote |
 | 🧭 **Minimap et horloge** | Coordonnées, alarmes et minuteurs |
 | 🪟 **Fenêtres** | Fenêtres Blizzard déplaçables et ouvertes côte à côte |
