@@ -517,6 +517,7 @@ Panneau ouvert depuis l'horloge de la minimap :
 - **minuteurs** multiples et nommés ; **chronomètre** ;
 - signal sonore et alerte au centre de l'écran (affichée **même en combat**, en format réduit) ;
 - les minuteurs survivent au `/reload` et à la déconnexion (heure de fin sauvegardée) ; un minuteur terminé hors ligne est signalé à la connexion.
+- **Réalisé** (`Modules/UI/Clock.lua`, module `Clock`) : panneau au style de NextStep (clic droit sur l'horloge de la minimap `TimeManagerClockButton`, menu du bouton NextStep, `/ns clock`) avec alarmes (nom, hh:mm, heure locale ou du serveur, une fois par jour), minuteurs (nom, minutes, temps restant) et chronomètre (démarrer, pause, remise à zéro) ; `/ns timer <minutes> [nom]`, `/ns alarm <hh:mm> [nom]`. Alerte au centre de l'écran avec le son d'avertissement de raid, réduite en combat, fermée d'un clic ou après 15 s, et rappelée dans le chat. Alarmes et minuteurs par personnage. **[À vérifier]** sur Forever : `TimeManagerClockButton`, `GetGameTime`.
 
 ### Fenêtres déplaçables
 
