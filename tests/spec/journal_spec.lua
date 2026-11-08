@@ -105,4 +105,31 @@ describe("Journal du guide", function()
         expect(#Guide.journal.spells.lines > 0, "lignes de sorts dessinées")
         expect_eq(#game.errors, 0)
     end)
+
+    it("garde le guide de leveling à reprendre après un guide annexe", function()
+        local game, Guide = boot()
+        Guide:Start(ELWYNN)
+        local side
+        for _, guide in game.ns.DB:IterateGuides() do
+            if guide.category == "Collectibles" and not side then
+                side = guide
+            end
+        end
+        expect(side, "un guide de collection")
+        Guide:FollowFromJournal(side)
+        expect_eq(Guide.char.active, side.id)
+        expect_eq(Guide.char.returnTo, ELWYNN, "le leveling sera repris")
+        Guide:UpdateWindow(Guide.result)
+        local texts = table.concat(Guide.windowTexts or {}, " | ")
+        expect(texts:find("Back to:", 1, true), "ligne pour reprendre le leveling : " .. texts)
+        Guide:Resume()
+        expect_eq(Guide.char.active, ELWYNN, "leveling repris")
+        expect_eq(Guide.char.returnTo, nil)
+
+        -- Un autre guide de leveling remplace simplement le précédent.
+        Guide:FollowFromJournal(game.ns.DB:GetGuide(WESTFALL))
+        expect_eq(Guide.char.active, WESTFALL)
+        expect_eq(Guide.char.returnTo, nil)
+        expect_eq(#game.errors, 0)
+    end)
 end)

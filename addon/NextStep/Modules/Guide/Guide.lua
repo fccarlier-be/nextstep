@@ -34,7 +34,7 @@ local Guide = ns.Modules:New("Guide", {
         answers = {},      -- [quête de groupe] = true (la faire) / false (la passer)
         dungeons = {},     -- [nom du donjon] = true : donjons choisis
         completed = {},    -- [identifiant du guide] = true : guides terminés
-        returnTo = nil,    -- guide de leveling à reprendre après une quête de classe
+        returnTo = nil,    -- guide de leveling à reprendre après un guide annexe (classe, collection...)
         trainedLevel = nil, -- niveau du personnage à sa dernière visite au maître de classe
     },
 })
@@ -286,16 +286,25 @@ function Guide:ClassGuides(state)
     return list
 end
 
--- Commence une quête de classe ; le guide de leveling suivi sera repris à la fin.
-function Guide:StartClassGuide(id)
+-- Commence un guide annexe (quête de classe, collection, réputation, métier...) : le
+-- guide de leveling suivi sera repris à la fin, ou plus tôt d'un clic dans la fenêtre.
+-- Un guide de leveling, lui, remplace simplement le précédent.
+function Guide:StartSideGuide(id)
+    local guide = ns.DB:GetGuide(id)
     local current = self:ActiveGuide()
-    if current and current.category ~= "Class" then
+    if guide and guide.category == "Leveling" then
+        self.char.returnTo = nil
+    elseif current and current.category == "Leveling" and current.id ~= id then
         self.char.returnTo = current.id
     end
     return self:Start(id)
 end
 
--- Reprend le guide de leveling interrompu par une quête de classe.
+function Guide:StartClassGuide(id)
+    return self:StartSideGuide(id)
+end
+
+-- Reprend le guide de leveling interrompu par un guide annexe.
 function Guide:Resume()
     local id = self.char.returnTo
     self.char.returnTo = nil

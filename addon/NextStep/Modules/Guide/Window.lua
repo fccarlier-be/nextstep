@@ -570,6 +570,16 @@ function Guide:UpdateWindow(result)
     elseif result.ask then
         addAsk(self, view, result)
     else
+        -- Guide annexe : le guide de leveling interrompu reste à un clic.
+        local back = self.char.returnTo and ns.DB:GetGuide(self.char.returnTo)
+        if back and result.guide and result.guide.id ~= back.id then
+            addLine(view, L["Back to: %s"]:format(Labels.Guide(back)), COLORS.action, {
+                onClick = function()
+                    self:Resume()
+                end,
+                tooltip = L["Leave this guide and resume your leveling guide where you left it."],
+            })
+        end
         -- Flèche tournée vers un lieu choisi dans le journal : un clic la rend au guide.
         if self.pointTarget then
             addLine(view, L["Arrow: %s (click to go back to the guide)"]:format(self.pointTarget.label or "?"),

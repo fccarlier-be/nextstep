@@ -325,12 +325,7 @@ end
 
 -- Suivre un guide du journal : une quête de classe garde la route à reprendre.
 function Guide:FollowFromJournal(guide)
-    if guide.category == "Class" then
-        self:StartClassGuide(guide.id)
-    else
-        self.char.returnTo = nil
-        self:Start(guide.id)
-    end
+    self:StartSideGuide(guide.id)
     self:SetWindowShown(true)
 end
 

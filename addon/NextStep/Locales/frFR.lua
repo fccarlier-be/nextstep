@@ -428,3 +428,5 @@ L["Next milestones"] = "Prochains jalons"
 L["Nothing to plan for now."] = "Rien à prévoir pour l'instant."
 L["Gear not to miss (%s)"] = "Équipement à ne pas rater (%s)"
 L["No known upgrade for the next levels."] = "Aucune amélioration connue pour les prochains niveaux."
+L["Leave this guide and resume your leveling guide where you left it."] =
+    "Quitter ce guide et reprendre votre guide de leveling là où vous l'avez laissé."
