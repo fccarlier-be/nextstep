@@ -42,6 +42,7 @@ files["addon/**"] = {
         "C_TradeSkillUI",
         "CLASS_ICON_TCOORDS",
         "CreateFrame",
+        "CreateColor",
         "CreateFromMixins",
         "CreateVector2D",
         "CurveConstants",
