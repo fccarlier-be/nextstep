@@ -460,6 +460,19 @@ local function addSpellsReminder(self, view, result)
     local summary, _, total = self:SpellsSummary()
     if summary then
         local short = (self.state:Money() or 0) < total
+        -- En ville, près d'un maître de classe : un détour d'un clic.
+        local trainer, distance = self:NearbyClassTrainer()
+        if trainer and not short then
+            local name = ns.DB:GetName("npc", trainer.npc) or L["your class trainer"]
+            addLine(view, L["Class trainer nearby (%s, %d yd): %s"]:format(name, math.floor(distance + 0.5), summary),
+                COLORS.action, {
+                    tooltip = self:SpellsTooltip(),
+                    onClick = function()
+                        self:PointTo(trainer, name)
+                    end,
+                })
+            return
+        end
         addLine(view, summary, short and COLORS.warning or COLORS.muted, { tooltip = self:SpellsTooltip() })
     end
 end
