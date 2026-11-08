@@ -1,7 +1,8 @@
 -- Module Items (docs/DESIGN.md, « 7. Items ») : conseils d'équipement pour le
 -- personnage qui monte en niveau. Le score vient de Score.lua ; ce fichier tient les
 -- réglages, la spécialisation, l'infobulle des objets et la commande /ns gear.
--- Récompenses de quête : Rewards.lua ; alerte d'amélioration : Alert.lua.
+-- Récompenses de quête : Rewards.lua ; alerte d'amélioration : Alert.lua ; onglets
+-- Donjons et Équipement du journal : Dungeons.lua et Upgrades.lua.
 --
 -- Rien n'est jamais équipé ni choisi automatiquement.
 
@@ -21,6 +22,7 @@ local Items = ns.Modules:New("Items", {
         alertDuration = 20,   -- secondes avant la fermeture de l'alerte (0 : jamais)
         spec = {},            -- [classe] = "auto" | clé de spécialisation
         alertPoint = nil,     -- position de l'alerte déplacée
+        learnedLoot = {},     -- [donjon] = { [objet] = PNJ (0 : inconnu) } : butin vu en jeu
     },
     charDefaults = { alerted = {} },   -- [lien] = true : déjà signalé
 })
@@ -38,6 +40,7 @@ local SPEC_NAMES = {
 Items.SPEC_NAMES = SPEC_NAMES
 
 local REASONS = {
+    class = L["reserved for other classes"],
     armor = L["your class cannot wear it"],
     weapon = L["your class cannot use this weapon"],
     skill = L["weapon skill not learned"],
@@ -208,6 +211,28 @@ function Items:Refresh()
     if self.RefreshRewards then
         self:RefreshRewards()
     end
+    -- Onglets du journal : une seule mise à jour pour une rafale d'événements.
+    if self.RefreshJournal and not self.journalPending then
+        if C_Timer and C_Timer.After then
+            self.journalPending = true
+            C_Timer.After(0.3, function()
+                self.journalPending = false
+                self:RefreshJournal()
+            end)
+        else
+            self:RefreshJournal()
+        end
+    end
+end
+
+-- Ouvre le journal sur un onglet du module (« dungeons » ou « gear »).
+function Items:OpenJournal(tab)
+    local guide = ns.Modules:Get("Guide")
+    if guide and guide.enabled then
+        guide:ToggleJournal(tab)
+    else
+        ns:Print(L["%s is disabled: enable it in the options."]:format(guide and guide.title or "Guide"))
+    end
 end
 
 function Items:OnInitialize()
@@ -218,6 +243,9 @@ function Items:OnInitialize()
             ns:Print(L["%s is disabled: enable it in the options."]:format(self.title))
         end
     end, L["Gear: spec and weights in use, or compare an item link"])
+    ns.Slash:Add("dungeons", function()
+        self:OpenJournal("dungeons")
+    end, L["Dungeons: quests to take before going in, and boss loot"])
 end
 
 function Items:OnEnable()
@@ -240,6 +268,10 @@ function Items:OnEnable()
     for _, event in ipairs({ "CHARACTER_POINTS_CHANGED", "PLAYER_TALENT_UPDATE", "SPELLS_CHANGED" }) do
         self:RegisterEvent(event, function() self:Invalidate("spec") end)
     end
+    self:RegisterEvent("LOOT_OPENED", function()
+        ns.SafeCall(self.LearnLoot, self)
+    end)
+    self:RegisterEvent("QUEST_TURNED_IN", function() self:Refresh() end)
     self:RegisterEvent("BAG_UPDATE_DELAYED", function()
         Score.Invalidate("bags")
         self:ScanBags()

@@ -3,6 +3,9 @@
 -- à la cible) au doré puis au vert (en face), et affiche la distance. Une coche
 -- remplace la flèche à l'arrivée. Cachée sans cible, sans position (instance) ou
 -- quand l'option est désactivée.
+--
+-- Guide:PointTo(point, label) la tourne vers un autre lieu (donneur d'une quête de
+-- donjon, choisi dans le journal) jusqu'à l'arrivée ; la cible du guide reprend ensuite.
 
 local _, ns = ...
 local L = ns.L
@@ -82,6 +85,12 @@ function Guide:SetArrowTarget(target)
     if not frame then
         return
     end
+    if self.pointTarget and self.enabled then
+        frame.label:SetText(self.pointTarget.label or "")
+        frame:Show()
+        self:UpdateArrowDirection()
+        return
+    end
     if not (target and self.enabled and self.db.arrow and self.result) then
         frame:Hide()
         return
@@ -91,8 +100,22 @@ function Guide:SetArrowTarget(target)
     self:UpdateArrowDirection()
 end
 
+-- Pointe un lieu choisi : { map, x, y } (carte du client, pour cent) ; nil rend la
+-- flèche au guide.
+function Guide:PointTo(point, label)
+    if point then
+        self.pointTarget = { map = point.map, x = point.x, y = point.y, label = label }
+    else
+        self.pointTarget = nil
+    end
+    if not self.arrowFrame then
+        self:CreateArrow()
+    end
+    self:SetArrowTarget(self.target)
+end
+
 function Guide:UpdateArrowDirection()
-    local frame, target = self.arrowFrame, self.target
+    local frame, target = self.arrowFrame, self.pointTarget or self.target
     if not (frame and target) then
         return
     end
@@ -102,6 +125,12 @@ function Guide:UpdateArrowDirection()
         frame.arrow:Hide()
         frame.check:Hide()
         frame.distance:SetText("")
+        return
+    end
+    if distance <= ARRIVED and self.pointTarget then
+        -- Lieu choisi atteint : la flèche revient au guide.
+        self.pointTarget = nil
+        self:SetArrowTarget(self.target)
         return
     end
     if distance <= ARRIVED then

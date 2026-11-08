@@ -15,6 +15,7 @@ Ce document décrit les fichiers de données de NextStep et la couche d'accès q
 | `addon/NextStep_Horde/Data/Guides.lua` | Guides Horde | Personnage Horde |
 | `addon/NextStep/Data/Imported/Client/MapOverlays.lua` | Superpositions de la carte du monde, explorées ou non (carte sans brouillard) | Toujours |
 | `addon/NextStep/Data/Imported/Polestar/Gear.lua` | Poids de stats, aptitudes d'équipement et traits raciaux (module Items) | Toujours |
+| `addon/NextStep/Data/Imported/Polestar/Dungeons.lua` | Donjons, leurs quêtes et suites de quêtes, butin des boss, provenance et caractéristiques des objets de leveling | Toujours |
 
 Tous sont **générés** et ne doivent jamais être modifiés à la main : ceux de Polestar par `Tools/import/import.lua` (voir [l'import](#import)), celui de la carte par `Tools/worldmap/generate.lua` (voir [l'extraction de la carte](#extraction-de-la-carte)). Les corrections iront dans `Data/Overrides/`.
 
@@ -220,6 +221,32 @@ DB.gear = {
 - `proficiency` : sous-types d'armure (1 tissu, 2 cuir, 3 mailles, 4 plaques ; `armorAt40` : armure plus lourde apprise au niveau 40), `relic` (7 libram, 8 idole, 9 totem), sous-types d'armes autorisés, niveau de l'ambidextrie.
 - `racials` : par identifiant de race du client.
 
+## Donjons
+
+`Data/Imported/Polestar/Dungeons.lua`, généré par `Tools/import/dungeons.py` :
+
+```lua
+DB.dungeons = {
+	{ key = "deadmines", area = 1581, min = 17, max = 26, zone = 40, instance = 36, quests = { 214, 168, 166 },
+		bosses = { { npc = 639, name = "Edwin VanCleef", loot = { { 5202, 235 } } } } },
+}
+DB.dungeonQuests = {
+	[166] = { t = "The Defias Brotherhood", l = 22, m = 14, s = 1, r = 4294967373, z = 1581,
+		st = { k = "n", id = 234, name = "Gryan Stoutmantle", map = 1436, x = 56.3, y = 47.5 },
+		en = { ... }, any = { 155 }, ch = { 2041, 2042, 6087 } },
+}
+DB.itemStats = { [5202] = "16 25 20 3 4 1 sta5 ..." }
+DB.itemSources = { [2302] = "c2149p5s1", [5202] = "d639x235z1581" }
+DB.itemQuests = { [166] = { "The Defias Brotherhood", 22, 1, 40 } }
+DB.itemZones = { [1581] = "The Deadmines" }
+```
+
+- `dungeons` : `area` (zone du donjon, nom traduit par le client), niveaux conseillés, `zone` de l'entrée, `instance` (identifiant de `GetInstanceInfo`), `side` (`"A"` ou `"H"` si réservé), `forever` (donjon propre à Forever), quêtes rattachées, boss et butin (`{ objet, taux pour mille }`, objets verts ou mieux).
+- Une quête est rattachée à un donjon si forever-db la range dans la zone du donjon, si un objectif tue l'un de ses boss ou demande un objet de quête que seuls ses boss laissent tomber, ou par son titre (liste écrite dans l'outil, pour les donjons que forever-db range dans la zone du donneur).
+- `dungeonQuests` : les quêtes des donjons, toute la chaîne de leurs prérequis et quatre niveaux de suites. `t` titre anglais, `l`/`m` niveau et niveau minimal, `s` faction (1 Alliance, 2 Horde), `r`/`c` masques de races et de classes du client, `z` zone ; `st`/`en` donneur et destinataire (`k` : `n` PNJ, `o` objet, `i` objet de l'inventaire ; position sur la carte du client, en pour cent) ; `all` (tous requis), `any` (l'un d'eux), `bc` (quête d'introduction) ; `ch` récompenses au choix, `it` objets donnés.
+- `itemStats` : format de `Polestar_ItemDB` (emplacement, niveau d'objet, niveau requis, qualité, classe, sous-classe, puis stats ; `dmin`/`dmax`/`speed` pour les armes, `cls` masque de classes).
+- `itemSources` : `q<quête>`, `d<PNJ>x<taux pour mille>z<zone>`, `c<sort>p<métier>s<compétence>` (métier : rang dans la liste de ForeverLevelingBiS, 1 Alchimie… 13 Pêche), séparés par `|`.
+
 ## Import
 
 ```powershell
@@ -230,6 +257,7 @@ DB.gear = {
 2. `import.lua` exécute les fichiers compilés de Polestar dans un environnement isolé (sans accès aux fichiers ni au système, bytecode refusé), vérifie le numéro de format, convertit, écrit les fichiers, puis les relit pour comparer avec la source. Toute fonction `Polestar.*` inconnue arrête l'import : c'est le signe d'un changement de format. Une licence de pack autre que GPL-3.0-only l'arrête aussi. Chaque fichier généré rappelle le copyright et la licence de Polestar, et l'import recopie sans modification les notices de Polestar dans un `LICENSE-DATA.txt` à côté des données (voir [DATA_SOURCES.md](DATA_SOURCES.md#obligations)).
 3. Le rapport [`Tools/import/last-import.md`](../Tools/import/last-import.md) donne les totaux, la couverture des noms et les avertissements.
 4. `gear.lua` exécute `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar dans un environnement isolé, écrit les [poids de stats](#poids-de-stats) et recopie la notice de ces données (MIT : ForeverLevelingBiS, wowsims) dans `Gear-LICENSE-DATA.txt`.
+5. `dungeons.py` (Python, lancé avec `-I`) lit forever-db (`forever-db/data/*.jsonl`) et `Polestar_ItemDB` (`Items.lua`, `Forever.lua`), écrit les [donjons](#donjons) et recopie les notices (`ForeverDB-NOTICE.md`, `ItemDB-LICENSE-DATA.txt`).
 
 L'import est **reproductible** : deux exécutions sur le même commit produisent des fichiers identiques, ce qui rend les différences lisibles dans git.
 
