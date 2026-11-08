@@ -33,6 +33,8 @@ Modules\UI\Radar.lua
 Modules\UI\Minimap.lua
 Modules\UI\AddonsMenu.lua
 Modules\UI\QuestItems.lua
+Modules\UI\Junk.lua
+Modules\UI\Windows.lua
 Modules\Guide\Conditions.lua
 Modules\Guide\Goals.lua
 Modules\Guide\Engine.lua

@@ -261,3 +261,28 @@ L["Not in combat."] = "Pas en combat."
 L["Open NextStep options"] = "Ouvrir les options de NextStep"
 L["Also with /ns options or a right-click on the NextStep minimap button."] =
     "Aussi avec /ns options ou un clic droit sur le bouton NextStep de la minimap."
+
+-- Modules/UI/Junk.lua
+L["Junk"] = "Camelote"
+L["Sells grey items when you open a merchant (twelve at most, so you can buy them back), "
+    .. "with a summary in the chat."] =
+    "Vend les objets gris à l'ouverture d'un marchand (douze au plus, pour pouvoir les racheter), "
+    .. "avec un résumé dans le chat."
+L["Junk sold: %d items for %s."] = "Camelote vendue : %d objets pour %s."
+L["%d more grey items: reopen the merchant to sell them."] =
+    "Encore %d objets gris : rouvrez le marchand pour les vendre."
+L["Never sell this grey item: /ns keep <item link or id>"] =
+    "Ne jamais vendre cet objet gris : /ns keep <lien ou identifiant>"
+L["Usage: /ns keep <item link or id>"] = "Usage : /ns keep <lien ou identifiant de l'objet>"
+L["Item %d will be sold again."] = "L'objet %d sera de nouveau vendu."
+L["Item %d will never be sold."] = "L'objet %d ne sera jamais vendu."
+
+-- Modules/UI/Windows.lua
+L["Movable windows"] = "Fenêtres déplaçables"
+L["Drag Blizzard windows (character, spellbook, quest log, merchants, trainers...) to "
+    .. "move them; their position is remembered. Alt + right-click puts one back in its place."] =
+    "Faites glisser les fenêtres de Blizzard (personnage, grimoire, journal de quêtes, marchands, maîtres...) "
+    .. "pour les déplacer ; leur position est retenue. Alt + clic droit en remet une à sa place."
+L["%s will open in its usual place."] = "%s s'ouvrira à sa place habituelle."
+L["Windows will open in their usual place."] = "Les fenêtres s'ouvriront à leur place habituelle."
+L["Reset window positions"] = "Rétablir la place des fenêtres"
