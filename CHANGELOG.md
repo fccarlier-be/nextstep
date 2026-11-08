@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Fenêtre du guide : **en groupe et en mode Strict**, un rappel propose le mode Libre (un clic), qui suit les quêtes faites ensemble dans n'importe quel ordre ; `/ns debug` détaille les objectifs de l'étape en cours et leur état.
 - **Notes des guides de l'Alliance traduites en français** : les 1 038 textes des guides de leveling (585) et de classe (453) que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ, familier du chasseur, poisons, totems…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de réputation, de métiers, de collection et de la Horde.
 - Minimap carrée : l'icône jour / nuit est posée sur le coin en haut à droite, un peu plus petite ; sa place d'origine est rendue en rond.
 - Journal, onglet Sorts de classe : **infobulle du sort** au survol, avec son prix chez le maître.

@@ -161,6 +161,11 @@ L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, mode"
     "Affiche ou cache le guide ; /ns guide list, start, stop, reset, skip, done, mode"
 L["Show the arrow"] = "Afficher la flèche"
 L["Class quest: %s"] = "Quête de classe : %s"
+L["In a group? Free mode follows the quests you do together."] =
+    "En groupe ? Le mode Libre suit les quêtes que vous faites ensemble."
+L["Free mode shows the open objectives around you, in any order, instead of one step at a time."] =
+    "Le mode Libre montre les objectifs ouverts autour de vous, dans n'importe quel ordre, "
+    .. "au lieu d'une étape à la fois."
 L["Back to: %s"] = "Reprendre : %s"
 L["Show the step's points on the minimap"] = "Afficher les points de l'étape sur la minimap"
 L["Show the step's points on the world map"] = "Afficher les points de l'étape sur la carte du monde"
