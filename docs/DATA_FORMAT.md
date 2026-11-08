@@ -14,6 +14,7 @@ Ce document décrit les fichiers de données de NextStep et la couche d'accès q
 | `addon/NextStep_Alliance/Data/Guides.lua` | Guides Alliance | Personnage Alliance |
 | `addon/NextStep_Horde/Data/Guides.lua` | Guides Horde | Personnage Horde |
 | `addon/NextStep/Data/Imported/Client/MapOverlays.lua` | Superpositions de la carte du monde, explorées ou non (carte sans brouillard) | Toujours |
+| `addon/NextStep/Data/Imported/Polestar/Gear.lua` | Poids de stats, aptitudes d'équipement et traits raciaux (module Items) | Toujours |
 
 Tous sont **générés** et ne doivent jamais être modifiés à la main : ceux de Polestar par `Tools/import/import.lua` (voir [l'import](#import)), celui de la carte par `Tools/worldmap/generate.lua` (voir [l'extraction de la carte](#extraction-de-la-carte)). Les corrections iront dans `Data/Overrides/`.
 
@@ -199,6 +200,26 @@ DB:AddTrainerSpells("HUNTER", function() return {
 
 Par classe (jeton de `UnitClass`), puis par niveau requis, chaque sort : `id` (identifiant du sort), `cost` (prix en pièces de cuivre), et si besoin `req` (sorts à connaître avant : rang précédent), `talent` (talent requis), `races` (jetons de race), `faction` (`"Alliance"` ou `"Horde"`), `skill` (`{ ligne de compétence, rang }`, comme les poisons du voleur). L'import refuse tout autre champ.
 
+## Poids de stats
+
+`Data/Imported/Polestar/Gear.lua`, généré par `Tools/import/gear.lua` depuis `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar, définit `DB.gear` :
+
+```lua
+DB.gear = {
+	classes = { WARRIOR = { bit = 1, default = "arms", specs = { { key = "arms", names = { "arms" } }, ... } } },
+	weights = { WARRIOR = { arms = { str = 1, agi = 0.6, crit = 10, dps = 7, ... } } },
+	bands = { WARRIOR = { arms = { { upTo = 39, source = "polestar", weights = { ... } }, ... } } },
+	proficiency = { WARRIOR = { armor = 3, armorAt40 = 4, shield = true, dualWield = 20, weapons = { [0] = true, ... } } },
+	racials = { [1] = { weaponCrit = { pct = 2, subclasses = { [7] = true, [8] = true } }, statMult = { spi = 1.05 } } },
+}
+```
+
+- `specs` : dans l'ordre des arbres de talents ; `default` : la spécialisation habituelle avant le premier point.
+- Clés de stats : `str agi sta int spi armor health mana ap rap sp spArcane spFire spFrost spHoly spNature spShadow heal crit hit spellCrit spellHit mp5 hp5 defense dodge parry block blockValue dps rdps` ; les pourcentages (crit, toucher, esquive…) valent pour 1 % ; `dps` est la DPS de l'arme de mêlée, `rdps` celle de l'arme à distance.
+- `bands` : une tranche s'applique jusqu'au niveau `upTo` inclus (la dernière au-delà) ; `source` vaut `polestar` ou `wowsims` (mélange des deux). Sans tranche, `weights` sert à tous les niveaux.
+- `proficiency` : sous-types d'armure (1 tissu, 2 cuir, 3 mailles, 4 plaques ; `armorAt40` : armure plus lourde apprise au niveau 40), `relic` (7 libram, 8 idole, 9 totem), sous-types d'armes autorisés, niveau de l'ambidextrie.
+- `racials` : par identifiant de race du client.
+
 ## Import
 
 ```powershell
@@ -208,6 +229,7 @@ Par classe (jeton de `UnitClass`), puis par niveau requis, chaque sort : `id` (i
 1. `fetch.ps1` télécharge le commit de Polestar indiqué dans `polestar.lock` (extraction partielle, en cache dans `Tools/import/cache/`, ignoré par git).
 2. `import.lua` exécute les fichiers compilés de Polestar dans un environnement isolé (sans accès aux fichiers ni au système, bytecode refusé), vérifie le numéro de format, convertit, écrit les fichiers, puis les relit pour comparer avec la source. Toute fonction `Polestar.*` inconnue arrête l'import : c'est le signe d'un changement de format. Une licence de pack autre que GPL-3.0-only l'arrête aussi. Chaque fichier généré rappelle le copyright et la licence de Polestar, et l'import recopie sans modification les notices de Polestar dans un `LICENSE-DATA.txt` à côté des données (voir [DATA_SOURCES.md](DATA_SOURCES.md#obligations)).
 3. Le rapport [`Tools/import/last-import.md`](../Tools/import/last-import.md) donne les totaux, la couverture des noms et les avertissements.
+4. `gear.lua` exécute `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar dans un environnement isolé, écrit les [poids de stats](#poids-de-stats) et recopie la notice de ces données (MIT : ForeverLevelingBiS, wowsims) dans `Gear-LICENSE-DATA.txt`.
 
 L'import est **reproductible** : deux exécutions sur le même commit produisent des fichiers identiques, ce qui rend les différences lisibles dans git.
 

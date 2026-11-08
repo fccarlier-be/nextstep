@@ -25,6 +25,7 @@ local SPECS = {
     "pins",
     "spells",
     "journal",
+    "items",
     "autoplay",
     "diagnostic",
 }

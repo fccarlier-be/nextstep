@@ -285,11 +285,15 @@ Code repris de GatherMate2 (GPL-2.0-or-later, donc réutilisable sous GPL-3.0), 
 
 ### Calcul du score
 
-`Modules/Items/Score.lua` est **le seul** endroit où le score est calculé : capacité à porter l'objet (classe), puis somme pondérée des stats selon la spécialisation et la tranche de niveaux. Les stats viennent de la base importée ; la lecture du tooltip (`C_TooltipInfo`) ne sert qu'en secours.
+`Modules/Items/Score.lua` est **le seul** endroit où le score est calculé : capacité à porter l'objet (armure, bouclier, relique, arme autorisée à la classe, compétence d'arme apprise, ambidextrie, niveau ; armure plus lourde à partir du niveau 40), puis somme pondérée des stats selon la spécialisation et la tranche de niveaux, plus les traits raciaux (spécialisation d'arme, multiplicateurs de stats). Algorithme adapté de Polestar (`Gear/Gear.lua`, GPL-3.0-only).
+
+- **Stats** : celles du client, `C_Item.GetItemStats` (chiffres propres à Forever, y compris les suffixes aléatoires). La base d'items de Polestar n'est pas importée (800 Ko) : un objet affiché dans une infobulle, une récompense ou les sacs est toujours connu du client. Bonus « Équipé : » que le client ne liste pas : non comptés pour l'instant.
+- **Poids** : `Data/Imported/Polestar/Gear.lua` (voir [DATA_FORMAT.md](DATA_FORMAT.md#poids-de-stats)) ; par classe et spécialisation, une table par tranche de niveaux (Polestar seul jusqu'au niveau 24 ou 39 pour la plupart des spécialisations, puis mêlé aux simulations de wowsims par tranches de dix niveaux). Les lanceurs de sorts et les druides gardent un petit poids de DPS d'arme ; en Farouche, 14 points de puissance d'attaque valent 1 DPS.
+- **Comparaison** : bagues et bijoux remplacent le plus faible des deux ; une arme à deux mains se compare à main droite + main gauche ; une arme à une main face à une deux mains portée s'associe à la meilleure pièce des sacs pour l'autre main ; la main gauche frappe à moitié. Gain en pour cent du score de la pièce remplacée ; un emplacement vide est toujours une amélioration.
 
 ### Spécialisation
 
-Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la main**. Import d'échelles Pawn envisagé plus tard.
+Détectée automatiquement (arbre de talents le plus rempli, `GetTalentTabInfo`), sinon la spécialisation habituelle de la classe pour monter en niveau ; **modifiable à la main** (bouton des options : automatique, puis chaque spécialisation). `/ns gear` affiche la spécialisation et la tranche de poids utilisées, `/ns gear <lien>` compare un objet. Import d'échelles Pawn envisagé plus tard.
 
 ### Fonctions
 
@@ -302,7 +306,9 @@ Détectée automatiquement (arbre de talents le plus rempli), **modifiable à la
 | Jalons | Sacs, quêtes de classe, monture, sorts à apprendre (voir [Sorts à apprendre](#sorts-à-apprendre)) ; seuils dans les données |
 | Butin des donjons | Récompenses de chaque donjon et de chaque boss ; améliorations pour la spécialisation mises en évidence avec le gain. Enrichit le journal des donjons natif s'il existe, sinon onglet du journal NextStep. Inspiré de DungeonJournal (« All Rights Reserved ») : code propre. AtlasLootClassic est incompatible (GPL-2.0 seule). Données : voir ci-dessous |
 
-**[À vérifier]** Possibilité d'équiper un objet depuis l'alerte. Sinon, le clic ouvre les sacs avec l'objet en surbrillance.
+Réalisé (v0.3, `Modules/Items/`) : infobulles (« NextStep (Armes) : +12 % », porté, emplacement vide, niveau requis, ou raison en gris), récompenses (encart doré à droite de la fenêtre de quête et cadre sur le bouton conseillé), alerte (cinq objets au plus, clic gauche pour équiper hors combat, clic droit pour fermer, fermeture après 20 s réglable, chaque objet signalé une fois par personnage). Les trois se coupent séparément dans les options ; seuil par défaut : 2 %.
+
+**[À vérifier]** sur Forever : équiper depuis l'alerte (`C_Item.EquipItemByName`) ; noms des boutons de récompense (`QuestInfoRewardsFrameQuestInfoItem<n>`) ; signature de `GetTalentTabInfo` ; clés de `C_Item.GetItemStats` pour le toucher et le critique.
 
 **Données du butin des donjons** (vérifiées sur Polestar 0.3.0) :
 
