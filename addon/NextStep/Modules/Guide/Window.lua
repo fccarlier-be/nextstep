@@ -157,17 +157,37 @@ function Guide:CreateWindow()
     separator:SetPoint("BOTTOMLEFT", 1, FOOTER_HEIGHT - 2)
     separator:SetPoint("BOTTOMRIGHT", -1, FOOTER_HEIGHT - 2)
     frame.separator = separator
-    frame.skip = smallButton(footer, L["Skip"], 70, function()
+    frame.skip = smallButton(footer, L["Skip"], 80, function()
         local result = self.result
         if result and result.current then
             self:Skip(result.current)
         end
     end)
     frame.skip:SetPoint("LEFT", 0, 0)
-    frame.done = smallButton(footer, L["Done"], 70, function()
+    frame.done = smallButton(footer, L["Done"], 80, function()
         self:ValidateCurrent()
     end)
     frame.done:SetPoint("LEFT", frame.skip, "RIGHT", 4, 0)
+    -- Ce que fait chaque bouton, au survol.
+    local function explain(button, heading, text)
+        button:HookScript("OnEnter", function(owner)
+            if GameTooltip then
+                GameTooltip:SetOwner(owner, "ANCHOR_TOP")
+                GameTooltip:SetText(heading)
+                GameTooltip:AddLine(text, 1, 1, 1, true)
+                GameTooltip:Show()
+            end
+        end)
+        button:HookScript("OnLeave", function()
+            if GameTooltip then
+                GameTooltip:Hide()
+            end
+        end)
+    end
+    explain(frame.skip, L["Skip"], L["Moves on without doing this step: all its quests are left aside. "
+        .. "To leave out just one quest, right-click its line."])
+    explain(frame.done, L["Done"], L["You did this step yourself: ticks what the guide cannot see (talk to, "
+        .. "visit...), and moves on."])
     frame.mode = smallButton(footer, L["Strict"], 80, function()
         self:SetMode(self.char.mode == "free" and "strict" or "free")
     end)
@@ -197,8 +217,11 @@ local function acquireLine(frame, index)
             text:SetWordWrap(true)
         end
         line.text = text
-        line:SetScript("OnClick", function(button)
-            if button.onClick then
+        line:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        line:SetScript("OnClick", function(button, mouse)
+            if mouse == "RightButton" and button.menu then
+                button.menu(button)
+            elseif button.onClick then
                 button.onClick()
             end
         end)
@@ -241,7 +264,8 @@ local function addLine(view, text, color, options)
     line:SetSize(width, height)
     line.onClick = options.onClick
     line.tooltip = options.tooltip
-    line:EnableMouse(options.onClick ~= nil or options.tooltip ~= nil)
+    line.menu = options.menu
+    line:EnableMouse(options.onClick ~= nil or options.tooltip ~= nil or options.menu ~= nil)
     line:Show()
     view.height = view.height + height + LINE_GAP
     view.texts[#view.texts + 1] = text
@@ -329,8 +353,88 @@ local function addGoal(self, view, result, i, j, status)
             options.tooltip = self:SpellsTooltip()
         end
     end
+    -- Clic droit : ignorer cet objectif ou toute la quête, le marquer fait.
+    if status ~= "done" then
+        options.menu = function(owner)
+            self:OpenGoalMenu(owner, i, j)
+        end
+        local tooltip = options.tooltip
+        options.tooltip = function(frame)
+            if type(tooltip) == "function" then
+                tooltip(frame)
+            elseif tooltip then
+                frame:SetText(tooltip, 1, 1, 1, 1, true)
+            else
+                frame:SetText(text, 1, 1, 1, 1, true)
+            end
+            frame:AddLine(L["Right-click: ignore it, or mark it done"], 0.6, 0.6, 0.6)
+        end
+    end
     local color = status == "done" and COLORS.done or COLORS.text
     addLine(view, (ICONS[status] or ICONS.todo) .. " " .. text, color, options)
+end
+
+-- Choix du menu d'un objectif : { label, action }.
+function Guide:GoalMenuEntries(i, j)
+    local result = self.result
+    local goal = result and result.guide.steps[i] and result.guide.steps[i].goals[j]
+    if not goal then
+        return {}
+    end
+    local entries = {}
+    entries[#entries + 1] = { label = L["Ignore this objective"], action = function() self:IgnoreGoal(i, j) end }
+    if goal.quest then
+        local name = ns.DB:GetName("quest", goal.quest, result.guide) or ("#" .. goal.quest)
+        entries[#entries + 1] = { label = L["Ignore the quest \"%s\" (all its lines)"]:format(name),
+            action = function() self:IgnoreQuest(goal.quest) end }
+    end
+    entries[#entries + 1] = { label = L["Mark this objective done"], action = function() self:Tick(i, j) end }
+    if goal.quest and self.state and self.state:InLog(goal.quest) then
+        entries[#entries + 1] = { label = L["Open in the quest log"], action = function()
+            self:OpenQuestLog(goal.quest)
+        end }
+    end
+    return entries
+end
+
+function Guide:OpenGoalMenu(owner, i, j)
+    local entries = self:GoalMenuEntries(i, j)
+    if not (MenuUtil and MenuUtil.CreateContextMenu) then
+        return entries
+    end
+    MenuUtil.CreateContextMenu(owner, function(_, root)
+        root:CreateTitle(L["This objective"])
+        for _, entry in ipairs(entries) do
+            root:CreateButton(entry.label, entry.action)
+        end
+    end)
+    return entries
+end
+
+-- Quêtes ignorées : une ligne, et un clic pour les reprendre.
+local function addIgnored(self, view)
+    local list = {}
+    for quest in pairs(self.char.ignoredQuests or {}) do
+        list[#list + 1] = quest
+    end
+    if #list == 0 then
+        return
+    end
+    table.sort(list)
+    local function open(owner)
+        if not (MenuUtil and MenuUtil.CreateContextMenu) then
+            return
+        end
+        MenuUtil.CreateContextMenu(owner, function(_, root)
+            root:CreateTitle(L["Ignored quests"])
+            for _, quest in ipairs(list) do
+                local name = ns.DB:GetName("quest", quest) or ("#" .. quest)
+                root:CreateButton(L["Take back: %s"]:format(name), function() self:IgnoreQuest(quest, false) end)
+            end
+        end)
+    end
+    addLine(view, L["%d ignored quests (click to take them back)"]:format(#list), COLORS.muted,
+        { onClick = function() open(view.frame) end, menu = open })
 end
 
 local SHOWN_GOALS = { done = true, todo = true, manual = true, blocked = true }
@@ -605,6 +709,7 @@ function Guide:UpdateWindow(result)
         addLine(view, L["Reading the quest log..."], COLORS.muted)
     elseif result.finished then
         addFinished(self, view, result)
+        addIgnored(self, view)
     elseif result.ask then
         addAsk(self, view, result)
     else
@@ -633,6 +738,7 @@ function Guide:UpdateWindow(result)
         addBagWarning(view)
         addGroupHint(self, view)
         addClassGuides(self, view)
+        addIgnored(self, view)
     end
     for index = view.count + 1, #frame.lines do
         frame.lines[index]:Hide()

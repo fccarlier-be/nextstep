@@ -90,6 +90,7 @@ function Engine.NewProgress()
         forced = {},       -- [clé d'étape] = true : réactivée, ses conditions when ignorées
         jumpOrigin = {},   -- [clé d'étape sautée] = clé de l'étape qui a déclenché le saut
         noJump = {},       -- [clé d'étape] = true : son saut a été annulé par le joueur
+        ignoredGoals = {}, -- [clé d'objectif] = true : ignoré par le joueur
     }
 end
 
@@ -159,6 +160,9 @@ function Engine.Evaluate(guide, ctx)
     local droppedQuests = {}
     local evaluated = {}     -- [i] = résultat calculé pendant cette évaluation
 
+    local ignoredQuests = ctx.ignoredQuests or {}
+    local ignoredGoals = progress.ignoredGoals or {}
+
     local goalCtx = {
         droppedQuests = droppedQuests,
         trainedLevel = ctx.trainedLevel,   -- niveau de la dernière visite au maître de classe
@@ -203,7 +207,12 @@ function Engine.Evaluate(guide, ctx)
         local step = guide.steps[i]
         local list = {}
         for j, goal in ipairs(step.goals) do
-            list[j] = Goals.Evaluate(goal, state, goalCtx)
+            -- Objectif ou quête ignorés par le joueur : hors sujet, comme une étape ignorée.
+            if ignoredGoals[keys.goals[i][j]] or (goal.quest and ignoredQuests[goal.quest]) then
+                list[j] = { status = "na", reason = { kind = "ignored" } }
+            else
+                list[j] = Goals.Evaluate(goal, state, goalCtx)
+            end
         end
         -- Un déplacement est accompli dès qu'un objectif suivant l'est.
         local laterDone = false
@@ -458,6 +467,12 @@ end
 
 function Engine.Skip(progress, guide, i)
     progress.skipped[Engine.Keys(guide).steps[i]] = true
+end
+
+-- Ignore un seul objectif d'une étape (ou le reprend).
+function Engine.IgnoreGoal(progress, guide, i, j, ignored)
+    progress.ignoredGoals = progress.ignoredGoals or {}
+    progress.ignoredGoals[Engine.Keys(guide).goals[i][j]] = ignored ~= false or nil
 end
 
 -- Réactive une étape ignorée, sautée ou hors sujet : elle s'applique alors quelles

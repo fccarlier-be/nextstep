@@ -119,8 +119,8 @@ L["Have %d gold"] = "Avoir %d po"
 L["Die (shortcut, not used)"] = "Mourir (raccourci, non utilisé)"
 
 -- Modules/Guide/Window.lua
-L["Skip"] = "Ignorer"
-L["Done"] = "Valider"
+L["Skip"] = "Passer l'étape"
+L["Done"] = "Étape faite"
 L["Strict"] = "Strict"
 L["Free"] = "Libre"
 L["requires level %d"] = "niveau %d requis"
@@ -567,3 +567,22 @@ L["Advice goal: %s"] = "Objectif du conseiller : %s"
 L["Open the clock"] = "Ouvrir l'horloge"
 L["Clear the exceptions (%d)"] = "Vider les exceptions (%d)"
 L["Every grey item will be sold again."] = "Tous les objets gris seront de nouveau vendus."
+
+-- Guide : ignorer une quête ou un objectif
+L["Right-click: ignore it, or mark it done"] = "Clic droit : l'ignorer, ou la marquer faite"
+L["Ignore this objective"] = "Ignorer cet objectif"
+L["Ignore the quest \"%s\" (all its lines)"] = "Ignorer la quête « %s » (toutes ses lignes)"
+L["Mark this objective done"] = "Marquer cet objectif comme fait"
+L["Open in the quest log"] = "Ouvrir dans le journal de quêtes"
+L["This objective"] = "Cet objectif"
+L["Ignored quests"] = "Quêtes ignorées"
+L["Take back: %s"] = "Reprendre : %s"
+L["%d ignored quests (click to take them back)"] = "%d quêtes ignorées (clic pour les reprendre)"
+L["Moves on without doing this step: all its quests are left aside. "
+    .. "To leave out just one quest, right-click its line."] =
+    "Passe à la suite sans faire cette étape : toutes ses quêtes sont laissées de côté. "
+    .. "Pour n'écarter qu'une quête, clic droit sur sa ligne."
+L["You did this step yourself: ticks what the guide cannot see (talk to, "
+    .. "visit...), and moves on."] =
+    "Vous avez fait cette étape : coche ce que le guide ne peut pas voir (parler à, "
+    .. "visiter...), et passe à la suite."

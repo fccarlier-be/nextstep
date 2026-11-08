@@ -135,6 +135,7 @@ function Guide:NearbyActions(result)
         for j, goal in ipairs(guide.steps[i].goals) do
             local q = goal.quest
             if q and not seen[q .. goal.t] and goal.map and goal.x and goal.y
+                and not (self.char.ignoredQuests or {})[q]
                 and (goal.t == "accept" or goal.t == "turnin") then
                 local ready
                 if goal.t == "accept" then

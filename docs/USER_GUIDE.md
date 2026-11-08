@@ -18,6 +18,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 | **Flèche** | En haut de l'écran, vers l'objectif le plus proche, avec la distance. Un clic dans le journal la tourne vers un donneur de quête ; **clic droit dessus** (ou la ligne « Flèche : … », ou `/ns arrow`) pour la rendre au guide. |
 | **Carte et minimap** | Tous les points de l'étape ; la cible en doré. |
 | **Ici aussi** | Près d'un PNJ, les quêtes que le guide prévoit plus loin chez lui et que tu peux faire tout de suite. |
+| **Ignorer** | Clic droit sur une ligne : ignorer cet objectif, ignorer toute la quête (dans tous les guides), ou la marquer faite. « N quêtes ignorées » en bas de la fenêtre pour les reprendre. **Passer l'étape** laisse de côté toute l'étape ; **Étape faite** coche ce que le guide ne voit pas (parler à, visiter) et passe à la suite. |
 | **Détours** | Tu peux faire les quêtes dans un autre ordre : le guide se recale tout seul. Une quête abandonnée est signalée (clic pour la reprendre). |
 | **Guides annexes** | Quêtes de classe, guides de métier, de réputation ou de collection : ton guide de leveling est gardé, « Reprendre : … » y revient d'un clic. |
 | **Sorts à apprendre** | Les sorts de ton maître de classe et leur coût ; en ville, près de ton maître, un clic t'y mène. La liste lue chez le maître est retenue. |

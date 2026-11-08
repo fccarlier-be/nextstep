@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Fenêtre du guide : **clic droit sur une ligne** pour ignorer cet objectif, ignorer toute la quête (toutes ses lignes, dans tous les guides) ou la marquer faite ; une ligne « N quêtes ignorées » permet de les reprendre. Les boutons s'appellent désormais **« Passer l'étape »** et **« Étape faite »**, et expliquent leur effet au survol.
 - **Nouvelle flèche** du guide, dorée au contour sombre, teintée selon la direction. Réglages ajoutés : objectif du conseiller de métiers, ouverture de l'horloge, remise à zéro des exceptions de la camelote. **Guide d'utilisation** en français (`docs/USER_GUIDE.md`).
 - **Mode conseil** : sans guide suivi, la fenêtre du guide propose les 5 quêtes à prendre les plus proches (pour votre faction, race, classe et niveau, prérequis faits), un clic pointe la flèche vers le donneur. Nouvel onglet **Zones** du journal : les zones de votre niveau en tête, avec leurs quêtes disponibles, leurs guides de leveling et leurs donjons.
 - Module **Métiers** : vos métiers et leur rang (suivis malgré l'absence de l'ancienne API sur Forever), la maîtrise suivante, les routes de métier à suivre d'un clic et un conseiller de paires de métiers selon votre race, votre classe et votre objectif, dans un onglet **Métiers** du journal ; le guide rappelle d'aller voir le maître quand un métier est au plafond.
