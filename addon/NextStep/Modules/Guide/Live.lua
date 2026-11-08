@@ -631,8 +631,13 @@ function Guide:AddCommands()
         end
     end, ns.L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, mode"])
     ns.Slash:Add("arrow", function()
+        -- Vers un lieu choisi : d'abord le retour au guide.
+        if self.pointTarget then
+            self:BackToGuide()
+            return
+        end
         self:SetArrowShown(not self.db.arrow)
-    end, ns.L["Show or hide the arrow"])
+    end, ns.L["Show or hide the arrow (or point it back to the guide)"])
     ns.Slash:Add("journal", function()
         self:ToggleJournal("routes")
     end, ns.L["Open the guide journal"])

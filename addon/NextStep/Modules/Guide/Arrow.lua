@@ -6,6 +6,8 @@
 --
 -- Guide:PointTo(point, label) la tourne vers un autre lieu (donneur d'une quête de
 -- donjon, choisi dans le journal) jusqu'à l'arrivée ; la cible du guide reprend ensuite.
+-- Pour revenir au guide avant : clic droit sur la flèche, la ligne en tête de la
+-- fenêtre du guide, un second clic sur le même lieu dans le journal, ou /ns arrow.
 
 local _, ns = ...
 local L = ns.L
@@ -44,7 +46,26 @@ function Guide:CreateArrow()
     frame:SetSize(SIZE, SIZE)
     frame:SetPoint("TOP", UIParent, "TOP", 0, -90)
     frame:SetFrameStrata("MEDIUM")
+    -- Cliquable seulement vers un lieu choisi (clic droit : retour au guide).
     frame:EnableMouse(false)
+    frame:SetScript("OnMouseUp", function(_, button)
+        if button == "RightButton" and self.pointTarget then
+            self:BackToGuide()
+        end
+    end)
+    frame:SetScript("OnEnter", function(owner)
+        if self.pointTarget and GameTooltip then
+            GameTooltip:SetOwner(owner, "ANCHOR_BOTTOM")
+            GameTooltip:SetText(self.pointTarget.label or "")
+            GameTooltip:AddLine(L["Right-click: back to the guide"], 1, 0.82, 0)
+            GameTooltip:Show()
+        end
+    end)
+    frame:SetScript("OnLeave", function()
+        if GameTooltip then
+            GameTooltip:Hide()
+        end
+    end)
     frame:Hide()
 
     local arrow = frame:CreateTexture(nil, "ARTWORK")
@@ -85,6 +106,7 @@ function Guide:SetArrowTarget(target)
     if not frame then
         return
     end
+    frame:EnableMouse(self.pointTarget ~= nil)
     if self.pointTarget and self.enabled then
         frame.label:SetText(self.pointTarget.label or "")
         frame:Show()
@@ -112,6 +134,24 @@ function Guide:PointTo(point, label)
         self:CreateArrow()
     end
     self:SetArrowTarget(self.target)
+    if self.window and self.result then
+        self:UpdateWindow(self.result)
+    end
+end
+
+-- Rend la flèche à l'étape du guide.
+function Guide:BackToGuide()
+    if self.pointTarget then
+        self:PointTo(nil)
+        ns:Print(L["The arrow follows the guide again."])
+    end
+end
+
+-- Le lieu choisi est-il déjà pointé ?
+function Guide:IsPointing(point)
+    local target = self.pointTarget
+    return target ~= nil and point ~= nil and target.map == point.map and target.x == point.x
+        and target.y == point.y
 end
 
 function Guide:UpdateArrowDirection()
@@ -129,8 +169,7 @@ function Guide:UpdateArrowDirection()
     end
     if distance <= ARRIVED and self.pointTarget then
         -- Lieu choisi atteint : la flèche revient au guide.
-        self.pointTarget = nil
-        self:SetArrowTarget(self.target)
+        self:PointTo(nil)
         return
     end
     if distance <= ARRIVED then

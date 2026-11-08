@@ -570,6 +570,11 @@ function Guide:UpdateWindow(result)
     elseif result.ask then
         addAsk(self, view, result)
     else
+        -- Flèche tournée vers un lieu choisi dans le journal : un clic la rend au guide.
+        if self.pointTarget then
+            addLine(view, L["Arrow: %s (click to go back to the guide)"]:format(self.pointTarget.label or "?"),
+                COLORS.warning, { onClick = function() self:BackToGuide() end })
+        end
         addCurrentStep(self, view, result)
         addNearby(self, view, result)
         addAlong(self, view, result)
