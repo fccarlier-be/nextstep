@@ -430,3 +430,11 @@ L["Gear not to miss (%s)"] = "Équipement à ne pas rater (%s)"
 L["No known upgrade for the next levels."] = "Aucune amélioration connue pour les prochains niveaux."
 L["Leave this guide and resume your leveling guide where you left it."] =
     "Quitter ce guide et reprendre votre guide de leveling là où vous l'avez laissé."
+
+-- Modules/Guide/Celebration.lua
+L["New spells at your trainer: %d (%s)"] = "Nouveaux sorts chez votre maître : %d (%s)"
+L["Class quest available: %s"] = "Quête de classe disponible : %s"
+L["Suggested next: %s"] = "Ensuite, conseillé : %s"
+L["Level %d!"] = "Niveau %d !"
+L["Celebrate each level"] = "Célébrer chaque niveau gagné"
+L["Play a sound for the celebration"] = "Jouer un son pour la célébration"

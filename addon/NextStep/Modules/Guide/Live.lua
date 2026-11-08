@@ -55,6 +55,11 @@ function Guide:OnEnable()
         end
         self:OnNpcWindow("getfp", ns.NpcID(UnitGUID("npc")))
     end)
+    self:RegisterEvent("PLAYER_LEVEL_UP", function(_, _, level)
+        self.live:OnEvent("PLAYER_LEVEL_UP", level)
+        self:RequestRefresh()
+        self:OnLevelUp(level)
+    end)
     self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED", function(_, _, unit, _, spell)
         if unit == "player" and ns.Usable(spell) then
             self:Validate(function(goal)
@@ -674,7 +679,13 @@ function Guide:BuildOptions(panel, anchor)
     local map = Options.AddCheck(panel, minimap, ns.L["Show the step's points on the world map"],
         function() return self.db.mapPins end,
         function(value) self:SetMapPinsShown(value) end)
-    local locked = Options.AddCheck(panel, map, ns.L["Lock the guide window"],
+    local celebrate = Options.AddCheck(panel, map, ns.L["Celebrate each level"],
+        function() return self.db.celebration end,
+        function(value) self.db.celebration = value end)
+    local sound = Options.AddCheck(panel, celebrate, ns.L["Play a sound for the celebration"],
+        function() return self.db.celebrationSound end,
+        function(value) self.db.celebrationSound = value end)
+    local locked = Options.AddCheck(panel, sound, ns.L["Lock the guide window"],
         function() return self.db.window.locked end,
         function(value) self:SetWindowLocked(value) end)
     return locked
