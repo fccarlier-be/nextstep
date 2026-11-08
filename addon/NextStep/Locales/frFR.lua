@@ -586,3 +586,19 @@ L["You did this step yourself: ticks what the guide cannot see (talk to, "
     .. "visit...), and moves on."] =
     "Vous avez fait cette étape : coche ce que le guide ne peut pas voir (parler à, "
     .. "visiter...), et passe à la suite."
+
+-- Métiers : où farmer
+L["Skin beasts up to level %d"] = "Dépecez les bêtes jusqu'au niveau %d"
+L["Farm %s in %s"] = "Récoltez %s : %s"
+L["To gather: %s"] = "À récolter : %s"
+L["Here, to gather: %s"] = "Ici, à récolter : %s"
+
+-- Minimap et menu : réglages complétés
+L["Minimap size: %d%%"] = "Taille de la minimap : %d %%"
+L["The zoom stays where you leave it"] = "Le zoom reste là où vous le laissez"
+L["Back to the widest zoom after %d seconds"] = "Retour au zoom le plus large après %d secondes"
+L["Keep visible on the minimap"] = "Garder visibles sur la minimap"
+L["%s already groups minimap buttons: NextStep leaves them alone."] =
+    "%s regroupe déjà les boutons de la minimap : NextStep n'y touche pas."
+L["Hide Blizzard's add-on compartment"] = "Masquer le compartiment d'addons de Blizzard"
+L["Hide the NextStep button (menu: /ns addons)"] = "Cacher le bouton NextStep (menu : /ns addons)"

@@ -51,9 +51,30 @@ end
 
 -- Points des objectifs ouverts du résultat : { instance, north, west, kind, step,
 -- goal, target }, la cible en dernier (dessinée par-dessus les autres).
+-- Mode conseil (aucun guide suivi) : les donneurs des quêtes disponibles les plus proches.
+local ADVICE_PINS = 30
+
+function Guide:AdvicePinPoints()
+    local list = {}
+    if not (self.state and self.NearbyQuests) then
+        return list
+    end
+    for _, entry in ipairs(self:NearbyQuests(self.state, ADVICE_PINS)) do
+        local quest = entry.quest
+        local instance, north, west = Navigation.WorldPosition(quest.map, quest.x, quest.y)
+        if instance then
+            list[#list + 1] = { instance = instance, north = north, west = west, kind = "place", quest = quest }
+        end
+    end
+    return list
+end
+
 function Guide:PinPoints(result)
     local list, target = {}, nil
-    if not (result and result.current) then
+    if not result then
+        return self:AdvicePinPoints()
+    end
+    if not result.current then
         return list
     end
     local guide = result.guide
@@ -83,6 +104,9 @@ end
 
 -- Libellé d'un repère (infobulle de la carte du monde).
 function Guide:PinLabel(pin)
+    if pin.quest then
+        return self:AdviceText(pin.quest)
+    end
     local result = self.result
     if not (result and result.guide.steps[pin.step]) then
         return nil

@@ -83,6 +83,104 @@ Professions.ADVICE = {
     pairs = { HERBALISM = "ALCHEMY", MINING = "BLACKSMITHING", SKINNING = "LEATHERWORKING" },
 }
 
+-- Où farmer (faits du Classic) : par tranche de compétence, les ressources (objets, dont
+-- le nom vient du client) et les zones où elles abondent (cartes du client).
+-- [À vérifier] sur Forever : zones et ressources remaniées.
+Professions.FARMING = {
+    HERBALISM = {
+        { skill = 1, items = { 2447, 765, 2449 }, maps = { 1429, 1426, 1411, 1412, 1438, 1420 } },
+        { skill = 50, items = { 785, 2450 }, maps = { 1436, 1439, 1413, 1421, 1432 } },
+        { skill = 100, items = { 2453, 3355, 3356 }, maps = { 1437, 1424, 1440, 1442, 1431 } },
+        { skill = 150, items = { 3357, 3818, 3821, 3358 }, maps = { 1417, 1434, 1443, 1416, 1435 } },
+        { skill = 205, items = { 4625, 8831, 8838 }, maps = { 1425, 1444, 1446, 1418 } },
+        { skill = 250, items = { 8846, 13464, 13463, 13465 }, maps = { 1449, 1448, 1452, 1423, 1422 } },
+    },
+    MINING = {
+        { skill = 1, items = { 2770 }, maps = { 1429, 1426, 1411, 1412, 1436, 1432, 1413 } },
+        { skill = 65, items = { 2771, 2775 }, maps = { 1433, 1437, 1424, 1440, 1442, 1431 } },
+        { skill = 125, items = { 2772, 2776 }, maps = { 1417, 1443, 1434, 1441, 1416 } },
+        { skill = 175, items = { 3858, 7911 }, maps = { 1418, 1425, 1446, 1444, 1427 } },
+        { skill = 245, items = { 10620 }, maps = { 1449, 1428, 1452, 1451, 1423 } },
+    },
+}
+
+-- Tranche de « où farmer » pour un rang : la plus haute atteinte.
+function Professions.FarmingBand(key, rank)
+    local bands = Professions.FARMING[key]
+    local pick
+    for _, band in ipairs(bands or {}) do
+        if (rank or 1) >= band.skill then
+            pick = band
+        end
+    end
+    return pick
+end
+
+-- Niveau maximal des bêtes que le dépeceur peut dépecer (règle du Classic).
+function Professions.SkinnableLevel(rank)
+    rank = rank or 1
+    if rank < 100 then
+        return math.floor(rank / 10) + 10
+    end
+    return math.floor(rank / 5)
+end
+
+local function itemName(id)
+    local name = C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(id)
+    if not name and C_Item and C_Item.RequestLoadItemDataByID then
+        pcall(C_Item.RequestLoadItemDataByID, id)
+    end
+    return name or ("#" .. id)
+end
+
+local function mapName(map)
+    local info = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(map)
+    return info and info.name or ("#" .. map)
+end
+
+-- « Où farmer » d'un métier de récolte au rang donné : texte, ou nil.
+function Professions:FarmingText(profession, rank)
+    if profession.key == "SKINNING" then
+        return L["Skin beasts up to level %d"]:format(Professions.SkinnableLevel(rank))
+    end
+    local band = Professions.FarmingBand(profession.key, rank)
+    if not band then
+        return nil
+    end
+    local items, maps = {}, {}
+    for _, id in ipairs(band.items) do
+        items[#items + 1] = itemName(id)
+    end
+    for index, map in ipairs(band.maps) do
+        if index <= 4 then
+            maps[#maps + 1] = mapName(map)
+        end
+    end
+    return L["Farm %s in %s"]:format(table.concat(items, ", "), table.concat(maps, ", "))
+end
+
+-- Ressources récoltables dans une zone avec les métiers du personnage : { texte }.
+function Professions:ZoneResources(map)
+    local list = {}
+    for _, entry in ipairs(self:Known()) do
+        local key = entry.profession.key
+        for _, band in ipairs(Professions.FARMING[key] or {}) do
+            if (entry.rank or 1) >= band.skill then
+                for _, other in ipairs(band.maps) do
+                    if other == map then
+                        local names = {}
+                        for _, id in ipairs(band.items) do
+                            names[#names + 1] = itemName(id)
+                        end
+                        list[#list + 1] = ("%s : %s"):format(entry.profession.name, table.concat(names, ", "))
+                    end
+                end
+            end
+        end
+    end
+    return list
+end
+
 local GOALS = { "leveling", "gold", "endgame" }
 local GOAL_LABELS = { leveling = L["leveling"], gold = L["gold"], endgame = L["end game"] }
 
@@ -317,6 +415,12 @@ function Professions:Rows(state)
         local rank = entry.rank and ("%d / %d"):format(entry.rank, entry.max) or ("? / %d"):format(entry.max)
         rows[#rows + 1] = { text = ("%s (%s)"):format(entry.profession.name, TIERS[entry.tier].name), right = rank,
             color = C.text }
+        if entry.profession.kind == "gathering" then
+            local farming = self:FarmingText(entry.profession, entry.rank)
+            if farming then
+                rows[#rows + 1] = { text = farming, indent = 1, color = C.green }
+            end
+        end
         local next = TIERS[entry.tier + 1]
         if next then
             local ready = entry.rank and entry.rank >= next.skill and level >= next.level

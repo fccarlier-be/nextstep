@@ -153,7 +153,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 - Conseiller de métiers, routes de métiers, intégration dans la route de leveling, onglet Métiers.
 - **Points de récolte** : enregistrement automatique des herbes, minerais et autres ressources récoltés, affichés sur la carte et la minimap.
 
-État : **écrit et testé hors jeu** (modules `Professions` et `Gathering`) : rangs suivis malgré l'absence de `GetNumSkillLines`, onglet Métiers (rangs, maîtrise suivante, routes de Polestar, conseiller), rappel du maître dans le guide, points de récolte sur la minimap et la carte. Restent l'insertion des étapes de métier dans la route de leveling et le choix de zone selon les ressources ; vérification en jeu.
+État : **écrit et testé hors jeu** (modules `Professions` et `Gathering`) : rangs suivis malgré l'absence de `GetNumSkillLines`, onglet Métiers (rangs, maîtrise suivante, routes de Polestar, conseiller), rappel du maître dans le guide, points de récolte sur la minimap et la carte. Complété ensuite : où farmer (onglet Métiers), ressources par zone (onglet Zones), rappels dans la fenêtre du guide. Reste l'insertion d'étapes de métier dans la route elle-même ; vérification en jeu.
 
 ## Phase 10 : Items à ne pas rater, jalons, mode libre → v0.7
 
@@ -161,7 +161,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 - Items par tranche de niveaux intégrés à la route, jalons (sacs, monture, quêtes de classe), onglet Zones.
 - **Butin des donjons** : récompenses de chaque donjon, améliorations pour la spécialisation du joueur mises en évidence (enrichit le journal natif s'il existe).
 
-État : **écrit et testé hors jeu**. Items à ne pas rater, jalons et butin des donjons : faits avec la phase 6 (onglets Équipement et Donjons, récompenses signalées sur les lignes du guide). Mode conseil (`Modules/Guide/Advice.lua`) : quêtes disponibles d'après forever-db, les plus proches dans la fenêtre du guide sans guide suivi ; onglet **Zones** du journal. Restent les repères du mode conseil sur la carte et la vérification en jeu.
+État : **écrit et testé hors jeu**. Items à ne pas rater, jalons et butin des donjons : faits avec la phase 6 (onglets Équipement et Donjons, récompenses signalées sur les lignes du guide). Mode conseil (`Modules/Guide/Advice.lua`) : quêtes disponibles d'après forever-db, les plus proches dans la fenêtre du guide sans guide suivi ; onglet **Zones** du journal. Repères du mode conseil sur la carte et la minimap faits ensuite ; reste la vérification en jeu.
 
 ## Phase 11 : Finitions et publication → v1.0
 

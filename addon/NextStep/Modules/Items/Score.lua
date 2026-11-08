@@ -205,6 +205,10 @@ local function clientStats(link)
     return out
 end
 
+-- Stats que le client donne toujours quand il connaît l'objet.
+local BASE_STATS = { str = true, agi = true, sta = true, int = true, spi = true, armor = true, dps = true,
+    health = true, mana = true }
+
 -- Caractéristiques importées (DB.itemStats, format de Polestar_ItemDB) : pour les
 -- objets que le client n'a pas encore en cache (butin des donjons, objets à venir).
 --   "<emplacement> <niveau d'objet> <niveau requis> <qualité> <classe> <sous-classe>
@@ -272,6 +276,15 @@ local function buildInfo(link)
     local stats = clientStats(link)
     if not stats or next(stats) == nil then
         stats = imported and imported.stats or stats
+    elseif imported then
+        -- Bonus « Équipé : » que le client ne liste pas (toucher, critique, puissance des
+        -- sorts d'une école...) : pris dans les caractéristiques importées. Les stats de
+        -- base viennent toujours du client (chiffres de Forever, suffixes aléatoires).
+        for key, value in pairs(imported.stats) do
+            if not BASE_STATS[key] and stats[key] == nil then
+                stats[key] = value
+            end
+        end
     end
     if not stats then
         return nil

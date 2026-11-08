@@ -563,7 +563,14 @@ local function addProfessionHint(self, view)
     end
     for _, due in ipairs(professions:TrainingDue(self.state:Level())) do
         addLine(view, L["%s %d/%d: learn %s at the trainer"]:format(due.profession.name, due.rank, due.max,
-            due.tier.name), COLORS.warning)
+            due.tier.name), COLORS.warning, { onClick = function() self:ToggleJournal("professions") end })
+    end
+    -- Ressources de la zone où se trouve le personnage, pour ses métiers de récolte.
+    local map = C_Map and C_Map.GetBestMapForUnit and C_Map.GetBestMapForUnit("player")
+    if map and professions.ZoneResources then
+        for _, text in ipairs(professions:ZoneResources(map)) do
+            addLine(view, L["Here, to gather: %s"]:format(text), COLORS.muted)
+        end
     end
 end
 
