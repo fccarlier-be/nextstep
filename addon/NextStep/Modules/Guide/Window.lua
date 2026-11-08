@@ -451,6 +451,18 @@ local function addGroupHint(self, view)
 end
 
 -- Rappel des sorts à apprendre, sauf si l'étape courante mène déjà au maître.
+-- Métier au plafond de sa maîtrise : la suivante est à apprendre chez le maître.
+local function addProfessionHint(self, view)
+    local professions = ns.Modules:Get("Professions")
+    if not (professions and professions.enabled and self.state) then
+        return
+    end
+    for _, due in ipairs(professions:TrainingDue(self.state:Level())) do
+        addLine(view, L["%s %d/%d: learn %s at the trainer"]:format(due.profession.name, due.rank, due.max,
+            due.tier.name), COLORS.warning)
+    end
+end
+
 local function addSpellsReminder(self, view, result)
     for _, goal in ipairs(result.guide.steps[result.current].goals) do
         if goal.t == "train" and goal.class then
@@ -604,6 +616,7 @@ function Guide:UpdateWindow(result)
         addAbandoned(self, view, result)
         addFooterLines(view, result)
         addSpellsReminder(self, view, result)
+        addProfessionHint(self, view)
         addBagWarning(view)
         addGroupHint(self, view)
         addClassGuides(self, view)

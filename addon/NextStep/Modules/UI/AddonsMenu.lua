@@ -139,6 +139,12 @@ function Menu:Fill(root)
             guide:ToggleJournal("dungeons")
         end
     end)
+    root:CreateButton(L["Professions"], function()
+        local guide = ns.Modules:Get("Guide")
+        if guide then
+            guide:ToggleJournal("professions")
+        end
+    end)
     root:CreateButton(L["Gear"], function()
         local guide = ns.Modules:Get("Guide")
         if guide then

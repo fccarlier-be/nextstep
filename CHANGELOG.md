@@ -7,6 +7,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Module **Métiers** : vos métiers et leur rang (suivis malgré l'absence de l'ancienne API sur Forever), la maîtrise suivante, les routes de métier à suivre d'un clic et un conseiller de paires de métiers selon votre race, votre classe et votre objectif, dans un onglet **Métiers** du journal ; le guide rappelle d'aller voir le maître quand un métier est au plafond.
+- Module **Points de récolte** : chaque herbe, filon et coffre récoltés sont retenus et affichés sur la minimap et la carte du monde, filtrables par type ; partagés entre vos personnages, rien n'est envoyé.
 - Module **Sacs et banque** : flèche verte sur les améliorations et pièce grise sur la camelote dans vos sacs, niveau d'objet en option, places libres ; sacs et banque de tous vos personnages retenus, comptés dans les infobulles, et consultables de n'importe où (`/ns bank`, avec une recherche).
 - Guide : les quêtes **élites**, de groupe, de donjon ou de raid sont signalées sur toutes leurs lignes, même quand le guide ne le dit pas (d'après le type de la quête et le rang des monstres visés, forever-db) : plus de longue marche pour une quête qu'on ne fera pas seul.
 - Module **Valeurs de vie et de ressources** : valeurs sur les cadres d'unité (texte de statut de Blizzard : valeur et pourcentage, valeur, ou pourcentage) et vie sous les barres de nom (court, complet ou pourcentage) ; vos réglages d'origine sont rendus si vous le désactivez.
