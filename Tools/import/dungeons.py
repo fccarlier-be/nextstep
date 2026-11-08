@@ -116,9 +116,12 @@ npcs = {n["id"]: n for n in read_jsonl("npc")}
 objects = {o["id"]: o for o in read_jsonl("object")}
 items = {i["id"]: i for i in read_jsonl("item")}
 drops_by_item = {}
+other_source = set()     # objets qu'on obtient aussi autrement que sur un PNJ
 for row in read_jsonl("item_source"):
     if row["kind"] == "npc":
         drops_by_item.setdefault(row["item"], set()).add(row["id"])
+    else:
+        other_source.add(row["item"])
 spawns = {}
 for row in read_jsonl("spawn"):
     key = (row["kind"], row["id"])
@@ -424,6 +427,48 @@ out.append("DB.itemZones = {")
 for area, name in sorted(section("zones").items()):
     out.append("\t[%d] = %s," % (area, lua_string(name)))
 out.append("}")
+
+# ---------------------------------------------------------------------------
+# Quêtes élites ou de groupe (toutes les quêtes) : type de la quête, sinon rang des
+# monstres visés (tuer, ou objet que seuls des élites laissent tomber).
+# ---------------------------------------------------------------------------
+
+QUEST_TYPES = {1: "g", 81: "d", 62: "r"}
+ELITE_RANKS = {1, 2, 3}
+
+
+def elite_npc(ident):
+    return (npcs.get(ident) or {}).get("rank") in ELITE_RANKS
+
+
+groups = {}
+for q in quests.values():
+    kind = QUEST_TYPES.get(q.get("type"))
+    if not kind:
+        for obj in objectives.get(q["id"], []):
+            if obj["kind"] == "kill" and elite_npc(obj["target"]):
+                kind = "e"
+            elif obj["kind"] == "item" and obj["target"] not in other_source:
+                droppers = drops_by_item.get(obj["target"], set())
+                if droppers and all(elite_npc(n) for n in droppers):
+                    kind = "e"
+    if kind:
+        groups[q["id"]] = kind
+
+group_lines = [
+    "-- Généré par Tools/import/dungeons.py depuis forever-db de Polestar %s (%s). Ne pas modifier."
+    % (lock.get("version", "?"), commit),
+    "-- Quêtes élites ou de groupe : e élite (monstres visés élites, rares élites ou boss),",
+    "-- g groupe, d donjon, r raid (type de la quête). GPL-3.0 : ForeverDB-NOTICE.md.",
+    "",
+    "NextStep.DB.questGroups = {",
+]
+for qid in sorted(groups):
+    group_lines.append('\t[%d] = "%s",' % (qid, groups[qid]))
+group_lines.append("}")
+with open(OUT_DIR + "QuestGroups.lua", "w", encoding="utf-8", newline="\n") as f:
+    f.write("\n".join(group_lines) + "\n")
+print("quêtes élites ou de groupe : %d" % len(groups))
 
 with open(OUT_DIR + "Dungeons.lua", "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(out) + "\n")

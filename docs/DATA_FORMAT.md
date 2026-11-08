@@ -15,6 +15,7 @@ Ce document décrit les fichiers de données de NextStep et la couche d'accès q
 | `addon/NextStep_Horde/Data/Guides.lua` | Guides Horde | Personnage Horde |
 | `addon/NextStep/Data/Imported/Client/MapOverlays.lua` | Superpositions de la carte du monde, explorées ou non (carte sans brouillard) | Toujours |
 | `addon/NextStep/Data/Imported/Polestar/Gear.lua` | Poids de stats, aptitudes d'équipement et traits raciaux (module Items) | Toujours |
+| `addon/NextStep/Data/Imported/Polestar/QuestGroups.lua` | Quêtes élites ou de groupe (`DB.questGroups[quête] = "e"` élite, `"g"` groupe, `"d"` donjon, `"r"` raid), d'après le type de la quête dans forever-db, sinon le rang des monstres visés ; affichées sur les lignes du guide quand il ne le dit pas | Toujours |
 | `addon/NextStep/Data/Imported/Polestar/Dungeons.lua` | Donjons, leurs quêtes et suites de quêtes, butin des boss, provenance et caractéristiques des objets de leveling | Toujours |
 
 Tous sont **générés** et ne doivent jamais être modifiés à la main : ceux de Polestar par `Tools/import/import.lua` (voir [l'import](#import)), celui de la carte par `Tools/worldmap/generate.lua` (voir [l'extraction de la carte](#extraction-de-la-carte)). Les corrections iront dans `Data/Overrides/`.

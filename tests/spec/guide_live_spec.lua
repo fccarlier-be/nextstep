@@ -250,6 +250,15 @@ describe("Guide en jeu", function()
         local Labels = game.ns.GuideLabels
         local guide = game.ns.DB:GetGuide("test/group")
         expect_eq(Labels.GroupTag({ t = "accept", quest = 902 }, guide), nil, "quête solo")
+        -- Sans indication du guide : la base de quêtes (« Recherché : Lardeur », de groupe).
+        expect_eq(Labels.GroupTag({ t = "accept", quest = 176 }, guide), "group")
+        local elite
+        for quest, kind in pairs(game.ns.DB.questGroups) do
+            if kind == "e" then
+                elite = elite or quest
+            end
+        end
+        expect_eq(Labels.GroupTag({ t = "accept", quest = elite }, guide), "elite", "quête élite " .. elite)
         expect_eq(Labels.GroupTag({ group = { kind = "dungeon", name = "Stockade" } }, guide), "dungeon: Stockade")
     end)
 
