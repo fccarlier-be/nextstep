@@ -147,15 +147,22 @@ describe("Radar de récolte", function()
         expect(radar.frame.shown)
     end)
 
-    it("cache les enfants affichés et non protégés de la minimap, puis les rend", function()
+    it("rend transparents les enfants affichés et non protégés de la minimap, puis les rend", function()
         local world = {}
         local _, radar = boot(world)
+        -- Hide et Show souilleraient l'interface de Blizzard : interdits.
+        for _, child in ipairs({ world.button, world.hiddenButton, world.secure }) do
+            child.Hide = function() error("Hide interdit") end
+            child.Show = function() error("Show interdit") end
+        end
         radar:Toggle()
-        expect(not world.button.shown)
-        expect(world.secure.shown, "cadre protégé laissé tel quel")
+        expect_eq(world.button.alpha, 0, "transparent")
+        expect_eq(world.button.mouse, false, "ne prend plus la souris")
+        expect_eq(world.secure.alpha, 1, "cadre protégé laissé tel quel")
+        expect_eq(world.hiddenButton.alpha, 1, "cadre caché laissé tel quel")
         radar:Toggle()
-        expect(world.button.shown)
-        expect(not world.hiddenButton.shown, "un cadre déjà caché le reste")
+        expect_eq(world.button.alpha, 1)
+        expect_eq(world.button.mouse, true)
     end)
 
     it("reprend la minimap quand le client la rétablit", function()

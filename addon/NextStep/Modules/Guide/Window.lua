@@ -394,6 +394,21 @@ local function addFooterLines(view, result)
     end
 end
 
+-- En groupe et en mode strict : rappel du mode libre, qui suit les objectifs proches
+-- dans l'ordre où le groupe les fait (les guides de deux joueurs de niveaux
+-- différents ne tombent jamais pile ensemble). Un clic passe en mode libre.
+local function addGroupHint(self, view)
+    if self.char.mode == "free" or not (IsInGroup and IsInGroup()) then
+        return
+    end
+    addLine(view, L["In a group? Free mode follows the quests you do together."], COLORS.action, {
+        onClick = function()
+            self:SetMode("free")
+        end,
+        tooltip = L["Free mode shows the open objectives around you, in any order, instead of one step at a time."],
+    })
+end
+
 -- Rappel des sorts à apprendre, sauf si l'étape courante mène déjà au maître.
 local function addSpellsReminder(self, view, result)
     for _, goal in ipairs(result.guide.steps[result.current].goals) do
@@ -519,6 +534,7 @@ function Guide:UpdateWindow(result)
         addAbandoned(self, view, result)
         addFooterLines(view, result)
         addSpellsReminder(self, view, result)
+        addGroupHint(self, view)
         addClassGuides(self, view)
     end
     for index = view.count + 1, #frame.lines do

@@ -394,20 +394,26 @@ function Guide:UpdateTracker()
         end
         return
     end
-    if not self.trackerHooked then
-        hooksecurefunc(frame, "Show", function(shown)
-            if self.trackerHidden then
-                shown:Hide()
-            end
-        end)
-        self.trackerHooked = true
-    end
-    if hide and not self.trackerHidden then
-        self.trackerHidden = true
-        frame:Hide()
-    elseif not hide and self.trackerHidden then
+    -- Jamais Hide ni Show : ils lanceraient les scripts du suivi (OnShow, OnHide) depuis
+    -- le code de l'addon, ce qui souille le suivi et le mode Édition (erreurs « tainted »
+    -- sur les auras secrètes). Le suivi devient seulement transparent et ne prend plus
+    -- la souris ; il continue de se mettre à jour normalement.
+    if hide then
+        if not self.trackerHidden then
+            self.trackerHidden = true
+            self.trackerAlpha = frame:GetAlpha()
+            self.trackerMouse = frame.IsMouseEnabled and frame:IsMouseEnabled()
+        end
+        frame:SetAlpha(0)
+        if frame.EnableMouse then
+            frame:EnableMouse(false)
+        end
+    elseif self.trackerHidden then
         self.trackerHidden = false
-        frame:Show()
+        frame:SetAlpha(self.trackerAlpha or 1)
+        if frame.EnableMouse and self.trackerMouse ~= nil then
+            frame:EnableMouse(self.trackerMouse)
+        end
     end
 end
 
@@ -521,7 +527,20 @@ function Guide:PrintDebug()
         return #list, list[1] and list[1].id
     end)
     local result = self.result
-    out("résultat", result ~= nil, "prêt", result and result.ready, "étape", result and result.current)
+    out("résultat", result ~= nil, "prêt", result and result.ready, "étape", result and result.current,
+        "mode", self.char.mode, "groupe", IsInGroup and IsInGroup() or false)
+    -- Objectifs de l'étape courante : ce qui la retient.
+    if result and result.current then
+        local step = result.guide.steps[result.current]
+        local statuses = result.steps[result.current].goals or {}
+        for j, goal in ipairs(step.goals) do
+            local entry = statuses[j] or {}
+            local reason = entry.reason and (entry.reason.kind .. (entry.reason.level and (" " .. entry.reason.level)
+                or entry.reason.quest and (" " .. entry.reason.quest) or "")) or ""
+            out("  objectif", j, goal.t, goal.quest or goal.npc or goal.item or "", entry.status or "?", reason,
+                goal.optional and "facultatif" or "")
+        end
+    end
     out("repères", self.pinPoints and #self.pinPoints, "minimap", self.minimapPins ~= nil,
         "carte du monde", self.mapProvider ~= nil,
         "rayon minimap", Minimap and Minimap.GetViewRadius and Minimap:GetViewRadius())

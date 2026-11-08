@@ -6,7 +6,10 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.1.1] - 2026-11-08
+
 ### Ajouté
+- Fenêtre du guide : **en groupe et en mode Strict**, un rappel propose le mode Libre (un clic), qui suit les quêtes faites ensemble dans n'importe quel ordre ; `/ns debug` détaille les objectifs de l'étape en cours et leur état.
 - **Notes des guides de l'Alliance traduites en français** : les 1 038 textes des guides de leveling (585) et de classe (453) que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ, familier du chasseur, poisons, totems…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de réputation, de métiers, de collection et de la Horde.
 - Minimap carrée : l'icône jour / nuit est posée sur le coin en haut à droite, un peu plus petite ; sa place d'origine est rendue en rond.
 - Journal, onglet Sorts de classe : **infobulle du sort** au survol, avec son prix chez le maître.
@@ -22,6 +25,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - L'étape « maître de classe » est validée d'office quand il n'y a rien de nouveau à apprendre (règle des niveaux pairs en secours si la classe n'a pas de données).
 
 ### Corrigé
+- **Erreurs « tainted » du suivi de quêtes et du mode Édition** (`GetAuraDataByIndex() … tainted by NextStep_Alliance`) : NextStep cachait le suivi de quêtes de Blizzard avec `Hide`/`Show`, ce qui lançait ses scripts depuis le code de l'addon et le souillait. Le suivi est maintenant rendu transparent et ne prend plus la souris, sans jamais appeler ses scripts ; de même pour les boutons de la minimap pendant le radar.
 - **Options** : le panneau débordait (pas de défilement) et chaque module était décalé un peu plus à droite. Les options sont maintenant une fenêtre NextStep au style sombre et doré, avec défilement, sections alignées et réglages au même style ; la page des options du jeu ouvre cette fenêtre.
 - **Radar de récolte** : la carte disparaissait parfois (changement de zone, chargement) et ne revenait qu'en touchant à l'opacité. Le radar réapplique ses réglages après ces événements, dès qu'un autre code change la minimap, et vérifie chaque seconde qu'il l'a toujours. Anneau plus fin et plus net (texture de 512 pixels).
 
@@ -95,5 +99,6 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/fccarlier-be/nextstep/releases/tag/v0.1.0
