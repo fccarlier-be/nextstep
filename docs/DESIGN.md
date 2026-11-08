@@ -274,7 +274,7 @@ Une session de farm peut basculer temporairement sur la route de métier ; le re
 
 ### Points de récolte
 
-Code repris de GatherMate2 (GPL-2.0-or-later, donc réutilisable sous GPL-3.0), adapté au format de NextStep ; ses données (extraction de Wowhead) ne sont pas reprises.
+Idée reprise de GatherMate2 (détection par le sort lancé et l'objet ciblé) ; code propre à NextStep, aucune donnée reprise (celles de GatherMate2_Data sont extraites de Wowhead).
 
 - Chaque récolte (herbe, minerai, coffre, banc de poissons…) est enregistrée automatiquement : carte, coordonnées, type de ressource. Les points très proches sont fusionnés.
 - Affichage sur la carte et la minimap (HereBeDragons), filtrable par type ; utilisé par les routes de métier pour « où farmer ».

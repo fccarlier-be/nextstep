@@ -561,3 +561,9 @@ L["Guide: %s"] = "Guide : %s"
 L["Dungeon: %s (%d-%d)"] = "Donjon : %s (%d-%d)"
 L["Quests you can take"] = "Quêtes que vous pouvez prendre"
 L["No quest to take here for now."] = "Aucune quête à prendre ici pour l'instant."
+
+-- Options complètes (phase 11)
+L["Advice goal: %s"] = "Objectif du conseiller : %s"
+L["Open the clock"] = "Ouvrir l'horloge"
+L["Clear the exceptions (%d)"] = "Vider les exceptions (%d)"
+L["Every grey item will be sold again."] = "Tous les objets gris seront de nouveau vendus."

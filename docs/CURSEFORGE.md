@@ -21,11 +21,11 @@ Ce document contient le texte de la page CurseForge de NextStep et la liste des 
 | Un changelog pour chaque fichier envoyé | Coller la section de la version tirée de [CHANGELOG.md](../CHANGELOG.md) à chaque envoi. |
 | Pas de mises à jour vides ni de renvois pour gagner en visibilité | Ne publier que des versions qui changent quelque chose. |
 
-**À chaque version** : relire la description et retirer de « Planned » ce qui est devenu disponible (et l'inverse), pour que la page décrive toujours le fichier publié. La section du guide décrit le guide complet : la v0.1 (phase 4 de la feuille de route) et ses compléments v0.1.x (phase 4b : carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal). Tant qu'un complément n'est pas publié, sa ligne passe dans « Planned ».
+**À chaque version** : relire la description pour qu'elle décrive toujours le fichier publié (toutes les phases de la feuille de route sont décrites comme disponibles depuis la v1.0). La section du guide décrit le guide complet : la v0.1 (phase 4 de la feuille de route) et ses compléments v0.1.x (phase 4b : carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal). Tant qu'un complément n'est pas publié, sa ligne passe dans « Planned ».
 
 ## Résumé (champ « Summary »)
 
-> Leveling guide with detour support, navigation arrow, map and minimap pins and French translations, plus a square minimap, a farming radar and other UI helpers, all in one addon.
+> Leveling guide with detours, arrow and map pins, gear and dungeon advice, professions and many UI helpers, in English and French, all in one addon.
 
 ## Description (champ « Description », Markdown)
 
@@ -75,30 +75,34 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | 🪶 **Lightweight** | Only your faction's data is loaded. |
 | ☑️ **Modular** | Every module has its own checkbox in the options. |
 
+## 🗡️ Gear and dungeons
+
+- 📈 **Upgrade hints** in item tooltips, scored for your spec and level ("+12 %").
+- 🎁 **Quest rewards**: the one to take is framed, with the reason; never picked for you.
+- 🔔 **Upgrade alert** when better gear lands in your bags, one click to equip.
+- 🏰 **Dungeons tab**: the quests to pick up before each dungeon, the remaining steps of their quest chains with the giver and zone, and boss loot with the gain for your spec.
+- 🧭 **Gear not to miss** in the next five levels, with where it comes from, and the next milestones (spells, class quests, bags, mount).
+
+## ⚒️ Professions
+
+- 📊 Your professions and their skill, the next rank to learn, profession routes to follow, and an **advisor** for the best pairs for your race, class and goal.
+- 🌿 **Gathering nodes** recorded as you farm, shown on the minimap and the world map.
+
 ## 🧰 Interface helpers
 
-- 🟦 **Square minimap** with mouse wheel zoom, and **one NextStep button** for the farming radar, NextStep's options and the settings of every addon (other addons' minimap buttons hidden).
-- 🌿 **Farming radar**: the minimap, large and see-through, around your character, to spot herbs, ore and fish.
-- 🗺️ **No more fog**: unexplored areas of the world map are shown, dimmed.
-- 📦 **Quest items** marked in your bags, with the quest named in their tooltip.
+- 🟦 **Square minimap** with mouse wheel zoom, and **one NextStep button** for every NextStep window and the settings of every addon (other addons' minimap buttons hidden).
+- 🌿 **Farming radar**: the minimap, large and see-through, around your character.
+- 🗺️ **No more fog** on the world map, and **zone levels** shown on it.
+- ❤️ **Health and power values** on unit frames and nameplates.
+- 🎒 **Bags and bank**: upgrades and junk marked, the bags and bank of all your characters counted in tooltips and viewable from anywhere; **junk sold** automatically.
+- 🪟 **Movable Blizzard windows**, positions remembered.
+- ⏰ **Clock** with alarms, timers and a stopwatch.
 
 ## ⌨️ Getting started
 
 1. Install NextStep and log in.
-2. Type **`/ns`** (or `/nextstep`) to open it.
+2. Type **`/ns`** (or `/nextstep`) to open it, or use the NextStep button on the minimap.
 3. Fine-tune it under *Options → AddOns → NextStep*.
-
-## 🚧 On the road map
-
-| Module | What's coming |
-|---|---|
-| ⚒️ **Professions** | Profession advisor and routes, woven into the leveling guide; gathering nodes recorded as you farm and shown on the map |
-| 🗡️ **Gear** | Recommended quest rewards, upgrade hints in tooltips, loot alerts, dungeon loot with the upgrades for your spec |
-| ❤️ **Unit values** | Health and resource numbers on unit frames and nameplates |
-| 📜 **Guide extras** | Level-up celebration, zone levels on the world map |
-| 🎒 **Bags and bank** | Unified bags and bank, bank viewable from anywhere, junk auto-sell |
-| 🧭 **Minimap and clock** | Coordinates, alarms and timers |
-| 🪟 **Windows** | Movable Blizzard windows that stay open side by side |
 
 ---
 ---
@@ -139,30 +143,34 @@ Copier tout ce qui se trouve entre les deux marques. Mise en page en Markdown pu
 | 🪶 **Léger** | Seules les données de ta faction sont chargées. |
 | ☑️ **Modulaire** | Chaque module a sa case à cocher dans les options. |
 
+## 🗡️ Équipement et donjons
+
+- 📈 **Gains dans les infobulles**, calculés pour ta spécialisation et ton niveau (« +12 % »).
+- 🎁 **Récompenses de quête** : celle à prendre est encadrée, avec la raison ; jamais choisie à ta place.
+- 🔔 **Alerte d'amélioration** quand un meilleur objet arrive dans tes sacs, équipé d'un clic.
+- 🏰 **Onglet Donjons** : les quêtes à prendre avant chaque donjon, les étapes restantes de leur suite avec le donneur et sa zone, et le butin des boss avec le gain pour ta spécialisation.
+- 🧭 **Équipement à ne pas rater** d'ici cinq niveaux, avec sa provenance, et les prochains jalons (sorts, quêtes de classe, sacs, monture).
+
+## ⚒️ Métiers
+
+- 📊 Tes métiers et leur rang, la maîtrise suivante, les routes de métier à suivre, et un **conseiller** des meilleures paires selon ta race, ta classe et ton objectif.
+- 🌿 **Points de récolte** enregistrés pendant que tu farmes, affichés sur la minimap et la carte du monde.
+
 ## 🧰 Aides pour l'interface
 
-- 🟦 **Minimap carrée** avec zoom à la molette, et **un seul bouton NextStep** pour le radar de récolte, les options de NextStep et les paramètres de chaque addon (les boutons des autres addons masqués).
-- 🌿 **Radar de récolte** : la minimap, en grand et en transparence, autour de ton personnage, pour repérer herbes, filons et poissons.
-- 🗺️ **Plus de brouillard** : les zones inexplorées de la carte du monde sont affichées, plus sombres.
-- 📦 **Objets de quête** marqués dans tes sacs, avec la quête nommée dans leur infobulle.
+- 🟦 **Minimap carrée** avec zoom à la molette, et **un seul bouton NextStep** pour toutes les fenêtres de NextStep et les paramètres de chaque addon (les boutons des autres addons masqués).
+- 🌿 **Radar de récolte** : la minimap, en grand et en transparence, autour de ton personnage.
+- 🗺️ **Plus de brouillard** sur la carte du monde, et le **niveau des zones** affiché dessus.
+- ❤️ **Valeurs de vie et de ressources** sur les cadres d'unité et les barres de nom.
+- 🎒 **Sacs et banque** : améliorations et camelote marquées, sacs et banque de tous tes personnages comptés dans les infobulles et consultables de partout ; **camelote vendue** automatiquement.
+- 🪟 **Fenêtres Blizzard déplaçables**, positions retenues.
+- ⏰ **Horloge** avec alarmes, minuteurs et chronomètre.
 
 ## ⌨️ Pour commencer
 
 1. Installe NextStep et connecte-toi.
-2. Tape **`/ns`** (ou `/nextstep`) pour l'ouvrir.
+2. Tape **`/ns`** (ou `/nextstep`) pour l'ouvrir, ou utilise le bouton NextStep de la minimap.
 3. Règle-le dans *Options → AddOns → NextStep*.
-
-## 🚧 Au programme
-
-| Module | Ce qui arrive |
-|---|---|
-| ⚒️ **Métiers** | Conseiller et routes de métiers, intégrés au guide de leveling ; points de récolte enregistrés pendant que tu farmes et affichés sur la carte |
-| 🗡️ **Équipement** | Récompenses de quête conseillées, gains dans les infobulles, alerte au butin, butin des donjons avec les améliorations pour ta spécialisation |
-| ❤️ **Valeurs** | Vie et ressources en chiffres sur les cadres d'unité et les barres de nom |
-| 📜 **Compléments du guide** | Célébration de niveau, niveau des zones sur la carte |
-| 🎒 **Sacs et banque** | Sacs et banque unifiés, banque consultable partout, vente de la camelote |
-| 🧭 **Minimap et horloge** | Coordonnées, alarmes et minuteurs |
-| 🪟 **Fenêtres** | Fenêtres Blizzard déplaçables et ouvertes côte à côte |
 
 ---
 ---
@@ -176,7 +184,10 @@ NextStep builds on these open-source projects. Thanks to their authors! / NextSt
 - **[Ding!](https://github.com/moust4ki/DingGuideWoWForever)** and DingDB by Yendi, via Polestar: French names / noms français *(GPL-3.0)*
 - **[CMaNGOS classic-db](https://github.com/cmangos/classic-db)**, via Polestar: NPC spawn heights and walk areas, quest objective counts / hauteurs d'apparition et zones de déplacement des PNJ, nombre d'objectifs des quêtes *(GPL-3.0)*
 - **[What's Training](https://github.com/fusionpit/WhatsTraining)** by Fusionpit: class trainer spells / sorts des maîtres de classe *(MIT)*
-- **[GatherMate2](https://github.com/Nevcairiel/GatherMate2)** by kagaro, Xinhuan and Nevcairiel: gathering detection / détection des récoltes *(GPL-2.0-or-later)*
+- **[GatherMate2](https://github.com/Nevcairiel/GatherMate2)** by kagaro, Xinhuan and Nevcairiel: idea of the gathering detection / idée de la détection des récoltes *(GPL-2.0-or-later)*
+- **[forever-db](https://github.com/fitzforge/polestar/tree/next/forever-db)** (Polestar) and its sources: quests, quest chains and givers for the dungeon tab and the advice mode / quêtes, suites et donneurs pour l'onglet Donjons et le mode conseil *(GPL-3.0)*
+- **ForeverLevelingBiS** by Thunder, via Polestar: boss loot, where leveling gear comes from, racial gear traits / butin des boss, provenance de l'équipement, traits raciaux *(MIT)*
+- **[wowsims](https://github.com/wowsims)**, via Polestar: stat weights / poids de stats *(MIT)*
 
 🎨 The logo was generated with AI (FLUX.2 [klein], background removed with BiRefNet). / Le logo a été généré par IA (FLUX.2 [klein], détourage avec BiRefNet).
 
