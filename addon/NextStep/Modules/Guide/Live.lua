@@ -527,7 +527,20 @@ function Guide:PrintDebug()
         return #list, list[1] and list[1].id
     end)
     local result = self.result
-    out("résultat", result ~= nil, "prêt", result and result.ready, "étape", result and result.current)
+    out("résultat", result ~= nil, "prêt", result and result.ready, "étape", result and result.current,
+        "mode", self.char.mode, "groupe", IsInGroup and IsInGroup() or false)
+    -- Objectifs de l'étape courante : ce qui la retient.
+    if result and result.current then
+        local step = result.guide.steps[result.current]
+        local statuses = result.steps[result.current].goals or {}
+        for j, goal in ipairs(step.goals) do
+            local entry = statuses[j] or {}
+            local reason = entry.reason and (entry.reason.kind .. (entry.reason.level and (" " .. entry.reason.level)
+                or entry.reason.quest and (" " .. entry.reason.quest) or "")) or ""
+            out("  objectif", j, goal.t, goal.quest or goal.npc or goal.item or "", entry.status or "?", reason,
+                goal.optional and "facultatif" or "")
+        end
+    end
     out("repères", self.pinPoints and #self.pinPoints, "minimap", self.minimapPins ~= nil,
         "carte du monde", self.mapProvider ~= nil,
         "rayon minimap", Minimap and Minimap.GetViewRadius and Minimap:GetViewRadius())

@@ -293,6 +293,27 @@ describe("Guide en jeu", function()
         expect_eq(#game.errors, 0)
     end)
 
+    it("rappelle le mode Libre en groupe, et y passe d'un clic", function()
+        local game, Guide = boot()
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start(GUIDE_ID)
+        expect(not hasText(Guide, "In a group?"), "seul : pas de rappel")
+        _G.IsInGroup = function() return true end
+        Guide:Refresh()
+        expect(hasText(Guide, "In a group?"), "en groupe : rappel")
+        for _, line in ipairs(Guide.window.lines) do
+            local text = rawget(line.text, "text")
+            if text and text:find("In a group?", 1, true) then
+                rawget(line, "onClick")()
+            end
+        end
+        expect_eq(Guide.char.mode, "free")
+        expect(not hasText(Guide, "In a group?"), "déjà en mode libre : plus de rappel")
+        _G.IsInGroup = nil
+        SlashCmdList.NEXTSTEP("debug")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("calcule distance et direction en coordonnées monde", function()
         local game = boot()
         local Navigation = game.ns.Navigation

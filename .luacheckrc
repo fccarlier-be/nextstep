@@ -65,6 +65,7 @@ files["addon/**"] = {
         "hooksecurefunc",
         "InCombatLockdown",
         "IsIndoors",
+        "IsInGroup",
         "IsPlayerSpell",
         "issecretvalue",
         "IsSpellKnown",
