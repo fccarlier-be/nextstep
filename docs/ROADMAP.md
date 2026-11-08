@@ -161,6 +161,8 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 - Items par tranche de niveaux intégrés à la route, jalons (sacs, monture, quêtes de classe), onglet Zones.
 - **Butin des donjons** : récompenses de chaque donjon, améliorations pour la spécialisation du joueur mises en évidence (enrichit le journal natif s'il existe).
 
+État : **écrit et testé hors jeu**. Items à ne pas rater, jalons et butin des donjons : faits avec la phase 6 (onglets Équipement et Donjons, récompenses signalées sur les lignes du guide). Mode conseil (`Modules/Guide/Advice.lua`) : quêtes disponibles d'après forever-db, les plus proches dans la fenêtre du guide sans guide suivi ; onglet **Zones** du journal. Restent les repères du mode conseil sur la carte et la vérification en jeu.
+
 ## Phase 11 : Finitions et publication → v1.0
 
 - Graphismes définitifs (flèche ; le logo est fait), relecture des traductions, options complètes.

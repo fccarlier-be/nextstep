@@ -30,6 +30,7 @@ local SPECS = {
     "pins",
     "spells",
     "journal",
+    "advice",
     "items",
     "dungeons",
     "celebration",

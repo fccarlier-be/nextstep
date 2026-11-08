@@ -551,3 +551,13 @@ L["Goal: %s (click to change)"] = "Objectif : %s (clic pour changer)"
 L["score %d"] = "score %d"
 L["Also useful: First Aid, Cooking and Fishing."] = "Utiles aussi : Secourisme, Cuisine et Pêche."
 L["%s %d/%d: learn %s at the trainer"] = "%s %d/%d : apprenez %s chez le maître"
+
+-- Modules/Guide/Advice.lua, Zones.lua (mode conseil)
+L["Quests to take nearby:"] = "Quêtes à prendre près de vous :"
+L["Zones"] = "Zones"
+L["Other zones"] = "Autres zones"
+L["Pick a zone in the list."] = "Choisissez une zone dans la liste."
+L["Guide: %s"] = "Guide : %s"
+L["Dungeon: %s (%d-%d)"] = "Donjon : %s (%d-%d)"
+L["Quests you can take"] = "Quêtes que vous pouvez prendre"
+L["No quest to take here for now."] = "Aucune quête à prendre ici pour l'instant."

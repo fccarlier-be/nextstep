@@ -521,6 +521,8 @@ end
 
 local MAX_SUGGESTIONS = 3
 
+local NEARBY_QUESTS = 5
+
 local function addSuggestions(self, view)
     addLine(view, L["No guide followed."], COLORS.title)
     if not (self.state and self.state:Ready() ~= false) then
@@ -535,10 +537,21 @@ local function addSuggestions(self, view)
     end
     if #list == 0 then
         addLine(view, L["No leveling guide for your level."], COLORS.muted)
-        return
+    else
+        addChoices(self, view, list, L["Start: %s"])
+        addClassGuides(self, view)
     end
-    addChoices(self, view, list, L["Start: %s"])
-    addClassGuides(self, view)
+    -- Mode conseil : les quêtes à prendre les plus proches (forever-db).
+    local nearby = self.NearbyQuests and self:NearbyQuests(self.state, NEARBY_QUESTS) or {}
+    if #nearby > 0 then
+        addLine(view, L["Quests to take nearby:"], COLORS.title)
+        for _, entry in ipairs(nearby) do
+            local quest = entry.quest
+            addLine(view, ("%s |cffa0a0a0(%d yd)|r"):format(self:AdviceText(quest), math.floor(entry.distance + 0.5)),
+                COLORS.action, { indent = INDENT, onClick = function() self:PointToQuest(quest) end,
+                    tooltip = L["Click: point the arrow to the giver"] })
+        end
+    end
 end
 
 local function addFinished(self, view, result)
