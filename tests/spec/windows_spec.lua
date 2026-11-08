@@ -55,6 +55,12 @@ describe("Fenêtres déplaçables", function()
         expect_eq(window.points[1][1], "CENTER")
         expect_eq(window.points[1][4], 120)
 
+        -- Clic : la fenêtre passe au premier plan.
+        local raised = 0
+        window.Raise = function() raised = raised + 1 end
+        run(window, "OnMouseDown", "LeftButton")
+        expect_eq(raised, 1, "passée devant les autres")
+
         -- Alt + clic droit : position oubliée.
         _G.IsAltKeyDown = function() return true end
         run(window, "OnMouseUp", "RightButton")
