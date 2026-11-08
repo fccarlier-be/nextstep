@@ -167,6 +167,33 @@ describe("Guide en jeu", function()
         expect_eq(r.target.choices, 2, "deux objectifs obligatoires : la cible peut changer")
     end)
 
+    it("ne vise pas le rendu d'une quête pas encore acceptée", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/chain", title = "Chain", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Herbalist", goals = {
+                    { t = "turnin", quest = 130, npc = 342, map = MAP, x = 30, y = 30, f = "e" },
+                    { t = "accept", quest = 131, npc = 342, map = MAP, x = 30, y = 30, f = "e", pre = { 130 } },
+                    { t = "turnin", quest = 131, npc = 379, map = MAP, x = 60, y = 60, f = "e" },
+                } },
+            },
+        } end)
+        game:acceptQuest(130, {})
+        game:completeQuest(130)
+        game.player.position = worldOf(game.ns, 61, 61)
+        game:fire("QUEST_LOG_UPDATE")
+        local r = Guide:Start("test/chain")
+        expect_eq(r.target.goal, 1, "d'abord rendre la quête de l'herboriste, même si Darcy est plus près")
+        game:turnInQuest(130)
+        game:fire("QUEST_TURNED_IN", 130)
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(Guide.result.target.goal, 2, "puis accepter la suite")
+        game:acceptQuest(131, {})
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(Guide.result.target.goal, 3, "enfin la rendre à Darcy")
+    end)
+
     it("signale les quêtes de groupe et d'élite sur tous leurs objectifs", function()
         local game, Guide = boot()
         game.ns.DB.AddGuide(function() return {

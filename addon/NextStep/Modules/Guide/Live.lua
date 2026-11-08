@@ -193,7 +193,11 @@ function Guide:OpenGoals(result)
         local i = result.current
         for j, goal in ipairs(result.guide.steps[i].goals) do
             local status = result.steps[i].goals and result.steps[i].goals[j].status
-            if OPEN[status] then
+            -- Rendre une quête pas encore acceptée n'est pas une cible : il faut d'abord
+            -- la prendre (souvent chez un autre PNJ de la même étape).
+            local waiting = goal.t == "turnin" and goal.quest and self.state
+                and not self.state:InLog(goal.quest)
+            if OPEN[status] and not waiting then
                 list[#list + 1] = { step = i, goal = j, status = status, optional = goal.optional }
             end
         end
