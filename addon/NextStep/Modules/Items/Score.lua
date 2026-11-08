@@ -238,6 +238,16 @@ function Score.ParseStats(text)
     return info
 end
 
+-- Objet connu du client ? Sinon, le lui demander (GetItemInfo, GetItemStats) lance une
+-- requête au serveur : des milliers d'un coup figent le jeu. Sans l'API, on suppose que oui.
+function Score.IsCached(id)
+    if C_Item and C_Item.IsItemDataCachedByID then
+        local ok, cached = pcall(C_Item.IsItemDataCachedByID, id)
+        return ok and cached == true
+    end
+    return true
+end
+
 -- -> { id, link, inv, req, quality, class, subclass, allow, sellPrice, name, icon, stats } | nil
 local function buildInfo(link)
     if type(link) ~= "string" then
@@ -246,6 +256,14 @@ local function buildInfo(link)
     local id = Score.ItemID(link)
     local imported = id and ns.DB.itemStats and ns.DB.itemStats[id]
     imported = imported and Score.ParseStats(imported)
+    -- Simple « item:<id> » d'un objet hors cache : les caractéristiques importées seules.
+    if link:match("^item:%d+$") and not Score.IsCached(id) then
+        if not (imported and SLOTS_OF[imported.inv]) then
+            return nil
+        end
+        imported.id, imported.link, imported.sellPrice = id, link, 0
+        return imported
+    end
     local equipLoc, class, subclass, minLevel, quality, sellPrice, name, icon = Client.ItemInfo(link)
     local inv = EQUIP_LOC[equipLoc or ""] or (imported and imported.inv)
     if not (inv and SLOTS_OF[inv]) then
@@ -268,7 +286,7 @@ end
 
 -- Lien d'un objet par son identifiant : celui du client s'il le connaît, sinon « item:<id> ».
 function Score.LinkOf(id)
-    if C_Item and C_Item.GetItemInfo then
+    if C_Item and C_Item.GetItemInfo and Score.IsCached(id) then
         local ok, _, link = pcall(C_Item.GetItemInfo, id)
         if ok and type(link) == "string" and ns.Usable(link) then
             return link
@@ -708,6 +726,34 @@ end
 ---------------------------------------------------------------------------
 -- Fraîcheur
 ---------------------------------------------------------------------------
+
+-- Le client vient de recevoir un objet : seules les réponses qui le concernent sont
+-- oubliées (toutes si l'objet est porté).
+function Score.ItemReceived(id)
+    id = tonumber(id)
+    if not id then
+        return
+    end
+    for _, slot in ipairs(EQUIPPED_SLOTS) do
+        local info = equipped.info[slot]
+        if info and info.id == id then
+            Score.Invalidate("items")
+            return
+        end
+    end
+    for key, info in pairs(infoCache) do
+        if (info and info.id == id) or key == "item:" .. id then
+            infoCache[key] = nil
+            infoCount = infoCount - 1
+        end
+    end
+    for key, result in pairs(resultCache) do
+        if Score.ItemID(key) == id or (result and result.info and result.info.id == id) then
+            resultCache[key] = nil
+            resultCount = resultCount - 1
+        end
+    end
+end
 
 -- what : "equipment", "bags", "level", "spec", "skills", "items" (infos reçues).
 function Score.Invalidate(what)

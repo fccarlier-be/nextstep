@@ -247,7 +247,7 @@ end
 
 -- Gain d'un objet pour la spécialisation : texte et couleur (nil : rien à dire).
 function Items:GainOf(id)
-    local result = Score.Compare(Score.LinkOf(id))
+    local result = Score.Compare("item:" .. id)
     if not result then
         return nil
     end

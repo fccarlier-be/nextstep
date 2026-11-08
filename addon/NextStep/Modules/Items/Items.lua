@@ -201,6 +201,9 @@ end
 -- Une réponse a pu changer : caches, puis ce qui est affiché.
 function Items:Invalidate(what)
     Score.Invalidate(what)
+    -- La liste « à ne pas rater » ne dépend que de l'équipement, du niveau, de la
+    -- spécialisation et des quêtes faites.
+    self.upcoming = nil
     self:Refresh()
 end
 
@@ -263,7 +266,11 @@ function Items:OnEnable()
             end)
         end
     end)
-    self:RegisterEvent("GET_ITEM_INFO_RECEIVED", function() self:Invalidate("items") end)
+    -- Objet reçu du serveur : seul son score est revu, les listes gardent leur ordre.
+    self:RegisterEvent("GET_ITEM_INFO_RECEIVED", function(_, _, id)
+        Score.ItemReceived(id)
+        self:Refresh()
+    end)
     self:RegisterEvent("SKILL_LINES_CHANGED", function() self:Invalidate("skills") end)
     for _, event in ipairs({ "CHARACTER_POINTS_CHANGED", "PLAYER_TALENT_UPDATE", "SPELLS_CHANGED" }) do
         self:RegisterEvent(event, function() self:Invalidate("spec") end)
@@ -271,7 +278,10 @@ function Items:OnEnable()
     self:RegisterEvent("LOOT_OPENED", function()
         ns.SafeCall(self.LearnLoot, self)
     end)
-    self:RegisterEvent("QUEST_TURNED_IN", function() self:Refresh() end)
+    self:RegisterEvent("QUEST_TURNED_IN", function()
+        self.upcoming = nil
+        self:Refresh()
+    end)
     self:RegisterEvent("BAG_UPDATE_DELAYED", function()
         Score.Invalidate("bags")
         self:ScanBags()

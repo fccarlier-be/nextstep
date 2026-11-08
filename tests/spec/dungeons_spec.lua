@@ -231,4 +231,29 @@ describe("Donjons : butin et équipement", function()
         SlashCmdList.NEXTSTEP("dungeons")
         expect_eq(#game.errors, 0)
     end)
+
+    it("ne demande rien au serveur pour les objets hors cache, et garde l'ordre", function()
+        local asked = 0
+        local game, items = boot({ itemInfo = function()
+            asked = asked + 1
+            return nil
+        end })
+        _G.C_Item.IsItemDataCachedByID = function() return false end
+        _G.C_Item.RequestLoadItemDataByID = function() end
+        local facts = items:QuestFacts()
+        local list = items:UpcomingUpgrades(facts)
+        expect(#list > 0, "améliorations calculées avec les données importées")
+        expect_eq(asked, 0, "aucune requête au serveur pendant le calcul")
+        for _, entry in ipairs(list) do
+            for _, source in ipairs(entry.sources) do
+                expect(not source:find("Silithus", 1, true), "pas de quête de niveau 60 : " .. source)
+            end
+        end
+        local first = list[1].item
+        game:fire("GET_ITEM_INFO_RECEIVED", first, true)
+        expect(items:UpcomingUpgrades(facts) == list, "un objet reçu ne refait pas la liste")
+        game:fire("PLAYER_EQUIPMENT_CHANGED")
+        expect(items:UpcomingUpgrades(facts) ~= list, "l'équipement, si")
+        expect_eq(#game.errors, 0)
+    end)
 end)
