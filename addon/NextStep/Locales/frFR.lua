@@ -438,3 +438,8 @@ L["Suggested next: %s"] = "Ensuite, conseillé : %s"
 L["Level %d!"] = "Niveau %d !"
 L["Celebrate each level"] = "Célébrer chaque niveau gagné"
 L["Play a sound for the celebration"] = "Jouer un son pour la célébration"
+
+-- Modules/UI/ZoneLevels.lua
+L["Zone levels"] = "Niveau des zones"
+L["Shows each zone's level range on the world map."] =
+    "Affiche la tranche de niveaux de chaque zone sur la carte du monde."

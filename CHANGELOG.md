@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Module **Niveau des zones** : sur la carte du monde, la tranche de niveaux s'affiche à côté du nom de la zone survolée et en haut de la carte d'une zone, colorée selon votre niveau ; tranches de Forever tirées des guides.
 - **Célébration de niveau** : à chaque niveau, un bandeau doré et un son du jeu, avec les nouveaux sorts chez le maître (et leur coût), la quête de classe qui s'ouvre, et la suite conseillée quand le guide suivi est dépassé ; jamais en combat ; options pour la couper ou couper son son.
 - Fenêtre du guide : en suivant un guide annexe depuis le journal (collection, réputation, métier, classe), le guide de leveling est gardé ; une ligne **« Reprendre : … »** en tête de la fenêtre y revient d'un clic, à tout moment.
 - Module **Améliorations d'équipement** (`Items`, phase 6) : chaque pièce est notée pour la classe et la spécialisation (détectée par les talents, ou choisie dans les options), avec les poids de stats de Polestar par tranche de niveaux. **Infobulle** : gain ou perte par rapport à l'équipement porté, ou la raison si l'objet n'est pas utilisable. **Récompenses de quête** : la récompense conseillée est encadrée, avec la raison (amélioration et gain, sinon celle qui se vend le mieux), jamais choisie à votre place. **Alerte** quand une amélioration arrive dans les sacs : un peu au-dessus du centre de l'écran, jamais en combat, regroupée, clic pour équiper, clic droit pour fermer, déplaçable. Commande `/ns gear [lien]`.

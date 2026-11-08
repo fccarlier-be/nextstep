@@ -14,6 +14,7 @@ local SPECS = {
     "data",
     "names",
     "map_reveal",
+    "zone_levels",
     "radar",
     "minimap",
     "quest_items",

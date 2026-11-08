@@ -110,7 +110,7 @@ Chaque complément est indépendant des autres et ne dépend que de la v0.1 : il
 | Carte et minimap | Points de l'étape sur la carte du monde et la minimap : écrit et testé hors jeu (`Modules/Guide/Pins.lua`), à vérifier en jeu. |
 | Sorts à apprendre | Sorts disponibles chez le maître selon la classe, la race et le niveau, avec leur coût ; étape « maître de classe » dans la route ; liste mémorisée à chaque visite chez le maître. **Écrit et testé hors jeu** (tables de What's Training, coût, étape « maître de classe » validée quand il n'y a rien à apprendre) ; restent la liste lue chez le maître et l'étape ajoutée dans les villes. |
 | Célébration de niveau | Bandeau, son du jeu, nouveaux sorts disponibles et zone suivante conseillée. **Écrit et testé hors jeu** (`Modules/Guide/Celebration.lua`) ; à vérifier en jeu, graphismes en phase 11. |
-| Niveau des zones | Niveau des zones affiché sur la carte du monde. |
+| Niveau des zones | Niveau des zones affiché sur la carte du monde. **Écrit et testé hors jeu** (module `ZoneLevels`) ; à vérifier en jeu. |
 | Journal | Journal du guide : onglet Routes, « Choisis ton chemin ». **Écrit et testé hors jeu** (onglets Routes et Sorts de classe) ; à vérifier en jeu. |
 
 **Terminé quand** : tous les compléments sont publiés, et le guide signale les visites au maître de classe.

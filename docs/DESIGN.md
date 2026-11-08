@@ -399,7 +399,7 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 - En mode conseil (plus tard) : les donneurs de quêtes adaptés.
 - Waypoint natif (`C_Map.SetUserWaypoint`) en option. Ne pas utiliser `C_SuperTrack.SetSuperTrackedUserWaypoint`.
 - **Zoom à la molette** sur la minimap et sur la carte du monde. **[À vérifier]** zoom natif de la carte sur Forever.
-- **Niveau des zones** affiché sur la carte du monde (tranche de niveaux, couleur selon le niveau du joueur), en appui du conseil de zone suivante.
+- **Niveau des zones** affiché sur la carte du monde (tranche de niveaux, couleur selon le niveau du joueur), en appui du conseil de zone suivante. Réalisé (module `ZoneLevels`) : tranche à droite du nom de la zone survolée sur la carte d'un continent, et en haut de la carte d'une zone ouverte ; tranches des guides de leveling (propres à Forever), sinon `C_Map.GetMapLevels`, sinon celles du Classic. **[À vérifier]** sur Forever : l'étiquette des zones de la carte (`Label:SetLabel`).
 
 ### Journal
 
