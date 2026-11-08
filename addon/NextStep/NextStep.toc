@@ -51,6 +51,7 @@ Modules\Guide\Journal.lua
 Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
 Modules\Guide\Pins.lua
+Modules\Guide\Celebration.lua
 Modules\Items\Score.lua
 Modules\Items\Items.lua
 Modules\Items\Rewards.lua

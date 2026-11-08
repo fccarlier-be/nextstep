@@ -27,6 +27,7 @@ local SPECS = {
     "journal",
     "items",
     "dungeons",
+    "celebration",
     "autoplay",
     "diagnostic",
 }

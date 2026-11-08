@@ -439,6 +439,8 @@ Inspirée de SkyrimSong, dans le style de NextStep (aucune musique ni image d'un
 - À chaque niveau : bandeau au centre de l'écran, son tiré des fichiers du jeu, résumé de ce que le niveau apporte (sorts disponibles, jalons, zone suivante conseillée).
 - Jamais en combat (différée), désactivable, son désactivable séparément ; graphismes générés avec FLUX, comme le logo.
 
+Réalisé (`Modules/Guide/Celebration.lua`) : bandeau doré en haut de l'écran (« Niveau 22 ! »), son du jeu (fin de quête), puis les nouveaux sorts chez le maître avec leur coût, une quête de classe qui s'ouvre à ce niveau, et la suite conseillée quand le guide de leveling suivi est dépassé. Fermeture après 10 secondes ou d'un clic ; un clic sur une ligne ouvre le journal (onglet Sorts de classe ou Routes). Options « Célébrer chaque niveau gagné » et « Jouer un son pour la célébration ». Graphismes FLUX : en phase 11.
+
 ### Logo et icônes
 
 Une arche de pierre moussue, une étoile dorée sur la clé de voûte, des marches qui montent vers une lumière dorée : la prochaine étape. Généré avec FLUX.2 [klein] 4B, détouré, puis décliné par `Tools/logo/prepare.py` (voir [CREDITS.md](../CREDITS.md#logo)) :

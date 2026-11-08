@@ -25,6 +25,8 @@ local Guide = ns.Modules:New("Guide", {
         minimapPins = true,     -- points de l'étape sur la minimap
         mapPins = true,         -- points de l'étape sur la carte du monde
         hideTracker = true,     -- masque le suivi de quêtes Blizzard quand un guide est suivi
+        celebration = true,     -- bandeau à chaque niveau gagné (Celebration.lua)
+        celebrationSound = true,
     },
     charDefaults = {
         taxi = {},         -- [point de vol] = true : points connus (relevés à la carte des vols)
