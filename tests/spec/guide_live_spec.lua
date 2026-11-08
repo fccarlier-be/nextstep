@@ -201,6 +201,42 @@ describe("Guide en jeu", function()
         expect_eq(#game.errors, 0)
     end)
 
+    it("ignore une seule quête ou un seul objectif, et les reprend", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/many", title = "Many", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Accept", goals = {
+                    { t = "accept", quest = 900, npc = 1 },
+                    { t = "accept", quest = 901, npc = 1 },
+                } },
+                { title = "Later", goals = { { t = "turnin", quest = 901, npc = 2 } } },
+            },
+        } end)
+        game:fire("QUEST_LOG_UPDATE")
+        local r = Guide:Start("test/many")
+        expect_eq(r.current, 1)
+        local entries = Guide:GoalMenuEntries(1, 1)
+        expect(entries[1].label:find("Ignore this objective", 1, true))
+        expect(entries[2].label:find("Ignore the quest", 1, true))
+        -- Ignorer la quête 900 : l'étape ne retient plus que la 901.
+        entries[2].action()
+        expect(Guide.char.ignoredQuests[900])
+        expect_eq(Guide.result.steps[1].goals[1].status, "na")
+        expect_eq(Guide.result.current, 1, "la 901 reste à prendre")
+        -- Ignorer l'objectif de la 901 : l'étape est passée, la quête emportée.
+        Guide:IgnoreGoal(1, 2)
+        expect(Guide.result.current ~= 1, "étape passée")
+        local texts = table.concat(Guide.windowTexts or {}, " | ")
+        expect(texts:find("1 ignored quests", 1, true), texts)
+        -- Reprendre la quête 900.
+        Guide:IgnoreQuest(900, false)
+        Guide:IgnoreGoal(1, 2, false)
+        expect_eq(Guide.char.ignoredQuests[900], nil)
+        expect_eq(Guide.result.current, 1, "de nouveau à faire")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("ne vise pas le rendu d'une quête pas encore acceptée", function()
         local game, Guide = boot()
         game.ns.DB.AddGuide(function() return {

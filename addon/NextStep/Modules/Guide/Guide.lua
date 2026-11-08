@@ -37,6 +37,7 @@ local Guide = ns.Modules:New("Guide", {
         dungeons = {},     -- [nom du donjon] = true : donjons choisis
         completed = {},    -- [identifiant du guide] = true : guides terminés
         returnTo = nil,    -- guide de leveling à reprendre après un guide annexe (classe, collection...)
+        ignoredQuests = {}, -- [quête] = true : ignorée par le joueur, dans tous les guides
         trainedLevel = nil, -- niveau du personnage à sa dernière visite au maître de classe
         trainerList = nil,  -- { level, spells, total } : sorts disponibles lus chez le maître (Spells.lua)
     },
@@ -88,6 +89,7 @@ function Guide:Refresh()
         answers = self.char.answers,
         dungeons = self.char.dungeons,
         trainedLevel = self.char.trainedLevel,
+        ignoredQuests = self.char.ignoredQuests,
         spellsToLearn = function()
             local list = self.SpellsToLearn and self:SpellsToLearn()
             return list and #list
@@ -142,6 +144,45 @@ end
 function Guide:Skip(step)
     return withActive(self, function(progress, guide)
         Engine.Skip(progress, guide, step)
+    end)
+end
+
+-- Ignore une quête partout (acceptation, objectifs, rendu), ou la reprend.
+function Guide:IgnoreQuest(quest, ignored)
+    self.char.ignoredQuests = self.char.ignoredQuests or {}
+    self.char.ignoredQuests[quest] = ignored ~= false or nil
+    if ignored == false then
+        -- Reprise : les étapes de la quête passées à cause d'elle sont rouvertes.
+        local guide = self:ActiveGuide()
+        if guide then
+            local progress = self:Progress(guide.id)
+            for i, step in ipairs(guide.steps) do
+                for _, goal in ipairs(step.goals) do
+                    if goal.quest == quest then
+                        Engine.Reopen(progress, guide, i)
+                    end
+                end
+            end
+        end
+    end
+    return self:Refresh()
+end
+
+function Guide:IgnoreGoal(step, goal, ignored)
+    return withActive(self, function(progress, guide)
+        Engine.IgnoreGoal(progress, guide, step, goal, ignored)
+        if ignored == false then
+            Engine.Reopen(progress, guide, step)
+            -- Les étapes suivantes de la même quête aussi.
+            local quest = guide.steps[step].goals[goal].quest
+            for i, other in ipairs(guide.steps) do
+                for _, g in ipairs(other.goals) do
+                    if quest and g.quest == quest then
+                        Engine.Reopen(progress, guide, i)
+                    end
+                end
+            end
+        end
     end)
 end
 

@@ -109,8 +109,9 @@ function Guide:AvailableQuests(state)
     if not state then
         return list
     end
+    local ignored = self.char and self.char.ignoredQuests or {}
     for _, quest in ipairs(Guide.AdviceQuestList()) do
-        if Guide.QuestAvailable(quest, state) then
+        if not ignored[quest.id] and Guide.QuestAvailable(quest, state) then
             list[#list + 1] = quest
         end
     end
