@@ -196,4 +196,43 @@ describe("Bouton NextStep", function()
         menu:SetHideButtons(false)
         expect_eq(button.shown, true, "option désactivée : il revient")
     end)
+
+    it("garde visibles les boutons choisis, et regroupe les addons nombreux", function()
+        local world = {}
+        local bagnon = addonButton("LibDBIcon10_Bagnon")
+        world.children = { bagnon }
+        local _, _, menu = boot(world)
+        expect_eq(bagnon.shown, false)
+        menu.db.keepButtons.LibDBIcon10_Bagnon = true
+        menu:HideButtons()
+        expect_eq(bagnon.shown, true, "gardé visible")
+        local addons = {}
+        for index = 1, 40 do
+            addons[index] = { title = string.char(64 + math.ceil(index / 2)) .. "addon" .. index }
+        end
+        local groups = menu.Groups(addons)
+        expect(#groups >= 3, "plusieurs groupes")
+        for _, group in ipairs(groups) do
+            expect(#group.addons <= 16, group.label)
+        end
+    end)
+
+    it("règle la taille de la minimap et revient au zoom large", function()
+        local cluster = setmetatable({ scale = 1 }, { __index = function() return function() end end })
+        function cluster.SetScale(self, value) self.scale = value end
+        function cluster.GetScale(self) return self.scale end
+        function cluster.IsProtected() return false end
+        local _, module, _, world = boot({}, { beforeInit = nil })
+        _G.MinimapCluster = cluster
+        module.db.scale = 1.3
+        module:ApplyScale()
+        expect_eq(cluster.scale, 1.3)
+        world.minimap.zoom = 3
+        local delayed
+        _G.C_Timer = { After = function(_, fn) delayed = fn end }
+        module:ScheduleZoomBack()
+        delayed()
+        expect_eq(world.minimap.zoom, 0, "retour au zoom le plus large")
+        _G.MinimapCluster = nil
+    end)
 end)

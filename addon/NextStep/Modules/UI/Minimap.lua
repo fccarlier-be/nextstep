@@ -15,7 +15,7 @@ local L = ns.L
 local MinimapModule = ns.Modules:New("Minimap", {
     title = L["Minimap"],
     description = L["Square minimap (round as an option) and zoom with the mouse wheel."],
-    defaults = { square = true, wheelZoom = true },
+    defaults = { square = true, wheelZoom = true, scale = 1, zoomBack = 20 },   -- zoomBack : secondes (0 : jamais)
     conflicts = { "SexyMap", "BasicMinimap", "Chinchilla" },
 })
 
@@ -57,6 +57,7 @@ function MinimapModule:OnEnable()
         Minimap:HookScript("OnMouseWheel", function(_, delta)
             if self.enabled and self.db.wheelZoom then
                 self:Zoom(delta)
+                self:ScheduleZoomBack()
             end
         end)
     end
@@ -119,6 +120,37 @@ function MinimapModule:Apply()
         self.savedWheel = Minimap:IsMouseWheelEnabled() == true
     end
     Minimap:EnableMouseWheel(self.db.wheelZoom or self.savedWheel)
+    self:ApplyScale()
+end
+
+-- Taille de la minimap (échelle de son cadre), jamais en combat s'il est protégé.
+function MinimapModule:ApplyScale()
+    local cluster = MinimapCluster
+    if not (cluster and cluster.SetScale) then
+        return
+    end
+    if InCombatLockdown and InCombatLockdown() and cluster.IsProtected and cluster:IsProtected() then
+        return
+    end
+    if self.savedScale == nil and cluster.GetScale then
+        self.savedScale = cluster:GetScale()
+    end
+    cluster:SetScale(self.enabled and (self.db.scale or 1) or (self.savedScale or 1))
+end
+
+-- Retour au zoom le plus large quelques secondes après le dernier cran de molette.
+function MinimapModule:ScheduleZoomBack()
+    local delay = tonumber(self.db.zoomBack) or 0
+    if delay <= 0 or not (C_Timer and C_Timer.After) then
+        return
+    end
+    self.zoomToken = (self.zoomToken or 0) + 1
+    local token = self.zoomToken
+    C_Timer.After(delay, function()
+        if self.enabled and self.zoomToken == token and Minimap:GetZoom() > 0 then
+            Minimap:SetZoom(0)
+        end
+    end)
 end
 
 function MinimapModule:Restore()
@@ -140,6 +172,7 @@ function MinimapModule:Restore()
     end
     self:PlaceMenuButton()
     self:PlaceDayNight(false)
+    self:ApplyScale()
     if self.savedWheel ~= nil then
         Minimap:EnableMouseWheel(self.savedWheel)
         self.savedWheel = nil
@@ -236,7 +269,21 @@ function MinimapModule:BuildOptions(panel, anchor)
     local square = Options.AddCheck(panel, anchor, L["Square minimap"],
         function() return self.db.square end,
         function(value) self:SetSquare(value) end)
-    return Options.AddCheck(panel, square, L["Zoom with the mouse wheel"],
+    local wheel = Options.AddCheck(panel, square, L["Zoom with the mouse wheel"],
         function() return self.db.wheelZoom end,
         function(value) self:SetWheelZoom(value) end)
+    local below = Options.AddSlider(panel, wheel, 0.8, 1.6, 0.05,
+        function(value) return L["Minimap size: %d%%"]:format(math.floor(value * 100 + 0.5)) end,
+        function() return self.db.scale or 1 end,
+        function(value)
+            self.db.scale = value
+            self:ApplyScale()
+        end)
+    return Options.AddSlider(panel, below, 0, 60, 5,
+        function(value)
+            return value == 0 and L["The zoom stays where you leave it"]
+                or L["Back to the widest zoom after %d seconds"]:format(value)
+        end,
+        function() return self.db.zoomBack or 0 end,
+        function(value) self.db.zoomBack = value end)
 end

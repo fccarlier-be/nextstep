@@ -144,6 +144,13 @@ function Guide:ZoneDetailRows(map, state)
                 end }
         end
     end
+    -- Ressources de la zone pour les métiers de récolte du personnage.
+    local professions = ns.Modules:Get("Professions")
+    if professions and professions.enabled and professions.ZoneResources then
+        for _, text in ipairs(professions:ZoneResources(map)) do
+            rows[#rows + 1] = { text = L["To gather: %s"]:format(text), color = C.green }
+        end
+    end
     rows[#rows + 1] = { header = true, text = L["Quests you can take"], right = tostring(#zone.quests) }
     if #zone.quests == 0 then
         rows[#rows + 1] = { text = L["No quest to take here for now."], color = C.muted }

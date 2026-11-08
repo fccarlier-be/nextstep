@@ -20,13 +20,22 @@ local Menu = ns.Modules:New("AddonsMenu", {
     title = L["NextStep button"],
     description = L["A single minimap button for the farming radar, NextStep's options and the settings "
         .. "of every add-on; other add-ons' minimap buttons are hidden."],
-    defaults = { angle = 225, hideButtons = true },
+    defaults = {
+        angle = 225,
+        hideButtons = true,
+        keepButtons = {},       -- [nom du bouton LibDBIcon] = true : laissé visible
+        hideOwnButton = false,  -- bouton NextStep caché (menu par /ns addons)
+        hideCompartment = true, -- compartiment d'addons de Blizzard masqué
+    },
 })
 
 local ICON = "Interface\\AddOns\\NextStep\\Media\\IconSmall"
 local BORDER = "Interface\\Minimap\\MiniMap-TrackingBorder"
 local SIZE = 31
 local RESCAN_DELAY = 5   -- secondes : boutons créés tardivement par les autres addons
+local GROUP_SIZE = 15    -- au-delà, les addons sont rangés par lettre
+-- Addons qui regroupent déjà les boutons de la minimap : NextStep ne masque rien.
+local BUTTON_BAGS = { "MinimapButtonButton", "Bazooka", "ButtonBin", "MBB" }
 
 -- Retire les codes de couleur et de texture d'un titre d'addon.
 local function plain(text)
@@ -179,8 +188,8 @@ function Menu:Fill(root)
         local none = root:CreateButton(L["No other add-on loaded."], function() end)
         none:SetEnabled(false)
     end
-    for _, addon in ipairs(addons) do
-        local line = root:CreateButton(withIcon(addon.icon, addon.title), addon.action or function() end)
+    local function addLine(parent, addon)
+        local line = parent:CreateButton(withIcon(addon.icon, addon.title), addon.action or function() end)
         if not addon.action then
             line:SetEnabled(false)
             if line.SetTooltip then
@@ -188,6 +197,72 @@ function Menu:Fill(root)
                     tooltip:SetText(L["No settings"])
                 end)
             end
+        end
+    end
+    if #addons <= GROUP_SIZE then
+        for _, addon in ipairs(addons) do
+            addLine(root, addon)
+        end
+    else
+        -- Beaucoup d'addons : un sous-menu par groupe de lettres.
+        for _, group in ipairs(Menu.Groups(addons)) do
+            local sub = root:CreateButton(group.label)
+            for _, addon in ipairs(group.addons) do
+                addLine(sub, addon)
+            end
+        end
+    end
+    -- Boutons de la minimap à garder visibles.
+    local hidden = self:HiddenButtonNames()
+    if #hidden > 0 and root.CreateCheckbox then
+        root:CreateDivider()
+        local sub = root:CreateButton(L["Keep visible on the minimap"])
+        for _, name in ipairs(hidden) do
+            sub:CreateCheckbox(name:gsub("^LibDBIcon10_", ""), function()
+                return self.db.keepButtons[name] == true
+            end, function()
+                self.db.keepButtons[name] = not self.db.keepButtons[name] or nil
+                self:HideButtons()
+            end)
+        end
+    end
+end
+
+-- Groupes de lettres : { label = "A - F", addons }, au plus GROUP_SIZE addons chacun.
+function Menu.Groups(addons)
+    local groups, current = {}, nil
+    for _, addon in ipairs(addons) do
+        local letter = addon.title:sub(1, 1):upper()
+        if not current or #current.addons >= GROUP_SIZE and letter ~= current.last then
+            current = { first = letter, last = letter, addons = {} }
+            groups[#groups + 1] = current
+        end
+        current.last = letter
+        table.insert(current.addons, addon)
+    end
+    for _, group in ipairs(groups) do
+        group.label = group.first == group.last and group.first or (group.first .. " - " .. group.last)
+    end
+    return groups
+end
+
+function Menu:HiddenButtonNames()
+    local list = {}
+    for child in pairs(self.hiddenButtons or {}) do
+        local name = child.GetName and child:GetName()
+        if name then
+            list[#list + 1] = name
+        end
+    end
+    table.sort(list)
+    return list
+end
+
+-- Un addon qui regroupe déjà les boutons est chargé : nom, ou nil.
+function Menu.ButtonBag()
+    for _, name in ipairs(BUTTON_BAGS) do
+        if C_AddOns.IsAddOnLoaded(name) then
+            return name
         end
     end
 end
@@ -315,7 +390,9 @@ function Menu:HideButtons()
                 if name and name:find("^LibDBIcon10_") and not self.hiddenButtons[child] then
                     self.hiddenButtons[child] = true
                     child:HookScript("OnShow", function(frame)
-                        if self.enabled and self.db.hideButtons and self.hiddenButtons[frame] then
+                        local shown = frame.GetName and frame:GetName()
+                        if self.enabled and self.db.hideButtons and self.hiddenButtons[frame]
+                            and not self.db.keepButtons[shown] and not Menu.ButtonBag() then
                             frame:Hide()
                         end
                     end)
@@ -323,8 +400,23 @@ function Menu:HideButtons()
             end
         end
     end
+    local hide = self.enabled and self.db.hideButtons and not Menu.ButtonBag()
     for child in pairs(self.hiddenButtons) do
-        child:SetShown(not (self.enabled and self.db.hideButtons))
+        local name = child.GetName and child:GetName()
+        child:SetShown(not (hide and not self.db.keepButtons[name]))
+    end
+end
+
+-- Compartiment d'addons de Blizzard : masqué sans Hide (transparent, sans souris).
+function Menu:ApplyCompartment()
+    local frame = _G.AddonCompartmentFrame
+    if not (frame and frame.SetAlpha) then
+        return
+    end
+    local hide = self.enabled and self.db.hideCompartment
+    frame:SetAlpha(hide and 0 or 1)
+    if frame.EnableMouse then
+        frame:EnableMouse(not hide)
     end
 end
 
@@ -365,8 +457,13 @@ function Menu:OnEnable()
         self:CreateButton()
     end
     self:PlaceButton()
-    self.button:Show()
+    self.button:SetShown(not self.db.hideOwnButton)
     self:HideButtons()
+    self:ApplyCompartment()
+    local bag = Menu.ButtonBag()
+    if bag and self.db.hideButtons then
+        ns:Print(L["%s already groups minimap buttons: NextStep leaves them alone."]:format(bag))
+    end
     self:RegisterEvent("ADDON_LOADED", function()
         self:HideButtons()
     end)
@@ -384,10 +481,26 @@ function Menu:OnDisable()
         self.button:Hide()
     end
     self:ShowButtons()
+    self:ApplyCompartment()
 end
 
 function Menu:BuildOptions(panel, anchor)
-    return ns.Options.AddCheck(panel, anchor, L["Hide other add-ons' minimap buttons"],
+    local Options = ns.Options
+    local below = Options.AddCheck(panel, anchor, L["Hide other add-ons' minimap buttons"],
         function() return self.db.hideButtons end,
         function(value) self:SetHideButtons(value) end)
+    below = Options.AddCheck(panel, below, L["Hide Blizzard's add-on compartment"],
+        function() return self.db.hideCompartment end,
+        function(value)
+            self.db.hideCompartment = value
+            self:ApplyCompartment()
+        end)
+    return Options.AddCheck(panel, below, L["Hide the NextStep button (menu: /ns addons)"],
+        function() return self.db.hideOwnButton end,
+        function(value)
+            self.db.hideOwnButton = value
+            if self.button then
+                self.button:SetShown(self.enabled and not value)
+            end
+        end)
 end
