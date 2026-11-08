@@ -88,8 +88,12 @@ function Gathering:Record(instance, north, west, name, kind)
 end
 
 function Gathering:OnCastSent(unit, target, castGUID, spellID)
-    if unit ~= "player" then
+    -- Valeurs secrètes (en combat, ou cibles protégées) : ni comparées ni lues.
+    if not (ns.Usable(unit) and ns.Usable(spellID)) or unit ~= "player" then
         return
+    end
+    if not ns.Usable(castGUID) then
+        castGUID = nil
     end
     local kind = self:KindOf(spellID)
     if kind and ns.Usable(target) and type(target) == "string" and target ~= "" then
@@ -101,7 +105,11 @@ end
 
 function Gathering:OnCastSucceeded(unit, castGUID)
     local pending = self.pending
-    if unit ~= "player" or not pending or (pending.guid and castGUID and pending.guid ~= castGUID) then
+    if not ns.Usable(castGUID) then
+        castGUID = nil
+    end
+    if not ns.Usable(unit) or unit ~= "player" or not pending
+        or (pending.guid and castGUID and pending.guid ~= castGUID) then
         return
     end
     self.pending = nil
@@ -308,7 +316,7 @@ function Gathering:OnEnable()
     end)
     for _, event in ipairs({ "UNIT_SPELLCAST_FAILED", "UNIT_SPELLCAST_INTERRUPTED" }) do
         self:RegisterEvent(event, function(_, _, unit)
-            if unit == "player" then
+            if ns.Usable(unit) and unit == "player" then
                 self.pending = nil
             end
         end)

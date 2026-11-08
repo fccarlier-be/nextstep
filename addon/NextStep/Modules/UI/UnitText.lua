@@ -186,14 +186,18 @@ end
 function UnitText:OnEnable()
     self:ApplyFrames()
     self:RegisterEvent("NAME_PLATE_UNIT_ADDED", function(_, _, unit)
-        self:OnPlateAdded(unit)
+        if ns.Usable(unit) then
+            self:OnPlateAdded(unit)
+        end
     end)
     self:RegisterEvent("NAME_PLATE_UNIT_REMOVED", function(_, _, unit)
-        self:OnPlateRemoved(unit)
+        if ns.Usable(unit) then
+            self:OnPlateRemoved(unit)
+        end
     end)
     for _, event in ipairs({ "UNIT_HEALTH", "UNIT_MAXHEALTH" }) do
         self:RegisterEvent(event, function(_, _, unit)
-            if unit and self.units[unit] then
+            if ns.Usable(unit) and unit and self.units[unit] then
                 self:UpdatePlate(unit)
             end
         end)

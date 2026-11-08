@@ -68,7 +68,7 @@ function Guide:OnEnable()
         end
     end)
     self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED", function(_, _, unit, _, spell)
-        if unit == "player" and ns.Usable(spell) then
+        if ns.Usable(unit) and unit == "player" and ns.Usable(spell) then
             self:Validate(function(goal)
                 return goal.t == "cast" and goal.spell == spell
             end)
