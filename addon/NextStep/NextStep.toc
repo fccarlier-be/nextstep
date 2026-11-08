@@ -26,6 +26,7 @@ Data\Imported\Polestar\Names_frFR.lua
 Data\Imported\Polestar\Texts_frFR.lua
 Data\Imported\Client\MapOverlays.lua
 Data\Imported\WhatsTraining\Spells.lua
+Data\Overrides\Guides.lua
 Data\Imported\Polestar\Gear.lua
 Data\Imported\Polestar\Dungeons.lua
 Data\Imported\Polestar\QuestGroups.lua

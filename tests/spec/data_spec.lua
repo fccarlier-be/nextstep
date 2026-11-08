@@ -263,3 +263,25 @@ describe("Licences livrées avec l'addon", function()
         end
     end)
 end)
+
+describe("Corrections des guides (Data/Overrides)", function()
+    it("envoie l'achat du tube en bronze chez Neal Allen, pas chez Herble Baubbletump", function()
+        local game = wow.boot({ faction = "Alliance" })
+        local found = 0
+        for _, guide in game.ns.DB:IterateGuides() do
+            for _, step in ipairs(guide.steps) do
+                for _, goal in ipairs(step.goals) do
+                    if goal.t == "buy" and goal.item == 4371 then
+                        expect(goal.npc ~= 3133, guide.id .. " : plus chez Herble Baubbletump")
+                        if goal.npc == 1448 then
+                            found = found + 1
+                            expect_eq(goal.map, 1437, "Port de Menethil")
+                        end
+                    end
+                end
+            end
+        end
+        expect(found >= 3, "les achats de Sombre-Comté corrigés : " .. found)
+        expect_eq(#game.errors, 0)
+    end)
+end)
