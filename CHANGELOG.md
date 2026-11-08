@@ -28,6 +28,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Module **Fenêtres déplaçables** (`Windows`, phase 5) : les fenêtres de Blizzard se déplacent en les faisant glisser, leur position est retenue et rendue à chaque ouverture ; Alt + clic droit pour la remettre à sa place ; bouton de réinitialisation dans les options. Sans souillure de l'interface (ni Show/Hide, ni table UIPanelWindows).
 
 ### Corrigé
+- Erreur Lua « attempt to index a secret string value » du module Métiers : sur Forever, le texte des messages de compétence du chat est secret ; il est ignoré (le rang vient de la fenêtre du métier). Récolte, barres de nom et sorts lancés protégés de la même façon.
 - Flèche et repères : le rendu d'une quête pas encore acceptée n'est plus visé. Dans une étape « rendre A, accepter B, rendre B », la flèche montrait déjà le destinataire de B, s'il était plus près, avant même que A soit rendue.
 
 ## [0.1.1] - 2026-11-08

@@ -11,6 +11,8 @@
 --
 -- Les rangs servent aussi au guide (State:Skill), pour les étapes des routes de métier.
 --
+-- Sur Forever, le texte de CHAT_MSG_SKILL est secret (erreur en jeu du 2026-11-08) : il
+-- est ignoré, et le rang vient de la fenêtre du métier.
 -- [À vérifier] sur Forever : ERR_SKILL_UP_SI / SKILL_RANK_UP (CHAT_MSG_SKILL), fenêtre
 -- du métier (C_TradeSkillUI.GetTradeSkillLine ou GetTradeSkillLine), bonus raciaux.
 
@@ -158,12 +160,17 @@ end
 
 -- « Votre compétence en Herboristerie augmente jusqu'à 57. » -> profession, 57.
 function Professions:ParseSkillUp(message)
+    -- Sur Forever, le texte des messages du chat peut être secret : illisible, ignoré
+    -- (le rang vient alors de la fenêtre du métier).
+    if type(message) ~= "string" or not ns.Usable(message) then
+        return nil
+    end
     local template = SKILL_RANK_UP or "Your skill in %s has increased to %d."
     -- Modèle du client -> motif Lua : %s et %d deviennent des captures.
     local pattern = template:gsub("%%s", "\1"):gsub("%%d", "\2")
     pattern = pattern:gsub("[%^%$%(%)%.%[%]%*%+%-%?]", "%%%0")
     pattern = "^" .. pattern:gsub("\1", "(.+)"):gsub("\2", "(%%d+)") .. "$"
-    local name, rank = tostring(message or ""):match(pattern)
+    local name, rank = message:match(pattern)
     local profession = Professions.FromName(name)
     if profession and tonumber(rank) then
         return profession, tonumber(rank)

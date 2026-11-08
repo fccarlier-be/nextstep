@@ -90,3 +90,20 @@ describe("Métiers", function()
         expect_eq(#game.errors, 0)
     end)
 end)
+
+describe("Valeurs secrètes du chat et des sorts", function()
+    it("ignore un message de compétence secret, sans erreur", function()
+        local game = wow.boot({ player = { level = 12, spells = { [2366] = true } } })
+        local professions = game.ns.Modules:Get("Professions")
+        local secret = "Your skill in Herbalism has increased to 60."
+        _G.issecretvalue = function(value) return value == secret or value == "secret-guid" end
+        game:fire("CHAT_MSG_SKILL", secret)
+        expect_eq(professions.char.skills.HERBALISM, nil, "message illisible : rang inchangé")
+        local gathering = game.ns.Modules:Get("Gathering")
+        game:fire("UNIT_SPELLCAST_SENT", "player", "Peacebloom", "secret-guid", 2366)
+        game:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "secret-guid", 2366)
+        expect_eq(#game.errors, 0, tostring(game.errors[1]))
+        expect(gathering, "récolte toujours suivie")
+        _G.issecretvalue = nil
+    end)
+end)
