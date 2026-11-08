@@ -233,10 +233,17 @@ local function groupsOf(guide)
 end
 
 -- Mention du contenu de groupe d'un objectif (« élite », « groupe de 2 »…), ou nil.
+-- Quêtes élites ou de groupe d'après forever-db (DB.questGroups), quand le guide ne le
+-- dit pas : évite de traverser la carte pour une quête qu'on ne fera pas seul.
+local QUEST_GROUPS = { e = { kind = "elite" }, g = { kind = "group" }, d = { kind = "dungeon" }, r = { kind = "raid" } }
+
 function Labels.GroupTag(goal, guide)
     local group = goal.group
     if goal.quest and guide then
         group = groupsOf(guide)[goal.quest] or group
+    end
+    if not group and goal.quest and ns.DB.questGroups then
+        group = QUEST_GROUPS[ns.DB.questGroups[goal.quest]]
     end
     local kind = group and group.kind
     if kind == "elite" then

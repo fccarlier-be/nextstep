@@ -28,6 +28,7 @@ Data\Imported\Client\MapOverlays.lua
 Data\Imported\WhatsTraining\Spells.lua
 Data\Imported\Polestar\Gear.lua
 Data\Imported\Polestar\Dungeons.lua
+Data\Imported\Polestar\QuestGroups.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
