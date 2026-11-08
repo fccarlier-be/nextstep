@@ -140,8 +140,7 @@ function Items:CreateAlert()
         end
     end)
     frame:Hide()
-    Style.Fill(frame, Style.COLORS.background)
-    Style.Border(frame, Style.COLORS.gold)
+    Style.Frame(frame, Style.COLORS.gold)
     local title = Style.Text(frame, "GameFontNormal", Style.COLORS.gold)
     title:SetPoint("TOPLEFT", 10, -8)
     frame.title = title

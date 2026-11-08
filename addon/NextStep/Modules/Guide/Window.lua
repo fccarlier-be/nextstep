@@ -20,6 +20,46 @@ local FOOTER_HEIGHT = 36
 local LINE_GAP = 3
 local INDENT = 14
 
+-- Icône de chaque type d'objectif (curseurs et icônes du jeu), à faire.
+-- [À vérifier] sur Forever : présence de ces textures (Interface\\Cursor).
+local TYPE_ICONS = {
+    accept = "Interface\\GossipFrame\\AvailableQuestIcon",
+    turnin = "Interface\\GossipFrame\\ActiveQuestIcon",
+    complete = "Interface\\CURSOR\\Quest",
+    kill = "Interface\\CURSOR\\Attack",
+    collect = "Interface\\CURSOR\\Pickup",
+    interact = "Interface\\CURSOR\\Interact",
+    use = "Interface\\CURSOR\\Interact",
+    task = "Interface\\CURSOR\\Interact",
+    talk = "Interface\\CURSOR\\Speak",
+    vendor = "Interface\\CURSOR\\Buy",
+    buy = "Interface\\CURSOR\\Buy",
+    train = "Interface\\CURSOR\\Trainer",
+    cast = "Interface\\CURSOR\\Cast",
+    ["goto"] = "Interface\\CURSOR\\Directions",
+    explore = "Interface\\CURSOR\\Directions",
+    enter = "Interface\\CURSOR\\Directions",
+    fly = "Interface\\CURSOR\\Taxi",
+    getfp = "Interface\\CURSOR\\Taxi",
+    hearth = "Interface\\CURSOR\\Innkeeper",
+    sethome = "Interface\\CURSOR\\Innkeeper",
+    level = "Interface\\CURSOR\\Inspect",
+}
+
+-- Icône d'une ligne d'objectif : coche si fait, croix si bloqué, sinon son type.
+local function goalIcon(goal, status)
+    if status == "done" then
+        return "|TInterface\\RaidFrame\\ReadyCheck-Ready:14:14|t"
+    elseif status == "blocked" then
+        return "|TInterface\\RaidFrame\\ReadyCheck-NotReady:14:14|t"
+    end
+    local texture = TYPE_ICONS[goal.t]
+    if texture then
+        return ("|T%s:15:15|t"):format(texture)
+    end
+    return "|TInterface\\Buttons\\UI-CheckBox-Up:16:16|t"
+end
+
 local ICONS = {
     done = "|TInterface\\Buttons\\UI-CheckBox-Check:16:16|t",
     todo = "|TInterface\\Buttons\\UI-CheckBox-Up:16:16|t",
@@ -83,8 +123,7 @@ function Guide:CreateWindow()
     frame:SetMovable(true)
     frame:EnableMouse(true)
     -- Style sombre et doré, comme le journal.
-    frame.bg = Style.Fill(frame, Style.COLORS.background)
-    Style.Border(frame, Style.COLORS.goldDim)
+    frame.bg = Style.Frame(frame)
 
     -- Barre de titre : déplacement, guide suivi, journal, options, réduction.
     local header = CreateFrame("Frame", nil, frame)
@@ -92,9 +131,8 @@ function Guide:CreateWindow()
     header:SetPoint("TOPRIGHT", -1, -1)
     header:SetHeight(HEADER_HEIGHT)
     Style.Fill(header, Style.COLORS.header)
-    local underline = Style.Line(header, Style.COLORS.gold)
-    underline:SetPoint("BOTTOMLEFT")
-    underline:SetPoint("BOTTOMRIGHT")
+    Style.Sheen(header, 0.08)
+    Style.FadeLine(header, Style.COLORS.gold):Place(header, 0)
     header:EnableMouse(true)
     header:RegisterForDrag("LeftButton")
     header:SetScript("OnDragStart", function()
@@ -217,6 +255,19 @@ local function acquireLine(frame, index)
             text:SetWordWrap(true)
         end
         line.text = text
+        -- Bandeau du titre de l'étape, et surlignage des lignes cliquables au survol.
+        line.band = line:CreateTexture(nil, "BACKGROUND")
+        line.band:SetTexture("Interface\\Buttons\\WHITE8X8")
+        line.band:SetPoint("TOPLEFT", -4, 2)
+        line.band:SetPoint("BOTTOMRIGHT", 4, -2)
+        Style.Gradient(line.band, "HORIZONTAL", Style.COLORS.gold, 0, 0.16)
+        line.band:Hide()
+        line.highlight = line:CreateTexture(nil, "BACKGROUND", nil, 1)
+        line.highlight:SetTexture("Interface\\Buttons\\WHITE8X8")
+        line.highlight:SetPoint("TOPLEFT", -4, 1)
+        line.highlight:SetPoint("BOTTOMRIGHT", 4, -1)
+        line.highlight:SetVertexColor(1, 0.82, 0, 0.08)
+        line.highlight:Hide()
         line:RegisterForClicks("LeftButtonUp", "RightButtonUp")
         line:SetScript("OnClick", function(button, mouse)
             if mouse == "RightButton" and button.menu then
@@ -226,6 +277,9 @@ local function acquireLine(frame, index)
             end
         end)
         line:SetScript("OnEnter", function(button)
+            if button.onClick or button.menu then
+                button.highlight:Show()
+            end
             if not (button.tooltip and GameTooltip) then
                 return
             end
@@ -237,7 +291,8 @@ local function acquireLine(frame, index)
             end
             GameTooltip:Show()
         end)
-        line:SetScript("OnLeave", function()
+        line:SetScript("OnLeave", function(button)
+            button.highlight:Hide()
             if GameTooltip then
                 GameTooltip:Hide()
             end
@@ -254,6 +309,8 @@ local function addLine(view, text, color, options)
     local line = acquireLine(view.frame, view.count)
     local indent = options.indent or 0
     local width = WIDTH - 2 * PADDING - indent
+    -- Avant le texte : la hauteur de la ligne dépend de la police.
+    line.text:SetFontObject(options.header and "GameFontNormal" or "GameFontHighlightSmall")
     line.text:SetWidth(width)
     line.text:SetText(text)
     color = color or COLORS.text
@@ -265,6 +322,8 @@ local function addLine(view, text, color, options)
     line.onClick = options.onClick
     line.tooltip = options.tooltip
     line.menu = options.menu
+    line.band:SetShown(options.header == true)
+    line.highlight:Hide()
     line:EnableMouse(options.onClick ~= nil or options.tooltip ~= nil or options.menu ~= nil)
     line:Show()
     view.height = view.height + height + LINE_GAP
@@ -371,7 +430,7 @@ local function addGoal(self, view, result, i, j, status)
         end
     end
     local color = status == "done" and COLORS.done or COLORS.text
-    addLine(view, (ICONS[status] or ICONS.todo) .. " " .. text, color, options)
+    addLine(view, goalIcon(goal, status) .. " " .. text, color, options)
 end
 
 -- Choix du menu d'un objectif : { label, action }.
@@ -442,7 +501,8 @@ local SHOWN_GOALS = { done = true, todo = true, manual = true, blocked = true }
 local function addCurrentStep(self, view, result)
     local guide, i = result.guide, result.current
     local step = guide.steps[i]
-    addLine(view, Labels.Step(step, guide), COLORS.title)
+    addLine(view, Labels.Step(step, guide), COLORS.title, { header = true })
+    addGap(view)
     if result.mode == "free" then
         for _, entry in ipairs(result.free) do
             addGoal(self, view, result, entry.step, entry.goal, entry.status)

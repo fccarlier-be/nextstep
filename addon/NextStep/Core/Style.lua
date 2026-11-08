@@ -48,6 +48,90 @@ function Style.Line(parent, color, height)
     return line
 end
 
+-- Dégradé d'opacité d'une texture : alpha de minAlpha (bas, ou gauche) à maxAlpha
+-- (haut, ou droite), dans la couleur donnée. API moderne (SetGradient + CreateColor),
+-- sinon l'ancienne (SetGradientAlpha) ; sans l'une ni l'autre, aplat à maxAlpha.
+function Style.Gradient(texture, orientation, color, minAlpha, maxAlpha)
+    local r, g, b = color[1], color[2], color[3]
+    if texture.SetGradient and CreateColor then
+        local ok = pcall(texture.SetGradient, texture, orientation, CreateColor(r, g, b, minAlpha),
+            CreateColor(r, g, b, maxAlpha))
+        if ok then
+            return texture
+        end
+    end
+    if texture.SetGradientAlpha then
+        texture:SetGradientAlpha(orientation, r, g, b, minAlpha, r, g, b, maxAlpha)
+    else
+        texture:SetVertexColor(r, g, b, maxAlpha)
+    end
+    return texture
+end
+
+-- Reflet : voile clair en haut d'un cadre, qui s'efface vers le bas (donne du relief
+-- sans toucher à la couleur de fond, que le survol peut changer).
+function Style.Sheen(frame, strength)
+    local texture = frame:CreateTexture(nil, "BACKGROUND", nil, 2)
+    texture:SetTexture(WHITE)
+    texture:SetAllPoints()
+    return Style.Gradient(texture, "VERTICAL", { 1, 1, 1 }, 0, strength or 0.06)
+end
+
+-- Trait doré qui s'estompe aux deux bouts (sous une barre de titre).
+function Style.FadeLine(parent, color, height)
+    local holder = {}
+    local left = parent:CreateTexture(nil, "ARTWORK")
+    left:SetTexture(WHITE)
+    left:SetHeight(height or 1)
+    Style.Gradient(left, "HORIZONTAL", color or Style.COLORS.gold, 0, 1)
+    local right = parent:CreateTexture(nil, "ARTWORK")
+    right:SetTexture(WHITE)
+    right:SetHeight(height or 1)
+    Style.Gradient(right, "HORIZONTAL", color or Style.COLORS.gold, 1, 0)
+    function holder.Place(_, anchor, y)
+        left:ClearAllPoints()
+        left:SetPoint("BOTTOMLEFT", anchor, "BOTTOMLEFT", 0, y or 0)
+        left:SetPoint("BOTTOMRIGHT", anchor, "BOTTOM", 0, y or 0)
+        right:ClearAllPoints()
+        right:SetPoint("BOTTOMLEFT", anchor, "BOTTOM", 0, y or 0)
+        right:SetPoint("BOTTOMRIGHT", anchor, "BOTTOMRIGHT", 0, y or 0)
+    end
+    holder.left, holder.right = left, right
+    return holder
+end
+
+-- Coins dorés : petits équerres aux quatre coins d'un cadre.
+local CORNER = 9
+function Style.Corners(frame, color)
+    color = color or Style.COLORS.gold
+    for _, corner in ipairs({ "TOPLEFT", "TOPRIGHT", "BOTTOMLEFT", "BOTTOMRIGHT" }) do
+        local h = frame:CreateTexture(nil, "OVERLAY")
+        h:SetTexture(WHITE)
+        h:SetVertexColor(color[1], color[2], color[3], 1)
+        h:SetSize(CORNER, 2)
+        h:SetPoint(corner)
+        local v = frame:CreateTexture(nil, "OVERLAY")
+        v:SetTexture(WHITE)
+        v:SetVertexColor(color[1], color[2], color[3], 1)
+        v:SetSize(2, CORNER)
+        v:SetPoint(corner)
+    end
+end
+
+-- Cadre au style NextStep : fond sombre avec reflet, ombre portée, liseré et coins dorés.
+function Style.Frame(frame, borderColor)
+    local bg = Style.Fill(frame, Style.COLORS.background)
+    Style.Sheen(frame, 0.05)
+    local shadow = frame:CreateTexture(nil, "BACKGROUND", nil, -8)
+    shadow:SetTexture(WHITE)
+    shadow:SetVertexColor(0, 0, 0, 0.45)
+    shadow:SetPoint("TOPLEFT", -3, 3)
+    shadow:SetPoint("BOTTOMRIGHT", 3, -3)
+    Style.Border(frame, borderColor or Style.COLORS.goldDim)
+    Style.Corners(frame)
+    return bg
+end
+
 -- Bordure fine sur les quatre côtés d'un cadre.
 function Style.Border(frame, color)
     local sides = {}
@@ -90,17 +174,15 @@ function Style.Window(name, width, height, title)
     frame:SetMovable(true)
     frame:EnableMouse(true)
     frame:Hide()
-    Style.Fill(frame, Style.COLORS.background)
-    Style.Border(frame, Style.COLORS.goldDim)
+    Style.Frame(frame)
 
     local header = CreateFrame("Frame", nil, frame)
     header:SetPoint("TOPLEFT", 1, -1)
     header:SetPoint("TOPRIGHT", -1, -1)
     header:SetHeight(36)
     Style.Fill(header, Style.COLORS.header)
-    local underline = Style.Line(header, Style.COLORS.gold)
-    underline:SetPoint("BOTTOMLEFT")
-    underline:SetPoint("BOTTOMRIGHT")
+    Style.Sheen(header, 0.08)
+    Style.FadeLine(header, Style.COLORS.gold):Place(header, 0)
     header:EnableMouse(true)
     header:RegisterForDrag("LeftButton")
     header:SetScript("OnDragStart", function() frame:StartMoving() end)
@@ -131,6 +213,14 @@ function Style.Button(parent, label, width, height, onClick)
     local button = CreateFrame("Button", nil, parent)
     button:SetSize(width, height)
     button.bg = Style.Fill(button, Style.COLORS.panel, "BACKGROUND")
+    Style.Sheen(button, 0.09)
+    -- Liseré discret, qui s'allume au survol.
+    button.edges = Style.Border(button, { 0.6, 0.5, 0.25, 0.35 })
+    local function setEdges(self, alpha)
+        for _, edge in ipairs(self.edges) do
+            edge:SetVertexColor(Style.COLORS.goldDim[1], Style.COLORS.goldDim[2], Style.COLORS.goldDim[3], alpha)
+        end
+    end
     button.mark = Style.Line(button, Style.COLORS.gold, 2)
     button.mark:SetPoint("BOTTOMLEFT")
     button.mark:SetPoint("BOTTOMRIGHT")
@@ -140,9 +230,18 @@ function Style.Button(parent, label, width, height, onClick)
     button.text:SetText(label)
     button:SetScript("OnEnter", function(self)
         self.bg:SetVertexColor(unpackColor(Style.COLORS.cardHover))
+        setEdges(self, 1)
     end)
     button:SetScript("OnLeave", function(self)
         self.bg:SetVertexColor(unpackColor(self.active and Style.COLORS.cardSelected or Style.COLORS.panel))
+        setEdges(self, 0.35)
+    end)
+    -- Appui : le texte s'enfonce d'un pixel.
+    button:SetScript("OnMouseDown", function(self)
+        self.text:SetPoint("CENTER", 1, -1)
+    end)
+    button:SetScript("OnMouseUp", function(self)
+        self.text:SetPoint("CENTER", 0, 0)
     end)
     button:SetScript("OnClick", onClick)
     function button.SetActive(self, active)
