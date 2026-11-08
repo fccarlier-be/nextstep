@@ -104,10 +104,65 @@ function Guide:RequestRefresh()
     end)
 end
 
+-- Ici aussi : ce que le guide prévoit plus loin auprès d'un PNJ tout proche et qu'on
+-- peut faire tout de suite (accepter une quête désormais disponible, rendre une
+-- quête terminée). Évite les allers-retours quand on ne suit pas le guide à la
+-- lettre, ou qu'on a rendu une quête plus tôt faute de place dans les sacs.
+local NEARBY_YARDS = 40
+
+function Guide:NearbyActions(result)
+    result = result or self.result
+    local list = {}
+    if not (result and result.current and self.state) then
+        return list
+    end
+    local guide, state = result.guide, self.state
+    local ctx = { droppedQuests = {}, seen = function() return false end }
+    local seen = {}
+    for i = result.current + 1, #guide.steps do
+        for j, goal in ipairs(guide.steps[i].goals) do
+            local q = goal.quest
+            if q and not seen[q .. goal.t] and goal.map and goal.x and goal.y
+                and (goal.t == "accept" or goal.t == "turnin") then
+                local ready
+                if goal.t == "accept" then
+                    ready = ns.GuideGoals.Evaluate(goal, state, ctx).status == "todo"
+                else
+                    ready = state:InLog(q) and state:Complete(q)
+                end
+                if ready then
+                    local distance = Navigation.DistanceTo(goal.map, goal.x, goal.y, goal.f)
+                    if distance and distance <= NEARBY_YARDS then
+                        seen[q .. goal.t] = true
+                        list[#list + 1] = { step = i, goal = j, kind = goal.t }
+                    end
+                end
+            end
+        end
+    end
+    return list
+end
+
+local function nearbyKey(list)
+    local parts = {}
+    for index, entry in ipairs(list) do
+        parts[index] = entry.step .. ":" .. entry.goal
+    end
+    return table.concat(parts, ",")
+end
+
 function Guide:OnTick()
     local result = self.result
     if not result then
         return
+    end
+    -- Un PNJ s'approche ou s'éloigne : la fenêtre montre ou retire « Ici aussi ».
+    local key = nearbyKey(self:NearbyActions(result))
+    if key ~= self.nearbyKey then
+        self.nearbyKey = key
+        if self.UpdateWindow then
+            self:UpdateWindow(result)
+        end
     end
     if result.needsPosition then
         self:Refresh()

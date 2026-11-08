@@ -348,6 +348,38 @@ local function addCurrentStep(self, view, result)
     end
 end
 
+-- Ici aussi : quêtes à prendre ou à rendre tout de suite auprès d'un PNJ proche,
+-- que le guide prévoit plus loin.
+local function addNearby(self, view, result)
+    local list = self:NearbyActions(result)
+    if #list == 0 then
+        return
+    end
+    addGap(view)
+    addLine(view, L["Here too (planned later in the guide):"], COLORS.title)
+    for _, entry in ipairs(list) do
+        addGoal(self, view, result, entry.step, entry.goal, "todo")
+    end
+end
+
+-- Sacs presque pleins : le guide ramasse beaucoup d'objets en chemin.
+local LOW_BAG_SLOTS = 4
+
+local function addBagWarning(view)
+    if not (C_Container and C_Container.GetContainerNumFreeSlots) then
+        return
+    end
+    local free = 0
+    for bag = 0, 4 do
+        free = free + (C_Container.GetContainerNumFreeSlots(bag) or 0)
+    end
+    if free <= LOW_BAG_SLOTS then
+        addLine(view, L["Bags almost full: %d free slots."]:format(free), COLORS.warning, {
+            tooltip = L["Sell your grey items, or hand in finished quests nearby, before picking up more."],
+        })
+    end
+end
+
 local function addAlong(self, view, result)
     if #result.along == 0 then
         return
@@ -530,10 +562,12 @@ function Guide:UpdateWindow(result)
         addAsk(self, view, result)
     else
         addCurrentStep(self, view, result)
+        addNearby(self, view, result)
         addAlong(self, view, result)
         addAbandoned(self, view, result)
         addFooterLines(view, result)
         addSpellsReminder(self, view, result)
+        addBagWarning(view)
         addGroupHint(self, view)
         addClassGuides(self, view)
     end

@@ -17,6 +17,8 @@ local SPECS = {
     "radar",
     "minimap",
     "quest_items",
+    "junk",
+    "windows",
     "engine",
     "guide",
     "guide_live",

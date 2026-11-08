@@ -314,6 +314,42 @@ describe("Guide en jeu", function()
         expect_eq(#game.errors, 0)
     end)
 
+    it("signale ce qu'on peut faire tout de suite auprès d'un PNJ proche", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/nearby", title = "Nearby", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Far away", goals = { { t = "goto", map = MAP, x = 20, y = 80, f = "e", r = 5 } } },
+                { title = "Later", goals = {
+                    { t = "turnin", quest = 901, npc = 197, map = MAP, x = 50, y = 40, f = "e" },
+                    { t = "accept", quest = 902, npc = 197, map = MAP, x = 50, y = 40, f = "e", pre = { 901 } },
+                    { t = "accept", quest = 903, npc = 197, map = MAP, x = 50, y = 40, f = "e" },
+                } },
+            },
+        } end)
+        game:acceptQuest(901, { kill() })
+        game:completeQuest(901)
+        game:fire("QUEST_LOG_UPDATE")
+        game.player.position = worldOf(game.ns, 50, 40)
+        Guide:Start("test/nearby")
+        local kinds = {}
+        for _, entry in ipairs(Guide:NearbyActions()) do
+            kinds[#kinds + 1] = entry.kind .. " " .. Guide.result.guide.steps[entry.step].goals[entry.goal].quest
+        end
+        expect_eq(kinds, { "turnin 901", "accept 903" }, "rendre la 901 ; la 902 attend que la 901 soit rendue")
+        expect(hasText(Guide, "Here too"), "section « Ici aussi » dans la fenêtre")
+
+        game.player.position = worldOf(game.ns, 20, 80)
+        expect_eq(#Guide:NearbyActions(), 0, "loin du PNJ : rien")
+
+        local container = _G.C_Container
+        _G.C_Container = { GetContainerNumFreeSlots = function() return 0 end }
+        Guide:Refresh()
+        expect(hasText(Guide, "Bags almost full"), "sacs pleins signalés")
+        _G.C_Container = container
+        expect_eq(#game.errors, 0)
+    end)
+
     it("calcule distance et direction en coordonnées monde", function()
         local game = boot()
         local Navigation = game.ns.Navigation
