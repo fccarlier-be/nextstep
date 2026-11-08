@@ -31,6 +31,7 @@ Data\Imported\Polestar\Dungeons.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
+Modules\UI\ZoneLevels.lua
 Modules\UI\Radar.lua
 Modules\UI\Minimap.lua
 Modules\UI\AddonsMenu.lua
