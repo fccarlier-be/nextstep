@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Module **Valeurs de vie et de ressources** : valeurs sur les cadres d'unité (texte de statut de Blizzard : valeur et pourcentage, valeur, ou pourcentage) et vie sous les barres de nom (court, complet ou pourcentage) ; vos réglages d'origine sont rendus si vous le désactivez.
 - Fenêtres déplaçables : un clic sur une fenêtre la passe devant les autres (fenêtres de Blizzard prises en charge et fenêtres de NextStep).
 - Module **Horloge** : clic droit sur l'horloge de la minimap (ou `/ns clock`) pour des **alarmes** (heure locale ou du serveur), des **minuteurs** nommés et un **chronomètre** ; alerte au centre de l'écran avec un son, même en combat (en petit) ; les minuteurs survivent à la déconnexion, et ceux finis hors ligne sont signalés à la connexion. `/ns timer <minutes> [nom]`, `/ns alarm <hh:mm> [nom]`.
 - Sorts à apprendre : la **liste lue chez le maître** est retenue à chaque visite et l'emporte sur les tables tant que vous n'avez pas changé de niveau ; **en ville**, près de votre maître de classe avec des sorts à apprendre, la fenêtre du guide le signale (distance, sorts, coût) et un clic y pointe la flèche.
