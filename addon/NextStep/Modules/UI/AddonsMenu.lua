@@ -145,6 +145,12 @@ function Menu:Fill(root)
             guide:ToggleJournal("gear")
         end
     end)
+    root:CreateButton(L["Clock"], function()
+        local clock = ns.Modules:Get("Clock")
+        if clock and clock.enabled then
+            clock:Toggle()
+        end
+    end)
     root:CreateButton(L["NextStep options"], function()
         ns.Options:Open()
     end)

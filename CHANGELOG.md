@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Module **Horloge** : clic droit sur l'horloge de la minimap (ou `/ns clock`) pour des **alarmes** (heure locale ou du serveur), des **minuteurs** nommés et un **chronomètre** ; alerte au centre de l'écran avec un son, même en combat (en petit) ; les minuteurs survivent à la déconnexion, et ceux finis hors ligne sont signalés à la connexion. `/ns timer <minutes> [nom]`, `/ns alarm <hh:mm> [nom]`.
 - Sorts à apprendre : la **liste lue chez le maître** est retenue à chaque visite et l'emporte sur les tables tant que vous n'avez pas changé de niveau ; **en ville**, près de votre maître de classe avec des sorts à apprendre, la fenêtre du guide le signale (distance, sorts, coût) et un clic y pointe la flèche.
 - Module **Niveau des zones** : sur la carte du monde, la tranche de niveaux s'affiche à côté du nom de la zone survolée et en haut de la carte d'une zone, colorée selon votre niveau ; tranches de Forever tirées des guides.
 - **Célébration de niveau** : à chaque niveau, un bandeau doré et un son du jeu, avec les nouveaux sorts chez le maître (et leur coût), la quête de classe qui s'ouvre, et la suite conseillée quand le guide suivi est dépassé ; jamais en combat ; options pour la couper ou couper son son.

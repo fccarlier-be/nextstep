@@ -19,6 +19,7 @@ local SPECS = {
     "minimap",
     "quest_items",
     "junk",
+    "clock",
     "windows",
     "engine",
     "guide",
