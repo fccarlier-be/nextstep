@@ -99,3 +99,24 @@ function Junk:ToggleKeep(input)
         ns:Print(L["Item %d will never be sold."]:format(itemID))
     end
 end
+
+-- Options : exceptions (objets gris jamais vendus), ajoutées par /ns keep.
+function Junk:BuildOptions(panel, anchor)
+    local function count()
+        local total = 0
+        for _ in pairs(self.db.keep) do
+            total = total + 1
+        end
+        return total
+    end
+    local button = ns.Options.AddButton(panel, L["Clear the exceptions (%d)"]:format(count()), 260, function(frame)
+        self.db.keep = {}
+        frame:SetLabel(L["Clear the exceptions (%d)"]:format(0))
+        ns:Print(L["Every grey item will be sold again."])
+    end)
+    button:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -10)
+    panel:HookScript("OnShow", function()
+        button:SetLabel(L["Clear the exceptions (%d)"]:format(count()))
+    end)
+    return button
+end

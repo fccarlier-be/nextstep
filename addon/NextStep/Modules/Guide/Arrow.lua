@@ -19,7 +19,7 @@ local SIZE = 48
 local UPDATE_PERIOD = 0.05   -- secondes
 local ARRIVED = 5            -- yards
 
-local ARROW_TEXTURE = "Interface\\Minimap\\MinimapArrow"
+local ARROW_TEXTURE = "Interface\\AddOns\\NextStep\\Media\\Arrow"   -- Tools/arrow/textures.py
 local CHECK_TEXTURE = "Interface\\RaidFrame\\ReadyCheck-Ready"
 
 local GREEN, GOLD, RED = { 0.2, 1, 0.2 }, { 1, 0.82, 0 }, { 1, 0.3, 0.1 }

@@ -392,3 +392,22 @@ function Professions:OnEnable()
         end)
     end
 end
+
+-- Options : objectif du conseiller.
+function Professions:BuildOptions(panel, anchor)
+    local function label()
+        return L["Advice goal: %s"]:format(GOAL_LABELS[self.db.goal] or self.db.goal)
+    end
+    local button = ns.Options.AddButton(panel, label(), 260, function(frame)
+        for index, goal in ipairs(GOALS) do
+            if goal == self.db.goal then
+                self.db.goal = GOALS[index % #GOALS + 1]
+                break
+            end
+        end
+        frame:SetLabel(label())
+        self:UpdateTab()
+    end)
+    button:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -10)
+    return button
+end

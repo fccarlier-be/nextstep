@@ -4,7 +4,7 @@
 
 > L'addon tout-en-un pour monter ses personnages sur **WoW Forever** : guide de leveling, métiers, équipement et améliorations de l'interface, dans un seul addon.
 
-**Statut : en développement (fondations, import des données et moteur du guide terminés ; interface du guide en préparation).** Aucune version jouable n'est encore publiée. Voir la [feuille de route](docs/ROADMAP.md).
+**Statut : toutes les phases de la feuille de route sont écrites et testées hors jeu ; vérification en jeu en cours avant la v1.0.** Mode d'emploi : [guide d'utilisation](docs/USER_GUIDE.md). Avancement : [feuille de route](docs/ROADMAP.md).
 
 [![CI](https://github.com/fccarlier-be/nextstep/actions/workflows/ci.yml/badge.svg)](https://github.com/fccarlier-be/nextstep/actions/workflows/ci.yml)
 
@@ -16,7 +16,7 @@
 
 Pour bien monter un personnage, on finit souvent par installer une quinzaine d'addons : un guide, un suivi de quêtes, une flèche, un comparateur d'équipement, des sacs unifiés, une minimap améliorée… NextStep les regroupe dans un seul addon cohérent, avec une seule fenêtre d'options.
 
-## Fonctionnalités prévues
+## Fonctionnalités
 
 ### Guide de leveling
 - Une route étape par étape, adaptée à **ta race, ta classe et ton niveau**.
@@ -38,7 +38,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 - Le **butin des donjons**, avec les améliorations pour ta spécialisation.
 
 ### Interface
-- **Fenêtres Blizzard déplaçables**, ouvertes côte à côte avec passage au premier plan, et **carte sans brouillard**.
+- **Fenêtres Blizzard déplaçables**, passage au premier plan au clic, et **carte sans brouillard**.
 - **Valeurs de vie et de ressources** sur les cadres d'unité et les nameplates.
 - **Sacs et banque unifiés**, banque consultable à distance, vente automatique de la camelote.
 - **Minimap** carrée, zoom à la molette, coordonnées, un seul bouton pour accéder aux paramètres de tous tes addons (les autres boutons sont masqués), horloge avec **alarmes et minuteurs**.
@@ -55,6 +55,7 @@ Pour bien monter un personnage, on finit souvent par installer une quinzaine d'a
 
 | Document | Contenu |
 |---|---|
+| [docs/USER_GUIDE.md](docs/USER_GUIDE.md) | Guide d'utilisation : le guide, le journal, l'équipement, l'interface, les commandes |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Feuille de route et état d'avancement |
 | [docs/DESIGN.md](docs/DESIGN.md) | Conception : architecture, moteur du guide, modules |
 | [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Origine des données et licences |
@@ -81,4 +82,4 @@ NextStep est distribué sous la [GNU General Public License v3.0](LICENSE), vers
 
 ## English summary
 
-**NextStep** is an all-in-one addon for **WoW Forever**: a race/class-aware leveling guide that tolerates detours, profession advice and routes, gear upgrade hints, and light Blizzard UI improvements (unit values, unified bags and bank, square minimap, a farming radar, clock timers). One addon instead of fifteen. It never sends any data anywhere. **Status: design phase**, no playable release yet. Licensed under GPL-3.0-only.
+**NextStep** is an all-in-one addon for **WoW Forever**: a race/class-aware leveling guide that tolerates detours, profession advice and routes, gear upgrade hints, and light Blizzard UI improvements (unit values, unified bags and bank, square minimap, a farming radar, clock timers). One addon instead of fifteen. It never sends any data anywhere. **Status: every road map phase is written and tested outside the game; in-game checks are under way before v1.0.** User guide (in French): [docs/USER_GUIDE.md](docs/USER_GUIDE.md). Licensed under GPL-3.0-only.

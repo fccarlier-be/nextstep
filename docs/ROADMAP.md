@@ -169,6 +169,8 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 - Page CurseForge (texte prêt, empaquetage automatique en place : [RELEASE.md](RELEASE.md)), documentation utilisateur, vérification des crédits et licences.
 - Prise de contact avec l'auteur de Polestar avant la publication.
 
+État : flèche dessinée par script (`Tools/arrow/textures.py`, `Media/Arrow.tga`, teintée en jeu) ; traductions relues (tout est traduit) ; réglages ajoutés pour Métiers, Horloge et Camelote ; [guide d'utilisation](USER_GUIDE.md) écrit ; page CurseForge à jour (toutes les fonctions disponibles, crédits complétés) ; crédits et licences vérifiés (What's Training parmi les données intégrées, GatherMate2 parmi les inspirations, QuestieDB précisé). **Restent** : envoyer le message à l'auteur de Polestar (brouillon prêt, à envoyer par le porteur du projet), vérifier en jeu, puis publier la v1.0.
+
 ## Après la v1.0 *(à l'étude)*
 
 - **Prix de l'hôtel des ventes** : prix mémorisés lors des visites, utilisés pour les récompenses de quête, l'objectif « or » des métiers et les infobulles (voir [DESIGN.md](DESIGN.md#10-idées-à-létude)).

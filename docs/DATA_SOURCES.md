@@ -13,7 +13,7 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 | Polestar — `Polestar_frFR` | Noms traduits (quêtes, PNJ, objets, zones) et textes des guides en français | GPL-3.0-only ; noms repris notamment de DingDB (GPL-3.0, Yendi) et de pfQuest (MIT) : voir le `LICENSE-DATA.txt` du pack | Noms extraits des tables du client |
 | [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) | Bibliothèque : points sur la carte et la minimap, conversion de coordonnées | BSD (déclarée dans le TOC) | Prend en charge Forever (`WOW_PROJECT_CAMELOT`). **Non utilisée** : les repères de la carte et de la minimap sont du code propre (v0.1.0) |
 | [What's Training](https://github.com/fusionpit/WhatsTraining) | Sorts de chaque classe chez le maître : niveau, rang, coût, prérequis, race, faction, talent et compétence requis ; **intégré** (tables `Classes/Camelot`, celles de Forever, importées par `Tools/trainer/`, notice MIT dans `Data/Imported/WhatsTraining/LICENSE-DATA.txt`) | MIT | Prend en charge Forever ; tables `Classes/Vanilla/*.lua` à importer, notice MIT à conserver |
-| [GatherMate2](https://github.com/Nevcairiel/GatherMate2) | Code de détection des récoltes et identifiants des ressources *(prévu en phase 9)* | GPL-2.0-or-later, donc réutilisable sous GPL-3.0 | Prend en charge Forever (`16001`) ; seul le code est repris, pas les données |
+| [GatherMate2](https://github.com/Nevcairiel/GatherMate2) | Idée de la détection des récoltes (sort lancé et objet ciblé) | GPL-2.0-or-later | Ni code ni données repris : le module Points de récolte (phase 9) est du code propre à NextStep |
 | Tables du client Forever (`WorldMapOverlay`, `WorldMapOverlayTile`) | Textures des zones inexplorées de la carte (module prévu en phase 5) ; données extraites : `Data/Imported/Client/MapOverlays.lua` | — | Extraites de l'installation locale (produit `wowf`) par TACTSharp et DBCD (MIT), avec les définitions de WoWDBDefs ; outils de développement, non livrés (`Tools/worldmap/`). Voir [DESIGN.md](DESIGN.md#carte-sans-brouillard) |
 | Le client du jeu | Noms localisés (dont les noms de PNJ appris), état du journal de quêtes, recettes connues | — | Lu en jeu, conservé dans les sauvegardes locales, jamais redistribué |
 
@@ -21,7 +21,7 @@ NextStep **importe** ses données au lieu de dépendre d'autres addons à l'exé
 
 | Source | Raison |
 |---|---|
-| QuestieDB | Aucune licence déclarée pour les données ; réutilisation impossible sans accord des mainteneurs |
+| QuestieDB | Aucune licence déclarée pour les données ; réutilisation impossible sans accord des mainteneurs. forever-db la cite parmi ses sources, mais ne publie que les valeurs qu'au moins une source libre confirme (une valeur connue d'une seule source fermée est laissée de côté, selon son README) : ce sont ces valeurs que NextStep importe |
 | Sources `.guide` de Polestar | Elles-mêmes générées par l'outil de Polestar ; certaines instructions ne sont résolues qu'à la compilation, avec des données non publiées |
 | `Polestar_Nav`, `Legs.lua` | Chemins de marche précalculés, trop volumineux (~38 Mo) et liés au système de navigation de Polestar |
 | `Polestar_Recorder` et service de collecte | NextStep n'enregistre ni n'envoie aucune donnée |

@@ -419,3 +419,12 @@ function Clock:OnDisable()
         self.panel:Hide()
     end
 end
+
+-- Options : ouvrir l'horloge.
+function Clock:BuildOptions(panel, anchor)
+    local button = ns.Options.AddButton(panel, L["Open the clock"], 200, function()
+        self:Toggle()
+    end)
+    button:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -10)
+    return button
+end
