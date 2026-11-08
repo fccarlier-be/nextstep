@@ -6,6 +6,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.1.1] - 2026-11-08
+
 ### Ajouté
 - Fenêtre du guide : **en groupe et en mode Strict**, un rappel propose le mode Libre (un clic), qui suit les quêtes faites ensemble dans n'importe quel ordre ; `/ns debug` détaille les objectifs de l'étape en cours et leur état.
 - **Notes des guides de l'Alliance traduites en français** : les 1 038 textes des guides de leveling (585) et de classe (453) que Polestar ne traduit pas (conseils d'étape, « Attention : … », positions des PNJ, familier du chasseur, poisons, totems…), par NextStep (`Locales/GuideNotes_frFR.lua`, outils `Tools/translate/`, noms vérifiés à l'assemblage). Restent les guides de réputation, de métiers, de collection et de la Horde.
@@ -97,5 +99,6 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/fccarlier-be/nextstep/releases/tag/v0.1.0
