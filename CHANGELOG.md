@@ -22,6 +22,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - L'étape « maître de classe » est validée d'office quand il n'y a rien de nouveau à apprendre (règle des niveaux pairs en secours si la classe n'a pas de données).
 
 ### Corrigé
+- **Erreurs « tainted » du suivi de quêtes et du mode Édition** (`GetAuraDataByIndex() … tainted by NextStep_Alliance`) : NextStep cachait le suivi de quêtes de Blizzard avec `Hide`/`Show`, ce qui lançait ses scripts depuis le code de l'addon et le souillait. Le suivi est maintenant rendu transparent et ne prend plus la souris, sans jamais appeler ses scripts ; de même pour les boutons de la minimap pendant le radar.
 - **Options** : le panneau débordait (pas de défilement) et chaque module était décalé un peu plus à droite. Les options sont maintenant une fenêtre NextStep au style sombre et doré, avec défilement, sections alignées et réglages au même style ; la page des options du jeu ouvre cette fenêtre.
 - **Radar de récolte** : la carte disparaissait parfois (changement de zone, chargement) et ne revenait qu'en touchant à l'opacité. Le radar réapplique ses réglages après ces événements, dès qu'un autre code change la minimap, et vérifie chaque seconde qu'il l'a toujours. Anneau plus fin et plus net (texture de 512 pixels).
 
