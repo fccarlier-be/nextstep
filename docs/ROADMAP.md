@@ -153,6 +153,8 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 - Conseiller de métiers, routes de métiers, intégration dans la route de leveling, onglet Métiers.
 - **Points de récolte** : enregistrement automatique des herbes, minerais et autres ressources récoltés, affichés sur la carte et la minimap.
 
+État : **écrit et testé hors jeu** (modules `Professions` et `Gathering`) : rangs suivis malgré l'absence de `GetNumSkillLines`, onglet Métiers (rangs, maîtrise suivante, routes de Polestar, conseiller), rappel du maître dans le guide, points de récolte sur la minimap et la carte. Restent l'insertion des étapes de métier dans la route de leveling et le choix de zone selon les ressources ; vérification en jeu.
+
 ## Phase 10 : Items à ne pas rater, jalons, mode libre → v0.7
 
 - Import des faits de forever-db (quêtes, PNJ) pour le mode conseil.

@@ -270,6 +270,8 @@ Le moteur **assemble** à l'affichage la route de leveling et la route de métie
 
 Une session de farm peut basculer temporairement sur la route de métier ; le retour au leveling se fait là où le joueur en était.
 
+**Réalisé** (`Modules/Professions/Professions.lua`, module `Professions`) : Forever n'a plus `GetNumSkillLines`, donc la maîtrise vient des sorts connus (Apprenti à Artisan) et le rang des messages « Votre compétence en … augmente jusqu'à N » (`SKILL_RANK_UP`) et de la fenêtre du métier ; le guide s'en sert (`State:Skill`). Onglet **Métiers** du journal (et menu du bouton NextStep) : métiers appris avec rang et maîtrise, maîtrise suivante (compétence et niveau requis), routes de métier de Polestar à suivre d'un clic (guide annexe, le leveling est repris ensuite), conseiller (trois meilleures paires avec leurs raisons ; objectif leveling, or ou fin de jeu au clic ; tables `Professions.ADVICE`). Dans la fenêtre du guide : « Herboristerie 75/75 : apprenez Compagnon chez le maître ». Restent : étapes de métier insérées dans la route, choix de zone selon les ressources, rappels de zone.
+
 ### Points de récolte
 
 Code repris de GatherMate2 (GPL-2.0-or-later, donc réutilisable sous GPL-3.0), adapté au format de NextStep ; ses données (extraction de Wowhead) ne sont pas reprises.
@@ -278,6 +280,7 @@ Code repris de GatherMate2 (GPL-2.0-or-later, donc réutilisable sous GPL-3.0), 
 - Affichage sur la carte et la minimap (HereBeDragons), filtrable par type ; utilisé par les routes de métier pour « où farmer ».
 - Données au niveau du compte, partagées entre les personnages du joueur ; rien n'est envoyé.
 - **[À vérifier]** Détection fiable d'une récolte (sort lancé, butin, nom de l'objet ciblé).
+- **Réalisé** (`Modules/UI/Gathering.lua`, module `Gathering`) : `UNIT_SPELLCAST_SENT` donne le nom de l'objet ciblé et le sort (Cueillette, Minage, Ouverture, reconnus par leur nom pour tous les rangs), `UNIT_SPELLCAST_SUCCEEDED` du même lancer confirme ; position monde du joueur (`UnitPosition`), points du même nom à moins de 15 m fusionnés (compteur). Affichage sans HereBeDragons, avec le placement des repères du guide : icônes sur la minimap (rotation, minimap carrée) et sur la carte du monde (infobulle : nom et nombre de récoltes), filtres herbes / filons / coffres dans les options. Reste : « où farmer » dans les routes de métier.
 
 ---
 

@@ -140,6 +140,9 @@ local function minimapRotates()
     return value == "1"
 end
 
+-- Partagés avec les points de récolte (Modules/UI/Gathering.lua).
+Guide.MinimapRadius, Guide.MinimapSquare, Guide.MinimapRotates = minimapRadius, minimapSquare, minimapRotates
+
 local function pinTexture(frame, pool, index)
     local texture = pool[index]
     if not texture then

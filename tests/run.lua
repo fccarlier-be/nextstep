@@ -22,6 +22,7 @@ local SPECS = {
     "clock",
     "unit_text",
     "inventory",
+    "professions",
     "windows",
     "engine",
     "guide",

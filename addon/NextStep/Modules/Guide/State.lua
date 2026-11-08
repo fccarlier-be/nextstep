@@ -266,6 +266,14 @@ function State:Skill(line, name)
             return skill[1], skill[2]
         end
     end
+    -- Forever n'a plus GetNumSkillLines : rangs suivis par le module Métiers.
+    local professions = ns.Modules:Get("Professions")
+    if professions and professions.enabled and professions.SkillOf then
+        local rank, max = professions:SkillOf(line, name)
+        if rank then
+            return rank, max
+        end
+    end
 end
 
 function State:Knows(spell)

@@ -608,9 +608,10 @@ function Guide:CreateJournal()
     local previous
     for index = #tabs, 1, -1 do
         local tab = tabs[index]
-        local button = Style.Button(frame.header, tab.label, 100, 26, function()
+        local button = Style.Button(frame.header, tab.label, 88, 26, function()
             self:ShowJournalTab(tab.key)
         end)
+        button.text:SetFontObject("GameFontNormalSmall")
         if previous then
             button:SetPoint("RIGHT", previous, "LEFT", -4, 0)
         else
