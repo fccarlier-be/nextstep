@@ -20,6 +20,7 @@ local SPECS = {
     "quest_items",
     "junk",
     "clock",
+    "unit_text",
     "windows",
     "engine",
     "guide",

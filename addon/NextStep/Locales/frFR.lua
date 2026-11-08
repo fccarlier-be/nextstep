@@ -476,3 +476,18 @@ L["Alarm set at %02d:%02d."] = "Alarme réglée à %02d:%02d."
 L["Usage: /ns alarm <hh:mm> [name]"] = "Usage : /ns alarm <hh:mm> [nom]"
 L["Set an alarm: /ns alarm <hh:mm> [name]"] = "Règle une alarme : /ns alarm <hh:mm> [nom]"
 L["Timer finished while you were away: %s"] = "Minuteur terminé pendant votre absence : %s"
+
+-- Modules/UI/UnitText.lua
+L["Health and power values"] = "Valeurs de vie et de ressources"
+L["Health and power values on unit frames (Blizzard's status text) and health on nameplates."] =
+    "Valeurs de vie et de ressources sur les cadres d'unité (texte de statut de Blizzard) et vie sur les barres de nom."
+L["value and percent"] = "valeur et pourcentage"
+L["value"] = "valeur"
+L["percent"] = "pourcentage"
+L["short (4.5k)"] = "court (4,5k)"
+L["full (4,523 / 6,000)"] = "complet (4 523 / 6 000)"
+L["Show values on unit frames (Blizzard's status text)"] =
+    "Valeurs sur les cadres d'unité (texte de statut de Blizzard)"
+L["Unit frames: %s"] = "Cadres d'unité : %s"
+L["Show health on nameplates"] = "Vie sur les barres de nom"
+L["Nameplates: %s"] = "Barres de nom : %s"

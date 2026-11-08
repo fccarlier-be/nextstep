@@ -140,6 +140,8 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
 - Cadres d'unité Blizzard et nameplates, selon les résultats de la phase 1.
 
+État : **écrit et testé hors jeu** (module `UnitText`) : texte de statut natif sur les cadres d'unité, vie sur les barres de nom avec repli si une valeur secrète refuse un format ; reste la vérification en jeu, en combat surtout.
+
 ## Phase 8 : Sacs et banque → v0.5
 
 - Sacs et banque unifiés, banque consultable à distance, mémoire des autres personnages, marques sur les objets.

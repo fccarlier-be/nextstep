@@ -468,6 +468,7 @@ Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Mini
 - Format par défaut : `4 523 / 6 000 (75 %)` ; format court (`4,5k / 6k`) en option, réglable séparément pour les cadres et les nameplates.
 - Stratégie : (1) option native « Texte de statut » si elle existe ; (2) nos propres textes ailleurs, les valeurs étant transmises sans calcul ; (3) repli sur un format autorisé en combat.
 - **[À vérifier]** Fonctions de formatage des secret values ; nameplates verrouillées (alliés en donjon).
+- **Réalisé** (`Modules/UI/UnitText.lua`, module `UnitText`) : le diagnostic montre que la santé est secrète même hors combat. Cadres d'unité : texte de statut natif (`statusText = 1`, `statusTextDisplay` = valeur et pourcentage, valeur ou pourcentage au choix), réglages d'origine rendus à la désactivation. Barres de nom : texte de NextStep sous la barre, mis à jour sur `UNIT_HEALTH` ; formats court (`4,5k (75 %)`), complet (`4 523 / 6 000`) ou pourcentage, chaque forme essayée sous `pcall`, repli sur une forme plus simple si une valeur secrète refuse l'opération ; barres verrouillées (`IsForbidden`) ignorées. Format court des cadres : non, le texte natif n'en a pas. Mis de côté si Plater, KuiNameplates ou ThreatPlates est chargé.
 
 ### Sacs et banque
 
