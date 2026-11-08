@@ -134,6 +134,8 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 - Calcul du score, détection de la spécialisation (modifiable à la main).
 - Récompenses de quête mises en évidence, infobulles, alerte d'amélioration.
 
+État : **écrit et testé hors jeu** (module `Items`, `Modules/Items/`) : poids de stats importés de Polestar (`Tools/import/gear.lua`, tranches de niveau mêlées à wowsims), stats lues dans le client (`C_Item.GetItemStats`, chiffres propres à Forever), spécialisation détectée par les talents ou choisie dans les options, gain ou perte dans l'infobulle, récompense de quête conseillée avec la raison, alerte d'amélioration (hors combat, groupée, seuil, équiper d'un clic), `/ns gear`. La base d'items de Polestar (`Polestar_ItemDB`) n'est pas importée : le client donne les stats de tout objet affiché. Restent la vérification en jeu, puis les items à ne pas rater, les jalons et le butin des donjons.
+
 ## Phase 7 : Valeurs de vie et de ressources → v0.4
 
 - Cadres d'unité Blizzard et nameplates, selon les résultats de la phase 1.

@@ -6,12 +6,14 @@ NextStep s'appuie sur le travail de plusieurs projets libres. Merci à leurs aut
 
 | Projet | Utilisation dans NextStep | Licence |
 |---|---|---|
-| [Polestar](https://github.com/fitzforge/polestar), Copyright (c) 2026 The Polestar authors | Guides de leveling, de classe et de métiers ; noms et textes traduits | GPL-3.0-only |
+| [Polestar](https://github.com/fitzforge/polestar), Copyright (c) 2026 The Polestar authors | Guides de leveling, de classe et de métiers ; noms et textes traduits ; poids de stats et calcul du score d'équipement (adapté) | GPL-3.0-only |
+| [wowsims](https://github.com/wowsims), Copyright (c) 2024 wowsims team (via Polestar) | Poids de stats par spécialisation au-delà des premiers niveaux | MIT |
+| ForeverLevelingBiS, Copyright (c) 2026 Thunder (via Polestar) | Traits raciaux d'équipement | MIT |
 | [pfQuest](https://github.com/shagu/pfQuest), Copyright (c) 2017-2021 Eric Mauser (Shagu) (via Polestar) | Faits de quêtes, PNJ, objets et items repris dans les guides ; noms français | MIT |
 | [Ding!](https://github.com/moust4ki/DingGuideWoWForever) et sa base DingDB, Copyright Yendi ([@moust4ki](https://github.com/moust4ki)) (via Polestar, v1.8.1, commit `fb0a06a`) | Noms français de quêtes, PNJ, objets et items | GPL-3.0 |
 | [CMaNGOS classic-db](https://github.com/cmangos/classic-db) (via Polestar) | Hauteurs d'apparition et déplacements des PNJ, nombre d'objectifs des quêtes | GPL-3.0 |
 
-Les mentions et licences complètes de ces sources, et des autres sources de Polestar, sont livrées avec l'addon, à côté des données : un fichier `LICENSE-DATA.txt` dans `NextStep/Data/Imported/Polestar/`, `NextStep_Alliance/Data/` et `NextStep_Horde/Data/`. Ce fichier reproduit sans modification les notices de Polestar (dont la licence MIT de pfQuest et les crédits de DingDB). Le texte de la GPL est dans `NextStep/LICENSE.txt`.
+Les mentions et licences complètes de ces sources, et des autres sources de Polestar, sont livrées avec l'addon, à côté des données : un fichier `LICENSE-DATA.txt` dans `NextStep/Data/Imported/Polestar/`, `NextStep_Alliance/Data/` et `NextStep_Horde/Data/`. Ce fichier reproduit sans modification les notices de Polestar (dont la licence MIT de pfQuest et les crédits de DingDB). Les notices MIT de wowsims et de ForeverLevelingBiS sont dans `NextStep/Data/Imported/Polestar/Gear-LICENSE-DATA.txt`. Le texte de la GPL est dans `NextStep/LICENSE.txt`.
 
 ## Prévus
 
@@ -20,8 +22,7 @@ Ces projets seront utilisés dans les prochaines phases (voir la [feuille de rou
 | Projet | Utilisation prévue | Licence |
 |---|---|---|
 | [forever-db](https://github.com/fitzforge/polestar/tree/next/forever-db) (Polestar) | Faits du jeu : quêtes, PNJ, objets, cartes | GPL-3.0 ; couche « mécaniques et étapes » sous CC BY 4.0 |
-| ForeverLevelingBiS, par Thunder (via Polestar) | Statistiques et provenance des items de leveling | MIT |
-| [wowsims](https://github.com/wowsims) (via Polestar) | Poids de stats par spécialisation | MIT |
+| ForeverLevelingBiS, par Thunder (via Polestar) | Provenance des items de leveling, butin des donjons | MIT |
 | [What's Training](https://github.com/fusionpit/WhatsTraining), par Fusionpit | Sorts de chaque classe chez le maître (niveau, rang, coût) | MIT |
 | [GatherMate2](https://github.com/Nevcairiel/GatherMate2), par kagaro, Xinhuan et Nevcairiel | Code de détection des récoltes | GPL-2.0-or-later |
 

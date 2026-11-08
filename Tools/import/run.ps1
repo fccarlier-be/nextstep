@@ -4,7 +4,8 @@
 
 .DESCRIPTION
     1. fetch.ps1 downloads the Polestar commit pinned in polestar.lock (cached).
-    2. import.lua converts it and writes the data files and last-import.md.
+    2. import.lua converts it and writes the data files and last-import.md;
+       gear.lua writes the stat weights (Data/Imported/Polestar/Gear.lua).
     3. Tools\check.ps1 runs luacheck and the out-of-game tests.
     To import a newer Polestar, edit polestar.lock first.
 #>
@@ -18,6 +19,8 @@ try {
     if (-not $luajit) { $luajit = Join-Path $env:LOCALAPPDATA "Programs\LuaJIT\bin\luajit.exe" }
     & $luajit Tools/import/import.lua Tools/import/cache/polestar Tools/import/polestar.lock
     if ($LASTEXITCODE -ne 0) { throw "import failed" }
+    & $luajit Tools/import/gear.lua Tools/import/cache/polestar Tools/import/polestar.lock
+    if ($LASTEXITCODE -ne 0) { throw "gear import failed" }
 
     & (Join-Path $PSScriptRoot "..\check.ps1")
     if ($LASTEXITCODE -ne 0) { throw "checks failed" }

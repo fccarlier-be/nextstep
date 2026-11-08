@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     Sparse, shallow checkout into Tools\import\cache\polestar (ignored by git): only the
-    compiled guide packs, the French pack and the licence files are downloaded.
+    compiled guide packs, the French pack, the gear weights and the licence files are downloaded.
 #>
 $ErrorActionPreference = "Stop"
 
@@ -21,8 +21,10 @@ if (-not (Test-Path (Join-Path $dest ".git"))) {
     git -C $dest sparse-checkout set --no-cone `
         "/LICENSE" "/THIRD_PARTY.md" `
         "/addon/Polestar_Guides/" "/addon/Polestar_Guides_Alliance/" "/addon/Polestar_Guides_Horde/" `
-        "/addon/Polestar_frFR/"
+        "/addon/Polestar_frFR/" "/addon/Polestar/Gear/"
 }
+# Anciens caches : ajoute les dossiers apparus depuis (poids de stats, phase 6).
+git -C $dest sparse-checkout add "/addon/Polestar/Gear/"
 
 Write-Host "Fetching Polestar $($lock.version) ($($lock.commit))..."
 # blob:none: only the files kept by the sparse checkout are downloaded.
