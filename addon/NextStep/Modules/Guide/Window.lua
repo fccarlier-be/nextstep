@@ -17,7 +17,9 @@ local WIDTH = 330
 local PADDING = 10
 local HEADER_HEIGHT = 30
 local FOOTER_HEIGHT = 36
-local LINE_GAP = 3
+local LINE_GAP = 4
+local CARD_PAD = 4          -- marge intérieure des cartes d'objectif et de la note
+local BAR_HEIGHT = 3
 local INDENT = 14
 
 -- Icône de chaque type d'objectif (curseurs et icônes du jeu), à faire.
@@ -195,17 +197,18 @@ function Guide:CreateWindow()
     separator:SetPoint("BOTTOMLEFT", 1, FOOTER_HEIGHT - 2)
     separator:SetPoint("BOTTOMRIGHT", -1, FOOTER_HEIGHT - 2)
     frame.separator = separator
-    frame.skip = smallButton(footer, L["Skip"], 80, function()
+    local buttonWidth = math.floor((WIDTH - 2 * PADDING - 2 * 6) / 3)
+    frame.skip = smallButton(footer, L["Skip"], buttonWidth, function()
         local result = self.result
         if result and result.current then
             self:Skip(result.current)
         end
     end)
     frame.skip:SetPoint("LEFT", 0, 0)
-    frame.done = smallButton(footer, L["Done"], 80, function()
+    frame.done = smallButton(footer, L["Done"], buttonWidth, function()
         self:ValidateCurrent()
     end)
-    frame.done:SetPoint("LEFT", frame.skip, "RIGHT", 4, 0)
+    frame.done:SetPoint("LEFT", frame.skip, "RIGHT", 6, 0)
     -- Ce que fait chaque bouton, au survol.
     local function explain(button, heading, text)
         button:HookScript("OnEnter", function(owner)
@@ -226,7 +229,7 @@ function Guide:CreateWindow()
         .. "To leave out just one quest, right-click its line."])
     explain(frame.done, L["Done"], L["You did this step yourself: ticks what the guide cannot see (talk to, "
         .. "visit...), and moves on."])
-    frame.mode = smallButton(footer, L["Strict"], 80, function()
+    frame.mode = smallButton(footer, L["Strict"], buttonWidth, function()
         self:SetMode(self.char.mode == "free" and "strict" or "free")
     end)
     frame.mode:SetPoint("RIGHT", 0, 0)
@@ -268,6 +271,26 @@ local function acquireLine(frame, index)
         line.highlight:SetPoint("BOTTOMRIGHT", 4, -1)
         line.highlight:SetVertexColor(1, 0.82, 0, 0.08)
         line.highlight:Hide()
+        -- Carte d'un objectif ou de la note : fond, liseré coloré à gauche.
+        line.card = line:CreateTexture(nil, "BACKGROUND", nil, -1)
+        line.card:SetTexture("Interface\\Buttons\\WHITE8X8")
+        line.card:Hide()
+        line.accent = line:CreateTexture(nil, "BORDER")
+        line.accent:SetTexture("Interface\\Buttons\\WHITE8X8")
+        line.accent:SetWidth(2)
+        line.accent:Hide()
+        -- Barre d'avancement (« 10/12 tués »).
+        line.bar = CreateFrame("StatusBar", nil, line)
+        line.bar:SetStatusBarTexture("Interface\\Buttons\\WHITE8X8")
+        line.bar:SetMinMaxValues(0, 1)
+        line.bar:SetHeight(BAR_HEIGHT)
+        Style.Fill(line.bar, { 0, 0, 0, 0.5 })
+        line.bar:Hide()
+        -- Filet sous un titre de section (« En chemin »).
+        line.rule = Style.FadeLine(line, Style.COLORS.goldDim)
+        line.rule:Place(line, -2)
+        line.rule.left:Hide()
+        line.rule.right:Hide()
         line:RegisterForClicks("LeftButtonUp", "RightButtonUp")
         line:SetScript("OnClick", function(button, mouse)
             if mouse == "RightButton" and button.menu then
@@ -308,17 +331,51 @@ local function addLine(view, text, color, options)
     view.count = view.count + 1
     local line = acquireLine(view.frame, view.count)
     local indent = options.indent or 0
+    local carded = options.card ~= nil
+    -- Une carte a une marge intérieure : le texte est décalé, la ligne plus haute.
+    local pad = carded and CARD_PAD or 0
     local width = WIDTH - 2 * PADDING - indent
     -- Avant le texte : la hauteur de la ligne dépend de la police.
     line.text:SetFontObject(options.header and "GameFontNormal" or "GameFontHighlightSmall")
-    line.text:SetWidth(width)
+    line.text:SetWidth(width - 2 * pad - (carded and 2 or 0))
+    line.text:ClearAllPoints()
+    line.text:SetPoint("TOPLEFT", pad + (carded and 2 or 0), -pad)
     line.text:SetText(text)
     color = color or COLORS.text
     line.text:SetTextColor(color[1], color[2], color[3])
-    local height = math.max(line.text:GetStringHeight() or 12, 12)
+    local height = math.max(line.text:GetStringHeight() or 12, 12) + 2 * pad
+    if options.progress then
+        height = height + BAR_HEIGHT + 2
+    end
     line:ClearAllPoints()
     line:SetPoint("TOPLEFT", view.frame.body, "TOPLEFT", indent, -view.height)
     line:SetSize(width, height)
+    -- Carte : fond et liseré de la couleur de l'état.
+    line.card:SetShown(carded)
+    line.accent:SetShown(carded)
+    if carded then
+        local fill = options.card == "note" and { 0.16, 0.14, 0.09, 0.75 } or { 0.12, 0.12, 0.15, 0.7 }
+        line.card:SetVertexColor(fill[1], fill[2], fill[3], fill[4])
+        line.card:ClearAllPoints()
+        line.card:SetAllPoints()
+        local accent = options.accent or Style.COLORS.goldDim
+        line.accent:SetVertexColor(accent[1], accent[2], accent[3], 1)
+        line.accent:ClearAllPoints()
+        line.accent:SetPoint("TOPLEFT")
+        line.accent:SetPoint("BOTTOMLEFT")
+    end
+    -- Barre d'avancement sous le texte.
+    line.bar:SetShown(options.progress ~= nil)
+    if options.progress then
+        line.bar:ClearAllPoints()
+        line.bar:SetPoint("BOTTOMLEFT", pad + 2, pad)
+        line.bar:SetPoint("BOTTOMRIGHT", -pad, pad)
+        line.bar:SetValue(options.progress)
+        local barColor = options.progress >= 1 and Style.COLORS.green or Style.COLORS.gold
+        line.bar:SetStatusBarColor(barColor[1], barColor[2], barColor[3])
+    end
+    line.rule.left:SetShown(options.section == true)
+    line.rule.right:SetShown(options.section == true)
     line.onClick = options.onClick
     line.tooltip = options.tooltip
     line.menu = options.menu
@@ -430,6 +487,17 @@ local function addGoal(self, view, result, i, j, status)
         end
     end
     local color = status == "done" and COLORS.done or COLORS.text
+    options.card = "goal"
+    options.accent = (status == "done" and Style.COLORS.green) or (status == "blocked" and Style.COLORS.orange)
+        or Style.COLORS.gold
+    -- Objectif chiffré (« 10/12 tués ») : une barre d'avancement.
+    local done, total
+    for a, b in text:gmatch("(%d+)/(%d+)") do
+        done, total = tonumber(a), tonumber(b)
+    end
+    if total and total > 0 and done <= total then
+        options.progress = status == "done" and 1 or done / total
+    end
     addLine(view, goalIcon(goal, status) .. " " .. text, color, options)
 end
 
@@ -517,7 +585,8 @@ local function addCurrentStep(self, view, result)
     end
     local note = Labels.StepNote(step, guide)
     if note then
-        addLine(view, ICONS.note .. " " .. note, COLORS.muted, { indent = INDENT })
+        addGap(view)
+        addLine(view, ICONS.note .. " " .. note, { 0.85, 0.8, 0.65 }, { card = "note", accent = Style.COLORS.goldDim })
     end
 end
 
@@ -558,7 +627,7 @@ local function addAlong(self, view, result)
         return
     end
     addGap(view)
-    addLine(view, L["Along the way:"], COLORS.title)
+    addLine(view, L["Along the way:"], COLORS.title, { section = true })
     for _, entry in ipairs(result.along) do
         addGoal(self, view, result, entry.step, entry.goal, entry.status)
     end
