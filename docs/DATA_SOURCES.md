@@ -41,6 +41,10 @@ La version de Polestar importée est fixée dans [`Tools/import/polestar.lock`](
 
 Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au format Lua de NextStep. Ils sont appliqués **après** les données importées et survivent aux réimports.
 
+- `Data/Overrides/Guides.lua` : `DB:AddGuideFix(function(guide) ... end)`, appliquée à chaque guide chargé (`DB.AddGuide`), y compris ceux de faction chargés plus tard.
+- Corrections en place : achat du tube en bronze (4371) déplacé de Herble Baubbletump (Sombre-Comté, qui n'en vend pas sur Forever) à Neal Allen (Port de Menethil).
+- Une erreur de guide trouvée en jeu se corrige ici, et se signale aussi à Polestar.
+
 ## Obligations
 
 - NextStep est distribué sous GPL-3.0-only, la licence des données de Polestar qu'il contient. Le texte de la licence est livré dans l'addon (`addon/NextStep/LICENSE.txt`, copie de `LICENSE`, vérifiée par les tests).

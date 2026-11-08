@@ -36,8 +36,21 @@ DB.locale = clientLocale()
 
 -- G(function() return { ... } end) : un constructeur par guide, pour rester sous la
 -- limite de constantes par fonction de Lua 5.1.
+-- Corrections propres à NextStep (Data/Overrides/), appliquées à chaque guide chargé.
+DB.guideFixes = {}
+function DB:AddGuideFix(fix)
+    self.guideFixes[#self.guideFixes + 1] = fix
+    -- Guides déjà chargés : corrigés tout de suite.
+    for _, guide in pairs(self.guides) do
+        fix(guide)
+    end
+end
+
 function DB.AddGuide(build)
     local guide = build()
+    for _, fix in ipairs(DB.guideFixes) do
+        fix(guide)
+    end
     if not DB.guides[guide.id] then
         DB.order[#DB.order + 1] = guide.id
     end
