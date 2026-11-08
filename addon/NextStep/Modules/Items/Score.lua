@@ -205,25 +205,76 @@ local function clientStats(link)
     return out
 end
 
--- -> { id, link, inv, req, quality, class, subclass, sellPrice, name, icon, stats } | nil
+-- Caractéristiques importées (DB.itemStats, format de Polestar_ItemDB) : pour les
+-- objets que le client n'a pas encore en cache (butin des donjons, objets à venir).
+--   "<emplacement> <niveau d'objet> <niveau requis> <qualité> <classe> <sous-classe>
+--    [<stat><n> ...] [dmin<n> dmax<n> speed<ms>] [cls<masque>] [uniq1]"
+local UNTOKEN = { mpr = "mp5", hpr = "hp5" }
+function Score.ParseStats(text)
+    local inv, req, quality, class, sub = text:match("^(%d+) %d+ (%d+) (%d+) (%d+) (%d+)")
+    if not inv then
+        return nil
+    end
+    local info = { inv = tonumber(inv), req = tonumber(req), quality = tonumber(quality),
+        class = tonumber(class), subclass = tonumber(sub), allow = 0, stats = {} }
+    local dmin, dmax, speed
+    for key, value in text:gmatch("(%a+)(%-?%d+)") do
+        value = tonumber(value)
+        if key == "dmin" then
+            dmin = value
+        elseif key == "dmax" then
+            dmax = value
+        elseif key == "speed" then
+            speed = value
+        elseif key == "cls" then
+            info.allow = value
+        elseif key ~= "uniq" then
+            info.stats[UNTOKEN[key] or key] = value
+        end
+    end
+    if dmin and dmax and speed and speed > 0 then
+        info.stats.dps = math.floor((dmin + dmax) / 2 / (speed / 1000) * 10 + 0.5) / 10
+    end
+    return info
+end
+
+-- -> { id, link, inv, req, quality, class, subclass, allow, sellPrice, name, icon, stats } | nil
 local function buildInfo(link)
     if type(link) ~= "string" then
         return nil
     end
+    local id = Score.ItemID(link)
+    local imported = id and ns.DB.itemStats and ns.DB.itemStats[id]
+    imported = imported and Score.ParseStats(imported)
     local equipLoc, class, subclass, minLevel, quality, sellPrice, name, icon = Client.ItemInfo(link)
-    local inv = EQUIP_LOC[equipLoc or ""]
+    local inv = EQUIP_LOC[equipLoc or ""] or (imported and imported.inv)
     if not (inv and SLOTS_OF[inv]) then
         return nil
     end
     local stats = clientStats(link)
+    if not stats or next(stats) == nil then
+        stats = imported and imported.stats or stats
+    end
     if not stats then
         return nil
     end
     return {
-        id = Score.ItemID(link), link = link, inv = inv, req = tonumber(minLevel) or 0, quality = quality,
-        class = class, subclass = subclass, sellPrice = tonumber(sellPrice) or 0, name = name, icon = icon,
-        stats = stats,
+        id = id, link = link, inv = inv, req = tonumber(minLevel) or (imported and imported.req) or 0,
+        quality = quality or (imported and imported.quality), class = class or (imported and imported.class),
+        subclass = subclass or (imported and imported.subclass), allow = imported and imported.allow or 0,
+        sellPrice = tonumber(sellPrice) or 0, name = name, icon = icon, stats = stats,
     }
+end
+
+-- Lien d'un objet par son identifiant : celui du client s'il le connaît, sinon « item:<id> ».
+function Score.LinkOf(id)
+    if C_Item and C_Item.GetItemInfo then
+        local ok, _, link = pcall(C_Item.GetItemInfo, id)
+        if ok and type(link) == "string" and ns.Usable(link) then
+            return link
+        end
+    end
+    return "item:" .. id
 end
 
 function Score.Info(link)
@@ -395,6 +446,11 @@ function Score.Usability(info)
     local minLevel = info.req or 0
     if not prof then
         return true, nil, minLevel
+    end
+    -- Objet réservé à certaines classes (masque de bits des classes).
+    local meta = gear().classes and gear().classes[me.class]
+    if info.allow and info.allow > 0 and meta and math.floor(info.allow / meta.bit) % 2 ~= 1 then
+        return false, "class", minLevel
     end
     local sub = info.subclass
     if info.class == ARMOR and sub and not ANY_ARMOR_INV[info.inv] then

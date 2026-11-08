@@ -26,6 +26,7 @@ local SPECS = {
     "spells",
     "journal",
     "items",
+    "dungeons",
     "autoplay",
     "diagnostic",
 }

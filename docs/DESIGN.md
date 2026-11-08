@@ -308,6 +308,19 @@ Détectée automatiquement (arbre de talents le plus rempli, `GetTalentTabInfo`)
 
 Réalisé (v0.3, `Modules/Items/`) : infobulles (« NextStep (Armes) : +12 % », porté, emplacement vide, niveau requis, ou raison en gris), récompenses (encart doré à droite de la fenêtre de quête et cadre sur le bouton conseillé), alerte (cinq objets au plus, clic gauche pour équiper hors combat, clic droit pour fermer, fermeture après 20 s réglable, chaque objet signalé une fois par personnage). Les trois se coupent séparément dans les options ; seuil par défaut : 2 %.
 
+**Onglet Donjons** du journal (`Modules/Items/Dungeons.lua`, `/ns dungeons`, menu du bouton NextStep) : à gauche les donjons de la faction, ceux du niveau du personnage en tête ; à droite le donjon choisi :
+
+- **Quêtes à prendre avant d'y aller** : celles qui concernent le personnage (faction, race, classe) et ne sont pas faites, avec leur état (à prendre, dans le journal, niveau requis, étape avant) et le gain de leur meilleure récompense. Si la quête termine une **suite de quêtes**, les étapes encore à faire sont listées dans l'ordre (prérequis « tous » puis « l'un d'eux », celui du journal en priorité ; les quêtes d'introduction sont laissées de côté), chacune avec son donneur et sa zone ; les suites après la quête sont citées (« Ensuite : … »). Un clic sur une quête ou une étape tourne la flèche vers le donneur (`Guide:PointTo`), jusqu'à l'arrivée.
+- **Butin des boss** : la sélection importée (taux de butin) et le butin **vu en jeu** (objets verts ou mieux du butin ouvert dans le donjon, rangés sous leur boss, au niveau du compte), chacun avec son gain pour la spécialisation.
+
+**Onglet Équipement** (`Modules/Items/Upgrades.lua`) :
+
+- **Prochains jalons** : sorts à apprendre maintenant et au prochain niveau utile (coût), quêtes de classe disponibles, sacs (emplacement vide ou sacs de moins de 10 places à partir du niveau 5), monte au niveau 40 (environ 90 po, part déjà économisée). Seuils dans `Items.MILESTONES`. **[À vérifier]** niveau et prix de la monte sur Forever.
+- **Équipement à ne pas rater** : les objets de leveling (ForeverLevelingBiS) portables d'ici cinq niveaux qui amélioreraient l'équipement porté, triés par gain, avec leur provenance (quête et donneur, boss et donjon avec le taux, artisanat) ; un clic sur une quête pointe la flèche vers son donneur.
+- **Dans la route** : sur les lignes « accepter » et « rendre » du guide, la récompense qui améliore l'équipement est signalée (« récompense +12 % »).
+
+Les objets que le client n'a pas encore en cache sont notés avec les caractéristiques importées (`DB.itemStats`), le client prenant le relais dès qu'il les connaît.
+
 **[À vérifier]** sur Forever : équiper depuis l'alerte (`C_Item.EquipItemByName`) ; noms des boutons de récompense (`QuestInfoRewardsFrameQuestInfoItem<n>`) ; signature de `GetTalentTabInfo` ; clés de `C_Item.GetItemStats` pour le toucher et le critique.
 
 **Données du butin des donjons** (vérifiées sur Polestar 0.3.0) :

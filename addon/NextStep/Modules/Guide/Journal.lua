@@ -7,6 +7,8 @@
 --            bouton pour le suivre.
 --   Sorts de classe : les sorts du maître, maintenant et aux niveaux à venir
 --            (SpellsWindow.lua).
+--   Onglets ajoutés par d'autres modules (Guide:AddJournalTab) : Donjons et
+--            Équipement du module Items.
 --   Options : ouvre les options de NextStep.
 --
 -- Ouvert par le menu du bouton NextStep, /ns journal ou un raccourci clavier ;
@@ -475,6 +477,127 @@ local function fillCard(self, card, row)
     end
 end
 
+---------------------------------------------------------------------------
+-- Onglets des autres modules et liste de lignes commune
+---------------------------------------------------------------------------
+
+-- Onglet ajouté par un autre module : { key, label, create(parent) -> cadre, update(cadre) }.
+-- Le cadre occupe tout le corps du journal (Guide.JOURNAL_BODY).
+Guide.journalTabs = {}
+function Guide:AddJournalTab(tab)
+    self.journalTabs[#self.journalTabs + 1] = tab
+end
+
+Guide.JOURNAL_BODY = { width = WIDTH - 2 * PADDING - 2, height = HEIGHT - 37 - 2 * PADDING,
+    list = LIST_WIDTH, padding = PADDING }
+
+local ROW_HEIGHT = 22
+
+-- Liste défilante de lignes, pour les onglets des autres modules. SetRows(rows), où
+-- chaque ligne est un en-tête { header = true, text, right, color, star } ou
+-- { text, right, icon, color, rightColor, indent, selected, tooltip = fn(tooltip) | lien,
+--   onClick = fn }.
+function Guide.RowList(parent, width, height)
+    local list = CreateFrame("Frame", nil, parent)
+    list:SetSize(width, height)
+    list:EnableMouseWheel(true)
+    list.headers, list.lines, list.offset, list.rows = {}, {}, 0, {}
+    list:SetScript("OnMouseWheel", function(_, delta)
+        list.offset = math.max(0, math.min(list.offset - delta * 3, #list.rows - 1))
+        list:Render()
+    end)
+
+    local function newLine()
+        local line = CreateFrame("Button", nil, list)
+        line:SetHeight(ROW_HEIGHT)
+        line.bg = Style.Fill(line, C.card)
+        line.bg:SetPoint("BOTTOMRIGHT", 0, 2)
+        line.icon = Style.Icon(line, 16)
+        line.text = Style.Text(line, "GameFontHighlightSmall", C.text)
+        line.right = Style.Text(line, "GameFontHighlightSmall", C.text, "RIGHT")
+        line.right:SetPoint("RIGHT", -8, 1)
+        if line.text.SetWordWrap then
+            line.text:SetWordWrap(false)
+        end
+        line:SetScript("OnEnter", function(frame)
+            setFill(frame.bg, C.cardHover)
+            local row = frame.row
+            if row and row.tooltip and GameTooltip then
+                GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+                if type(row.tooltip) == "function" then
+                    row.tooltip(GameTooltip)
+                else
+                    GameTooltip:SetHyperlink(row.tooltip)
+                end
+                GameTooltip:Show()
+            end
+        end)
+        line:SetScript("OnLeave", function(frame)
+            setFill(frame.bg, frame.row and frame.row.selected and C.cardSelected or C.card)
+            if GameTooltip then
+                GameTooltip:Hide()
+            end
+        end)
+        line:SetScript("OnClick", function(frame)
+            if frame.row and frame.row.onClick then
+                frame.row.onClick()
+            end
+        end)
+        return line
+    end
+
+    function list.Render(self)
+        local headers, lines = 0, 0
+        layout(self, self.rows, self.offset, function(row)
+            if row.header then
+                headers = headers + 1
+                local header = self.headers[headers] or sectionHeader(self)
+                self.headers[headers] = header
+                header.text:SetText(row.text)
+                setColor(header.text, row.color or C.gold)
+                header.star:SetShown(row.star == true)
+                header.right:SetText(row.right or "")
+                return header, HEADER_HEIGHT
+            end
+            lines = lines + 1
+            local line = self.lines[lines] or newLine()
+            self.lines[lines] = line
+            line.row = row
+            setFill(line.bg, row.selected and C.cardSelected or C.card)
+            local indent = 8 + (row.indent or 0) * 14
+            line.icon:ClearAllPoints()
+            line.icon:SetPoint("LEFT", indent, 1)
+            line.icon:SetTexture(row.icon)
+            line.icon:SetShown(row.icon ~= nil)
+            line.text:ClearAllPoints()
+            if row.icon then
+                line.text:SetPoint("LEFT", line.icon, "RIGHT", 6, 0)
+            else
+                line.text:SetPoint("LEFT", line, "LEFT", indent, 1)
+            end
+            line.text:SetPoint("RIGHT", line.right, "LEFT", -6, 0)
+            line.text:SetText(row.text)
+            setColor(line.text, row.color or C.text)
+            line.right:SetText(row.right or "")
+            setColor(line.right, row.rightColor or C.muted)
+            return line, ROW_HEIGHT
+        end, function()
+            hidePool(self.headers, headers + 1)
+            hidePool(self.lines, lines + 1)
+        end)
+    end
+
+    function list.SetRows(self, rows, keepOffset)
+        self.rows = rows
+        if not keepOffset then
+            self.offset = 0
+        end
+        self.offset = math.max(0, math.min(self.offset, #rows - 1))
+        self:Render()
+    end
+    return list
+end
+
 function Guide:CreateJournal()
     local frame = Style.Window("NextStepJournalFrame", WIDTH, HEIGHT, L["NextStep journal"])
 
@@ -484,10 +607,13 @@ function Guide:CreateJournal()
         { key = "routes", label = L["Routes"] },
         { key = "spells", label = L["Class spells"] },
     }
+    for _, tab in ipairs(self.journalTabs) do
+        tabs[#tabs + 1] = tab
+    end
     local previous
     for index = #tabs, 1, -1 do
         local tab = tabs[index]
-        local button = Style.Button(frame.header, tab.label, 120, 26, function()
+        local button = Style.Button(frame.header, tab.label, 100, 26, function()
             self:ShowJournalTab(tab.key)
         end)
         if previous then
@@ -620,6 +746,16 @@ function Guide:CreateJournal()
     spells.headers, spells.lines = {}, {}
     frame.spells = spells
 
+    -- Onglets des autres modules.
+    frame.extra = {}
+    for _, tab in ipairs(self.journalTabs) do
+        local body = tab.create(frame)
+        body:SetPoint("TOPLEFT", PADDING + 1, -37 - PADDING)
+        body:SetSize(WIDTH - 2 * PADDING - 2, HEIGHT - 37 - 2 * PADDING)
+        body:Hide()
+        frame.extra[tab.key] = { body = body, tab = tab }
+    end
+
     frame:SetScript("OnShow", function()
         self:UpdateJournal()
     end)
@@ -646,11 +782,16 @@ function Guide:UpdateJournal()
     frame.side:SetShown(routes)
     frame.list:SetShown(routes)
     frame.detail:SetShown(routes)
-    frame.spells:SetShown(not routes)
+    frame.spells:SetShown(tab == "spells")
+    for key, extra in pairs(frame.extra) do
+        extra.body:SetShown(key == tab)
+    end
     if routes then
         self:UpdateJournalRoutes()
-    else
+    elseif tab == "spells" then
         self:UpdateJournalSpells()
+    elseif frame.extra[tab] then
+        frame.extra[tab].tab.update(frame.extra[tab].body)
     end
 end
 
@@ -839,7 +980,8 @@ function Guide:UpdateJournalSpells()
     end)
 end
 
--- Ouvre le journal sur un onglet ("routes" ou "spells"), ou le ferme s'il y est déjà.
+-- Ouvre le journal sur un onglet ("routes", "spells" ou celui d'un autre module), ou le
+-- ferme s'il y est déjà.
 function Guide:ToggleJournal(tab)
     if not (self.enabled and self.state) then
         ns:Print(L["%s is disabled: enable it in the options."]:format(self.title))

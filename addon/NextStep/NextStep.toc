@@ -27,6 +27,7 @@ Data\Imported\Polestar\Texts_frFR.lua
 Data\Imported\Client\MapOverlays.lua
 Data\Imported\WhatsTraining\Spells.lua
 Data\Imported\Polestar\Gear.lua
+Data\Imported\Polestar\Dungeons.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
@@ -54,6 +55,8 @@ Modules\Items\Score.lua
 Modules\Items\Items.lua
 Modules\Items\Rewards.lua
 Modules\Items\Alert.lua
+Modules\Items\Dungeons.lua
+Modules\Items\Upgrades.lua
 Core\Factions.lua
 Core\Options.lua
 Core\Slash.lua
