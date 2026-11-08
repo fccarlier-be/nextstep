@@ -6,9 +6,10 @@
 --
 -- Sans souillure : seulement des fonctions du client (SetMovable, RegisterForDrag,
 -- StartMoving, SetPoint), jamais Show ni Hide, jamais la table UIPanelWindows ni
--- d'attribut sécurisé ; les cadres protégés ne bougent pas en combat. Plusieurs
--- fenêtres ouvertes ensemble (retrait du gestionnaire de Blizzard) : pas encore,
--- trop proche de ce qui souille l'interface.
+-- d'attribut sécurisé ; les cadres protégés ne bougent pas en combat. Un clic sur une
+-- fenêtre la passe au premier plan (Raise). Plusieurs fenêtres de Blizzard ouvertes
+-- ensemble demanderaient de retirer les fenêtres de la table UIPanelWindows, ce qui
+-- souille l'interface (erreurs « action bloquée ») : écarté.
 --
 -- [À vérifier] sur Forever : position rendue après le placement par UIParent
 -- (UpdateUIPanelPositions) ; fenêtres chargées à la demande.
@@ -97,6 +98,12 @@ function Windows:Manage(name)
         if self.enabled then
             window:StopMovingOrSizing()
             self:Save(window)
+        end
+    end)
+    -- Clic : la fenêtre passe devant les autres de sa strate.
+    frame:HookScript("OnMouseDown", function(window)
+        if self.enabled and window.Raise and not blocked(window) then
+            window:Raise()
         end
     end)
     frame:HookScript("OnMouseUp", function(window, button)

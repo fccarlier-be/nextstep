@@ -85,6 +85,7 @@ function Style.Window(name, width, height, title)
     frame:SetSize(width, height)
     frame:SetPoint("CENTER")
     frame:SetFrameStrata("DIALOG")
+    frame:SetToplevel(true)      -- un clic la passe devant les autres fenêtres de NextStep
     frame:SetClampedToScreen(true)
     frame:SetMovable(true)
     frame:EnableMouse(true)
