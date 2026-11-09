@@ -38,6 +38,7 @@ local Guide = ns.Modules:New("Guide", {
         completed = {},    -- [identifiant du guide] = true : guides terminés
         returnTo = nil,    -- guide de leveling à reprendre après un guide annexe (classe, collection...)
         ignoredQuests = {}, -- [quête] = true : ignorée par le joueur, dans tous les guides
+        notOffered = {},    -- [quête] = niveau : le PNJ ne la proposait pas (Live.lua, ReadOffers)
         trainedLevel = nil, -- niveau du personnage à sa dernière visite au maître de classe
         trainerList = nil,  -- { level, spells, total } : sorts disponibles lus chez le maître (Spells.lua)
     },
@@ -71,6 +72,20 @@ function Guide:Progress(id)
     return progress
 end
 
+-- Quêtes refusées par leur PNJ à ce niveau : [quête] = true. Un niveau de plus peut les
+-- débloquer, les refus d'un autre niveau sont oubliés.
+function Guide:NotOffered()
+    local list, level = {}, self.state and self.state:Level()
+    for q, at in pairs(self.char.notOffered or {}) do
+        if at == level then
+            list[q] = true
+        else
+            self.char.notOffered[q] = nil
+        end
+    end
+    return list
+end
+
 function Guide:Refresh()
     local guide = self:ActiveGuide()
     if not guide or not self.state then
@@ -83,6 +98,7 @@ function Guide:Refresh()
     end
     local progress = self:Progress(guide.id)
     local result = Engine.Evaluate(guide, {
+        notOffered = self:NotOffered(),
         state = self.state,
         progress = progress,
         seen = self.seen[guide.id] or {},

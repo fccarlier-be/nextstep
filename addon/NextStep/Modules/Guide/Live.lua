@@ -40,12 +40,20 @@ function Guide:OnEnable()
     for event in pairs(ns.GuideState.EVENTS) do
         self:RegisterEvent(event, function(_, _, ...)
             self.live:OnEvent(event, ...)
+            -- Une quête rendue peut en débloquer d'autres : les refus constatés ne valent plus.
+            if event == "QUEST_TURNED_IN" then
+                self.char.notOffered = {}
+            end
             self:RequestRefresh()
         end)
     end
     for event, kind in pairs(NPC_EVENTS) do
         self:RegisterEvent(event, function()
-            self:OnNpcWindow(kind, ns.NpcID(UnitGUID("npc")))
+            local npc = ns.NpcID(UnitGUID("npc"))
+            self:OnNpcWindow(kind, npc)
+            if event == "GOSSIP_SHOW" or event == "QUEST_GREETING" then
+                self:ReadOffers(event, npc)
+            end
         end)
     end
     self:RegisterEvent("TAXIMAP_OPENED", function()
@@ -129,7 +137,7 @@ function Guide:NearbyActions(result)
         return list
     end
     local guide, state = result.guide, self.state
-    local ctx = { droppedQuests = {}, seen = function() return false end }
+    local ctx = { droppedQuests = {}, notOffered = self:NotOffered(), seen = function() return false end }
     local seen = {}
     for i = result.current + 1, #guide.steps do
         for j, goal in ipairs(guide.steps[i].goals) do
@@ -295,6 +303,88 @@ function Guide:OnNpcWindow(kind, npc)
         end
         return false
     end)
+end
+
+---------------------------------------------------------------------------
+-- Quêtes que le PNJ ne propose pas
+---------------------------------------------------------------------------
+
+-- Les données de Polestar ne connaissent pas toutes les conditions de Forever (chaîne
+-- refaite, quête retirée) : « Rapporter la statuette » au capitaine de port de Menethil,
+-- « Les lingots de sancteforge » chez Glorin Steelbrow. Le dialogue du PNJ fait foi :
+-- une quête que le guide fait accepter ici, mais absente de sa liste, est mise de côté
+-- (char.notOffered) jusqu'au prochain rendu de quête ou au prochain niveau, qui peuvent
+-- la débloquer. Elle revient aussi dès que le PNJ la propose.
+
+-- Écart de niveau à partir duquel une quête devient grise : le client peut la cacher
+-- (suivi des quêtes de bas niveau), son absence ne prouve alors rien.
+local TRIVIAL_GAP = 5
+
+-- Quêtes proposées par le PNJ : { [quête] = true }, ou nil si la liste est illisible.
+local function offeredQuests(event)
+    local offered = {}
+    if event == "GOSSIP_SHOW" then
+        if not (C_GossipInfo and C_GossipInfo.GetAvailableQuests) then
+            return nil
+        end
+        for _, info in ipairs(C_GossipInfo.GetAvailableQuests() or {}) do
+            local id = info.questID
+            if not ns.Usable(id) or type(id) ~= "number" then
+                return nil
+            end
+            offered[id] = true
+        end
+    else
+        if not (GetNumAvailableQuests and GetAvailableQuestInfo) then
+            return nil
+        end
+        local count = GetNumAvailableQuests()
+        if not ns.Usable(count) then
+            return nil
+        end
+        for i = 1, count or 0 do
+            local id = select(5, GetAvailableQuestInfo(i))
+            if not ns.Usable(id) or type(id) ~= "number" then
+                return nil
+            end
+            offered[id] = true
+        end
+    end
+    return offered
+end
+
+function Guide:ReadOffers(event, npc)
+    local result, state = self.result, self.state
+    if not (npc and result and result.current and state) then
+        return
+    end
+    local offered = offeredQuests(event)
+    if not offered then
+        return
+    end
+    local level = state:Level()
+    local notOffered = self.char.notOffered or {}
+    self.char.notOffered = notOffered
+    local changed = false
+    for q in pairs(offered) do
+        if notOffered[q] then
+            notOffered[q] = nil
+            changed = true
+        end
+    end
+    for _, entry in ipairs(self:OpenGoals(result)) do
+        local goal = result.guide.steps[entry.step].goals[entry.goal]
+        local q = goal.quest
+        if goal.t == "accept" and q and goal.npc == npc and entry.status == "todo"
+            and not offered[q] and not state:InLog(q)
+            and not (goal.qlvl and level - goal.qlvl >= TRIVIAL_GAP) then
+            notOffered[q] = level
+            changed = true
+        end
+    end
+    if changed then
+        self:Refresh()
+    end
 end
 
 ---------------------------------------------------------------------------

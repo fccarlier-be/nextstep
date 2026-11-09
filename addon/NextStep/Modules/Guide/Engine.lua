@@ -207,6 +207,7 @@ function Engine.Evaluate(guide, ctx)
 
     local goalCtx = {
         droppedQuests = droppedQuests,
+        notOffered = ctx.notOffered or {}, -- quêtes que leur PNJ ne propose pas (Live.lua)
         trainedLevel = ctx.trainedLevel,   -- niveau de la dernière visite au maître de classe
         spellsToLearn = ctx.spellsToLearn, -- nombre de sorts à apprendre (nil sans données)
         seen = function(goal)

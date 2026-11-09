@@ -264,6 +264,86 @@ describe("Guide en jeu", function()
         expect_eq(Guide.result.target.goal, 3, "enfin la rendre à Darcy")
     end)
 
+    it("met de côté une quête que le PNJ ne propose pas", function()
+        local game, Guide = boot({ level = 26 })
+        game.ns.DB.AddGuide(function() return {
+            id = "test/offers", title = "Offers", category = "Test", minLevel = 1, maxLevel = 60,
+            steps = {
+                { title = "Menethil", goals = {
+                    { t = "accept", quest = 900, npc = 50, qlvl = 25 },
+                    { t = "accept", quest = 901, npc = 50, qlvl = 25 },
+                    { t = "accept", quest = 902, npc = 50, qlvl = 12 },
+                } },
+                { title = "Rendre 900", goals = { { t = "turnin", quest = 900, npc = 60 } } },
+                { title = "Rendre 901", goals = { { t = "turnin", quest = 901, npc = 60 } } },
+            },
+        } end)
+        local offered = { 901 }
+        _G.C_GossipInfo = { GetAvailableQuests = function()
+            local list = {}
+            for i, id in ipairs(offered) do list[i] = { questID = id } end
+            return list
+        end }
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start("test/offers")
+        local function status(i, j) return Guide.result.steps[i].goals[j] end
+
+        game:setUnit("npc", { guid = npcGUID(51) })
+        game:fire("GOSSIP_SHOW")
+        expect_eq(status(1, 1).status, "todo", "un autre PNJ ne dit rien de la quête")
+
+        game:setUnit("npc", { guid = npcGUID(50) })
+        game:fire("GOSSIP_SHOW")
+        expect_eq(status(1, 1).status, "na", "absente de la liste du PNJ")
+        expect_eq(status(1, 1).reason.kind, "notOffered")
+        expect_eq(status(1, 2).status, "todo", "proposée")
+        expect_eq(status(1, 3).status, "todo", "grise : le client peut la cacher, rien n'est prouvé")
+
+        offered = { 900, 901 }
+        game:fire("GOSSIP_SHOW")
+        expect_eq(status(1, 1).status, "todo", "proposée à nouveau : elle revient")
+
+        offered = { 901 }
+        game:fire("GOSSIP_SHOW")
+        expect_eq(status(1, 1).status, "na")
+        game:fire("QUEST_TURNED_IN", 5)
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(status(1, 1).status, "todo", "une quête rendue peut la débloquer")
+
+        game:fire("GOSSIP_SHOW")
+        Guide.char.notOffered[900] = 25
+        Guide:Refresh()
+        expect_eq(status(1, 1).status, "todo", "refus d'un autre niveau oublié")
+
+        game:fire("GOSSIP_SHOW")
+        game:acceptQuest(901, {})
+        game:acceptQuest(902, {})
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(Guide.result.current, 3, "le rendu de la quête refusée est passé aussi")
+        expect_eq(#game.errors, 0)
+        _G.C_GossipInfo = nil
+    end)
+
+    it("lit aussi les quêtes proposées sans dialogue (QUEST_GREETING)", function()
+        local game, Guide = boot({ level = 20 })
+        game.ns.DB.AddGuide(function() return {
+            id = "test/greeting", title = "Greeting", category = "Test", minLevel = 1, maxLevel = 60,
+            steps = { { title = "PNJ", goals = {
+                { t = "accept", quest = 910, npc = 70 },
+                { t = "accept", quest = 911, npc = 70 },
+            } } },
+        } end)
+        _G.GetNumAvailableQuests = function() return 1 end
+        _G.GetAvailableQuestInfo = function() return false, 0, false, false, 911 end
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start("test/greeting")
+        game:setUnit("npc", { guid = npcGUID(70) })
+        game:fire("QUEST_GREETING")
+        expect_eq(Guide.result.steps[1].goals[1].status, "na")
+        expect_eq(Guide.result.steps[1].goals[2].status, "todo")
+        _G.GetNumAvailableQuests, _G.GetAvailableQuestInfo = nil, nil
+    end)
+
     it("signale les quêtes de groupe et d'élite sur tous leurs objectifs", function()
         local game, Guide = boot()
         game.ns.DB.AddGuide(function() return {
