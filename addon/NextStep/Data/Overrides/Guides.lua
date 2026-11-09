@@ -42,3 +42,26 @@ DB:AddGuideFix(function(guide)
         end
     end)
 end)
+
+---------------------------------------------------------------------------
+-- Lingots de sancteforge (quête 526) : Glorin Steelbrow (PNJ 1217), à Port de Menethil,
+-- ne la propose pas sur Forever (vérifié en jeu le 2026-11-09, chasseur niveau 26, sans
+-- la chaîne de la Flotte maudite). Les mêmes 5 lingots sont demandés par « Les lingots
+-- perdus » (324), de cette chaîne, que les guides suivent déjà. On retire l'acceptation ;
+-- le ramassage et le rendu, dans un autre guide, sont passés tant que la quête n'est
+-- pas dans le journal.
+---------------------------------------------------------------------------
+
+local LIGHTFORGE_INGOTS = 526
+
+DB:AddGuideFix(function(guide)
+    for _, step in ipairs(guide.steps or {}) do
+        local goals = step.goals or {}
+        for i = #goals, 1, -1 do
+            local goal = goals[i]
+            if goal.t == "accept" and goal.quest == LIGHTFORGE_INGOTS and #goals > 1 then
+                table.remove(goals, i)
+            end
+        end
+    end
+end)

@@ -33,6 +33,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Module **Fenêtres déplaçables** (`Windows`, phase 5) : les fenêtres de Blizzard se déplacent en les faisant glisser, leur position est retenue et rendue à chaque ouverture ; Alt + clic droit pour la remettre à sa place ; bouton de réinitialisation dans les options. Sans souillure de l'interface (ni Show/Hide, ni table UIPanelWindows).
 
 ### Corrigé
+- Guide : plus d'étape « accepter Les lingots de sancteforge » chez Glorin Steelbrow, à Port de Menethil : il ne la propose pas sur Forever. Les mêmes lingots se ramassent pour « Les lingots perdus », dans la chaîne de la Flotte maudite.
 - Guide : une quête prise dans un autre guide (« Voyage vers Ashenvale », prise à Auberdine) n'est plus à rendre si elle n'est pas dans le journal ; l'étape revient si on la prend.
 - Guide : il ne demande plus de rendre une quête que vous avez abandonnée (« Les plaies à huit pattes ») ; elle reste proposée à la reprise, et si vous la reprenez, l'étape de son rendu revient.
 - Guide du Bois de la Pénombre : le tube en bronze s'achète chez Neal Allen, à Port de Menethil ; Herble Baubbletump, à Sombre-Comté, n'en vend pas sur Forever. Première correction du nouveau dossier `Data/Overrides/` (corrections de guides propres à NextStep, conservées aux réimports).
