@@ -703,6 +703,10 @@ function SUBCOMMANDS.skip(self)
     end
 end
 
+function SUBCOMMANDS.back(self)
+    self:Back()
+end
+
 function SUBCOMMANDS.done(self)
     self:ValidateCurrent()
 end
@@ -804,9 +808,9 @@ function Guide:AddCommands()
         elseif name == "" then
             self:ToggleWindow()
         else
-            ns:Print(ns.L["Usage: /ns guide [list | start <number or id> | stop | reset | skip | done | mode]"])
+            ns:Print(ns.L["Usage: /ns guide [list | start <number or id> | stop | reset | skip | done | back | mode]"])
         end
-    end, ns.L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, mode"])
+    end, ns.L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, back, mode"])
     ns.Slash:Add("arrow", function()
         -- Vers un lieu choisi : d'abord le retour au guide.
         if self.pointTarget then

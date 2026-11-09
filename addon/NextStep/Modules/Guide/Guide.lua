@@ -159,8 +159,25 @@ end
 
 function Guide:Skip(step)
     return withActive(self, function(progress, guide)
+        Engine.Remember(progress, guide, step, "skip")
         Engine.Skip(progress, guide, step)
     end)
+end
+
+-- Retour à l'étape précédente : annule le dernier « Passer l'étape » ou « Étape faite »
+-- (clic de trop).
+function Guide:CanGoBack()
+    local guide = self:ActiveGuide()
+    return guide ~= nil and Engine.CanGoBack(self:Progress(guide.id))
+end
+
+function Guide:Back()
+    local guide = self:ActiveGuide()
+    if not (guide and Engine.Back(self:Progress(guide.id))) then
+        ns:Print(ns.L["Nothing to undo in this guide."])
+        return self.result
+    end
+    return self:Refresh()
 end
 
 -- Ignore une quête partout (acceptation, objectifs, rendu), ou la reprend.
