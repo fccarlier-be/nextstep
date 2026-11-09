@@ -42,7 +42,7 @@ La version de Polestar importée est fixée dans [`Tools/import/polestar.lock`](
 Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au format Lua de NextStep. Ils sont appliqués **après** les données importées et survivent aux réimports.
 
 - `Data/Overrides/Guides.lua` : `DB:AddGuideFix(function(guide) ... end)`, appliquée à chaque guide chargé (`DB.AddGuide`), y compris ceux de faction chargés plus tard.
-- Corrections en place : achat du tube en bronze (4371) déplacé de Herble Baubbletump (Sombre-Comté, qui n'en vend pas sur Forever) à Neal Allen (Port de Menethil) ; acceptation des « Lingots de sancteforge » (526) retirée, Glorin Steelbrow ne la propose pas sur Forever (les mêmes lingots viennent par « Les lingots perdus », 324) ; prérequis ajoutés : « Proche de la famille » (98190) après « Rapporter la statuette » (98189), sa suite (98191) après elle.
+- Corrections en place : achat du tube en bronze (4371) déplacé de Herble Baubbletump (Sombre-Comté, qui n'en vend pas sur Forever) à Neal Allen (Port de Menethil) ; prérequis ajouté à la suite de « Proche de la famille » chez Bolvar Fordragon (98191 après 98190).
 - Une erreur de guide trouvée en jeu se corrige ici, et se signale aussi à Polestar.
 
 ## Obligations
