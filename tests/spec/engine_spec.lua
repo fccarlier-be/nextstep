@@ -364,4 +364,29 @@ describe("Moteur du guide", function()
         expect_eq({ r.steps[1].status, r.steps[3].status, r.current }, { "done", "skipped", 2 },
             "les clés suivent les quêtes, pas les positions")
     end)
+
+    it("ne demande pas de rendre une quête abandonnée, et la redemande si on la reprend", function()
+        local Engine, progress = setup()
+        local g = guide({
+            step({ accept(1), accept(2) }),
+            step({ turnin(1) }),
+            step({ turnin(2) }),
+        })
+        local player = Player.new()
+        player:accept(1)
+        player:accept(2)
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 2, "rendre la 1")
+        -- La quête 1 est abandonnée : son rendu est mis de côté, elle est proposée à la reprise.
+        player.log[1] = nil
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 3, "on passe au rendu de la 2")
+        expect_eq(r.steps[2].goals[1].reason.kind, "abandoned")
+        expect_eq(r.abandoned[1].quest, 1, "proposée à la reprise")
+        -- Reprise de la quête 1 : l'étape de son rendu revient.
+        player:accept(1)
+        run(Engine, g, player, progress)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 2, "rendre la 1 de nouveau")
+    end)
 end)
