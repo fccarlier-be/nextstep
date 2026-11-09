@@ -72,6 +72,9 @@ local function accept(goal, state, ctx)
     if pre then
         return result("na", { kind = "prerequisite", quest = pre })
     end
+    if ctx.notOffered and ctx.notOffered[q] then
+        return result("na", { kind = "notOffered" })
+    end
     local need = goal.minLevel
     if need and state:Level() < need then
         return result("blocked", { kind = "level", level = need })

@@ -33,6 +33,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Module **Fenêtres déplaçables** (`Windows`, phase 5) : les fenêtres de Blizzard se déplacent en les faisant glisser, leur position est retenue et rendue à chaque ouverture ; Alt + clic droit pour la remettre à sa place ; bouton de réinitialisation dans les options. Sans souillure de l'interface (ni Show/Hide, ni table UIPanelWindows).
 
 ### Corrigé
+- Guide : une quête que le PNJ **ne propose pas** sur Forever est mise de côté dès que vous lui parlez (le guide lit sa liste de quêtes), avec son rendu : « Rapporter la statuette » au port de Menethil, « Proche de la famille » chez le capitaine Stoutfist… Elle revient si le PNJ la propose plus tard ; une quête rendue ou un niveau gagné font revérifier. Les quêtes grises, que le jeu peut cacher, ne sont pas concernées.
 - Guide : plus d'étape « accepter Les lingots de sancteforge » chez Glorin Steelbrow, à Port de Menethil : il ne la propose pas sur Forever. Les mêmes lingots se ramassent pour « Les lingots perdus », dans la chaîne de la Flotte maudite.
 - Guide : une quête prise dans un autre guide (« Voyage vers Ashenvale », prise à Auberdine) n'est plus à rendre si elle n'est pas dans le journal ; l'étape revient si on la prend.
 - Guide : il ne demande plus de rendre une quête que vous avez abandonnée (« Les plaies à huit pattes ») ; elle reste proposée à la reprise, et si vous la reprenez, l'étape de son rendu revient.
