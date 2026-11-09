@@ -33,6 +33,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Module **Fenêtres déplaçables** (`Windows`, phase 5) : les fenêtres de Blizzard se déplacent en les faisant glisser, leur position est retenue et rendue à chaque ouverture ; Alt + clic droit pour la remettre à sa place ; bouton de réinitialisation dans les options. Sans souillure de l'interface (ni Show/Hide, ni table UIPanelWindows).
 
 ### Corrigé
+- Guide : une quête prise dans un autre guide (« Voyage vers Ashenvale », prise à Auberdine) n'est plus à rendre si elle n'est pas dans le journal ; l'étape revient si on la prend.
 - Guide : il ne demande plus de rendre une quête que vous avez abandonnée (« Les plaies à huit pattes ») ; elle reste proposée à la reprise, et si vous la reprenez, l'étape de son rendu revient.
 - Guide du Bois de la Pénombre : le tube en bronze s'achète chez Neal Allen, à Port de Menethil ; Herble Baubbletump, à Sombre-Comté, n'en vend pas sur Forever. Première correction du nouveau dossier `Data/Overrides/` (corrections de guides propres à NextStep, conservées aux réimports).
 - Erreur Lua « attempt to index a secret string value » du module Métiers : sur Forever, le texte des messages de compétence du chat est secret ; il est ignoré (le rang vient de la fenêtre du métier). Récolte, barres de nom et sorts lancés protégés de la même façon.

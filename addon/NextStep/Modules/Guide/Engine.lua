@@ -143,6 +143,24 @@ end
 
 -- ctx : state, progress, seen ([clé d'objectif] = true pour la session),
 -- answers ([quête] = true/false : quêtes de groupe), dungeons ([nom] = true).
+-- Quêtes qu'un guide fait prendre (objectifs « accept ») : [quête] = true, mis en cache.
+local taken = setmetatable({}, { __mode = "k" })
+local function takenBy(guide)
+    local set = taken[guide]
+    if not set then
+        set = {}
+        for _, step in ipairs(guide.steps) do
+            for _, goal in ipairs(step.goals) do
+                if goal.t == "accept" and goal.quest then
+                    set[goal.quest] = true
+                end
+            end
+        end
+        taken[guide] = set
+    end
+    return set
+end
+
 function Engine.Evaluate(guide, ctx)
     local state, progress = ctx.state, ctx.progress
     local keys = Engine.Keys(guide)
@@ -176,6 +194,10 @@ function Engine.Evaluate(guide, ctx)
             result.reopen[q] = stepKeys
         end
     end
+    -- Quêtes que ce guide fait prendre. Une quête rendue ici mais prise dans un autre
+    -- guide (« Voyage vers Ashenvale », prise à Auberdine) n'est demandée que si elle est
+    -- dans le journal : sinon ses objectifs sont mis de côté, et rouverts si elle y entre.
+    local takenHere = takenBy(guide)
     local reopened = {}
     for _, stepKeys in pairs(result.reopen) do
         for stepKey in pairs(stepKeys) do
@@ -235,6 +257,12 @@ function Engine.Evaluate(guide, ctx)
                 and not state:InLog(q) and not state:TurnedIn(q) then
                 list[j] = { status = "na", reason = { kind = "abandoned" } }
                 abandonedHere[q] = true
+                local stepKeys = result.abandonedSteps[q] or {}
+                result.abandonedSteps[q] = stepKeys
+                stepKeys[keys.steps[i]] = true
+            elseif q and goal.t ~= "accept" and not takenHere[q]
+                and not state:InLog(q) and not state:TurnedIn(q) then
+                list[j] = { status = "na", reason = { kind = "notTaken" } }
                 local stepKeys = result.abandonedSteps[q] or {}
                 result.abandonedSteps[q] = stepKeys
                 stepKeys[keys.steps[i]] = true

@@ -389,4 +389,24 @@ describe("Moteur du guide", function()
         r = run(Engine, g, player, progress)
         expect_eq(r.current, 2, "rendre la 1 de nouveau")
     end)
+
+    it("ne demande pas de rendre une quête prise dans un autre guide si elle n'est pas dans le journal", function()
+        local Engine, progress = setup()
+        -- La quête 9 est prise ailleurs (« Voyage vers Ashenvale », à Auberdine).
+        local g = guide({
+            step({ accept(1) }),
+            step({ turnin(9) }),
+            step({ turnin(1) }),
+        })
+        local player = Player.new()
+        player:accept(1)
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 3, "le rendu de la 9 est mis de côté")
+        expect_eq(r.steps[2].goals[1].reason.kind, "notTaken")
+        -- Le joueur l'avait en fait : l'étape revient.
+        player:accept(9)
+        run(Engine, g, player, progress)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 2, "rendre la 9")
+    end)
 end)
