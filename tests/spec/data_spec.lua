@@ -284,4 +284,20 @@ describe("Corrections des guides (Data/Overrides)", function()
         expect(found >= 3, "les achats de Sombre-Comté corrigés : " .. found)
         expect_eq(#game.errors, 0)
     end)
+
+    it("ne fait plus accepter les lingots de sancteforge (526), que Glorin ne propose pas", function()
+        local game = wow.boot({ faction = "Alliance" })
+        local others = 0
+        for _, guide in game.ns.DB:IterateGuides() do
+            for _, step in ipairs(guide.steps) do
+                expect(#step.goals > 0, guide.id .. " : étape vidée")
+                for _, goal in ipairs(step.goals) do
+                    expect(not (goal.t == "accept" and goal.quest == 526), guide.id .. " : acceptation retirée")
+                    if goal.quest == 526 then others = others + 1 end
+                end
+            end
+        end
+        expect(others > 0, "le ramassage et le rendu restent, pour qui l'aurait dans son journal")
+        expect_eq(#game.errors, 0)
+    end)
 end)
