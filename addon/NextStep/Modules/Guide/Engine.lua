@@ -162,6 +162,26 @@ function Engine.Evaluate(guide, ctx)
 
     local ignoredQuests = ctx.ignoredQuests or {}
     local ignoredGoals = progress.ignoredGoals or {}
+    -- Quêtes acceptées dans une étape faite : [quête] = étape. Si l'une n'est plus dans
+    -- le journal ni rendue, elle a été abandonnée : ses objectifs suivants sont mis de
+    -- côté (sans être mémorisés), et la quête est proposée à la reprise.
+    local acceptedAt = {}
+    local abandonedHere = {}
+    -- Étapes passées à cause d'un abandon, retenues pour être rouvertes si la quête
+    -- revient dans le journal : [quête] = { [clé d'étape] = true }.
+    result.abandonedSteps = {}
+    result.reopen = {}
+    for q, stepKeys in pairs(progress.abandonedSteps or {}) do
+        if state:InLog(q) or state:TurnedIn(q) then
+            result.reopen[q] = stepKeys
+        end
+    end
+    local reopened = {}
+    for _, stepKeys in pairs(result.reopen) do
+        for stepKey in pairs(stepKeys) do
+            reopened[stepKey] = true
+        end
+    end
 
     local goalCtx = {
         droppedQuests = droppedQuests,
@@ -208,8 +228,16 @@ function Engine.Evaluate(guide, ctx)
         local list = {}
         for j, goal in ipairs(step.goals) do
             -- Objectif ou quête ignorés par le joueur : hors sujet, comme une étape ignorée.
-            if ignoredGoals[keys.goals[i][j]] or (goal.quest and ignoredQuests[goal.quest]) then
+            local q = goal.quest
+            if ignoredGoals[keys.goals[i][j]] or (q and ignoredQuests[q]) then
                 list[j] = { status = "na", reason = { kind = "ignored" } }
+            elseif q and goal.t ~= "accept" and acceptedAt[q] and acceptedAt[q] < i
+                and not state:InLog(q) and not state:TurnedIn(q) then
+                list[j] = { status = "na", reason = { kind = "abandoned" } }
+                abandonedHere[q] = true
+                local stepKeys = result.abandonedSteps[q] or {}
+                result.abandonedSteps[q] = stepKeys
+                stepKeys[keys.steps[i]] = true
             else
                 list[j] = Goals.Evaluate(goal, state, goalCtx)
             end
@@ -284,7 +312,7 @@ function Engine.Evaluate(guide, ctx)
                 entry.status = "ahead"
                 entry.goals = evaluateGoals(i)
             end
-        elseif progress.outcomes[key] then
+        elseif progress.outcomes[key] and not reopened[key] then
             entry.status = progress.outcomes[key]
         elseif jumpTo then
             entry.status = "jumped"
@@ -320,6 +348,15 @@ function Engine.Evaluate(guide, ctx)
             end
             if entry.status ~= "current" and entry.status ~= "ask" then
                 result.passed[key] = entry.status
+            end
+        end
+
+        -- Quêtes acceptées par une étape faite (pour reconnaître un abandon plus loin).
+        if not current and (entry.status == "done") then
+            for _, goal in ipairs(step.goals) do
+                if goal.t == "accept" and goal.quest and not acceptedAt[goal.quest] then
+                    acceptedAt[goal.quest] = i
+                end
             end
         end
 
@@ -382,6 +419,24 @@ function Engine.Evaluate(guide, ctx)
                         and Goals.Holds(goal, Goals.Evaluate(goal, state, goalCtx).status) then
                         result.abandoned[#result.abandoned + 1] = { quest = q, step = i }
                     end
+                end
+            end
+        end
+    end
+
+    -- Quêtes abandonnées dont le rendu a été mis de côté : proposées à la reprise.
+    local listed = {}
+    for _, entry in ipairs(result.abandoned) do
+        listed[entry.quest] = true
+    end
+    for q in pairs(abandonedHere) do
+        local i = acceptedAt[q]
+        if not listed[q] and i then
+            for _, goal in ipairs(guide.steps[i].goals) do
+                if goal.t == "accept" and goal.quest == q
+                    and Goals.Holds(goal, Goals.Evaluate(goal, state, goalCtx).status) then
+                    result.abandoned[#result.abandoned + 1] = { quest = q, step = i }
+                    listed[q] = true
                 end
             end
         end
@@ -453,8 +508,25 @@ end
 -- Mémorise le résultat des étapes dépassées. À n'appeler que si l'état du joueur
 -- est fiable (journal de quêtes lu).
 function Engine.Commit(progress, result)
+    -- Quête abandonnée revenue dans le journal : ses étapes passées sont rouvertes.
+    progress.abandonedSteps = progress.abandonedSteps or {}
+    for q, stepKeys in pairs(result.reopen or {}) do
+        for stepKey in pairs(stepKeys) do
+            progress.outcomes[stepKey] = nil
+        end
+        progress.abandonedSteps[q] = nil
+    end
     for key, outcome in pairs(result.passed) do
         progress.outcomes[key] = outcome
+    end
+    for q, stepKeys in pairs(result.abandonedSteps or {}) do
+        local known = progress.abandonedSteps[q] or {}
+        progress.abandonedSteps[q] = known
+        for stepKey in pairs(stepKeys) do
+            if result.passed[stepKey] then
+                known[stepKey] = true
+            end
+        end
     end
     for key, origin in pairs(result.jumpOrigin) do
         progress.jumpOrigin[key] = origin
