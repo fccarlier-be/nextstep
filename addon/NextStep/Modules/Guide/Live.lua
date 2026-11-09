@@ -31,6 +31,13 @@ local NPC_EVENTS = {
     TRAINER_SHOW = "train",
 }
 
+-- Fenêtres qui montrent la liste des quêtes du PNJ (ReadOffers).
+local LIST_EVENTS = { GOSSIP_SHOW = true, QUEST_GREETING = true }
+
+local function now()
+    return GetTime and GetTime() or 0
+end
+
 function Guide:OnEnable()
     self.live = self.live or ns.GuideState.New(self.char.taxi)
     if not self.state then
@@ -51,8 +58,18 @@ function Guide:OnEnable()
         self:RegisterEvent(event, function()
             local npc = ns.NpcID(UnitGUID("npc"))
             self:OnNpcWindow(kind, npc)
-            if event == "GOSSIP_SHOW" or event == "QUEST_GREETING" then
-                self:ReadOffers(event, npc)
+            if kind == "talk" then
+                local starts = self:DialogStarts(npc)
+                if LIST_EVENTS[event] or starts then
+                    self:ReadOffers(event, npc)
+                end
+            end
+        end)
+    end
+    for _, event in ipairs({ "GOSSIP_CLOSED", "QUEST_FINISHED" }) do
+        self:RegisterEvent(event, function()
+            if self.dialog then
+                self.dialog.closedAt = now()
             end
         end)
     end
@@ -320,10 +337,39 @@ end
 -- (suivi des quêtes de bas niveau), son absence ne prouve alors rien.
 local TRIVIAL_GAP = 5
 
+-- Un dialogue qui reprend moins de DIALOG_GAP secondes après la fermeture d'une fenêtre
+-- du même PNJ continue le précédent (liste -> quête choisie, rendu -> quête suivante).
+local DIALOG_GAP = 2
+
+-- Cette fenêtre de quête ouvre-t-elle un nouveau dialogue avec le PNJ ? Ouverte
+-- directement, sans liste, elle dit que le PNJ n'a que cette quête pour nous : une
+-- quête en cours (« ? » gris de Whelgar) et rien à proposer, ou une seule à proposer.
+function Guide:DialogStarts(npc)
+    local dialog = self.dialog
+    local continuing = dialog ~= nil and dialog.npc == npc
+        and (dialog.closedAt == nil or now() - dialog.closedAt < DIALOG_GAP)
+    if continuing then
+        dialog.closedAt = nil
+    else
+        self.dialog = { npc = npc }
+    end
+    return not continuing
+end
+
 -- Quêtes proposées par le PNJ : { [quête] = true }, ou nil si la liste est illisible.
 local function offeredQuests(event)
     local offered = {}
-    if event == "GOSSIP_SHOW" then
+    if event == "QUEST_DETAIL" then
+        -- Fenêtre ouverte d'emblée : la seule quête proposée.
+        local id = GetQuestID and GetQuestID()
+        if not ns.Usable(id) or type(id) ~= "number" or id == 0 then
+            return nil
+        end
+        offered[id] = true
+    elseif event == "QUEST_PROGRESS" or event == "QUEST_COMPLETE" then
+        -- Une quête à rendre, ouverte d'emblée : rien d'autre à proposer.
+        return offered
+    elseif event == "GOSSIP_SHOW" then
         if not (C_GossipInfo and C_GossipInfo.GetAvailableQuests) then
             return nil
         end

@@ -68,6 +68,8 @@ files["addon/**"] = {
         "GetMerchantItemID",
         "GetMerchantItemLink",
         "C_GossipInfo",
+        "GetQuestID",
+        "GetTime",
         "GetNumAvailableQuests",
         "GetAvailableQuestInfo",
         "GetLootSlotLink",
