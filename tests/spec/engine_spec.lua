@@ -409,4 +409,25 @@ describe("Moteur du guide", function()
         r = run(Engine, g, player, progress)
         expect_eq(r.current, 2, "rendre la 9")
     end)
+
+    it("ne bloque pas une escorte sur « aller voir » le PNJ escorté, qui s'éloigne", function()
+        local Engine, progress = setup()
+        -- Kerlonian Evershade (11218, quête 5321) : le guide demande de le rejoindre là où
+        -- il dort ; une fois l'escorte lancée, il part et ce point n'est plus atteint.
+        local g = guide({
+            step({
+                accept(5321, { npc = 11218, escort = true }),
+                { t = "goto", map = 1429, x = 50, y = 50, text = "{npc:11218}" },
+            }),
+            step({ turnin(5321) }),
+        })
+        local player = Player.new()
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 1, "rien de lancé")
+        expect_eq(r.steps[1].goals[2].status, "todo", "le rejoindre avant de prendre l'escorte")
+        player:accept(5321)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.steps[1].goals[2].status, "done", "escorte lancée : le rejoindre est fait")
+        expect_eq(r.current, 2, "en route vers le rendu")
+    end)
 end)

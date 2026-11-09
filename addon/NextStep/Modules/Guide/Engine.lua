@@ -271,6 +271,20 @@ function Engine.Evaluate(guide, ctx)
                 list[j] = Goals.Evaluate(goal, state, goalCtx)
             end
         end
+        -- Escorte : « aller voir » le PNJ escorté (là où il attend) est fait dès que sa
+        -- quête est dans le journal, puisqu'il quitte cet endroit pendant l'escorte
+        -- (Kerlonian Evershade, quête 5321 : l'étape restait bloquée sans flèche).
+        for j, goal in ipairs(step.goals) do
+            local npc = goal.t == "goto" and tonumber((goal.text or ""):match("^{npc:(%d+)}$"))
+            if npc and list[j].status ~= "done" then
+                for _, other in ipairs(step.goals) do
+                    if other.t == "accept" and other.escort and other.npc == npc and other.quest
+                        and (state:InLog(other.quest) or state:TurnedIn(other.quest)) then
+                        list[j] = { status = "done", implied = true }
+                    end
+                end
+            end
+        end
         -- Un déplacement est accompli dès qu'un objectif suivant l'est.
         local laterDone = false
         for j = #step.goals, 1, -1 do
