@@ -324,6 +324,51 @@ describe("Guide en jeu", function()
         _G.C_GossipInfo = nil
     end)
 
+    it("déduit l'absence de quête à proposer d'une fenêtre de quête ouverte d'emblée", function()
+        local game, Guide = boot({ level = 27 })
+        game.ns.DB.AddGuide(function() return {
+            id = "test/direct", title = "Direct", category = "Test", minLevel = 1, maxLevel = 60,
+            steps = { { title = "Whelgar", goals = {
+                { t = "accept", quest = 920, npc = 80 },
+                { t = "accept", quest = 921, npc = 80 },
+                { t = "talk", npc = 999 },   -- garde l'étape ouverte
+            } } },
+        } end)
+        local clock = 100
+        _G.GetTime = function() return clock end
+        _G.C_GossipInfo = { GetAvailableQuests = function() return { { questID = 920 }, { questID = 921 } } end }
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start("test/direct")
+        local function status(j) return Guide.result.steps[1].goals[j].status end
+        game:setUnit("npc", { guid = npcGUID(80) })
+
+        -- Liste, puis une quête choisie : la fenêtre de quête continue le dialogue.
+        game:fire("GOSSIP_SHOW")
+        game:fire("GOSSIP_CLOSED")
+        clock = clock + 0.1
+        game:fire("QUEST_PROGRESS")
+        clock = clock + 10
+        game:fire("QUEST_COMPLETE")
+        expect_eq(status(1), "todo", "venue de la liste : rien n'est déduit")
+        game:fire("QUEST_FINISHED")
+
+        -- Plus tard, la fenêtre de la quête en cours s'ouvre d'emblée : rien à proposer.
+        clock = clock + 30
+        game:fire("QUEST_PROGRESS")
+        expect_eq(status(1), "na")
+        expect_eq(status(2), "na")
+        game:fire("QUEST_FINISHED")
+
+        -- Une seule quête proposée, ouverte d'emblée : les autres ne le sont pas.
+        _G.GetQuestID = function() return 921 end
+        clock = clock + 30
+        game:fire("QUEST_DETAIL")
+        expect_eq(status(1), "na")
+        expect_eq(status(2), "todo")
+        expect_eq(#game.errors, 0)
+        _G.GetTime, _G.GetQuestID, _G.C_GossipInfo = nil, nil, nil
+    end)
+
     it("lit aussi les quêtes proposées sans dialogue (QUEST_GREETING)", function()
         local game, Guide = boot({ level = 20 })
         game.ns.DB.AddGuide(function() return {
