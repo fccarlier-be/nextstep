@@ -44,6 +44,29 @@ DB:AddGuideFix(function(guide)
 end)
 
 ---------------------------------------------------------------------------
+-- Prérequis inconnus de Polestar, constatés en jeu.
+-- 98190 « Proche de la famille » (capitaine Stoutfist, Port de Menethil) : proposée
+-- seulement après le rendu de 98189 « Rapporter la statuette » (2026-11-09). 98191, sa
+-- suite chez Bolvar Fordragon, suppose 98190 rendue.
+---------------------------------------------------------------------------
+
+local EXTRA_PRE = {
+    [98190] = 98189,
+    [98191] = 98190,
+}
+
+DB:AddGuideFix(function(guide)
+    eachGoal(guide, function(goal)
+        -- goal.pre se lit « l'une de ces quêtes rendue » : on ne complète pas une liste
+        -- existante, ce qui affaiblirait la condition.
+        local pre = goal.t == "accept" and EXTRA_PRE[goal.quest]
+        if pre and not goal.pre then
+            goal.pre = { pre }
+        end
+    end)
+end)
+
+---------------------------------------------------------------------------
 -- Lingots de sancteforge (quête 526) : Glorin Steelbrow (PNJ 1217), à Port de Menethil,
 -- ne la propose pas sur Forever (vérifié en jeu le 2026-11-09, chasseur niveau 26, sans
 -- la chaîne de la Flotte maudite). Les mêmes 5 lingots sont demandés par « Les lingots

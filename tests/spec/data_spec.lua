@@ -285,6 +285,23 @@ describe("Corrections des guides (Data/Overrides)", function()
         expect_eq(#game.errors, 0)
     end)
 
+    it("ne fait accepter « Proche de la famille » qu'après la statuette rendue", function()
+        local game = wow.boot({ faction = "Alliance" })
+        local found = {}
+        for _, guide in game.ns.DB:IterateGuides() do
+            for _, step in ipairs(guide.steps) do
+                for _, goal in ipairs(step.goals) do
+                    if goal.t == "accept" and (goal.quest == 98190 or goal.quest == 98191) then
+                        found[goal.quest] = goal.pre and goal.pre[1]
+                    end
+                end
+            end
+        end
+        expect_eq(found[98190], 98189)
+        expect_eq(found[98191], 98190)
+        expect_eq(#game.errors, 0)
+    end)
+
     it("ne fait plus accepter les lingots de sancteforge (526), que Glorin ne propose pas", function()
         local game = wow.boot({ faction = "Alliance" })
         local others = 0
