@@ -23,6 +23,7 @@ local SPECS = {
     "unit_text",
     "inventory",
     "professions",
+    "ammo",
     "windows",
     "engine",
     "guide",

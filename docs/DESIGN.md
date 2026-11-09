@@ -526,6 +526,11 @@ Panneau ouvert depuis l'horloge de la minimap :
 - les minuteurs survivent au `/reload` et à la déconnexion (heure de fin sauvegardée) ; un minuteur terminé hors ligne est signalé à la connexion.
 - **Réalisé** (`Modules/UI/Clock.lua`, module `Clock`) : panneau au style de NextStep (clic droit sur l'horloge de la minimap `TimeManagerClockButton`, menu du bouton NextStep, `/ns clock`) avec alarmes (nom, hh:mm, heure locale ou du serveur, une fois par jour), minuteurs (nom, minutes, temps restant) et chronomètre (démarrer, pause, remise à zéro) ; `/ns timer <minutes> [nom]`, `/ns alarm <hh:mm> [nom]`. Alerte au centre de l'écran avec le son d'avertissement de raid, réduite en combat, fermée d'un clic ou après 15 s, et rappelée dans le chat. Alarmes et minuteurs par personnage. **[À vérifier]** sur Forever : `TimeManagerClockButton`, `GetGameTime`.
 
+### Munitions du chasseur
+
+- **Réalisé** (`Modules/Items/Ammo.lua`, module `Ammo`) : quand les flèches (arc, arbalète) ou les balles (fusil) du chasseur passent sous un seuil réglable (200 par défaut), un encart s'affiche au milieu de l'écran avec le son d'avertissement de raid : munitions restantes, **vendeur le plus proche** (zone, distance) et munition conseillée pour le niveau. Clic : la flèche du guide pointe le vendeur ; clic droit : fermer. Une seconde alerte quand il n'y en a plus ; réarmée après le plein. Jamais en combat (attend la fin). `/ns ammo` affiche l'état à la demande.
+- Vendeurs : présumés sur leur titre dans forever-db (`Tools/import/ammo.py`), puis appris à chaque ouverture d'un marchand (ce qu'il vend, où il est), commun aux personnages. Un vendeur pas encore vu est marqué « à confirmer ». **[À vérifier]** sur Forever : `GetMerchantItemID`, `GetItemInfoInstant` (classe 6 projectile), les vendeurs présumés.
+
 ### Fenêtres déplaçables
 
 Inspiré de BlizzMove, dont le code est « All Rights Reserved » : code propre à NextStep.

@@ -249,6 +249,19 @@ DB.itemZones = { [1581] = "The Deadmines" }
 - `itemStats` : format de `Polestar_ItemDB` (emplacement, niveau d'objet, niveau requis, qualité, classe, sous-classe, puis stats ; `dmin`/`dmax`/`speed` pour les armes, `cls` masque de classes).
 - `itemSources` : `q<quête>`, `d<PNJ>x<taux pour mille>z<zone>`, `c<sort>p<métier>s<compétence>` (métier : rang dans la liste de ForeverLevelingBiS, 1 Alchimie… 13 Pêche), séparés par `|`.
 
+## Vendeurs de munitions
+
+`Data/Imported/Polestar/AmmoVendors.lua`, généré par `Tools/import/ammo.py` :
+
+```lua
+DB.ammoVendors = {
+	[3165] = "a H 1 362 -4764 1411 53.0 41.0|Ghrawt",
+}
+```
+
+- Une chaîne par PNJ : munitions présumées (`a` flèches, `b` balles, `ab` les deux), faction (`A`, `H`, `N` pour les deux), carte monde, nord, ouest (yards, comme `UnitPosition`), carte du client, x, y (pour cent), puis le nom anglais après `|`.
+- forever-db ne dit pas ce que vend un marchand : il est retenu sur son titre (« Bowyer », « Gunsmith », « General Supplies »…). Ce qu'il vend vraiment est appris en jeu à l'ouverture du marchand et gardé dans les réglages du module `Ammo` (`vendors`), qui l'emportent sur l'import.
+
 ## Import
 
 ```powershell

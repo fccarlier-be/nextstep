@@ -31,6 +31,7 @@ Data\Imported\Polestar\Gear.lua
 Data\Imported\Polestar\Dungeons.lua
 Data\Imported\Polestar\QuestGroups.lua
 Data\Imported\Polestar\AdviceQuests.lua
+Data\Imported\Polestar\AmmoVendors.lua
 Core\Modules.lua
 Modules\Names.lua
 Modules\UI\MapReveal.lua
@@ -67,6 +68,7 @@ Modules\Items\Rewards.lua
 Modules\Items\Alert.lua
 Modules\Items\Dungeons.lua
 Modules\Items\Upgrades.lua
+Modules\Items\Ammo.lua
 Modules\Professions\Professions.lua
 Modules\UI\Gathering.lua
 Core\Factions.lua
