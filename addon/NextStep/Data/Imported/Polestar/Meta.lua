@@ -1,16 +1,21 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.3.0 (d48e609ecdac, 2026-11-03). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.3.5 (bf23c61a5d1f, 2026-11-08). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB
 
-DB:SetSource({ commit = "d48e609ecdac109cba89680a0ca4ab4f03cfa0c3", date = "2026-11-03", format = 8, name = "Polestar", version = "0.3.0" })
+DB:SetSource({ commit = "bf23c61a5d1f1b58f0edbd4ad7411aa6910938c1", date = "2026-11-08", format = 8, name = "Polestar", version = "0.3.5" })
 
 DB:RetireGuides({
 	"forever/alliance/dwarf-gnome/01-dun-morogh",
+	"forever/horde/30-40/01-desolace",
+	"forever/horde/30-40/02-stranglethorn-vale",
+	"forever/horde/30-40/03-arathi-highlands",
 	"forever/horde/orc-troll/01-durotar",
 	"forever/horde/orc-troll/02-the-barrens",
+	"forever/horde/orc/02-the-barrens",
+	"forever/horde/troll/02-the-barrens",
 })
 
 -- Repères « era » des cartes, pour convertir en jeu les coordonnées marquées f = "e".

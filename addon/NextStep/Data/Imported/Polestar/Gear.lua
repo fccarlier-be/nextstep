@@ -1,4 +1,4 @@
--- Généré par Tools/import/gear.lua depuis Polestar 0.3.0 (d48e609ecdac, 2026-11-03), Gear/Weights.lua et
+-- Généré par Tools/import/gear.lua depuis Polestar 0.3.5 (bf23c61a5d1f, 2026-11-08), Gear/Weights.lua et
 -- Gear/SpecData.lua. Ne pas modifier : relancer Tools\import\run.ps1.
 -- Polestar : Copyright (c) 2026 The Polestar authors, GPL-3.0-only. Poids mêlés aux
 -- simulations de wowsims (MIT) et traits raciaux de ForeverLevelingBiS (MIT) :
