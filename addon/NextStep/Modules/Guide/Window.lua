@@ -154,7 +154,7 @@ function Guide:CreateWindow()
 
     local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     title:SetPoint("LEFT", logo, "RIGHT", 6, 0)
-    title:SetPoint("RIGHT", -80, 0)
+    title:SetPoint("RIGHT", -106, 0)
     title:SetJustifyH("LEFT")
     if title.SetWordWrap then
         title:SetWordWrap(false)
@@ -178,6 +178,27 @@ function Guide:CreateWindow()
     journal.icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
     journal:SetPoint("RIGHT", options, "LEFT", -3, 0)
     frame.journalButton = journal
+
+    -- Retour à l'étape précédente (annule « Passer l'étape » ou « Étape faite »).
+    local back = Style.IconButton(header, "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up", 22, function()
+        self:Back()
+    end)
+    back:SetPoint("RIGHT", journal, "LEFT", -3, 0)
+    back:HookScript("OnEnter", function(owner)
+        if GameTooltip then
+            GameTooltip:SetOwner(owner, "ANCHOR_TOP")
+            GameTooltip:SetText(L["Previous step"])
+            GameTooltip:AddLine(L["Undoes the last \"Skip\" or \"Done\" and takes you back to that step."],
+                1, 1, 1, true)
+            GameTooltip:Show()
+        end
+    end)
+    back:HookScript("OnLeave", function()
+        if GameTooltip then
+            GameTooltip:Hide()
+        end
+    end)
+    frame.back = back
 
     -- Corps : lignes réutilisées d'une mise à jour à l'autre.
     local body = CreateFrame("Frame", nil, frame)
@@ -837,6 +858,8 @@ function Guide:UpdateWindow(result)
     end
     frame.title:SetText(result and Labels.Guide(result.guide) or "NextStep")
     frame.mode:SetText(self.char.mode == "free" and L["Free"] or L["Strict"])
+    -- Grisé tant qu'il n'y a rien à annuler.
+    frame.back:SetEnabled(self:CanGoBack())
 
     local view = { frame = frame, count = 0, height = 4, texts = {} }
     if not result then
@@ -984,16 +1007,27 @@ function Guide:ValidateCurrent()
         return
     end
     local i = result.current
-    local any = false
-    for j in ipairs(result.guide.steps[i].goals) do
+    local guide = result.guide
+    local Engine = ns.GuideEngine
+    local manual = {}
+    for j in ipairs(guide.steps[i].goals) do
         local entry = result.steps[i].goals and result.steps[i].goals[j]
         if entry and entry.status == "manual" then
-            local guide = result.guide
-            ns.GuideEngine.Tick(self:Progress(guide.id), guide, i, j)
-            any = true
+            manual[#manual + 1] = j
         end
     end
-    if any then
+    if #manual > 0 then
+        local progress = self:Progress(guide.id)
+        local keys = {}
+        for _, j in ipairs(manual) do
+            keys[#keys + 1] = Engine.Keys(guide).goals[i][j]
+        end
+        Engine.Remember(progress, guide, i, "done", keys)
+        for _, j in ipairs(manual) do
+            Engine.Tick(progress, guide, i, j)
+        end
+    end
+    if #manual > 0 then
         self:Refresh()
     else
         -- Rien à valider à la main : l'étape est considérée comme faite.

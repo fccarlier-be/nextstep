@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Guide : **retour à l'étape précédente** après un clic de trop. La flèche ← de la barre de titre (ou `/ns guide back`) annule le dernier « Passer l'étape » ou « Étape faite », jusqu'à cinq fois, et rouvre aussi les étapes qui avaient été passées à sa suite.
 - **Guides mis à jour vers Polestar 0.3.5** (au lieu de 0.3.0) : 260 guides, parcours de leveling revus d'après les retours des joueurs. Le guide d'Orneval s'arrête désormais avant les Paluns, qui ont leur propre guide (niveaux 27-30) ; « Les lingots de sancteforge », que Glorin Steelbrow ne propose pas, ne sont plus demandés ; « Proche de la famille » suit « Rapporter la statuette ». Les 752 nouvelles notes des guides de leveling Alliance sont traduites en français.
 - Module **Munitions du chasseur** : alerte au milieu de l'écran quand les flèches ou les balles passent sous un seuil (200 par défaut), avec le **vendeur le plus proche** (zone, distance) et la munition à acheter pour votre niveau ; un clic pointe la flèche du guide vers lui. Vendeurs repérés dans forever-db puis appris à chaque ouverture d'un marchand. `/ns ammo`.
 - Fenêtre du guide retravaillée : chaque objectif dans sa **carte** avec un liseré coloré (doré à faire, vert fait, orange bloqué) et une **barre d'avancement** pour les objectifs chiffrés (« 10/12 tués ») ; la note de l'étape dans un encadré parchemin ; « En chemin » souligné ; les trois boutons du bas de même largeur et alignés.

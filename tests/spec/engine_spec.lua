@@ -410,6 +410,48 @@ describe("Moteur du guide", function()
         expect_eq(r.current, 2, "rendre la 9")
     end)
 
+    it("revient à l'étape passée par erreur, avec les étapes passées à sa suite", function()
+        local Engine, progress = setup()
+        local g = guide({
+            step({ accept(1) }),
+            step({ kill(1) }),
+            step({ turnin(1) }),
+            step({ { t = "talk", npc = 5 } }),
+        })
+        local player = Player.new()
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 1)
+        expect(not Engine.CanGoBack(progress), "rien à annuler")
+
+        -- Clic de trop sur « Passer l'étape » : la quête 1 est laissée de côté, et ses
+        -- étapes suivantes passent avec elle.
+        Engine.Remember(progress, g, 1, "skip")
+        Engine.Skip(progress, g, 1)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 4, "la quête 1 entière mise de côté")
+        expect(Engine.CanGoBack(progress))
+        expect(Engine.Back(progress))
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 1, "de retour à l'acceptation")
+        expect(not Engine.CanGoBack(progress))
+
+        -- « Étape faite » sur un dialogue : la coche est retirée.
+        player:accept(1)
+        player:complete(1)
+        player:turnin(1)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 4)
+        local key = Engine.Keys(g).goals[4][1]
+        Engine.Remember(progress, g, 4, "done", { key })
+        Engine.Tick(progress, g, 4, 1)
+        r = run(Engine, g, player, progress)
+        expect(r.finished, "guide fini")
+        Engine.Back(progress)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 4, "le dialogue est de nouveau à faire")
+        expect_eq(progress.ticks[key], nil)
+    end)
+
     it("ne bloque pas une escorte sur « aller voir » le PNJ escorté, qui s'éloigne", function()
         local Engine, progress = setup()
         -- Kerlonian Evershade (11218, quête 5321) : le guide demande de le rejoindre là où

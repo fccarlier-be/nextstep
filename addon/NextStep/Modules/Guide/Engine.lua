@@ -614,6 +614,52 @@ function Engine.Tick(progress, guide, i, j)
     progress.ticks[key] = not progress.ticks[key] or nil
 end
 
+---------------------------------------------------------------------------
+-- Retour en arrière : annule le dernier « Passer l'étape » ou « Étape faite »
+---------------------------------------------------------------------------
+
+local HISTORY = 5    -- actions annulables retenues par guide
+
+-- Note, avant une action du joueur, de quoi l'annuler : l'étape, et les étapes déjà
+-- passées (celles que l'action fera passer ensuite seront rouvertes).
+function Engine.Remember(progress, guide, i, kind, ticks)
+    local before = {}
+    for key in pairs(progress.outcomes) do
+        before[key] = true
+    end
+    progress.history = progress.history or {}
+    table.insert(progress.history, {
+        kind = kind, step = Engine.Keys(guide).steps[i], ticks = ticks, before = before,
+    })
+    while #progress.history > HISTORY do
+        table.remove(progress.history, 1)
+    end
+end
+
+function Engine.CanGoBack(progress)
+    return progress.history ~= nil and #progress.history > 0
+end
+
+-- Annule la dernière action retenue. -> true si quelque chose a été annulé.
+function Engine.Back(progress)
+    local entry = progress.history and table.remove(progress.history)
+    if not entry then
+        return false
+    end
+    progress.skipped[entry.step] = nil
+    for _, key in ipairs(entry.ticks or {}) do
+        progress.ticks[key] = nil
+    end
+    -- Étapes passées depuis l'action (sa propre étape comprise) : rouvertes.
+    for key in pairs(progress.outcomes) do
+        if not entry.before[key] then
+            progress.outcomes[key] = nil
+        end
+    end
+    progress.outcomes[entry.step] = nil
+    return true
+end
+
 -- Revient à une étape dépassée (quête abandonnée à reprendre).
 function Engine.Reopen(progress, guide, i)
     progress.outcomes[Engine.Keys(guide).steps[i]] = nil

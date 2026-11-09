@@ -157,10 +157,14 @@ L["Mark the current step as done"] = "Valide l'étape en cours"
 L["Guides for your character:"] = "Guides pour votre personnage :"
 L["Unknown guide: %s"] = "Guide inconnu : %s"
 L["Progress of the guide reset."] = "Progression du guide remise à zéro."
-L["Usage: /ns guide [list | start <number or id> | stop | reset | skip | done | mode]"] =
-    "Utilisation : /ns guide [list | start <numéro ou identifiant> | stop | reset | skip | done | mode]"
-L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, mode"] =
-    "Affiche ou cache le guide ; /ns guide list, start, stop, reset, skip, done, mode"
+L["Usage: /ns guide [list | start <number or id> | stop | reset | skip | done | back | mode]"] =
+    "Utilisation : /ns guide [list | start <numéro ou identifiant> | stop | reset | skip | done | back | mode]"
+L["Show or hide the guide; /ns guide list, start, stop, reset, skip, done, back, mode"] =
+    "Affiche ou cache le guide ; /ns guide list, start, stop, reset, skip, done, back, mode"
+L["Previous step"] = "Étape précédente"
+L["Undoes the last \"Skip\" or \"Done\" and takes you back to that step."] =
+    "Annule le dernier « Passer l'étape » ou « Étape faite » et vous ramène à cette étape."
+L["Nothing to undo in this guide."] = "Rien à annuler dans ce guide."
 L["Show the arrow"] = "Afficher la flèche"
 L["Class quest: %s"] = "Quête de classe : %s"
 L["Here too (planned later in the guide):"] = "Ici aussi (prévu plus loin dans le guide) :"
