@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Traduction française des 33 notes des guides « Divers » (Sac de couchage douillet, livres de Mages…), restées en anglais.
 - Guide : **trajet vers l'autre continent**. Quand l'objectif est sur l'autre continent, la fenêtre du guide indique le bateau ou le zeppelin à prendre (« Autre continent : prenez le bateau de Menethil pour Theramore. »), choisi pour marcher le moins possible, et la flèche mène au quai de départ. Loin du quai, elle dit de le rejoindre d'abord (« rejoignez Menethil (en vol si vous connaissez le trajet), puis… ») ; le bateau du port de Hurlevent pour Auberdine, ajouté par Forever, est pris en compte.
 - Guide : **retour à l'étape précédente** après un clic de trop. La flèche ← de la barre de titre (ou `/ns guide back`) annule le dernier « Passer l'étape » ou « Étape faite », jusqu'à cinq fois, et rouvre aussi les étapes qui avaient été passées à sa suite.
 - **Guides mis à jour vers Polestar 0.3.5** (au lieu de 0.3.0) : 260 guides, parcours de leveling revus d'après les retours des joueurs. Le guide d'Orneval s'arrête désormais avant les Paluns, qui ont leur propre guide (niveaux 27-30) ; « Les lingots de sancteforge », que Glorin Steelbrow ne propose pas, ne sont plus demandés ; « Proche de la famille » suit « Rapporter la statuette ». Les 752 nouvelles notes des guides de leveling Alliance sont traduites en français.
