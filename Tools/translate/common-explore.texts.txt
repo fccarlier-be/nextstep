@@ -1,0 +1,162 @@
+{area:9} opens onto {zone:1429}; {area:87} is south down the road.
+Take the {area:2257} from {zone:1453}'s {object:28027} to {zone:1455}, then leave the city through its gates.
+Leave {zone:1426} east through the South Gate tunnel; it opens into {zone:1432} by the dwarf king statues of the {area:924}.
+Flight path here: {area:144} ({npc:1572}).
+Fly from {area:144} to {zone:1453} if you have its flight path; otherwise ride back to {zone:1455} and take the {area:2257}. Walk west out of {zone:1429} past the {area:120} into {zone:1436}.
+Flight path here: {area:108} (Thor).
+Go back east through {zone:1429}: the road past the {area:88} enters Redridge at {area:1002}, where the roads from {zone:1429} and {zone:1431} meet.
+Flight path here: {area:69} ({npc:931}).
+From {area:1002} take the road south into {zone:1431}; {area:42} is east along its main road. Most of Duskwood is level 24-30: come with Redridge behind you.
+Flight path here: {area:42} ({npc:2409}).
+Fly from {area:42} to {area:144} in {zone:1432} and ride north through the {area:836} pass into the {zone:1437}.
+Flight path here: {area:150} ({npc:1571}).
+the discovery triggers at the {area:1038}: do not go into {area:1037} itself
+Take the boat from {area:150} to {area:271}.
+Flight path here: {area:271} ({npc:2432}).
+Horde guards: touch the edge of {area:272} and move on
+Follow the road west from {area:287} past {area:285} into {zone:1421}, Horde country with Horde guards at the {area:228}.
+Horde guards: touch the edge of {area:228} and move on
+Silverpine's road north leads into {zone:1420}. {area:159}, {area:154} and the {zone:1458} ruins are Horde ground.
+Horde guards: touch the edge of {area:153} and move on
+Horde guards: touch the edge of {area:159} and move on
+Horde guards: touch the edge of {area:154} and move on
+{area:154} opens onto {zone:1420}; {area:159} is east along the road. Orcs, trolls and tauren arrive at the zeppelin tower by the {zone:1458}.
+{zone:1421} is south of {zone:1420}: follow the road south from {area:159}.
+Flight path here: {area:228} ({npc:2226}).
+At the south end of Silverpine the road turns east into {zone:1424} by {area:285}. {area:272} in the north-east is the Horde town; {area:271} is Alliance.
+Flight path here: {area:272} (Zarise).
+Alliance guards: touch the edge of {area:271} and move on
+Walk east from {area:287} into the {zone:1417} (level 30+ creatures off the road), south to the {area:881} bridge, and across it into the {zone:1437}. {area:150} is an Alliance town.
+Alliance guards: touch the edge of {area:150} and move on
+The {area:836} pass in south-eastern {zone:1437} leads down into {zone:1432} by {area:925}.
+Alliance guards: touch the edge of {area:144} and move on
+From {area:925} take the {area:807} tunnel west into {zone:1426}. {area:131} and {zone:1455}'s gates are Alliance ground.
+Alliance guards: touch the edge of {area:809} and move on; any one of these names counts
+Alliance guards: touch the edge of {area:131} and move on
+Alliance guards: touch the edge of {area:132} and move on; any one of these names counts
+Hearth or fly back to the {zone:1458} (or go to {zone:1454}), take the zeppelin to {area:117} in {zone:1434} and walk north along the road into {zone:1431}. Northern Stranglethorn is level 30+ off the road.
+Alliance guards: touch the edge of {area:42} and move on
+{zone:1436} borders {zone:1431} to the west. {area:108} is an Alliance town.
+Alliance guards: touch the edge of {area:108} and move on
+{zone:1429} is north of {zone:1436} and {zone:1431}. {area:87}, {area:9} and {zone:1453}'s gates are Alliance ground with guards.
+Alliance guards: touch the edge of {area:9} and move on
+Alliance guards: touch the edge of {area:87} and move on
+Go east through {zone:1429} to {area:1002}, where Redridge starts. {area:69} is an Alliance town.
+Alliance guards: touch the edge of {area:69} and move on
+Fly to {area:271} in {zone:1424} and walk north into the {zone:1416}.
+Fly to {area:272} in {zone:1424} and walk north into the {zone:1416}.
+{area:320} in the middle is the Alliance town; {area:321} in the east is Horde.
+{area:321} in the east is the Horde town; {area:320} in the middle is Alliance.
+Flight path here: {area:320} ({npc:2835}).
+Flight path here: {area:321} (Urda).
+Cross the {area:880} south into the {zone:1437}, go through the {object:1668} pass into {zone:1432} and take the road south out of {zone:1432} into the {zone:1418}.
+Faster: fly to {area:144} in {zone:1432}.
+{area:340} in the west is the Horde town.
+Flight path here: {area:340} (Gorrik).
+14 areas to discover here, levels 36-44. Flight paths: {area:16724} in the south-east (Alliance), {area:16743} in the middle (Horde).
+From the south of the {zone:1418}, past {area:345}, a way leads down into the {zone:2548} by {area:16685}. (The {zone:2548} also open off northern Redridge through {area:2417}, and a ship runs from {area:977} in {zone:1446} to {area:16727}, the neutral goblin port on its coast.) {area:17780} is an ogre clan's outdoor dungeon.
+The {zone:1435} lies south of the {zone:2548}: swim south from {area:16725}, or walk through Redridge Pass, south of the {area:16737}.
+{area:75} is the Horde town.
+Flight path here: {area:75} (Breyk).
+27 areas to discover here, levels 30-50. {area:35} at the southern tip is a neutral goblin port with a boat to {area:392}.
+Or take the zeppelin from {zone:1454} or the {zone:1458} to {area:117}.
+Flight path here: {area:35} (Gyll).
+Flight paths here: {area:35} (Gringer), {object:3202} (Thysta).
+Fly to {area:348} if you have it; otherwise fly to {area:271} and walk north-east from {zone:1424} into the {zone:1425}.
+Fly to {area:3317} if you have it; otherwise fly to {area:272} and walk east from {zone:1424} into the {zone:1425}.
+Flight path here: {area:348} ({npc:8018}).
+Flight path here: {area:3317} (Gorkas).
+The way in on foot is from the western {zone:1418}: the path by {area:340} climbs west into the {zone:1427}.
+Fly to {area:144} and ride south through {zone:1432} into the {zone:1418}, then west to {area:340} (Horde guards).
+Fly to {area:340} in the {zone:1418}.
+Flight path here: {area:1446} ({npc:2941}).
+Flight path here: {area:1446} (Grisha).
+Cross {area:254} from the south of the {zone:1427} into the {zone:1428}: stay on the chain path inside, past the dungeon entrances. {area:2418} (Alliance) is in the east.
+Flight path here: {area:2418} ({npc:2299}).
+Flight path here: {area:251} (Vahgruk).
+Take the pass south from the {zone:1428} into the {zone:1433}, follow the road south-west through {area:1002} into {zone:1431} and east past {area:42} into {zone:1430}.
+Ride east out of {zone:1430} into the {zone:1435} and take the road south into the {zone:1419}; {area:1438} (Alliance) stands just inside.
+Flight path here: {area:1438} ({npc:8609}).
+Fly to {area:3197} if you have it; otherwise fly to {area:271} and ride north through the {zone:1416} to {area:3197} in southern {zone:1422}.
+Fly to {area:272} and ride north through the {zone:1416} into southern {zone:1422}, or go east from {zone:1420} past {area:813}.
+Flight path here: {area:3197} ({npc:12596}).
+{zone:1423} lie east of {zone:1422}, across the {area:2619}. {area:2268} in the east has flight masters for both factions.
+Flight path here: {area:2268} ({npc:12617}).
+Flight path here: {area:2268} (Georgia).
+Discovering an area gives experience scaled to its level, so this runs alongside leveling. Alliance starts on {zone:1438}; humans, dwarves and gnomes arrive by boat at {area:442} and can begin at the {zone:1439} step. 11 areas to discover here, levels 5-11.
+{area:188} opens onto {zone:1438}; {area:186} is south along the road. {area:702}, at the foot of the tree, is reached through the portal in {zone:1457}.
+Flight path here: {area:702} (Vesprystus).
+Take the boat from {area:702} to {area:442}.
+Flight path here: {area:442} ({npc:3841}).
+Follow {zone:1439}'s coast road south into {zone:1440}. {area:415} is the Alliance town.
+Flight path here: {area:415} (Daelyshia).
+The {zone:1442} border {zone:1440} to the south-west; {area:467} in the north is the Alliance flight point.
+Flight path here: {area:467} (Teloren).
+Horde guards: touch the edge of {area:460} and move on
+Horde guards: touch the edge of {area:2539} and move on
+The road east out of south-eastern Stonetalon comes down into the {zone:1413} at {area:1702}. {area:380} and {area:378} are Horde towns; {area:392} is a neutral port.
+Flight path here: {area:392} (Bragok).
+Horde guards: touch the edge of {area:378} and move on
+Horde guards: touch the edge of {area:380} and move on
+Cross the {area:814} east from the northern {zone:1413} into {zone:1411}: Horde country, with guards at {area:362}, {area:367} and {zone:1454}.
+Horde guards: touch the edge of {area:362} and move on
+Horde guards: touch the edge of {area:363} and move on
+Horde guards: touch the edge of {area:367} and move on
+Go back west across the {zone:1413}; the road west from {area:378} climbs through the only pass into {zone:1412}, tauren country with guards at {area:222} and {zone:1456}.
+Horde guards: touch the edge of {area:222} and move on
+Leave {zone:1412} by the same pass and ride south through the {zone:1413} to the {area:485} down into {zone:1441}. {area:484} is a Horde town.
+Horde guards: touch the edge of {area:484} and move on
+The {area:363} opens onto {zone:1411}; {area:362} is north along the road.
+Cross the {area:814} bridges west out of {zone:1411} into the {zone:1413}. {area:385} in the east is an Alliance fort.
+Flight paths here: {area:392} (Bragok), Crossroads (Devrak), {area:378} ({npc:10378}).
+The road west from {area:378} climbs through the only pass into {zone:1412}.
+Leave {zone:1412} by the same pass, ride north through the {zone:1413} and west at {area:1702} into the {zone:1442}. {area:460} is the Horde town; {area:467} in the north is Alliance.
+Flight path here: {area:460} (Tharm).
+Alliance guards: touch the edge of {area:467} and move on
+{area:1276} tunnel in eastern Stonetalon leads north into {zone:1440}. {area:431} and {area:2897} are Horde; {area:415} is Alliance.
+Flight paths here: {area:2897} (Andruk), {area:431} (Vhulgra).
+Alliance guards: touch the edge of {area:415} and move on
+Follow {zone:1440}'s road north-west to the coast and into {zone:1439}, Alliance country with guards at {area:442}.
+Alliance guards: touch the edge of {area:442} and move on
+Take the boat from {area:442} to {area:702}. {zone:1438} is night elf country: {area:186} and {area:188} have guards, and {zone:1457} is reached only through the portal in {area:702}.
+Alliance guards: touch the edge of {area:702} and move on
+Alliance guards: touch the edge of {area:186} and move on
+Alliance guards: touch the edge of {area:188} and move on
+Fly to {area:378} and walk south through the {zone:1413} to the {area:485} down into {zone:1441}.
+Flight path here: {area:484} (Nyse).
+Fly to {area:467} (or to {area:608} if you have it) and take the road south-west out of the {zone:1442} into {zone:1443}; {area:608} in the north is the Alliance town.
+Fly to {area:460} and take the road south-west into {zone:1443}; {area:2408} on the west coast is the Horde town.
+Flight path here: {area:608} ({npc:6706}).
+Flight path here: {area:2408} (Thalon).
+{zone:2652}, the ruins between {zone:1443} and {zone:1412}, is entered from southern {zone:1443} through the {area:2657}.
+{area:1116} on {area:1120} is the Alliance town (boat from the {area:1108}).
+{area:1099} in the east is the Horde town.
+Flight paths here: {area:489} (Thyssiana), Feathermoon ({npc:8019}).
+Flight path here: {area:1099} (Shyn).
+{area:1113} and {area:1111} are level 60 areas, far above this guide. Skip this step for now and come back near that level: exploring the whole map needs them.
+Fly to Theramore (or take the boat from {area:150}); {area:513} is the Alliance town.
+{zone:1445} is east of the southern {zone:1413}; {area:496} in the north-west is the Horde town.
+Flight path here: {area:496} (Shardi).
+{area:2079} is a level 61 area, far above this guide. Skip this step for now and come back near that level: exploring the whole map needs it.
+{zone:1446} is south of {zone:1445} and {zone:1441}. {area:976} is a neutral goblin town.
+Flight path here: {area:976} ({npc:7823}).
+Flight path here: {area:976} ({npc:7824}).
+From western {zone:1446} take the path down into {zone:1449}. {area:541} in the north is a neutral camp.
+Flight path here: {area:541} (Gryfe).
+{zone:1451} is west of {zone:1449}, through the pass in its north-west. {area:3425} is neutral.
+Flight path here: {area:3425} ({npc:15177}).
+Flight path here: {area:3425} ({npc:15178}).
+Fly to {area:3137} if you have it, otherwise to {area:415}, and walk east out of {zone:1440} into {zone:1447}.
+Fly to {area:1237} if you have it, otherwise to {area:431}, and walk east out of {zone:1440} into {zone:1447}.
+Flight path here: {area:3137} (Jarrodenus).
+Flight path here: {area:1237} (Kroum).
+Flight path here: {area:1998} (Mishellena).
+Flight path here: {area:1997} (Brakkar).
+Take the {area:1769} tunnel in northern {zone:1448} through to {zone:1450} (druids: {spell:18960}). {area:2361} is neutral.
+The other exit of the {area:1769} tunnel leads into {zone:1452}. {area:2255} is a neutral goblin town with flight masters for both factions.
+Flight path here: {area:2255} (Maethrya).
+Flight path here: {area:2255} (Yugrek).
+{zone:2482} is reached from {zone:1452} through {area:2256} in the south. It is Forever's endgame leveling zone.
+{zone:2521} is the Skyborne starting island, a world of its own in {area:17221}; anyone may visit. 20 areas to discover here, levels 3-12.
+The skyboat leaves the north side of {area:279} in the {zone:1416} (another flies from north of {zone:1456}).
+The skyboat leaves the cliffs south of {area:17045}, north of {zone:1456} (another flies from {area:279}).

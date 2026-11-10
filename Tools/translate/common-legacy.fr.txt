@@ -1,0 +1,19 @@
+La suite de quêtes de {npc:16042} vaut un point. C'est la chaîne des ensembles de donjon de niveau 60, d'Une proposition sérieuse jusqu'à {quest:8999} de votre classe : {npc:16013} ({zone:1455}) ou {npc:16012} ({zone:1454}) vous envoient, par À la recherche d'Anthion et Les dernières paroles d'Anthion, voir {npc:16033} à {area:254}, dont Les trois rois de la flamme, les moitiés gauche et droite de l'amulette du seigneur Valthalak, Derniers préparatifs et {quest:8995} se terminent par {quest:8996}. {quest:8997} mène ensuite à {quest:8999}.
+{npc:16073}, dans le sommet du pic Rochenoire après Mea Culpa (pas de point d'apparition dans les données : la flèche mène à {area:254} de {npc:16033})
+Le boss final de chaque donjon de niveau 15-25 rapporte un point, tous ensemble. {area:2437} et {area:16919} de Forever (à {zone:1455}) comptent pour un : l'un ou l'autre boss final suffit. Cochez chaque boss quand vous le tuez, et consultez la liste dans le panneau Héritage du jeu.
+{area:2437} : {npc:11519} (ou {area:16919})
+{area:16919} : {npc:261319} (ou {area:2437})
+{area:153} (de Forever, {zone:1420}) : {npc:256035}
+{area:718} (apparaît après l'événement de {npc:3678})
+{area:17732} (de Forever) : {npc:260326}
+Le boss final de chaque donjon de niveau 26-45 rapporte un point, tous ensemble. La Cité engloutie et {area:17780} (dans {zone:2548}) sont des nouveautés de Forever absentes de nos données : cochez-les vous-même.
+{area:796} : Cimetière
+{area:796} : Bibliothèque
+{area:796} : Armurerie
+{area:796} : Cathédrale
+Le boss final de chaque donjon de niveau 46-60 rapporte un point, tous ensemble. La prison d'Alcaz, {area:1216} et {area:16985} sont des nouveautés de Forever absentes de nos données : cochez-les vous-même.
+Partie supérieure de {area:1583}
+{area:2279}, côté vivant
+{area:2279}, côté mort-vivant
+Tuer {npc:10184} vaut un point. {area:2159} est un raid à 40 joueurs dans {zone:1445}, ouvert à partir du 9 décembre. Chaque raideur doit avoir {item:16309} dans ses sacs : la chaîne de l'Alliance commence par La menace draconique dans {zone:1428}, celle de la Horde par Sang et tonnerre à {area:340} ({zone:1418}) ; les deux se terminent dans le sommet du pic Rochenoire avec {npc:10363}.
+Les 8 boss des Profondeurs des Tertres valent un point. Les Profondeurs des Tertres sont un nouveau raid de Forever à 10 joueurs sous {zone:2482}, accessible depuis {zone:2482}, {zone:1452} ou {area:1216}, ouvert à partir du 9 décembre ; ses boss ne sont pas dans nos données, cochez-le une fois les 8 tombés.

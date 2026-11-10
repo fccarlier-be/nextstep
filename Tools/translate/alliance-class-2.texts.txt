@@ -1,0 +1,14 @@
+{npc:5144} teaches mages in {zone:1455}'s {object:32362}. Take the {area:2257} from {object:171524} to {zone:1453} afterwards.
+{npc:7312} teaches mages in {zone:1455}'s {object:32362}. Take the {area:2257} from {object:171524} to {zone:1453} afterwards.
+Strange Orb atop the {area:444}: right-click the Althalaxx Orb it gives
+Back to {npc:3649} in {area:442}: he purifies the gem.
+{spell:921} the {npc:6846} for the {item:7675}
+At 10 {npc:1234}, the rogue trainer in the {area:2102} in {area:131}, sends you to {npc:5165} in {zone:1455}.
+Pick Pocket Sethir the Ancient for {item:7737}
+{spell:921} the {npc:7051} for the {item:7923}
+At 30 {npc:6122}, in the cellar of the {object:2164} in the {object:2101}, sends you to {npc:6251} in {area:392}.
+At 30 {npc:6120}, in the {object:32383}, sends you to {npc:6251} in {area:392}.
+Enter the {area:98} and come back
+Roogug in {area:1717}
+The {quest:1708} grows on the sea floor just south of {area:150}, by the murloc huts and a wrecked boat: eight there and two south-east of the harbor, each back in 3 minutes, so you will wait for respawns to reach 20. The murlocs can net you underwater: watch your breath, and an Elixir of Water Breathing removes the risk.
+Enriched Manna Biscuits: {npc:10857}, {area:3197}
