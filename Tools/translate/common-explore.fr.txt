@@ -1,0 +1,162 @@
+{area:9} débouche sur {zone:1429} ; {area:87} est au sud, en suivant la route.
+Prenez {area:2257} depuis {object:28027} de {zone:1453} jusqu'à {zone:1455}, puis sortez de la ville par ses portes.
+Quittez {zone:1426} vers l'est par le tunnel de la porte Sud ; il débouche dans {zone:1432} près des statues des rois nains de {area:924}.
+Trajet de vol ici : {area:144} ({npc:1572}).
+Volez de {area:144} à {zone:1453} si vous avez ce trajet ; sinon, revenez à {zone:1455} et prenez {area:2257}. Sortez de {zone:1429} vers l'ouest après {area:120} pour entrer dans {zone:1436}.
+Trajet de vol ici : {area:108} (Thor).
+Repartez vers l'est à travers {zone:1429} : la route qui passe par {area:88} entre dans les Carmines à {area:1002}, où se rejoignent les routes de {zone:1429} et de {zone:1431}.
+Trajet de vol ici : {area:69} ({npc:931}).
+Depuis {area:1002}, prenez la route vers le sud jusqu'à {zone:1431} ; {area:42} est à l'est sur la route principale. La plus grande partie du Bois de la Pénombre est de niveau 24-30 : venez après les Carmines.
+Trajet de vol ici : {area:42} ({npc:2409}).
+Volez de {area:42} à {area:144} dans {zone:1432}, puis montez vers le nord par le col de {area:836} jusqu'à {zone:1437}.
+Trajet de vol ici : {area:150} ({npc:1571}).
+la découverte se déclenche à {area:1038} : n'entrez pas dans {area:1037} lui-même
+Prenez le bateau de {area:150} pour {area:271}.
+Trajet de vol ici : {area:271} ({npc:2432}).
+Gardes de la Horde : touchez le bord de {area:272} et repartez
+Suivez la route vers l'ouest depuis {area:287}, après {area:285}, jusqu'à {zone:1421}, territoire de la Horde gardé par la Horde à {area:228}.
+Gardes de la Horde : touchez le bord de {area:228} et repartez
+La route de Pins-Argentés mène au nord jusqu'à {zone:1420}. {area:159}, {area:154} et les ruines de {zone:1458} sont en territoire de la Horde.
+Gardes de la Horde : touchez le bord de {area:153} et repartez
+Gardes de la Horde : touchez le bord de {area:159} et repartez
+Gardes de la Horde : touchez le bord de {area:154} et repartez
+{area:154} débouche sur {zone:1420} ; {area:159} est à l'est sur la route. Les orcs, trolls et taurens arrivent à la tour des zeppelins près de {zone:1458}.
+{zone:1421} est au sud de {zone:1420} : suivez la route vers le sud depuis {area:159}.
+Trajet de vol ici : {area:228} ({npc:2226}).
+Au sud de Pins-Argentés, la route tourne vers l'est et entre dans {zone:1424} près de {area:285}. {area:272}, au nord-est, est la ville de la Horde ; {area:271} est à l'Alliance.
+Trajet de vol ici : {area:272} (Zarise).
+Gardes de l'Alliance : touchez le bord de {area:271} et repartez
+Marchez vers l'est depuis {area:287} jusqu'à {zone:1417} (créatures de niveau 30 et plus hors de la route), puis au sud jusqu'au pont de {area:881}, et traversez-le pour entrer dans {zone:1437}. {area:150} est une ville de l'Alliance.
+Gardes de l'Alliance : touchez le bord de {area:150} et repartez
+Le col de {area:836}, au sud-est de {zone:1437}, descend dans {zone:1432} près de {area:925}.
+Gardes de l'Alliance : touchez le bord de {area:144} et repartez
+Depuis {area:925}, prenez le tunnel de {area:807} vers l'ouest jusqu'à {zone:1426}. {area:131} et les portes de {zone:1455} sont en territoire de l'Alliance.
+Gardes de l'Alliance : touchez le bord de {area:809} et repartez ; n'importe lequel de ces noms compte
+Gardes de l'Alliance : touchez le bord de {area:131} et repartez
+Gardes de l'Alliance : touchez le bord de {area:132} et repartez ; n'importe lequel de ces noms compte
+Rentrez par la pierre de foyer ou en vol à {zone:1458} (ou allez à {zone:1454}), prenez le zeppelin pour {area:117} dans {zone:1434} et marchez vers le nord par la route jusqu'à {zone:1431}. Le nord de Strangleronce est de niveau 30 et plus hors de la route.
+Gardes de l'Alliance : touchez le bord de {area:42} et repartez
+{zone:1436} touche {zone:1431} à l'ouest. {area:108} est une ville de l'Alliance.
+Gardes de l'Alliance : touchez le bord de {area:108} et repartez
+{zone:1429} est au nord de {zone:1436} et de {zone:1431}. {area:87}, {area:9} et les portes de {zone:1453} sont en territoire de l'Alliance, avec des gardes.
+Gardes de l'Alliance : touchez le bord de {area:9} et repartez
+Gardes de l'Alliance : touchez le bord de {area:87} et repartez
+Partez vers l'est à travers {zone:1429} jusqu'à {area:1002}, où commencent les Carmines. {area:69} est une ville de l'Alliance.
+Gardes de l'Alliance : touchez le bord de {area:69} et repartez
+Volez jusqu'à {area:271} dans {zone:1424} et marchez vers le nord jusqu'à {zone:1416}.
+Volez jusqu'à {area:272} dans {zone:1424} et marchez vers le nord jusqu'à {zone:1416}.
+{area:320}, au centre, est la ville de l'Alliance ; {area:321}, à l'est, est à la Horde.
+{area:321}, à l'est, est la ville de la Horde ; {area:320}, au centre, est à l'Alliance.
+Trajet de vol ici : {area:320} ({npc:2835}).
+Trajet de vol ici : {area:321} (Urda).
+Traversez {area:880} vers le sud jusqu'à {zone:1437}, passez le col de {object:1668} jusqu'à {zone:1432} et prenez la route vers le sud qui sort de {zone:1432} pour {zone:1418}.
+Plus rapide : volez jusqu'à {area:144} dans {zone:1432}.
+{area:340}, à l'ouest, est la ville de la Horde.
+Trajet de vol ici : {area:340} (Gorrik).
+14 lieux à découvrir ici, niveaux 36-44. Trajets de vol : {area:16724} au sud-est (Alliance), {area:16743} au centre (Horde).
+Au sud de {zone:1418}, après {area:345}, un chemin descend dans {zone:2548} près de {area:16685}. ({zone:2548} s'ouvre aussi au nord des Carmines par {area:2417}, et un navire relie {area:977} dans {zone:1446} à {area:16727}, le port gobelin neutre sur sa côte.) {area:17780} est le donjon en plein air d'un clan d'ogres.
+{zone:1435} s'étend au sud de {zone:2548} : nagez vers le sud depuis {area:16725}, ou passez par le col des Carmines, au sud de {area:16737}.
+{area:75} est la ville de la Horde.
+Trajet de vol ici : {area:75} (Breyk).
+27 lieux à découvrir ici, niveaux 30-50. {area:35}, à la pointe sud, est un port gobelin neutre avec un bateau pour {area:392}.
+Ou prenez le zeppelin de {zone:1454} ou de {zone:1458} pour {area:117}.
+Trajet de vol ici : {area:35} (Gyll).
+Trajets de vol ici : {area:35} (Gringer), {object:3202} (Thysta).
+Volez jusqu'à {area:348} si vous l'avez ; sinon, volez jusqu'à {area:271} et marchez vers le nord-est depuis {zone:1424} jusqu'à {zone:1425}.
+Volez jusqu'à {area:3317} si vous l'avez ; sinon, volez jusqu'à {area:272} et marchez vers l'est depuis {zone:1424} jusqu'à {zone:1425}.
+Trajet de vol ici : {area:348} ({npc:8018}).
+Trajet de vol ici : {area:3317} (Gorkas).
+À pied, l'entrée se fait par l'ouest de {zone:1418} : le chemin près de {area:340} monte vers l'ouest jusqu'à {zone:1427}.
+Volez jusqu'à {area:144} et descendez vers le sud à travers {zone:1432} jusqu'à {zone:1418}, puis à l'ouest jusqu'à {area:340} (gardes de la Horde).
+Volez jusqu'à {area:340} dans {zone:1418}.
+Trajet de vol ici : {area:1446} ({npc:2941}).
+Trajet de vol ici : {area:1446} (Grisha).
+Traversez {area:254} depuis le sud de {zone:1427} jusqu'à {zone:1428} : restez sur le chemin des chaînes à l'intérieur, en passant devant les entrées des donjons. {area:2418} (Alliance) est à l'est.
+Trajet de vol ici : {area:2418} ({npc:2299}).
+Trajet de vol ici : {area:251} (Vahgruk).
+Prenez le col vers le sud depuis {zone:1428} jusqu'à {zone:1433}, suivez la route vers le sud-ouest par {area:1002} jusqu'à {zone:1431}, puis vers l'est après {area:42} jusqu'à {zone:1430}.
+Sortez de {zone:1430} vers l'est jusqu'à {zone:1435} et prenez la route vers le sud jusqu'à {zone:1419} ; {area:1438} (Alliance) se trouve juste à l'entrée.
+Trajet de vol ici : {area:1438} ({npc:8609}).
+Volez jusqu'à {area:3197} si vous l'avez ; sinon, volez jusqu'à {area:271} et montez vers le nord à travers {zone:1416} jusqu'à {area:3197}, au sud de {zone:1422}.
+Volez jusqu'à {area:272} et montez vers le nord à travers {zone:1416} jusqu'au sud de {zone:1422}, ou partez vers l'est depuis {zone:1420} après {area:813}.
+Trajet de vol ici : {area:3197} ({npc:12596}).
+{zone:1423} s'étendent à l'est de {zone:1422}, au-delà de {area:2619}. {area:2268}, à l'est, a des maîtres de vol pour les deux factions.
+Trajet de vol ici : {area:2268} ({npc:12617}).
+Trajet de vol ici : {area:2268} (Georgia).
+Découvrir un lieu rapporte de l'expérience selon son niveau : cela se fait en même temps que la montée de niveau. L'Alliance commence sur {zone:1438} ; les humains, nains et gnomes arrivent en bateau à {area:442} et peuvent commencer à l'étape de {zone:1439}. 11 lieux à découvrir ici, niveaux 5-11.
+{area:188} débouche sur {zone:1438} ; {area:186} est au sud, en suivant la route. {area:702}, au pied de l'arbre, s'atteint par le portail de {zone:1457}.
+Trajet de vol ici : {area:702} (Vesprystus).
+Prenez le bateau de {area:702} pour {area:442}.
+Trajet de vol ici : {area:442} ({npc:3841}).
+Suivez la route côtière de {zone:1439} vers le sud jusqu'à {zone:1440}. {area:415} est la ville de l'Alliance.
+Trajet de vol ici : {area:415} (Daelyshia).
+{zone:1442} bordent {zone:1440} au sud-ouest ; {area:467}, au nord, est le point de vol de l'Alliance.
+Trajet de vol ici : {area:467} (Teloren).
+Gardes de la Horde : touchez le bord de {area:460} et repartez
+Gardes de la Horde : touchez le bord de {area:2539} et repartez
+La route qui sort vers l'est du sud-est des Serres-Rocheuses descend dans {zone:1413} à {area:1702}. {area:380} et {area:378} sont des villes de la Horde ; {area:392} est un port neutre.
+Trajet de vol ici : {area:392} (Bragok).
+Gardes de la Horde : touchez le bord de {area:378} et repartez
+Gardes de la Horde : touchez le bord de {area:380} et repartez
+Traversez {area:814} vers l'est depuis le nord de {zone:1413} jusqu'à {zone:1411} : territoire de la Horde, avec des gardes à {area:362}, {area:367} et {zone:1454}.
+Gardes de la Horde : touchez le bord de {area:362} et repartez
+Gardes de la Horde : touchez le bord de {area:363} et repartez
+Gardes de la Horde : touchez le bord de {area:367} et repartez
+Retraversez {zone:1413} vers l'ouest ; la route qui part vers l'ouest de {area:378} monte par le seul col menant à {zone:1412}, territoire tauren avec des gardes à {area:222} et {zone:1456}.
+Gardes de la Horde : touchez le bord de {area:222} et repartez
+Quittez {zone:1412} par le même col et descendez vers le sud à travers {zone:1413} jusqu'à {area:485}, qui descend dans {zone:1441}. {area:484} est une ville de la Horde.
+Gardes de la Horde : touchez le bord de {area:484} et repartez
+{area:363} débouche sur {zone:1411} ; {area:362} est au nord, en suivant la route.
+Traversez les ponts de {area:814} vers l'ouest pour quitter {zone:1411} et entrer dans {zone:1413}. {area:385}, à l'est, est un fort de l'Alliance.
+Trajets de vol ici : {area:392} (Bragok), la Croisée (Devrak), {area:378} ({npc:10378}).
+La route qui part vers l'ouest de {area:378} monte par le seul col menant à {zone:1412}.
+Quittez {zone:1412} par le même col, montez vers le nord à travers {zone:1413} et tournez à l'ouest à {area:1702} pour entrer dans {zone:1442}. {area:460} est la ville de la Horde ; {area:467}, au nord, est à l'Alliance.
+Trajet de vol ici : {area:460} (Tharm).
+Gardes de l'Alliance : touchez le bord de {area:467} et repartez
+Le tunnel de {area:1276}, à l'est des Serres-Rocheuses, mène au nord jusqu'à {zone:1440}. {area:431} et {area:2897} sont à la Horde ; {area:415} est à l'Alliance.
+Trajets de vol ici : {area:2897} (Andruk), {area:431} (Vhulgra).
+Gardes de l'Alliance : touchez le bord de {area:415} et repartez
+Suivez la route de {zone:1440} vers le nord-ouest jusqu'à la côte et entrez dans {zone:1439}, territoire de l'Alliance avec des gardes à {area:442}.
+Gardes de l'Alliance : touchez le bord de {area:442} et repartez
+Prenez le bateau de {area:442} pour {area:702}. {zone:1438} est le territoire des elfes de la nuit : {area:186} et {area:188} ont des gardes, et {zone:1457} ne s'atteint que par le portail de {area:702}.
+Gardes de l'Alliance : touchez le bord de {area:702} et repartez
+Gardes de l'Alliance : touchez le bord de {area:186} et repartez
+Gardes de l'Alliance : touchez le bord de {area:188} et repartez
+Volez jusqu'à {area:378} et marchez vers le sud à travers {zone:1413} jusqu'à {area:485}, qui descend dans {zone:1441}.
+Trajet de vol ici : {area:484} (Nyse).
+Volez jusqu'à {area:467} (ou jusqu'à {area:608} si vous l'avez) et prenez la route vers le sud-ouest qui sort de {zone:1442} pour {zone:1443} ; {area:608}, au nord, est la ville de l'Alliance.
+Volez jusqu'à {area:460} et prenez la route vers le sud-ouest jusqu'à {zone:1443} ; {area:2408}, sur la côte ouest, est la ville de la Horde.
+Trajet de vol ici : {area:608} ({npc:6706}).
+Trajet de vol ici : {area:2408} (Thalon).
+{zone:2652}, les ruines entre {zone:1443} et {zone:1412}, s'atteignent par le sud de {zone:1443}, à travers {area:2657}.
+{area:1116}, sur {area:1120}, est la ville de l'Alliance (bateau depuis {area:1108}).
+{area:1099}, à l'est, est la ville de la Horde.
+Trajets de vol ici : {area:489} (Thyssiana), Pennelune ({npc:8019}).
+Trajet de vol ici : {area:1099} (Shyn).
+{area:1113} et {area:1111} sont des lieux de niveau 60, bien au-dessus de ce guide. Passez cette étape pour l'instant et revenez près de ce niveau : explorer toute la carte en a besoin.
+Volez jusqu'à Theramore (ou prenez le bateau depuis {area:150}) ; {area:513} est la ville de l'Alliance.
+{zone:1445} est à l'est du sud de {zone:1413} ; {area:496}, au nord-ouest, est la ville de la Horde.
+Trajet de vol ici : {area:496} (Shardi).
+{area:2079} est un lieu de niveau 61, bien au-dessus de ce guide. Passez cette étape pour l'instant et revenez près de ce niveau : explorer toute la carte en a besoin.
+{zone:1446} est au sud de {zone:1445} et de {zone:1441}. {area:976} est une ville gobeline neutre.
+Trajet de vol ici : {area:976} ({npc:7823}).
+Trajet de vol ici : {area:976} ({npc:7824}).
+Depuis l'ouest de {zone:1446}, prenez le chemin qui descend dans {zone:1449}. {area:541}, au nord, est un camp neutre.
+Trajet de vol ici : {area:541} (Gryfe).
+{zone:1451} est à l'ouest de {zone:1449}, par le col au nord-ouest. {area:3425} est neutre.
+Trajet de vol ici : {area:3425} ({npc:15177}).
+Trajet de vol ici : {area:3425} ({npc:15178}).
+Volez jusqu'à {area:3137} si vous l'avez, sinon jusqu'à {area:415}, et sortez de {zone:1440} vers l'est jusqu'à {zone:1447}.
+Volez jusqu'à {area:1237} si vous l'avez, sinon jusqu'à {area:431}, et sortez de {zone:1440} vers l'est jusqu'à {zone:1447}.
+Trajet de vol ici : {area:3137} (Jarrodenus).
+Trajet de vol ici : {area:1237} (Kroum).
+Trajet de vol ici : {area:1998} (Mishellena).
+Trajet de vol ici : {area:1997} (Brakkar).
+Prenez le tunnel de {area:1769}, au nord de {zone:1448}, jusqu'à {zone:1450} (druides : {spell:18960}). {area:2361} est neutre.
+L'autre sortie du tunnel de {area:1769} mène à {zone:1452}. {area:2255} est une ville gobeline neutre avec des maîtres de vol pour les deux factions.
+Trajet de vol ici : {area:2255} (Maethrya).
+Trajet de vol ici : {area:2255} (Yugrek).
+{zone:2482} s'atteint depuis {zone:1452} par {area:2256}, au sud. C'est la zone de fin de montée de niveau de Forever.
+{zone:2521} est l'île de départ des Célestes, un monde à part dans {area:17221} ; tout le monde peut s'y rendre. 20 lieux à découvrir ici, niveaux 3-12.
+Le dirigeable part du nord de {area:279}, dans {zone:1416} (un autre décolle au nord de {zone:1456}).
+Le dirigeable part des falaises au sud de {area:17045}, au nord de {zone:1456} (un autre décolle de {area:279}).

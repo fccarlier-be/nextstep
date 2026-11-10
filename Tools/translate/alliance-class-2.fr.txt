@@ -1,0 +1,14 @@
+{npc:5144} forme les mages dans {object:32362} de {zone:1455}. Prenez ensuite {area:2257} depuis {object:171524} pour {zone:1453}.
+{npc:7312} forme les mages dans {object:32362} de {zone:1455}. Prenez ensuite {area:2257} depuis {object:171524} pour {zone:1453}.
+Orbe étrange au sommet de {area:444} : clic droit sur l'orbe d'Althalaxx qu'elle donne
+Retour auprès de {npc:3649} à {area:442} : il purifie la gemme.
+{spell:921} sur {npc:6846} pour {item:7675}
+Au niveau 10, {npc:1234}, le maître voleur de {area:2102} à {area:131}, vous envoie voir {npc:5165} à {zone:1455}.
+Faites les poches de Sethir l'Ancien pour {item:7737}
+{spell:921} sur {npc:7051} pour {item:7923}
+Au niveau 30, {npc:6122}, dans la cave de {object:2164} dans {object:2101}, vous envoie voir {npc:6251} à {area:392}.
+Au niveau 30, {npc:6120}, dans {object:32383}, vous envoie voir {npc:6251} à {area:392}.
+Entrez dans {area:98} et revenez
+Roogug à {area:1717}
+Le {quest:1708} pousse au fond de la mer juste au sud de {area:150}, près des huttes des murlocs et d'un bateau échoué : huit là, et deux au sud-est du port, chacun repoussant en 3 minutes ; il faudra donc attendre la repousse pour arriver à 20. Les murlocs peuvent vous immobiliser sous l'eau dans leurs filets : surveillez votre souffle, un élixir de respiration aquatique supprime le risque.
+Biscuits de manne enrichis : {npc:10857}, {area:3197}

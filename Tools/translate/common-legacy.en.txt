@@ -1,0 +1,19 @@
+The {npc:16042} questline is a point. It is the level 60 dungeon-set chain, from An Earnest Proposition to your class's {quest:8999}: {npc:16013} ({zone:1455}) or {npc:16012} ({zone:1454}) send you through In Search of Anthion and Anthion's Parting Words to {npc:16033} at {area:254}, whose Three Kings of Flame, the Left and Right Pieces of Lord Valthalak's Amulet, Final Preparations and {quest:8995} end with {quest:8996}. {quest:8997} then leads to {quest:8999}.
+{npc:16073}, inside Upper Blackrock Spire after Mea Culpa (no spawn in the data: the arrow leads to {npc:16033}'s {area:254})
+The final boss of every level 15-25 dungeon earns one point together. {area:2437} and Forever's {area:16919} (in {zone:1455}) count as one: either final boss does. Tick each boss off when you kill it, and check the in-game Legacy panel for the list.
+{area:2437}: {npc:11519} (or {area:16919})
+{area:16919}: {npc:261319} (or {area:2437})
+{area:153} (Forever's, {zone:1420}): {npc:256035}
+{area:718} (appears after the {npc:3678}'s event)
+{area:17732} (Forever's): {npc:260326}
+The final boss of every level 26-45 dungeon earns one point together. The Drowned City and {area:17780} (in the {zone:2548}) are new in Forever and not in our data: tick them off yourself.
+{area:796}: Graveyard
+{area:796}: Library
+{area:796}: Armory
+{area:796}: Cathedral
+The final boss of every level 46-60 dungeon earns one point together. Alcaz Prison, {area:1216} and the {area:16985} are new in Forever and not in our data: tick them off yourself.
+Upper {area:1583}
+{area:2279}, Live side
+{area:2279}, Undead side
+Killing {npc:10184} is a point. {area:2159} is a 40-player raid in {zone:1445}, open from 9 December. Every raider needs the {item:16309} in the bags: the Alliance chain starts with Dragonkin Menace in the {zone:1428}, the Horde chain with Blood and Thunder in {area:340} ({zone:1418}); both end in Upper Blackrock Spire with {npc:10363}.
+All 8 Barrow Deeps bosses are a point. Barrow Deeps is a new 10-player Forever raid beneath {zone:2482}, entered from {zone:2482}, {zone:1452} or {area:1216} and open from 9 December; its bosses are not in our data, so tick it off once all 8 are down.

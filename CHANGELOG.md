@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Traduction française de tous les guides Alliance et communs restés en anglais : réputations, classes, exploration, métiers, objets à collectionner, héritage (884 notes). Seuls les guides propres à la Horde gardent de l'anglais.
 - Traduction française des 33 notes des guides « Divers » (Sac de couchage douillet, livres de Mages…), restées en anglais.
 - Guide : **trajet vers l'autre continent**. Quand l'objectif est sur l'autre continent, la fenêtre du guide indique le bateau ou le zeppelin à prendre (« Autre continent : prenez le bateau de Menethil pour Theramore. »), choisi pour marcher le moins possible, et la flèche mène au quai de départ. Loin du quai, elle dit de le rejoindre d'abord (« rejoignez Menethil (en vol si vous connaissez le trajet), puis… ») ; le bateau du port de Hurlevent pour Auberdine, ajouté par Forever, est pris en compte.
 - Guide : **retour à l'étape précédente** après un clic de trop. La flèche ← de la barre de titre (ou `/ns guide back`) annule le dernier « Passer l'étape » ou « Étape faite », jusqu'à cinq fois, et rouvre aussi les étapes qui avaient été passées à sa suite.
