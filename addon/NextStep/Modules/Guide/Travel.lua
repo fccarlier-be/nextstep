@@ -33,6 +33,9 @@ local DOCKS = {
     durotar = { name = "the Orgrimmar zeppelin tower", map = 1411, x = 50.8, y = 13.5, f = "e" },
 }
 Travel.DOCKS = DOCKS
+for id, dock in pairs(DOCKS) do
+    dock.id = id
+end
 
 -- Liaisons dans les deux sens ; faction nil : ouverte à tous.
 local LINKS = {
@@ -44,6 +47,9 @@ local LINKS = {
     { kind = "zeppelin", faction = "Horde", DOCKS.gromgol, DOCKS.durotar },
 }
 Travel.LINKS = LINKS
+for _, link in ipairs(LINKS) do
+    link.id = link[1].id .. "-" .. link[2].id
+end
 
 local DEPARTURE_WEIGHT = 0.5
 local NEAR_DOCK = 300   -- yards : au-delà, la phrase dit de rejoindre d'abord le quai

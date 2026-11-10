@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Module **Horaires des bateaux et zeppelins** : près d'un quai, un encart dit dans combien de temps part le prochain bateau ou zeppelin (« Bateau pour Theramore : départ dans 2:40 »). Les horaires s'apprennent en prenant ces transports (traversée, escale, tour complet), par royaume et pour tous vos personnages ; le port de Hurlevent est compris. Pas encore le tram de Forgefer.
 - Traduction française de tous les guides Alliance et communs restés en anglais : réputations, classes, exploration, métiers, objets à collectionner, héritage (884 notes). Seuls les guides propres à la Horde gardent de l'anglais.
 - Traduction française des 33 notes des guides « Divers » (Sac de couchage douillet, livres de Mages…), restées en anglais.
 - Guide : **trajet vers l'autre continent**. Quand l'objectif est sur l'autre continent, la fenêtre du guide indique le bateau ou le zeppelin à prendre (« Autre continent : prenez le bateau de Menethil pour Theramore. »), choisi pour marcher le moins possible, et la flèche mène au quai de départ. Loin du quai, elle dit de le rejoindre d'abord (« rejoignez Menethil (en vol si vous connaissez le trajet), puis… ») ; le bateau du port de Hurlevent pour Auberdine, ajouté par Forever, est pris en compte.

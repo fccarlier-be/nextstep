@@ -652,3 +652,11 @@ L["Other continent: go to %s (by flight path if you know it), then take the boat
 L["Other continent: go to %s (by flight path if you know it), then take the zeppelin to %s."] =
     "Autre continent : rejoignez %s (en vol si vous connaissez le trajet), puis prenez le zeppelin pour %s."
 L["Stormwind Harbor"] = "Hurlevent"
+L["Boat and zeppelin times"] = "Horaires des bateaux et zeppelins"
+L["Near a dock, shows when the next boat or zeppelin leaves, learned from your own trips."] =
+    "Près d'un quai, indique quand part le prochain bateau ou zeppelin, appris de vos propres traversées."
+L["Zeppelin to %s"] = "Zeppelin pour %s"
+L["Boat to %s"] = "Bateau pour %s"
+L["%s: leaves in %s"] = "%s : départ dans %s"
+L["%s: leaves in about %s"] = "%s : départ dans %s environ"
+L["%s: time unknown, ride it once to learn it"] = "%s : horaire inconnu, prenez-le une fois pour l'apprendre"
