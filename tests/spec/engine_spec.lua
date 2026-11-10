@@ -472,4 +472,27 @@ describe("Moteur du guide", function()
         expect_eq(r.steps[1].goals[2].status, "done", "escorte lancée : le rejoindre est fait")
         expect_eq(r.current, 2, "en route vers le rendu")
     end)
+    it("ne perd pas les étapes suivantes quand une quête rendue quitte le journal avant son rendu", function()
+        local Engine, progress = setup()
+        local g = guide({
+            step({ accept(1) }),
+            step({ turnin(1), accept(2, { pre = { 1 } }) }),
+            step({ turnin(2), accept(3, { pre = { 2 } }) }),
+            step({ turnin(3), accept(4, { pre = { 3 } }) }),
+            step({ { t = "goto", map = 1429, x = 10, y = 10 } }),
+        })
+        local player = Player.new():accept(1)
+        run(Engine, g, player, progress)
+        player:turnin(1):accept(2)
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 3)
+        -- Le jeu retire la quête 2 du journal avant d'annoncer son rendu : vue abandonnée.
+        player:abandon(2)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 5, "le temps de l'abandon apparent, la suite est mise de côté")
+        -- Le rendu arrive, la quête suivante est prise.
+        player:turnin(2):accept(3)
+        r = run(Engine, g, player, progress)
+        expect_eq(r.current, 4, "l'étape suivante revient, avec la quête 3 en cours")
+    end)
 end)
