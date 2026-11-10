@@ -1,0 +1,33 @@
+La cachette suivante est un petit camp dans les collines au nord-ouest de {area:460}, au milieu des {zone:1442}. Quittez la route là où un sentier grimpe vers l'ouest dans les collines et suivez-le jusqu'au camp ; la {object:424005} est posée sur une caisse à côté de sa tente.
+La route vers l'ouest traverse {area:1702}, un poste de la Horde ; ce chemin le contourne.
+La figurine est sur une corniche juste sous le sommet de {area:146}, sur sa face nord. Descendez doucement : en marchant à reculons, vous ne dépasserez pas la corniche.
+À la porte de {area:1057}, entre Arathi et {area:287}, tournez vers le nord et longez le mur côté {area:287} jusqu'à une charrette renversée appuyée contre lui. Sautez sur la charrette puis sur son échelle pour monter sur le mur, puis passez par les rochers jusqu'au camp caché. Certains personnages ne passent pas sous le filet de chargement du camp ; une autre race ou une forme plus petite y arrive.
+À mi-hauteur de {area:91}, à l'est de {area:87}. Rien d'hostile à l'intérieur.
+Deux livres : l'un dans une maison à {area:20}, l'autre à {area:108} (Alliance seulement).
+Le livre de sorts se trouve dans {area:2098}, la crypte au nord-ouest de {zone:1431}. Elle est pleine de morts-vivants ; si vous êtes en difficulté, une course de fantôme fait l'affaire.
+Les parchemins sont dans la grotte des ogres Mo'grosh, au nord-est. Les ogres de la grotte sont des élites de niveau 18-19 : mieux vaut y aller en groupe. (Rumi de Gnomeregan se trouve aussi à {area:144}, si vous l'avez manqué à {area:108}.)
+À {area:118}, le chantier de fouilles au milieu des {zone:1437}.
+À {area:233}, le village des mages au sud-est de la forêt des Pins-Argentés.
+Sur une étagère de l'apothicairerie de {area:159}.
+En bas des escaliers de {area:443}, au nord de {zone:1439}.
+Sur un tonneau, dans une tente à {area:2537}, à l'extrême sud-est de la zone.
+Deux livres : le manuel dans la salle de contrôle, en haut de la plate-forme pétrolière de {area:382}, et l'{object:407566} à côté de Gazlowe à {area:392}.
+La grotte de {area:718}
+Les parchemins sont sous terre, dans la grotte sous {area:387}, près de l'entrée de {area:718}, et non dans le donjon. Entrez par la bouche de la grotte dans l'oasis et suivez la grotte vers le bas ; la flèche pointe les parchemins depuis la surface.
+Entrée de la grotte à {area:387}
+L'{object:405149} est la tablette de pierre appuyée contre le mur dans {object:172961}, sur le chemin des maîtres mages. Utilisez-la pour prendre le livre.
+Dans la première tour du fort des ogres à {area:1357}, au milieu de la zone.
+Sur un banc à côté de l'entrée de {area:310}, au milieu de la zone.
+Sur la passerelle supérieure de {area:1477}, à l'extérieur du donjon.
+Dans une hutte sur le plateau de {area:2097}.
+Dans les ruines trolls de {area:353}, au sud de {zone:1425}.
+Dans {area:254}, pas dans un donjon : le livre est sur l'autel du tombeau de {npc:8888}, près de {npc:14387}. Le point de passage indique la montagne.
+Sur une caisse à {area:1236}, à l'extrême ouest de {zone:1447}.
+Le second {quest:79536}
+À partir du niveau 35, après avoir rendu 25 livres différents, {npc:211033} propose le second {quest:79536} : {item:277254}, {item:277258} ou {item:277260} (équipables au niveau 40).
+Huit autres livres se trouvent dans des zones de niveau 55-60 ; ce sont les maîtres mages à côté des bibliothécaires qui les prennent, pas les bibliothécaires. {item:228141} est sur une table du donjon en ruine de {area:2298}, au-dessus de {area:2057} (à l'extérieur du donjon) ; {item:228132} à {area:199}.
+{item:228135} se trouve dans {area:2268}. {item:228138} est à {area:2264} ; d'autres exemplaires se trouvent ailleurs dans la zone (dont un près des portes de {area:2279}), et vous ne pouvez en prendre qu'un. {item:228140} est sur une table à {area:2277} : attendez que l'élite qui patrouille ait dégagé les créatures voisines, puis avancez.
+{item:228134} se trouve dans le tunnel de {area:1769}, entre {zone:1448} et {zone:1452}.
+{item:228136} est sur une étagère derrière le fournisseur d'alchimie de {area:2255}.
+{item:228133} se trouve dans {area:254}, dans le passage de la mine vers {area:1584}, au-delà du donneur de quêtes de {area:2717}. Le point de passage indique la montagne.
+Au nord du lieu de l'Honneur
