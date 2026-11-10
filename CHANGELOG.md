@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Ajouté
+- Horaires des transports : **tram de Forgefer**, **partage** des horaires avec le groupe et la guilde, durée exacte du tour de chaque liaison classique (reprise de NauticusClassic) : une seule traversée suffit pour une heure exacte. Nouvelles liaisons Rut'theran–Auberdine, Pennelune, Fossoyeuse–Grom'gol. `/ns transports` pour voir ce que la détection a vu.
 - Module **Horaires des bateaux et zeppelins** : près d'un quai, un encart dit dans combien de temps part le prochain bateau ou zeppelin (« Bateau pour Theramore : départ dans 2:40 »). Les horaires s'apprennent en prenant ces transports (traversée, escale, tour complet), par royaume et pour tous vos personnages ; le port de Hurlevent est compris. Pas encore le tram de Forgefer.
 - Traduction française de tous les guides Alliance et communs restés en anglais : réputations, classes, exploration, métiers, objets à collectionner, héritage (884 notes). Seuls les guides propres à la Horde gardent de l'anglais.
 - Traduction française des 33 notes des guides « Divers » (Sac de couchage douillet, livres de Mages…), restées en anglais.

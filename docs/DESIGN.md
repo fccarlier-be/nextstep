@@ -439,14 +439,16 @@ Données reprises de What's Training (MIT, prend en charge Forever), importées 
 
 ### Transports
 
-Horaires des bateaux et des zeppelins (`Modules/UI/Transports.lua`, module « Horaires des bateaux et zeppelins »). Le jeu ne donne ni la position d'un transport ni son horaire ; ils tournent pourtant en boucle à durée fixe, que l'addon apprend en voyant le joueur à bord.
+Horaires des bateaux, zeppelins et du tram (`Modules/UI/Transports.lua`, module « Horaires des bateaux, zeppelins et tram »). Le jeu ne donne ni la position d'un transport ni son horaire ; ils tournent pourtant en boucle à durée fixe.
 
-- **À bord** : la position (`UnitPosition`) avance alors que le joueur ne marche pas (`GetUnitSpeed` nul, hors trajet de vol). Le mouvement qui commence près d'un quai connu (`Travel.DOCKS`) est un départ, celui qui s'arrête près d'un autre quai une arrivée : durée de la traversée. Resté à bord, le départ suivant donne la durée de l'escale.
-- **Tour complet** : traversée + escale à chaque bout ; tant qu'un seul sens est mesuré, l'autre est présumé égal, et l'escale vaut 60 s tant qu'aucune n'est mesurée (heure donnée « environ »). Deux départs du même quai fixent le tour exact (un nombre entier de tours les sépare).
-- **Mémoire** : commune aux personnages, par royaume (`db.realms`) ; une observation de plus de 24 h n'est plus utilisée (un redémarrage du serveur décale les horaires).
-- **Affichage** : à moins de 150 m d'un quai, un encart en haut de l'écran donne pour chaque liaison de la faction « Bateau pour Theramore : départ dans 2:40 » (ou « environ »), ou invite à prendre le bateau une fois pour apprendre l'horaire.
-- **Non couvert** : le tram de Forgefer (instance sans position). **À faire** : partager les observations entre joueurs (groupe, guilde) pour connaître l'horaire sans l'avoir pris soi-même.
-- **[À vérifier]** `GetUnitSpeed` nul à bord quand le joueur ne bouge pas, et position des quais (relevés dans les étapes « Boat to… » des guides ; celui de Baie-du-Butin est estimé).
+- **Durée du tour** : connue pour les liaisons classiques (mesurée par NauticusClassic, MIT, voir CREDITS.md : 143 s pour le tram, de 295 à 356 s pour les bateaux et zeppelins). Pour Hurlevent–Auberdine (ajout de Forever), estimée : traversées + escales mesurées (escale de 60 s présumée, heure « environ »), puis fixée par deux départs du même quai.
+- **Où en est le transport** : appris en voyant le joueur à bord. La position (`UnitPosition`) avance alors qu'il ne marche pas (`GetUnitSpeed` nul, hors trajet de vol) ; un mouvement qui commence près d'un quai connu (`Travel.DOCKS`, à 350 m près) est un départ, celui qui s'arrête près d'un autre quai une arrivée (traversée), et le départ suivant resté à bord une escale. Une seule observation suffit quand la durée du tour est connue.
+- **Tram de Forgefer** : instance 369, où `UnitPosition` donne une position ; quais et voies (nord 4,5 et −45,4) repris de NauticusClassic. Deux rames, reconnues à leur voie ; au quai, une seule ligne : la prochaine qui part.
+- **Partage** : chaque traversée apprise est envoyée au groupe et à la guilde (message d'addon `NextStepTr`, « S|liaison|quai|heure serveur|traversée|escale ») ; à la connexion, une demande (« Q ») fait répondre ceux qui ont un horaire récent, après un délai aléatoire (une réponse déjà entendue n'est pas répétée). Heures du serveur (`GetServerTime`), communes à tous.
+- **Mémoire** : par royaume, commune aux personnages (`db.realms`) ; une observation de plus de 24 h n'est plus utilisée (un redémarrage du serveur décale les horaires).
+- **Affichage** : à moins de 150 m d'un quai, un encart en haut de l'écran : « Bateau pour Theramore : départ dans 2:40 » (ou « environ »), ou « horaire inconnu, prenez-le une fois ».
+- **Diagnostic** : `/ns transports` donne la position, la vitesse propre, le quai le plus proche et les derniers départs et arrivées détectés (gardés dans `db.trace`).
+- **[À vérifier]** `GetUnitSpeed` nul à bord quand le joueur ne bouge pas ; position des quais (relevés dans les étapes « Boat to… » des guides ; Baie-du-Butin et Rut'theran estimés) ; axes de `UnitPosition` dans l'instance du tram.
 
 ### Célébration de niveau
 
