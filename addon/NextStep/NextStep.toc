@@ -70,6 +70,7 @@ Modules\Items\Alert.lua
 Modules\Items\Dungeons.lua
 Modules\Items\Upgrades.lua
 Modules\Items\Ammo.lua
+Modules\UI\Transports.lua
 Modules\Professions\Professions.lua
 Modules\UI\Gathering.lua
 Core\Factions.lua

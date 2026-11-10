@@ -24,6 +24,7 @@ local SPECS = {
     "inventory",
     "professions",
     "ammo",
+    "transports",
     "windows",
     "engine",
     "guide",
