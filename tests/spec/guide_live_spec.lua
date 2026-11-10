@@ -756,6 +756,16 @@ describe("Guide en jeu", function()
         p = at(DOCKS.tirisfal)
         route = Travel.Crossing(barrens, "Horde", p[3], p[1], p[2])
         expect_eq(route and route.kind, "zeppelin")
+        -- Depuis Hurlevent, vers Sombrivage : le port de Hurlevent, ajouté par Forever.
+        p = at(DOCKS.stormwind)
+        route = Travel.Crossing({ map = 1439, x = 38, y = 60, f = "e" }, "Alliance", p[3], p[1], p[2])
+        expect_eq(route and route.from, DOCKS.stormwind)
+        expect_eq(Travel.Describe(route), "Other continent: take the boat from Stormwind Harbor to Auberdine.")
+        -- Loin du quai : la phrase dit de le rejoindre d'abord.
+        local _, n, w = ns.Navigation.WorldPosition(1453, 60, 70, "e")
+        route = Travel.Crossing(barrens, "Alliance", p[3], n, w)
+        expect(route.approach > Travel.NEAR_DOCK)
+        expect(Travel.Describe(route):find("go to", 1, true), "rejoindre le quai d'abord")
         -- Même continent : rien.
         p = at(DOCKS.ratchet)
         expect_eq(Travel.Crossing(barrens, "Alliance", p[3], p[1], p[2]), nil)
