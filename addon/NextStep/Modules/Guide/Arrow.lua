@@ -117,7 +117,8 @@ function Guide:SetArrowTarget(target)
         frame:Hide()
         return
     end
-    frame.label:SetText(self:GoalLabel(self.result, target.step, target.goal))
+    local route = self:Crossing(target)
+    frame.label:SetText(route and ns.Travel.Describe(route) or self:GoalLabel(self.result, target.step, target.goal))
     frame:Show()
     self:UpdateArrowDirection()
 end
@@ -158,6 +159,11 @@ function Guide:UpdateArrowDirection()
     local frame, target = self.arrowFrame, self.pointTarget or self.target
     if not (frame and target) then
         return
+    end
+    -- Cible sur l'autre continent : la flèche mène au quai de départ.
+    local route = not self.pointTarget and self:Crossing(target)
+    if route then
+        target = route.from
     end
     local distance, angle = Navigation.Direction(target.map, target.x, target.y, target.f)
     if not distance then

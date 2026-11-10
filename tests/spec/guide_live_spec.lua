@@ -733,4 +733,44 @@ describe("Guide en jeu", function()
         near(math.pi, { 1, 0.3, 0.1 })           -- derrière : rouge-orangé
         near(3 * math.pi / 2, { 1, 0.82, 0 })
     end)
+    it("indique le bateau à prendre quand la cible est sur l'autre continent", function()
+        local game, Guide = boot()
+        local ns = game.ns
+        local Travel, DOCKS = ns.Travel, ns.Travel.DOCKS
+        local function at(dock)
+            local instance, north, west = ns.Navigation.WorldPosition(dock.map, dock.x, dock.y, dock.f)
+            return { north, west, instance }
+        end
+        local barrens = { map = 1413, x = 46.35, y = 73.89, f = "e" }
+
+        -- Alliance aux Paluns : bateau de Menethil pour Theramore, le plus près du sud des Tarides.
+        local p = at(DOCKS.menethil)
+        local route = Travel.Crossing(barrens, "Alliance", p[3], p[1], p[2])
+        expect_eq(route and route.to, DOCKS.theramore)
+        expect_eq(route.from, DOCKS.menethil)
+        -- Depuis Baie-du-Butin, le bateau de Cabestan, ouvert à tous.
+        p = at(DOCKS.bootyBay)
+        route = Travel.Crossing(barrens, "Alliance", p[3], p[1], p[2])
+        expect_eq(route and route.from, DOCKS.bootyBay)
+        -- La Horde prend le zeppelin depuis Tirisfal.
+        p = at(DOCKS.tirisfal)
+        route = Travel.Crossing(barrens, "Horde", p[3], p[1], p[2])
+        expect_eq(route and route.kind, "zeppelin")
+        -- Même continent : rien.
+        p = at(DOCKS.ratchet)
+        expect_eq(Travel.Crossing(barrens, "Alliance", p[3], p[1], p[2]), nil)
+
+        -- Dans la fenêtre et sur la flèche.
+        game.player.position = at(DOCKS.menethil)
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start(GUIDE_ID)
+        Guide:Refresh()
+        local result = Guide.result
+        result.target = { map = barrens.map, x = barrens.x, y = barrens.y, f = "e", step = result.current, goal = 1 }
+        Guide:UpdateWindow(result)
+        expect(hasText(Guide, "Other continent: take the boat from Menethil Harbor to Theramore."),
+            "trajet écrit dans la fenêtre")
+        expect_eq(#game.errors, 0)
+    end)
+
 end)

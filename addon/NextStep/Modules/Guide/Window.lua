@@ -604,6 +604,11 @@ local function addCurrentStep(self, view, result)
             end
         end
     end
+    local route = self:Crossing(result.target)
+    if route then
+        addGap(view)
+        addLine(view, ns.Travel.Describe(route), COLORS.action)
+    end
     local note = Labels.StepNote(step, guide)
     if note then
         addGap(view)
