@@ -647,3 +647,8 @@ L["Ratchet"] = "Cabestan"
 L["the Tirisfal zeppelin tower"] = "la tour des zeppelins de Tirisfal"
 L["Grom'gol"] = "Grom'gol"
 L["the Orgrimmar zeppelin tower"] = "la tour des zeppelins d'Orgrimmar"
+L["Other continent: go to %s (by flight path if you know it), then take the boat to %s."] =
+    "Autre continent : rejoignez %s (en vol si vous connaissez le trajet), puis prenez le bateau pour %s."
+L["Other continent: go to %s (by flight path if you know it), then take the zeppelin to %s."] =
+    "Autre continent : rejoignez %s (en vol si vous connaissez le trajet), puis prenez le zeppelin pour %s."
+L["Stormwind Harbor"] = "Hurlevent"

@@ -1,7 +1,11 @@
 -- Trajet vers l'autre continent : quand la cible de l'étape n'est pas sur le
--- continent du joueur, le guide choisit le bateau ou le zeppelin à prendre (le
--- moins de marche au départ et à l'arrivée), la flèche pointe le quai de départ
--- et la fenêtre l'écrit en clair.
+-- continent du joueur, le guide choisit le bateau ou le zeppelin à prendre, la
+-- flèche pointe le quai de départ et la fenêtre l'écrit en clair (avec « rejoignez
+-- d'abord… » quand le quai est loin).
+--
+-- Choix : distance du joueur au quai de départ, plus celle du quai d'arrivée à la
+-- cible. Le premier trajet compte pour moitié : on le fait souvent en vol, alors
+-- que l'arrivée sur l'autre continent se fait à pied, sans trajets de vol connus.
 --
 -- Quais en repère « era » (f = "e"), relevés dans les étapes « Boat to… » et
 -- « Zeppelin to… » des guides importés. Les liaisons de Forever qui ne mènent
@@ -17,6 +21,8 @@ local Travel = {}
 ns.Travel = Travel
 
 local DOCKS = {
+    stormwind = { name = "Stormwind Harbor", map = 1453, x = 26.12, y = 47.06, f = "e" },
+    auberdineWest = { name = "Auberdine", map = 1439, x = 30.7, y = 41, f = "e" },
     menethil = { name = "Menethil Harbor", map = 1437, x = 4.78, y = 57.02, f = "e" },
     auberdine = { name = "Auberdine", map = 1439, x = 32.4, y = 43.8, f = "e" },
     theramore = { name = "Theramore", map = 1445, x = 71.6, y = 56.4, f = "e" },
@@ -32,11 +38,16 @@ Travel.DOCKS = DOCKS
 local LINKS = {
     { kind = "boat", faction = "Alliance", DOCKS.menethil, DOCKS.auberdine },
     { kind = "boat", faction = "Alliance", DOCKS.menethil, DOCKS.theramore },
+    { kind = "boat", faction = "Alliance", DOCKS.stormwind, DOCKS.auberdineWest },   -- ajout de Forever
     { kind = "boat", DOCKS.bootyBay, DOCKS.ratchet },
     { kind = "zeppelin", faction = "Horde", DOCKS.tirisfal, DOCKS.durotar },
     { kind = "zeppelin", faction = "Horde", DOCKS.gromgol, DOCKS.durotar },
 }
 Travel.LINKS = LINKS
+
+local DEPARTURE_WEIGHT = 0.5
+local NEAR_DOCK = 300   -- yards : au-delà, la phrase dit de rejoindre d'abord le quai
+Travel.NEAR_DOCK = NEAR_DOCK
 
 local function where(point)
     return Navigation.WorldPosition(point.map, point.x, point.y, point.f)
@@ -62,9 +73,10 @@ function Travel.Crossing(target, faction, instance, north, west)
                 local fInstance, fNorth, fWest = where(from)
                 local aInstance, aNorth, aWest = where(to)
                 if fInstance == instance and aInstance == tInstance then
-                    local cost = distance(north, west, fNorth, fWest) + distance(aNorth, aWest, tNorth, tWest)
+                    local approach = distance(north, west, fNorth, fWest)
+                    local cost = approach * DEPARTURE_WEIGHT + distance(aNorth, aWest, tNorth, tWest)
                     if not bestCost or cost < bestCost then
-                        best, bestCost = { kind = link.kind, from = from, to = to }, cost
+                        best, bestCost = { kind = link.kind, from = from, to = to, approach = approach }, cost
                     end
                 end
             end
@@ -85,9 +97,18 @@ function Guide:Crossing(target)
     return Travel.Crossing(target, UnitFactionGroup("player"), instance, north, west)
 end
 
--- Phrase de la fenêtre : « Autre continent : prenez le bateau de X pour Y. »
+-- Phrase de la fenêtre : « Autre continent : prenez le bateau de X pour Y. »,
+-- ou, loin du quai, « rejoignez X (en vol si vous connaissez le trajet), puis… ».
 function Travel.Describe(route)
-    local text = route.kind == "zeppelin" and L["Other continent: take the zeppelin from %s to %s."]
-        or L["Other continent: take the boat from %s to %s."]
+    local zeppelin = route.kind == "zeppelin"
+    local text
+    if route.approach and route.approach > NEAR_DOCK then
+        text = zeppelin
+            and L["Other continent: go to %s (by flight path if you know it), then take the zeppelin to %s."]
+            or L["Other continent: go to %s (by flight path if you know it), then take the boat to %s."]
+    else
+        text = zeppelin and L["Other continent: take the zeppelin from %s to %s."]
+            or L["Other continent: take the boat from %s to %s."]
+    end
     return text:format(L[route.from.name], L[route.to.name])
 end
