@@ -31,6 +31,15 @@ local DOCKS = {
     tirisfal = { name = "the Tirisfal zeppelin tower", map = 1420, x = 60.7, y = 58.9, f = "e" },
     gromgol = { name = "Grom'gol", map = 1434, x = 31.4, y = 29.9, f = "e" },
     durotar = { name = "the Orgrimmar zeppelin tower", map = 1411, x = 50.8, y = 13.5, f = "e" },
+    -- Liaisons sur un même continent (horaires seulement, pas de traversée).
+    rutheran = { name = "Rut'theran Village", map = 1438, x = 55.9, y = 93.5, f = "e" },
+    auberdineTeldrassil = { name = "Auberdine", map = 1439, x = 33.2, y = 40.1, f = "e" },
+    feathermoon = { name = "Feathermoon", map = 1444, x = 31, y = 39.8, f = "e" },
+    forgottenCoast = { name = "the Forgotten Coast", map = 1444, x = 43.3, y = 42.7, f = "e" },
+    -- Tram de Forgefer : coordonnées de l'instance 369 (UnitPosition : nord, ouest),
+    -- quais relevés dans NauticusClassic (MIT, voir CREDITS.md).
+    tramStormwind = { name = "Stormwind", instance = 369, north = -20.45, west = 2491.8 },
+    tramIronforge = { name = "Ironforge", instance = 369, north = -20.45, west = 9.15 },
 }
 Travel.DOCKS = DOCKS
 for id, dock in pairs(DOCKS) do
@@ -45,19 +54,30 @@ local LINKS = {
     { kind = "boat", DOCKS.bootyBay, DOCKS.ratchet },
     { kind = "zeppelin", faction = "Horde", DOCKS.tirisfal, DOCKS.durotar },
     { kind = "zeppelin", faction = "Horde", DOCKS.gromgol, DOCKS.durotar },
+    { kind = "zeppelin", faction = "Horde", DOCKS.tirisfal, DOCKS.gromgol },
+    { kind = "boat", faction = "Alliance", DOCKS.rutheran, DOCKS.auberdineTeldrassil },
+    { kind = "boat", faction = "Alliance", DOCKS.feathermoon, DOCKS.forgottenCoast },
+    -- Deux rames, chacune sur sa voie (nord de la position).
+    { kind = "tram", id = "tram-north", lane = 4.5, DOCKS.tramStormwind, DOCKS.tramIronforge },
+    { kind = "tram", id = "tram-south", lane = -45.4, DOCKS.tramStormwind, DOCKS.tramIronforge },
 }
 Travel.LINKS = LINKS
 for _, link in ipairs(LINKS) do
-    link.id = link[1].id .. "-" .. link[2].id
+    link.id = link.id or (link[1].id .. "-" .. link[2].id)
 end
 
 local DEPARTURE_WEIGHT = 0.5
 local NEAR_DOCK = 300   -- yards : au-delà, la phrase dit de rejoindre d'abord le quai
 Travel.NEAR_DOCK = NEAR_DOCK
 
+-- Position monde d'un quai (coordonnées d'instance données telles quelles).
 local function where(point)
+    if point.instance then
+        return point.instance, point.north, point.west
+    end
     return Navigation.WorldPosition(point.map, point.x, point.y, point.f)
 end
+Travel.Where = where
 
 local function distance(n1, w1, n2, w2)
     local dn, dw = n1 - n2, w1 - w2

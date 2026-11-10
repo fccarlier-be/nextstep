@@ -41,7 +41,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 - **Infobulles** : « NextStep (Armes) : +12 % » face à ce que tu portes, ou la raison si l'objet ne te convient pas.
 - **Récompenses de quête** : la récompense conseillée est encadrée, avec la raison (amélioration, sinon celle qui se vend le mieux). Jamais choisie à ta place.
 - **Alerte** : quand une amélioration arrive dans tes sacs, un encart s'affiche (jamais en combat) ; clic pour l'équiper, clic droit pour fermer.
-- **Bateaux et zeppelins** : près d'un quai, un encart en haut de l'écran dit dans combien de temps part le prochain bateau ou zeppelin. NextStep apprend les horaires en te voyant prendre ces transports (horaire « inconnu » tant que tu n'en as pas pris un depuis un jour, « environ » tant qu'un seul trajet est mesuré). Pas le tram de Forgefer.
+- **Bateaux, zeppelins et tram** : près d'un quai, un encart en haut de l'écran dit dans combien de temps part le prochain bateau, zeppelin ou tram de Forgefer. NextStep apprend où en est chaque transport en te voyant à bord (une traversée suffit), et partage ces horaires avec ton groupe et ta guilde s'ils ont l'addon. Horaire « inconnu » tant que personne ne l'a pris depuis un jour. `/ns transports` montre ce que la détection a vu.
 - **Munitions (chasseur)** : quand tes flèches ou tes balles passent sous 200 (réglable), une alerte au milieu de l'écran indique le vendeur le plus proche et la munition à acheter ; clic pour y pointer la flèche. NextStep apprend ce que vend chaque marchand que tu ouvres : un vendeur pas encore vu est marqué « à confirmer ».
 - **Spécialisation** : déduite de tes talents, ou choisie dans les options. `/ns gear` la montre, `/ns gear <lien>` compare un objet.
 
@@ -73,6 +73,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 | `/ns gear [lien]` | Spécialisation et poids utilisés, ou comparaison d'un objet |
 | `/ns bank` | Sacs et banque de tous tes personnages |
 | `/ns ammo` | Munitions restantes et vendeur le plus proche (chasseur) |
+| `/ns transports` | État de la détection des bateaux et du tram (diagnostic) |
 | `/ns clock`, `/ns timer <minutes> [nom]`, `/ns alarm <hh:mm> [nom]` | Horloge, minuteur, alarme |
 | `/ns radar` | Radar de récolte |
 | `/ns keep <objet>` | Objet gris à ne jamais vendre |

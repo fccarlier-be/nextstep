@@ -652,11 +652,20 @@ L["Other continent: go to %s (by flight path if you know it), then take the boat
 L["Other continent: go to %s (by flight path if you know it), then take the zeppelin to %s."] =
     "Autre continent : rejoignez %s (en vol si vous connaissez le trajet), puis prenez le zeppelin pour %s."
 L["Stormwind Harbor"] = "Hurlevent"
-L["Boat and zeppelin times"] = "Horaires des bateaux et zeppelins"
-L["Near a dock, shows when the next boat or zeppelin leaves, learned from your own trips."] =
-    "Près d'un quai, indique quand part le prochain bateau ou zeppelin, appris de vos propres traversées."
+L["Boat and zeppelin times"] = "Horaires des bateaux, zeppelins et tram"
+L["Near a dock, shows when the next boat, zeppelin or tram leaves, learned from trips "
+    .. "and shared with your group and guild."] =
+    "Près d'un quai, indique quand part le prochain bateau, zeppelin ou tram, appris des traversées "
+    .. "et partagé avec votre groupe et votre guilde."
 L["Zeppelin to %s"] = "Zeppelin pour %s"
 L["Boat to %s"] = "Bateau pour %s"
 L["%s: leaves in %s"] = "%s : départ dans %s"
 L["%s: leaves in about %s"] = "%s : départ dans %s environ"
 L["%s: time unknown, ride it once to learn it"] = "%s : horaire inconnu, prenez-le une fois pour l'apprendre"
+L["Tram to %s"] = "Tram pour %s"
+L["Rut'theran Village"] = "Rut'theran"
+L["Feathermoon"] = "Pennelune"
+L["the Forgotten Coast"] = "la Côte oubliée"
+L["Stormwind"] = "Hurlevent"
+L["Ironforge"] = "Forgefer"
+L["Boat and tram detection state"] = "État de la détection des bateaux et du tram"
