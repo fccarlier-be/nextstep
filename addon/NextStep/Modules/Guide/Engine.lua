@@ -204,6 +204,22 @@ function Engine.Evaluate(guide, ctx)
             reopened[stepKey] = true
         end
     end
+    -- Une étape retenue « hors sujet » est réévaluée tant qu'une de ses quêtes est dans
+    -- le journal : une quête qu'on a ne la rend pas hors sujet. Le jeu retire une quête
+    -- rendue du journal un instant avant d'annoncer son rendu ; vue abandonnée, elle
+    -- emportait les étapes suivantes, retenues hors sujet (sac de couchage : « Cent pas
+    -- vers le nord » et le barrage, passés alors que « Travail humide » était en cours).
+    for i, step in ipairs(guide.steps) do
+        local key = keys.steps[i]
+        if progress.outcomes[key] == "na" then
+            for _, goal in ipairs(step.goals) do
+                if goal.quest and state:InLog(goal.quest) then
+                    reopened[key] = true
+                    break
+                end
+            end
+        end
+    end
 
     local goalCtx = {
         droppedQuests = droppedQuests,
