@@ -1,0 +1,93 @@
+-- Trajet vers l'autre continent : quand la cible de l'étape n'est pas sur le
+-- continent du joueur, le guide choisit le bateau ou le zeppelin à prendre (le
+-- moins de marche au départ et à l'arrivée), la flèche pointe le quai de départ
+-- et la fenêtre l'écrit en clair.
+--
+-- Quais en repère « era » (f = "e"), relevés dans les étapes « Boat to… » et
+-- « Zeppelin to… » des guides importés. Les liaisons de Forever qui ne mènent
+-- pas d'un continent à l'autre (dirigeables) n'entrent pas en compte.
+
+local _, ns = ...
+local L = ns.L
+
+local Navigation = ns.Navigation
+local Guide = ns.Modules:Get("Guide")
+
+local Travel = {}
+ns.Travel = Travel
+
+local DOCKS = {
+    menethil = { name = "Menethil Harbor", map = 1437, x = 4.78, y = 57.02, f = "e" },
+    auberdine = { name = "Auberdine", map = 1439, x = 32.4, y = 43.8, f = "e" },
+    theramore = { name = "Theramore", map = 1445, x = 71.6, y = 56.4, f = "e" },
+    bootyBay = { name = "Booty Bay", map = 1434, x = 25.8, y = 73.1, f = "e" },
+    ratchet = { name = "Ratchet", map = 1413, x = 63.4, y = 38.5, f = "e" },
+    tirisfal = { name = "the Tirisfal zeppelin tower", map = 1420, x = 60.7, y = 58.9, f = "e" },
+    gromgol = { name = "Grom'gol", map = 1434, x = 31.4, y = 29.9, f = "e" },
+    durotar = { name = "the Orgrimmar zeppelin tower", map = 1411, x = 50.8, y = 13.5, f = "e" },
+}
+Travel.DOCKS = DOCKS
+
+-- Liaisons dans les deux sens ; faction nil : ouverte à tous.
+local LINKS = {
+    { kind = "boat", faction = "Alliance", DOCKS.menethil, DOCKS.auberdine },
+    { kind = "boat", faction = "Alliance", DOCKS.menethil, DOCKS.theramore },
+    { kind = "boat", DOCKS.bootyBay, DOCKS.ratchet },
+    { kind = "zeppelin", faction = "Horde", DOCKS.tirisfal, DOCKS.durotar },
+    { kind = "zeppelin", faction = "Horde", DOCKS.gromgol, DOCKS.durotar },
+}
+Travel.LINKS = LINKS
+
+local function where(point)
+    return Navigation.WorldPosition(point.map, point.x, point.y, point.f)
+end
+
+local function distance(n1, w1, n2, w2)
+    local dn, dw = n1 - n2, w1 - w2
+    return math.sqrt(dn * dn + dw * dw)
+end
+
+-- Meilleure traversée du joueur (continent, nord, ouest) vers la cible :
+-- { kind, from, to } ou nil (même continent, position inconnue, pas de liaison).
+function Travel.Crossing(target, faction, instance, north, west)
+    local tInstance, tNorth, tWest = where(target)
+    if not (tInstance and instance) or tInstance == instance then
+        return nil
+    end
+    local best, bestCost
+    for _, link in ipairs(LINKS) do
+        if not link.faction or link.faction == faction then
+            for side = 1, 2 do
+                local from, to = link[side], link[3 - side]
+                local fInstance, fNorth, fWest = where(from)
+                local aInstance, aNorth, aWest = where(to)
+                if fInstance == instance and aInstance == tInstance then
+                    local cost = distance(north, west, fNorth, fWest) + distance(aNorth, aWest, tNorth, tWest)
+                    if not bestCost or cost < bestCost then
+                        best, bestCost = { kind = link.kind, from = from, to = to }, cost
+                    end
+                end
+            end
+        end
+    end
+    return best
+end
+
+-- Traversée à faire pour atteindre une cible, depuis la position du joueur.
+function Guide:Crossing(target)
+    if not target then
+        return nil
+    end
+    local instance, north, west = Navigation.PlayerPosition()
+    if not instance then
+        return nil
+    end
+    return Travel.Crossing(target, UnitFactionGroup("player"), instance, north, west)
+end
+
+-- Phrase de la fenêtre : « Autre continent : prenez le bateau de X pour Y. »
+function Travel.Describe(route)
+    local text = route.kind == "zeppelin" and L["Other continent: take the zeppelin from %s to %s."]
+        or L["Other continent: take the boat from %s to %s."]
+    return text:format(L[route.from.name], L[route.to.name])
+end
