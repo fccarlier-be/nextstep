@@ -57,14 +57,54 @@ describe("Transports", function()
         local _, Transports, ns = boot()
         local D = ns.Travel.DOCKS
         local tracker = Transports.Tracker.New()
-        local samples = ride(ns, D.menethil, D.theramore, 1000, 5, 60)
+        local samples = ride(ns, D.theramore, D.menethil, 1000, 5, 60)
         local events = feed(tracker, samples)
         expect_eq(#events, 1)
         local e = events[1]
         expect_eq(e.link, "menethil-theramore")
-        expect_eq(e.from, "menethil")
-        expect_eq(e.to, "theramore")
-        expect(math.abs(e.ride - 60) < 2, "durée de la traversée")
+        expect_eq(e.from, "theramore")
+        expect_eq(e.to, "menethil")
+        expect_eq(e.departed, 1004.5, "dernier relevé à quai")
+    end)
+
+    it("retient le départ sans attendre l'arrivée, mais pas une simple poussée", function()
+        local _, Transports, ns = boot()
+        local D = ns.Travel.DOCKS
+        -- Tram : on descend en marchant dès l'arrêt, sans jamais rester immobile.
+        local tracker = Transports.Tracker.New()
+        local t, events = 0, {}
+        local function sample(west, speed, north)
+            local e = tracker:Feed(t, 369, north or 4.5, west, speed, false)
+            if e then
+                events[#events + 1] = e
+            end
+            t = t + 0.5
+        end
+        sample(D.tramIronforge.west, 0)
+        for k = 1, 30 do
+            sample(D.tramIronforge.west + k * 40, 0)
+        end
+        for k = 1, 10 do
+            sample(D.tramIronforge.west + 1200 + k * 3, 7)
+        end
+        expect_eq(#events, 1, "départ retenu")
+        expect_eq(events[1].link, "tram-north")
+        expect_eq(events[1].from, "tramIronforge")
+
+        -- Poussée d'une seconde près d'un quai, puis marche : rien.
+        tracker, events = Transports.Tracker.New(), {}
+        local i, n, w = at(ns, D.menethil)
+        for k = 0, 2 do
+            local e = tracker:Feed(t, i, n + k * 6, w, 0, false)
+            events[#events + 1] = e
+            t = t + 0.5
+        end
+        for k = 1, 40 do
+            local e = tracker:Feed(t, i, n + 12 + k * 3, w, 7, false)
+            events[#events + 1] = e
+            t = t + 0.5
+        end
+        expect_eq(#events, 0, "pas de départ")
     end)
 
     it("suit le bateau de Menethil d'escale en escale (Austrivage sur Forever)", function()

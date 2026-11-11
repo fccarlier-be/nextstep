@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.2.2] - 2026-11-11
+
+### Corrigé
+- Horaires des transports : un trajet en **tram** (ou en bateau) n'était pas appris quand on descendait en marchant dès l'arrêt. Le départ est maintenant retenu après 8 secondes à bord, sans attendre l'arrivée. Chaque escale a son propre point d'accostage : les deux bateaux de Menethil (Auberdine et Theramore) et les plateformes des tours de zeppelins ne peuvent plus être confondus.
+
 ## [0.2.1] - 2026-11-11
 
 ### Ajouté
@@ -159,7 +164,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.1...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/fccarlier-be/nextstep/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/fccarlier-be/nextstep/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...v0.1.1

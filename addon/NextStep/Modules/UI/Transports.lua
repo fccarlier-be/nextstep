@@ -8,8 +8,9 @@
 -- prévoir tous ses départs, à chaque escale.
 --
 -- Le départ se voit quand le joueur est à bord : sa position avance alors qu'il ne
--- marche pas (GetUnitSpeed nul, hors trajet de vol). Le mouvement commence près d'un
--- quai (Travel.DOCKS) et s'arrête près de l'escale suivante : c'est ce transport-là.
+-- marche pas (GetUnitSpeed nul, hors trajet de vol). Un mouvement qui part d'un quai
+-- (Travel.DOCKS) et dure 8 secondes est un départ de ce quai : le quai, et pour le
+-- tram la voie, désignent le transport. L'arrivée n'est pas attendue.
 --
 -- Partage : chaque départ vu est envoyé au groupe et à la guilde (message d'addon
 -- « NextStepTr »), et à la connexion l'addon demande les horaires connus. Les heures
@@ -38,41 +39,45 @@ local SAMPLE = 0.5          -- secondes entre deux relevés de position
 local MOVING = 3            -- yards par seconde : au-delà, le transport avance
 local STOPPED = 0.5         -- yards par seconde : en deçà, il est à quai
 local STOP_SAMPLES = 3      -- relevés immobiles d'affilée pour une arrivée
-local DOCK_RADIUS = 350     -- yards : un quai est « ici » à cette distance
+local CONFIRM = 8           -- secondes de trajet à bord qui confirment un départ
+local DOCK_RADIUS = 150     -- yards : un départ à cette distance d'un point d'accostage
 local MAX_AGE = 24 * 3600   -- secondes : au-delà, l'horaire appris est trop vieux
-local DISPLAY_RADIUS = 150  -- yards : l'encart s'affiche près d'un quai
+local DISPLAY_RADIUS = 250  -- yards : l'encart s'affiche près d'un point d'accostage
 local PREFIX = "NextStepTr"
 
 Transports.MAX_AGE = MAX_AGE
 Transports.PREFIX = PREFIX
 
 -- Tours (NauticusClassicResurrected, version Forever) : durée en secondes, escales dans
--- l'ordre du trajet, avec l'arrivée et le départ de chacune comptés depuis le début du
--- tour. L'identifiant reprend celui de la liaison (Travel.LINKS) ; lane : voie du tram.
+-- l'ordre du trajet : quai (Travel.DOCKS), arrivée et départ comptés depuis le début du
+-- tour, et point d'accostage (nord, ouest ; continent du quai). Deux transports d'un
+-- même port accostent à des pontons ou des plateformes distincts : c'est ce point,
+-- pas le quai, qui les distingue (et, pour le tram, la voie).
 local ROUTES = {
     { id = "tirisfal-durotar", kind = "zeppelin", faction = "Horde", period = 356.288,
-        { "durotar", 0, 60 }, { "tirisfal", 191.139, 251.139 } },
+        { "durotar", 0, 60, 1310.3, -4648.5 }, { "tirisfal", 191.139, 251.139, 2073.6, 298.1 } },
     { id = "gromgol-durotar", kind = "zeppelin", faction = "Horde", period = 303.467,
-        { "durotar", 0, 60 }, { "gromgol", 138.314, 198.314 } },
+        { "durotar", 0, 60, 1372.8, -4634.6 }, { "gromgol", 138.314, 198.314, -12461.4, 219.5 } },
     { id = "tirisfal-gromgol", kind = "zeppelin", faction = "Horde", period = 335.298,
-        { "tirisfal", 0, 60 }, { "gromgol", 155.978, 215.978 } },
+        { "tirisfal", 0, 60, 2051.7, 229.6 }, { "gromgol", 155.978, 215.978, -12398.7, 202.7 } },
     { id = "bootyBay-ratchet", kind = "boat", period = 350.823,
-        { "ratchet", 0, 60 }, { "bootyBay", 166.808, 226.808 } },
+        { "ratchet", 0, 60, -1008.3, -3840.1 }, { "bootyBay", 166.808, 226.808, -14280.7, 583.8 } },
     -- Sur Forever, ce bateau fait escale à Austrivage (tour de 8 min, pas 5).
     { id = "menethil-auberdine", kind = "boat", faction = "Alliance", period = 486.226,
-        { "menethil", 0, 60 }, { "southshore", 202.265, 262.276 }, { "auberdine", 345.796, 404.997 } },
+        { "menethil", 0, 60, -3710.8, -572.4 }, { "southshore", 202.265, 262.276, -1102.5, -551.6 },
+        { "auberdine", 345.796, 404.997, 6407.6, 826.1 } },
     { id = "menethil-theramore", kind = "boat", faction = "Alliance", period = 329.316,
-        { "menethil", 0, 60 }, { "theramore", 164.003, 224.003 } },
+        { "menethil", 0, 60, -3908.0, -587.2 }, { "theramore", 164.003, 224.003, -4018.8, -4738.7 } },
     { id = "rutheran-auberdineTeldrassil", kind = "boat", faction = "Alliance", period = 316.254,
-        { "rutheran", 0, 60 }, { "auberdineTeldrassil", 164.465, 224.465 } },
+        { "rutheran", 0, 60, 8533.5, 1028.0 }, { "auberdineTeldrassil", 164.465, 224.465, 6593.8, 756.9 } },
     { id = "feathermoon-forgottenCoast", kind = "boat", faction = "Alliance", period = 317.045,
-        { "feathermoon", 0, 60 }, { "forgottenCoast", 119.881, 179.881 } },
+        { "feathermoon", 0, 60, -4197.4, 3289.6 }, { "forgottenCoast", 119.881, 179.881, -4344.8, 2444.6 } },
     { id = "stormwind-auberdineWest", kind = "boat", faction = "Alliance", period = 246.5,
-        { "stormwind", 17.469, 77.105 }, { "auberdineWest", 135.092, 195.091 } },
-    { id = "tram-north", kind = "tram", lane = 4.5, period = 143.334,
-        { "tramStormwind", 0, 12.1 }, { "tramIronforge", 70.735, 84.685 } },
-    { id = "tram-south", kind = "tram", lane = -45.4, period = 143.334,
-        { "tramStormwind", 0, 13.95 }, { "tramIronforge", 72.582, 84.682 } },
+        { "stormwind", 17.469, 77.105, -8650.8, 1345.8 }, { "auberdineWest", 135.092, 195.091, 6547.1, 943.0 } },
+    { id = "tram-north", kind = "tram", period = 143.334,
+        { "tramStormwind", 0, 12.1, 4.5, 2490.8 }, { "tramIronforge", 70.735, 84.685, 4.5, 8.5 } },
+    { id = "tram-south", kind = "tram", period = 143.334,
+        { "tramStormwind", 0, 13.95, -45.4, 2492.8 }, { "tramIronforge", 72.582, 84.682, -45.4, 9.8 } },
 }
 Transports.ROUTES = ROUTES
 
@@ -80,7 +85,7 @@ local byId = {}
 for _, route in ipairs(ROUTES) do
     byId[route.id] = route
     for _, stop in ipairs(route) do
-        stop.dock, stop.arrive, stop.depart = stop[1], stop[2], stop[3]
+        stop.dock, stop.arrive, stop.depart, stop.north, stop.west = stop[1], stop[2], stop[3], stop[4], stop[5]
     end
 end
 
@@ -122,24 +127,33 @@ function Transports.DocksNear(instance, north, west, radius)
     return found
 end
 
--- Tour qui relie deux ensembles de quais, d'une escale à la suivante (la voie la plus
--- proche quand plusieurs rames partagent les mêmes quais) : tour, quai de départ,
--- quai d'arrivée.
-local function routeBetween(fromDocks, toDocks, laneNorth)
-    local best, bestFrom, bestTo, bestGap
+-- Point d'accostage le plus proche d'une position, à moins de radius yards :
+-- tour, index de l'escale, distance (ou nil).
+-- Distance d'une position au point d'accostage d'une escale (nil sur un autre continent).
+local function berthDistance(stop, instance, north, west)
+    if stop.instance == nil then
+        stop.instance = Travel.Where(Travel.DOCKS[stop.dock]) or false
+    end
+    if stop.instance == instance then
+        return distance(north, west, stop.north, stop.west)
+    end
+end
+
+local function nearestBerth(instance, north, west, radius)
+    local best, bestIndex, bestDistance
     for _, route in ipairs(ROUTES) do
         for index, stop in ipairs(route) do
-            local nextStop = route[index % #route + 1]
-            if fromDocks[stop.dock] and toDocks[nextStop.dock] then
-                local gap = (route.lane and laneNorth) and math.abs(route.lane - laneNorth) or 0
-                if not bestGap or gap < bestGap then
-                    best, bestFrom, bestTo, bestGap = route, stop.dock, nextStop.dock, gap
+            local d = berthDistance(stop, instance, north, west)
+            if d then
+                if d <= radius and (not bestDistance or d < bestDistance) then
+                    best, bestIndex, bestDistance = route, index, d
                 end
             end
         end
     end
-    return best, bestFrom, bestTo
+    return best, bestIndex, bestDistance
 end
+Transports.NearestBerth = nearestBerth
 
 ---------------------------------------------------------------------------
 -- Détection à bord (pure : relevés en entrée, événements en sortie)
@@ -172,9 +186,22 @@ function Tracker:Note(t, what, instance, north, west, detail)
     self.trace[9] = nil
 end
 
+-- Départ confirmé : CONFIRM secondes transporté (sans marcher) depuis un quai, sans
+-- attendre l'arrivée (on descend souvent du tram ou du bateau en marchant).
+local function confirm(self)
+    local departure = self.departure
+    if not departure or departure.sent or departure.ridden < CONFIRM then
+        return nil
+    end
+    departure.sent = true
+    local route, index = departure.route, departure.index
+    departure.note.detail = route.id
+    return { link = route.id, from = route[index].dock, to = route[index % #route + 1].dock,
+        departed = departure.t }
+end
+
 -- Un relevé : t (secondes), position (nil hors du monde), vitesse propre du joueur,
--- en trajet de vol. Renvoie un événement ou nil :
---   { link, from, to, departed, arrived, ride }
+-- en trajet de vol. Renvoie un événement ou nil : { link, from, to, departed }.
 function Tracker:Feed(t, instance, north, west, ownSpeed, onTaxi)
     if not instance or onTaxi then
         if onTaxi then
@@ -194,14 +221,20 @@ function Tracker:Feed(t, instance, north, west, ownSpeed, onTaxi)
         self.still = 0
         return nil
     end
+    local event
     local rate = distance(north, west, last.north, last.west) / (t - last.t)
     if rate >= MOVING then
         self.still = 0
         if not self.moving then
             self.moving = true
             self:Note(last.t, "start", last.instance, last.north, last.west)
-            local docks = Transports.DocksNear(last.instance, last.north, last.west, DOCK_RADIUS)
-            self.departure = next(docks) and { t = last.t, docks = docks, lane = north } or nil
+            local route, index = nearestBerth(last.instance, last.north, last.west, DOCK_RADIUS)
+            self.departure = route and { t = last.t, route = route, index = index, note = self.trace[1],
+                ridden = 0 } or nil
+        end
+        if self.departure then
+            self.departure.ridden = self.departure.ridden + (t - last.t)
+            event = confirm(self)
         end
     elseif rate <= STOPPED and self.moving then
         self.still = self.still + 1
@@ -210,22 +243,11 @@ function Tracker:Feed(t, instance, north, west, ownSpeed, onTaxi)
             self.still = 0
             local departure = self.departure
             self.departure = nil
-            local docks = Transports.DocksNear(instance, north, west, DOCK_RADIUS)
-            local arrived = t - (STOP_SAMPLES * SAMPLE)
-            self:Note(arrived, "stop", instance, north, west,
-                not departure and "no dock at start" or not next(docks) and "no dock here" or nil)
-            if departure and next(docks) then
-                local route, from, to = routeBetween(departure.docks, docks, departure.lane)
-                if route then
-                    self.trace[1].detail = route.id
-                    return { link = route.id, from = from, to = to, departed = departure.t,
-                        arrived = arrived, ride = arrived - departure.t }
-                end
-                self.trace[1].detail = "no route"
-            end
+            self:Note(t - (STOP_SAMPLES * SAMPLE), "stop", instance, north, west,
+                not departure and "no dock at start" or not departure.sent and "too short" or nil)
         end
     end
-    return nil
+    return event
 end
 
 ---------------------------------------------------------------------------
@@ -459,12 +481,12 @@ function Transports:Lines(instance, north, west, faction, now)
     if not instance then
         return lines
     end
-    local near = Transports.DocksNear(instance, north, west, DISPLAY_RADIUS)
     local realm = self:Realm()
     for _, route in ipairs(ROUTES) do
         if not route.faction or route.faction == faction then
             for index, stop in ipairs(route) do
-                if near[stop.dock] then
+                local d = berthDistance(stop, instance, north, west)
+                if d and d <= DISPLAY_RADIUS then
                     local label = L[KINDS[route.kind]]:format(destinations(route, index))
                     local wait, docked = Transports.NextDeparture(realm[route.id], route, stop.dock, now)
                     local line = byLabel[label]
