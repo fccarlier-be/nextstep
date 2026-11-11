@@ -1,0 +1,290 @@
+Sur la route de {zone:1453} à {zone:1436}, {area:87} est la première halte : {npc:241} se tient devant l'auberge, {npc:240} à côté de lui. {quest:40} de {npc:241} mène tout droit à Dughan, qui donne ensuite {quest:35} ; sa quête {quest:109} vous suit jusqu'en {zone:1436}.
+Suivez la route vers l'ouest jusqu'à {area:87}, sur le chemin de {zone:1436} : {npc:240} se tient devant l'auberge.
+{npc:5480} forme les guerriers dans {object:2100}, près de la boutique de {npc:1323} ; le tram de {zone:1455} arrive dans {object:28027}, au nord. {npc:6089} et {npc:6090} s'y tiennent ensemble, près de {object:2152}. {npc:6090} se bat avec vous pour sa chope. Si {npc:5480} ne propose pas {quest:1638}, allez directement voir {npc:6089} : il donne {quest:1639} sans elle.
+{npc:1646}, {object:2098} : sa boussole est dans son ancienne maison, en {zone:1436}
+{npc:376} est dans la cathédrale de la Lumière, de l'autre côté de {object:2098} par rapport à {npc:1646}.
+Foies de sanglier en chemin
+Des Sangliers et des Jeunes sangliers fouissent sur chaque partie de cette boucle : tuez ceux que vous croisez pour les foies de la tourte.
+{item:729} en chemin
+Des Déchireurs volent au-dessus des champs le long de cette boucle : tuez ceux que vous croisez pour la viande du ragoût.
+{quest:153} en chemin
+Chaque Défias de cette boucle peut lâcher {item:829} : les trappeurs et les contrebandiers, et les gardes de {object:290}.
+Trappeurs et contrebandiers défias
+Au nord-ouest de {area:108} vers {area:918} : des trappeurs et des contrebandiers défias campent dans les champs entre les deux.
+Le puits de {area:918}
+Les Guetteurs des moissons de {area:918}
+Des Guetteurs des moissons et des golems travaillent les champs autour de {area:918} ; ils lâchent les isoressorts, les gyrostabilisateurs, {item:732} et parfois {item:255155}. {npc:573}, un rare de niveau 20, se promène ici : laissez-le tranquille.
+{item:814} : gardez-en cinq pour {npc:392} à {area:115}, plus loin sur la route
+Au nord, vers les collines au-dessus de {area:111} : des gnolls et des éclaireurs Rivepatte (niveaux 11-13) y rôdent, vers l'est jusqu'à {area:916}. Les gnolls plus au sud et à l'ouest sont de niveau 13-19 : restez dans les collines du nord.
+Attention : les gnolls proches les uns des autres ont tendance à se joindre au combat en groupe. Il est plus sûr de les attirer un par un.
+Les murlocs de {area:2}
+Des Coureurs des côtes et des Pillards murlocs bordent la côte nord, au-dessus de la mine, vers l'est jusqu'à {area:916} : longez la plage vers l'est. Ils fuient quand leur vie est basse : attirez-les un par un.
+{object:290} se trouve dans la maison en ruine à l'est de la mine, sur le chemin de {area:916}.
+Attention : deux Défias montent la garde à l'intérieur, dont {npc:502}, un nommé de niveau 15. Ils sont liés : attaquer l'un amène les deux.
+Terminez les foies de sanglier
+Il vous en manque pour arriver à huit ? Des Jeunes sangliers fouissent dans les champs juste à l'ouest de {area:107}.
+Terminez {item:729}
+Il vous en manque pour arriver à trois ? De Jeunes déchireurs volent au-dessus des champs au nord-ouest de {area:107}.
+Terminez {quest:153}
+Il vous en manque pour arriver à quinze ? Des trappeurs défias campent dans les champs juste à l'ouest de {area:108}.
+{object:28027} de {zone:1453}
+Marchez jusqu'à {area:1519}, ou volez si vous connaissez le trajet. Maîtres : {object:2100} (guerriers, voleurs), la cathédrale (paladins, prêtres), {object:2101} (mages, démonistes), {object:28027} (chasseurs), le parc (druides).
+Entrez par la grande porte (déjà fait si vous êtes en ville)
+Reprenez le tram : il arrive dans {object:28027} de {zone:1453}, où commencent les courses ci-dessous.
+{npc:10219} (les Elfes de la nuit l'ont depuis {zone:1438})
+{quest:3524} : les tortues de mer échouées, plus haut sur la côte, ne proposent leurs quêtes qu'une fois celle-ci rendue
+{npc:11802} se tient à l'étage de son bâtiment à {area:2361} : montez par l'intérieur, la flèche ne distingue pas les étages. Les colifichets du sanctuaire se trouvent dans les récipients posés au sol de {area:656}, sous {area:2361} : prenez-en un jusqu'à {area:2362}, au nord-ouest, utilisez-le là-bas et parlez à {npc:11799}. {quest:29} est limitée dans le temps : pas de téléportation ni de pierre de foyer tant que {npc:11799} ne l'a pas. Revenez ensuite en vol à {area:442} depuis {area:2361}.
+Depuis le quai, montez d'abord au bout nord du village ({npc:3649}, {npc:3702} près du puits de lune, {npc:2913}), puis redescendez la rue principale : l'avis de recherche devant l'auberge, {npc:3693} à son extrémité est, là où la route part vers le sud. {npc:3694} se tient à côté de {npc:3693}, près du maître de vol ; si elle n'est pas là, c'est qu'elle a été tuée et elle réapparaît vite : patientez un instant.
+{npc:3649}, au bout nord du village : la réponse de {npc:1646}
+{npc:3694}, à côté de {npc:3693} : pour {npc:3691} à {area:415}, dans le guide suivant
+{object:12666}, une fois {quest:949} en poche
+Soignez {npc:12298}
+Vers le sud, le long de la rive ouest. {object:665289} repose au fond du loch, à l'un de plusieurs endroits : à l'est de {area:144} (48.1,39.7), un peu au sud-ouest de là (45.7,43.4), ou au bout sud du loch (48.7,54.4 ou 50.6,53.3). S'il n'est pas sous la flèche, essayez l'endroit suivant. Cliquez dessus pour la quête ; {item:278051} vient avec.
+{npc:1154} : les crocilisques du loch, sous le pavillon
+Vieux sangliers des montagnes, {npc:270693} et les crocilisques du loch
+Les Vieux sangliers des montagnes parcourent les collines au nord-ouest du pavillon, le long de la rive est : {quest:258} dure 12 minutes, donc les sangliers d'abord. {npc:270693}, un crocilisque, patrouille la rive en contrebas, parmi les Crocilisques du loch.
+{item:2924} : Crocilisques du loch
+La route de l'est vers les Carmines
+Depuis le pont, partez vers le nord jusqu'à {area:86}. {npc:6172} gît au sud du lac : utilisez {item:6866} sur lui. Les Sorciers voleurs défias autour de lui portent {item:6846}.
+Ses piques et ses rivets viennent des gnolls au nord du lac, sur la boucle après {zone:1436}
+La porte de {zone:1453}
+Pas de Confrérie défias par Wiley (elle commence avec la lettre de {npc:234} en {zone:1436}) : passez {zone:1436}. Au nord par la route de {area:87} à {zone:1453} : {npc:466} est sur son cheval au bout du pont, devant la grande porte. Puis les griffons de {object:2096}, retour à {area:69}.
+À l'ouest par Ruisseau-de-l'Ouest jusqu'en {zone:1436}.
+{item:3636} : {npc:391}, sur la plage au nord-est du phare
+Vous avez gardé cinq fioles d'huile des Guetteurs des moissons de {zone:1436} ? {npc:392} les prend pour le feu de son phare.
+{npc:1646} se tient du côté est de {object:2098}, sur le chemin entre {object:28027} et le port.
+Pour {npc:3649}, là où accoste le bateau
+{npc:6173} et {npc:6171} sont dans la cathédrale de la Lumière, sur {object:2098}, sur le chemin du port.
+Entraînez-vous, puis sortez par la grande porte et suivez la route vers l'est à travers {zone:1429}.
+{quest:174} à {area:42} demande {item:4371}. Ses vendeurs n'en ont qu'un ou deux, et {npc:3133} à {area:42} est presque toujours en rupture : achetez-en un à l'hôtel des ventes de {object:2096} en partant. Un ingénieur peut aussi en fabriquer un.
+{item:4371} : l'hôtel des ventes, pour {quest:174} à {area:42}
+La route vers {zone:1429}
+La route de l'est à travers Elwynn passe dans les Carmines à {area:1002}, où se rejoignent les routes des Carmines, de {zone:1431} et d'Elwynn : d'abord au sud vers {zone:1431}.
+Suivez la route vers le sud depuis {area:1002} jusqu'en {zone:1431} ; {area:42} se trouve du côté est de la forêt.
+Pas de {item:4371} pour {quest:174} ? {npc:3133}, dans la maison à côté de celle de {npc:276}, n'en a qu'un et est souvent en rupture. Sans lui, faites un clic droit sur la quête dans la fenêtre du guide et passez-la.
+La maison de {npc:276} se trouve au bout est de la ville. {npc:3133} vend des fournitures d'ingénierie dans la maison voisine.
+{item:2251} : gardez celles que lâchent ces araignées, pour {npc:272} à {area:42}
+{npc:272} : six pattes d'araignée gluantes, que les araignées de {zone:1431} lâchent même sans la quête
+Vous en avez déjà six ? Rendez-les maintenant
+Pour {npc:288}, à {quest:163}, à la prochaine boucle de {zone:1431}
+{npc:415}, au bord de la route au bout nord du pont
+Des Grandes tarentules rampent sur les pentes autour de {quest:98386}, au nord-est du lac ; leurs œufs de tarentule sont posés au sol parmi elles : cliquez-en six.
+Depuis le donjon, revenez vers l'ouest le long de la rive nord du lac, puis montez vers le nord dans {area:95}. Juste au sud de {area:997}, {npc:518}, un gnoll de niveau 25, se promène parmi les Alphas et les Mystiques de Rougecrête.
+{npc:415}, au bord de la route sur le chemin du pont
+Ensuite : le griffon pour {area:42}, pour la deuxième boucle de {zone:1431} (05-duskwood).
+Pattes d'araignée gluantes
+Des Reclus charognards se cachent dans les bois sur le chemin de l'ouest, et des araignées Tisse-venin, des Tisse-venin pygmées et des Reclus verts rampent juste au sud du camp de {npc:311} : chacune peut lâcher une patte.
+Rentrez à {area:42} par la pierre de foyer si vous l'avez liée à la taverne du Corbeau écarlate lors de la première boucle, ou revenez vers l'est par la route.
+{npc:272} est aussi dans la taverne du Corbeau écarlate.
+Pour {npc:288}, à {area:94}, sur le chemin de l'ouest
+{item:4371} : l'hôtel des ventes, {object:2096} ; {npc:5519} en a un et est presque toujours en rupture
+Escortez {npc:11218} vers le sud par la route jusqu'à son sac, à la limite sud de {zone:1439}, puis continuez jusqu'à {npc:11219} à {area:413}.
+{npc:3691} : {quest:990}, depuis {area:442}
+Partez vers le sud après {area:421} dans le tunnel de {area:1276} ; il débouche à {area:461}, dans les Serres-Rocheuses, au nord de {area:2160}.
+La défense de {npc:4276} est difficile seul à ce niveau : il est conseillé de se grouper, cherchez des joueurs pour la faire avec vous. Passez-la si vous êtes seul.
+{npc:4276} creuse au fond de {area:2160}, à l'extrémité est de l'escarpement, au-delà de ses kobolds (niveaux 19-23). Parlez-lui, puis gardez-le en vie cinq minutes pendant qu'il creuse : une douzaine de kobolds ou plus l'attaquent par vagues, d'abord des combattants au corps à corps, puis des lanceurs de sorts, et les kobolds de la mine réapparaissent en plein combat. S'il meurt, la quête échoue.
+Gardez {npc:4276} en vie pendant qu'il creuse, sous terre
+Au sud du camp de {npc:3987}, {area:415} est sur le chemin de l'ouest : {npc:3691} dans l'auberge, {npc:3894} dans le bâtiment au-delà.
+Depuis {area:415}, partez au sud-ouest vers {area:412}, au sud du sanctuaire : {npc:3664} et ses marcheurs du Vide les tiennent. Attirez d'abord ses gardes.
+{npc:3663} : ses cercles sont pour votre prochaine visite en {zone:1440}, vers le niveau 28
+Suivez la route vers le sud-est depuis {area:413} pour revenir à {area:415} : {npc:3845} se tient près du maître de vol.
+Rentrez à {area:150} par la pierre de foyer si vous l'avez liée à {area:2104}, ou marchez vers l'ouest par la route jusqu'à Menethil : {npc:2096} au bord de la route, à l'entrée de la porte nord, {npc:2111} et {npc:1480} à l'auberge, {npc:2086} dans le donjon, {npc:2094} du côté ouest, près des quais, {npc:1242} sur la jetée au nord de l'auberge.
+Le tram arrive dans {object:28027} ; marchez vers l'ouest jusqu'à {object:2098} : {npc:1646} se tient de son côté est. (La route rend sa lettre à la fin de 03-loch-modan ; ceci est pour un personnage qui l'a encore.)
+Pour {npc:3649}, de retour à {area:442} (06-wetlands)
+Le tram arrive dans {object:28027} ; marchez vers l'ouest jusqu'à {object:2098}. {npc:376} est dans la cathédrale de la Lumière.
+Lancez {spell:18960}. Avec les deux moitiés de pendentif dans vos sacs, placez-vous près de {area:2362}, sur la rive nord-ouest du lac, et utilisez une moitié pour les réunir, puis allez voir {npc:11802} à {area:2361}. {npc:11802} se tient à l'étage de son bâtiment : montez par l'intérieur, la flèche ne distingue pas les étages.
+{item:15885} : réunissez les moitiés à {area:2362}
+Prenez {quest:5061} auprès de {npc:11802}, à l'étage de son bâtiment. Ensuite, {npc:11800} à {area:2361} emmène les druides en vol directement à {area:702}.
+Les reliques se trouvent dans le chantier de fouilles lui-même. {npc:1353}, un grand Tranchegueule, rôde dans la vallée des raptors juste à l'ouest.
+Des Gardiens goaz (élites, niveau 32) se tiennent parmi les reliques et {object:331} : attirez-les à l'écart un par un, ou contournez-les.
+Au nord des fouilles, dans le camp Gueule-de-dragon : cliquez sur les quatre jeux de plans d'attaque. Le plan de {zone:1455} est à l'extrémité ouest du camp, les trois autres plus à l'est. {npc:2091}, un élite, se tient à l'écart au sud-est : {quest:98221} n'a pas besoin de lui.
+{quest:98246} : les œufs de Tranchegueule, sur la même boucle
+Rampants des marais le long de la rivière
+Au nord-ouest de {npc:2093} jusqu'à la rivière : des Rampants des marais se cachent dans ses mares et le long de ses berges, jusqu'à {area:1024} à l'ouest. Remontez-la vers l'ouest jusqu'à en avoir douze, puis revenez vers l'est jusqu'à {npc:1244}.
+Attention : hors combat, les Rampants des marais lancent Camouflage de temps en temps : ils sont alors furtifs et difficiles à voir.
+Rentrez à {area:150} par la pierre de foyer si vous l'avez liée à {area:2104}, ou marchez vers l'ouest par la route : {npc:2104} se tient au dernier étage de {area:2103}, {npc:1217} dans {area:2104} au sud, {npc:2094} près des quais, sur le chemin du bateau.
+{npc:3649} se tient au bout nord d'{area:442}.
+La réponse d'Alexston, si vous l'avez encore (la route la rend au premier arrêt à {area:442} de 03-darkshore-return)
+{npc:3693} se tient près du maître de vol.
+Facultatif : {npc:3848} propose aussi {quest:1012} : trois druides de niveau 32 au fond de {area:432}, une grotte aux monstres furtifs qui réapparaissent vite, puis retour auprès d'elle. C'est au-dessus de votre niveau ici : prenez-la seulement si vous êtes en groupe ou voulez l'expérience en plus ; le guide n'en a pas besoin.
+L'entrée de {area:432}
+Les trois druides sont dans {area:432}, éloignés les uns des autres : entrez par son ouverture, au sud du camp des Réprouvés, pas par la colline au-dessus d'eux. {npc:3940} est dans les salles est, {npc:3941} tout au fond, à l'extrémité nord-est, et {npc:3942} à l'extrémité ouest.
+Attention : la tanière compte beaucoup de monstres qui réapparaissent vite, dont des morts-vivants furtifs et des patrouilles : d'autres monstres se joignent souvent au combat.
+{npc:3691} et {npc:3961} sont dans l'auberge ; {npc:3894} est dans le bâtiment juste au sud.
+{npc:3961}, dans l'auberge
+{npc:3894}, dans le bâtiment au sud de l'auberge
+Au sud-est par la route jusqu'à {area:415} : {npc:3691} dans l'auberge, le maître de vol à l'extrémité ouest.
+Nids des Tranchegueules
+Les œufs de Tranchegueule parfaits pour {quest:98246} se trouvent dans les nids des raptors, dans les collines autour de {quest:98283}.
+Des Griffes-pourries enragées parcourent {area:1025} autour de {npc:1244} ; l'une d'elles lâche la chair. {npc:1244} ne prend la quête qu'avec la tête de {quest:98283} aussi.
+Avec la tête de {quest:98283} et la chair
+Au nord par la route jusqu'à {area:205}. {npc:1071} et {npc:1075} se tiennent ensemble dans le camp des nains, du côté est de la route ; les ruines de {object:147516}, à l'ouest, sont pleines d'élites.
+Ce sont des monstres élites : il est conseillé de se grouper, cherchez des joueurs pour la faire avec vous. {npc:271481} est retenu à l'extrémité ouest des ruines de {object:147516}, au-delà de nains élites de niveau 27-30, et {npc:1364} (34, élite) peut être parmi eux. Menez-le vers l'est hors des ruines, puis rendez la quête à {npc:1072} dans le camp. Passez-la si vous êtes seul.
+Au nord par la route de {area:205} vers {area:880} : le corps d'Ebenezer Rustlocke gît sous l'arche. Le parchemin de Rustlocke retourne à {npc:1075}.
+Deux Saboteurs Sombrefer élites se tiennent près du corps, sous l'arche : attirez-les un par un, ou fouillez le corps et sortez en courant.
+De l'autre côté de {area:880} : la cache d'explosifs des Sombrefer se trouve du côté d'Arathi.
+{quest:98246} : les œufs
+{npc:4455}, près de la porte du donjon : pour {quest:1132} à Theramore, dans le guide suivant
+{npc:2104} : pour {npc:270637}, en revenant vers l'est par la route
+Revenez vers l'est par la route jusqu'à {area:1025} : {npc:270637} campe parmi les Coureurs-des-marais, juste à l'ouest de {npc:1244}. Puis de nouveau vers l'ouest jusqu'à Menethil pour le bateau.
+En descendant du bateau, remontez la jetée jusqu'en ville : {npc:2711} et le lieutenant Farren se tiennent près de l'auberge, {npc:2430} à l'étage, {npc:2382} à l'est ; le maître de vol est au bout nord, {npc:2381} et {npc:2438} entre lui et l'auberge, Maleb dans l'hôtel de ville, du côté ouest.
+{npc:2366} ne propose peut-être pas {quest:98463} sur Forever : si c'est le cas, passez-la.
+{npc:2438} fabrique une cape en fourrure de yéti pour qui lui apporte {item:3719} ({skill:165}) et {item:2997} ({skill:197}) ; aucun vendeur ne vend l'un ou l'autre, donc cette étape n'apparaît que si vous avez les deux.
+{npc:2438}, entre le maître de vol et l'auberge : il veut aussi {item:3719} et {item:2997}
+{npc:251493} se tient au nord-ouest du maître de vol, sur le chemin de la grotte des yétis, au nord.
+{quest:98059} : {npc:251493} vous remet {item:279386} pour le conseil de {area:287}, dans les fermes à l'ouest de {area:271} ; vous le livrez après le camp du Syndicat.
+Au sud-ouest du camp du Syndicat, jusqu'aux fermes de {area:286}.
+Le conseil de {area:287}
+Utilisez {item:279386} au conseil de {area:287}.
+Battez {npc:4961} et ses voyous : ils abandonnent
+{npc:5642} : la Lame ardente à {area:599}, où mènent ses recherches
+Son frère {npc:5643} (36) parcourt la forteresse avec les cultistes de la Lame ardente (30-33) : attirez-le seul. {npc:13019} garde le sceptre dans le bâtiment principal de la forteresse. {npc:5642} veut quatre cultistes de chaque sorte en chemin.
+Utilisez {item:13892} de {npc:11596} sur un kodo âgé, mourant ou {npc:4702} : il devient un kodo apprivoisé qui vous suit. Ramenez-le au camp de {npc:11596} ; là, parlez au kodo : il est compté et vous pouvez apprivoiser le suivant. Cinq kodos, un à la fois ; les kodos âgés lâchent aussi les peaux, et les Fouetteurs scorpashi qui chassent autour du cimetière portent le venin.
+Tapoke Jahn (34) se faufile hors de la taverne dès que vous prenez {quest:1248} : restez juste derrière lui. Il se retourne contre vous dehors, un ami le rejoint, et il abandonne une fois bien amoché. Si vous le perdez, la quête échoue : abandonnez-la et reprenez-la auprès de {npc:4963}.
+La course suivante de {npc:4456} mène à {area:415}, hors de cette route : laissez-la.
+{quest:1132} : les wyvernes sont en {zone:1441}, plus loin dans ce guide
+Descendez {area:485} jusqu'en {zone:1441}, puis à l'ouest jusqu'aux falaises des wyvernes à {area:482}. Chaque wyverne peut y lâcher une poche de venin.
+Les canyons à l'est de {area:482}
+Écaille cristallisée, sur les Basilics de Salpierre : huit pour {npc:4078} à {zone:1453}
+Depuis le circuit, suivez la route vers le sud en sortant de {area:439} jusqu'en {zone:1446}.
+{area:976} est un peu plus bas sur la route ; restez dessus. {npc:7823}, le maître de vol de l'Alliance, se tient dans l'enceinte.
+Niveau 33,2
+Les quêtes de la jungle montent jusqu'au niveau 37 à partir d'ici : pas encore 33,2 ? Continuez sur les Tigres de Strangleronce, dans les collines juste au sud et à l'ouest du camp, jusqu'au niveau 33,2. Ou, en groupe, faites plutôt le donjon de {area:796} (Bibliothèque).
+Revenez vers l'est jusqu'au camp de Nesingwary, sur le chemin du nord vers {area:99}.
+Prenez la route vers le nord ; le camp se trouve dans les collines à l'ouest.
+{npc:738} passe le plus clair de son temps en haut du chemin de {area:99}, près des huttes, et descend de temps en temps jusqu'à la route avant de remonter (environ huit minutes). S'il n'est pas sous la flèche, cherchez-le le long de ce chemin.
+{npc:469} : les registres de {quest:200} se trouvent en bordure de {area:101}, juste après
+{npc:770} : pour {npc:773} à {area:35}, plus loin dans ce guide
+Les rebelles kurzen tiennent le camp à l'est de {area:99} ; restez sur son pourtour, où se tiennent les combattants de la jungle et les guérisseurs, et fouillez les caisses de ravitaillement près des tentes. Les registres de {quest:200} se trouvent dans une hutte, du côté ouest de l'enceinte.
+{object:287}, dans la hutte
+Le coffre est plus loin à l'intérieur, près de la grotte : sur la boucle nord (04b)
+Niveau 33,6
+Pas encore 33,6 ? Continuez sur les combattants de la jungle et les guérisseurs kurzen du pourtour de l'enceinte jusqu'au niveau 33,6. Ou, en groupe, faites plutôt le donjon de {area:796} (Bibliothèque).
+{npc:4078} est dans {object:2164}, dans {object:2101}.
+La route de {area:608}
+Dans {object:2164}, si vous l'avez encore
+{npc:5476} garde le carrefour à l'ouest du marais. {npc:217412} se tient un peu au nord de lui.
+{npc:217412} n'est peut-être pas là sur Forever : si {npc:217412} ne propose pas {quest:93176}, passez-la.
+À l'ouest par la route, depuis le coffre de {npc:5391} jusqu'à {area:657}.
+{npc:1776} : le gourdin de Noboru
+Au sud par la route jusqu'à {npc:5476}, sur le chemin de l'ouest pour sortir du marais.
+{npc:5677}, au cercle d'invocation
+Le Syndicat tient la ferme au nord-ouest de {area:320}.
+Attention : les Bandits de grand chemin du Syndicat sont de niveau 30-31 et peuvent lancer Camouflage hors combat : ils sont souvent furtifs et difficiles à repérer.
+Des Charançons du foin rampent au bout nord de la ferme de {quest:681} : attrapez-en un avec l'outil du nécessaire d'entomologiste de {npc:217412}.
+À l'ouest par la route jusqu'à {area:320}, sur le chemin de {object:2689}.
+{npc:2789} : la grotte de {npc:2793} vient après {area:327}
+À l'est de {area:327}, à travers les collines du sud : {npc:2793}, un ogre mage, tient la grotte à l'extrémité sud de la vallée des Fanécorce.
+Au sud-ouest de la grotte de {npc:2793} jusqu'à {area:880} : {npc:2696} se tient sur une partie effondrée du pont ; sautez jusqu'à lui depuis son extrémité nord. {quest:647} doit parvenir à {npc:2705} à {area:271} en moins de 15 minutes : revenez directement à {area:320} et volez jusqu'à {area:271}.
+En descendant du vol, allez directement à l'auberge de {area:271}.
+Les tomes se trouvent dans le donjon en ruine à l'ouest de {area:280} ; des Mages de l'ombre d'Argus tiennent les ruines.
+Attention : les Bellicistes Cassecrête appellent les alliés proches (à 15 mètres) dès que leur vie passe sous la moitié.
+Les Marteleurs, Mages, Massacreurs et Bellicistes Cassecrête (36-39) sont élites ; les Ogres et les Brutes Cassecrête (34-35) ne le sont pas et portent aussi les tomes : attirez-les un par un, ou groupez-vous.
+Les ogres Cassecrête tiennent les collines au nord de {area:280}. Plus au nord, un vieux coffre en bois contient {item:3706} ; {npc:2320}, de {quest:537}, se tient juste à côté.
+Les Marteleurs, Mages, Massacreurs et Bellicistes Cassecrête (36-39) sont élites ; les Ogres et les Brutes Cassecrête (34-35) ne le sont pas et lâchent aussi les osselets : attirez-les un par un, ou groupez-vous.
+{npc:2277} : le parchemin
+{npc:2438} se tient entre le maître de vol et l'auberge ; {npc:2381}, à côté de lui, vend {item:2321} si vous n'en avez pas.
+{npc:1356}, {object:32356} : pour {npc:1344} en {zone:1432}, juste après
+{quest:739} en personne (42) se promène parmi les Briseurs d'os : laissez-le pour le guide de {zone:1418} suivant, vers le niveau 43, et tuez les Briseurs d'os pour cette quête maintenant.
+Au sud-ouest, dans les ravines : seuls les Grands élémentaires de roche lâchent les brassards.
+{npc:2920}, à côté de {npc:2921}, échange contre {item:2868}, un objet de forgeron : cette étape n'apparaît que si vous en portez une paire.
+Prenez la route vers le nord jusqu'au manoir en ruine ; Jarl vit dans la cabane à côté, et la terre meuble est à l'angle de la maison. Jarl veut trois {quest:1218} : si vous êtes passé devant {npc:4897}, achetez-les-lui d'abord à Theramore.
+{npc:4794} : les rampants sont sur la côte de {zone:1435}, gardez-la
+Le bateau part de Theramore : présentez-vous à {npc:4944}, au dernier étage de {area:514}, sur le chemin des quais.
+Seahorn propose maintenant {quest:604} : laissez-la. Ses trois capitaines sont de niveau 45-48, entourés de leur équipage, et la route vous ramène à Seahorn au niveau 48 pour elle.
+Les Traqueurs de la jungle rôdent sur les pentes à l'ouest de la mine.
+{npc:217588} rampe dans la jungle au sud-est du camp de Nesingwary, sur le chemin de {area:99} : attrapez-en un avec l'outil du nécessaire d'entomologiste de {npc:217412}.
+Chevauchez au nord-est après le camp de Nesingwary et suivez la route vers le nord jusqu'au camp en haut du val.
+Niveau 42,16 à Zul'Mamwe
+Seul, vous passez les trois chasses élites de Nesingwary : prenez plutôt leur expérience sur les trolls Brise-crâne de Zul'Mamwe, juste à l'est de la mine, pour que chaque victime compte aussi pour les défenses de {npc:737}. Ou, en groupe, faites plutôt le donjon de {area:1517}.
+Toujours pas au niveau 42,16 après les chasses que vous avez faites ? Complétez sur les Basilics Œil-froid près de {area:310}, sur le chemin du sud vers {area:35}. Ou, en groupe, faites plutôt le donjon de {area:1517}.
+Sortez de {zone:1426} vers l'est par le tunnel jusqu'en {zone:1432}, puis continuez par la route jusqu'à {area:144}.
+{npc:1470} est sous terre à {area:144}, près de l'auberge. Ses champignons poussent dans les fouilles d'{area:1517}, en {zone:1418} ; le guide suivant vous y emmène et vous ramène par {area:144}.
+Chevauchez vers le nord par le col jusqu'en {zone:1432}, puis vers l'est le long de la rive sud jusqu'au camp d'Ironband.
+Repassez le col : les troggs Cave-de-pierre creusent devant {area:1517}, à la limite nord de {zone:1418}. Les urnes sculptées et les touffes de champignons magenta se trouvent dans leurs grottes et leurs tunnels, hors du donjon lui-même.
+Chevauchez vers l'ouest le long du loch jusqu'à {area:144}.
+En venant du sud : d'abord {npc:7877} et {npc:7878}, puis {npc:7900} à côté du bâtiment de {npc:7880}, puis l'escalier. {npc:7880} se tient à l'étage de son bâtiment : montez par l'intérieur, la flèche ne distingue pas les étages. {npc:7852} est près du maître de vol, à la sortie.
+Revenez vers l'ouest par la route, puis au nord dans les collines de la Balafre de rage. Chaque yéti peut y lâcher une peau, et environ un sur trente {quest:7735}, que {npc:7852} paie aussi.
+Les quêtes de {npc:14637} sur la côte demandent le niveau 45 : tuez les yétis ici jusqu'au niveau 44,5, pour que ces victimes rapportent aussi les peaux de {npc:7852}. Ou, en groupe, faites plutôt le donjon de {area:978}.
+Toujours pas de {quest:7735} ? Continuez à tuer les yétis de la Balafre de rage jusqu'à ce que l'un en lâche, puis faites un clic droit dessus.
+{area:2240} se trouve sur {area:439}, au sud-est de {zone:1441} : {npc:4454} est dans le camp des gnomes, à côté de la piste, {npc:4709} près du camp des gobelins.
+« Loup de mer » MacKinley à {area:35} : la route vous y emmène à la fin du guide de {zone:1425}, gardez-la
+Revenez vers l'ouest jusqu'à {area:976} : {npc:11758} se tient du côté est de la ville, là où vous entrez.
+Liez votre pierre de foyer ici : le guide de {zone:1427} part d'{area:144}.
+Les trois navires de la Voile sanglante sont à l'ancre au large de la côte, juste au sud de {area:35} : {npc:2550} (45) et {npc:2548} (46) sur les ponts les plus proches, {npc:2546} (48) sur le navire amiral, chacun avec un équipage de pirates de niveau 42-45. Nagez jusqu'à eux, dégagez chaque pont depuis le bord et attirez-les un par un.
+Depuis {area:144}, chevauchez vers le sud jusqu'en {zone:1418}, puis à l'ouest après la ville hordeuse de {area:340} (gardez vos distances) et montez le sentier jusqu'en {zone:1427} : {area:247} est juste à l'entrée, au sud-est. Le prisonnier, dans la cabane en bois, veut 15 {item:4306} et huit Géologues Sombrefer tués sur le site de fouilles autour. La cabane s'ouvre aussi avec la clé, si vous en avez trouvé une.
+Dorius se tient au bord de la route, à côté de {area:247}. Escortez-le au nord-est jusqu'à {area:1959} et gardez-le en vie ; à la fin, lisez {object:175704} qu'il laisse sur la route.
+Chevauchez vers l'ouest par le nord de la Gorge jusqu'à {area:1446}, le camp aux échafaudages sur le bord nord-ouest.
+Les araignées parcourent les plateaux et les bassins de lave au sud de {npc:8436}, sur le chemin de {npc:8479}.
+{npc:8479} se tient au bord du Chaudron, au sud de {area:1446}. Écoutez son histoire.
+Des Golems de guerre lourds patrouillent au fond du Chaudron, sous {npc:8479} ; des Élémentaires de magma flottent parmi eux. Les golems et les élémentaires lâchent l'huile, les élémentaires les cœurs.
+Nains de {object:147516} : tuez-les en les croisant
+Les Contremaîtres et les Esclavagistes poussent les esclaves dans tout le Chaudron, et chacun d'eux peut porter {item:10551}. Les Forgevapeurs travaillent aux fourneaux au centre ({item:18959}), les Guetteurs se tiennent sur les crêtes sud (la longue-vue). N'importe quel nain de {object:147516} peut lâcher {item:11818} : gardez-le.
+Attention : les Esclavagistes Sombrefer (niveau 45-46) appellent à l'aide les alliés proches (à 15 mètres) quand on les attire, lancent Filet jusqu'à 15 mètres et utilisent Pourfendre au corps à corps.
+{npc:7312}, le maître des mages : pour {npc:8395} en {zone:1447}, gardez-la
+Descendez de votre monture avant de parler à {npc:8395} : il vous téléporte jusqu'à la tour de {npc:8379}, sur la falaise au-dessus de son camp.
+L'apprenti en haut de la tour vous renvoie en bas.
+Les elfes de sang sont à {area:1220}, sur le chemin de {npc:8420}
+{item:20028}, sur les arpenteurs et les récupérateurs elfes de sang
+Revenez vers l'ouest jusqu'au camp de {npc:8395} et descendez de votre monture : il vous téléporte de nouveau chez Xylem.
+Les Sirènes Fouette-bile errent dans les ruines et sur la plage autour de {area:1223}, juste au sud de {npc:8395}. Seules les Sirènes portent le corail, pas les Hurleuses.
+Remontez par la téléportation de {npc:8395}.
+La dernière tâche de Xylem, Détruire Morphaz, est dans {area:1417} : passez-la.
+Sortez d'{area:415} vers le nord jusqu'en {zone:1448}, à {area:2479}, le camp des druides au bord de la route.
+{area:1763} est le temple en ruine au nord du vallon.
+Les furbolgs Mort-bois de {area:1762} remplissent les collines à l'ouest de la grotte. Continuez à les tuer jusqu'à ce que l'un lâche {quest:8470}, environ une victime sur trente, puis faites un clic droit dessus : {npc:11558} à {area:1769} la prend dès que les Grumegueules vous sont neutres, tout de suite si c'est déjà le cas, ou quand le dernier guide repasse devant la grotte au niveau 58.
+Attention : les Guetteurs de la tanière sont de niveau 53-54 ; ils appellent les alliés proches (à 25 mètres) une fois sous 50 % de vie et s'enfuient chercher de l'aide sous 15 %.
+Utilisez {item:12922} au puits de lune corrompu, au centre de {area:1763}.
+Chevauchez au sud-est de {area:1763} jusqu'à {area:2479}, le camp des druides au bord de la route, dans le sud de {zone:1448}.
+Le camp ouest des Tombe-hiver se trouve dans les collines entre {npc:11556} et {npc:9298}. N'importe quel furbolg ici peut lâcher {item:12771} (environ un sur dix : il tombe pendant les victimes que demandent ces quêtes) et {quest:8471} (environ un sur trente : il tombe pendant les compléments d'expérience) : faites un clic droit sur celui qui tombe. Gardez {item:14047} que lâchent les furbolgs pour Meilosh.
+Le reste de {zone:1452} est de niveau 55-58 : restez sur ce camp jusqu'au niveau 54, pour que vos premières victimes comptent aussi pour {npc:9298} et {npc:11556}. Ou, en groupe, faites plutôt le donjon de {area:1584}.
+Complétez ici jusqu'au niveau 55,05 avant les rendus à {area:2255} : ils vous mènent au niveau 56. Tuez les furbolgs Tombe-hiver qui campent près de {area:2246} (éclaireurs, totémiques, guetteurs de la tanière) : ils font monter votre réputation auprès des Grumegueules, dont ont besoin les quêtes d'ici et le passage par {area:1769}, l'un d'eux lâche {quest:8471}, et ils remplissent vos sacs des trente étoffes runiques que demande Meilosh. Ou, en groupe, faites plutôt le donjon de {area:1584} ou celui de {area:1583} (partie basse).
+N'importe quel furbolg Tombe-hiver peut lâcher le totem, environ une victime sur trente : si le complément d'expérience ne l'a pas apporté, continuez à les tuer ici jusqu'à ce qu'il tombe, puis faites un clic droit dessus.
+{npc:10739} se tient près de la ferme de {area:202}, sur la route de l'est vers {zone:1423}.
+Le Fléau autour de {area:2264}, à l'ouest de la chapelle, lâche les deux sortes de pierres du Fléau ; des Esprits de Comté-de-Darrow s'en élèvent : parlez à chacun pour le libérer.
+Attention : {npc:10411} devient invisible hors combat et appelle des Gargouilles Aile-de-roc dès qu'un combat commence. Il n'en existe que 3, et elles réapparaissent toutes les 15 minutes.
+Pas encore de {quest:5401} ({spell:437801} la donne au passage du guide de {zone:1452}) ? Cœur-pur vous en donne une ici : les quêtes des pierres du Fléau en ont besoin.
+Le géant {npc:7765} est assis juste au nord-ouest du camp de {npc:7775}.
+Ramenez {npc:7774} jusqu'à {npc:7765} au pas : elle s'éloigne, alors sonnez la cloche pour la rappeler (pas en combat), et éliminez les harpies du chemin avant qu'elle ne les atteigne.
+Depuis Theramore, chevauchez vers l'ouest jusqu'en {zone:1413}, puis au nord le long de la côte jusqu'à {area:392}.
+Sortez du cratère par le col nord-ouest jusqu'en {zone:1451} : {npc:13220} se tient à {area:3077}, là où débouche le col.
+Continuez vers l'ouest jusqu'à {area:3425}. {npc:15189} se tient à l'étage de son bâtiment : montez par l'intérieur, la flèche ne distingue pas les étages.
+Revenez à {area:3425}. {npc:15189} se tient à l'étage de son bâtiment : montez par l'intérieur, la flèche ne distingue pas les étages.
+En arrivant de {zone:1451}, {area:543} est juste à l'entrée du cratère : {npc:10302}, le gobelin, est assis au bord de l'eau.
+{npc:9619} campe au pied de la rampe qui descend dans le cratère.
+Les peaux viennent des gorilles de {area:1943}
+Depuis {area:3137}, chevauchez jusqu'en {zone:1448} : {area:2479} est le camp des druides sur la route, juste après la limite de {zone:1440}.
+{area:1770} est la grotte au fond de {area:1763}, à l'ouest de la route. Utilisez {item:12906} sur les quatre braseros à l'intérieur. Tuez les ours Griffe-colère et les loups Gangrepatte que vous croisez pour {item:11172}.
+Attention : des monstres du Conseil des ombres de niveau 53-55 remplissent la grotte et arrivent souvent en grands groupes liés, beaucoup avec des étourdissements. Un groupe de 2 ou 3 joueurs est conseillé.
+Les Tisseurs d'ombre, Démonistes et Massacreurs de Jaedenar d'ici lâchent {item:13140}, environ une victime sur trente : continuez à les tuer jusqu'à ce qu'elle tombe. Elle ouvre la cellule de {npc:11018}, l'elfe de la nuit retenue dans la grotte.
+{npc:11016}, dans sa cellule ; sous terre
+Faites-la sortir de {area:1770} et gardez-la en vie jusqu'à ce qu'elle soit hors de la grotte : dégagez d'abord le chemin du retour.
+Retournez dans {area:1770} : {npc:9861} et {npc:9860} gardent {npc:9517} dans sa salle la plus profonde. La succube {npc:9518} attend en chemin, avec à côté d'elle les restes de Trey Lightforge.
+Attention : les trois boss combattent ensemble. Tuez d'abord les monstres proches pour ne pas attirer d'ennemis en plus.
+{npc:11558} se tient juste à l'entrée de la grotte de {area:1769} : elle vous parle dès que vous êtes Neutre auprès des Grumegueules, ce que vous ont apporté les furbolgs Tombe-hiver tués en {zone:1452}.
+{npc:11558}, juste à l'entrée de la grotte : se déplace par ici, cherchez dans le cercle sur la carte
+Le totem Mort-bois de {area:1762}, si {npc:11558} ne l'a pas pris à ce moment-là.
+{npc:11558} : se déplace par ici, cherchez dans le cercle sur la carte
+{npc:11557}, juste à l'entrée de la grotte à côté de {npc:11558}, prend trente {quest:6031} dès que vous êtes Amical auprès des Grumegueules : le complément d'expérience sur les furbolgs Tombe-hiver de {zone:1452} vous apporte les deux.
+{quest:6184} : les restes des agents se trouvent à {area:2260}, en {zone:1423}
+Chevauchez vers le sud jusqu'à {area:2260}, la ferme au nord-ouest de {area:2262}. Les restes des trois agents sont des contours d'ossements au sol : un au bord de la route au sud de la ferme, un sur la colline à l'est de la maison, un sur le tertre devant elle. S'approcher assez pour voir le Mandeur de peste devant la maison achève la reconnaissance.
+Attention : {npc:11878} (élite de niveau 62) et ses chiens élites se tiennent devant la maison : prenez les restes du tertre par le côté et ne l'attirez pas. Vous n'avez pas à le combattre.
+Niveau 59,93
+Traversez la rivière à l'est de {npc:1855} jusqu'à {area:2627}. Les Esprits de Vallée-de-la-terreur hantent les bois. Complétez ici jusqu'au niveau 59,93 avant les rendus à {area:3197} : ils vous mènent au niveau 60. Ou, en groupe, faites plutôt le donjon de {area:2057} ou celui de {area:2279}.
+La tâche suivante de Flint mène à {zone:1453} : vous êtes maintenant niveau 60, passez-la.
+{npc:1226} : {npc:11406} à {zone:1455} la prend
+À l'est par le tunnel de la porte Sud jusqu'en {zone:1432}. {npc:1089} et {npc:1092} se tiennent au poste nain juste après.
+À l'ouest depuis {object:32383} jusqu'à {object:32362} : {npc:5149}, {npc:6179} et {npc:6178} sont dans {object:32386}, {npc:6179} et {npc:6178} à son étage : l'escalier commence juste au nord-est de {npc:5149}. {npc:6175}, un mendiant, erre dans la ville. Il demande dix {item:2589} : les troggs et les trolls de {zone:1426} en lâchent, et l'hôtel des ventes en vend.
+{npc:5505} à {zone:1453} ; {zone:1426} n'a pas de maître des druides
+Attrapez {npc:13016}
+À l'ouest depuis {object:32383} jusqu'à {object:32362} : {npc:5149}, {npc:6179} et {npc:6178} sont dans {object:32386}, Tiza et Muiredon à son étage : l'escalier commence juste au nord-est de {npc:5149}. {npc:6175}, un mendiant, erre dans la ville. Il demande dix {item:2589} : les troggs et les trolls de {zone:1426} en lâchent, et l'hôtel des ventes en vend.
+{npc:248278} est un élite de niveau 11 sur la rive des murlocs au sud du pont : il est conseillé de se grouper, cherchez des joueurs pour la faire avec vous. {quest:91740} demande un groupe de 2. Passez-la si vous êtes seul : la route vous fait regagner l'expérience. Faites un clic droit sur la tête pour sa quête.
+Ne prenez l'antidote auprès de {npc:8583}, au pied de {area:256}, que maintenant, en descendant : il dure cinq minutes. {npc:8584} attend au nord-ouest, près de la grotte : allez directement jusqu'à lui.
+L'entrée de {area:262}
+{npc:3666}, à l'étage de l'auberge : prenez l'escalier intérieur, la flèche ne distingue pas les étages
+Pattes de rampant : les Rampants des marées
+Des Griffes-fières et des Courants-de-vent parcourent les prairies autour du village. Les Courants-de-vent lâchent à la fois les œufs et la viande : la plupart des joueurs prennent les œufs sur ceux juste à l'ouest du village.
+Retournez voir {npc:252800} à la ferme.
+{npc:252800}, à la ferme
+{item:258771} : les Chasse-tempête et les Fantassins autour du camp de {npc:254151}
+{npc:1646} se tient sur {object:2098}, sur le chemin entre le donjon et la grande porte : sa boussole est dans son ancienne maison, en {zone:1436}, sur le chemin.

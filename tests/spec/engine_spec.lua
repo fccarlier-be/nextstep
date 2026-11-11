@@ -61,6 +61,22 @@ describe("Moteur du guide", function()
         expect_eq(r.steps[2].status, "ahead")
     end)
 
+    it("pose les questions de groupe d'une étape une à une", function()
+        local Engine, progress = setup()
+        local when = { { k = "group", q = 7, neg = true }, { k = "group", q = 8, neg = true } }
+        local g = guide({ step({ accept(1) }, { when = when }), step({ accept(2) }) })
+        local answers = {}
+        local r = run(Engine, g, Player.new(), progress, { answers = answers })
+        expect_eq(r.ask.quest, 7)
+        answers[7] = false
+        r = run(Engine, g, Player.new(), progress, { answers = answers })
+        expect_eq(r.ask and r.ask.quest, 8, "puis la deuxième quête")
+        answers[8] = false
+        r = run(Engine, g, Player.new(), progress, { answers = answers })
+        expect_eq(r.ask, nil)
+        expect_eq(r.current, 1)
+    end)
+
     it("ne propose pas de rendre une quête aux objectifs pas remplis", function()
         local Engine, progress = setup()
         local g = guide({ step({ accept(1) }), step({ turnin(1) }) })

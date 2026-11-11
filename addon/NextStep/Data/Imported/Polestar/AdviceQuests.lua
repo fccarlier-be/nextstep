@@ -1,4 +1,4 @@
--- Généré par Tools/import/dungeons.py depuis forever-db de Polestar 0.3.5 (bf23c61a5d1f). Ne pas modifier.
+-- Généré par Tools/import/dungeons.py depuis forever-db de Polestar 0.3.6 (67bf2ef63706). Ne pas modifier.
 -- Mode conseil : quêtes prises hors instance. GPL-3.0 : ForeverDB-NOTICE.md. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB

@@ -2,9 +2,9 @@ NextStep : données importées de Polestar
 ========================================
 
 Les fichiers de données de ce dossier sont générés par Tools/import/import.lua de
-NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar 0.3.5
+NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar 0.3.6
 (https://github.com/fitzforge/polestar), puis convertis au format de NextStep.
-Commit de Polestar : bf23c61a5d1f1b58f0edbd4ad7411aa6910938c1 (2026-11-08).
+Commit de Polestar : 67bf2ef637063d1a3963a9650437e9d6123cece3 (2026-11-10).
 
 Copyright (c) 2026 The Polestar authors
 Polestar est distribué sous la GNU General Public License, version 3
@@ -107,7 +107,7 @@ TrinityCore and the advocaite/TrinityCore `forever` branch; CMaNGOS (https://git
 
 Quest XP for quests QuestieDB lacks: two Forever web quest databases (one from the beta client's quest cache)
 -------------------------------------------------------------------------------------------------------------
-Revision: 561 quests; cache data/sources/webxp/quest-xp.json
+Revision: 537 quests; cache data/sources/webxp/quest-xp.json
 License: Public web pages; facts (XP numbers) only, used locally with permission
 
 QuestieDB (Questie-Forever), baked Forever store and support data

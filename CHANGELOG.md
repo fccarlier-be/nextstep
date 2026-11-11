@@ -6,7 +6,10 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.2.0] - 2026-11-11
+
 ### Corrigé
+- Guide : une étape qui dépend de plusieurs quêtes de groupe pose bien la question pour chacune, l'une après l'autre (elle redemandait sans fin la première, par exemple dans le guide de Strangleronce 40-50).
 - Guide : une quête dont les objectifs ne sont pas remplis n'est plus proposée au rendu comme si elle était finie. La ligne dit ce qui manque (« Rendre Feu interdit (terminez d'abord : Silex brut : 0/9) »), par exemple quand le ramassage prévu lors d'un passage précédent a été oublié.
 - **Horaires des bateaux faux** : ils reposaient sur des durées de Classic. Sur Forever, le bateau de Menethil fait escale à Austrivage avant Auberdine (tour de 8 min, pas 5). Les horaires suivent désormais le tour réel de chaque transport, relevé par NauticusClassicResurrected : durée, ordre des escales, heure d'arrivée et de départ à chaque quai. Un seul départ vu donne l'heure exacte à toutes les escales, et l'encart dit quand le bateau est déjà à quai (« Bateau pour Austrivage puis Auberdine : à quai, départ dans 0:20 »). Les quais sont placés là où le bateau accoste (celui du port de Hurlevent était à plus de 300 m, d'où une traversée non reconnue). Les horaires partagés suivent un nouveau format, que les versions précédentes ignorent.
 
@@ -17,6 +20,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - Traduction française des 33 notes des guides « Divers » (Sac de couchage douillet, livres de Mages…), restées en anglais.
 - Guide : **trajet vers l'autre continent**. Quand l'objectif est sur l'autre continent, la fenêtre du guide indique le bateau ou le zeppelin à prendre (« Autre continent : prenez le bateau de Menethil pour Theramore. »), choisi pour marcher le moins possible, et la flèche mène au quai de départ. Loin du quai, elle dit de le rejoindre d'abord (« rejoignez Menethil (en vol si vous connaissez le trajet), puis… ») ; le bateau du port de Hurlevent pour Auberdine, ajouté par Forever, est pris en compte.
 - Guide : **retour à l'étape précédente** après un clic de trop. La flèche ← de la barre de titre (ou `/ns guide back`) annule le dernier « Passer l'étape » ou « Étape faite », jusqu'à cinq fois, et rouvre aussi les étapes qui avaient été passées à sa suite.
+- **Guides mis à jour vers Polestar 0.3.6** : tous les parcours de leveling revus de bout en bout, 40-60 retravaillé pour les deux factions (plus de quêtes sur la route, moins de montée de niveau à faire), corrections des Paluns (« Cette terre était la leur » après Nek'rosh, plans d'attaque, druides fous facultatifs). Les 290 nouvelles notes des guides de leveling Alliance sont traduites ; quelques notes des guides de classe et de réputation restent en anglais.
 - **Guides mis à jour vers Polestar 0.3.5** (au lieu de 0.3.0) : 260 guides, parcours de leveling revus d'après les retours des joueurs. Le guide d'Orneval s'arrête désormais avant les Paluns, qui ont leur propre guide (niveaux 27-30) ; « Les lingots de sancteforge », que Glorin Steelbrow ne propose pas, ne sont plus demandés ; « Proche de la famille » suit « Rapporter la statuette ». Les 752 nouvelles notes des guides de leveling Alliance sont traduites en français.
 - Module **Munitions du chasseur** : alerte au milieu de l'écran quand les flèches ou les balles passent sous un seuil (200 par défaut), avec le **vendeur le plus proche** (zone, distance) et la munition à acheter pour votre niveau ; un clic pointe la flèche du guide vers lui. Vendeurs repérés dans forever-db puis appris à chaque ouverture d'un marchand. `/ns ammo`.
 - Fenêtre du guide retravaillée : chaque objectif dans sa **carte** avec un liseré coloré (doré à faire, vert fait, orange bloqué) et une **barre d'avancement** pour les objectifs chiffrés (« 10/12 tués ») ; la note de l'étape dans un encadré parchemin ; « En chemin » souligné ; les trois boutons du bas de même largeur et alignés.
@@ -147,6 +151,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/fccarlier-be/nextstep/releases/tag/v0.1.0
