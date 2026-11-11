@@ -1,11 +1,11 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.3.5 (bf23c61a5d1f, 2026-11-08). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.3.6 (67bf2ef63706, 2026-11-10). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB
 
-DB:SetSource({ commit = "bf23c61a5d1f1b58f0edbd4ad7411aa6910938c1", date = "2026-11-08", format = 8, name = "Polestar", version = "0.3.5" })
+DB:SetSource({ commit = "67bf2ef637063d1a3963a9650437e9d6123cece3", date = "2026-11-10", format = 8, name = "Polestar", version = "0.3.6" })
 
 DB:RetireGuides({
 	"forever/alliance/dwarf-gnome/01-dun-morogh",

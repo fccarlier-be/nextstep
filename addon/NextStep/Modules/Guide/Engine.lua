@@ -116,9 +116,11 @@ end
 local PASSED = { done = true, na = true, jumped = true, along = true, skipped = true }
 local NOT_APPLYING = { na = true, jumped = true, skipped = true }
 
-local function firstGroupQuest(when)
+-- Première quête de groupe de la condition encore sans réponse (ni rendue) : celle
+-- à demander. Les suivantes viennent une à une, après chaque réponse.
+local function firstGroupQuest(when, state, answers)
     for _, pred in ipairs(when or {}) do
-        if pred.k == "group" then
+        if pred.k == "group" and answers[pred.q] == nil and not state:TurnedIn(pred.q) then
             return pred.q
         end
     end
@@ -383,7 +385,7 @@ function Engine.Evaluate(guide, ctx)
                 entry.status = "na"
             elseif applying == "ask" then
                 entry.status = "ask"
-                result.ask = { quest = firstGroupQuest(step.when) }
+                result.ask = { quest = firstGroupQuest(step.when, state, ctx.answers) }
                 current = i
             elseif step.along then
                 entry.status = "along"
