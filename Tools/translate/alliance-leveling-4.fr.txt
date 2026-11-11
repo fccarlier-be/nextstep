@@ -1,0 +1,6 @@
+sur un kodo âgé, mourant ou {npc:4702} du cimetière ; ne le tuez pas
+le kodo apprivoisé, au camp de {npc:11596} : parlez-lui, cinq fois
+Entrez dans la grotte : {npc:11558} se tient juste à l'entrée.
+{npc:11556} se tient juste à la sortie du tunnel de {area:1769} côté {zone:1452}, là où vous débouchez.
+Effrayez {npc:10977} avec {npc:10980}
+Le lac pour {quest:5845}

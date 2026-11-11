@@ -6,6 +6,14 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.2.1] - 2026-11-11
+
+### Ajouté
+- Journal des guides : boutons **Recommencer** et **Abandonner** dans le détail d'un guide, confirmés d'un second clic. Recommencer efface l'avancement retenu par NextStep (étapes passées, cochées, guide terminé) pour revoir tout le guide, y compris les quêtes ajoutées par une mise à jour ; les quêtes déjà rendues, lues dans le jeu, restent faites et leurs étapes se revalident d'elles-mêmes. Abandonner arrête de suivre le guide en gardant son avancement ; un guide annexe rend la main au guide de leveling interrompu.
+
+### Modifié
+- Traduction française des dernières notes Alliance et communes restées en anglais (guides de classe, de réputation et de leveling : 61 paragraphes). Seuls les guides propres à la Horde gardent de l'anglais.
+
 ## [0.2.0] - 2026-11-11
 
 ### Corrigé
@@ -151,7 +159,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.0...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/fccarlier-be/nextstep/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/fccarlier-be/nextstep/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/fccarlier-be/nextstep/releases/tag/v0.1.0

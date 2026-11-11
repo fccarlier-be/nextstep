@@ -106,6 +106,62 @@ describe("Journal du guide", function()
         expect_eq(#game.errors, 0)
     end)
 
+    it("recommence ou abandonne un guide depuis le journal, après confirmation", function()
+        local game, Guide = boot()
+        Guide:Start(ELWYNN)
+        local key = game.ns.GuideEngine.Keys(game.ns.DB:GetGuide(ELWYNN)).steps[1]
+        Guide.char.progress[ELWYNN].skipped[key] = true
+        Guide.char.completed[WESTFALL] = true
+        Guide.char.progress[WESTFALL] = { outcomes = {}, skipped = {} }
+
+        -- Recommencer un guide non suivi : avancement et « terminé » oubliés.
+        Guide:RestartGuide(WESTFALL)
+        expect_eq(Guide.char.progress[WESTFALL], nil)
+        expect_eq(Guide.char.completed[WESTFALL], nil)
+        expect_eq(Guide.char.active, ELWYNN, "le guide suivi ne change pas")
+
+        -- Le guide suivi reprend à sa première étape.
+        Guide:RestartGuide(ELWYNN)
+        expect(not (Guide.char.progress[ELWYNN] and Guide.char.progress[ELWYNN].skipped[key]), "étape passée oubliée")
+        expect_eq(Guide.char.active, ELWYNN)
+
+        -- Les quêtes rendues viennent du jeu, pas de l'avancement : recommencer ne les
+        -- oublie pas, les étapes déjà faites se revalident d'elles-mêmes.
+        local guide = game.ns.DB:GetGuide(ELWYNN)
+        for _, step in ipairs(guide.steps) do
+            for _, goal in ipairs(step.goals) do
+                if goal.quest then
+                    Guide.state:turnin(goal.quest)
+                end
+            end
+        end
+        Guide:RestartGuide(ELWYNN)
+        local result = Guide:Refresh()
+        expect(result.finished or (result.current and result.current > 1), "étapes des quêtes rendues validées")
+
+        -- Abandonner un guide annexe rend la main au leveling ; l'avancement reste.
+        Guide:FollowFromJournal(game.ns.DB:GetGuide(TAMING))
+        Guide:AbandonGuide(TAMING)
+        expect_eq(Guide.char.active, ELWYNN, "leveling repris")
+        Guide:AbandonGuide(ELWYNN)
+        expect_eq(Guide.char.active, nil, "plus de guide suivi")
+        expect(Guide.char.progress[ELWYNN] ~= nil, "avancement gardé")
+
+        -- Boutons du détail : un premier clic demande confirmation.
+        Guide:Start(ELWYNN)
+        SlashCmdList.NEXTSTEP("journal")
+        rawset(Guide.journal, "IsShown", function() return true end)
+        rawset(Guide.journal.list, "GetHeight", function() return 440 end)
+        Guide.journalSelected = ELWYNN
+        Guide:ShowJournalTab("routes")
+        local abandon = Guide.journal.detail.abandon
+        abandon:GetScript("OnClick")(abandon)
+        expect_eq(Guide.char.active, ELWYNN, "pas encore confirmé")
+        abandon:GetScript("OnClick")(abandon)
+        expect_eq(Guide.char.active, nil, "abandonné au second clic")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("garde le guide de leveling à reprendre après un guide annexe", function()
         local game, Guide = boot()
         Guide:Start(ELWYNN)

@@ -1,0 +1,6 @@
+on an Aged, Dying or {npc:4702} in the graveyard; don't kill it
+the tamed kodo, at {npc:11596}'s camp: talk to it, five times
+Step into the cave: {npc:11558} stands just inside.
+{npc:11556} stands right at the {zone:1452} exit of {area:1769}'s tunnel, where you come out.
+Scare {npc:10977} with {npc:10980}
+The lake for {quest:5845}

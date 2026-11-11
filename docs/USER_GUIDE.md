@@ -29,7 +29,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 
 | Onglet | Contenu |
 |---|---|
-| **Routes** | Tous les guides de ton personnage par catégorie, « Choisis ton chemin » en tête, avancement, détail, bouton pour suivre. |
+| **Routes** | Tous les guides de ton personnage par catégorie, « Choisis ton chemin » en tête, avancement, détail, bouton pour suivre. **Recommencer** remet le guide à zéro pour revoir toutes ses étapes (les quêtes déjà rendues restent faites) ; **Abandonner** arrête de le suivre en gardant l'avancement. Les deux demandent un second clic pour confirmer. |
 | **Sorts de classe** | Ce que ton maître a maintenant et à chaque niveau à venir, avec le prix. |
 | **Zones** | Les zones de ton niveau en tête, avec leurs quêtes à prendre (clic : flèche vers le donneur), leurs guides et leurs donjons. |
 | **Donjons** (`/ns dungeons`) | Pour chaque donjon : les quêtes à prendre avant d'y aller, les étapes de leur suite de quêtes avec le donneur et sa zone, le butin des boss avec le gain pour ta spécialisation. |

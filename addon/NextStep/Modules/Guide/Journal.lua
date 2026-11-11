@@ -329,6 +329,61 @@ function Guide:FollowFromJournal(guide)
     self:SetWindowShown(true)
 end
 
+-- Recommencer un guide : tout son avancement est oublié (étapes passées, faites,
+-- validées à la main, « terminé ») ; suivi, il reprend à sa première étape à faire.
+function Guide:RestartGuide(id)
+    self.char.completed[id] = nil
+    if self.char.active == id then
+        return self:Reset(id)
+    end
+    self.char.progress[id] = nil
+    self.seen[id] = nil
+end
+
+-- Abandonner le guide suivi : son avancement est gardé (on peut le reprendre plus
+-- tard) ; un guide annexe rend la main au guide de leveling interrompu.
+function Guide:AbandonGuide(id)
+    if self.char.active ~= id then
+        return
+    end
+    if self.char.returnTo and self.char.returnTo ~= id then
+        return self:Resume()
+    end
+    self.char.returnTo = nil
+    return self:Stop()
+end
+
+-- Bouton à confirmer d'un second clic (dans les 5 secondes) : le libellé devient
+-- « Cliquez encore pour confirmer ».
+local CONFIRM_DELAY = 5
+local pending = {}   -- [bouton] = { label, armed (heure du premier clic), guide }
+
+local function disarm(button)
+    local state = pending[button]
+    state.armed = nil
+    button:SetLabel(state.label)
+end
+
+local function confirmed(button)
+    local state = pending[button]
+    local now = GetTime and GetTime() or 0
+    if state.armed and now - state.armed <= CONFIRM_DELAY then
+        disarm(button)
+        return true
+    end
+    state.armed = now
+    button:SetLabel(L["Click again to confirm"])
+    if C_Timer and C_Timer.After then
+        C_Timer.After(CONFIRM_DELAY, function()
+            if state.armed == now then
+                disarm(button)
+            end
+        end)
+    end
+    return false
+end
+Guide.JournalConfirmed = confirmed
+
 ---------------------------------------------------------------------------
 -- Cadre (style sombre et doré, Core/Style.lua)
 ---------------------------------------------------------------------------
@@ -728,6 +783,27 @@ function Guide:CreateJournal()
     end)
     detail.follow:SetPoint("BOTTOM", 0, 12)
     frame.follow = detail.follow
+    -- Recommencer (avancement effacé) et abandonner (ne plus suivre), confirmés d'un
+    -- second clic.
+    local half = (DETAIL_WIDTH - 24 - 6) / 2
+    detail.restart = Style.Button(detail, L["Restart"], half, 24, function(button)
+        local id = self.journalSelected
+        if id and confirmed(button) then
+            self:RestartGuide(id)
+            self:UpdateJournal()
+        end
+    end)
+    pending[detail.restart] = { label = L["Restart"] }
+    detail.restart:SetPoint("BOTTOMLEFT", detail.follow, "TOPLEFT", 0, 6)
+    detail.abandon = Style.Button(detail, L["Abandon"], half, 24, function(button)
+        local id = self.journalSelected
+        if id and confirmed(button) then
+            self:AbandonGuide(id)
+            self:UpdateJournal()
+        end
+    end)
+    pending[detail.abandon] = { label = L["Abandon"] }
+    detail.abandon:SetPoint("BOTTOMRIGHT", detail.follow, "TOPRIGHT", 0, 6)
 
     -- Onglet des sorts.
     local spells = CreateFrame("Frame", nil, frame)
@@ -846,7 +922,7 @@ function Guide:UpdateJournalDetail()
     local detail = self.journal.detail
     local guide = self.journalSelected and ns.DB:GetGuide(self.journalSelected)
     local parts = { detail.title, detail.range, detail.zone, detail.bar, detail.progress, detail.why,
-        detail.rewardLabel, detail.nextText, detail.follow }
+        detail.rewardLabel, detail.nextText, detail.follow, detail.restart, detail.abandon }
     for _, region in ipairs(parts) do
         region:SetShown(guide ~= nil)
     end
@@ -901,6 +977,15 @@ function Guide:UpdateJournalDetail()
     detail.nextText:SetText(info.next and L["Then: %s"]:format(info.next) or "")
     detail.follow:SetLabel(status == "active" and L["Following"] or L["Follow this guide"])
     detail.follow:SetEnabled(status ~= "active")
+    -- Un autre guide choisi : la confirmation en attente est oubliée.
+    for _, button in ipairs({ detail.restart, detail.abandon }) do
+        if pending[button].guide ~= guide.id then
+            disarm(button)
+            pending[button].guide = guide.id
+        end
+    end
+    detail.restart:SetEnabled(status == "active" or status == "done" or status > 0)
+    detail.abandon:SetEnabled(status == "active")
 end
 
 local function spellIcon(id)
