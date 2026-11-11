@@ -21,21 +21,25 @@ local Travel = {}
 ns.Travel = Travel
 
 local DOCKS = {
-    stormwind = { name = "Stormwind Harbor", map = 1453, x = 26.12, y = 47.06, f = "e" },
-    auberdineWest = { name = "Auberdine", map = 1439, x = 30.7, y = 41, f = "e" },
-    menethil = { name = "Menethil Harbor", map = 1437, x = 4.78, y = 57.02, f = "e" },
-    auberdine = { name = "Auberdine", map = 1439, x = 32.4, y = 43.8, f = "e" },
-    theramore = { name = "Theramore", map = 1445, x = 71.6, y = 56.4, f = "e" },
-    bootyBay = { name = "Booty Bay", map = 1434, x = 25.8, y = 73.1, f = "e" },
-    ratchet = { name = "Ratchet", map = 1413, x = 63.4, y = 38.5, f = "e" },
+    -- Bateaux : là où le bateau accoste, d'après les tracés de NauticusClassicResurrected
+    -- (MIT, voir CREDITS.md), convertis en repère « era ».
+    stormwind = { name = "Stormwind Harbor", map = 1453, x = 2.62, y = 41.5, f = "e" },
+    auberdineWest = { name = "Auberdine", map = 1439, x = 30.51, y = 40.91, f = "e" },
+    menethil = { name = "Menethil Harbor", map = 1437, x = 4.42, y = 56.7, f = "e" },
+    southshore = { name = "Southshore", map = 1424, x = 50.57, y = 70.43, f = "e" },
+    auberdine = { name = "Auberdine", map = 1439, x = 32.3, y = 44.1, f = "e" },
+    theramore = { name = "Theramore", map = 1445, x = 71.69, y = 56.73, f = "e" },
+    bootyBay = { name = "Booty Bay", map = 1434, x = 25.65, y = 73.15, f = "e" },
+    ratchet = { name = "Ratchet", map = 1413, x = 63.78, y = 38.79, f = "e" },
+    -- Tours des zeppelins (deux plateformes chacune), relevées dans les guides.
     tirisfal = { name = "the Tirisfal zeppelin tower", map = 1420, x = 60.7, y = 58.9, f = "e" },
     gromgol = { name = "Grom'gol", map = 1434, x = 31.4, y = 29.9, f = "e" },
     durotar = { name = "the Orgrimmar zeppelin tower", map = 1411, x = 50.8, y = 13.5, f = "e" },
     -- Liaisons sur un même continent (horaires seulement, pas de traversée).
-    rutheran = { name = "Rut'theran Village", map = 1438, x = 55.9, y = 93.5, f = "e" },
-    auberdineTeldrassil = { name = "Auberdine", map = 1439, x = 33.2, y = 40.1, f = "e" },
-    feathermoon = { name = "Feathermoon", map = 1444, x = 31, y = 39.8, f = "e" },
-    forgottenCoast = { name = "the Forgotten Coast", map = 1444, x = 43.3, y = 42.7, f = "e" },
+    rutheran = { name = "Rut'theran Village", map = 1438, x = 54.73, y = 97.17, f = "e" },
+    auberdineTeldrassil = { name = "Auberdine", map = 1439, x = 33.36, y = 39.84, f = "e" },
+    feathermoon = { name = "Feathermoon", map = 1444, x = 30.96, y = 39.51, f = "e" },
+    forgottenCoast = { name = "the Forgotten Coast", map = 1444, x = 43.12, y = 42.69, f = "e" },
     -- Tram de Forgefer : coordonnées de l'instance 369 (UnitPosition : nord, ouest),
     -- quais relevés dans NauticusClassic (MIT, voir CREDITS.md).
     tramStormwind = { name = "Stormwind", instance = 369, north = -20.45, west = 2491.8 },
@@ -48,7 +52,9 @@ end
 
 -- Liaisons dans les deux sens ; faction nil : ouverte à tous.
 local LINKS = {
+    -- Sur Forever, le bateau de Menethil fait escale à Austrivage avant Auberdine.
     { kind = "boat", faction = "Alliance", DOCKS.menethil, DOCKS.auberdine },
+    { kind = "boat", faction = "Alliance", DOCKS.southshore, DOCKS.auberdine },
     { kind = "boat", faction = "Alliance", DOCKS.menethil, DOCKS.theramore },
     { kind = "boat", faction = "Alliance", DOCKS.stormwind, DOCKS.auberdineWest },   -- ajout de Forever
     { kind = "boat", DOCKS.bootyBay, DOCKS.ratchet },

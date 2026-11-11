@@ -6,6 +6,9 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+### Corrigé
+- **Horaires des bateaux faux** : ils reposaient sur des durées de Classic. Sur Forever, le bateau de Menethil fait escale à Austrivage avant Auberdine (tour de 8 min, pas 5). Les horaires suivent désormais le tour réel de chaque transport, relevé par NauticusClassicResurrected : durée, ordre des escales, heure d'arrivée et de départ à chaque quai. Un seul départ vu donne l'heure exacte à toutes les escales, et l'encart dit quand le bateau est déjà à quai (« Bateau pour Austrivage puis Auberdine : à quai, départ dans 0:20 »). Les quais sont placés là où le bateau accoste (celui du port de Hurlevent était à plus de 300 m, d'où une traversée non reconnue). Les horaires partagés suivent un nouveau format, que les versions précédentes ignorent.
+
 ### Ajouté
 - Horaires des transports : **tram de Forgefer**, **partage** des horaires avec le groupe et la guilde, durée exacte du tour de chaque liaison classique (reprise de NauticusClassic) : une seule traversée suffit pour une heure exacte. Nouvelles liaisons Rut'theran–Auberdine, Pennelune, Fossoyeuse–Grom'gol. `/ns transports` pour voir ce que la détection a vu.
 - Module **Horaires des bateaux et zeppelins** : près d'un quai, un encart dit dans combien de temps part le prochain bateau ou zeppelin (« Bateau pour Theramore : départ dans 2:40 »). Les horaires s'apprennent en prenant ces transports (traversée, escale, tour complet), par royaume et pour tous vos personnages ; le port de Hurlevent est compris. Pas encore le tram de Forgefer.

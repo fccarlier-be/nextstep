@@ -65,71 +65,80 @@ describe("Transports", function()
         expect_eq(e.from, "menethil")
         expect_eq(e.to, "theramore")
         expect(math.abs(e.ride - 60) < 2, "durée de la traversée")
-        expect_eq(e.dwell, nil, "pas d'escale vue au premier départ")
     end)
 
-    it("mesure l'escale quand on reste à bord, puis prévoit les départs", function()
+    it("suit le bateau de Menethil d'escale en escale (Austrivage sur Forever)", function()
         local _, Transports, ns = boot()
         local D = ns.Travel.DOCKS
         local tracker = Transports.Tracker.New()
-        local first, t = ride(ns, D.stormwind, D.auberdineWest, 1000, 5, 60)
-        local back = ride(ns, D.auberdineWest, D.stormwind, t, 50, 60)
+        local first, t = ride(ns, D.menethil, D.southshore, 1000, 5, 60)
+        local second = ride(ns, D.southshore, D.auberdine, t, 30, 60)
         local events = feed(tracker, first)
-        for _, e in ipairs(feed(tracker, back)) do
+        for _, e in ipairs(feed(tracker, second)) do
             events[#events + 1] = e
         end
         expect_eq(#events, 2)
-        expect_eq(events[2].from, "auberdineWest")
-        expect(events[2].dwell and math.abs(events[2].dwell - 52) < 3, "escale mesurée à Auberdine")
-
-        local realm = {}
-        for _, e in ipairs(events) do
-            Transports.Learn(realm, e)
-        end
-        local link = ns.Transports.LinkById("stormwind-auberdineWest")
-        local data = realm[link.id]
-        local period, exact = Transports.Period(data, link)
-        -- Deux traversées mesurées, une escale : l'autre escale est présumée égale.
-        expect(period > 200 and period < 240, "tour d'environ 2 x (60 + 52)")
-        expect_eq(exact, false)
-        -- Prochain départ d'Auberdine : un tour après le départ observé.
-        local departed = events[2].departed
-        local wait = Transports.NextDeparture(data, link, "auberdineWest", departed + 10)
-        expect(math.abs(wait - (period - 10)) < 1, "un tour plus tard")
-        -- Trop vieux : plus de prévision.
-        expect_eq(Transports.NextDeparture(data, link, "auberdineWest", departed + 25 * 3600), nil)
+        expect_eq(events[1].link, "menethil-auberdine")
+        expect_eq(events[1].to, "southshore")
+        expect_eq(events[2].link, "menethil-auberdine")
+        expect_eq(events[2].from, "southshore")
+        expect_eq(events[2].to, "auberdine")
     end)
 
-    it("affine le tour avec deux départs du même quai", function()
-        local _, Transports, ns = boot()
-        local link = ns.Transports.LinkById("stormwind-auberdineWest")
+    it("situe le tour d'un départ vu, et prévoit chaque escale", function()
+        local _, Transports = boot()
+        local route = Transports.RouteById("menethil-auberdine")
         local realm = {}
-        Transports.Learn(realm, { link = link.id, from = "stormwind", departed = 0, ride = 60 })
-        Transports.Learn(realm, { link = link.id, from = "stormwind", departed = 3 * 250, ride = 60 })
-        expect_eq(realm[link.id].period, 250, "trois tours de 250 s entre les deux départs")
-        local _, exact = Transports.Period(realm[link.id], link)
-        expect_eq(exact, true)
+        -- Départ d'Auberdine vu à 10000 : le tour a commencé 404,997 s plus tôt.
+        Transports.Learn(realm, { link = route.id, from = "auberdine", departed = 10000 })
+        local data = realm[route.id]
+        expect(math.abs(data.start - 9595.003) < 0.001, "début du tour")
+        -- Menethil : départ 60 s après le début du tour, puis tous les 486,226 s.
+        local wait, docked = Transports.NextDeparture(data, route, "menethil", 10000)
+        expect(math.abs(wait - 141.229) < 0.01, "prochain départ de Menethil : " .. wait)
+        expect_eq(docked, false)
+        wait = Transports.NextDeparture(data, route, "southshore", 10000)
+        expect(math.abs(wait - 343.505) < 0.01, "prochain départ d'Austrivage : " .. wait)
+        -- 30 s avant le départ vu, le bateau est à quai à Auberdine.
+        wait, docked = Transports.NextDeparture(data, route, "auberdine", 9970)
+        expect(math.abs(wait - 30) < 0.01, "à quai")
+        expect_eq(docked, true)
+        -- Trop vieux : plus de prévision.
+        expect_eq(Transports.NextDeparture(data, route, "menethil", 10000 + 25 * 3600), nil)
+        -- Une observation plus ancienne ne remplace pas la récente.
+        Transports.Learn(realm, { link = route.id, from = "menethil", departed = 9000 })
+        expect_eq(realm[route.id].seen, 10000)
+    end)
+
+    it("convertit les observations de la version précédente", function()
+        local _, Transports = boot()
+        local realm = {
+            ["menethil-auberdine"] = { last = { dock = "auberdine", t = 10000 }, ride = { auberdine = 82 },
+                dwell = {} },
+            ["menethil-theramore"] = { ride = {}, dwell = {} },
+            ["inconnue"] = { last = { dock = "x", t = 1 } },
+        }
+        Transports.Migrate(realm)
+        expect(math.abs(realm["menethil-auberdine"].start - 9595.003) < 0.001, "départ converti")
+        expect_eq(realm["menethil-auberdine"].seen, 10000)
+        expect_eq(realm["menethil-theramore"], nil, "rien à convertir")
+        expect_eq(realm["inconnue"], nil)
     end)
 
     it("affiche l'attente près d'un quai, ou invite à prendre le bateau", function()
         local _, Transports, ns = boot()
         local D = ns.Travel.DOCKS
         local instance, north, west = at(ns, D.menethil, 20)
-        local lines = Transports:Lines(instance, north, west, "Alliance", 5000)
-        expect_eq(#lines, 2, "Auberdine et Theramore depuis Menethil")
-        expect(lines[1].text:find("ride it once", 1, true), "horaire encore inconnu")
-        Transports.Learn(Transports:Realm(), { link = "menethil-theramore", from = "menethil", to = "theramore",
-            departed = 4900, ride = 60, dwell = 40 })
-        lines = Transports:Lines(instance, north, west, "Alliance", 5000)
-        local found
-        for _, line in ipairs(lines) do
-            if line.text:find("Theramore", 1, true) then
-                found = line
-            end
-        end
-        expect(found and found.text:find("leaves in 3:49", 1, true), "durée du tour connue : heure exacte")
+        local lines = Transports:Lines(instance, north, west, "Alliance", 10000)
+        expect_eq(#lines, 2, "Auberdine (par Austrivage) et Theramore depuis Menethil")
+        expect_eq(lines[1].text, "Boat to Southshore then Auberdine: time unknown, ride it once to learn it")
+        Transports.Learn(Transports:Realm(), { link = "menethil-auberdine", from = "auberdine", departed = 10000 })
+        lines = Transports:Lines(instance, north, west, "Alliance", 10000)
+        expect_eq(lines[1].text, "Boat to Southshore then Auberdine: leaves in 2:21")
+        lines = Transports:Lines(instance, north, west, "Alliance", 10000 + 141.229 - 20)
+        expect_eq(lines[1].text, "Boat to Southshore then Auberdine: at the dock, leaves in 0:20")
         local far = { at(ns, D.menethil, 1000) }
-        expect_eq(#Transports:Lines(far[1], far[2], far[3], "Alliance", 5000), 0, "loin du quai : rien")
+        expect_eq(#Transports:Lines(far[1], far[2], far[3], "Alliance", 10000), 0, "loin du quai : rien")
     end)
 
     it("reconnaît la rame du tram à sa voie", function()
@@ -155,31 +164,31 @@ describe("Transports", function()
         end
         -- Au quai : une seule ligne pour les deux rames, la prochaine qui part.
         local realm = Transports:Realm()
-        Transports.Learn(realm, { link = "tram-north", from = "tramStormwind", departed = 1000, ride = 58 })
-        Transports.Learn(realm, { link = "tram-south", from = "tramStormwind", departed = 1060, ride = 58 })
+        Transports.Learn(realm, { link = "tram-north", from = "tramStormwind", departed = 1000 })
+        Transports.Learn(realm, { link = "tram-south", from = "tramStormwind", departed = 1060 })
         local lines = Transports:Lines(369, D.tramStormwind.north, D.tramStormwind.west, "Alliance", 1100)
         expect_eq(#lines, 1)
-        expect(lines[1].text:find("Tram to Ironforge: leaves in 0:43", 1, true), lines[1].text)
+        expect_eq(lines[1].text, "Tram to Ironforge: leaves in 0:43")
     end)
 
     it("partage les horaires et apprend ceux des autres", function()
         local _, Transports = boot()
         local realm = {}
-        Transports.Learn(realm, { link = "menethil-theramore", from = "menethil", departed = 5000, ride = 120,
-            dwell = 30 })
+        Transports.Learn(realm, { link = "menethil-theramore", from = "theramore", departed = 5000 })
         local text = Transports.Encode("menethil-theramore", realm["menethil-theramore"])
-        expect_eq(text, "S|menethil-theramore|menethil|5000|120|30")
+        expect_eq(text, "T|menethil-theramore|4776.0|5000")
         local event = Transports.Decode(text, 5100)
         expect_eq(event.link, "menethil-theramore")
-        expect_eq(event.departed, 5000)
+        expect_eq(event.start, 4776)
+        expect_eq(event.seen, 5000)
         expect_eq(Transports.Decode(text, 5000 + 25 * 3600), nil, "trop vieux")
-        expect_eq(Transports.Decode("S|inconnue|menethil|5000|0|0", 5100), nil, "liaison inconnue")
-        expect_eq(Transports.Decode("S|menethil-theramore|ratchet|5000|0|0", 5100), nil, "quai étranger")
+        expect_eq(Transports.Decode("T|inconnue|4776.0|5000", 5100), nil, "transport inconnu")
+        expect_eq(Transports.Decode("S|menethil-theramore|menethil|5000|0|0", 5100), nil, "ancien format")
 
         _G.GetServerTime = function() return 5100 end
         Transports:OnAddonMessage(Transports.PREFIX, text, "GUILD", "Quelqu'un-Royaume")
         local data = Transports:Realm()["menethil-theramore"]
-        expect(data and data.last and data.last.t == 5000, "horaire reçu de la guilde")
+        expect(data and data.seen == 5000 and data.start == 4776, "horaire reçu de la guilde")
         _G.GetServerTime = nil
     end)
 end)

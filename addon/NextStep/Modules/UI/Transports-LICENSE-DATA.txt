@@ -1,6 +1,9 @@
-Durées des tours des bateaux, zeppelins et du tram, et position des quais du tram
+Durée des tours des bateaux, zeppelins et du tram, ordre des escales, heures d'arrivée
+et de départ à chaque quai dans le tour, et position des quais
 (Modules/UI/Transports.lua, Modules/Guide/Travel.lua) : reprises de NauticusClassic,
-https://github.com/psynct/NauticusClassic (data.lua, tables rtts et données du tram).
+https://github.com/psynct/NauticusClassic, et de sa suite pour WoW Forever,
+NauticusClassicResurrected, https://github.com/sam-k-taylor/NauticusClassicResurrected
+(data.lua : rtts, rtts_forever, packedData, packedData_forever). Même licence :
 
 MIT License
 

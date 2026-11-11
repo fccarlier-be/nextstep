@@ -1,24 +1,22 @@
 -- Horaires des bateaux, zeppelins et du tram (docs/DESIGN.md, « Transports ») : près
 -- d'un quai, un encart dit dans combien de temps part le prochain transport.
 --
--- Le jeu ne donne ni la position des transports ni leur horaire. Ils tournent pourtant
--- en boucle, à durée fixe : la durée d'un tour est connue (mesurée par NauticusClassic,
--- MIT, voir CREDITS.md) et l'addon apprend où en est chaque transport en voyant le
--- joueur à bord : la position du joueur avance alors qu'il ne marche pas (GetUnitSpeed
--- nul, hors trajet de vol).
---   départ  : le mouvement commence près d'un quai connu (Travel.DOCKS) ;
---   arrivée : il s'arrête près d'un autre quai : durée de la traversée ;
---   escale  : resté à bord, le départ suivant donne la durée de l'escale.
--- Une liaison sans durée connue (Hurlevent–Auberdine, ajout de Forever) l'estime :
--- traversée + escale à chaque bout (escale de 60 s présumée, heure « environ ») ; deux
--- départs du même quai fixent le tour.
+-- Le jeu ne donne ni la position des transports ni leur horaire. Chacun suit pourtant
+-- un tour fixe : NauticusClassicResurrected (MIT, voir CREDITS.md) en a relevé la
+-- durée, l'ordre des escales et l'instant où le transport arrive à chaque quai et en
+-- repart. Il suffit donc de voir partir le transport une fois pour situer son tour et
+-- prévoir tous ses départs, à chaque escale.
 --
--- Partage : chaque traversée apprise est envoyée au groupe et à la guilde (message
--- d'addon « NextStepTr »), et à la connexion l'addon demande les horaires connus.
--- Les heures sont celles du serveur (GetServerTime), communes à tous les joueurs.
+-- Le départ se voit quand le joueur est à bord : sa position avance alors qu'il ne
+-- marche pas (GetUnitSpeed nul, hors trajet de vol). Le mouvement commence près d'un
+-- quai (Travel.DOCKS) et s'arrête près de l'escale suivante : c'est ce transport-là.
+--
+-- Partage : chaque départ vu est envoyé au groupe et à la guilde (message d'addon
+-- « NextStepTr »), et à la connexion l'addon demande les horaires connus. Les heures
+-- sont celles du serveur (GetServerTime), communes à tous les joueurs.
 --
 -- Observations communes aux personnages, par royaume (db.realms). Un redémarrage du
--- serveur décale les horaires : une observation de plus de 24 h n'est plus utilisée.
+-- serveur peut décaler les tours : une observation de plus de 24 h n'est plus utilisée.
 
 local _, ns = ...
 local L = ns.L
@@ -30,7 +28,7 @@ local Transports = ns.Modules:New("Transports", {
     description = L["Near a dock, shows when the next boat, zeppelin or tram leaves, learned from trips "
         .. "and shared with your group and guild."],
     defaults = {
-        realms = {},   -- [royaume] = { [liaison] = { last = { dock, t }, ride, dwell, period } }
+        realms = {},   -- [royaume] = { [transport] = { start, seen } }
         trace = {},    -- derniers départs et arrivées détectés (diagnostic)
         share = true,  -- envoyer et recevoir les horaires
     },
@@ -40,35 +38,68 @@ local SAMPLE = 0.5          -- secondes entre deux relevés de position
 local MOVING = 3            -- yards par seconde : au-delà, le transport avance
 local STOPPED = 0.5         -- yards par seconde : en deçà, il est à quai
 local STOP_SAMPLES = 3      -- relevés immobiles d'affilée pour une arrivée
-local DOCK_RADIUS = 350     -- yards : un quai est « ici » à cette distance (le bateau accoste
-                            -- souvent au bout d'un long ponton)
-local DWELL_RADIUS = 30     -- yards : resté sur place entre l'arrivée et le départ
-local DEFAULT_DWELL = 60    -- secondes d'escale présumées
+local DOCK_RADIUS = 350     -- yards : un quai est « ici » à cette distance
 local MAX_AGE = 24 * 3600   -- secondes : au-delà, l'horaire appris est trop vieux
 local DISPLAY_RADIUS = 150  -- yards : l'encart s'affiche près d'un quai
 local PREFIX = "NextStepTr"
 
-Transports.DEFAULT_DWELL = DEFAULT_DWELL
 Transports.MAX_AGE = MAX_AGE
 Transports.PREFIX = PREFIX
 
--- Durée d'un tour complet (secondes), mesurée par NauticusClassic (rtts).
-local PERIODS = {
-    ["tirisfal-durotar"] = 356.288,
-    ["gromgol-durotar"] = 303.467,
-    ["tirisfal-gromgol"] = 335.298,
-    ["bootyBay-ratchet"] = 350.823,
-    ["menethil-auberdine"] = 295.581,
-    ["menethil-theramore"] = 329.316,
-    ["rutheran-auberdineTeldrassil"] = 316.254,
-    ["feathermoon-forgottenCoast"] = 317.045,
-    ["tram-north"] = 143.334,
-    ["tram-south"] = 143.334,
+-- Tours (NauticusClassicResurrected, version Forever) : durée en secondes, escales dans
+-- l'ordre du trajet, avec l'arrivée et le départ de chacune comptés depuis le début du
+-- tour. L'identifiant reprend celui de la liaison (Travel.LINKS) ; lane : voie du tram.
+local ROUTES = {
+    { id = "tirisfal-durotar", kind = "zeppelin", faction = "Horde", period = 356.288,
+        { "durotar", 0, 60 }, { "tirisfal", 191.139, 251.139 } },
+    { id = "gromgol-durotar", kind = "zeppelin", faction = "Horde", period = 303.467,
+        { "durotar", 0, 60 }, { "gromgol", 138.314, 198.314 } },
+    { id = "tirisfal-gromgol", kind = "zeppelin", faction = "Horde", period = 335.298,
+        { "tirisfal", 0, 60 }, { "gromgol", 155.978, 215.978 } },
+    { id = "bootyBay-ratchet", kind = "boat", period = 350.823,
+        { "ratchet", 0, 60 }, { "bootyBay", 166.808, 226.808 } },
+    -- Sur Forever, ce bateau fait escale à Austrivage (tour de 8 min, pas 5).
+    { id = "menethil-auberdine", kind = "boat", faction = "Alliance", period = 486.226,
+        { "menethil", 0, 60 }, { "southshore", 202.265, 262.276 }, { "auberdine", 345.796, 404.997 } },
+    { id = "menethil-theramore", kind = "boat", faction = "Alliance", period = 329.316,
+        { "menethil", 0, 60 }, { "theramore", 164.003, 224.003 } },
+    { id = "rutheran-auberdineTeldrassil", kind = "boat", faction = "Alliance", period = 316.254,
+        { "rutheran", 0, 60 }, { "auberdineTeldrassil", 164.465, 224.465 } },
+    { id = "feathermoon-forgottenCoast", kind = "boat", faction = "Alliance", period = 317.045,
+        { "feathermoon", 0, 60 }, { "forgottenCoast", 119.881, 179.881 } },
+    { id = "stormwind-auberdineWest", kind = "boat", faction = "Alliance", period = 246.5,
+        { "stormwind", 17.469, 77.105 }, { "auberdineWest", 135.092, 195.091 } },
+    { id = "tram-north", kind = "tram", lane = 4.5, period = 143.334,
+        { "tramStormwind", 0, 12.1 }, { "tramIronforge", 70.735, 84.685 } },
+    { id = "tram-south", kind = "tram", lane = -45.4, period = 143.334,
+        { "tramStormwind", 0, 13.95 }, { "tramIronforge", 72.582, 84.682 } },
 }
-Transports.PERIODS = PERIODS
+Transports.ROUTES = ROUTES
+
+local byId = {}
+for _, route in ipairs(ROUTES) do
+    byId[route.id] = route
+    for _, stop in ipairs(route) do
+        stop.dock, stop.arrive, stop.depart = stop[1], stop[2], stop[3]
+    end
+end
+
+function Transports.RouteById(id)
+    return byId[id]
+end
+
+-- Escale d'un quai sur un tour : index, escale (ou nil).
+local function stopOf(route, dock)
+    for index, stop in ipairs(route) do
+        if stop.dock == dock then
+            return index, stop
+        end
+    end
+end
+Transports.StopOf = stopOf
 
 ---------------------------------------------------------------------------
--- Quais et liaisons
+-- Quais
 ---------------------------------------------------------------------------
 
 local function distance(n1, w1, n2, w2)
@@ -91,26 +122,18 @@ function Transports.DocksNear(instance, north, west, radius)
     return found
 end
 
-local function linkById(id)
-    for _, link in ipairs(Travel.LINKS) do
-        if link.id == id then
-            return link
-        end
-    end
-end
-Transports.LinkById = linkById
-
--- Liaison entre deux ensembles de quais (la voie la plus proche quand plusieurs
--- rames partagent les mêmes quais) : la liaison, le quai de départ, d'arrivée.
-local function linkBetween(fromDocks, toDocks, laneNorth)
+-- Tour qui relie deux ensembles de quais, d'une escale à la suivante (la voie la plus
+-- proche quand plusieurs rames partagent les mêmes quais) : tour, quai de départ,
+-- quai d'arrivée.
+local function routeBetween(fromDocks, toDocks, laneNorth)
     local best, bestFrom, bestTo, bestGap
-    for _, link in ipairs(Travel.LINKS) do
-        for side = 1, 2 do
-            local a, b = link[side], link[3 - side]
-            if fromDocks[a.id] and toDocks[b.id] then
-                local gap = (link.lane and laneNorth) and math.abs(link.lane - laneNorth) or 0
+    for _, route in ipairs(ROUTES) do
+        for index, stop in ipairs(route) do
+            local nextStop = route[index % #route + 1]
+            if fromDocks[stop.dock] and toDocks[nextStop.dock] then
+                local gap = (route.lane and laneNorth) and math.abs(route.lane - laneNorth) or 0
                 if not bestGap or gap < bestGap then
-                    best, bestFrom, bestTo, bestGap = link, a.id, b.id, gap
+                    best, bestFrom, bestTo, bestGap = route, stop.dock, nextStop.dock, gap
                 end
             end
         end
@@ -151,11 +174,11 @@ end
 
 -- Un relevé : t (secondes), position (nil hors du monde), vitesse propre du joueur,
 -- en trajet de vol. Renvoie un événement ou nil :
---   { link, from, to, departed, arrived, ride, dwell? }
+--   { link, from, to, departed, arrived, ride }
 function Tracker:Feed(t, instance, north, west, ownSpeed, onTaxi)
     if not instance or onTaxi then
         if onTaxi then
-            self.moving, self.departure, self.docked = false, nil, nil
+            self.moving, self.departure = false, nil
         end
         self.last = nil
         return nil
@@ -178,43 +201,27 @@ function Tracker:Feed(t, instance, north, west, ownSpeed, onTaxi)
             self.moving = true
             self:Note(last.t, "start", last.instance, last.north, last.west)
             local docks = Transports.DocksNear(last.instance, last.north, last.west, DOCK_RADIUS)
-            if next(docks) then
-                local dwell
-                local docked = self.docked
-                if docked and docked.instance == last.instance
-                    and distance(docked.north, docked.west, last.north, last.west) <= DWELL_RADIUS then
-                    dwell = last.t - docked.t
-                end
-                self.departure = { t = last.t, docks = docks, dwell = dwell, dockedLink = docked and docked.link,
-                    lane = north }
-            else
-                self.departure = nil
-            end
-            self.docked = nil
+            self.departure = next(docks) and { t = last.t, docks = docks, lane = north } or nil
         end
-    elseif rate <= STOPPED then
-        if self.moving then
-            self.still = self.still + 1
-            if self.still >= STOP_SAMPLES then
-                self.moving = false
-                self.still = 0
-                local departure = self.departure
-                self.departure = nil
-                local docks = Transports.DocksNear(instance, north, west, DOCK_RADIUS)
-                local arrived = t - (STOP_SAMPLES * SAMPLE)
-                self:Note(arrived, "stop", instance, north, west,
-                    not departure and "no dock at start" or not next(docks) and "no dock here" or nil)
-                if departure and next(docks) then
-                    local link, from, to = linkBetween(departure.docks, docks, departure.lane)
-                    if link then
-                        self.docked = { t = arrived, instance = instance, north = north, west = west,
-                            link = link.id }
-                        self.trace[1].detail = link.id
-                        return { link = link.id, from = from, to = to, departed = departure.t,
-                            arrived = arrived, ride = arrived - departure.t,
-                            dwell = departure.dockedLink == link.id and departure.dwell or nil }
-                    end
+    elseif rate <= STOPPED and self.moving then
+        self.still = self.still + 1
+        if self.still >= STOP_SAMPLES then
+            self.moving = false
+            self.still = 0
+            local departure = self.departure
+            self.departure = nil
+            local docks = Transports.DocksNear(instance, north, west, DOCK_RADIUS)
+            local arrived = t - (STOP_SAMPLES * SAMPLE)
+            self:Note(arrived, "stop", instance, north, west,
+                not departure and "no dock at start" or not next(docks) and "no dock here" or nil)
+            if departure and next(docks) then
+                local route, from, to = routeBetween(departure.docks, docks, departure.lane)
+                if route then
+                    self.trace[1].detail = route.id
+                    return { link = route.id, from = from, to = to, departed = departure.t,
+                        arrived = arrived, ride = arrived - departure.t }
                 end
+                self.trace[1].detail = "no route"
             end
         end
     end
@@ -225,117 +232,82 @@ end
 -- Apprentissage et prévision (pures)
 ---------------------------------------------------------------------------
 
--- Durée d'un tour : secondes, exacte (ou nil).
-function Transports.Period(data, link)
-    if PERIODS[link.id] then
-        return PERIODS[link.id], true
-    end
-    if data.period then
-        return data.period, true
-    end
-    local a, b = link[1].id, link[2].id
-    local rideA, rideB = data.ride and data.ride[a], data.ride and data.ride[b]
-    local ride = rideA or rideB
-    if not ride then
-        return nil
-    end
-    local dwellA, dwellB = data.dwell and data.dwell[a], data.dwell and data.dwell[b]
-    local exact = rideA ~= nil and rideB ~= nil and dwellA ~= nil and dwellB ~= nil
-    return (rideA or ride) + (rideB or ride) + (dwellA or dwellB or DEFAULT_DWELL)
-        + (dwellB or dwellA or DEFAULT_DWELL), exact
+-- Début du tour (heure serveur) d'après un départ observé, ou nil.
+local function startOf(route, dock, departed)
+    local _, stop = stopOf(route, dock)
+    return stop and departed - stop.depart
 end
 
-local function slot(realm, id)
-    local data = realm[id] or {}
-    realm[id] = data
-    data.ride = data.ride or {}
-    data.dwell = data.dwell or {}
-    return data
-end
-
--- Mémorise une traversée observée (ou reçue) dans les données d'un royaume.
+-- Mémorise un départ observé (ou reçu) dans les données d'un royaume :
+-- event = { link, from, departed } ou { link, start, seen }.
 function Transports.Learn(realm, event)
-    local link = linkById(event.link)
-    if not link then
+    local route = byId[event.link]
+    if not route then
         return
     end
-    local data = slot(realm, event.link)
-    if event.ride then
-        data.ride[event.from] = math.floor(event.ride + 0.5)
+    local start, seen = event.start, event.seen
+    if not start then
+        start, seen = startOf(route, event.from, event.departed), event.departed
     end
-    if event.dwell then
-        data.dwell[event.from] = math.floor(event.dwell + 0.5)
+    if not start then
+        return
     end
-    -- Deux départs du même quai : un nombre entier de tours les sépare.
-    local last = data.last
-    local estimate = Transports.Period(data, link)
-    if last and last.dock == event.from and estimate and not PERIODS[link.id] then
-        local elapsed = event.departed - last.t
-        local turns = math.floor(elapsed / estimate + 0.5)
-        if turns >= 1 and math.abs(elapsed / turns - estimate) <= estimate * 0.15 then
-            data.period = math.floor(elapsed / turns + 0.5)
-        end
-    end
-    if not last or event.departed >= last.t then
-        data.last = { dock = event.from, t = event.departed }
+    local data = realm[route.id]
+    if not (data and data.seen and data.seen > seen) then
+        realm[route.id] = { start = start, seen = seen }
     end
 end
 
--- Prochain départ du quai dock sur une liaison : secondes d'attente, exact (ou nil).
-function Transports.NextDeparture(data, link, dock, now)
-    local last = data and data.last
-    if not last or now - last.t > MAX_AGE then
-        return nil
-    end
-    local period, exact = Transports.Period(data, link)
-    if not period or period <= 0 then
-        return nil
-    end
-    local first = last.t
-    if dock ~= last.dock then
-        -- Départ du quai d'en face : traversée depuis le dernier départ, puis escale ;
-        -- sans mesure, la moitié du tour.
-        local ride = data.ride[last.dock] or data.ride[dock]
-        local dwell = data.dwell[dock]
-        if ride and dwell then
-            first = last.t + ride + dwell
-            exact = exact and data.ride[last.dock] ~= nil
-        elseif ride then
-            first = last.t + ride + (PERIODS[link.id] and math.max(0, period / 2 - ride) or DEFAULT_DWELL)
-            exact = false
-        else
-            first = last.t + period / 2
-            exact = false
+-- Données d'une version précédente (dernier départ vu d'un quai) : converties.
+function Transports.Migrate(realm)
+    for id, data in pairs(realm) do
+        local route = byId[id]
+        local last = type(data) == "table" and data.last
+        if route and last and not data.start then
+            local start = startOf(route, last.dock, last.t)
+            realm[id] = start and { start = start, seen = last.t } or nil
+        elseif not route or type(data) ~= "table" or not data.start then
+            realm[id] = nil
         end
     end
-    local wait = (first - now) % period
-    return wait, exact
+end
+
+-- Prochain départ du quai dock : secondes d'attente et « à quai » (le transport y est
+-- déjà), ou nil si le tour est inconnu ou trop vieux.
+function Transports.NextDeparture(data, route, dock, now)
+    if not (data and data.start and data.seen) or now - data.seen > MAX_AGE then
+        return nil
+    end
+    local _, stop = stopOf(route, dock)
+    if not stop then
+        return nil
+    end
+    local period = route.period
+    local phase = (now - data.start) % period
+    local wait = (stop.depart - phase) % period
+    return wait, wait <= stop.depart - stop.arrive
 end
 
 ---------------------------------------------------------------------------
 -- Partage (pur : texte des messages)
 ---------------------------------------------------------------------------
 
--- « S|liaison|quai|heure|traversée|escale » (traversée et escale : 0 si inconnues).
+-- « T|transport|début du tour|heure de l'observation » (dixièmes de seconde pour le début).
 function Transports.Encode(id, data)
-    local last = data.last
-    return ("S|%s|%s|%d|%d|%d"):format(id, last.dock, last.t, data.ride[last.dock] or 0,
-        data.dwell[last.dock] or 0)
+    return ("T|%s|%.1f|%d"):format(id, data.start, data.seen)
 end
 
--- Message reçu -> traversée à apprendre, ou nil s'il est invalide ou trop vieux.
+-- Message reçu -> départ à apprendre, ou nil s'il est invalide ou trop vieux.
 function Transports.Decode(text, now)
-    local id, dock, t, ride, dwell = tostring(text or ""):match("^S|([%w%-]+)|(%w+)|(%d+)|(%d+)|(%d+)$")
-    local link = id and linkById(id)
-    if not link or (link[1].id ~= dock and link[2].id ~= dock) then
+    local id, start, seen = tostring(text or ""):match("^T|([%w%-]+)|(%-?[%d%.]+)|(%d+)$")
+    if not (id and byId[id]) then
         return nil
     end
-    t, ride, dwell = tonumber(t), tonumber(ride), tonumber(dwell)
-    if t > now + 60 or now - t > MAX_AGE then
+    start, seen = tonumber(start), tonumber(seen)
+    if not (start and seen) or seen > now + 60 or now - seen > MAX_AGE then
         return nil
     end
-    return { link = id, from = dock, departed = t, ride = ride > 0 and ride or nil,
-        dwell = dwell > 0 and dwell or nil }
+    return { link = id, start = start, seen = seen }
 end
 
 ---------------------------------------------------------------------------
@@ -387,7 +359,7 @@ function Transports:Share(id)
         return
     end
     local data = self:Realm()[id]
-    if data and data.last then
+    if data and data.start then
         send(Transports.Encode(id, data))
     end
 end
@@ -397,7 +369,7 @@ function Transports:Answer()
     local now = serverNow()
     for id, data in pairs(self:Realm()) do
         local heard = self.heard and self.heard[id]
-        if data.last and now - data.last.t <= MAX_AGE and not (heard and heard >= data.last.t) then
+        if data.seen and now - data.seen <= MAX_AGE and not (heard and heard >= data.seen) then
             send(Transports.Encode(id, data))
         end
     end
@@ -424,7 +396,7 @@ function Transports:OnAddonMessage(prefix, text, _, sender)
     local event = Transports.Decode(text, serverNow())
     if event then
         self.heard = self.heard or {}
-        self.heard[event.link] = math.max(self.heard[event.link] or 0, event.departed)
+        self.heard[event.link] = math.max(self.heard[event.link] or 0, event.seen)
         Transports.Learn(self:Realm(), event)
     end
 end
@@ -470,7 +442,17 @@ end
 
 local KINDS = { boat = "Boat to %s", zeppelin = "Zeppelin to %s", tram = "Tram to %s" }
 
--- Lignes de l'encart pour une position : { { text, wait, exact } }, vide loin d'un quai.
+-- Escales suivantes d'un quai, dans l'ordre du trajet : « Austrivage puis Auberdine ».
+local function destinations(route, index)
+    local names = {}
+    for k = 1, #route - 1 do
+        local stop = route[(index + k - 1) % #route + 1]
+        names[#names + 1] = L[Travel.DOCKS[stop.dock].name]
+    end
+    return table.concat(names, L[" then "])
+end
+
+-- Lignes de l'encart pour une position : { { text, wait, docked } }, vide loin d'un quai.
 -- Les rames du tram vers la même destination n'en font qu'une : la prochaine qui part.
 function Transports:Lines(instance, north, west, faction, now)
     local lines, byLabel = {}, {}
@@ -479,13 +461,12 @@ function Transports:Lines(instance, north, west, faction, now)
     end
     local near = Transports.DocksNear(instance, north, west, DISPLAY_RADIUS)
     local realm = self:Realm()
-    for _, link in ipairs(Travel.LINKS) do
-        if not link.faction or link.faction == faction then
-            for side = 1, 2 do
-                local dock, other = link[side], link[3 - side]
-                if near[dock.id] then
-                    local label = L[KINDS[link.kind]]:format(L[other.name])
-                    local wait, exact = Transports.NextDeparture(realm[link.id], link, dock.id, now)
+    for _, route in ipairs(ROUTES) do
+        if not route.faction or route.faction == faction then
+            for index, stop in ipairs(route) do
+                if near[stop.dock] then
+                    local label = L[KINDS[route.kind]]:format(destinations(route, index))
+                    local wait, docked = Transports.NextDeparture(realm[route.id], route, stop.dock, now)
                     local line = byLabel[label]
                     if not line then
                         line = { label = label }
@@ -493,7 +474,7 @@ function Transports:Lines(instance, north, west, faction, now)
                         lines[#lines + 1] = line
                     end
                     if wait and (not line.wait or wait < line.wait) then
-                        line.wait, line.exact = wait, exact
+                        line.wait, line.docked = wait, docked
                     end
                 end
             end
@@ -501,7 +482,7 @@ function Transports:Lines(instance, north, west, faction, now)
     end
     for _, line in ipairs(lines) do
         if line.wait then
-            line.text = (line.exact and L["%s: leaves in %s"] or L["%s: leaves in about %s"])
+            line.text = (line.docked and L["%s: at the dock, leaves in %s"] or L["%s: leaves in %s"])
                 :format(line.label, duration(line.wait))
         else
             line.text = L["%s: time unknown, ride it once to learn it"]:format(line.label)
@@ -561,6 +542,9 @@ end
 function Transports:OnEnable()
     self.tracker = self.tracker or Tracker.New()
     self.tracker.trace = self.db.trace or self.tracker.trace
+    for _, realm in pairs(self.db.realms) do
+        Transports.Migrate(realm)
+    end
     if C_ChatInfo and C_ChatInfo.RegisterAddonMessagePrefix then
         C_ChatInfo.RegisterAddonMessagePrefix(PREFIX)
     end
