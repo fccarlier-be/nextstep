@@ -421,6 +421,9 @@ local function blockedReason(reason)
     if reason and reason.kind == "level" then
         return L["requires level %d"]:format(reason.level)
     end
+    if reason and reason.kind == "unfinished" then
+        return L["first finish: %s"]:format(table.concat(reason.objectives, ", "))
+    end
     return L["not available yet"]
 end
 

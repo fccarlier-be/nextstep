@@ -86,6 +86,19 @@ end
 function Player:TurnedIn(q)
     return self.done[q] == true
 end
+-- Objectifs tels que le jeu les donne : { { text, finished } }.
+function Player:Objectives(q)
+    local entry = self.log[q]
+    return entry and entry.texts
+end
+function Player:pending(q, texts)
+    local list = {}
+    for _, text in ipairs(texts) do
+        list[#list + 1] = { text = text, finished = false }
+    end
+    self.log[q].texts = list
+    return self
+end
 function Player:Objective(q, oi)
     return self.log[q] ~= nil and self.log[q].objectives[oi] == true
 end

@@ -7,6 +7,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 ## [Non publié]
 
 ### Corrigé
+- Guide : une quête dont les objectifs ne sont pas remplis n'est plus proposée au rendu comme si elle était finie. La ligne dit ce qui manque (« Rendre Feu interdit (terminez d'abord : Silex brut : 0/9) »), par exemple quand le ramassage prévu lors d'un passage précédent a été oublié.
 - **Horaires des bateaux faux** : ils reposaient sur des durées de Classic. Sur Forever, le bateau de Menethil fait escale à Austrivage avant Auberdine (tour de 8 min, pas 5). Les horaires suivent désormais le tour réel de chaque transport, relevé par NauticusClassicResurrected : durée, ordre des escales, heure d'arrivée et de départ à chaque quai. Un seul départ vu donne l'heure exacte à toutes les escales, et l'encart dit quand le bateau est déjà à quai (« Bateau pour Austrivage puis Auberdine : à quai, départ dans 0:20 »). Les quais sont placés là où le bateau accoste (celui du port de Hurlevent était à plus de 300 m, d'où une traversée non reconnue). Les horaires partagés suivent un nouveau format, que les versions précédentes ignorent.
 
 ### Ajouté

@@ -82,12 +82,33 @@ local function accept(goal, state, ctx)
     return TODO
 end
 
+-- Objectifs de la quête pas encore remplis (textes du jeu : « Silex brut : 0/9 »), ou nil.
+local function unfinished(state, q)
+    if not state.Objectives or state:Complete(q) then
+        return nil
+    end
+    local list
+    for _, objective in ipairs(state:Objectives(q) or {}) do
+        if not objective.finished then
+            list = list or {}
+            list[#list + 1] = objective.text
+        end
+    end
+    return list
+end
+
 local function turnin(goal, state, ctx)
     if state:TurnedIn(goal.quest) then
         return DONE
     end
     if dropped(goal, state, ctx) then
         return result("na", { kind = "skipped" })
+    end
+    -- Dans le journal, objectifs pas remplis (ramassage d'un passage précédent
+    -- oublié) : on ne peut pas encore la rendre, et la ligne dit ce qui manque.
+    local missing = state:InLog(goal.quest) and unfinished(state, goal.quest)
+    if missing then
+        return result("blocked", { kind = "unfinished", objectives = missing })
     end
     return TODO
 end

@@ -179,7 +179,7 @@ Fichiers : `Modules/Guide/Conditions.lua` (à qui s'adresse une étape, dans que
 |---|---|---|
 | `done` | Accompli (ou implicite : un déplacement est accompli dès qu'un objectif suivant de l'étape l'est) | Non |
 | `todo` | À faire | Oui |
-| `blocked` | À faire mais impossible pour l'instant ; aujourd'hui, niveau insuffisant pour accepter une quête | Oui (l'étape affiche la raison) |
+| `blocked` | À faire mais impossible pour l'instant : niveau insuffisant pour accepter une quête, ou quête à rendre dont les objectifs ne sont pas remplis (la ligne dit lesquels, d'après le journal) | Oui (l'étape affiche la raison) |
 | `manual` | Invisible pour l'addon (parler à un PNJ, voir un maître, utiliser un objet sans quête) : validé par le joueur ou par un événement du jeu | Oui |
 | `na` | Hors sujet ou plus disponible : quête fermée par une quête exclusive, prérequis manquant, quête dont l'acceptation a été ignorée ou sautée | Non |
 | `info` | Simple note | Non |
@@ -218,6 +218,7 @@ Les deux modes utilisent **le même moteur** ; seul l'affichage change.
 | Retour après un détour | Reprise à la première étape non faite |
 | Personnage plus haut que le guide | Signalé (`advice.overleveled`), avec le nombre de quêtes grises à venir (`advice.greyAhead`, formule du Classic) |
 | Niveau insuffisant | Étape bloquée avec le niveau requis |
+| Quête à rendre aux objectifs pas remplis (ramassage d'un passage précédent oublié) | Rendu bloqué : « terminez d'abord : Silex brut : 0/9 » |
 
 ### Enchaînement
 
