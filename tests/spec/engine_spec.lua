@@ -61,6 +61,25 @@ describe("Moteur du guide", function()
         expect_eq(r.steps[2].status, "ahead")
     end)
 
+    it("ne propose pas de rendre une quête aux objectifs pas remplis", function()
+        local Engine, progress = setup()
+        local g = guide({ step({ accept(1) }), step({ turnin(1) }) })
+        local player = Player.new():accept(1):pending(1, { "Silex brut : 0/9" })
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 2)
+        local goal = r.steps[2].goals[1]
+        expect_eq(goal.status, "blocked")
+        expect_eq(goal.reason.kind, "unfinished")
+        expect_eq(goal.reason.objectives[1], "Silex brut : 0/9")
+        -- Objectifs remplis (ou quête sans objectif) : à rendre.
+        player.log[1].texts[1].finished = true
+        r = run(Engine, g, player, progress)
+        expect_eq(r.steps[2].goals[1].status, "todo")
+        player.log[1].texts = nil
+        r = run(Engine, g, player, progress)
+        expect_eq(r.steps[2].goals[1].status, "todo")
+    end)
+
     it("avance quand l'étape est faite et mémorise l'étape dépassée", function()
         local Engine, progress = setup()
         local g = guide({ step({ accept(1) }), step({ kill(1) }), step({ turnin(1) }) })
