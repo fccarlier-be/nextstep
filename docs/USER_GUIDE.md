@@ -73,6 +73,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 | `/ns gear [lien]` | Spécialisation et poids utilisés, ou comparaison d'un objet |
 | `/ns bank` | Sacs et banque de tous tes personnages |
 | `/ns ammo` | Munitions restantes et vendeur le plus proche (chasseur) |
+| `/ns errors` | Erreurs Lua de NextStep relevées (`/ns errors clear` les efface) : utile pour signaler un problème |
 | `/ns transports` | État de la détection des bateaux et du tram (diagnostic) |
 | `/ns clock`, `/ns timer <minutes> [nom]`, `/ns alarm <hh:mm> [nom]` | Horloge, minuteur, alarme |
 | `/ns radar` | Radar de récolte |

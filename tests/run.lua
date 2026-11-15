@@ -10,6 +10,7 @@ local SPECS = {
     "modules",
     "factions",
     "slash",
+    "errors",
     "locale",
     "data",
     "names",

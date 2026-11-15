@@ -94,6 +94,7 @@ Un seul fichier `NextStep.toc` par addon, **sans suffixe de version** (`_Camelot
 | Fichier | Rôle |
 |---|---|
 | `Core/Init.lua` | Espace de noms `ns` (seule globale : `NextStep`), `ns:Print`, `ns.SafeCall` |
+| `Core/Errors.lua` | Relevé des erreurs Lua : enveloppe le gestionnaire d'erreurs du jeu (`seterrorhandler`, comme BugGrabber ; le précédent reçoit toujours l'erreur), note celles dont le texte ou la pile cite `AddOns/NextStep*`, et les actions bloquées (`ADDON_ACTION_BLOCKED`/`FORBIDDEN`), dans `NextStepDB.errors` : message, pile (12 lignes), nombre, première et dernière heure, version ; 50 erreurs différentes au plus. Chargé juste après `Init.lua` : les erreurs du chargement attendent la lecture des sauvegardes. `/ns errors` |
 | `Core/Locale.lua`, `Locales/*.lua` | Table `ns.L` ; une clé sans traduction s'affiche telle quelle (anglais) |
 | `Core/Events.lua` | Un seul cadre écoute le jeu ; abonnés identifiés par un propriétaire ; messages internes ; erreur d'un abonné isolée des autres |
 | `Core/Storage.lua` | `NextStepDB` (compte) et `NextStepCharDB` (personnage), numéro de schéma, migrations, valeurs par défaut |

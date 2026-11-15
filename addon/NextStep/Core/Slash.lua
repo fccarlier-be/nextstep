@@ -84,6 +84,30 @@ end, L["List modules"])
 Slash:Add("enable", setModule("enable", true, L["Module %s enabled."]), L["Enable a module"])
 Slash:Add("disable", setModule("disable", false, L["Module %s disabled."]), L["Disable a module"])
 
+-- /ns errors : erreurs Lua relevées (Core/Errors.lua) ; /ns errors clear les efface.
+Slash:Add("errors", function(argument)
+    if argument == "clear" then
+        ns.Errors.Clear()
+        ns:Print(L["Recorded errors cleared."])
+        return
+    end
+    local entries = ns.Errors.List()
+    if #entries == 0 then
+        ns:Print(L["No Lua error recorded."])
+        return
+    end
+    ns:Print(L["%d Lua error(s) recorded (most recent first):"]:format(#entries))
+    for index, entry in ipairs(entries) do
+        if index > 10 then
+            DEFAULT_CHAT_FRAME:AddMessage("  " .. L["... and %d more in the saved variables."]:format(#entries - 10))
+            break
+        end
+        local when = date and date("%d/%m %H:%M", entry.last) or tostring(entry.last)
+        DEFAULT_CHAT_FRAME:AddMessage(("  |cffff6060%dx|r %s (%s, %s)"):format(entry.count, entry.message, when,
+            tostring(entry.version)))
+    end
+end, L["List the Lua errors recorded (clear: erase them)"])
+
 Slash:Add("options", function()
     ns.Options:Open()
 end, L["Open the options"])

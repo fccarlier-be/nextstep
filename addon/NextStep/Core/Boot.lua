@@ -12,6 +12,7 @@ ns.Events:Register("ADDON_LOADED", Boot, function(_, _, loadedName)
     end
     ns.Events:Unregister("ADDON_LOADED", Boot)
     ns.Storage:Init()
+    ns.Errors.Attach(ns.db)
     ns.Modules:InitializeAll()
     ns.Options:Init()
 end)
