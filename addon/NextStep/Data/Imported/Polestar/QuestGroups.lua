@@ -1,4 +1,4 @@
--- Généré par Tools/import/dungeons.py depuis forever-db de Polestar 0.3.6 (67bf2ef63706). Ne pas modifier.
+-- Généré par Tools/import/dungeons.py depuis forever-db de Polestar 0.3.7.2 (19bd636e7d6f). Ne pas modifier.
 -- Quêtes élites ou de groupe : e élite (monstres visés élites, rares élites ou boss),
 -- g groupe, d donjon, r raid (type de la quête). GPL-3.0 : ForeverDB-NOTICE.md.
 

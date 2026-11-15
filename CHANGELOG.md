@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.2.3] - 2026-11-15
+
+### Modifié
+- **Guides mis à jour vers Polestar 0.3.7.2** : Loch Modan (le défi du chasseur revient voir Daryl avant les crocilisques, le minuteur ne s'épuise plus), Orneval (le tome de Mel'Thandris lu à la visite suivante), sac de couchage douillet (entrée dans les Serres-Rocheuses par le nord), quêtes de classe des druides célestes sur la route de leveling, Un'Goro pour les mages, Bois de la Pénombre : le tube en bronze s'achète à l'hôtel des ventes de Hurlevent ou chez Gearcutter Cogspinner à Forgefer (la correction propre à NextStep vers Neal Allen est retirée).
+
 ## [0.2.2] - 2026-11-11
 
 ### Corrigé
@@ -164,7 +169,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.2...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/fccarlier-be/nextstep/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/fccarlier-be/nextstep/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/fccarlier-be/nextstep/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/fccarlier-be/nextstep/compare/v0.1.1...v0.2.0

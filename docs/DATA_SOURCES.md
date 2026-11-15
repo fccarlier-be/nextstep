@@ -42,7 +42,7 @@ La version de Polestar importée est fixée dans [`Tools/import/polestar.lock`](
 Les corrections et ajouts écrits à la main vivent dans `Data/Overrides/`, au format Lua de NextStep. Ils sont appliqués **après** les données importées et survivent aux réimports.
 
 - `Data/Overrides/Guides.lua` : `DB:AddGuideFix(function(guide) ... end)`, appliquée à chaque guide chargé (`DB.AddGuide`), y compris ceux de faction chargés plus tard.
-- Corrections en place : achat du tube en bronze (4371) déplacé de Herble Baubbletump (Sombre-Comté, qui n'en vend pas sur Forever) à Neal Allen (Port de Menethil) ; prérequis ajouté à la suite de « Proche de la famille » chez Bolvar Fordragon (98191 après 98190).
+- Corrections en place : prérequis ajouté à la suite de « Proche de la famille » chez Bolvar Fordragon (98191 après 98190). L'achat du tube en bronze chez Herble Baubbletump, corrigé ici jusqu'à Polestar 0.3.6, l'est dans Polestar depuis la 0.3.7.2.
 - Une erreur de guide trouvée en jeu se corrige ici, et se signale aussi à Polestar.
 
 ## Obligations
