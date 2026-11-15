@@ -54,6 +54,8 @@ files["addon/**"] = {
         "GetCursorPosition",
         "GetCVar",
         "geterrorhandler",
+        "seterrorhandler",
+        "debugstack",
         "EquipItemByName",
         "date",
         "GetFactionInfoByID",

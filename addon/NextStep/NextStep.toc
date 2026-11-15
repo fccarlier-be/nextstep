@@ -11,6 +11,7 @@
 ## SavedVariablesPerCharacter: NextStepCharDB
 
 Core\Init.lua
+Core\Errors.lua
 Core\Locale.lua
 Locales\frFR.lua
 Core\Events.lua
