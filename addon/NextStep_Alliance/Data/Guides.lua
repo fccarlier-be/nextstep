@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.3.6 (67bf2ef63706, 2026-11-10). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.3.7.2 (19bd636e7d6f, 2026-11-12). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -260,7 +260,7 @@ G(function() return {
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Defias Rogue Wizards camp on the shores of {area:86}; they drop the Red Linen Bandanas too. {object:56} lies in the murloc village on the north-east shore.",
 			goals = {
-				{ t = "collect", quest = 83, item = 1019, count = 6, map = 1429, x = 72.5, y = 56.41, f = "e", note = "Red Linen Bandanas", fromNpcs = { { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 116, npcName = "Defias Bandit" }, { npc = 473, npcName = "Morgan the Collector" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 880, npcName = "Erlan Drudgemoor" } }, lvl = 9, oi = 1, spotsPacked = "73.3,55,,49,5,,10;76.4,48,,40,2,,10;71.3,76.7,,40,1;68.3,81.2,,40,2;48.3,87.2,,40,3,,10;47.5,74.1,,40,1;52.4,59.1,,40,3,,10;34.1,55.6,,40,1;30.1,57.9,,40,3;30.7,65,,40,4;25,58.5,,48,9;89.5,79.3,,40,8;73.6,51.2,,76,10,1,10;76.9,52.5,,40,2,1,10;73.5,46.7,,40,2,1,10;68.3,77.4,,40,4,1;70.9,80.5,,40,5,1,10;55.3,59.9,,40,1,1;50.1,82.8,,46,4,1,10;45.6,75.1,,43,4,1;47.5,81.2,,40,1,1;47.5,83.7,,53,4,1;29,60.5,,51,7,1,10", spread = true },
+				{ t = "collect", quest = 83, item = 1019, count = 6, map = 1429, x = 72.5, y = 56.41, f = "e", note = "Red Linen Bandanas", fromNpcs = { { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 116, npcName = "Defias Bandit" }, { npc = 473, npcName = "Morgan the Collector" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 880, npcName = "Erlan Drudgemoor" }, { npc = 881, npcName = "Surena Caledon" }, { npc = 6846, npcName = "Defias Dockmaster" }, { npc = 6866, npcName = "Defias Bodyguard" }, { npc = 6927, npcName = "Defias Dockworker" } }, fromNpcsAt = "1;1;2;2;7,8,9;2;2,1;4;2;2;2;2;1;1;1;2;2,3,5,6;2;2,1;2;2;2;1,2", lvl = 9, oi = 1, spotsPacked = "73.3,55,,49,5,,10;76.4,48,,40,2,,10;71.3,76.7,,40,1;68.3,81.2,,40,2;48.3,87.2,,40,3,,10;47.5,74.1,,40,1;52.4,59.1,,40,3,,10;34.1,55.6,,40,1;30.1,57.9,,40,3;30.7,65,,40,4;25,58.5,,48,9;89.5,79.3,,40,8;73.6,51.2,,76,10,1,10;76.9,52.5,,40,2,1,10;73.5,46.7,,40,2,1,10;68.3,77.4,,40,4,1;70.9,80.5,,40,5,1,10;55.3,59.9,,40,1,1;50.1,82.8,,46,4,1,10;45.6,75.1,,43,4,1;47.5,81.2,,40,1,1;47.5,83.7,,53,4,1;29,60.5,,51,7,1,10", spread = true },
 				{ t = "turnin", quest = 45, object = 56, map = 1429, x = 79.8, y = 55.5, z = 73.4, f = "e" },
 				{ t = "accept", minLevel = 7, quest = 71, object = 56, map = 1429, x = 79.8, y = 55.5, z = 73.4, f = "e", pre = { 45 }, qlvl = 10 },
 			},
@@ -283,7 +283,7 @@ G(function() return {
 		{
 			title = "{area:54}: kill these as you meet them",
 			only = { races = { "DWARF", "GNOME" } },
-			note = "The mine is south-west of the gnoll camps. {item:247816} lie near the entrance; Kobold Geomancers hold the tunnels.",
+			note = "The mine is south-west of the gnoll camps. {item:247816} lie near the entrance; Kobold Geomancers hold the tunnels.\nCareful: {npc:471} (7-10), the Mine Spiders (7-9) and {npc:248474} (7) are elites deep in the mine: pull the kobolds one at a time near the entrance and back out if an elite comes; they're easier with a friend.",
 			goals = {
 				{ t = "collect", quest = 91732, item = 247816, count = 4, map = 1429, x = 61.6, y = 53.3, f = "e", fromId = 562114, fromKind = "object", oi = 1, spotsPacked = "61.2,51.7,,40,6" },
 				{ t = "kill", quest = 91723, npc = 476, count = 8, map = 1429, x = 61.26, y = 51.66, z = 57.6, f = "e", note = "{npc:476} walks around {area:54}: look inside the circle on the map", lvl = 8, oi = 1, spotsPacked = "61.2,50.5,,29,2;63.2,56.8,,78,5", target = "Kobold Geomancer" },
@@ -375,7 +375,7 @@ G(function() return {
 			title = "Goretusk Snouts",
 			note = "Young Goretusks root in the fields along the road south from Saldean's to {area:108}: take their snouts on the way.",
 			goals = {
-				{ t = "collect", quest = 38, item = 731, count = 3, map = 1436, x = 50.42, y = 29.35, f = "e", fromNpcs = { { npc = 454, npcName = "Young Goretusk" }, { npc = 157, npcName = "Goretusk" } }, lvl = 15, oi = 3, spotsPacked = "50.4,29.4,,55,1,,13;42.5,26,,56,2,,13;33.7,31,,55,1;42.7,44.5,,64,3;48.3,52.6,,55,1;51.2,42,,78,5,,13;60.1,44.8,,73,6;62.4,25.7,,55,2,,13;58.6,13,,55,2,,13;55,64.3,,55,2;40.4,59.3,,55,2;35.2,80.1,,55,2;54.2,26.7,,55,1,1,13;49.9,36.8,,55,1,1,13;51.1,21.9,,61,4,1,13;44.1,31.3,,55,2,1,13;47.7,19.2,,55,2,1,13;52.4,17.6,,55,1,1,13;56.1,18.8,,70,3,1,13;57.1,39.2,,55,1,1,13;42.9,39.2,,55,2,1;60.3,32,,55,3,1,13;54.4,43.4,,82,6,1,13;40.3,33.5,,55,2,1;39.1,29.5,,68,3,1;37.8,25.9,,55,1,1,13;62.2,37.3,,55,2,1,13;38.9,41.1,,73,3,1;44.6,50.5,,69,5,1;34.6,35.7,,61,5,1;45.6,56.4,,55,4,1;50.7,59,,55,3,1;55.6,59.1,,55,2,1;47.2,62.2,,55,1,1;44,61.9,,78,4,1;36.3,59.1,,55,2,1;37.6,65,,55,2,1;36.2,70.7,,55,2,1;32.6,77.3,,60,3,1", spread = true },
+				{ t = "collect", quest = 38, item = 731, count = 3, map = 1436, x = 50.42, y = 29.35, f = "e", fromAlso = "Young Goretusk", fromAlsoId = 454, fromId = 157, fromKind = "npc", fromNpcs = { { npc = 454, npcName = "Young Goretusk" }, { npc = 157, npcName = "Goretusk" } }, lvl = 15, oi = 3, spotsPacked = "50.4,29.4,,55,1,,13;42.5,26,,56,2,,13;33.7,31,,55,1;42.7,44.5,,64,3;48.3,52.6,,55,1;51.2,42,,78,5,,13;60.1,44.8,,73,6;62.4,25.7,,55,2,,13;58.6,13,,55,2,,13;55,64.3,,55,2;40.4,59.3,,55,2;35.2,80.1,,55,2;54.2,26.7,,55,1,1,13;49.9,36.8,,55,1,1,13;51.1,21.9,,61,4,1,13;44.1,31.3,,55,2,1,13;47.7,19.2,,55,2,1,13;52.4,17.6,,55,1,1,13;56.1,18.8,,70,3,1,13;57.1,39.2,,55,1,1,13;42.9,39.2,,55,2,1;60.3,32,,55,3,1,13;54.4,43.4,,82,6,1,13;40.3,33.5,,55,2,1;39.1,29.5,,68,3,1;37.8,25.9,,55,1,1,13;62.2,37.3,,55,2,1,13;38.9,41.1,,73,3,1;44.6,50.5,,69,5,1;34.6,35.7,,61,5,1;45.6,56.4,,55,4,1;50.7,59,,55,3,1;55.6,59.1,,55,2,1;47.2,62.2,,55,1,1;44,61.9,,78,4,1;36.3,59.1,,55,2,1;37.6,65,,55,2,1;36.2,70.7,,55,2,1;32.6,77.3,,60,3,1", spread = true },
 			},
 		},
 		{
@@ -494,7 +494,7 @@ G(function() return {
 			along = "q153",
 			note = "Every Defias on this loop can drop a {item:829}: the Trappers and Smugglers, and the guards at {object:290}.",
 			goals = {
-				{ t = "collect", quest = 153, item = 829, count = 15, map = 1436, x = 60.61, y = 58.2, f = "e", note = "{quest:153}", fromNpcs = { { npc = 122, npcName = "Defias Highwayman" }, { npc = 121, npcName = "Defias Pathstalker" }, { npc = 449, npcName = "Defias Knuckleduster" }, { npc = 450, npcName = "Defias Renegade Mage" }, { npc = 481, npcName = "Defias Footpad" } }, lvl = 13, oi = 1, spotsPacked = "60.6,58.7,,40,3,,18;46.7,52.9,,40,2;50.5,41.3,,40,2,,12;41.3,40.7,,40,6;31.7,33.8,,40,8;29.6,49.8,,52,7,,15;38.4,57.5,,48,7,,15;42.7,69.7,,56,15,,15;37.2,81.5,,44,8,,19;52.4,78.3,,40,5,,18;44.4,25.2,,45,10;56.5,19.3,,40,4,,11;51.1,47,,40,4,1;51.9,74.3,,43,6,1,18;48.2,46,,64,10,1;50.8,39.6,,40,3,1;45.7,69.7,,59,8,1,15;49.7,78,,58,7,1,18;44,67.6,,47,13,1,15;46.4,38.2,,56,9,1;46.5,80,,41,4,1,18;38.8,69.6,,40,3,1,16;42.7,80.1,,40,2,1,18;38.7,73.4,,40,1,1,17;36.3,54.3,,48,9,1,15;40,79.4,,40,2,1,18;45.9,26.6,,40,4,1;37,75.5,,48,9,1,19;35.2,71.8,,40,1,1,17;42.2,88.4,,40,1,1,18;33,57.3,,40,5,1,15;49.2,19.7,,43,9,1,15;45.1,21.6,,40,6,1;45.8,18.9,,40,5,1,12;31.5,43.9,,40,6,1,15;29.9,46.6,,40,4,1,15", spread = true },
+				{ t = "collect", quest = 153, item = 829, count = 15, map = 1436, x = 60.61, y = 58.2, f = "e", note = "{quest:153}", fromNpcs = { { npc = 122, npcName = "Defias Highwayman" }, { npc = 121, npcName = "Defias Pathstalker" }, { npc = 449, npcName = "Defias Knuckleduster" }, { npc = 450, npcName = "Defias Renegade Mage" }, { npc = 481, npcName = "Defias Footpad" }, { npc = 589, npcName = "Defias Pillager" }, { npc = 95, npcName = "Defias Smuggler" }, { npc = 590, npcName = "Defias Looter" }, { npc = 504, npcName = "Defias Trapper" }, { npc = 502, npcName = "Benny Blaanco" }, { npc = 6180, npcName = "Defias Raider" } }, fromNpcsAt = "3,1;7,9;7;7,9;9;8,6;8,6;6,8;1,3,4;1,3;7,9;5;7,9;1,2;9,7;7,9;8,6;3,2,1;6,8;9,7;1,2,3;2,6;1;3;8,6;1;7,9;2,3,4;3;11;6;7,9,10;7,9;7;6,8;6,8", lvl = 13, oi = 1, spotsPacked = "60.6,58.7,,40,3,,18;46.7,52.9,,40,2;50.5,41.3,,40,2,,12;41.3,40.7,,40,6;31.7,33.8,,40,8;29.6,49.8,,52,7,,15;38.4,57.5,,48,7,,15;42.7,69.7,,56,15,,15;37.2,81.5,,44,8,,19;52.4,78.3,,40,5,,18;44.4,25.2,,45,10;56.5,19.3,,40,4,,11;51.1,47,,40,4,1;51.9,74.3,,43,6,1,18;48.2,46,,64,10,1;50.8,39.6,,40,3,1;45.7,69.7,,59,8,1,15;49.7,78,,58,7,1,18;44,67.6,,47,13,1,15;46.4,38.2,,56,9,1;46.5,80,,41,4,1,18;38.8,69.6,,40,3,1,16;42.7,80.1,,40,2,1,18;38.7,73.4,,40,1,1,17;36.3,54.3,,48,9,1,15;40,79.4,,40,2,1,18;45.9,26.6,,40,4,1;37,75.5,,48,9,1,19;35.2,71.8,,40,1,1,17;42.2,88.4,,40,1,1,18;33,57.3,,40,5,1,15;49.2,19.7,,43,9,1,15;45.1,21.6,,40,6,1;45.8,18.9,,40,5,1,12;31.5,43.9,,40,6,1,15;29.9,46.6,,40,4,1,15", spread = true },
 			},
 		},
 		{
@@ -528,7 +528,7 @@ G(function() return {
 			title = "The gnoll hills",
 			note = "North to the hills above {area:111}: Riverpaw Gnolls and Scouts (level 11-13) roam there, east toward the {area:916}. The gnolls further south and west are 13-19: stay in the north hills.\nCareful: Gnolls that stand close together tend to join a fight as a group. Pulling one at a time is safer.",
 			goals = {
-				{ t = "collect", quest = 102, item = 725, count = 8, map = 1436, x = 44.7, y = 14.6, f = "e", note = "Gnoll Paws", fromNpcs = { { npc = 117, npcName = "Riverpaw Gnoll" }, { npc = 500, npcName = "Riverpaw Scout" }, { npc = 1065, npcName = "Riverpaw Shaman" } }, lvl = 13, oi = 1, spotsPacked = "44.7,14.6,,71,13;41.7,20.6,,46,8,1;52.1,14.8,,40,5,1;38.1,28.3,,40,1,1,14;56.7,13.3,,41,9,1;39.5,32.1,,40,2,1,14;36.5,31.7,,40,1,1,18;33.9,28.7,,40,2,1,14" },
+				{ t = "collect", quest = 102, item = 725, count = 8, map = 1436, x = 44.7, y = 14.6, f = "e", note = "Gnoll Paws", fromNpcs = { { npc = 117, npcName = "Riverpaw Gnoll" }, { npc = 500, npcName = "Riverpaw Scout" }, { npc = 1065, npcName = "Riverpaw Shaman" }, { npc = 123, npcName = "Riverpaw Mongrel" }, { npc = 506, npcName = "Sergeant Brashclaw" } }, fromNpcsAt = "1,2;1,2,3;1,2;2,4;1,2;2,4;4,2,5;2,4", lvl = 13, oi = 1, spotsPacked = "44.7,14.6,,71,13;41.7,20.6,,46,8,1;52.1,14.8,,40,5,1;38.1,28.3,,40,1,1,14;56.7,13.3,,41,9,1;39.5,32.1,,40,2,1,14;36.5,31.7,,40,1,1,18;33.9,28.7,,40,2,1,14" },
 			},
 		},
 		{
@@ -560,7 +560,7 @@ G(function() return {
 			when = { { k = "has", item = 723, n = 8, neg = true } },
 			note = "Still short of eight? Young Goretusks root in the fields just west of {area:107}.",
 			goals = {
-				{ t = "collect", quest = 22, item = 723, count = 8, map = 1436, x = 54.15, y = 26.72, f = "e", fromNpcs = { { npc = 454, npcName = "Young Goretusk" } }, lvl = 13, oi = 1, spotsPacked = "54.15,26.72,,58,1;50.4,29.4,,45,1,1;50.6,23.4,,45,2,1;55.7,20.2,,45,2,1;51.9,19.4,,47,3,1;60.3,32,,48,3,1;56.9,16.1,,45,1,1;61.9,27.8,,45,1,1;49.9,36.8,,45,1,1;47.7,19.2,,45,2,1;62.9,23.6,,45,1,1;56.6,40.8,,45,2,1;53.6,41.6,,76,5,1;58.6,13,,45,2,1;44.1,31.3,,45,2,1;62.2,37.3,,45,2,1;49.3,41.9,,45,2,1;42.2,23.7,,45,1,1;41.9,29.1,,45,2,1;53,45.4,,45,3,1;39.4,33.8,,45,1,1;37.8,25.9,,45,1,1;37.4,30.7,,45,1,1;34.7,34.7,,52,3,1,15" },
+				{ t = "collect", quest = 22, item = 723, count = 8, map = 1436, x = 54.15, y = 26.72, f = "e", fromNpcs = { { npc = 454, npcName = "Young Goretusk" }, { npc = 157, npcName = "Goretusk" } }, fromNpcsAt = "1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1,2", lvl = 13, oi = 1, spotsPacked = "54.15,26.72,,58,1;50.4,29.4,,45,1,1;50.6,23.4,,45,2,1;55.7,20.2,,45,2,1;51.9,19.4,,47,3,1;60.3,32,,48,3,1;56.9,16.1,,45,1,1;61.9,27.8,,45,1,1;49.9,36.8,,45,1,1;47.7,19.2,,45,2,1;62.9,23.6,,45,1,1;56.6,40.8,,45,2,1;53.6,41.6,,76,5,1;58.6,13,,45,2,1;44.1,31.3,,45,2,1;62.2,37.3,,45,2,1;49.3,41.9,,45,2,1;42.2,23.7,,45,1,1;41.9,29.1,,45,2,1;53,45.4,,45,3,1;39.4,33.8,,45,1,1;37.8,25.9,,45,1,1;37.4,30.7,,45,1,1;34.7,34.7,,52,3,1,15" },
 			},
 		},
 		{
@@ -587,7 +587,7 @@ G(function() return {
 			when = { { k = "has", item = 829, n = 15, neg = true } },
 			note = "Still short of fifteen? Defias Trappers camp in the fields just west of {area:108}.",
 			goals = {
-				{ t = "collect", quest = 153, item = 829, count = 15, map = 1436, x = 48.53, y = 45.24, f = "e", note = "{quest:153}", fromNpcs = { { npc = 504, npcName = "Defias Trapper" }, { npc = 95, npcName = "Defias Smuggler" } }, lvl = 13, oi = 1, spotsPacked = "48.53,45.24,,86,10;51.1,47,,40,4,1;50.5,41.3,,40,2,1,12;50.8,39.6,,40,3,1;46.4,38.2,,56,9,1;46.7,52.9,,40,2,1;41.3,40.7,,40,6,1;45.9,26.6,,40,4,1;44.4,25.2,,45,10,1;45.1,21.6,,40,6,1;49.1,19.8,,48,8,1,15;45.8,18.9,,40,5,1,12;31.7,33.8,,40,8,1" },
+				{ t = "collect", quest = 153, item = 829, count = 15, map = 1436, x = 48.53, y = 45.24, f = "e", note = "{quest:153}", fromNpcs = { { npc = 504, npcName = "Defias Trapper" }, { npc = 95, npcName = "Defias Smuggler" }, { npc = 502, npcName = "Benny Blaanco" } }, fromNpcsAt = "2,1;2,1;2;2,1;1,2;2,1;2,1;2,1;2,1;2,1;2,1,3;2;1", lvl = 13, oi = 1, spotsPacked = "48.53,45.24,,86,10;51.1,47,,40,4,1;50.5,41.3,,40,2,1,12;50.8,39.6,,40,3,1;46.4,38.2,,56,9,1;46.7,52.9,,40,2,1;41.3,40.7,,40,6,1;45.9,26.6,,40,4,1;44.4,25.2,,45,10,1;45.1,21.6,,40,6,1;49.1,19.8,,48,8,1,15;45.8,18.9,,40,5,1,12;31.7,33.8,,40,8,1" },
 			},
 		},
 		{
@@ -722,7 +722,7 @@ G(function() return {
 			title = "{zone:1453}",
 			goals = {
 				{ t = "getfp", npc = 352, map = 1453, x = 71.29, y = 72.23, z = 109.7, location = "Stormwind", node = 2 },
-				{ t = "buy", only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, npc = 1313, item = 2449, count = 5, map = 1453, x = 55.9, y = 85.64, z = 98.4, optional = true, note = "{item:2449} for Gathering the Cure (6123) in {zone:1439}: {npc:1313}, Alchemy Supplies; herbalists pick it there instead" },
+				{ t = "buy", only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, npc = 1313, item = 2449, count = 5, map = 1453, x = 55.9, y = 85.64, z = 98.4, optional = true, note = "{item:2449} for Gathering the Cure (6123) in {zone:1439}: {npc:1313}, Alchemy Supplies; herbalists pick it there instead" },
 				{ t = "turnin", only = { races = { "HUMAN" } }, quest = 1097, npc = 1416, map = 1453, x = 59.73, y = 33.78, z = 95.4, note = "{npc:1416}, {object:28027}" },
 				{ t = "accept", minLevel = 9, only = { races = { "HUMAN" } }, quest = 353, npc = 1416, map = 1453, x = 59.73, y = 33.78, z = 95.4, note = "{npc:1416}: his package for {npc:1343} in {zone:1432}, later on the route", qlvl = 15 },
 				{ t = "accept", minLevel = 13, quest = 97894, npc = 7232, map = 1453, x = 59.4, y = 34.26, z = 95.4, note = "{npc:7232}, {object:28027}: for his brother in {area:442}", closedBy = { 982 }, qlvl = 17 },
@@ -1040,7 +1040,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 954, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e" },
 				{ t = "accept", minLevel = 7, only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 955, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e", pre = { 954 }, qlvl = 12 },
-				{ t = "collect", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 955, item = 5336, count = 8, map = 1439, x = 44.6, y = 36.6, f = "e", note = "Grell Earrings", fromNpcs = { { npc = 2189, npcName = "Vile Sprite" }, { npc = 2190, npcName = "Wild Grell" } }, lvl = 12, oi = 1, spotsPacked = "44.6,36.6,,99,6;44.7,38.5,,54,10,1;46,39.3,,61,10,1;46.9,37.8,,46,8,1;47.6,36.7,,51,6,1" },
+				{ t = "collect", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 955, item = 5336, count = 8, map = 1439, x = 44.6, y = 36.6, f = "e", note = "Grell Earrings", fromAlso = "Wild Grell", fromAlsoId = 2190, fromId = 2189, fromKind = "npc", fromNpcs = { { npc = 2189, npcName = "Vile Sprite" }, { npc = 2190, npcName = "Wild Grell" } }, lvl = 12, oi = 1, spotsPacked = "44.6,36.6,,99,6;44.7,38.5,,54,10,1;46,39.3,,61,10,1;46.9,37.8,,46,8,1;47.6,36.7,,51,6,1" },
 				{ t = "turnin", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 955, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e" },
 				{ t = "accept", minLevel = 7, only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 956, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e", pre = { 955 }, qlvl = 13 },
 				{ t = "collect", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 956, item = 5338, count = 1, map = 1439, x = 45.5, y = 36.5, f = "e", note = "{item:5338}: Deth'ryll Satyrs", fromId = 2212, fromKind = "npc", fromNpcs = { { npc = 2212, npcName = "Deth'ryll Satyr" } }, lvl = 13, oi = 1, spotsPacked = "45.5,36.5,,15,1;46.6,39.2,,15,1,1;45.4,39.7,,15,1,1;47.6,37.1,,33,3,1" },
@@ -1073,48 +1073,49 @@ G(function() return {
 		},
 		{
 			title = "{quest:26}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
-			note = "Fly from {area:442} to {area:702} and take the portal up to {npc:4217} in the {area:1658}.",
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
+			note = "Night Elves fly from {area:442} to {area:702}; Skyborne take the boat from the {area:442} dock and learn the Rut'theran flight path. Then take the portal up to {npc:4217} in the {area:1658}.",
 			goals = {
-				{ t = "fly", area = 702, location = "Rut'theran Village", node = 27 },
+				{ t = "fly", only = { races = { "NIGHTELF" } }, area = 702, location = "Rut'theran Village", node = 27 },
+				{ t = "getfp", only = { races = { "SKYBORNE" } }, npc = 3838, map = 1438, x = 58.4, y = 94.02, z = 23.3, f = "e", area = 702, location = "Rut'theran Village", node = 27 },
 			},
 		},
 		{
 			title = "{zone:1457}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			goals = {
 				{ t = "goto", map = 1457, x = 35.8, y = 11.6, f = "e", text = "{npc:4217}" },
 			},
 		},
 		{
 			title = "{quest:26}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			goals = {
-				{ t = "accept", minLevel = 16, only = { races = { "NIGHTELF" } }, quest = 26, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", qlvl = 16 },
-				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF" } }, quest = 6121, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", note = "{npc:4217}: {quest:6121}", qlvl = 14 },
+				{ t = "accept", minLevel = 16, only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 26, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", qlvl = 16 },
+				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6121, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", note = "{npc:4217}: {quest:6121}", qlvl = 14 },
 			},
 		},
 		{
 			title = "{zone:1450}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			goals = {
 				{ t = "goto", map = 1450, x = 56.3, y = 32.5, f = "e", text = "Cast {spell:18960}" },
 			},
 		},
 		{
 			title = "{quest:29}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			note = "{npc:11802} stands upstairs in his building in {area:2361}: go up inside, the arrow cannot tell the floors apart. Shrine Baubles lie in the containers on the floor of {area:656}, below {area:2361}: take one to the {area:2362} in the north-west, use it there and speak to {npc:11799}. {quest:29} runs on a timer: no teleport or Hearthstone until {npc:11799} has it. Then fly back to {area:442} from {area:2361}.",
 			goals = {
-				{ t = "turnin", only = { races = { "NIGHTELF" } }, quest = 26, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
-				{ t = "turnin", only = { races = { "NIGHTELF" } }, quest = 6121, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
-				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF" } }, quest = 6122, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", note = "{quest:6122}: fill the sampler at {area:445}", pre = { 6121 }, qlvl = 14 },
-				{ t = "accept", minLevel = 16, only = { races = { "NIGHTELF" } }, quest = 29, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", limit = 1800, pre = { 26 }, qlvl = 16 },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 26, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6121, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
+				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6122, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", note = "{quest:6122}: fill the sampler at {area:445}", pre = { 6121 }, qlvl = 14 },
+				{ t = "accept", minLevel = 16, only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 29, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", limit = 1800, pre = { 26 }, qlvl = 16 },
 				{ t = "collect", item = 15877, count = 1, map = 1450, x = 54.7, y = 46.4, f = "e", note = "{item:15877}, from a {object:177785} in the lake", fromId = 177785, fromKind = "object", spotsPacked = "52,49.3,,99,6;56.4,53.4,,63,3;60.5,58.3,,15,1,1" },
 				{ t = "use", item = 15877, map = 1450, x = 36, y = 41.4, f = "e", note = "At the {area:2362}" },
-				{ t = "complete", only = { races = { "NIGHTELF" } }, quest = 29, objs = { { count = 1, text = "Shrine Of Remulos" } } },
-				{ t = "turnin", only = { races = { "NIGHTELF" } }, quest = 29, npc = 11799, map = 1450, x = 36.52, y = 40.1, z = 469.2, f = "e" },
-				{ t = "accept", minLevel = 16, only = { races = { "NIGHTELF" } }, quest = 272, npc = 11799, map = 1450, x = 36.52, y = 40.1, z = 469.2, f = "e", note = "The half pendants lie in {zone:1439} and {zone:1436}: later on the route", pre = { 29 }, qlvl = 16 },
+				{ t = "complete", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 29, objs = { { count = 1, text = "Shrine Of Remulos" } } },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 29, npc = 11799, map = 1450, x = 36.52, y = 40.1, z = 469.2, f = "e" },
+				{ t = "accept", minLevel = 16, only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 272, npc = 11799, map = 1450, x = 36.52, y = 40.1, z = 469.2, f = "e", note = "The half pendants lie in {zone:1439} and {zone:1436}: later on the route", pre = { 29 }, qlvl = 16 },
 				{ t = "fly", area = 442, location = "Auberdine", node = 26 },
 			},
 		},
@@ -1147,10 +1148,10 @@ G(function() return {
 			goals = {
 				{ t = "use", quest = 4762, item = 12350, map = 1439, x = 50.8, y = 25.6, f = "e", oi = 1 },
 				{ t = "collect", quest = 4762, item = 12349, count = 1, map = 1439, x = 50.84, y = 25.63, f = "e", note = "{item:12349}, at the waterfall", fromId = 175371, fromKind = "object", oi = 1 },
-				{ t = "collect", only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, quest = 6122, item = 15845, count = 1, map = 1439, x = 54.92, y = 33.31, f = "e", note = "{item:15845}: at the mouth of the cave by the falls", fromId = 19463, fromKind = "object", oi = 1 },
+				{ t = "collect", only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, quest = 6122, item = 15845, count = 1, map = 1439, x = 54.92, y = 33.31, f = "e", note = "{item:15845}: at the mouth of the cave by the falls", fromId = 19463, fromKind = "object", oi = 1 },
 				{ t = "accept", minLevel = 12, quest = 4727, object = 176196, map = 1439, x = 53.11, y = 18.08, z = 0.6, f = "e", pre = { 4681 }, qlvl = 15 },
 				{ t = "accept", minLevel = 12, quest = 4725, object = 176197, map = 1439, x = 44.19, y = 20.6, z = 2.5, f = "e", pre = { 4681 }, qlvl = 15 },
-				{ t = "collect", quest = 1138, item = 12237, count = 6, map = 1439, x = 44.76, y = 21.8, f = "e", note = "{item:12237} from {npc:2233} and {npc:2235}, by this stop", fromNpcs = { { npc = 2235, npcName = "Reef Crawler" }, { npc = 2233, npcName = "Encrusted Tide Crawler" } }, lvl = 17, oi = 1, spotsPacked = "45.9,20.8,,87,6;48.2,20.8,,56,3;51.5,22.9,,65,4,,20;52,20.9,,48,2,,20;53,18.7,,69,5,,20;35.4,72.8,,48,4;36,75.2,,48,1;35.5,77.5,,48,1;32.2,81.3,,48,3,,20;32.6,83.3,,48,2,,20", spread = true },
+				{ t = "collect", quest = 1138, item = 12237, count = 6, map = 1439, x = 44.76, y = 21.8, f = "e", note = "{item:12237} from {npc:2233} and {npc:2235}, by this stop", fromAlso = "Reef Crawler", fromAlsoId = 2235, fromId = 2233, fromKind = "npc", fromNpcs = { { npc = 2235, npcName = "Reef Crawler" }, { npc = 2233, npcName = "Encrusted Tide Crawler" } }, lvl = 17, oi = 1, spotsPacked = "45.9,20.8,,87,6;48.2,20.8,,56,3;51.5,22.9,,65,4,,20;52,20.9,,48,2,,20;53,18.7,,69,5,,20;35.4,72.8,,48,4;36,75.2,,48,1;35.5,77.5,,48,1;32.2,81.3,,48,3,,20;32.6,83.3,,48,2,,20", spread = true },
 			},
 		},
 		{
@@ -1165,7 +1166,7 @@ G(function() return {
 				{ t = "turnin", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 985, npc = 3693, map = 1439, x = 39.37, y = 43.48, z = 14, f = "e" },
 				{ t = "turnin", quest = 4762, npc = 3649, map = 1439, x = 37.4, y = 40.13, z = 8.3, f = "e" },
 				{ t = "accept", minLevel = 15, quest = 4763, npc = 3649, map = 1439, x = 37.4, y = 40.13, z = 8.3, f = "e", pre = { 4762 }, qlvl = 18 },
-				{ t = "turnin", only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, quest = 6122, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e" },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, quest = 6122, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e" },
 				{ t = "use", item = 12346, map = 1439, x = 37.8, y = 44, f = "e" },
 				{ t = "collect", item = 12347, map = 1439, x = 37.78, y = 44.03, f = "e", note = "{item:12347}: fill the {item:12346} at the {object:174795}", fromId = 174795, fromKind = "object" },
 				{ t = "turnin", only = { races = { "DWARF", "GNOME", "HUMAN", "SKYBORNE" } }, quest = 4813, npc = 2930, map = 1439, x = 37.7, y = 43.41, z = 7.9, f = "e" },
@@ -1178,7 +1179,7 @@ G(function() return {
 		{
 			title = "{area:452}",
 			goals = {
-				{ t = "collect", quest = 1001, item = 5412, count = 3, map = 1439, x = 33.8, y = 38.4, f = "e", note = "Thresher Eyes; underwater", fromNpcs = { { npc = 2185, npcName = "Darkshore Thresher" } }, lvl = 14, oi = 1, spotsPacked = "33.8,38.4,,175,8;35.1,37,,72,5,1;32.8,42,,66,3,1;33.7,34.5,,102,7,1;34.7,30.1,,97,6,1;29.5,46.3,,63,1,1;36.4,28.3,,63,3,1;39.7,29.8,,63,1,1;35.9,24.2,,63,1,1;34.7,53.2,,63,2,1;31.6,56.4,,66,3,1;34.5,58.2,,76,5,1;32.1,59.4,,89,6,1" },
+				{ t = "collect", quest = 1001, item = 5412, count = 3, map = 1439, x = 33.8, y = 38.4, f = "e", note = "Thresher Eyes; underwater", fromAlso = "Elder Darkshore Thresher", fromAlsoId = 2187, fromId = 2185, fromKind = "npc", fromNpcs = { { npc = 2185, npcName = "Darkshore Thresher" } }, lvl = 14, oi = 1, spotsPacked = "33.8,38.4,,175,8;35.1,37,,72,5,1;32.8,42,,66,3,1;33.7,34.5,,102,7,1;34.7,30.1,,97,6,1;29.5,46.3,,63,1,1;36.4,28.3,,63,3,1;39.7,29.8,,63,1,1;35.9,24.2,,63,1,1;34.7,53.2,,63,2,1;31.6,56.4,,66,3,1;34.5,58.2,,76,5,1;32.1,59.4,,89,6,1" },
 			},
 		},
 		{
@@ -1212,7 +1213,7 @@ G(function() return {
 		},
 		{
 			title = "{quest:965}",
-			note = "East of Buzzbox 323, {npc:3661} hides at the foot of the tower among the Dark Strand Fanatics. Keep his letter for Delgren in {zone:1440}.",
+			note = "East of Buzzbox 323, {npc:3661} hides at the foot of the tower among the Dark Strand Fanatics. Keep his letter for Delgren in {zone:1440}.\nCareful: Dark Strand Voidcallers (28-29) with their voidwalkers and {npc:3660} (31) stand in the tower itself: take the parchments from the Fanatics south of it and keep away from the tower.",
 			goals = {
 				{ t = "turnin", quest = 965, npc = 3661, map = 1439, x = 54.97, y = 24.89, z = 34.6, f = "e" },
 				{ t = "accept", minLevel = 13, quest = 966, npc = 3661, map = 1439, x = 54.97, y = 24.89, z = 34.6, f = "e", pre = { 965 }, qlvl = 18 },
@@ -1376,7 +1377,7 @@ G(function() return {
 			note = "From the dock, up to the north end of the village first ({npc:3649}, {npc:3702} by the moonwell, {npc:2913}), then down the main street: the WANTED poster outside the inn, {npc:3693} at its east end, where the road leaves south. {npc:3694} stands beside {npc:3693} by the flight master; if she isn't there, she has been killed and respawns shortly: wait a moment.",
 			goals = {
 				{ t = "turnin", quest = 97926, npc = 3649, map = 1439, x = 37.4, y = 40.13, z = 8.3, f = "e", optional = true, note = "{npc:3649}, north end of the village: {npc:1646}'s reply" },
-				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, quest = 6123, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e", pre = { 6122 }, qlvl = 14 },
+				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, quest = 6123, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e", pre = { 6122 }, qlvl = 14 },
 				{ t = "accept", minLevel = 15, quest = 729, npc = 2913, map = 1439, x = 37.44, y = 41.84, z = 6.8, f = "e", qlvl = 20 },
 				{ t = "vendor", optional = true, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 } },
 				{ t = "accept", minLevel = 15, quest = 4740, object = 175320, map = 1439, x = 37.22, y = 44.22, z = 8.1, f = "e", note = "The WANTED poster", qlvl = 18 },
@@ -1401,18 +1402,18 @@ G(function() return {
 		},
 		{
 			title = "{item:15851} and {item:2449}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			note = "The Lunar Fungal Blooms grow in the moonkin caves in the hills just east of {area:442}; the moonkin there are irritable. {item:2449} needs {skill:182}: herbalists pick it all over {zone:1439}, anyone else brings it from {zone:1453} ({npc:1313}) or the Auction House.",
 			goals = {
-				{ t = "collect", only = { races = { "NIGHTELF" } }, quest = 6123, item = 2449, count = 5, map = 1439, x = 42.59, y = 71.93, f = "e", oi = 1, spotsPacked = "41.4,70.2,,184,5;44.4,62.9,,150,1;47.1,50.7,,150,2;42.7,46.4,,150,1;41.5,37.5,,150,2;59.6,27.2,,150,1;61.6,21.2,,150,1;39.2,80.9,,150,1;38.5,88.9,,150,1;33.8,90.4,,150,2;44,86.7,,150,2;45.6,92,,150,1;33.5,84.8,,150,2,1", spread = true },
-				{ t = "collect", only = { races = { "NIGHTELF" } }, quest = 6123, item = 15851, count = 12, map = 1439, x = 45.35, y = 53.25, f = "e", fromId = 177750, fromKind = "object", oi = 2, spotsPacked = "43.5,49.7,,43,4;46.5,45.8,,15,2;45.4,53.3,,15,1,1;45.7,50.3,,15,1,1;42.4,52.5,,15,1,1;43.2,45.8,,15,1,1" },
+				{ t = "collect", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6123, item = 2449, count = 5, map = 1439, x = 42.59, y = 71.93, f = "e", oi = 1, spotsPacked = "41.4,70.2,,184,5;44.4,62.9,,150,1;47.1,50.7,,150,2;42.7,46.4,,150,1;41.5,37.5,,150,2;59.6,27.2,,150,1;61.6,21.2,,150,1;39.2,80.9,,150,1;38.5,88.9,,150,1;33.8,90.4,,150,2;44,86.7,,150,2;45.6,92,,150,1;33.5,84.8,,150,2,1", spread = true },
+				{ t = "collect", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6123, item = 15851, count = 12, map = 1439, x = 45.35, y = 53.25, f = "e", fromId = 177750, fromKind = "object", oi = 2, spotsPacked = "43.5,49.7,,43,4;46.5,45.8,,15,2;45.4,53.3,,15,1,1;45.7,50.3,,15,1,1;42.4,52.5,,15,1,1;43.2,45.8,,15,1,1" },
 			},
 		},
 		{
 			title = "The {quest:952}",
 			note = "Grizzled Thistle Bears roam the hills around the Grove; {quest:1003} stands west of it among them.",
 			goals = {
-				{ t = "collect", quest = 1003, item = 5414, count = 4, map = 1439, x = 41.1, y = 81.3, f = "e", note = "Grizzled Scalps", fromNpcs = { { npc = 2165, npcName = "Grizzled Thistle Bear" } }, lvl = 17, oi = 1, spotsPacked = "41.1,81.3,,129,7;43,82.5,,47,1,1;38.4,81.7,,61,5,1;37.8,79.2,,47,2,1;39.7,76.1,,47,2,1;45.1,81.4,,47,1,1;38.7,70.5,,47,2,1" },
+				{ t = "collect", quest = 1003, item = 5414, count = 4, map = 1439, x = 41.1, y = 81.3, f = "e", note = "Grizzled Scalps", fromAlso = "Den Mother", fromAlsoId = 6788, fromId = 2165, fromKind = "npc", fromNpcs = { { npc = 2165, npcName = "Grizzled Thistle Bear" } }, lvl = 17, oi = 1, spotsPacked = "41.1,81.3,,129,7;43,82.5,,47,1,1;38.4,81.7,,61,5,1;37.8,79.2,,47,2,1;39.7,76.1,,47,2,1;45.1,81.4,,47,1,1;38.7,70.5,,47,2,1" },
 				{ t = "turnin", quest = 1003, object = 17185, map = 1439, x = 41.39, y = 80.56, z = 49.2, f = "e" },
 			},
 		},
@@ -1420,9 +1421,9 @@ G(function() return {
 			title = "{quest:944}",
 			note = "Moonstalker Sires prowl the woods around the glaive. The {object:12666} sits at the bottom of the crater; {npc:3584} stands on its north side. For {quest:948}'s quest, use the {item:5251} at the bottom of the crater: it makes the {object:10076}, and you hand the quest in to the bowl.",
 			goals = {
-				{ t = "collect", quest = 986, item = 5386, count = 5, map = 1439, x = 39.89, y = 81.36, f = "e", note = "Fine Moonstalker Pelts", fromNpcs = { { npc = 2237, npcName = "Moonstalker Sire" }, { npc = 2071, npcName = "Moonstalker Matriarch" } }, lvl = 18, oi = 1, spotsPacked = "40.6,82.5,,80,3;43.7,81.8,,83,6;42.8,89.4,,64,2,,20;44.7,92,,64,1;39.5,90.9,,66,4,,20;39.3,94.5,,64,1;36.2,90.1,,97,4,,20;36.9,83,,64,2;38.3,77.2,,64,1;39.8,70.7,,64,1;60.7,12.3,,68,5,,20;62.7,7,,64,2,,20;37.4,92.7,,64,2,1,20", spread = true },
+				{ t = "collect", quest = 986, item = 5386, count = 5, map = 1439, x = 39.89, y = 81.36, f = "e", note = "Fine Moonstalker Pelts", fromAlso = "Moonstalker Sire", fromAlsoId = 2237, fromId = 2071, fromKind = "npc", fromNpcs = { { npc = 2237, npcName = "Moonstalker Sire" }, { npc = 2071, npcName = "Moonstalker Matriarch" } }, lvl = 18, oi = 1, spotsPacked = "40.6,82.5,,80,3;43.7,81.8,,83,6;42.8,89.4,,64,2,,20;44.7,92,,64,1;39.5,90.9,,66,4,,20;39.3,94.5,,64,1;36.2,90.1,,97,4,,20;36.9,83,,64,2;38.3,77.2,,64,1;39.8,70.7,,64,1;60.7,12.3,,68,5,,20;62.7,7,,64,2,,20;37.4,92.7,,64,2,1,20", spread = true },
 				{ t = "accept", minLevel = 10, quest = 945, npc = 3584, map = 1439, x = 38.64, y = 87.33, z = 33.9, f = "e", escort = true, qlvl = 18 },
-				{ t = "complete", quest = 945, note = "Escort her out of the glaive; Therysil takes the turn-in in {zone:1440}", escort = true, objs = { { count = 1, text = "Escort Therylune away from the Master's Glaive" } } },
+				{ t = "complete", quest = 945, note = "Escort her out of the glaive; Therysil takes the turn-in in {zone:1440}", carriedTo = "forever/alliance/06-ashenvale", escort = true, objs = { { count = 1, text = "Escort Therylune away from the Master's Glaive" } } },
 				{ t = "accept", minLevel = 10, quest = 968, item = 5352, optional = true, note = "Only if a Disciple or Thug dropped {item:5352}: right-click it", qlvl = 18 },
 				{ t = "complete", quest = 944, objs = { { count = 1, text = "Enter the Master's Glaive" } }, startItem = 5251, startItemName = "Phial of Scrying" },
 				{ t = "turnin", quest = 944, object = 10076, map = 1439, x = 38.6, y = 86.2, f = "e", note = "The {object:10076}" },
@@ -1487,8 +1488,8 @@ G(function() return {
 				{ t = "turnin", quest = 4740, npc = 2930, map = 1439, x = 37.7, y = 43.41, z = 7.9, f = "e" },
 				{ t = "accept", minLevel = 18, quest = 98461, npc = 2913, map = 1439, x = 37.44, y = 41.84, z = 6.8, f = "e", optional = true, qlvl = 21 },
 				{ t = "turnin", quest = 731, npc = 2913, map = 1439, x = 37.44, y = 41.84, z = 6.8, f = "e" },
-				{ t = "turnin", only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, quest = 6123, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e" },
-				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, quest = 6124, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e", note = "She gives you the {item:15826}", pre = { 6123 }, qlvl = 14 },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, quest = 6123, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e" },
+				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, quest = 6124, npc = 3702, map = 1439, x = 37.69, y = 40.66, z = 9.1, f = "e", note = "She gives you the {item:15826}", pre = { 6123 }, qlvl = 14 },
 				{ t = "turnin", quest = 98042, npc = 3649, map = 1439, x = 37.4, y = 40.13, z = 8.3, f = "e" },
 				{ t = "turnin", quest = 986, npc = 3693, map = 1439, x = 39.37, y = 43.48, z = 14, f = "e" },
 				{ t = "accept", minLevel = 10, quest = 993, npc = 3693, map = 1439, x = 39.37, y = 43.48, z = 14, f = "e", pre = { 986 }, qlvl = 20 },
@@ -1526,7 +1527,7 @@ G(function() return {
 		},
 		{
 			title = "{object:177792}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 272 } } },
 			goals = {
 				{ t = "collect", item = 15883, count = 1, map = 1439, x = 48.87, y = 11.32, f = "e", note = "{item:15883}: the {object:177792} under the water off the north coast, west of the ruins", fromId = 177792, fromKind = "object" },
@@ -1556,7 +1557,7 @@ G(function() return {
 				{ t = "turnin", quest = 993, npc = 3692, map = 1439, x = 45.01, y = 85.3, z = 69.7, f = "e", note = "{npc:3692}, inside {area:455}" },
 				{ t = "accept", minLevel = 10, quest = 994, npc = 3692, map = 1439, x = 45.01, y = 85.3, z = 69.7, f = "e", closedBy = { 995 }, escort = true, pre = { 993 }, qlvl = 22 },
 				{ t = "complete", quest = 994, map = 1439, x = 41.7, y = 81.5, f = "e", note = "His walk ends at the road, where Grimclaw waits", escort = true, objs = { { count = 1, text = "Help Volcor to the road" } } },
-				{ t = "kill", only = { races = { "NIGHTELF" }, classes = { "DRUID" } }, quest = 6124, npc = 12298, count = 10, map = 1439, x = 40.3, y = 81.84, z = 50.9, f = "e", note = "{npc:12298}: use the {item:15826} on them; they roam all of {zone:1439}", text = "Cure {npc:12298}", lvl = 5, oi = 1, spotsPacked = "39,79.8,,207,4;43.5,77.8,,123,2;41.9,89.1,,123,2;36.5,89.4,,173,4;43.5,65.5,,123,2;39.3,58.9,,196,4;40.7,49.4,,155,5;45.2,50.1,,147,4;46.7,42.1,,167,6;41.8,38.5,,238,6;49.9,34.3,,149,5;45.2,25.7,,123,3;43.5,83.4,53.4,123,1,1;40.8,70.8,,145,4,1;45.4,32.3,,123,3,1;49.4,28.6,38.5,128,3,1", spread = true, target = "Sickly Deer" },
+				{ t = "kill", only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } }, quest = 6124, npc = 12298, count = 10, map = 1439, x = 40.3, y = 81.84, z = 50.9, f = "e", note = "{npc:12298}: use the {item:15826} on them; they roam all of {zone:1439}", text = "Cure {npc:12298}", lvl = 5, oi = 1, spotsPacked = "39,79.8,,207,4;43.5,77.8,,123,2;41.9,89.1,,123,2;36.5,89.4,,173,4;43.5,65.5,,123,2;39.3,58.9,,196,4;40.7,49.4,,155,5;45.2,50.1,,147,4;46.7,42.1,,167,6;41.8,38.5,,238,6;49.9,34.3,,149,5;45.2,25.7,,123,3;43.5,83.4,53.4,123,1,1;40.8,70.8,,145,4,1;45.4,32.3,,123,3,1;49.4,28.6,38.5,128,3,1", spread = true, target = "Sickly Deer" },
 			},
 		},
 		{
@@ -1611,8 +1612,8 @@ G(function() return {
 			goals = {
 				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 98393, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
 				{ t = "accept", minLevel = 20, only = { races = { "NIGHTELF" } }, quest = 98394, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", pre = { 98393 }, qlvl = 20 },
-				{ t = "turnin", only = { races = { "NIGHTELF" } }, quest = 6124, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
-				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF" } }, quest = 6125, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", pre = { 6124 }, qlvl = 14 },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6124, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e" },
+				{ t = "accept", minLevel = 14, only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6125, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", pre = { 6124 }, qlvl = 14 },
 				{ t = "accept", minLevel = 20, only = { races = { "SKYBORNE" } }, quest = 98341, npc = 11802, map = 1450, x = 56.21, y = 30.64, z = 524.5, f = "e", pre = { 98340, 98393 }, qlvl = 20 },
 			},
 		},
@@ -1678,7 +1679,7 @@ G(function() return {
 			note = "Take the portal up to {npc:4217}, then fly back to {area:442} for the road south to {zone:1440}.",
 			goals = {
 				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 98397, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", note = "{npc:4217}: {spell:499}" },
-				{ t = "turnin", only = { races = { "NIGHTELF" } }, quest = 6125, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", note = "{npc:4217}: {spell:526}" },
+				{ t = "turnin", only = { races = { "NIGHTELF", "SKYBORNE" } }, quest = 6125, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", note = "{npc:4217}: {spell:526}" },
 				{ t = "fly", area = 442, location = "Auberdine", node = 26 },
 			},
 		},
@@ -2030,10 +2031,22 @@ G(function() return {
 			},
 		},
 		{
-			title = "Elder Mountain Boars, {npc:270693} and the loch crocolisks",
-			note = "The Elder Mountain Boars roam the hills north-west of the lodge, along the east shore: {quest:258} runs for 12 minutes, so the boars come first. {npc:270693}, a crocolisk, patrols the shore below them among the Loch Crocolisks.",
+			title = "Elder Mountain Boars",
+			note = "The Elder Mountain Boars roam the hills north-west of the lodge, along the east shore. {quest:258} runs for 12 minutes: kill five and go straight back to Daryl; the crocolisks come after.",
 			goals = {
 				{ t = "kill", quest = 258, npc = 1192, count = 5, map = 1432, x = 74.78, y = 50.69, z = 340.8, f = "e", lvl = 17, oi = 1, spotsPacked = "74.8,50.7,340.8,40,1;76.5,46.9,,40,2;74.8,42.1,323.9,40,1;70.1,37.8,332.1,40,1;66.2,40,321.2,43,6;63.2,35.1,311.4,40,1;60.3,35.1,,40,2;61.6,39.4,304,53,5", spread = true, target = "Elder Mountain Boar" },
+			},
+		},
+		{
+			title = "{npc:1187}",
+			goals = {
+				{ t = "turnin", quest = 258, npc = 1187, map = 1432, x = 83.47, y = 65.46, z = 407.8, f = "e" },
+			},
+		},
+		{
+			title = "{npc:270693} and the loch crocolisks",
+			note = "Back down to the east shore below the boars' hills: {npc:270693}, a crocolisk, patrols it among the Loch Crocolisks.",
+			goals = {
 				{ t = "collect", quest = 86758, item = 279591, count = 1, map = 1432, x = 66.73, y = 51.62, f = "e", note = "{item:279591}: {npc:270693}", fromId = 270693, fromKind = "npc", fromNpcs = { { npc = 270693, npcName = "Daggerfang" } }, lvl = 15, oi = 1, spotsPacked = "63.1,51.3,,61,11;63,45.9,,59,16;60.8,41.5,,66,9;63.6,38.1,,15,2;58.9,36.3,,62,10;66.7,51.6,,15,1,1;66.2,47.6,,15,1,1" },
 				{ t = "collect", quest = 385, item = 2924, count = 5, map = 1432, x = 62.44, y = 51.52, f = "e", note = "{item:2924}: Loch Crocolisks", fromNpcs = { { npc = 1693, npcName = "Loch Crocolisk" }, { npc = 2476, npcName = "Large Loch Crocolisk" } }, lvl = 15, oi = 1, spotsPacked = "62.4,51.5,,40,1;58.8,57.6,,40,1;55.1,53.9,,49,6;61,43.6,,45,3;59.5,38.2,,40,2,,22;56.2,36.8,,58,6;53.8,39.6,,44,5;51.2,34.9,,40,1;58.2,31.4,,40,2,,22;57.8,22.9,,40,2", spread = true },
 				{ t = "collect", quest = 385, item = 2925, count = 6, map = 1432, x = 62.44, y = 51.52, f = "e", fromNpcs = { { npc = 1693, npcName = "Loch Crocolisk" }, { npc = 2476, npcName = "Large Loch Crocolisk" } }, lvl = 15, oi = 2, spotsPacked = "62.4,51.5,,40,1;58.8,57.6,,40,1;55.1,53.9,,49,6;61,43.6,,45,3;59.5,38.2,,40,2,,22;56.2,36.8,,58,6;53.8,39.6,,44,5;51.2,34.9,,40,1;58.2,31.4,,40,2,,22;57.8,22.9,,40,2", spread = true },
@@ -2042,7 +2055,6 @@ G(function() return {
 		{
 			title = "{area:147}",
 			goals = {
-				{ t = "turnin", quest = 258, npc = 1187, map = 1432, x = 83.47, y = 65.46, z = 407.8, f = "e" },
 				{ t = "turnin", quest = 86758, npc = 1154, map = 1432, x = 81.76, y = 61.66, z = 408, f = "e", note = "{npc:1154}, inside" },
 				{ t = "turnin", quest = 385, npc = 1154, map = 1432, x = 81.76, y = 61.66, z = 408, f = "e" },
 			},
@@ -2190,7 +2202,7 @@ G(function() return {
 				{ t = "collect", quest = 98407, item = 280911, count = 5, map = 1433, x = 10.86, y = 67.44, note = "{item:280911}: Redridge Thrashers", fromId = 712, fromKind = "npc", fromNpcs = { { npc = 712, npcName = "Redridge Thrasher" } }, lvl = 15, oi = 1, spotsPacked = "10.3,66.9,,41,5;10.4,62.2,,40,3;23,80.9,,40,2,1", spread = true },
 				{ t = "kill", quest = 246, npc = 423, count = 10, map = 1433, x = 10.48, y = 66.59, z = 73.1, lvl = 16, oi = 1, spotsPacked = "10.5,62.9,,54,8;25.8,83.2,69.8,40,6;29.4,82.9,68.9,40,1;35,73,64,40,1;38.9,71.7,59.7,40,2", spread = true, target = "Redridge Mongrel" },
 				{ t = "kill", quest = 246, npc = 424, count = 6, map = 1433, x = 23.25, y = 79.41, z = 59.5, lvl = 17, oi = 2, spotsPacked = "26.1,80.8,61.8,66,6;24.7,84.1,58.7,25,3;29.9,83.3,69.9,15,2;37.6,71.4,59.8,31,4", target = "Redridge Poacher" },
-				{ t = "collect", quest = 92, item = 2296, count = 5, map = 1433, x = 23.23, y = 79.34, fromNpcs = { { npc = 547, npcName = "Great Goretusk" }, { npc = 345, npcName = "Bellygrub" } }, lvl = 17, oi = 1, spotsPacked = "22.7,77.4,,69,6;27.3,69.6,,59,5;28.9,61.1,,43,1;20.3,60.5,,43,1;13.6,71.9,,43,2;11.5,51.6,,69,7,,24;14.1,41.8,,43,2;33.3,73.3,,43,1;43.5,25.3,,43,1;40.1,20.5,,43,1;40,15.9,,62,3;41.3,10.4,,43,1", spread = true },
+				{ t = "collect", quest = 92, item = 2296, count = 5, map = 1433, x = 23.23, y = 79.34, fromAlso = "Bellygrub", fromAlsoId = 345, fromId = 547, fromKind = "npc", fromNpcs = { { npc = 547, npcName = "Great Goretusk" }, { npc = 345, npcName = "Bellygrub" } }, lvl = 17, oi = 1, spotsPacked = "22.7,77.4,,69,6;27.3,69.6,,59,5;28.9,61.1,,43,1;20.3,60.5,,43,1;13.6,71.9,,43,2;11.5,51.6,,69,7,,24;14.1,41.8,,43,2;33.3,73.3,,43,1;43.5,25.3,,43,1;40.1,20.5,,43,1;40,15.9,,62,3;41.3,10.4,,43,1", spread = true },
 				{ t = "collect", quest = 92, item = 1080, count = 5, map = 1433, x = 30.37, y = 70.23, fromId = 428, fromKind = "npc", fromNpcs = { { npc = 428, npcName = "Dire Condor" } }, lvl = 19, oi = 2, spotsPacked = "30.4,70.2,,49,1;40.9,77.5,,49,1;45.6,74.7,,49,1;51.8,75.6,,64,4;57.1,77,,49,3;51.1,45.5,,49,2;49.5,40.2,,59,3;41.7,33.9,,103,5", spread = true },
 				{ t = "collect", quest = 92, item = 1081, count = 5, map = 1433, x = 29.93, y = 75.08, note = "{item:1081}: Tarantulas", fromNpcs = { { npc = 442, npcName = "Tarantula" }, { npc = 505, npcName = "Greater Tarantula" }, { npc = 616, npcName = "Chatter" } }, lvl = 16, oi = 3, spotsPacked = "29.9,75.1,,40,1;21.5,75.8,,40,1;16.5,66.3,,40,3;13.7,71.7,,40,2;7.8,74.2,,40,2;8.2,83.7,,40,2;4.4,85.7,,40,2;7.3,93.2,,40,2;48.6,44.1,,74,10,,23;52.2,47.3,,40,3,,23;46.6,34.5,,40,3,,23;62.1,76.6,,40,1,,20;17.7,76.3,,40,1,1;5.8,78.2,,49,6,1;44.9,39.5,,50,6,1,23;48.6,37.9,,40,5,1,23", spread = true },
 			},
@@ -2208,7 +2220,7 @@ G(function() return {
 			note = "Back toward town, swim east from the bridge into {area:68}; the chest lies on the lake bed beside a sunken boat. Murloc Flesheaters and Tidecallers line the south shore around it: any of them can carry a {item:1467}.",
 			goals = {
 				{ t = "collect", quest = 125, item = 1309, count = 1, map = 1433, x = 36.43, y = 54.66, note = "{item:1309}; underwater", fromId = 32, fromKind = "object", oi = 1 },
-				{ t = "collect", quest = 127, item = 1467, count = 10, map = 1433, x = 35.67, y = 55.64, fromNpcs = { { npc = 422, npcName = "Murloc Flesheater" }, { npc = 544, npcName = "Murloc Nightcrawler" }, { npc = 545, npcName = "Murloc Tidecaller" }, { npc = 548, npcName = "Murloc Minor Tidecaller" }, { npc = 578, npcName = "Murloc Scout" } }, lvl = 20, oi = 1, spotsPacked = "33.7,54.5,,72,12;35.9,48,,54,26;40.2,51.8,,47,10;44.4,55.5,,44,4,,19;51.7,53.2,,64,26;53.4,61.3,,70,32;44.7,67.3,,57,7,,19;43.2,70.1,,89,28,,19;36.3,64,,65,5,,19;76.2,60.4,,40,13,,22", spread = true },
+				{ t = "collect", quest = 127, item = 1467, count = 10, map = 1433, x = 35.67, y = 55.64, fromNpcs = { { npc = 422, npcName = "Murloc Flesheater" }, { npc = 544, npcName = "Murloc Nightcrawler" }, { npc = 545, npcName = "Murloc Tidecaller" }, { npc = 548, npcName = "Murloc Minor Tidecaller" }, { npc = 578, npcName = "Murloc Scout" }, { npc = 14270, npcName = "Squiddic" }, { npc = 1083, npcName = "Murloc Shorestriker" } }, fromNpcsAt = "6,3,5,1,4;3,5,1,4,6;6,1,4,3,5;6;3,5;1,4,3,5;7,6,1,4;6,7,1,4;6;3,5,2", lvl = 20, oi = 1, spotsPacked = "33.7,54.5,,72,12;35.9,48,,54,26;40.2,51.8,,47,10;44.4,55.5,,44,4,,19;51.7,53.2,,64,26;53.4,61.3,,70,32;44.7,67.3,,57,7,,19;43.2,70.1,,89,28,,19;36.3,64,,65,5,,19;76.2,60.4,,40,13,,22", spread = true },
 			},
 		},
 		{
@@ -2711,7 +2723,7 @@ G(function() return {
 		},
 		{
 			title = "Fly to {area:108}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 272 } } },
 			goals = {
 				{ t = "goto", map = 1453, x = 66.3, y = 62.7, f = "e", text = "{zone:1453} flight master" },
@@ -2720,7 +2732,7 @@ G(function() return {
 		},
 		{
 			title = "{item:15882}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 272 } } },
 			note = "Fly to {area:108} and head north-west to the coast: the {object:177790} lies on the sea floor off the shore. Then head east along the road through Elwynn.",
 			goals = {
@@ -2755,7 +2767,7 @@ G(function() return {
 				{ t = "use", only = { races = { "HUMAN" } }, quest = 1786, item = 6866, map = 1429, x = 72.6, y = 51.41, f = "e", note = "Use the {item:6866} on {npc:6172}", oi = 1 },
 				{ t = "turnin", only = { races = { "HUMAN" } }, quest = 1786, npc = 6172, map = 1429, x = 72.6, y = 51.41, z = 76.2, f = "e" },
 				{ t = "accept", minLevel = 12, only = { races = { "HUMAN" } }, quest = 1787, npc = 6172, map = 1429, x = 72.6, y = 51.41, z = 76.2, f = "e", pre = { 1786 }, qlvl = 13 },
-				{ t = "collect", only = { races = { "HUMAN" } }, quest = 1787, item = 6846, count = 1, map = 1429, x = 71.74, y = 52.03, f = "e", note = "{item:6846}: Defias Rogue Wizards", fromAlso = "Defias Rogue Wizard", fromAlsoId = 474, fromId = 6866, fromKind = "npc", fromNpcs = { { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 6866, npcName = "Defias Bodyguard" } }, lvl = 10, oi = 1, spotsPacked = "73.6,51.2,,76,10;73.3,55,,49,5;76.9,52.5,,40,2;76.4,48,,40,2;73.5,46.7,,40,2;52.7,59,,40,1;50.7,83.2,,40,1;48.2,87.4,,40,1;29,61.3,,44,5", spread = true },
+				{ t = "collect", only = { races = { "HUMAN" } }, quest = 1787, item = 6846, count = 1, map = 1429, x = 71.74, y = 52.03, f = "e", note = "{item:6846}: Defias Rogue Wizards", carriedTo = "forever/alliance/05-duskwood", fromAlso = "Defias Rogue Wizard", fromAlsoId = 474, fromId = 6866, fromKind = "npc", fromNpcs = { { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 6866, npcName = "Defias Bodyguard" } }, lvl = 10, oi = 1, spotsPacked = "73.6,51.2,,76,10;73.3,55,,49,5;76.9,52.5,,40,2;76.4,48,,40,2;73.5,46.7,,40,2;52.7,59,,40,1;50.7,83.2,,40,1;48.2,87.4,,40,1;29,61.3,,44,5", spread = true },
 			},
 		},
 		{
@@ -2773,7 +2785,7 @@ G(function() return {
 		},
 		{
 			title = "{area:42}",
-			note = "Follow the road south from {area:1002} into {zone:1431}; {area:42} lies on the east side of the forest.\nNo {item:4371} for {quest:174}? {npc:3133}, in the house beside {npc:276}, keeps only one and is usually sold out. Without one, right-click the quest in the guide window and skip it.\n{npc:276}'s house stands at the east end of town. {npc:3133} sells engineering goods in the house beside it.",
+			note = "Follow the road south from {area:1002} into {zone:1431}; {area:42} lies on the east side of the forest.\nNo {item:4371} for {quest:174}? {npc:3133}, in the house beside {npc:276}, is nearly always sold out. Without one, right-click the quest in the guide window and skip it.",
 			goals = {
 				{ t = "getfp", npc = 2409, map = 1431, x = 77.49, y = 44.29, z = 41.5, f = "e", note = "{npc:2409}, at the north end of town", area = 42, location = "Darkshire", node = 12 },
 				{ t = "accept", minLevel = 18, quest = 101, npc = 265, map = 1431, x = 75.79, y = 45.32, z = 28.1, f = "e", note = "{npc:265}, in her house by the tavern; inside", qlvl = 25 },
@@ -2785,7 +2797,6 @@ G(function() return {
 				{ t = "accept", minLevel = 17, quest = 164, npc = 633, map = 1431, x = 75.34, y = 48.75, z = 28.5, f = "e", note = "{npc:633}, at the south end of town; inside", closedBy = { 95 }, qlvl = 23 },
 				{ t = "accept", minLevel = 17, quest = 165, npc = 633, map = 1431, x = 75.34, y = 48.75, z = 28.5, f = "e", closedBy = { 148 }, qlvl = 25 },
 				{ t = "accept", minLevel = 17, quest = 163, npc = 633, map = 1431, x = 75.34, y = 48.75, z = 28.5, f = "e", note = "{npc:633}: {npc:288}, at {quest:163}", closedBy = { 5 }, qlvl = 20 },
-				{ t = "buy", npc = 3133, item = 4371, count = 1, map = 1431, x = 77.99, y = 48.33, z = 37.1, f = "e", optional = true, note = "{item:4371}, from {npc:3133}, if you have none" },
 				{ t = "accept", minLevel = 20, quest = 174, npc = 276, map = 1431, x = 79.8, y = 48.02, z = 50.4, f = "e", note = "{npc:276}, inside", qlvl = 25 },
 				{ t = "turnin", quest = 174, npc = 276, map = 1431, x = 79.8, y = 48.02, z = 50.4, f = "e" },
 				{ t = "accept", minLevel = 20, quest = 175, npc = 276, map = 1431, x = 79.8, y = 48.02, z = 50.4, f = "e", note = "For {npc:302}, on the hill south-east of town", pre = { 174 }, qlvl = 25 },
@@ -2829,11 +2840,11 @@ G(function() return {
 			title = "{area:1097}: kill these as you meet them",
 			note = "Rabid Dire Wolves roam the woods around the cemetery and {npc:289}, Starving Dire Wolves the hills north-east of him. Pygmy Venom Web Spiders are the small spiders, and few: most crawl along the {area:1097} west of {quest:163}, fewer up north towards {npc:311}'s camp; they drop the venom too. Every ghoul of the cemetery's northern half can drop a fang. Wolves and the bigger spiders share the {zone:1436} border, so pull with care.",
 			goals = {
-				{ t = "kill", quest = 226, npc = 565, count = 8, map = 1431, x = 11.02, y = 32.27, z = 41.9, f = "e", lvl = 21, oi = 2, spotsPacked = "11.9,32.1,,45,3;15.2,27.6,,46,5;20.5,27.4,33.3,66,7;34.1,27.8,35.3,44,3;38.9,23.9,31.8,48,3;55.5,19,,44,2;61.5,19.5,36.4,44,1;66.8,20.3,32.8,46,3;9.7,40.5,26.1,44,1;10.7,51.6,28.3,44,1;11.1,59.1,,44,2;12.9,69.2,39.7,44,1;10,46.4,28.5,44,1,1", spread = true, target = "Rabid Dire Wolf" },
-				{ t = "kill", quest = 226, npc = 213, count = 12, map = 1431, x = 10.82, y = 29.53, z = 28.4, f = "e", lvl = 20, oi = 1, spotsPacked = "11.7,28.9,,41,2;17.7,23.4,30.4,45,3;23.3,27.2,25.1,61,4;29.3,26.7,,62,5;33.4,24.5,28.2,61,5;36.9,20.6,,58,5;41.9,19.7,,57,4;45.8,17.6,,41,2;58.3,16.2,,41,2;63.9,17.1,30,41,1;77.1,19.1,29.6,41,1;86.2,16.2,28.8,41,1;10.7,47.9,33.5,41,1,1;12.6,66.8,39.1,41,1,1;80.4,18.7,30.7,41,1,1", spread = true, target = "Starving Dire Wolf" },
+				{ t = "kill", quest = 226, npc = 565, count = 8, map = 1431, x = 11.02, y = 32.27, z = 41.9, f = "e", carriedTo = "forever/alliance/05-duskwood", lvl = 21, oi = 2, spotsPacked = "11.9,32.1,,45,3;15.2,27.6,,46,5;20.5,27.4,33.3,66,7;34.1,27.8,35.3,44,3;38.9,23.9,31.8,48,3;55.5,19,,44,2;61.5,19.5,36.4,44,1;66.8,20.3,32.8,46,3;9.7,40.5,26.1,44,1;10.7,51.6,28.3,44,1;11.1,59.1,,44,2;12.9,69.2,39.7,44,1;10,46.4,28.5,44,1,1", spread = true, target = "Rabid Dire Wolf" },
+				{ t = "kill", quest = 226, npc = 213, count = 12, map = 1431, x = 10.82, y = 29.53, z = 28.4, f = "e", carriedTo = "forever/alliance/05-duskwood", lvl = 20, oi = 1, spotsPacked = "11.7,28.9,,41,2;17.7,23.4,30.4,45,3;23.3,27.2,25.1,61,4;29.3,26.7,,62,5;33.4,24.5,28.2,61,5;36.9,20.6,,58,5;41.9,19.7,,57,4;45.8,17.6,,41,2;58.3,16.2,,41,2;63.9,17.1,30,41,1;77.1,19.1,29.6,41,1;86.2,16.2,28.8,41,1;10.7,47.9,33.5,41,1,1;12.6,66.8,39.1,41,1,1;80.4,18.7,30.7,41,1,1", spread = true, target = "Starving Dire Wolf" },
 				{ t = "kill", quest = 245, npc = 539, count = 15, map = 1431, x = 10.6, y = 55.4, z = 34.1, f = "e", lvl = 19, oi = 1, spotsPacked = "10.6,55.4,34.1,113,9;10.9,64.4,,46,2,1;8.5,43.7,,55,4,1;12.6,69.6,,46,2,1;12.5,28.8,26.3,46,1,1;23.9,27.8,26.9,46,1,1;28.8,27.6,32.6,46,1,1;34,24.6,28.3,46,1,1;38.6,21.5,,46,2,1;47.1,16.3,,46,2,1;54.2,13.8,34.1,46,2,1;60.8,16.6,33.1,46,1,1;67.4,17.5,,64,5,1;73.4,18.3,,46,2,1;84.7,18.4,29,46,1,1", target = "Pygmy Venom Web Spider" },
-				{ t = "collect", quest = 101, item = 1130, count = 5, map = 1431, x = 11.2, y = 54.81, f = "e", note = "{item:1130}: Pygmy Venom Web Spiders, Venom Web Spiders and Green Recluses", fromNpcs = { { npc = 217, npcName = "Venom Web Spider" }, { npc = 569, npcName = "Green Recluse" }, { npc = 574, npcName = "Naraxis" }, { npc = 539, npcName = "Pygmy Venom Web Spider" }, { npc = 930, npcName = "Black Widow Hatchling" } }, lvl = 25, oi = 2, spotsPacked = "11.1,57.5,,79,8,,22;15.5,72,,40,2,,20;36.1,58.6,,41,4;27.7,40.8,,40,1;17.9,26.6,,40,2,,20;9.3,39.6,,49,3,,22;41,21.3,,40,2,,20;51.1,18.7,,45,4,,22;61.5,18.5,,45,4,,22;71.3,20.9,,62,5,,22;84.7,18.4,,40,1,,19;80.7,62.8,,40,1;9.5,53.8,,40,1,1,19;11.3,51.2,,56,4,1,22;12,46.7,,40,3,1,20;11.9,64.5,,56,3,1,22;9.7,43.7,,53,6,1,22;15.6,67.5,,45,4,1,20;12.8,69.5,,40,3,1,22;18.1,43.7,,40,1,1,26;17.9,40.9,,40,2,1,26;21.5,46.3,,40,1,1,26;21,39.1,,40,1,1,26;26.6,51.5,,40,3,1;23.4,36.7,,40,1,1,26;12.5,28.8,,40,1,1,19;28.2,47,,58,5,1;31,55.3,,53,6,1;31.8,49.3,,57,7,1;23,28,,40,2,1,20;32.3,40.4,,42,3,1;34.2,45.9,,40,2,1;35.2,54.9,,40,3,1;32,34.6,,49,5,1;28.8,27.6,,40,1,1,19;35,32.4,,40,1,1;32.9,25.6,,40,2,1,20;37.2,21.3,,40,1,1,19;47.3,16.8,,40,3,1,20;56.3,20.8,,58,6,1,22;54.7,14.7,,42,4,1,20;60.9,22.6,,40,2,1,22;67.5,21.9,,73,7,1,22;66.7,17.6,,52,6,1,20;77.8,58.4,,40,1,1;75.5,22.7,,40,1,1,22;74.9,19.2,,40,3,1,20;80.9,52.8,,50,4,1;78,24.3,,40,1,1,20;83.8,57.6,,40,1,1;86.3,51.1,,64,6,1,27", spread = true },
-				{ t = "collect", item = 2251, count = 6, map = 1431, x = 11.2, y = 54.81, f = "e", optional = true, note = "{item:2251}: keep the ones these spiders drop, for {npc:272} in {area:42}", fromNpcs = { { npc = 217, npcName = "Venom Web Spider" }, { npc = 949, npcName = "Carrion Recluse" }, { npc = 574, npcName = "Naraxis" }, { npc = 930, npcName = "Black Widow Hatchling" }, { npc = 569, npcName = "Green Recluse" } }, lvl = 25, spotsPacked = "11.1,57.5,,79,8,,22;15.5,72,,40,2,,20;36.1,58.6,,41,4;27.7,40.8,,40,1;17.9,26.6,,40,2,,20;9.3,39.6,,49,3,,22;41,21.3,,40,2,,20;51.1,18.7,,45,4,,22;61.5,18.5,,45,4,,22;71.3,20.9,,62,5,,22;84.7,18.4,,40,1,,19;80.7,62.8,,40,1;9.5,53.8,,40,1,1,19;11.3,51.2,,56,4,1,22;12,46.7,,40,3,1,20;11.9,64.5,,56,3,1,22;9.7,43.7,,53,6,1,22;15.6,67.5,,45,4,1,20;12.8,69.5,,40,3,1,22;18.1,43.7,,40,1,1,26;17.9,40.9,,40,2,1,26;21.5,46.3,,40,1,1,26;21,39.1,,40,1,1,26;26.6,51.5,,40,3,1;23.4,36.7,,40,1,1,26;12.5,28.8,,40,1,1,19;28.2,47,,58,5,1;31,55.3,,53,6,1;31.8,49.3,,57,7,1;23,28,,40,2,1,20;32.3,40.4,,42,3,1;34.2,45.9,,40,2,1;35.2,54.9,,40,3,1;32,34.6,,49,5,1;28.8,27.6,,40,1,1,19;35,32.4,,40,1,1;32.9,25.6,,40,2,1,20;37.2,21.3,,40,1,1,19;47.3,16.8,,40,3,1,20;56.3,20.8,,58,6,1,22;54.7,14.7,,42,4,1,20;60.9,22.6,,40,2,1,22;67.5,21.9,,73,7,1,22;66.7,17.6,,52,6,1,20;77.8,58.4,,40,1,1;75.5,22.7,,40,1,1,22;74.9,19.2,,40,3,1,20;80.9,52.8,,50,4,1;78,24.3,,40,1,1,20;83.8,57.6,,40,1,1;86.3,51.1,,64,6,1,27", spread = true },
+				{ t = "collect", quest = 101, item = 1130, count = 5, map = 1431, x = 11.2, y = 54.81, f = "e", note = "{item:1130}: Pygmy Venom Web Spiders, Venom Web Spiders and Green Recluses", fromNpcs = { { npc = 217, npcName = "Venom Web Spider" }, { npc = 569, npcName = "Green Recluse" }, { npc = 574, npcName = "Naraxis" }, { npc = 539, npcName = "Pygmy Venom Web Spider" }, { npc = 930, npcName = "Black Widow Hatchling" }, { npc = 949, npcName = "Carrion Recluse" } }, fromNpcsAt = "4,2,1;1;5;5;1;1,2,4;1,4;2,1;1,2,4;2,4,1;4;5;4;4,2;1;4,2;4,2,1;1;4,2;6;6;6;6;5;6;4;5;5;5;1,4;5;5;5;5;4;5;1,4;4;4,1;2,1;1,4;2;2,1;4,1;5;2;1,4;5;1;5;5,3", lvl = 25, oi = 2, spotsPacked = "11.1,57.5,,79,8,,22;15.5,72,,40,2,,20;36.1,58.6,,41,4;27.7,40.8,,40,1;17.9,26.6,,40,2,,20;9.3,39.6,,49,3,,22;41,21.3,,40,2,,20;51.1,18.7,,45,4,,22;61.5,18.5,,45,4,,22;71.3,20.9,,62,5,,22;84.7,18.4,,40,1,,19;80.7,62.8,,40,1;9.5,53.8,,40,1,1,19;11.3,51.2,,56,4,1,22;12,46.7,,40,3,1,20;11.9,64.5,,56,3,1,22;9.7,43.7,,53,6,1,22;15.6,67.5,,45,4,1,20;12.8,69.5,,40,3,1,22;18.1,43.7,,40,1,1,26;17.9,40.9,,40,2,1,26;21.5,46.3,,40,1,1,26;21,39.1,,40,1,1,26;26.6,51.5,,40,3,1;23.4,36.7,,40,1,1,26;12.5,28.8,,40,1,1,19;28.2,47,,58,5,1;31,55.3,,53,6,1;31.8,49.3,,57,7,1;23,28,,40,2,1,20;32.3,40.4,,42,3,1;34.2,45.9,,40,2,1;35.2,54.9,,40,3,1;32,34.6,,49,5,1;28.8,27.6,,40,1,1,19;35,32.4,,40,1,1;32.9,25.6,,40,2,1,20;37.2,21.3,,40,1,1,19;47.3,16.8,,40,3,1,20;56.3,20.8,,58,6,1,22;54.7,14.7,,42,4,1,20;60.9,22.6,,40,2,1,22;67.5,21.9,,73,7,1,22;66.7,17.6,,52,6,1,20;77.8,58.4,,40,1,1;75.5,22.7,,40,1,1,22;74.9,19.2,,40,3,1,20;80.9,52.8,,50,4,1;78,24.3,,40,1,1,20;83.8,57.6,,40,1,1;86.3,51.1,,64,6,1,27", spread = true },
+				{ t = "collect", item = 2251, count = 6, map = 1431, x = 11.2, y = 54.81, f = "e", optional = true, note = "{item:2251}: keep the ones these spiders drop, for {npc:272} in {area:42}", fromNpcs = { { npc = 217, npcName = "Venom Web Spider" }, { npc = 949, npcName = "Carrion Recluse" }, { npc = 574, npcName = "Naraxis" }, { npc = 930, npcName = "Black Widow Hatchling" }, { npc = 569, npcName = "Green Recluse" }, { npc = 539, npcName = "Pygmy Venom Web Spider" } }, fromNpcsAt = "6,5,1;1;4;4;1;1,5,6;1,6;5,1;1,5,6;5,6,1;6;4;6;6,5;1;6,5;6,5,1;1;6,5;2;2;2;2;4;2;6;4;4;4;1,6;4;4;4;4;6;4;1,6;6;6,1;5,1;1,6;5;5,1;6,1;4;5;1,6;4;1;4;4,3", lvl = 25, spotsPacked = "11.1,57.5,,79,8,,22;15.5,72,,40,2,,20;36.1,58.6,,41,4;27.7,40.8,,40,1;17.9,26.6,,40,2,,20;9.3,39.6,,49,3,,22;41,21.3,,40,2,,20;51.1,18.7,,45,4,,22;61.5,18.5,,45,4,,22;71.3,20.9,,62,5,,22;84.7,18.4,,40,1,,19;80.7,62.8,,40,1;9.5,53.8,,40,1,1,19;11.3,51.2,,56,4,1,22;12,46.7,,40,3,1,20;11.9,64.5,,56,3,1,22;9.7,43.7,,53,6,1,22;15.6,67.5,,45,4,1,20;12.8,69.5,,40,3,1,22;18.1,43.7,,40,1,1,26;17.9,40.9,,40,2,1,26;21.5,46.3,,40,1,1,26;21,39.1,,40,1,1,26;26.6,51.5,,40,3,1;23.4,36.7,,40,1,1,26;12.5,28.8,,40,1,1,19;28.2,47,,58,5,1;31,55.3,,53,6,1;31.8,49.3,,57,7,1;23,28,,40,2,1,20;32.3,40.4,,42,3,1;34.2,45.9,,40,2,1;35.2,54.9,,40,3,1;32,34.6,,49,5,1;28.8,27.6,,40,1,1,19;35,32.4,,40,1,1;32.9,25.6,,40,2,1,20;37.2,21.3,,40,1,1,19;47.3,16.8,,40,3,1,20;56.3,20.8,,58,6,1,22;54.7,14.7,,42,4,1,20;60.9,22.6,,40,2,1,22;67.5,21.9,,73,7,1,22;66.7,17.6,,52,6,1,20;77.8,58.4,,40,1,1;75.5,22.7,,40,1,1,22;74.9,19.2,,40,3,1,20;80.9,52.8,,50,4,1;78,24.3,,40,1,1,20;83.8,57.6,,40,1,1;86.3,51.1,,64,6,1,27", spread = true },
 			},
 		},
 		{
@@ -2909,7 +2920,7 @@ G(function() return {
 			title = "{area:68}'s murlocs: kill these as you meet them",
 			note = "Murloc Flesheaters and Tidecallers line the south shore of {area:68}, just east of the gryphons and the bridge. Any of them can carry a fin.",
 			goals = {
-				{ t = "collect", quest = 150, item = 1468, count = 8, map = 1433, x = 30.7, y = 56.46, fromNpcs = { { npc = 14270, npcName = "Squiddic" }, { npc = 544, npcName = "Murloc Nightcrawler" }, { npc = 545, npcName = "Murloc Tidecaller" }, { npc = 578, npcName = "Murloc Scout" }, { npc = 422, npcName = "Murloc Flesheater" } }, lvl = 20, oi = 1, spotsPacked = "33.7,54.5,,72,12;35.9,48,,54,26;40.2,51.8,,47,10;44.4,55.5,,44,4,,19;51.7,53.2,,64,26;53.4,61.3,,70,32;44.7,67.3,,57,7,,19;43.2,70.1,,89,28,,19;36.3,64,,65,5,,19;76.2,60.4,,40,13,,22", spread = true },
+				{ t = "collect", quest = 150, item = 1468, count = 8, map = 1433, x = 30.7, y = 56.46, fromNpcs = { { npc = 14270, npcName = "Squiddic" }, { npc = 544, npcName = "Murloc Nightcrawler" }, { npc = 545, npcName = "Murloc Tidecaller" }, { npc = 578, npcName = "Murloc Scout" }, { npc = 422, npcName = "Murloc Flesheater" }, { npc = 548, npcName = "Murloc Minor Tidecaller" }, { npc = 1083, npcName = "Murloc Shorestriker" } }, fromNpcsAt = "1,3,4,5,6;3,4,5,6,1;1,5,6,3,4;1;3,4;5,6,3,4;7,1,5,6;1,7,5,6;1;3,4,2", lvl = 20, oi = 1, spotsPacked = "33.7,54.5,,72,12;35.9,48,,54,26;40.2,51.8,,47,10;44.4,55.5,,44,4,,19;51.7,53.2,,64,26;53.4,61.3,,70,32;44.7,67.3,,57,7,,19;43.2,70.1,,89,28,,19;36.3,64,,65,5,,19;76.2,60.4,,40,13,,22", spread = true },
 			},
 		},
 		{
@@ -2950,7 +2961,7 @@ G(function() return {
 			title = "{quest:98386}",
 			note = "Greater Tarantulas crawl on the slopes around {quest:98386}, north-east of the lake; their Tarantula Eggs lie on the ground among them: click six.",
 			goals = {
-				{ t = "kill", quest = 98386, npc = 505, count = 12, map = 1433, x = 42.74, y = 38.46, z = 115, lvl = 20, oi = 1, spotsPacked = "45.6,40.6,93.7,70,4;48.2,38,93.9,26,4;50.1,44,90.1,57,5;62.1,76.6,52.7,15,1,1", target = "Greater Tarantula" },
+				{ t = "kill", quest = 98386, npc = 505, count = 12, map = 1433, x = 42.74, y = 38.46, z = 115, fromNpcs = { { npc = 505, npcName = "Greater Tarantula" }, { npc = 271898, npcName = "Greater Tarantula" }, { npc = 271988, npcName = "Greater Tarantula" } }, lvl = 20, oi = 1, spotsPacked = "45.6,40.6,93.7,70,4;48.2,38,93.9,26,4;50.1,44,90.1,57,5;62.1,76.6,52.7,15,1,1", target = "Greater Tarantula" },
 				{ t = "interact", quest = 98386, object = 673101, map = 1433, x = 46.1, y = 37.3, oi = 2, spotsPacked = "47.5,39,,56,15;48.6,44.8,,76,10;51.6,41.5,,46,5" },
 			},
 		},
@@ -2958,7 +2969,7 @@ G(function() return {
 			title = "Blackrock camps",
 			note = "South-east from the mill, west of {area:1000}'s gnolls, to the Blackrock camps east of {area:2099}. Renegades, Grunts and Outrunners fill them; keep east of the keep, whose orcs are elite. Weapon racks and swords lie about the camps; meat haunches, grain sacks and water barrels hold the supplies.",
 			goals = {
-				{ t = "collect", quest = 20, item = 3014, count = 10, map = 1433, x = 71, y = 70.5, fromNpcs = { { npc = 437, npcName = "Blackrock Renegade" }, { npc = 485, npcName = "Blackrock Outrunner" }, { npc = 440, npcName = "Blackrock Grunt" }, { npc = 4463, npcName = "Blackrock Summoner" } }, lvl = 21, oi = 1, spotsPacked = "71,70.5,,120,26,,22;67.6,78.1,,82,13,1,23;67.3,80.9,,40,4,1;71.4,83.9,,49,16,1;63.5,58.5,,40,2,1,22;59.6,61.8,,40,3,1;55.1,65.6,,40,1,1,22;55.9,43.6,,46,30,1,23;36.3,40.8,,46,6,1;32.4,44,,45,6,1;42.3,17.5,,40,2,1,22;38.5,18.7,,40,7,1,23;38,12,,40,7,1,23;34,14.6,,40,4,1,24;29.1,8.5,,67,7,1,25;23.5,14.5,,60,6,1,25;22.6,10.9,,40,3,1,25" },
+				{ t = "collect", quest = 20, item = 3014, count = 10, map = 1433, x = 71, y = 70.5, fromNpcs = { { npc = 437, npcName = "Blackrock Renegade" }, { npc = 485, npcName = "Blackrock Outrunner" }, { npc = 440, npcName = "Blackrock Grunt" }, { npc = 4463, npcName = "Blackrock Summoner" }, { npc = 435, npcName = "Blackrock Champion" }, { npc = 615, npcName = "Blackrock Tracker" } }, fromNpcsAt = "2,1,3;2,3,4;3,2;3,2;1,2;2;1;3,2,4,1;3,2;3,2;1,2;1,2,4;1,4;1,6,4;4,6,5;5,4,6;5,4,6", lvl = 21, oi = 1, spotsPacked = "71,70.5,,120,26,,22;67.6,78.1,,82,13,1,23;67.3,80.9,,40,4,1;71.4,83.9,,49,16,1;63.5,58.5,,40,2,1,22;59.6,61.8,,40,3,1;55.1,65.6,,40,1,1,22;55.9,43.6,,46,30,1,23;36.3,40.8,,46,6,1;32.4,44,,45,6,1;42.3,17.5,,40,2,1,22;38.5,18.7,,40,7,1,23;38,12,,40,7,1,23;34,14.6,,40,4,1,24;29.1,8.5,,67,7,1,25;23.5,14.5,,60,6,1,25;22.6,10.9,,40,3,1,25" },
 				{ t = "collect", quest = 98387, item = 280841, count = 8, map = 1433, x = 68.3, y = 79.4, note = "{item:280841}: weapon racks and swords on the ground", fromAlso = "Stolen Weapon", fromAlsoId = 673399, fromId = 673390, fromKind = "object", oi = 1, spotsPacked = "68.3,79.4,,62,9;64.1,77.6,,34,3,1;70.8,73.6,,15,4,1;71.9,85.6,,28,3,1;73.1,69.1,,37,6,1" },
 				{ t = "collect", quest = 98387, item = 280839, count = 10, map = 1433, x = 67.4, y = 78.9, note = "{item:280839}: meat haunches, grain sacks, water barrels", fromId = 673385, fromKind = "object", oi = 2, spotsPacked = "67.4,78.9,,104,14;63.8,78.4,,15,1,1;72,85.2,,35,4,1;72.6,69.1,,60,5,1" },
 			},
@@ -2975,7 +2986,7 @@ G(function() return {
 			title = "{area:1000}",
 			note = "North up the valley's east side. Shadowhide gnolls fill it; {npc:703} (26) and his two guards stand at its north end: clear the gnolls around him first and fight at full health. Stay out of {area:2099} to the west until the watch tower: its orcs are elite.",
 			goals = {
-				{ t = "collect", quest = 91, item = 1075, count = 10, map = 1433, x = 77.71, y = 59.27, note = "{item:1075}: any Shadowhide gnoll", fromNpcs = { { npc = 431, npcName = "Shadowhide Slayer" }, { npc = 429, npcName = "Shadowhide Darkweaver" }, { npc = 432, npcName = "Shadowhide Brute" }, { npc = 433, npcName = "Shadowhide Gnoll" }, { npc = 434, npcName = "Rabid Shadowhide Gnoll" } }, lvl = 26, oi = 1, spotsPacked = "78.7,57.3,,48,12;75.1,54.5,,68,16;79.8,50.6,,39,3;75.1,48.4,,45,16;70.6,48.1,,62,15;67.7,55.6,,61,11,,24;74.6,42.7,,57,12,1;69.5,41.3,,69,8,1;74.8,36.9,,51,11,1;63.6,45.7,,15,1,1,23;70.7,36.4,,49,13,1;70.6,30.3,,16,6,1" },
+				{ t = "collect", quest = 91, item = 1075, count = 10, map = 1433, x = 77.71, y = 59.27, note = "{item:1075}: any Shadowhide gnoll", fromNpcs = { { npc = 431, npcName = "Shadowhide Slayer" }, { npc = 429, npcName = "Shadowhide Darkweaver" }, { npc = 432, npcName = "Shadowhide Brute" }, { npc = 433, npcName = "Shadowhide Gnoll" }, { npc = 434, npcName = "Rabid Shadowhide Gnoll" }, { npc = 568, npcName = "Shadowhide Warrior" }, { npc = 947, npcName = "Rohh the Silent" }, { npc = 579, npcName = "Shadowhide Assassin" }, { npc = 703, npcName = "Lieutenant Fangore" } }, fromNpcsAt = "1,6,7,2;2,1,7,4,6,8;2,7;2,1,6,8;4,5,3,7;4,5,3;6,3,2,7;6,4,7,5;3,6,2,1,9,7;4;6,7,2,1,3;6,2,1,7", lvl = 26, oi = 1, spotsPacked = "78.7,57.3,,48,12;75.1,54.5,,68,16;79.8,50.6,,39,3;75.1,48.4,,45,16;70.6,48.1,,62,15;67.7,55.6,,61,11,,24;74.6,42.7,,57,12,1;69.5,41.3,,69,8,1;74.8,36.9,,51,11,1;63.6,45.7,,15,1,1,23;70.7,36.4,,49,13,1;70.6,30.3,,16,6,1" },
 				{ t = "collect", quest = 180, item = 3632, count = 1, map = 1433, x = 75.09, y = 37.06, fromId = 703, fromKind = "npc", fromNpcs = { { npc = 703, npcName = "Lieutenant Fangore" } }, oi = 1 },
 			},
 		},
@@ -3276,7 +3287,7 @@ G(function() return {
 		{
 			title = "{area:121}",
 			goals = {
-				{ t = "collect", item = 2794, map = 1431, x = 81.71, y = 60.52, f = "e", optional = true, note = "{quest:337}: a rare drop from {zone:1431}'s mobs", fromNpcs = { { npc = 202, npcName = "Skeletal Horror" }, { npc = 3, npcName = "Flesh Eater" }, { npc = 48, npcName = "Skeletal Warrior" }, { npc = 203, npcName = "Skeletal Mage" }, { npc = 205, npcName = "Nightbane Dark Runner" } }, lvl = 29, spotsPacked = "80.3,60.1,,55,7,,24;73.7,77.7,,43,7,,32;62.3,81.5,,60,12,,31;49.4,71.2,,40,3,,25;37.2,83.7,,40,4,,31;22,66.5,,65,4,,25;15.9,35.4,,76,27;25,28.9,,40,9;59,26.6,,40,2,,27;66.2,38.9,,40,4,,28;61.9,53.4,,40,3,,28;77.9,32.3,,47,5,,30;81.4,57.1,,40,3,1,24;79,67.7,,57,7,1,23;81.4,70.7,,42,7,1,26;78.2,71.1,,41,7,1,23;79.2,73.7,,49,7,1,23;72.9,69.2,,40,7,1,30;72.2,72.7,,40,9,1,30;66.4,70.1,,40,5,1;67,47.7,,40,3,1;65.2,67.3,,40,12,1;76.8,35.7,,53,8,1,32;80.6,32.7,,40,2,1,30;66.2,76,,40,10,1;63.6,51,,60,7,1;65,43.6,,58,6,1;62.5,74.4,,58,13,1;61.3,70.1,,67,7,1;60.9,46.7,,40,4,1;58.8,52.2,,40,4,1,28;61.1,40.6,,60,12,1;63.7,35,,40,4,1,28;56.4,72.6,,40,1,1,25;61.5,30.7,,54,6,1,28;52.6,75.8,,40,2,1,25;57.9,29.6,,40,6,1,28;49.4,76.2,,46,10,1,27;39.5,74.9,,40,6,1,28;38.7,71.7,,60,6,1,28;36.6,79.5,,53,10,1,31;33.8,70.4,,68,10,1,30;34.3,75.2,,53,5,1,30;24.1,71.2,,40,4,1,27;25.7,34.3,,40,13,1;24.7,38.3,,40,6,1,28;22.9,41.9,,73,11,1,25;23.9,35.5,,53,10,1;21.7,72.5,,57,12,1,27;21.5,47.5,,43,7,1,25;22.2,34.7,,54,7,1,28;21.1,28.2,,59,12,1;16,46.8,,59,10,1,25;15.9,40,,64,14,1;16.9,30.6,,47,11,1", spread = true },
+				{ t = "collect", item = 2794, map = 1431, x = 81.71, y = 60.52, f = "e", optional = true, note = "{quest:337}: a rare drop from {zone:1431}'s mobs", fromNpcs = { { npc = 202, npcName = "Skeletal Horror" }, { npc = 3, npcName = "Flesh Eater" }, { npc = 48, npcName = "Skeletal Warrior" }, { npc = 203, npcName = "Skeletal Mage" }, { npc = 205, npcName = "Nightbane Dark Runner" }, { npc = 533, npcName = "Nightbane Shadow Weaver" }, { npc = 604, npcName = "Plague Spreader" }, { npc = 898, npcName = "Nightbane Worgen" }, { npc = 785, npcName = "Skeletal Warder" }, { npc = 1110, npcName = "Skeletal Raider" }, { npc = 206, npcName = "Nightbane Vile Fang" }, { npc = 570, npcName = "Brain Eater" }, { npc = 787, npcName = "Skeletal Healer" }, { npc = 1270, npcName = "Fetid Corpse" }, { npc = 210, npcName = "Bone Chewer" }, { npc = 215, npcName = "Defias Night Runner" }, { npc = 909, npcName = "Defias Night Blade" }, { npc = 531, npcName = "Skeletal Fiend" }, { npc = 920, npcName = "Nightbane Tainted One" }, { npc = 212, npcName = "Splinter Fist Warrior" }, { npc = 891, npcName = "Splinter Fist Fire Weaver" }, { npc = 948, npcName = "Rotted One" }, { npc = 889, npcName = "Splinter Fist Ogre" }, { npc = 1251, npcName = "Splinter Fist Firemonger" }, { npc = 910, npcName = "Defias Enchanter" }, { npc = 892, npcName = "Splinter Fist Taskmaster" }, { npc = 300, npcName = "Zzarc' Vul" }, { npc = 1487, npcName = "Splinter Fist Enslaver" }, { npc = 218, npcName = "Grave Robber" }, { npc = 315, npcName = "Stalvan Mistmantle" }, { npc = 511, npcName = "Insane Ghoul" }, { npc = 6170, npcName = "Gutspill" } }, fromNpcsAt = "1;19,32;19,11;16;24,27,28;16;9,10,13,7;12,7,15;8;8,6;8,6;14;1;3,4;3,4,31;3,4;4,3;11;11;5,6;5;5,6;14,30;14;5,6;5,6,8;6,5,8;5,6;6,8,5;6,5,8;8,6;5,6,8;6,8;16;8,6;16;8,6;17,16,25;21,23,26;23,21,26;20,24,27,28;20,21,26,24;20,21,24;17,16,25;7,15,12,2,22;2,22,15,7;18,2,1;7,15,2,22,12;17,25,16;1,18;7,15,22,2;12,7,15,13;1,18,29;10,13,9,18,1;9,13,10,15,7", lvl = 29, spotsPacked = "80.3,60.1,,55,7,,24;73.7,77.7,,43,7,,32;62.3,81.5,,60,12,,31;49.4,71.2,,40,3,,25;37.2,83.7,,40,4,,31;22,66.5,,65,4,,25;15.9,35.4,,76,27;25,28.9,,40,9;59,26.6,,40,2,,27;66.2,38.9,,40,4,,28;61.9,53.4,,40,3,,28;77.9,32.3,,47,5,,30;81.4,57.1,,40,3,1,24;79,67.7,,57,7,1,23;81.4,70.7,,42,7,1,26;78.2,71.1,,41,7,1,23;79.2,73.7,,49,7,1,23;72.9,69.2,,40,7,1,30;72.2,72.7,,40,9,1,30;66.4,70.1,,40,5,1;67,47.7,,40,3,1;65.2,67.3,,40,12,1;76.8,35.7,,53,8,1,32;80.6,32.7,,40,2,1,30;66.2,76,,40,10,1;63.6,51,,60,7,1;65,43.6,,58,6,1;62.5,74.4,,58,13,1;61.3,70.1,,67,7,1;60.9,46.7,,40,4,1;58.8,52.2,,40,4,1,28;61.1,40.6,,60,12,1;63.7,35,,40,4,1,28;56.4,72.6,,40,1,1,25;61.5,30.7,,54,6,1,28;52.6,75.8,,40,2,1,25;57.9,29.6,,40,6,1,28;49.4,76.2,,46,10,1,27;39.5,74.9,,40,6,1,28;38.7,71.7,,60,6,1,28;36.6,79.5,,53,10,1,31;33.8,70.4,,68,10,1,30;34.3,75.2,,53,5,1,30;24.1,71.2,,40,4,1,27;25.7,34.3,,40,13,1;24.7,38.3,,40,6,1,28;22.9,41.9,,73,11,1,25;23.9,35.5,,53,10,1;21.7,72.5,,57,12,1,27;21.5,47.5,,43,7,1,25;22.2,34.7,,54,7,1,28;21.1,28.2,,59,12,1;16,46.8,,59,10,1,25;15.9,40,,64,14,1;16.9,30.6,,47,11,1", spread = true },
 				{ t = "accept", minLevel = 20, quest = 337, item = 2794, optional = true, qlvl = 25 },
 			},
 		},
@@ -3338,8 +3349,8 @@ G(function() return {
 			title = "Rot Blossoms",
 			note = "Skeletal Horrors walk the hillside between {area:42} and the {area:121}, south-east of town; they drop the Rot Blossoms.",
 			goals = {
-				{ t = "collect", quest = 156, item = 1598, count = 8, map = 1431, x = 79.23, y = 57.54, f = "e", fromNpcs = { { npc = 202, npcName = "Skeletal Horror" }, { npc = 531, npcName = "Skeletal Fiend" } }, lvl = 25, oi = 1, spotsPacked = "80.3,60.1,,55,7,,24;81.4,57.1,,40,3,,24;23,42.7,,48,9;21.5,47.5,,43,7;16.1,47.1,,50,9;15.1,42.3,,40,3", spread = true },
-				{ t = "kill", quest = 57, npc = 202, count = 15, map = 1431, x = 79.23, y = 57.54, z = 49.1, f = "e", lvl = 24, oi = 2, spotsPacked = "80.3,60.1,36.7,55,7;81.4,57.1,,40,3;24.4,42.6,33.8,40,2;21.3,42.9,30.4,40,1;21.6,47.7,32,41,5;16.2,47.2,,53,6;14.1,42.2,35.5,40,1", spread = true, target = "Skeletal Horror" },
+				{ t = "collect", quest = 156, item = 1598, count = 8, map = 1431, x = 79.23, y = 57.54, f = "e", fromAlso = "Skeletal Fiend", fromAlsoId = 531, fromId = 202, fromKind = "npc", fromNpcs = { { npc = 202, npcName = "Skeletal Horror" }, { npc = 531, npcName = "Skeletal Fiend" } }, lvl = 25, oi = 1, spotsPacked = "80.3,60.1,,55,7,,24;81.4,57.1,,40,3,,24;23,42.7,,48,9;21.5,47.5,,43,7;16.1,47.1,,50,9;15.1,42.3,,40,3", spread = true },
+				{ t = "kill", quest = 57, npc = 202, count = 15, map = 1431, x = 79.23, y = 57.54, z = 49.1, f = "e", carriedTo = "forever/alliance/07-thousand-needles", lvl = 24, oi = 2, spotsPacked = "80.3,60.1,36.7,55,7;81.4,57.1,,40,3;24.4,42.6,33.8,40,2;21.3,42.9,30.4,40,1;21.6,47.7,32,41,5;16.2,47.2,,53,6;14.1,42.2,35.5,40,1", spread = true, target = "Skeletal Horror" },
 			},
 		},
 		{
@@ -3376,8 +3387,8 @@ G(function() return {
 			title = "{area:492}: kill these as you meet them",
 			note = "Head south through the cemetery towards {area:94}. Skeletal Fiends and Skeletal Horrors walk its southern half. {npc:522}, an elite, wanders the graves: keep away from him.",
 			goals = {
-				{ t = "kill", quest = 57, npc = 531, count = 15, map = 1431, x = 22.65, y = 40.49, z = 31.9, f = "e", lvl = 25, oi = 1, spotsPacked = "22.9,42.7,31.2,41,6;21.2,46.9,,19,2;15.6,42.4,,19,2;16,46.9,31.4,23,3", target = "Skeletal Fiend" },
-				{ t = "kill", quest = 57, npc = 202, count = 15, map = 1431, x = 24.58, y = 41.87, z = 34.5, f = "e", lvl = 24, oi = 2, spotsPacked = "24.4,42.6,33.8,40,2;21.3,42.9,30.4,40,1;21.6,47.7,32,41,5;16.2,47.2,,53,6;14.1,42.2,35.5,40,1;80.3,60.1,36.7,55,7;81.4,57.1,,40,3", spread = true, target = "Skeletal Horror" },
+				{ t = "kill", quest = 57, npc = 531, count = 15, map = 1431, x = 22.65, y = 40.49, z = 31.9, f = "e", carriedTo = "forever/alliance/07-thousand-needles", lvl = 25, oi = 1, spotsPacked = "22.9,42.7,31.2,41,6;21.2,46.9,,19,2;15.6,42.4,,19,2;16,46.9,31.4,23,3", target = "Skeletal Fiend" },
+				{ t = "kill", quest = 57, npc = 202, count = 15, map = 1431, x = 24.58, y = 41.87, z = 34.5, f = "e", carriedTo = "forever/alliance/07-thousand-needles", lvl = 24, oi = 2, spotsPacked = "24.4,42.6,33.8,40,2;21.3,42.9,30.4,40,1;21.6,47.7,32,41,5;16.2,47.2,,53,6;14.1,42.2,35.5,40,1;80.3,60.1,36.7,55,7;81.4,57.1,,40,3", spread = true, target = "Skeletal Horror" },
 			},
 		},
 		{
@@ -3895,7 +3906,7 @@ G(function() return {
 			note = "{npc:3885} stands at the {area:420} on the east shore of {area:421}; {npc:210995} camps on its west shore. Befouled Water Elementals wade in the lake between them.",
 			goals = {
 				{ t = "accept", minLevel = 20, quest = 1016, npc = 3885, map = 1440, x = 49.8, y = 67.21, z = 101.9, f = "e", qlvl = 24 },
-				{ t = "collect", item = 12220, count = 5, map = 1440, x = 50.92, y = 67.42, f = "e", optional = true, note = "Underwater", fromNpcs = { { npc = 3917, npcName = "Befouled Water Elemental" }, { npc = 12759, npcName = "Tideress" } }, lvl = 25, spotsPacked = "51.7,70,,21,3;49.9,70.1,,44,5;50.8,72.1,,55,5;47.8,69.1,,39,4;52.1,72.5,,15,2;48.8,72.3,,32,2;50.9,67.4,,15,1,1;46.8,67.4,,24,2,1;47.5,71.2,,57,5,1;45.9,69.7,,50,5,1,27" },
+				{ t = "collect", item = 12220, count = 5, map = 1440, x = 50.92, y = 67.42, f = "e", optional = true, note = "Underwater", fromAlso = "Tideress", fromAlsoId = 12759, fromId = 3917, fromKind = "npc", fromNpcs = { { npc = 3917, npcName = "Befouled Water Elemental" }, { npc = 12759, npcName = "Tideress" } }, lvl = 25, spotsPacked = "51.7,70,,21,3;49.9,70.1,,44,5;50.8,72.1,,55,5;47.8,69.1,,39,4;52.1,72.5,,15,2;48.8,72.3,,32,2;50.9,67.4,,15,1,1;46.8,67.4,,24,2,1;47.5,71.2,,57,5,1;45.9,69.7,,50,5,1,27" },
 				{ t = "collect", quest = 1016, item = 5455, count = 1, map = 1440, x = 49.6, y = 71.3, f = "e", note = "Kill the elementals for 5 Intact Elemental Bracers, then use the {item:5456}", oi = 1 },
 				{ t = "turnin", quest = 1016, npc = 3885, map = 1440, x = 49.8, y = 67.21, z = 101.9, f = "e" },
 			},
@@ -3947,7 +3958,7 @@ G(function() return {
 			goals = {
 				{ t = "accept", minLevel = 19, quest = 1007, npc = 3846, map = 1440, x = 14.79, y = 31.29, z = 5.5, f = "e", qlvl = 20 },
 				{ t = "collect", quest = 1007, item = 5424, count = 1, map = 1440, x = 14.2, y = 20.6, f = "e", note = "{item:5424}, in the ruins on the shore", fromId = 17783, fromKind = "object", oi = 1 },
-				{ t = "collect", quest = 1008, item = 5490, count = 20, map = 1440, x = 14.13, y = 20.51, f = "e", note = "{item:5490}: any Wrathtail naga on the strand", fromAlso = "Wrathtail Razortail", fromAlsoId = 3712, fromId = 3711, fromKind = "npc", fromNpcs = { { npc = 3713, npcName = "Wrathtail Wave Rider" }, { npc = 3711, npcName = "Wrathtail Myrmidon" }, { npc = 3712, npcName = "Wrathtail Razortail" }, { npc = 3715, npcName = "Wrathtail Sea Witch" }, { npc = 3717, npcName = "Wrathtail Sorceress" } }, lvl = 19, oi = 1, spotsPacked = "14.5,20.2,,42,6;15.9,15.8,,40,2;13.5,15.1,,42,3;10.7,13.6,,40,1,,20;8,16.4,,40,3,,21;6.4,11.7,,46,6,,21;9.7,25.3,,48,5,,20;11.8,24.3,,40,2;11,28.9,,45,4,,20;8.9,29.5,,59,7,,20;13.7,30.9,,40,1,,20;14.9,25.8,,41,3;14.8,22.8,,40,2,1;14.9,17,,40,3,1;11,25,,40,2,1,20;11.3,26.7,,40,3,1,20;12.8,28.8,,58,5,1;11.7,31,,45,3,1,21;7.5,15.5,,65,7,1,21;7.5,13.4,,44,8,1,21;5.6,14.5,,45,5,1,21", spread = true },
+				{ t = "collect", quest = 1008, item = 5490, count = 20, map = 1440, x = 14.13, y = 20.51, f = "e", note = "{item:5490}: any Wrathtail naga on the strand", fromAlso = "Wrathtail Razortail", fromAlsoId = 3712, fromId = 3711, fromKind = "npc", fromNpcs = { { npc = 3713, npcName = "Wrathtail Wave Rider" }, { npc = 3711, npcName = "Wrathtail Myrmidon" }, { npc = 3712, npcName = "Wrathtail Razortail" }, { npc = 3715, npcName = "Wrathtail Sea Witch" }, { npc = 3717, npcName = "Wrathtail Sorceress" }, { npc = 3944, npcName = "Wrathtail Priestess" } }, fromNpcsAt = "5,1;1,5;5;3;6,2;2,6;4,3;1,5;3,4;3,4;3;5,1;1,5;1,5;3,4;4,3;5,1;4,2;2,6;2,6,4;6,2", lvl = 19, oi = 1, spotsPacked = "14.5,20.2,,42,6;15.9,15.8,,40,2;13.5,15.1,,42,3;10.7,13.6,,40,1,,20;8,16.4,,40,3,,21;6.4,11.7,,46,6,,21;9.7,25.3,,48,5,,20;11.8,24.3,,40,2;11,28.9,,45,4,,20;8.9,29.5,,59,7,,20;13.7,30.9,,40,1,,20;14.9,25.8,,41,3;14.8,22.8,,40,2,1;14.9,17,,40,3,1;11,25,,40,2,1,20;11.3,26.7,,40,3,1,20;12.8,28.8,,58,5,1;11.7,31,,45,3,1,21;7.5,15.5,,65,7,1,21;7.5,13.4,,44,8,1,21;5.6,14.5,,45,5,1,21", spread = true },
 			},
 		},
 		{
@@ -4100,7 +4111,7 @@ G(function() return {
 			title = "{area:309}",
 			note = "North-west from {npc:1244}: Mosshide Fenrunners and Mistweavers roam the riverbanks on the way, and almost every one drops flint. Black, Crimson and Monstrous Oozes fill {area:309}, just west of the road to {area:205} and north of Einar's camp. Any ooze there may hold {npc:2111}'s bag.",
 			goals = {
-				{ t = "collect", quest = 277, item = 2611, count = 9, map = 1437, x = 51.23, y = 30.82, f = "e", note = "{item:2611}: Mosshide Fenrunners and Mistweavers", fromAlso = "Mosshide Fenrunner", fromAlsoId = 1010, fromId = 1009, fromKind = "npc", fromNpcs = { { npc = 1010, npcName = "Mosshide Fenrunner" }, { npc = 1009, npcName = "Mosshide Mistweaver" }, { npc = 1011, npcName = "Mosshide Trapper" }, { npc = 1012, npcName = "Mosshide Brute" }, { npc = 1013, npcName = "Mosshide Mystic" } }, lvl = 24, oi = 1, spotsPacked = "51.3,30.9,,40,3;45.5,34.8,,40,6,,23;39.1,34.2,,40,7;36.2,34.7,,40,1;33.1,34.4,,61,5;31.7,29.7,,52,11,,27;28.4,29.7,,40,2,,25;26.6,36.3,,40,2;35.1,27.4,,40,6,,27;40.1,27.3,,40,7,,27;60.1,54.9,,40,2,,23;64.7,56,,40,4,,23;52.8,27.6,,40,6,1;45.2,31.9,,40,5,1;43.2,33.5,,53,15,1,25;40.6,32.3,,50,3,1;37.9,29.7,,40,9,1,27;35.2,30.7,,40,2,1,25;31.2,32.6,,70,8,1,27;60.9,58.4,,54,6,1,23;63.1,57.7,,40,2,1,23;28.9,34.1,,52,3,1,25;29.2,37.4,,40,2,1;62.7,69.3,,40,1,1,23", spread = true },
+				{ t = "collect", quest = 277, item = 2611, count = 9, map = 1437, x = 51.23, y = 30.82, f = "e", note = "{item:2611}: Mosshide Fenrunners and Mistweavers", carriedTo = "forever/alliance/06-wetlands", fromAlso = "Mosshide Fenrunner", fromAlsoId = 1010, fromId = 1009, fromKind = "npc", fromNpcs = { { npc = 1010, npcName = "Mosshide Fenrunner" }, { npc = 1009, npcName = "Mosshide Mistweaver" }, { npc = 1011, npcName = "Mosshide Trapper" }, { npc = 1012, npcName = "Mosshide Brute" }, { npc = 1013, npcName = "Mosshide Mystic" }, { npc = 14425, npcName = "Gnawbone" }, { npc = 1014, npcName = "Mosshide Alpha" } }, fromNpcsAt = "3,1;1,2;1,2,3,6;3;3,1;4,3,5,7,6;4;1,3;4,5,7,6;4,5,7;1;1;1,3;1,2,3;3,1,4;3,1;4,5,7,6;1,4;3,4,6,5,7;1,2;1;3,4;3;2", lvl = 24, oi = 1, spotsPacked = "51.3,30.9,,40,3;45.5,34.8,,40,6,,23;39.1,34.2,,40,7;36.2,34.7,,40,1;33.1,34.4,,61,5;31.7,29.7,,52,11,,27;28.4,29.7,,40,2,,25;26.6,36.3,,40,2;35.1,27.4,,40,6,,27;40.1,27.3,,40,7,,27;60.1,54.9,,40,2,,23;64.7,56,,40,4,,23;52.8,27.6,,40,6,1;45.2,31.9,,40,5,1;43.2,33.5,,53,15,1,25;40.6,32.3,,50,3,1;37.9,29.7,,40,9,1,27;35.2,30.7,,40,2,1,25;31.2,32.6,,70,8,1,27;60.9,58.4,,54,6,1,23;63.1,57.7,,40,2,1,23;28.9,34.1,,52,3,1,25;29.2,37.4,,40,2,1;62.7,69.3,,40,1,1,23", spread = true },
 				{ t = "collect", quest = 470, item = 3349, count = 1, map = 1437, x = 44.6, y = 25.6, f = "e", fromNpcs = { { npc = 1031, npcName = "Crimson Ooze" }, { npc = 1032, npcName = "Black Ooze" }, { npc = 1033, npcName = "Monstrous Ooze" } }, lvl = 24, oi = 1, spotsPacked = "44.6,25.6,,130,26,,26;47.2,25.8,,53,5,1;56,25.1,,43,1,1;56.8,29.5,,43,1,1;56.9,32.5,,43,2,1;58.9,28.9,,43,1,1;59.6,40.1,,43,1,1;57.9,44.7,,43,2,1;62.2,36.3,,43,2,1,26;28.3,45.7,,43,1,1;64.9,36.9,,43,1,1,26;62.7,44.4,,43,2,1;66.2,42.5,,43,2,1,26;23.9,48.4,,43,1,1;66.5,46.3,,64,3,1,26;64.9,50.6,,43,2,1;69.9,43.5,,43,1,1,26;69.9,47.3,,43,1,1,26;21.3,52.2,,43,1,1;69.6,51.9,,43,2,1,26;22.9,59.5,,43,1,1" },
 			},
 		},
@@ -4130,6 +4141,7 @@ G(function() return {
 			note = "The gryphons land in the {object:32372}. {npc:4081} stands in {object:171524}, east of it, by the {area:2257}.",
 			goals = {
 				{ t = "turnin", quest = 1072, npc = 4081, map = 1455, x = 72.08, y = 51.88, z = 502, f = "e", note = "{npc:4081}, {object:171524}" },
+				{ t = "buy", npc = 5175, item = 4371, count = 1, map = 1455, x = 67.84, y = 42.5, z = 502.1, f = "e", optional = true, note = "{item:4371}, for Look to the Stars in {area:42}: {npc:5175}, beside {npc:4081}, sometimes has one" },
 				{ t = "turnin", quest = 968, npc = 2786, map = 1455, x = 50.83, y = 5.62, z = 505, f = "e", optional = true, note = "Only with {item:5352} from {zone:1439}: {npc:2786}, the {object:32383}" },
 				{ t = "train", zone = 1455, only = { classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK" } }, candidates = { 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201 }, class = true },
 				{ t = "vendor", candidates = { 202, 99, 100, 203, 55, 101, 53, 69, 54, 79, 57, 65, 66, 51, 56, 68, 37, 38, 67, 36, 49, 58, 48, 84, 47, 31, 82, 106, 105, 32, 41, 108, 107, 63, 62, 104, 103, 109, 35, 50, 34, 72, 61, 71, 45, 43, 94, 96, 44, 110, 95, 42, 76, 39, 77, 74, 75, 46, 111, 16, 112, 19, 113, 114, 115, 2, 116, 5, 10, 20, 28, 3, 4, 6, 9, 26, 117, 118, 11, 12, 27, 119, 29, 120, 24, 22, 88, 121, 8, 7, 89, 90, 91, 92, 93 } },
@@ -4181,8 +4193,7 @@ G(function() return {
 			title = "{object:2098}",
 			note = "The tram comes in at the {object:28027}; walk west to the {object:2098}. {npc:376} is in the Cathedral of Light.",
 			goals = {
-				{ t = "accept", minLevel = 20, only = { races = { "HUMAN" }, classes = { "PRIEST" } }, quest = 5676, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, closedBy = { 5677, 5678 }, qlvl = 20 },
-				{ t = "turnin", only = { races = { "HUMAN" }, classes = { "PRIEST" } }, quest = 5676, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, note = "{quest:5676}" },
+				{ t = "turnin", only = { races = { "HUMAN" }, classes = { "PRIEST" } }, quest = 5676, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, note = "{quest:5676}", direct = true, qlvl = 20 },
 				{ t = "accept", minLevel = 20, only = { races = { "DWARF" }, classes = { "PRIEST" } }, quest = 5645, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, note = "{npc:376}: {npc:11406} in {zone:1455} takes it, later", closedBy = { 5641, 5647 }, qlvl = 20 },
 				{ t = "accept", minLevel = 20, only = { races = { "GNOME" }, classes = { "PRIEST" } }, quest = 94819, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, note = "{npc:376}: {npc:258785} in {zone:1455} takes it, later", qlvl = 20 },
 				{ t = "accept", minLevel = 20, only = { races = { "NIGHTELF" }, classes = { "PRIEST" } }, quest = 5673, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, note = "{npc:376}: {npc:11401} in {zone:1457} takes it, later", closedBy = { 5672, 5674, 5675 }, qlvl = 20 },
@@ -4422,7 +4433,7 @@ G(function() return {
 	steps = {
 		{
 			title = "{zone:1450}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 272 } } },
 			goals = {
 				{ t = "goto", map = 1450, x = 56.3, y = 32.5, f = "e", text = "Cast {spell:18960}" },
@@ -4430,7 +4441,7 @@ G(function() return {
 		},
 		{
 			title = "{quest:272}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 272 } } },
 			note = "Cast {spell:18960}. With both half pendants in your bags, stand by the {area:2362} on the north-west shore of the lake and use a half to join them, then go to {npc:11802} in {area:2361}. {npc:11802} stands upstairs in his building: go up inside, the arrow cannot tell the floors apart.",
 			goals = {
@@ -4440,7 +4451,7 @@ G(function() return {
 		},
 		{
 			title = "{quest:5061}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "turnedin", q = 272 }, { k = "turnedin", neg = true, q = 5061 } },
 			note = "Take {quest:5061} from {npc:11802}, upstairs in his building. Then {npc:11800} in {area:2361} flies Druids straight to {area:702}.",
 			goals = {
@@ -4450,7 +4461,7 @@ G(function() return {
 		},
 		{
 			title = "{zone:1457}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 5061 } } },
 			goals = {
 				{ t = "goto", map = 1457, x = 35.8, y = 11.6, f = "e", text = "{npc:4217}" },
@@ -4458,7 +4469,7 @@ G(function() return {
 		},
 		{
 			title = "{npc:4217}",
-			only = { races = { "NIGHTELF" }, classes = { "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "DRUID" } },
 			when = { { k = "onquest", q = { 5061 } } },
 			note = "Take the portal up to the {area:1658}, then fly back to {area:442} for the boat to {area:150}.",
 			goals = {
@@ -4510,7 +4521,7 @@ G(function() return {
 		},
 		{
 			title = "Boat to {area:150}",
-			only = { races = { "NIGHTELF" }, classes = { "PRIEST", "DRUID" } },
+			only = { races = { "NIGHTELF", "SKYBORNE" }, classes = { "PRIEST", "DRUID" } },
 			when = { { k = "zone", area = 148, name = "Darkshore" } },
 			note = "Take the boat from {area:442}'s dock to {area:150}.",
 			goals = {
@@ -4661,7 +4672,7 @@ G(function() return {
 				{ t = "interact", quest = 98221, object = 671481, map = 1437, x = 45.6, y = 42.7, f = "e", oi = 1 },
 				{ t = "interact", quest = 98221, object = 671483, map = 1437, x = 45.4, y = 45.7, f = "e", oi = 3 },
 				{ t = "interact", quest = 98221, object = 671486, map = 1437, x = 49.4, y = 46.8, f = "e", oi = 2 },
-				{ t = "collect", quest = 464, item = 3337, count = 8, map = 1437, x = 45.5, y = 44.7, f = "e", note = "{item:3337}: the camp's Raiders and Swamprunners", fromAlso = "Dragonmaw Swamprunner", fromAlsoId = 1035, fromId = 1034, fromKind = "npc", fromNpcs = { { npc = 1037, npcName = "Dragonmaw Battlemaster" }, { npc = 1034, npcName = "Dragonmaw Raider" }, { npc = 1057, npcName = "Dragonmaw Bonewarder" }, { npc = 1035, npcName = "Dragonmaw Swamprunner" }, { npc = 1036, npcName = "Dragonmaw Centurion" } }, lvl = 27, oi = 1, spotsPacked = "45.5,44.7,,132,43,,30;48.9,47.5,,54,12,1,29;41.6,45.1,,56,5,1;42.2,40.8,,55,5,1;49.7,45.3,,40,5,1,29;50.9,47.4,,40,5,1,28;39.1,46.5,,47,4,1,28;50.9,50.3,,50,5,1,28;52.2,45.4,,40,2,1;53.2,54.2,,40,8,1,29" },
+				{ t = "collect", quest = 464, item = 3337, count = 8, map = 1437, x = 45.5, y = 44.7, f = "e", note = "{item:3337}: the camp's Raiders and Swamprunners", fromAlso = "Dragonmaw Swamprunner", fromAlsoId = 1035, fromId = 1034, fromKind = "npc", fromNpcs = { { npc = 1037, npcName = "Dragonmaw Battlemaster" }, { npc = 1034, npcName = "Dragonmaw Raider" }, { npc = 1057, npcName = "Dragonmaw Bonewarder" }, { npc = 1035, npcName = "Dragonmaw Swamprunner" }, { npc = 1036, npcName = "Dragonmaw Centurion" }, { npc = 1038, npcName = "Dragonmaw Shadowwarder" } }, fromNpcsAt = "2,3,4,1;3,2,4,5,6;2;2;4,3,5,6;2,4,3;2,4;3,4;2;6,5,4", lvl = 27, oi = 1, spotsPacked = "45.5,44.7,,132,43,,30;48.9,47.5,,54,12,1,29;41.6,45.1,,56,5,1;42.2,40.8,,55,5,1;49.7,45.3,,40,5,1,29;50.9,47.4,,40,5,1,28;39.1,46.5,,47,4,1,28;50.9,50.3,,50,5,1,28;52.2,45.4,,40,2,1;53.2,54.2,,40,8,1,29" },
 			},
 		},
 		{
@@ -4783,15 +4794,8 @@ G(function() return {
 			title = "Dartol's Rod",
 			note = "The Crazed and Withered Ancients north of the moonwell carry the {item:5475}; the worn chest it opens stands among them.",
 			goals = {
-				{ t = "collect", item = 5475, map = 1440, x = 57.7, y = 41.76, f = "e", fromNpcs = { { npc = 3919, npcName = "Withered Ancient" }, { npc = 3834, npcName = "Crazed Ancient" } }, lvl = 28, spotsPacked = "58.2,41.1,,81,4;60.1,38.8,,54,1;58.8,36.1,,54,1;57.7,32.6,,54,2;54.7,34.2,,54,4,,27;61.7,43.9,,54,2", spread = true },
+				{ t = "collect", item = 5475, map = 1440, x = 57.7, y = 41.76, f = "e", fromAlso = "Crazed Ancient", fromAlsoId = 3834, fromId = 3919, fromKind = "npc", fromNpcs = { { npc = 3919, npcName = "Withered Ancient" }, { npc = 3834, npcName = "Crazed Ancient" } }, lvl = 28, spotsPacked = "58.2,41.1,,81,4;60.1,38.8,,54,1;58.8,36.1,,54,1;57.7,32.6,,54,2;54.7,34.2,,54,4,,27;61.7,43.9,,54,2", spread = true },
 				{ t = "collect", quest = 1026, item = 5464, count = 1, map = 1440, x = 54.42, y = 35.4, f = "e", fromId = 19022, fromKind = "object", oi = 1 },
-			},
-		},
-		{
-			title = "{quest:1022}",
-			note = "Take the tunnel into the {area:419}; the tome lies in the ruins at its west end.",
-			goals = {
-				{ t = "interact", quest = 1022, object = 19027, map = 1440, x = 50.49, y = 39.13, z = 217, f = "e", oi = 1 },
 			},
 		},
 		{
@@ -4909,6 +4913,13 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 1055, npc = 3916, map = 1440, x = 53.54, y = 46.22, z = 208.1, f = "e" },
 				{ t = "accept", minLevel = 18, quest = 1029, npc = 3916, map = 1440, x = 53.54, y = 46.22, z = 208.1, f = "e", pre = { 1055 }, qlvl = 28 },
+			},
+		},
+		{
+			title = "{quest:1022}",
+			note = "Take the tunnel into the {area:419}; the tome lies in the ruins at its west end. Careful: Terrowulf Fleshrippers and Shadow Weavers (28-30) stand in tight packs around the tome, and the {npc:3792}, a level 32 rare, walks the vale. Pull the wolves one at a time from the tunnel and let the Packlord pass first.",
+			goals = {
+				{ t = "interact", quest = 1022, object = 19027, map = 1440, x = 50.49, y = 39.13, z = 217, f = "e", oi = 1 },
 			},
 		},
 		{
@@ -5728,9 +5739,9 @@ G(function() return {
 		{
 			title = "Yeti cave",
 			when = { { k = "onquest", q = { 565 } } },
-			note = "The yetis live in the cave in the hills north of {area:271}, on the way north to the Syndicate camp.",
+			note = "The yetis live in the cave in the hills north of {area:271}, on the way north to the Syndicate camp.\nStay in the {area:277}: the cave further north has Mountain and Giant Yetis (32-34) in pairs and {npc:13602}, a level 36 elite.",
 			goals = {
-				{ t = "collect", quest = 565, item = 3720, count = 10, map = 1424, x = 46.37, y = 34.01, f = "e", fromNpcs = { { npc = 2248, npcName = "Cave Yeti" }, { npc = 2249, npcName = "Ferocious Yeti" }, { npc = 2251, npcName = "Giant Yeti" }, { npc = 2250, npcName = "Mountain Yeti" } }, lvl = 34, oi = 4, spotsPacked = "46.2,32.3,,49,8,,31;43.5,31.1,,65,14,,32;44.3,26.9,,44,11,,32;43.6,12,,49,4,,33;45.2,7.7,,40,3;45.3,3.8,,40,5;47.4,5.4,,40,1;42.6,6.6,,41,7;39.9,9.1,,64,6;40.1,12.1,,40,3;37.1,6.7,,40,3,,33", spread = true },
+				{ t = "collect", quest = 565, item = 3720, count = 10, map = 1424, x = 44.5, y = 29.4, f = "e", carriedTo = "forever/alliance/30-40/05-arathi-highlands", fromNpcs = { { npc = 2248, npcName = "Cave Yeti" }, { npc = 2249, npcName = "Ferocious Yeti" } }, lvl = 31, oi = 4, spotsPacked = "44.5,29.4,,114,25,,32;46.2,32.3,,49,8,1" },
 			},
 		},
 		{
@@ -5926,8 +5937,8 @@ G(function() return {
 				{ t = "accept", minLevel = 30, quest = 1458, npc = 5638, map = 1443, x = 66.2, y = 9.63, z = 166.8, f = "e", pre = { 1453 }, qlvl = 33 },
 				{ t = "accept", minLevel = 30, quest = 1454, npc = 5638, map = 1443, x = 66.2, y = 9.63, z = 166.8, f = "e", note = "{npc:5638}: the wreck's chest lies below {npc:11863}'s tower, on the way to {area:599}", pre = { 1453 }, qlvl = 39 },
 				{ t = "accept", minLevel = 30, quest = 1387, npc = 5752, map = 1443, x = 66.74, y = 10.87, z = 163.3, f = "e", qlvl = 31 },
+				{ t = "accept", minLevel = 30, quest = 93224, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", note = "{npc:5396}, beside {npc:5752}", qlvl = 40 },
 				{ t = "accept", minLevel = 30, quest = 1437, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e", qlvl = 33 },
-				{ t = "accept", minLevel = 30, quest = 97284, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e", note = "{npc:5642}: the Burning Blade in {area:599}, where her search leads", qlvl = 33 },
 			},
 		},
 		{
@@ -5942,8 +5953,8 @@ G(function() return {
 			title = "{area:603}",
 			note = "The Hatefury satyrs hold the ruins of {area:603}, east of {area:608}.\nCareful: Hatefury Rogues spawn stealthed, and Hatefury Tricksters have a poison proc on their attacks.",
 			goals = {
-				{ t = "collect", quest = 1458, item = 6246, count = 10, map = 1443, x = 70.11, y = 15.58, f = "e", fromNpcs = { { npc = 4674, npcName = "Hatefury Shadowstalker" }, { npc = 4670, npcName = "Hatefury Rogue" }, { npc = 4671, npcName = "Hatefury Trickster" }, { npc = 4672, npcName = "Hatefury Felsworn" }, { npc = 4673, npcName = "Hatefury Betrayer" } }, lvl = 33, oi = 1, spotsPacked = "70.7,15.7,,40,3;72.4,18.2,,70,9;74.5,16.3,,40,3;77,16.7,,58,8;76,20.1,,61,7;76.7,24.1,,60,6;78.9,24.6,,40,1,,32;79,19,,43,4;80.5,17,,40,2;74.2,11,,67,8;74.1,24.2,,56,6;76.5,29,,40,3;73.5,13.7,,65,5,1;73.5,21.6,,55,6,1;79.2,15.5,,56,6,1;75.3,26.8,,40,5,1;78.6,21.9,,48,8,1;77.8,26.3,,40,2,1", spread = true },
-				{ t = "collect", quest = 1458, item = 6247, count = 10, map = 1443, x = 70.11, y = 15.58, f = "e", fromNpcs = { { npc = 4674, npcName = "Hatefury Shadowstalker" }, { npc = 4670, npcName = "Hatefury Rogue" }, { npc = 4671, npcName = "Hatefury Trickster" }, { npc = 4672, npcName = "Hatefury Felsworn" }, { npc = 4673, npcName = "Hatefury Betrayer" } }, lvl = 33, oi = 2, spotsPacked = "70.7,15.7,,40,3;72.4,18.2,,70,9;74.5,16.3,,40,3;77,16.7,,58,8;76,20.1,,61,7;76.7,24.1,,60,6;78.9,24.6,,40,1,,32;79,19,,43,4;80.5,17,,40,2;74.2,11,,67,8;74.1,24.2,,56,6;76.5,29,,40,3;73.5,13.7,,65,5,1;73.5,21.6,,55,6,1;79.2,15.5,,56,6,1;75.3,26.8,,40,5,1;78.6,21.9,,48,8,1;77.8,26.3,,40,2,1", spread = true },
+				{ t = "collect", quest = 1458, item = 6246, count = 10, map = 1443, x = 70.11, y = 15.58, f = "e", fromNpcs = { { npc = 4674, npcName = "Hatefury Shadowstalker" }, { npc = 4670, npcName = "Hatefury Rogue" }, { npc = 4671, npcName = "Hatefury Trickster" }, { npc = 4672, npcName = "Hatefury Felsworn" }, { npc = 4673, npcName = "Hatefury Betrayer" }, { npc = 4675, npcName = "Hatefury Hellcaller" }, { npc = 14225, npcName = "Prince Kellen" } }, fromNpcsAt = "2,5,1;6,2,4,5,3;6,2;4,1,2,3,5;3,4,5,1,6;1,6,2,5;3;3,2,6;4,5,6;2,6,3,4,5;2,3,4,6;3,4,1;5,3,4,1,6;4,2,3,5,6;1,3,4,5,6;4,1,5;5,6,2,3,1,7;3,5", lvl = 33, oi = 1, spotsPacked = "70.7,15.7,,40,3;72.4,18.2,,70,9;74.5,16.3,,40,3;77,16.7,,58,8;76,20.1,,61,7;76.7,24.1,,60,6;78.9,24.6,,40,1,,32;79,19,,43,4;80.5,17,,40,2;74.2,11,,67,8;74.1,24.2,,56,6;76.5,29,,40,3;73.5,13.7,,65,5,1;73.5,21.6,,55,6,1;79.2,15.5,,56,6,1;75.3,26.8,,40,5,1;78.6,21.9,,48,8,1;77.8,26.3,,40,2,1", spread = true },
+				{ t = "collect", quest = 1458, item = 6247, count = 10, map = 1443, x = 70.11, y = 15.58, f = "e", fromNpcs = { { npc = 4674, npcName = "Hatefury Shadowstalker" }, { npc = 4670, npcName = "Hatefury Rogue" }, { npc = 4671, npcName = "Hatefury Trickster" }, { npc = 4672, npcName = "Hatefury Felsworn" }, { npc = 4673, npcName = "Hatefury Betrayer" }, { npc = 4675, npcName = "Hatefury Hellcaller" }, { npc = 14225, npcName = "Prince Kellen" } }, fromNpcsAt = "2,5,1;6,2,4,5,3;6,2;4,1,2,3,5;3,4,5,1,6;1,6,2,5;3;3,2,6;4,5,6;2,6,3,4,5;2,3,4,6;3,4,1;5,3,4,1,6;4,2,3,5,6;1,3,4,5,6;4,1,5;5,6,2,3,1,7;3,5", lvl = 33, oi = 2, spotsPacked = "70.7,15.7,,40,3;72.4,18.2,,70,9;74.5,16.3,,40,3;77,16.7,,58,8;76,20.1,,61,7;76.7,24.1,,60,6;78.9,24.6,,40,1,,32;79,19,,43,4;80.5,17,,40,2;74.2,11,,67,8;74.1,24.2,,56,6;76.5,29,,40,3;73.5,13.7,,65,5,1;73.5,21.6,,55,6,1;79.2,15.5,,56,6,1;75.3,26.8,,40,5,1;78.6,21.9,,48,8,1;77.8,26.3,,40,2,1", spread = true },
 			},
 		},
 		{
@@ -5958,6 +5969,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 1465, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e" },
 				{ t = "accept", minLevel = 30, quest = 1438, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e", pre = { 1465 }, qlvl = 33 },
+				{ t = "accept", minLevel = 30, quest = 97284, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e", note = "{npc:5642}: the Burning Blade in {area:599}, where her search leads", pre = { 1465 }, qlvl = 33 },
 			},
 		},
 		{
@@ -5988,7 +6000,7 @@ G(function() return {
 			note = "Her brother {npc:5643} (36) walks the fortress with the Burning Blade cultists (30-33): pull him alone. The {npc:13019} keeps the sceptre in the fortress's main building. {npc:5642} wants four of each kind of cultist on the way.",
 			goals = {
 				{ t = "collect", quest = 1439, item = 6767, count = 1, map = 1443, x = 53.01, y = 29.08, f = "e", note = "{item:6767}; inside", fromId = 5643, fromKind = "npc", fromNpcs = { { npc = 5643, npcName = "Tyranis Malem" } }, oi = 1 },
-				{ t = "collect", quest = 5741, item = 15750, count = 1, map = 1443, x = 55.17, y = 30.15, f = "e", note = "{quest:5741}; on the top floor", fromId = 13019, fromKind = "npc", fromNpcs = { { npc = 13019, npcName = "Burning Blade Seer" } }, oi = 1 },
+				{ t = "collect", quest = 5741, item = 15750, count = 1, map = 1443, x = 55.17, y = 30.15, f = "e", note = "{quest:5741}; on the top floor", carriedTo = "forever/alliance/30-40/06-badlands", fromId = 13019, fromKind = "npc", fromNpcs = { { npc = 13019, npcName = "Burning Blade Seer" } }, oi = 1 },
 				{ t = "kill", quest = 97284, npc = 4663, count = 4, map = 1443, x = 55.18, y = 30.05, z = 153.5, f = "e", lvl = 31, oi = 1, spotsPacked = "56.8,27.2,,39,3;52.6,29.6,126.5,33,3;56.2,23.1,,84,10;55.2,30.1,153.5,15,1,1;56.8,30,117.6,15,1,1;54,27.9,127.6,15,1,1;52.9,32.3,94.4,15,1,1", target = "Burning Blade Augur" },
 				{ t = "kill", quest = 97284, npc = 4664, count = 4, map = 1443, x = 55.98, y = 29.87, z = 127.5, f = "e", lvl = 31, oi = 2, spotsPacked = "55.9,29.3,129.4,40,4;57.3,26,125.8,23,3;52.5,32.5,115.8,15,2;54,30.4,127.4,15,1,1;52.3,28.2,126.5,15,1,1;56.4,21.6,105.5,15,1,1", target = "Burning Blade Reaver" },
 				{ t = "kill", quest = 97284, npc = 4665, count = 4, map = 1443, x = 56.05, y = 31.14, z = 111.4, f = "e", lvl = 32, oi = 3, spotsPacked = "56.1,31.3,107.7,15,2;54.8,26.5,139.6,56,6;52.6,28.7,128.5,47,5;54.5,30,128.7,15,1,1;57.5,28.7,108.1,15,1,1;56.5,21.4,105.2,15,1,1", target = "Burning Blade Adept" },
@@ -6016,7 +6028,7 @@ G(function() return {
 			title = "{area:596}",
 			note = "Use {npc:11596}'s {item:13892} on an Aged, Dying or {npc:4702}: it becomes a tamed kodo that follows you. Walk it back to {npc:11596}'s camp; there, talk to the kodo: that counts it and lets you tame the next. Five kodos, one at a time; Aged Kodos also drop the hides, and the Scorpashi Lashers that hunt around the graveyard carry the venom.",
 			goals = {
-				{ t = "use", item = 13892, map = 1443, x = 51, y = 58.5, f = "e", note = "on an Aged, Dying or {npc:4702} in the graveyard; don't kill it", text = "{item:13892}" },
+				{ t = "use", item = 13892, map = 1443, x = 51, y = 58.5, f = "e", note = "on an Aged, Dying or {npc:4702} in the graveyard; don't kill it", text = "{item:13892}", fromNpcs = { { npc = 4700, npcName = "Aged Kodo" }, { npc = 4701, npcName = "Dying Kodo" }, { npc = 4702, npcName = "Ancient Kodo" } } },
 				{ t = "talk", quest = 5561, npc = 4700, map = 1443, x = 60.6, y = 61.6, f = "e", note = "the tamed kodo, at {npc:11596}'s camp: talk to it, five times", oi = 1 },
 				{ t = "collect", quest = 1459, item = 6249, count = 3, map = 1443, x = 57.76, y = 71.05, f = "e", fromId = 4700, fromKind = "npc", fromNpcs = { { npc = 4700, npcName = "Aged Kodo" } }, lvl = 35, oi = 2, spotsPacked = "57.8,71.1,,40,1;56.8,82.5,,40,2;51.5,60.9,,40,2;53.1,57.1,,40,2;51.2,56.4,,40,2;48.3,60.3,,40,1;49.4,40.6,,40,3;58.5,34.5,,40,3;44.8,19.3,,40,2", spread = true },
 				{ t = "collect", quest = 1459, item = 6248, count = 7, map = 1443, x = 58.93, y = 72.12, f = "e", fromAlso = "Scorpashi Lasher", fromAlsoId = 4697, fromId = 4696, fromKind = "npc", fromNpcs = { { npc = 4699, npcName = "Scorpashi Venomlash" }, { npc = 4696, npcName = "Scorpashi Snapper" }, { npc = 4697, npcName = "Scorpashi Lasher" } }, lvl = 31, oi = 1, spotsPacked = "61.8,72.5,,130,5,,39;59.4,54.5,,76,3,,35;71,58.9,,103,6,,35;79.5,36.1,,76,3;68.9,20.2,,86,4;59.9,33.5,,76,1;54.6,6.9,,76,1;40.4,40.8,,76,1,,35;41.8,57.3,,76,1,,35;37.5,73.8,,76,2,,35;28.9,82.3,,76,2,,39;46.5,86.9,,76,2,,39;61.1,79.3,,76,1,1,39;59.5,64.2,,76,1,1;56,64.7,,76,1,1;53.2,68.9,,76,1,1;64.1,63.8,,76,1,1;67.8,68,,76,1,1,35;55.8,85.4,,76,3,1,39;65,57.1,,76,2,1,35;71.6,64.6,,76,1,1,35;44.2,73,,76,2,1,35;49.6,91.8,,76,2,1,39;62.7,48.3,,76,1,1,35;56.3,47.1,,76,2,1,35;44,49,,76,2,1,35;44.1,45.5,,76,1,1,35;63.8,34.5,,107,5,1;77.6,44,,76,1,1,35;70.8,33.7,,122,9,1;60.4,27.8,,76,3,1;75.8,33.1,,114,6,1;65.8,25.6,,116,9,1;71.4,27.5,,111,8,1;54.3,20.4,,76,2,1;57.7,19.4,,76,1,1;63.2,17.4,,90,4,1;55.1,14.4,,76,2,1;58,10.7,,76,3,1;51.4,8.3,,96,4,1", spread = true },
@@ -6032,7 +6044,8 @@ G(function() return {
 			title = "{area:609}",
 			note = "The Kolkar roam the plains around {area:609}; their ears are for {npc:5752}.",
 			goals = {
-				{ t = "collect", quest = 1387, item = 6067, count = 15, map = 1443, x = 65.59, y = 70.3, f = "e", fromNpcs = { { npc = 4638, npcName = "Magram Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4635, npcName = "Kolkar Windchaser" } }, lvl = 35, oi = 1, spotsPacked = "66.3,71.5,,49,4,,34;68.3,82.5,,59,5;76,75.9,,40,1,,34;73.5,66.7,,40,3,,34;74.1,50,,68,9;69.7,40,,66,6,,32;39.7,61.4,,40,1,,38;30,67.7,,44,3,,38;29.6,51.8,,44,5,,40;36.6,80.2,,40,5;39.3,95.9,,64,15,,37;59.9,89.9,,40,1,,40;67.2,69.8,,40,3,1,33;66.7,74.8,,59,5,1,34;68.6,73.5,,40,4,1;69.4,70.1,,45,3,1,34;65.3,77.5,,48,4,1;70.6,71.9,,40,2,1,36;70.6,74.6,,42,6,1,36;69.5,77.2,,43,6,1,36;71.5,67.9,,42,3,1,34;66.5,80.2,,59,8,1,42;73.2,73.3,,40,5,1,36;70.7,80.1,,46,3,1,34;72.5,78.3,,40,4,1,36;75,69.1,,40,3,1,34;76.1,72.3,,40,2,1,34;68.4,51.4,,45,5,1;64.1,90.1,,41,3,1,40;71.1,49.7,,56,6,1,33;69.4,47.9,,40,4,1,32;73.5,47,,53,11,1;68.5,44.2,,45,5,1;71,44.7,,61,8,1,33;69,41.9,,40,2,1,31;74,44.1,,40,4,1;71.7,41.6,,50,5,1,33;73.1,42.1,,57,6,1;40.2,84.2,,40,4,1,34;40.3,87.3,,53,4,1;40.1,89.7,,40,2,1,33;37.9,81.9,,53,5,1;37.9,85,,57,7,1,34;40.3,93.1,,40,7,1,36;36.3,61.1,,50,4,1,38;38.4,90.5,,45,4,1;36,59.1,,40,1,1,38;38.8,93.5,,46,8,1,36;35.2,82.1,,67,11,1;36.4,88.3,,48,4,1;35,85.1,,44,5,1,34;34.7,56.8,,43,3,1,38;33,65.9,,40,1,1,38;34.6,53.7,,40,3,1,39;35.8,91.5,,40,4,1,36;35,89.9,,41,6,1,36;31.9,60.2,,44,7,1,39;32.8,54.7,,60,9,1,39;31,65.8,,40,2,1,38;29.8,61.3,,49,5,1,40;30,58,,51,7,1,40;31,50.9,,40,2,1,40;30,54.6,,52,7,1,40", spread = true },
+				{ t = "collect", quest = 1387, item = 6067, count = 15, map = 1443, x = 65.59, y = 70.3, f = "e", fromNpcs = { { npc = 4638, npcName = "Magram Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4635, npcName = "Kolkar Windchaser" }, { npc = 4649, npcName = "Gelkis Windchaser" }, { npc = 4648, npcName = "Gelkis Stamper" }, { npc = 4640, npcName = "Magram Wrangler" }, { npc = 4641, npcName = "Magram Windchaser" }, { npc = 4651, npcName = "Gelkis Earthcaller" }, { npc = 4655, npcName = "Maraudine Wrangler" }, { npc = 4657, npcName = "Maraudine Windchaser" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4656, npcName = "Maraudine Mauler" }, { npc = 4642, npcName = "Magram Stormer" }, { npc = 4654, npcName = "Maraudine Scout" }, { npc = 4647, npcName = "Gelkis Scout" }, { npc = 4653, npcName = "Gelkis Marauder" }, { npc = 4646, npcName = "Gelkis Outrunner" }, { npc = 4652, npcName = "Gelkis Mauler" }, { npc = 5600, npcName = "Khan Dez'hepah" }, { npc = 4637, npcName = "Kolkar Destroyer" }, { npc = 4644, npcName = "Magram Marauder" }, { npc = 4645, npcName = "Magram Mauler" }, { npc = 4639, npcName = "Magram Outrunner" }, { npc = 11559, npcName = "Outcast Necromancer" }, { npc = 4643, npcName = "Magram Pack Runner" }, { npc = 4658, npcName = "Maraudine Stormer" }, { npc = 4659, npcName = "Maraudine Marauder" }, { npc = 12976, npcName = "Kolkar Waylayer" }, { npc = 12977, npcName = "Kolkar Ambusher" }, { npc = 5601, npcName = "Khan Jehn" } }, fromNpcsAt = "8,1,9;8,9,15;9;8,1;13,22,5,21;3,5,2;11;11,16;14,12,28;7,6,10;6,20,18,7,10;26;25;1,9,25;8,9,15;1,8,9;9,15,27;15,23;15,8,27,23,24;15,24,8,9;1,25,9;9,15,23,8,24,32;23,8,9,24;9,8;8,15,27,24;9,8;8;2,3,30,31;26;13,3,4,5,22;2,3,5;5,13,4,21;3,2,30,31;4,3,13,22;2,3;21,4,13;4,13,5;4,5,21,13,22;6,19;10,7,6;19,17;6,17,7,10;7,6,19,17;7,20,6,10,18;11,16;7,10;16;6,7,10,18;17,7,6,10;6,19,10;19,17,6;11,16;16;11,14;7,6,20,18;6,7,18;12,14,11;14,16,12,11;16,11;11,16,12,29;14,12,29;14,12,28;12,16,14,28", lvl = 35, oi = 1, spotsPacked = "66.3,71.5,,49,4,,34;68.3,82.5,,59,5;76,75.9,,40,1,,34;73.5,66.7,,40,3,,34;74.1,50,,68,9;69.7,40,,66,6,,32;39.7,61.4,,40,1,,38;30,67.7,,44,3,,38;29.6,51.8,,44,5,,40;36.6,80.2,,40,5;39.3,95.9,,64,15,,37;59.9,89.9,,40,1,,40;67.2,69.8,,40,3,1,33;66.7,74.8,,59,5,1,34;68.6,73.5,,40,4,1;69.4,70.1,,45,3,1,34;65.3,77.5,,48,4,1;70.6,71.9,,40,2,1,36;70.6,74.6,,42,6,1,36;69.5,77.2,,43,6,1,36;71.5,67.9,,42,3,1,34;66.5,80.2,,59,8,1,42;73.2,73.3,,40,5,1,36;70.7,80.1,,46,3,1,34;72.5,78.3,,40,4,1,36;75,69.1,,40,3,1,34;76.1,72.3,,40,2,1,34;68.4,51.4,,45,5,1;64.1,90.1,,41,3,1,40;71.1,49.7,,56,6,1,33;69.4,47.9,,40,4,1,32;73.5,47,,53,11,1;68.5,44.2,,45,5,1;71,44.7,,61,8,1,33;69,41.9,,40,2,1,31;74,44.1,,40,4,1;71.7,41.6,,50,5,1,33;73.1,42.1,,57,6,1;40.2,84.2,,40,4,1,34;40.3,87.3,,53,4,1;40.1,89.7,,40,2,1,33;37.9,81.9,,53,5,1;37.9,85,,57,7,1,34;40.3,93.1,,40,7,1,36;36.3,61.1,,50,4,1,38;38.4,90.5,,45,4,1;36,59.1,,40,1,1,38;38.8,93.5,,46,8,1,36;35.2,82.1,,67,11,1;36.4,88.3,,48,4,1;35,85.1,,44,5,1,34;34.7,56.8,,43,3,1,38;33,65.9,,40,1,1,38;34.6,53.7,,40,3,1,39;35.8,91.5,,40,4,1,36;35,89.9,,41,6,1,36;31.9,60.2,,44,7,1,39;32.8,54.7,,60,9,1,39;31,65.8,,40,2,1,38;29.8,61.3,,49,5,1,40;30,58,,51,7,1,40;31,50.9,,40,2,1,40;30,54.6,,52,7,1,40", spread = true },
+				{ t = "collect", quest = 93224, item = 254432, count = 5, map = 1443, x = 65.59, y = 70.3, f = "e", fromNpcs = { { npc = 4638, npcName = "Magram Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4635, npcName = "Kolkar Windchaser" }, { npc = 4640, npcName = "Magram Wrangler" }, { npc = 4641, npcName = "Magram Windchaser" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4657, npcName = "Maraudine Windchaser" }, { npc = 4655, npcName = "Maraudine Wrangler" }, { npc = 4656, npcName = "Maraudine Mauler" }, { npc = 4654, npcName = "Maraudine Scout" }, { npc = 4642, npcName = "Magram Stormer" }, { npc = 4637, npcName = "Kolkar Destroyer" }, { npc = 4645, npcName = "Magram Mauler" }, { npc = 4639, npcName = "Magram Outrunner" }, { npc = 4643, npcName = "Magram Pack Runner" }, { npc = 4659, npcName = "Maraudine Marauder" } }, fromNpcsAt = "6,1,7;13,15;7;6,1;2,3;8,5,4,14;4,5;6,7,13;10;12,10;9,12,11;10,12;16;1,7,16;6,7,13;1,6,7;6,13,17;7,13,17;13,15,6,7;1,16,7;6,7,13,15;6,7,15;7,6;6,13,17,15;7,6;6;8,4,5,14;2,3,5;8,14,5;3,2;4,5,8;8,4,5;4,8,5,14;2,3;8,4,5,14;3,5,2;10,12;12;12;10,12,11,9;9,11,10;11,9,12;12,10;10,12,9,18;11,9,18;11,9", lvl = 34, oi = 1, spotsPacked = "66.3,71.5,,49,4;70.8,75.5,,40,2,,36;76,75.9,,40,1;73.5,66.7,,40,3;69.2,50.8,,51,4,,31;73.9,48.8,,48,5,,33;72.6,40.2,,40,2,,32;68.3,82.5,,59,5,,35;39.7,61.4,,40,1,,38;34.8,57.4,,40,2,,38;30,54.1,,68,7,,39;30,67.7,,44,3,,38;67.2,69.8,,40,3,1,33;66.7,74.8,,59,5,1;68.3,73.4,,40,3,1,35;69.4,70.1,,45,3,1;70.1,73.5,,40,5,1,35;65.5,77.8,,59,5,1,35;69.5,77.2,,43,6,1,36;71.5,67.9,,42,3,1;66.9,80.2,,41,4,1,36;73.1,72.8,,40,3,1,36;70.7,80.1,,46,3,1;72.5,78.3,,40,4,1,36;75,69.1,,40,3,1;76.1,72.3,,40,2,1;71.3,49.6,,50,5,1,33;69.4,47.9,,40,4,1,32;73.9,50.8,,42,5,1,33;69.2,44.8,,45,4,1,31;72.2,46,,62,6,1,33;74.3,46.8,,40,4,1,33;71.2,42.8,,48,8,1,33;69,41.9,,40,2,1,31;73.3,43.1,,54,5,1,33;69.7,40,,66,6,1,32;36.3,61.1,,50,4,1,38;36,59.1,,40,1,1,38;33,65.9,,40,1,1,38;34.3,54.5,,55,6,1,39;31.9,60.2,,44,7,1,39;32.5,54.6,,46,7,1,39;31,65.8,,40,2,1,38;29.8,61.3,,49,5,1,40;30,58,,51,7,1,40;31,51.6,,40,2,1,39", spread = true },
 			},
 		},
 		{
@@ -6041,6 +6054,7 @@ G(function() return {
 				{ t = "turnin", quest = 1440, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e" },
 				{ t = "turnin", quest = 97284, npc = 5642, map = 1443, x = 66.44, y = 11.82, z = 164.2, f = "e" },
 				{ t = "turnin", quest = 1387, npc = 5752, map = 1443, x = 66.74, y = 10.87, z = 163.3, f = "e" },
+				{ t = "turnin", quest = 93224, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e" },
 				{ t = "turnin", quest = 1459, npc = 5638, map = 1443, x = 66.2, y = 9.63, z = 166.8, f = "e" },
 				{ t = "turnin", quest = 1455, npc = 5638, map = 1443, x = 66.2, y = 9.63, z = 166.8, f = "e" },
 				{ t = "accept", minLevel = 30, quest = 1456, npc = 5638, map = 1443, x = 66.2, y = 9.63, z = 166.8, f = "e", note = "{npc:5638}: the satchel lies off the north-west coast, on the south loop at the end of 30-40 (06-badlands): keep it", pre = { 1455 }, qlvl = 39 },
@@ -6220,7 +6234,7 @@ G(function() return {
 				{ t = "kill", quest = 1175, npc = 4147, count = 10, map = 1441, x = 77.6, y = 64.88, z = -62.8, f = "e", lvl = 31, oi = 1, spotsPacked = "77.6,64.9,-62.8,52,1;80.6,64.2,-60.5,52,1;77.4,59.3,-59.7,55,4;74.5,60.5,,52,2;74.4,56.1,,85,5;76.3,53.3,-58.6,52,2;68.7,61.9,-53.6,52,1;71.1,66.9,,52,4", spread = true, target = "Saltstone Basilisk" },
 				{ t = "kill", quest = 1175, npc = 4151, count = 10, map = 1441, x = 76.92, y = 64.67, z = -59.3, f = "e", lvl = 33, oi = 2, spotsPacked = "76.7,66.1,,62,3;79.4,69.4,,55,3;83.7,69.4,-58.6,51,1;83.2,63.8,,51,3;86.2,59.3,,51,2;80,55.6,,51,2;80,51.7,-58.5,51,1;87.5,73.2,,51,2;87,79.6,-58.6,51,1;77.7,89.1,,66,6;72.9,77.8,,70,3;69,77.7,-58.4,51,1;76.1,69.7,-58.6,51,1,1;86.7,63.1,-58.6,51,1,1;78.8,87.1,-58.7,109,9,1", spread = true, target = "Saltstone Crystalhide" },
 				{ t = "kill", quest = 1175, npc = 4150, count = 6, map = 1441, x = 83.48, y = 78.77, z = -58.6, f = "e", lvl = 35, oi = 3, spotsPacked = "83.5,78.8,-58.6,42,1;83.1,85.6,-58.6,42,1;79.3,88.3,,42,4;77.3,89.5,,65,7;76.5,86.3,,42,2;77.7,83.6,-58.6,42,1;72.9,87.9,-58.6,42,1;71.2,90.7,-58.6,42,1", spread = true, target = "Saltstone Gazer" },
-				{ t = "collect", quest = 1078, item = 5675, count = 8, map = 1441, x = 80.59, y = 64.18, f = "e", optional = true, note = "Crystalized Scale, from the Saltstone Basilisks: eight for {npc:4078} in {zone:1453}", fromNpcs = { { npc = 4147, npcName = "Saltstone Basilisk" } }, lvl = 31, oi = 1, spotsPacked = "80.6,64.2,,52,1;77.6,64.9,,52,1;77.4,59.3,,55,4;74.5,60.5,,52,2;74.4,56.1,,85,5;76.3,53.3,,52,2;68.7,61.9,,52,1;71.1,66.9,,52,4", spread = true },
+				{ t = "collect", quest = 1078, item = 5675, count = 8, map = 1441, x = 80.59, y = 64.18, f = "e", optional = true, note = "Crystalized Scale, from the Saltstone Basilisks: eight for {npc:4078} in {zone:1453}", carriedTo = "forever/alliance/30-40/04-stranglethorn-vale", fromNpcs = { { npc = 4147, npcName = "Saltstone Basilisk" } }, lvl = 31, oi = 1, spotsPacked = "80.6,64.2,,52,1;77.6,64.9,,52,1;77.4,59.3,,55,4;74.5,60.5,,52,2;74.4,56.1,,85,5;76.3,53.3,,52,2;68.7,61.9,,52,1;71.1,66.9,,52,4", spread = true },
 			},
 		},
 		{
@@ -6489,9 +6503,9 @@ G(function() return {
 		},
 		{
 			title = "{area:99}",
-			note = "Take the road north; the camp sits in the hills to the west.\n{npc:738} spends most of his time at the top of the {area:99}'s path, by the huts, and now and then walks down it to the road and back (about eight minutes). If he isn't at the arrow, look along that path.",
+			note = "Take the road north; the camp sits in the hills to the west.\n{npc:738} offers {quest:215} only while he is out of the camp: about every half hour he walks down the path to the road, where two Kurzen's Agents ambush him. Help him kill them and take the quest at once, before he walks back up. He isn't there? Leave it: the guide passes {quest:200}, which follows from it, as well.",
 			goals = {
-				{ t = "accept", minLevel = 30, quest = 215, npc = 738, map = 1434, x = 38, y = 3.4, z = 75.6, f = "e", qlvl = 33, spotsPacked = "38,3.4,75.6,15,1;40.3,8.4,,15,1,1" },
+				{ t = "accept", minLevel = 30, quest = 215, npc = 738, map = 1434, x = 40.3, y = 8.4, f = "e", optional = true, note = "{npc:738}, at the foot of the path", qlvl = 33, spotsPacked = "40.3,8.4,,15,1;38,3.4,75.6,15,1,1" },
 				{ t = "turnin", quest = 215, npc = 469, map = 1434, x = 38.04, y = 3.01, z = 75.9, f = "e", note = "{npc:469}, in the hut" },
 				{ t = "accept", minLevel = 30, quest = 200, npc = 469, map = 1434, x = 38.04, y = 3.01, z = 75.9, f = "e", note = "{npc:469}: {quest:200}'s records lie at the edge of {area:101}, next", pre = { 215 }, qlvl = 35 },
 				{ t = "accept", minLevel = 32, quest = 210, npc = 770, map = 1434, x = 37.74, y = 3.3, z = 75.6, f = "e", note = "{npc:770}: for {npc:773} in {area:35}, later in this guide", qlvl = 37 },
@@ -6547,10 +6561,10 @@ G(function() return {
 			title = "{area:100}",
 			note = "{npc:716} collects the {item:2755}: the pages drop from almost every humanoid in the jungle. Turn the pages into chapters as you go.",
 			goals = {
-				{ t = "accept", minLevel = 30, quest = 339, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, qlvl = 40 },
-				{ t = "accept", minLevel = 30, quest = 340, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, qlvl = 40 },
-				{ t = "accept", minLevel = 30, quest = 341, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, qlvl = 40 },
-				{ t = "accept", minLevel = 30, quest = 342, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, qlvl = 40 },
+				{ t = "accept", minLevel = 30, quest = 339, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, parent = 338, qlvl = 40 },
+				{ t = "accept", minLevel = 30, quest = 340, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, parent = 338, qlvl = 40 },
+				{ t = "accept", minLevel = 30, quest = 341, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, parent = 338, qlvl = 40 },
+				{ t = "accept", minLevel = 30, quest = 342, npc = 716, map = 1434, x = 35.66, y = 10.53, z = 11.1, f = "e", optional = true, parent = 338, qlvl = 40 },
 				{ t = "turnin", quest = 187, npc = 717, map = 1434, x = 35.62, y = 10.62, z = 11.2, f = "e" },
 				{ t = "accept", minLevel = 28, quest = 188, npc = 717, map = 1434, x = 35.62, y = 10.62, z = 11.2, f = "e", pre = { 187 }, qlvl = 37 },
 				{ t = "turnin", quest = 194, npc = 715, map = 1434, x = 35.66, y = 10.81, z = 11, f = "e" },
@@ -6603,7 +6617,7 @@ G(function() return {
 			goals = {
 				{ t = "collect", quest = 605, item = 3918, count = 10, map = 1434, x = 24.2, y = 17.7, f = "e", fromNpcs = { { npc = 689, npcName = "Crystal Spine Basilisk" } }, lvl = 35, oi = 1, spotsPacked = "24.2,17.7,,83,6;26.7,18.3,,45,2,1;47.3,6.1,,48,3,1;48.7,9.3,,59,4,1" },
 				{ t = "complete", quest = 578, map = 1434, x = 21.9, y = 22.4, f = "e", note = "The haunted island", objs = { { count = 1, text = "Locate the haunted island" } }, startItem = 3898, startItemName = "Library Scrip" },
-				{ t = "collect", quest = 189, item = 1519, count = 15, map = 1434, x = 22.54, y = 13.37, f = "e", fromNpcs = { { npc = 701, npcName = "Bloodscalp Mystic" }, { npc = 694, npcName = "Bloodscalp Axe Thrower" }, { npc = 702, npcName = "Bloodscalp Scavenger" }, { npc = 697, npcName = "Bloodscalp Shaman" }, { npc = 587, npcName = "Bloodscalp Warrior" } }, lvl = 34, oi = 1, spotsPacked = "22.9,12.3,,55,14,,37;24.6,12.6,,66,15,,35;26.1,12.4,,49,11,,35;27.5,11.3,,40,4,,35;25.3,10.3,,54,15,,37;23.5,9.5,,78,11,,37;19.8,12.2,,40,4,,37;30.5,17.4,,40,2;30,21.2,,40,2;33,13.5,,40,3;34.3,14.6,,40,1;31.4,12.2,,40,4;20.7,11.2,,40,1,1,37;25.8,9.1,,45,13,1,35;29.4,19.5,,43,8,1;30.7,19.4,,40,1,1;31.7,14,,40,2,1;33.9,16.1,,48,6,1", spread = true },
+				{ t = "collect", quest = 189, item = 1519, count = 15, map = 1434, x = 22.54, y = 13.37, f = "e", fromNpcs = { { npc = 701, npcName = "Bloodscalp Mystic" }, { npc = 694, npcName = "Bloodscalp Axe Thrower" }, { npc = 702, npcName = "Bloodscalp Scavenger" }, { npc = 697, npcName = "Bloodscalp Shaman" }, { npc = 587, npcName = "Bloodscalp Warrior" }, { npc = 588, npcName = "Bloodscalp Scout" }, { npc = 595, npcName = "Bloodscalp Hunter" }, { npc = 597, npcName = "Bloodscalp Berserker" }, { npc = 699, npcName = "Bloodscalp Beastmaster" } }, fromNpcsAt = "1,6,7,9,8;6,1,7;1,7,6,9;1,6,9;1,6,7,9,8;8,7,9;8;4;4,5;3,5;5;3;8;1,6,7,9;2,4,5;4;3;2,5", lvl = 34, oi = 1, spotsPacked = "22.9,12.3,,55,14,,37;24.6,12.6,,66,15,,35;26.1,12.4,,49,11,,35;27.5,11.3,,40,4,,35;25.3,10.3,,54,15,,37;23.5,9.5,,78,11,,37;19.8,12.2,,40,4,,37;30.5,17.4,,40,2;30,21.2,,40,2;33,13.5,,40,3;34.3,14.6,,40,1;31.4,12.2,,40,4;20.7,11.2,,40,1,1,37;25.8,9.1,,45,13,1,35;29.4,19.5,,43,8,1;30.7,19.4,,40,1,1;31.7,14,,40,2,1;33.9,16.1,,48,6,1", spread = true },
 				{ t = "collect", quest = 188, item = 3879, count = 1, map = 1434, x = 31.47, y = 15.5, f = "e", fromId = 729, fromKind = "npc", fromNpcs = { { npc = 729, npcName = "Sin'Dall" } }, lvl = 37, oi = 1, spotsPacked = "31.5,15.5,,15,1;32.2,17.4,,15,1" },
 			},
 		},
@@ -6688,8 +6702,8 @@ G(function() return {
 			only = { classes = { "WARLOCK" } },
 			note = "From {area:415} head north-west into the hills: the {quest:1738} is a glowing tree north of the road to {area:413}. If you took {quest:65602}, the {item:190309} lies in a house among the trees north of {area:413} (26.6,22.0). Then take the road west to Stonetalon.",
 			goals = {
-				{ t = "collect", quest = 1738, item = 6912, count = 1, map = 1440, x = 31.55, y = 31.57, f = "e", fromId = 93192, fromKind = "object", oi = 1 },
-				{ t = "collect", quest = 65602, item = 190309, count = 1, map = 1440, x = 26.61, y = 22.03, f = "e", optional = true, note = "{item:190309}, north of {area:413}", fromId = 375544, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 1738, item = 6912, count = 1, map = 1440, x = 31.55, y = 31.57, f = "e", carriedTo = "forever/alliance/30-40/05-arathi-highlands", fromId = 93192, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 65602, item = 190309, count = 1, map = 1440, x = 26.61, y = 22.03, f = "e", optional = true, note = "{item:190309}, north of {area:413}", carriedTo = "forever/alliance/30-40/05-arathi-highlands", fromId = 375544, fromKind = "object", oi = 1 },
 			},
 		},
 		{
@@ -6711,6 +6725,7 @@ G(function() return {
 	zone = 1434,
 	next = { "forever/alliance/30-40/05-arathi-highlands" },
 	names = { ["zone:1453"] = "Stormwind" },
+	pitch = "For characters of 35 to 36, but several quests here are level 37-41: on purpose, for their experience. {quest:205}'s Skullsplitter trolls are 39-42, so pull them one at a time.",
 	version = 1,
 	steps = {
 		{
@@ -6856,7 +6871,7 @@ G(function() return {
 			title = "Skullsplitter trolls",
 			note = "The Skullsplitter trolls hold the ruins east of the road between Nesingwary and {object:3202}.",
 			goals = {
-				{ t = "collect", quest = 205, item = 2466, count = 4, map = 1434, x = 42.45, y = 33.27, f = "e", fromAlso = "Skullsplitter Mystic", fromAlsoId = 780, fromId = 670, fromKind = "npc", fromNpcs = { { npc = 780, npcName = "Skullsplitter Mystic" }, { npc = 670, npcName = "Skullsplitter Witch Doctor" } }, lvl = 40, oi = 1, spotsPacked = "43,33.1,,36,2;42.2,35.7,,41,6;43.8,34.7,,35,3;43.6,37.2,,39,3;45.9,32,,48,6;45.5,38,,33,2;45.1,34.1,,15,1,1;43.8,39.7,,27,5,1;47.2,33.3,,36,3,1;46.8,30.4,,28,2,1;45.9,40.3,,55,3,1;47.2,39.2,,51,6,1;45.1,42.1,,54,6,1,42;48.7,37.5,,15,1,1;48.3,40.2,,35,4,1;47.7,41.5,,44,3,1" },
+				{ t = "collect", quest = 205, item = 2466, count = 4, map = 1434, x = 42.45, y = 33.27, f = "e", carriedTo = "forever/alliance/40-50/01-stranglethorn-vale", fromAlso = "Skullsplitter Mystic", fromAlsoId = 780, fromId = 670, fromKind = "npc", fromNpcs = { { npc = 780, npcName = "Skullsplitter Mystic" }, { npc = 670, npcName = "Skullsplitter Witch Doctor" } }, lvl = 40, oi = 1, spotsPacked = "43,33.1,,36,2;42.2,35.7,,41,6;43.8,34.7,,35,3;43.6,37.2,,39,3;45.9,32,,48,6;45.5,38,,33,2;45.1,34.1,,15,1,1;43.8,39.7,,27,5,1;47.2,33.3,,36,3,1;46.8,30.4,,28,2,1;45.9,40.3,,55,3,1;47.2,39.2,,51,6,1;45.1,42.1,,54,6,1,42;48.7,37.5,,15,1,1;48.3,40.2,,35,4,1;47.7,41.5,,44,3,1" },
 			},
 		},
 		{
@@ -6867,7 +6882,7 @@ G(function() return {
 				{ t = "accept", minLevel = 32, quest = 602, npc = 2496, map = 1434, x = 27.23, y = 76.87, z = 28.9, f = "e", note = "For Archmage Ansirem in {zone:1416}", pre = { 601 }, qlvl = 37 },
 				{ t = "turnin", quest = 213, npc = 737, map = 1434, x = 27, y = 77.13, z = 26.4, f = "e" },
 				{ t = "turnin", quest = 210, npc = 773, map = 1434, x = 26.95, y = 77.21, z = 26.4, f = "e", note = "{npc:773}, upstairs" },
-				{ t = "accept", minLevel = 32, quest = 627, npc = 773, map = 1434, x = 26.95, y = 77.21, z = 26.4, f = "e", note = "{npc:773}: the ore drops from Drywhisker kobolds in {zone:1417}, next", pre = { 210 }, qlvl = 37 },
+				{ t = "accept", minLevel = 32, quest = 627, npc = 773, map = 1434, x = 26.95, y = 77.21, z = 26.4, f = "e", optional = true, note = "{npc:773}, upstairs: this optional quest needs four {item:4278}. Mine Lesser Bloodstone Deposits in {zone:1417} with {skill:186} 75, or buy the ore at the Auction House or ask a miner friend. The kobolds do not drop it; skip this quest if you cannot get the ore.", pre = { 210 }, qlvl = 37 },
 				{ t = "accept", minLevel = 30, quest = 600, npc = 2498, map = 1434, x = 27.12, y = 77.21, z = 15.2, f = "e", note = "{npc:2498}, inside", pre = { 605 }, qlvl = 41 },
 				{ t = "accept", minLevel = 30, quest = 606, npc = 2501, map = 1434, x = 27.78, y = 77.07, z = 15.8, f = "e", note = "\"Sea Wolf\" MacKinley, on the top floor", qlvl = 41 },
 			},
@@ -7131,10 +7146,10 @@ G(function() return {
 		},
 		{
 			title = "{area:76}",
-			note = "East along the road to the {area:76}. {npc:256028} mobs drop the crystals; Noboru walks the ruins and drops his cudgel.",
+			note = "East along the road to the {area:76}. {npc:256028} mobs drop the crystals. {quest:1392} walks a long path through the ruins: if you meet him, kill him, his cudgel starts a quest for {npc:1776}. Don't wait for him.",
 			goals = {
-				{ t = "collect", item = 6196, map = 1435, x = 54.9, y = 34.1, f = "e", fromId = 5477, fromKind = "npc", fromNpcs = { { npc = 5477, npcName = "Noboru the Cudgel" } } },
-				{ t = "accept", minLevel = 29, quest = 1392, item = 6196, qlvl = 39 },
+				{ t = "collect", item = 6196, map = 1435, x = 54.9, y = 34.1, f = "e", optional = true, note = "from {quest:1392}: he walks a path through the ruins", fromId = 5477, fromKind = "npc", fromNpcs = { { npc = 5477, npcName = "Noboru the Cudgel" } } },
+				{ t = "accept", minLevel = 29, quest = 1392, item = 6196, optional = true, qlvl = 39 },
 				{ t = "collect", quest = 1389, item = 6071, count = 6, map = 1435, x = 55.09, y = 30.08, f = "e", fromId = 22550, fromKind = "object", oi = 1, spotsPacked = "55.4,29.5,,15,2;58.8,23.6,,39,2;63.6,22.3,,51,4" },
 			},
 		},
@@ -7244,14 +7259,14 @@ G(function() return {
 		},
 		{
 			title = "{npc:2434}",
-			note = "A {npc:2434} lurks unseen on the edge of {area:271}; kill him and read the contract he carries.",
+			note = "A {npc:2434} lurks stealthed on the edge of {area:271}, and few players find him. If you spot him, kill him and read the contract he carries: {npc:2276} takes it. Don't wait for him: the rest of this step doesn't need him.",
 			goals = {
 				{ t = "sethome", npc = 2352, map = 1424, x = 51.17, y = 58.93, z = 11.3, f = "e", area = 271, location = "Southshore" },
-				{ t = "kill", npc = 2434, map = 1424, x = 50.06, y = 57.91, f = "e", target = "Shadowy Assassin" },
-				{ t = "collect", item = 3668, map = 1424, x = 50.06, y = 57.91, f = "e", fromId = 2434, fromKind = "npc", fromNpcs = { { npc = 2434, npcName = "Shadowy Assassin" } } },
-				{ t = "accept", minLevel = 30, quest = 522, item = 3668, qlvl = 38 },
+				{ t = "kill", npc = 2434, map = 1424, x = 50.06, y = 57.91, f = "e", optional = true, note = "{npc:2434}, if you spot him", target = "Shadowy Assassin" },
+				{ t = "collect", item = 3668, map = 1424, x = 50.06, y = 57.91, f = "e", optional = true, fromId = 2434, fromKind = "npc", fromNpcs = { { npc = 2434, npcName = "Shadowy Assassin" } } },
+				{ t = "accept", minLevel = 30, quest = 522, item = 3668, optional = true, qlvl = 38 },
 				{ t = "turnin", quest = 522, npc = 2276, map = 1424, x = 48.14, y = 59.11, z = 13.4, f = "e", note = "{npc:2276}, inside" },
-				{ t = "accept", minLevel = 30, quest = 523, npc = 2276, map = 1424, x = 48.14, y = 59.11, z = 13.4, f = "e", pre = { 522 }, qlvl = 40 },
+				{ t = "accept", minLevel = 30, quest = 523, npc = 2276, map = 1424, x = 48.14, y = 59.11, z = 13.4, f = "e", optional = true, pre = { 522 }, qlvl = 40 },
 				{ t = "turnin", quest = 525, npc = 2276, map = 1424, x = 48.14, y = 59.11, z = 13.4, f = "e" },
 				{ t = "accept", minLevel = 30, quest = 537, npc = 2276, map = 1424, x = 48.14, y = 59.11, z = 13.4, f = "e", pre = { 525 }, qlvl = 40 },
 			},
@@ -7306,9 +7321,9 @@ G(function() return {
 		},
 		{
 			title = "{area:318}: kill these as you meet them",
-			note = "The Drywhisker kobolds dig in the gorge east of {area:321} (Horde); skirt the town to the north. They drop both the motes and Krazek's ore.\nCareful: Every kobold type runs off for help when low on health (Kobolds at 30%, Surveyors and Diggers at 15%), which can pull more of them.",
+			note = "The Drywhisker kobolds dig in the gorge east of {area:321} (Horde); skirt the town to the north. They drop the Motes of Myzrael, not Krazek's ore. Lesser Bloodstone Deposits need {skill:186} 75: mine four ore, buy them at the Auction House, or ask a miner friend. The ore goal is optional; continue with Myzrael if you cannot get it. Careful: Every kobold type runs off for help when low on health (Kobolds at 30%, Surveyors and Diggers at 15%), which can pull more of them.",
 			goals = {
-				{ t = "collect", quest = 627, item = 4278, count = 4, map = 1417, x = 82.81, y = 33.53, f = "e", fromId = 2653, fromKind = "object", oi = 1, spotsPacked = "83.7,33.9,,51,10;84.4,29.6,,47,11;86.2,32.1,,55,7" },
+				{ t = "collect", quest = 627, item = 4278, count = 4, map = 1417, x = 82.81, y = 33.53, f = "e", optional = true, carriedTo = "forever/alliance/40-50/01-stranglethorn-vale", fromId = 2653, fromKind = "object", oi = 1, spotsPacked = "83.7,33.9,,51,10;84.4,29.6,,47,11;86.2,32.1,,55,7" },
 				{ t = "collect", quest = 642, item = 4435, count = 12, map = 1417, x = 83.07, y = 33.03, f = "e", note = "{item:4435} from {npc:2572}, {npc:2573} and {npc:2574}, by this stop", fromAlso = "Drywhisker Surveyor", fromAlsoId = 2573, fromId = 2572, fromKind = "npc", fromNpcs = { { npc = 2573, npcName = "Drywhisker Surveyor" }, { npc = 2572, npcName = "Drywhisker Kobold" }, { npc = 2574, npcName = "Drywhisker Digger" } }, lvl = 36, oi = 1, spotsPacked = "84.3,33.3,,50,7,,38;84.8,30.5,,44,7,,38;82.4,36.8,,50,7,,37;86.5,30.9,,26,4,,38;78.4,35.6,,53,8;78.9,40.6,,44,4;79.5,33.1,,15,1,1;76.6,43.7,,33,4,1" },
 			},
 		},
@@ -7509,14 +7524,14 @@ G(function() return {
 			when = { { k = "group", q = 543 } },
 			note = "These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:2417} is a level 40 elite: most classes solo it at level 42, but you may need help. Skip it if you are alone: the route has you grind the XP back.\n{npc:2417} walks from the arrow north-east through the ruins to about 40,47 and back: if he isn't at the arrow, follow his path.",
 			goals = {
-				{ t = "collect", quest = 543, item = 3684, count = 1, map = 1416, x = 35.6, y = 54.4, f = "e", fromId = 2417, fromKind = "npc", fromNpcs = { { npc = 2417, npcName = "Grel'borg the Miser" } }, fromRank = 1, group = { kind = "elite", lvl = 39, rank = 1 }, oi = 1 },
+				{ t = "collect", quest = 543, item = 3684, count = 1, map = 1416, x = 35.6, y = 54.4, f = "e", carriedTo = "forever/alliance/40-50/01-stranglethorn-vale", fromId = 2417, fromKind = "npc", fromNpcs = { { npc = 2417, npcName = "Grel'borg the Miser" } }, fromRank = 1, group = { kind = "elite", lvl = 39, rank = 1 }, oi = 1 },
 			},
 		},
 		{
 			title = "{area:280}: kill these as you meet them",
 			note = "Careful: Syndicate Spies and Assassins can be stealthed. Assassins also poison you.\nCareful: About three stealthed Syndicate mobs are inside {npc:2320}'s house. {npc:2320} does not join when they are pulled, and a ranged attack through the doorway brings him out by himself.",
 			goals = {
-				{ t = "collect", quest = 512, item = 3505, count = 7, map = 1416, x = 38.32, y = 22.46, f = "e", fromAlso = "Syndicate Sentry", fromAlsoId = 2243, fromId = 2242, fromKind = "npc", fromNpcs = { { npc = 2247, npcName = "Syndicate Enforcer" }, { npc = 2242, npcName = "Syndicate Spy" }, { npc = 2243, npcName = "Syndicate Sentry" }, { npc = 2245, npcName = "Syndicate Saboteur" }, { npc = 2246, npcName = "Syndicate Assassin" } }, lvl = 38, oi = 1, spotsPacked = "39.9,20.6,,57,8,,40;38.8,15,,61,14,,40;47.4,17.9,,56,10;53.7,20.6,,40,4;55.9,26.8,,40,6;58.5,30.4,,59,7;58.3,36.1,,40,1,,37;59.8,43.1,,62,11,,36;62.6,41.2,,46,5,,36;63,45,,44,9,,36;57.2,46.3,,51,4,,36;51.5,30.1,,40,2,,37;42.1,19,,40,4,1,40;53.2,23.4,,40,3,1,37;56.8,28.7,,53,5,1;56,34.4,,40,1,1,37;58.2,67.3,,40,1,1,35", spread = true },
+				{ t = "collect", quest = 512, item = 3505, count = 7, map = 1416, x = 38.32, y = 22.46, f = "e", fromAlso = "Syndicate Sentry", fromAlsoId = 2243, fromId = 2242, fromKind = "npc", fromNpcs = { { npc = 2247, npcName = "Syndicate Enforcer" }, { npc = 2242, npcName = "Syndicate Spy" }, { npc = 2243, npcName = "Syndicate Sentry" }, { npc = 2245, npcName = "Syndicate Saboteur" }, { npc = 2246, npcName = "Syndicate Assassin" }, { npc = 2319, npcName = "Syndicate Wizard" }, { npc = 14221, npcName = "Gravis Slipknot" } }, fromNpcsAt = "5,1;5,1;3,4;3,4;3,4;3,4;3;2,6,7;6,2;2,6;2;3;1,5;3;3,4;3;6", lvl = 38, oi = 1, spotsPacked = "39.9,20.6,,57,8,,40;38.8,15,,61,14,,40;47.4,17.9,,56,10;53.7,20.6,,40,4;55.9,26.8,,40,6;58.5,30.4,,59,7;58.3,36.1,,40,1,,37;59.8,43.1,,62,11,,36;62.6,41.2,,46,5,,36;63,45,,44,9,,36;57.2,46.3,,51,4,,36;51.5,30.1,,40,2,,37;42.1,19,,40,4,1,40;53.2,23.4,,40,3,1,37;56.8,28.7,,53,5,1;56,34.4,,40,1,1,37;58.2,67.3,,40,1,1,35", spread = true },
 				{ t = "kill", quest = 537, npc = 2318, count = 4, map = 1416, x = 47.79, y = 17.45, z = 71.1, f = "e", lvl = 36, oi = 1, spotsPacked = "50.5,19.1,,90,2;57.4,28.9,,90,2;61,44.1,,108,5", spread = true, target = "Argus Shadow Mage" },
 				{ t = "collect", quest = 523, item = 3626, count = 1, map = 1416, x = 47.83, y = 17.11, f = "e", fromId = 2306, fromKind = "npc", fromNpcs = { { npc = 2306, npcName = "Baron Vardus" } }, lvl = 40, oi = 1, spotsPacked = "47.8,17.1,,15,1;53.7,20.4,,15,1;56.3,26.7,,15,1;57.8,29.8,,15,1;60.3,43.1,,15,1", spread = true },
 			},
@@ -7702,13 +7717,13 @@ G(function() return {
 			title = "{area:345}: kill these as you meet them",
 			note = "The Dustbelcher ogres camp just south of the valley; any of them drops scrap. Buzzards circle the plain to the east.\nThe battered skeleton lies at the edge of the Stonevault trogg camp; {quest:739}, Agmond's killer, walks among the Bonesnappers.\nCareful: Dustbelcher Lords are level 44-45. They use {spell:5242} and {spell:1160}, and below 50% health they call for help from allies within 15 yd. Seven of them stand about 750 yd south of {area:340}.",
 			goals = {
-				{ t = "collect", quest = 733, item = 4630, count = 7, map = 1418, x = 61.95, y = 70.18, f = "e", fromNpcs = { { npc = 2701, npcName = "Dustbelcher Ogre" }, { npc = 2715, npcName = "Dustbelcher Brute" }, { npc = 2906, npcName = "Dustbelcher Warrior" }, { npc = 2907, npcName = "Dustbelcher Mystic" }, { npc = 2719, npcName = "Dustbelcher Lord" } }, lvl = 43, oi = 1, spotsPacked = "62.5,69.4,,40,3,,40;66.1,23.4,,57,8,,37;29.6,56.9,,40,3,,40;13,74.6,,40,10;9.2,74.6,,49,6;9.8,79.4,,46,6;8.6,84.4,,42,5,,44;8.2,91.2,,74,16,,45", spread = true },
+				{ t = "collect", quest = 733, item = 4630, count = 7, map = 1418, x = 61.95, y = 70.18, f = "e", carriedTo = "forever/alliance/40-50/01-stranglethorn-vale", fromNpcs = { { npc = 2701, npcName = "Dustbelcher Ogre" }, { npc = 2715, npcName = "Dustbelcher Brute" }, { npc = 2906, npcName = "Dustbelcher Warrior" }, { npc = 2907, npcName = "Dustbelcher Mystic" }, { npc = 2719, npcName = "Dustbelcher Lord" }, { npc = 2717, npcName = "Dustbelcher Mauler" }, { npc = 2720, npcName = "Dustbelcher Ogre Mage" }, { npc = 2716, npcName = "Dustbelcher Wyrmhunter" }, { npc = 2718, npcName = "Dustbelcher Shaman" } }, fromNpcsAt = "1,2;3,4;1,2;6,8,9,4;6,8,9;8,9,6;9,6,7;7,5", lvl = 43, oi = 1, spotsPacked = "62.5,69.4,,40,3,,40;66.1,23.4,,57,8,,37;29.6,56.9,,40,3,,40;13,74.6,,40,10;9.2,74.6,,49,6;9.8,79.4,,46,6;8.6,84.4,,42,5,,44;8.2,91.2,,74,16,,45", spread = true },
 				{ t = "collect", quest = 703, item = 3404, count = 4, map = 1418, x = 57.96, y = 73.76, f = "e", fromNpcs = { { npc = 2830, npcName = "Buzzard" }, { npc = 2831, npcName = "Giant Buzzard" }, { npc = 2829, npcName = "Starving Buzzard" } }, lvl = 41, oi = 1, spotsPacked = "58,73.8,,66,1,,39;50.1,77.9,,66,1,,39;49.5,57.7,,66,2,,39;62.5,54.9,,66,2,,39;60.8,39.7,,66,1,,37;58.8,27.7,,66,3,,37;48.9,27.4,,66,1,,37;55,13.8,,66,1,,37;33.4,59.8,,66,1;26.2,74,,73,3;12.2,69.4,,66,2;17.5,49.2,,66,1;49.5,63.8,,66,1,1,39;25.8,61.9,,66,1,1;18.9,77.6,,66,1,1;16.2,60.1,,66,8,1", spread = true },
 				{ t = "collect", quest = 2500, item = 7847, count = 5, map = 1418, x = 60.75, y = 39.65, f = "e", fromNpcs = { { npc = 2829, npcName = "Starving Buzzard" }, { npc = 2831, npcName = "Giant Buzzard" } }, lvl = 41, oi = 1, spotsPacked = "60.8,39.7,,51,1,,37;58.8,27.7,,56,3,,37;48.9,27.4,,51,1,,37;55,13.8,,51,1,,37;33.4,59.8,,51,1;25.8,61.9,,51,1;28.8,72,,51,1;24.8,75,,51,2;18.9,77.6,,51,1;12.2,69.4,,51,2;16.2,60.1,,51,8;17.5,49.2,,51,1", spread = true },
 				{ t = "accept", minLevel = 30, quest = 739, object = 2875, map = 1418, x = 50.89, y = 62.4, z = 243.5, f = "e", pre = { 738 }, qlvl = 42 },
 				{ t = "note", text = "{quest:739} himself (42) walks among the Bonesnappers: leave him for the later {zone:1418} guide at 43, and kill the Bonesnappers for this quest now." },
 				{ t = "collect", quest = 1108, item = 5797, count = 10, map = 1418, x = 50.92, y = 64.36, f = "e", fromAlso = "Stonevault Shaman", fromAlsoId = 2894, fromId = 2893, fromKind = "npc", fromNpcs = { { npc = 2893, npcName = "Stonevault Bonesnapper" }, { npc = 2894, npcName = "Stonevault Shaman" } }, lvl = 41, oi = 1, spotsPacked = "51,66.1,,47,7;49.8,69.6,,67,12" },
-				{ t = "kill", quest = 739, npc = 2893, count = 12, map = 1418, x = 50.92, y = 64.36, z = 242.9, f = "e", lvl = 40, oi = 2, spotsPacked = "51.3,67,241.8,61,9;49,71,,56,5", target = "Stonevault Bonesnapper" },
+				{ t = "kill", quest = 739, npc = 2893, count = 12, map = 1418, x = 50.92, y = 64.36, z = 242.9, f = "e", carriedTo = "forever/alliance/40-50/02-badlands", lvl = 40, oi = 2, spotsPacked = "51.3,67,241.8,61,9;49,71,,56,5", target = "Stonevault Bonesnapper" },
 				{ t = "accept", minLevel = 30, quest = 709, npc = 2785, map = 1418, x = 51.39, y = 76.87, z = 244.9, f = "e", qlvl = 40 },
 			},
 		},
@@ -7724,7 +7739,7 @@ G(function() return {
 			note = "The Lesser Rock Elementals wander the {area:1878} west of {npc:2921}; every rock elemental can drop {npc:1470}'s Rock Elemental Shards.",
 			goals = {
 				{ t = "collect", quest = 710, item = 4626, count = 10, map = 1418, x = 23.53, y = 45.47, f = "e", fromId = 2735, fromKind = "npc", fromNpcs = { { npc = 2735, npcName = "Lesser Rock Elemental" } }, lvl = 39, oi = 1, spotsPacked = "21.9,46.1,,54,7;18.6,42.9,,49,6;14.5,38.8,,52,5" },
-				{ t = "collect", quest = 2500, item = 7848, count = 5, map = 1418, x = 23.53, y = 45.47, f = "e", fromNpcs = { { npc = 2735, npcName = "Lesser Rock Elemental" }, { npc = 2736, npcName = "Greater Rock Elemental" }, { npc = 2791, npcName = "Enraged Rock Elemental" }, { npc = 92, npcName = "Rock Elemental" }, { npc = 2752, npcName = "Rumbler" } }, lvl = 40, oi = 3, spotsPacked = "21.9,46.1,,54,7,,39;18.6,42.9,,49,6,,39;14.7,35.2,,70,9;26,45.8,,40,1,,45;36.7,74.9,,50,5;40.9,77.8,,47,6;46.1,77.6,,40,1;43.3,86.8,,40,3;54.7,84,,59,11,,43;16.6,84.9,,40,2,,44;5.9,77.4,,62,6,,44;2.2,80.7,,66,9,,45;13.7,39.7,,44,3,1,39;13.9,86.4,,42,6,1,45;15.1,89.7,,40,5,1,45;4.7,82.5,,40,4,1,45;43.5,82.5,,55,8,1", spread = true },
+				{ t = "collect", quest = 2500, item = 7848, count = 5, map = 1418, x = 23.53, y = 45.47, f = "e", fromNpcs = { { npc = 2735, npcName = "Lesser Rock Elemental" }, { npc = 2736, npcName = "Greater Rock Elemental" }, { npc = 2791, npcName = "Enraged Rock Elemental" }, { npc = 92, npcName = "Rock Elemental" }, { npc = 2752, npcName = "Rumbler" }, { npc = 2919, npcName = "Fam'retor Guardian" } }, fromNpcsAt = "1;1;4,1;6;4;4;4;4;3;2;2;2,5;1;2,5;2,5;2,5;4", lvl = 40, oi = 3, spotsPacked = "21.9,46.1,,54,7,,39;18.6,42.9,,49,6,,39;14.7,35.2,,70,9;26,45.8,,40,1,,45;36.7,74.9,,50,5;40.9,77.8,,47,6;46.1,77.6,,40,1;43.3,86.8,,40,3;54.7,84,,59,11,,43;16.6,84.9,,40,2,,44;5.9,77.4,,62,6,,44;2.2,80.7,,66,9,,45;13.7,39.7,,44,3,1,39;13.9,86.4,,42,6,1,45;15.1,89.7,,40,5,1,45;4.7,82.5,,40,4,1,45;43.5,82.5,,55,8,1", spread = true },
 			},
 		},
 		{
@@ -7868,7 +7883,7 @@ G(function() return {
 			title = "Maraudine centaurs",
 			note = "The Maraudine centaurs hold the {area:607} west of the graveyard; every kind drops the totems.",
 			goals = {
-				{ t = "collect", quest = 93224, item = 254432, count = 5, map = 1443, x = 39.71, y = 61.41, f = "e", fromNpcs = { { npc = 4655, npcName = "Maraudine Wrangler" }, { npc = 4654, npcName = "Maraudine Scout" }, { npc = 4656, npcName = "Maraudine Mauler" }, { npc = 4657, npcName = "Maraudine Windchaser" }, { npc = 4659, npcName = "Maraudine Marauder" } }, lvl = 38, oi = 1, spotsPacked = "36.3,61.1,,50,4;34.8,57.4,,25,2;34.3,54.5,,55,6,,39;31.9,60.2,,44,7,,39;32.5,54.6,,46,7,,39;31,65.8,,17,2;39.7,61.4,,15,1,1;36,59.1,,15,1,1;33,65.9,,15,1,1;29.8,61.3,,49,5,1,40;30,58,,51,7,1,40;30,67.7,,44,3,1;30,54.1,,68,7,1,39;31,51.6,,24,2,1,39" },
+				{ t = "collect", quest = 93224, item = 254432, count = 5, map = 1443, x = 39.71, y = 61.41, f = "e", fromNpcs = { { npc = 4655, npcName = "Maraudine Wrangler" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4635, npcName = "Kolkar Windchaser" }, { npc = 4640, npcName = "Magram Wrangler" }, { npc = 4641, npcName = "Magram Windchaser" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4657, npcName = "Maraudine Windchaser" }, { npc = 4656, npcName = "Maraudine Mauler" }, { npc = 4654, npcName = "Maraudine Scout" }, { npc = 4642, npcName = "Magram Stormer" }, { npc = 4637, npcName = "Kolkar Destroyer" }, { npc = 4638, npcName = "Magram Scout" }, { npc = 4645, npcName = "Magram Mauler" }, { npc = 4639, npcName = "Magram Outrunner" }, { npc = 4643, npcName = "Magram Pack Runner" }, { npc = 4659, npcName = "Maraudine Marauder" } }, fromNpcsAt = "1;11,1;10,9;1,11;7,12,17;7,6;7;14,16,7;16;8,13,5;2,3,5;3,5,2;1,11;11;1,11,10,9;11;9,10,1;10,9,11;11,1;1,11,9,18;10,9,18;9,11,10;6,14,7;14,7,16;6,7,12;6,7,12,15;14,6,7;2,3;6,12,17;3,2;12,15,6,7;6,7,12;2,3;12,15;8,4,5,13;4,8,5,13;6,14;4,5,8;6,7,15;6,12,17,15;8,5,4,13;7,6;8,4,5,13;4,5;8,4,5;6", lvl = 34, oi = 1, spotsPacked = "39.7,61.4,,40,1,,38;34.8,57.4,,40,2,,38;31,51.6,,40,2,,39;30,67.7,,44,3,,38;65.5,77.8,,59,5,,35;70.7,80.1,,46,3;76,75.9,,40,1;71.5,67.9,,42,3;67.2,69.8,,40,3,,33;73.9,50.8,,42,5,,33;69.4,47.9,,40,4,,32;69.7,40,,66,6,,32;36.3,61.1,,50,4,1,38;36,59.1,,40,1,1,38;34.3,54.5,,55,6,1,39;33,65.9,,40,1,1,38;31.9,60.2,,44,7,1,39;32.5,54.6,,46,7,1,39;31,65.8,,40,2,1,38;29.8,61.3,,49,5,1,40;30,58,,51,7,1,40;30,54.1,,68,7,1,39;66.3,71.5,,49,4,1;66.7,74.8,,59,5,1;68.3,73.4,,40,3,1,35;66.9,80.2,,41,4,1,36;69.4,70.1,,45,3,1;69.2,50.8,,51,4,1,31;70.1,73.5,,40,5,1,35;69.2,44.8,,45,4,1,31;69.5,77.2,,43,6,1,36;68.3,82.5,,59,5,1,35;69,41.9,,40,2,1,31;70.8,75.5,,40,2,1,36;71.3,49.6,,50,5,1,33;71.2,42.8,,48,8,1,33;73.5,66.7,,40,3,1;72.2,46,,62,6,1,33;73.1,72.8,,40,3,1,36;72.5,78.3,,40,4,1,36;73.9,48.8,,48,5,1,33;75,69.1,,40,3,1;73.3,43.1,,54,5,1,33;72.6,40.2,,40,2,1,32;74.3,46.8,,40,4,1,33;76.1,72.3,,40,2,1", spread = true },
 			},
 		},
 		{
@@ -7937,7 +7952,7 @@ G(function() return {
 			title = "{area:598}: kill these as you meet them",
 			note = "The Slitherblade naga hold the north-west coast north of {npc:11863}'s tower; Karnitol's satchel lies on the sea floor off it, and any naga can drop Rackmore's golden key. Swim out to {area:2406} off the far northern tip and use the {item:15766} on the {object:177673}: {npc:12369} (38) rises; kill him for the {quest:6027}.",
 			goals = {
-				{ t = "collect", quest = 1456, item = 6245, count = 1, map = 1443, x = 33.2, y = 10.5, f = "e", note = "Underwater", fromNpcs = { { npc = 4716, npcName = "Slitherblade Tidehunter" }, { npc = 4719, npcName = "Slitherblade Sea Witch" } }, lvl = 37, oi = 1, spotsPacked = "33.2,10.5,,102,4;30.5,10.6,,32,3,1,36;30.4,7.9,,19,2,1;35,16.8,,15,1,1,36;28.5,11.9,,43,4,1;30.2,16.2,,17,2,1;28.3,9.3,,40,4,1" },
+				{ t = "collect", quest = 1456, item = 6245, count = 1, map = 1443, x = 33.2, y = 10.5, f = "e", note = "Underwater", fromAlso = "Slitherblade Sea Witch", fromAlsoId = 4719, fromId = 4716, fromKind = "npc", fromNpcs = { { npc = 4716, npcName = "Slitherblade Tidehunter" }, { npc = 4719, npcName = "Slitherblade Sea Witch" } }, lvl = 37, oi = 1, spotsPacked = "33.2,10.5,,102,4;30.5,10.6,,32,3,1,36;30.4,7.9,,19,2,1;35,16.8,,15,1,1,36;28.5,11.9,,43,4,1;30.2,16.2,,17,2,1;28.3,9.3,,40,4,1" },
 				{ t = "collect", quest = 6161, item = 15881, count = 1, map = 1443, x = 30, y = 12.2, f = "e", note = "{item:15881}, from the Slitherblade naga", fromId = 14229, fromKind = "npc", fromRank = 4, oi = 2 },
 				{ t = "use", quest = 6027, item = 15766, map = 1443, x = 28.2, y = 6.7, f = "e", note = "{item:15766}, on the {object:177673}", oi = 1 },
 				{ t = "collect", quest = 6027, item = 15803, count = 1, map = 1443, x = 28.24, y = 6.67, f = "e", fromId = 12369, fromKind = "npc", fromNpcs = { { npc = 12369, npcName = "Lord Kragaru" } }, oi = 1 },
@@ -8136,8 +8151,7 @@ G(function() return {
 				{ t = "accept", minLevel = 28, quest = 1324, npc = 4966, map = 1445, x = 45.24, y = 24.65, z = 31.4, f = "e", pre = { 1266 }, qlvl = 38 },
 				{ t = "complete", quest = 1324, objs = { { count = 1, text = "Private Hendel" } } },
 				{ t = "turnin", quest = 1324, npc = 4967, map = 1445, x = 45.2, y = 24.4, f = "e", spotsPacked = "45.2,24.4,,15,1;59.7,41.2,,15,1,1;66.4,49.3,65.1,15,1,1" },
-				{ t = "accept", minLevel = 28, quest = 1267, npc = 4968, map = 1445, x = 45.2, y = 24.3, f = "e", pre = { 1324 }, qlvl = 38, spotsPacked = "45.2,24.3,,15,1;66.3,49,65,15,1,1" },
-				{ t = "turnin", quest = 1267, npc = 4968, map = 1445, x = 45.2, y = 24.3, f = "e", spotsPacked = "45.2,24.3,,15,1;66.3,49,65,15,1,1" },
+				{ t = "turnin", quest = 1267, npc = 4968, map = 1445, x = 45.2, y = 24.3, f = "e", direct = true, qlvl = 38, spotsPacked = "45.2,24.3,,15,1;66.3,49,65,15,1,1" },
 			},
 		},
 		{
@@ -8183,7 +8197,7 @@ G(function() return {
 			title = "Mirefin murlocs",
 			note = "The Mirefin murlocs crowd the north coast past {area:497}.",
 			goals = {
-				{ t = "collect", quest = 1177, item = 5847, count = 12, map = 1445, x = 64.4, y = 29, f = "e", fromNpcs = { { npc = 4360, npcName = "Mirefin Warrior" }, { npc = 4358, npcName = "Mirefin Puddlejumper" }, { npc = 4359, npcName = "Mirefin Murloc" }, { npc = 4361, npcName = "Mirefin Muckdweller" }, { npc = 4362, npcName = "Mirefin Coastrunner" } }, lvl = 38, oi = 1, spotsPacked = "64.5,28.6,,40,2;63.4,27.6,,49,5;64.8,26.7,,40,2;62.4,18.6,,53,6;58.6,15.8,,40,7,,37;57.7,20.1,,40,7,,36;56.9,22,,56,15,,36;54.5,15.4,,62,11,,37;57.6,10.9,,49,9;59,9.5,,57,19;59.8,7.7,,40,4;63,7.5,,64,18;57.4,15.7,,73,13,1,37", spread = true },
+				{ t = "collect", quest = 1177, item = 5847, count = 12, map = 1445, x = 64.4, y = 29, f = "e", fromNpcs = { { npc = 4360, npcName = "Mirefin Warrior" }, { npc = 4358, npcName = "Mirefin Puddlejumper" }, { npc = 4359, npcName = "Mirefin Murloc" }, { npc = 4361, npcName = "Mirefin Muckdweller" }, { npc = 4362, npcName = "Mirefin Coastrunner" }, { npc = 4363, npcName = "Mirefin Oracle" }, { npc = 14230, npcName = "Burgle Eye" } }, fromNpcsAt = "1;1;1;1;3,5;2,3;2,3;3,5;1,4,6;1,4,6,7;1,4,6;1,4,6;3,5", lvl = 38, oi = 1, spotsPacked = "64.5,28.6,,40,2;63.4,27.6,,49,5;64.8,26.7,,40,2;62.4,18.6,,53,6;58.6,15.8,,40,7,,37;57.7,20.1,,40,7,,36;56.9,22,,56,15,,36;54.5,15.4,,62,11,,37;57.6,10.9,,49,9;59,9.5,,57,19;59.8,7.7,,40,4;63,7.5,,64,18;57.4,15.7,,73,13,1,37", spread = true },
 			},
 		},
 		{
@@ -8446,7 +8460,7 @@ G(function() return {
 		{
 			title = "{area:35}",
 			goals = {
-				{ t = "turnin", quest = 627, npc = 773, map = 1434, x = 26.95, y = 77.21, z = 26.4, f = "e", note = "{npc:773}, upstairs" },
+				{ t = "turnin", quest = 627, npc = 773, map = 1434, x = 26.95, y = 77.21, z = 26.4, f = "e", optional = true, note = "{npc:773}, upstairs" },
 				{ t = "accept", minLevel = 32, quest = 622, npc = 773, map = 1434, x = 26.95, y = 77.21, z = 26.4, f = "e", note = "for {npc:770} at the {area:99}, on the northern loop", pre = { 627 }, qlvl = 37 },
 				{ t = "accept", minLevel = 38, quest = 617, npc = 2494, map = 1434, x = 26.76, y = 76.38, z = 5, f = "e", qlvl = 43 },
 				{ t = "turnin", quest = 669, npc = 2487, map = 1434, x = 27.17, y = 77.01, z = 28.8, f = "e", note = "{npc:2487}, top floor" },
@@ -8487,7 +8501,7 @@ G(function() return {
 			goals = {
 				{ t = "collect", quest = 604, item = 3920, count = 1, map = 1434, x = 29.59, y = 80.84, f = "e", fromId = 2086, fromKind = "object", oi = 2, spotsPacked = "29.6,80.8,,15,1;27.3,82.8,,31,2" },
 				{ t = "collect", quest = 587, item = 3910, count = 15, map = 1434, x = 29.62, y = 80.93, f = "e", fromNpcs = { { npc = 1564, npcName = "Bloodsail Warlock" }, { npc = 1561, npcName = "Bloodsail Raider" }, { npc = 1562, npcName = "Bloodsail Mage" }, { npc = 1563, npcName = "Bloodsail Swashbuckler" }, { npc = 2545, npcName = "\"Pretty Boy\" Duncan" } }, lvl = 43, oi = 1, spotsPacked = "29.7,81.1,,40,5;32,79.5,,40,1;33,77.3,,40,1;32.3,72.4,,40,3,,41;28.9,70.7,,40,1,,41;27.6,69.8,,40,7,,41;26.8,67.5,,40,1,,41;23.2,53.7,,43,6;24.5,52.8,,40,1;26.9,83.1,,40,7;29.9,87.6,,40,3;33.7,86.3,,40,2;31,81.1,,40,1,1;27.9,82.5,,40,2,1;33.3,73.6,,40,2,1,41;25.9,66.6,,40,2,1,41;24.3,54.7,,56,4,1", spread = true },
-				{ t = "collect", quest = 576, item = 3897, count = 1, map = 1434, x = 29.62, y = 80.93, f = "e", fromNpcs = { { npc = 1564, npcName = "Bloodsail Warlock" }, { npc = 1561, npcName = "Bloodsail Raider" }, { npc = 1562, npcName = "Bloodsail Mage" }, { npc = 1563, npcName = "Bloodsail Swashbuckler" }, { npc = 1565, npcName = "Bloodsail Sea Dog" } }, lvl = 43, oi = 1, spotsPacked = "29.7,81.1,,40,5;32,79.5,,40,1;33,77.3,,40,1;32.3,72.4,,40,3,,41;28.9,70.7,,40,1,,41;26.8,67.5,,40,1,,41;32.4,56.2,,40,4,,45;24.5,52.8,,40,1;26.9,83.1,,40,7;29.4,88.5,,62,13,,47;30.6,90.1,,40,9,,48;33.7,86.3,,40,2;31,81.1,,40,1,1;27.9,82.5,,40,2,1;33.1,88.2,,40,8,1,46;33.3,73.6,,40,2,1,41;27.6,69.8,,40,6,1,41;25.9,66.6,,40,2,1,41;31.8,54.3,,40,8,1,45;24.3,54.7,,56,4,1;23.2,53.7,,43,6,1", spread = true },
+				{ t = "collect", quest = 576, item = 3897, count = 1, map = 1434, x = 29.62, y = 80.93, f = "e", fromNpcs = { { npc = 1564, npcName = "Bloodsail Warlock" }, { npc = 1561, npcName = "Bloodsail Raider" }, { npc = 1562, npcName = "Bloodsail Mage" }, { npc = 1563, npcName = "Bloodsail Swashbuckler" }, { npc = 1565, npcName = "Bloodsail Sea Dog" }, { npc = 1653, npcName = "Bloodsail Elder Magus" }, { npc = 4505, npcName = "Bloodsail Deckhand" }, { npc = 4506, npcName = "Bloodsail Swabby" }, { npc = 2546, npcName = "Fleet Master Firallon" }, { npc = 2547, npcName = "Ironpatch" }, { npc = 2548, npcName = "Captain Keelhaul" }, { npc = 2549, npcName = "Garr Salthoof" }, { npc = 2550, npcName = "Captain Stillwater" }, { npc = 2551, npcName = "Brutus" } }, fromNpcsAt = "1;4;4;2,3;3;3;5,6;1;4,1;5,1,6,7,4,11,12,8;5,7,6,9,10,8;4,1;4;4,1;6,7,8,13,14;2;2,3;3;5,6;4,1;1,4", lvl = 43, oi = 1, spotsPacked = "29.7,81.1,,40,5;32,79.5,,40,1;33,77.3,,40,1;32.3,72.4,,40,3,,41;28.9,70.7,,40,1,,41;26.8,67.5,,40,1,,41;32.4,56.2,,40,4,,45;24.5,52.8,,40,1;26.9,83.1,,40,7;29.4,88.5,,62,13,,47;30.6,90.1,,40,9,,48;33.7,86.3,,40,2;31,81.1,,40,1,1;27.9,82.5,,40,2,1;33.1,88.2,,40,8,1,46;33.3,73.6,,40,2,1,41;27.6,69.8,,40,6,1,41;25.9,66.6,,40,2,1,41;31.8,54.3,,40,8,1,45;24.3,54.7,,56,4,1;23.2,53.7,,43,6,1", spread = true },
 				{ t = "collect", quest = 604, item = 3921, count = 1, map = 1434, x = 29.57, y = 80.94, f = "e", fromId = 2087, fromKind = "object", oi = 3, spotsPacked = "29.6,80.9,,15,1;27.4,82.8,,30,2" },
 				{ t = "kill", quest = 604, npc = 1563, count = 10, map = 1434, x = 30.96, y = 81.07, z = 0.7, f = "e", lvl = 43, oi = 1, spotsPacked = "31.5,80.3,,62,2;33,77.3,4.9,62,1;33.9,86.2,3.9,62,1;30.1,87.5,3,62,1;27.1,83.2,3.4,80,6;23.9,54.2,,77,4", spread = true, target = "Bloodsail Swashbuckler" },
 			},
@@ -8506,16 +8520,15 @@ G(function() return {
 			title = "Gorilla hills",
 			note = "Ride inland to the Mistvale gorilla hills. Elder Mistvale Gorillas drop the giblets; {npc:1449} sits among them.",
 			goals = {
-				{ t = "accept", minLevel = 32, quest = 349, npc = 1449, map = 1434, x = 35.27, y = 60.41, z = 44.6, f = "e", note = "{npc:1449}, inside {area:1742}", qlvl = 35 },
-				{ t = "collect", quest = 606, item = 3919, count = 5, map = 1434, x = 34.4, y = 62.52, f = "e", fromId = 1557, fromKind = "npc", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" } }, lvl = 41, oi = 1, spotsPacked = "33.7,63,,50,4;34.5,64.8,,35,3;32.6,65.7,,76,7;33.8,67,,54,5;32.4,58.6,,27,2;31.4,60.2,,43,3;31.6,67.7,,62,4,1" },
-				{ t = "collect", quest = 349, item = 2799, count = 10, map = 1434, x = 34.4, y = 62.52, f = "e", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" }, { npc = 1511, npcName = "Enraged Silverback Gorilla" }, { npc = 1114, npcName = "Jungle Thunderer" }, { npc = 1108, npcName = "Mistvale Gorilla" }, { npc = 2521, npcName = "Skymane Gorilla" } }, lvl = 38, oi = 1, spotsPacked = "33.7,63.3,,57,5,,41;31.6,67,,77,6,,41;32.4,58.6,,43,2,,41;37.8,61.3,,59,5,,43;41.2,77.7,,52,3,,50;39.4,86.3,,56,3,,50;44.9,36.9,,53,3;47.9,37.6,,55,4;48.7,33.3,,51,4;45.5,29.2,,43,3;41.4,28.4,,60,3;38.5,16.3,,43,2,,33;35.6,63.4,,67,6,1,43;35.1,60.8,,43,1,1,42;32.9,65.7,,46,5,1,41;33.9,66.8,,75,6,1,41;31.4,60.2,,43,3,1,41;40.1,79.4,,63,4,1,50;41.9,79.5,,43,1,1,50;40.7,81.5,,43,3,1,50;41.9,81.8,,43,2,1,50;41.2,84.3,,57,3,1,50;46.2,35.1,,63,4,1;42.2,31.6,,47,4,1;43.8,31.6,,43,3,1;48.6,35.8,,43,3,1;41.7,26.7,,68,4,1;43.9,27.7,,85,6,1;41.8,24.4,,43,1,1;39,18,,43,2,1,33;37.3,17.4,,57,7,1,33", spread = true },
+				{ t = "collect", quest = 606, item = 3919, count = 5, map = 1434, x = 31.15, y = 67.93, f = "e", fromId = 1557, fromKind = "npc", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" } }, lvl = 41, oi = 1, spotsPacked = "31.6,67.7,,62,4;32.6,65.7,,76,7;33.8,67,,54,5;34.5,64.8,,35,3;33.7,63,,50,4;31.4,60.2,,43,3;32.4,58.6,,27,2,1" },
+				{ t = "collect", item = 2799, count = 10, map = 1434, x = 31.15, y = 67.93, f = "e", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" }, { npc = 1511, npcName = "Enraged Silverback Gorilla" }, { npc = 1114, npcName = "Jungle Thunderer" }, { npc = 1108, npcName = "Mistvale Gorilla" }, { npc = 2521, npcName = "Skymane Gorilla" }, { npc = 1558, npcName = "Silverback Patriarch" }, { npc = 14491, npcName = "Kurmokk" } }, fromNpcsAt = "1;1;1;6,7;5;5;3;3;3;3;3;4;1;1;1;6,1;2;5;5;5;5;5;3;3;3;3;3;3;3;4;4", lvl = 38, spotsPacked = "31.6,67,,77,6,,41;33.7,63.3,,57,5,,41;32.4,58.6,,43,2,,41;37.8,61.3,,59,5,,43;41.2,77.7,,52,3,,50;39.4,86.3,,56,3,,50;44.9,36.9,,53,3;47.9,37.6,,55,4;48.7,33.3,,51,4;45.5,29.2,,43,3;41.4,28.4,,60,3;38.5,16.3,,43,2,,33;32.9,65.7,,46,5,1,41;33.9,66.8,,75,6,1,41;31.4,60.2,,43,3,1,41;35.6,63.4,,67,6,1,43;35.1,60.8,,43,1,1,42;40.1,79.4,,63,4,1,50;40.7,81.5,,43,3,1,50;41.9,79.5,,43,1,1,50;41.9,81.8,,43,2,1,50;41.2,84.3,,57,3,1,50;46.2,35.1,,63,4,1;42.2,31.6,,47,4,1;43.8,31.6,,43,3,1;48.6,35.8,,43,3,1;41.7,26.7,,68,4,1;43.9,27.7,,85,6,1;41.8,24.4,,43,1,1;39,18,,43,2,1,33;37.3,17.4,,57,7,1,33", spread = true },
 			},
 		},
 		{
 			title = "Unbagwa's ritual",
 			note = "Hand in the fangs and stay: three waves of gorillas come, {npc:1514} last. Fight at full health.",
 			goals = {
-				{ t = "turnin", quest = 349, npc = 1449, map = 1434, x = 35.27, y = 60.41, z = 44.6, f = "e", note = "{npc:1449}, inside {area:1742}" },
+				{ t = "turnin", quest = 349, npc = 1449, map = 1434, x = 35.27, y = 60.41, z = 44.6, f = "e", note = "{npc:1449}, inside {area:1742}", direct = true, qlvl = 35 },
 				{ t = "collect", quest = 348, item = 2797, count = 1, map = 1434, x = 35.05, y = 60.88, f = "e", fromId = 1514, fromKind = "npc", fromNpcs = { { npc = 1514, npcName = "Mokk the Savage" } }, oi = 1 },
 			},
 		},
@@ -8552,7 +8565,7 @@ G(function() return {
 			title = "Zanzil's village",
 			note = "Every Zanzil follower can drop the mixture; {npc:2537} walks the south of the camp.",
 			goals = {
-				{ t = "collect", quest = 621, item = 4016, count = 12, map = 1434, x = 38.66, y = 59.78, f = "e", fromNpcs = { { npc = 1491, npcName = "Zanzil Naga" }, { npc = 2530, npcName = "Yenniku" }, { npc = 1488, npcName = "Zanzil Zombie" }, { npc = 1489, npcName = "Zanzil Hunter" }, { npc = 1490, npcName = "Zanzil Witch Doctor" } }, lvl = 44, oi = 1, spotsPacked = "39.2,58.7,,58,10,,46;40.2,57.9,,40,4;40.5,59.1,,40,2;41.5,56.8,,40,2;38.8,57.1,,40,2;34.9,51.5,,45,11", spread = true },
+				{ t = "collect", quest = 621, item = 4016, count = 12, map = 1434, x = 38.66, y = 59.78, f = "e", fromNpcs = { { npc = 1491, npcName = "Zanzil Naga" }, { npc = 2530, npcName = "Yenniku" }, { npc = 1488, npcName = "Zanzil Zombie" }, { npc = 1489, npcName = "Zanzil Hunter" }, { npc = 1490, npcName = "Zanzil Witch Doctor" }, { npc = 2537, npcName = "Chucky \"Ten Thumbs\"" }, { npc = 2534, npcName = "Zanzil the Outcast" }, { npc = 2536, npcName = "Jon-Jon the Crow" }, { npc = 2535, npcName = "Maury \"Club Foot\" Wilkins" } }, fromNpcsAt = "3,5,1,2,4,7,6;5,1,6;3,1;3,1;3,5;1,3,4,5,8,9", lvl = 44, oi = 1, spotsPacked = "39.2,58.7,,58,10,,46;40.2,57.9,,40,4;40.5,59.1,,40,2;41.5,56.8,,40,2;38.8,57.1,,40,2;34.9,51.5,,45,11", spread = true },
 				{ t = "collect", quest = 609, item = 3926, count = 1, map = 1434, x = 40, y = 58.24, f = "e", fromId = 2537, fromKind = "npc", fromNpcs = { { npc = 2537, npcName = "Chucky \"Ten Thumbs\"" } }, oi = 3 },
 				{ t = "collect", quest = 609, item = 3925, count = 1, map = 1434, x = 34.92, y = 51.84, f = "e", fromId = 2536, fromKind = "npc", fromNpcs = { { npc = 2536, npcName = "Jon-Jon the Crow" } }, oi = 2 },
 			},
@@ -8575,7 +8588,7 @@ G(function() return {
 			title = "The north-west coast",
 			note = "Ride north-west from the mine to the bay on the north-west coast. The Giant Clams lie on its floor and hold the pearls; {npc:2624} swims among them and drops the {item:4034}.",
 			goals = {
-				{ t = "collect", quest = 705, item = 4611, count = 9, map = 1434, x = 26.8, y = 30.8, f = "e", note = "{item:4611}; underwater", fromId = 2744, fromKind = "object", oi = 1, spotsPacked = "26,29.4,,49,4;24.3,29.4,,42,4;25.7,26.8,,49,5;27.6,26.6,,59,6;24,27.6,,31,2;25.8,24.7,,52,5;26.8,30.8,,15,1,1;27.6,29.2,,15,1,1;24,25.4,,15,1,1;27.4,23.4,,31,3,1;25.5,22.8,,15,2,1;23.6,23.4,,15,1,1" },
+				{ t = "collect", quest = 705, item = 4611, count = 9, map = 1434, x = 26.8, y = 30.8, f = "e", note = "{item:4611}; underwater", carriedTo = "forever/alliance/40-50/02-badlands", fromId = 2744, fromKind = "object", oi = 1, spotsPacked = "26,29.4,,49,4;24.3,29.4,,42,4;25.7,26.8,,49,5;27.6,26.6,,59,6;24,27.6,,31,2;25.8,24.7,,52,5;26.8,30.8,,15,1,1;27.6,29.2,,15,1,1;24,25.4,,15,1,1;27.4,23.4,,31,3,1;25.5,22.8,,15,2,1;23.6,23.4,,15,1,1" },
 				{ t = "collect", quest = 611, item = 4034, count = 1, map = 1434, x = 24.97, y = 23.58, f = "e", fromId = 2624, fromKind = "npc", fromNpcs = { { npc = 2624, npcName = "Gazban" } }, lvl = 40, oi = 1, spotsPacked = "25,23.6,,15,1;19.8,22.5,,15,1" },
 			},
 		},
@@ -8717,8 +8730,7 @@ G(function() return {
 			note = "{npc:1141} cooks in the {object:2169}; {npc:5384} is in the {object:28027}.",
 			goals = {
 				{ t = "sethome", npc = 6740, map = 1453, x = 60.39, y = 75.27, z = 98, area = 1519, location = "Stormwind City" },
-				{ t = "accept", minLevel = 30, quest = 1271, npc = 1141, map = 1453, x = 51.79, y = 93.64, z = 108.4, pre = { 1222 }, qlvl = 37 },
-				{ t = "turnin", quest = 1271, npc = 1141, map = 1453, x = 51.79, y = 93.64, z = 108.4 },
+				{ t = "turnin", quest = 1271, npc = 1141, map = 1453, x = 51.79, y = 93.64, z = 108.4, direct = true, qlvl = 37 },
 				{ t = "accept", minLevel = 40, quest = 1477, npc = 5694, map = 1453, x = 48.71, y = 87.62, z = 148.7, note = "{npc:5694}: for {npc:5464} in {area:42}, on the way to the swamp", closedBy = { 1395 }, qlvl = 45 },
 				{ t = "accept", minLevel = 37, quest = 1363, npc = 338, map = 1453, x = 51.8, y = 74.24, z = 98.4, qlvl = 41 },
 				{ t = "turnin", quest = 1363, npc = 5386, map = 1453, x = 51.4, y = 73.81, z = 104.8 },
@@ -8854,7 +8866,7 @@ G(function() return {
 			title = "{area:116}",
 			note = "The scroll lies in the marsh north of Biggs. The Swampwalkers north of it can drop Khadgar's essays.",
 			goals = {
-				{ t = "collect", quest = 1364, item = 6065, count = 1, map = 1435, x = 5.5, y = 31.4, f = "e", fromNpcs = { { npc = 1081, npcName = "Mire Lord" }, { npc = 766, npcName = "Tangled Horror" }, { npc = 765, npcName = "Swampwalker Elder" }, { npc = 764, npcName = "Swampwalker" } }, lvl = 41, oi = 1, spotsPacked = "5.5,31.4,,218,9,,42;14.6,37.9,,74,7,1,39;49.1,36.4,,54,3,1,39;56.4,34,,54,2,1;58.1,43.5,,54,2,1;57.8,52.9,,54,2,1;61.6,35,,54,2,1;68.1,32.1,,54,1,1;69.4,24,,54,2,1;74.7,29.9,,54,3,1;75.5,72.6,,77,4,1;77.4,79.4,,54,2,1;84.4,70.1,,54,2,1" },
+				{ t = "collect", quest = 1364, item = 6065, count = 1, map = 1435, x = 5.5, y = 31.4, f = "e", carriedTo = "forever/alliance/40-50/05-the-hinterlands", fromNpcs = { { npc = 1081, npcName = "Mire Lord" }, { npc = 766, npcName = "Tangled Horror" }, { npc = 765, npcName = "Swampwalker Elder" }, { npc = 764, npcName = "Swampwalker" } }, lvl = 41, oi = 1, spotsPacked = "5.5,31.4,,218,9,,42;14.6,37.9,,74,7,1,39;49.1,36.4,,54,3,1,39;56.4,34,,54,2,1;58.1,43.5,,54,2,1;57.8,52.9,,54,2,1;61.6,35,,54,2,1;68.1,32.1,,54,1,1;69.4,24,,54,2,1;74.7,29.9,,54,3,1;75.5,72.6,,77,4,1;77.4,79.4,,54,2,1;84.4,70.1,,54,2,1" },
 			},
 		},
 		{
@@ -8900,7 +8912,7 @@ G(function() return {
 			note = "The driftwood washes up along the eastern shore.",
 			goals = {
 				{ t = "collect", quest = 1398, item = 6146, count = 8, map = 1435, x = 91.94, y = 31.94, f = "e", fromId = 24798, fromKind = "object", oi = 1, spotsPacked = "92.6,34.2,,40,2;90.6,26.8,,40,2;88.5,20.7,,41,2;83.5,13.8,,40,1;80.2,8.7,,40,2;94.6,43.1,,40,2;94.8,51,,40,2;94.4,58.4,,40,2;93.6,65.2,,40,2;90.8,71.7,,53,3;87.5,78.1,,40,1;83.6,89.7,,49,3;85.7,83.4,,40,3,1", spread = true },
-				{ t = "collect", quest = 1258, item = 5938, count = 12, map = 1435, x = 94.6, y = 28.6, f = "e", note = "{item:5938}, from the Silt Crawlers on the same shore", fromAlso = "Monstrous Crawler", fromAlsoId = 1088, fromId = 922, fromKind = "npc", fromNpcs = { { npc = 1088, npcName = "Monstrous Crawler" }, { npc = 922, npcName = "Silt Crawler" } }, lvl = 44, oi = 1, spotsPacked = "92.9,28.7,,40,4;89.6,20.4,,70,27;85.1,13,,62,10;75.8,4.7,,51,4,,41;98.4,6.8,,40,8;97.6,45.4,,65,26;95.9,60.4,,56,22;93.8,70.6,,68,25;98.3,77.9,,40,9;95.6,96,,43,5;83,93.7,,59,3;85.4,84.3,,51,5;93.7,32.6,,52,17,1;98,33.5,,54,14,1;92.1,20.1,,40,6,1;96.3,39,,71,30,1;98.6,13.6,,40,6,1;90.6,11.9,,56,13,1;97,10.8,,50,13,1;93,6.9,,48,13,1;88.3,8.2,,99,20,1;96.7,53.5,,57,20,1;98.3,57.9,,58,13,1;80.2,7.9,,50,5,1,41;97.1,66.4,,70,25,1;97.5,72.2,,51,16,1;94,78.5,,50,12,1;95.9,79.4,,66,17,1;89.9,81.3,,63,4,1;98.6,83.8,,53,9,1;90.4,87.4,,63,27,1;96.2,90.5,,53,16,1;99,92.1,,40,5,1;92.2,94,,59,23,1;87.6,93.8,,80,21,1", spread = true },
+				{ t = "collect", quest = 1258, item = 5938, count = 12, map = 1435, x = 94.6, y = 28.6, f = "e", note = "{item:5938}, from the Silt Crawlers on the same shore", carriedTo = "forever/alliance/40-50/02-badlands", fromAlso = "Monstrous Crawler", fromAlsoId = 1088, fromId = 922, fromKind = "npc", fromNpcs = { { npc = 1088, npcName = "Monstrous Crawler" }, { npc = 922, npcName = "Silt Crawler" } }, lvl = 44, oi = 1, spotsPacked = "92.9,28.7,,40,4;89.6,20.4,,70,27;85.1,13,,62,10;75.8,4.7,,51,4,,41;98.4,6.8,,40,8;97.6,45.4,,65,26;95.9,60.4,,56,22;93.8,70.6,,68,25;98.3,77.9,,40,9;95.6,96,,43,5;83,93.7,,59,3;85.4,84.3,,51,5;93.7,32.6,,52,17,1;98,33.5,,54,14,1;92.1,20.1,,40,6,1;96.3,39,,71,30,1;98.6,13.6,,40,6,1;90.6,11.9,,56,13,1;97,10.8,,50,13,1;93,6.9,,48,13,1;88.3,8.2,,99,20,1;96.7,53.5,,57,20,1;98.3,57.9,,58,13,1;80.2,7.9,,50,5,1,41;97.1,66.4,,70,25,1;97.5,72.2,,51,16,1;94,78.5,,50,12,1;95.9,79.4,,66,17,1;89.9,81.3,,63,4,1;98.6,83.8,,53,9,1;90.4,87.4,,63,27,1;96.2,90.5,,53,16,1;99,92.1,,40,5,1;92.2,94,,59,23,1;87.6,93.8,,80,21,1", spread = true },
 			},
 		},
 		{
@@ -9198,7 +9210,7 @@ G(function() return {
 			goals = {
 				{ t = "interact", quest = 2988, object = 144068, map = 1425, x = 31.99, y = 57.31, z = 125.2, f = "e", oi = 3 },
 				{ t = "interact", quest = 2988, object = 144067, map = 1425, x = 23.13, y = 58.82, z = 119.4, f = "e", oi = 2 },
-				{ t = "collect", quest = 2880, item = 9259, count = 5, map = 1425, x = 23.12, y = 58.47, f = "e", fromNpcs = { { npc = 2649, npcName = "Witherbark Scalper" }, { npc = 2639, npcName = "Vilebranch Axe Thrower" }, { npc = 2640, npcName = "Vilebranch Witch Doctor" }, { npc = 2650, npcName = "Witherbark Zealot" }, { npc = 2651, npcName = "Witherbark Hideskinner" } }, lvl = 47, oi = 1, spotsPacked = "22.8,56.9,,55,12,,42;25.5,66.2,,40,2,,45;32.2,67.5,,40,4,,46;32.6,75.8,,40,4,,46;40,66.1,,40,3,,46;48,68.3,,56,8;63.5,60,,40,2;69.3,62.4,,40,1;71.1,48.1,,59,8;66.2,44.2,,40,6;53.2,39.4,,41,6;32.1,58,,50,14,,43;24.6,59.1,,40,7,1,42;24.8,56,,40,3,1,42;29.4,57.7,,63,8,1,43;30.4,60.6,,48,5,1,43;31.3,70.8,,40,2,1,45;33.1,70.3,,40,1,1,45;36.1,64.6,,46,4,1,45;36.4,71.9,,61,6,1,46;43.5,66.9,,40,3,1;45.3,67.4,,57,7,1;46.7,63.5,,58,6,1;48.5,65.5,,45,4,1;50,63.9,,56,6,1,48;66.6,68.7,,40,2,1;67.5,66.2,,40,2,1;68.7,69.8,,40,2,1", spread = true },
+				{ t = "collect", quest = 2880, item = 9259, count = 5, map = 1425, x = 23.12, y = 58.47, f = "e", fromNpcs = { { npc = 2649, npcName = "Witherbark Scalper" }, { npc = 2639, npcName = "Vilebranch Axe Thrower" }, { npc = 2640, npcName = "Vilebranch Witch Doctor" }, { npc = 2650, npcName = "Witherbark Zealot" }, { npc = 2651, npcName = "Witherbark Hideskinner" }, { npc = 4467, npcName = "Vilebranch Soothsayer" }, { npc = 4466, npcName = "Vilebranch Scalper" }, { npc = 2653, npcName = "Witherbark Sadist" }, { npc = 2652, npcName = "Witherbark Venomblood" }, { npc = 2654, npcName = "Witherbark Caller" }, { npc = 7809, npcName = "Vilebranch Ambusher" }, { npc = 8216, npcName = "Retherokk the Berserker" }, { npc = 8218, npcName = "Witherheart the Stalker" }, { npc = 8219, npcName = "Zul'arek Hatefowler" } }, fromNpcsAt = "1,4;8;8,10;8,10;8,10;6,3,7;3;11;7,6;7,6;7,6;5,9,14;1,4;1,4;5,9;5,9;8;13;8;8,10;2,7;6,2,7;2,7,6;6,7;7,2,6,12;3;3;3", lvl = 47, oi = 1, spotsPacked = "22.8,56.9,,55,12,,42;25.5,66.2,,40,2,,45;32.2,67.5,,40,4,,46;32.6,75.8,,40,4,,46;40,66.1,,40,3,,46;48,68.3,,56,8;63.5,60,,40,2;69.3,62.4,,40,1;71.1,48.1,,59,8;66.2,44.2,,40,6;53.2,39.4,,41,6;32.1,58,,50,14,,43;24.6,59.1,,40,7,1,42;24.8,56,,40,3,1,42;29.4,57.7,,63,8,1,43;30.4,60.6,,48,5,1,43;31.3,70.8,,40,2,1,45;33.1,70.3,,40,1,1,45;36.1,64.6,,46,4,1,45;36.4,71.9,,61,6,1,46;43.5,66.9,,40,3,1;45.3,67.4,,57,7,1;46.7,63.5,,58,6,1;48.5,65.5,,45,4,1;50,63.9,,56,6,1,48;66.6,68.7,,40,2,1;67.5,66.2,,40,2,1;68.7,69.8,,40,2,1", spread = true },
 				{ t = "interact", quest = 2988, object = 144066, map = 1425, x = 23.28, y = 58.81, z = 119.4, f = "e", oi = 1 },
 			},
 		},
@@ -9206,7 +9218,6 @@ G(function() return {
 			title = "{area:348}",
 			goals = {
 				{ t = "turnin", quest = 2880, npc = 7884, map = 1425, x = 14.83, y = 44.57, z = 123.3, f = "e", note = "{npc:7884}, inside" },
-				{ t = "accept", minLevel = 40, quest = 2881, npc = 7884, map = 1425, x = 14.83, y = 44.57, z = 123.3, f = "e", optional = true, note = "{npc:7884} keeps paying for necklaces: hand in any extras", pre = { 2880 }, qlvl = 45 },
 				{ t = "turnin", quest = 2988, npc = 5636, map = 1425, x = 9.75, y = 44.47, z = 197.7, f = "e", note = "{npc:5636}, beside the flight master at the top; inside" },
 				{ t = "note", text = "Talonaxe's next task waits for a later {zone:1425} guide." },
 			},
@@ -9338,7 +9349,7 @@ G(function() return {
 			title = "Hatecrest naga",
 			note = "Back to the {area:1117}. Every Hatecrest naga there can drop scales.",
 			goals = {
-				{ t = "collect", quest = 2869, item = 9247, count = 10, map = 1444, x = 28.82, y = 50.79, f = "e", fromNpcs = { { npc = 5331, npcName = "Hatecrest Warrior" }, { npc = 5335, npcName = "Hatecrest Screamer" }, { npc = 5332, npcName = "Hatecrest Wave Rider" }, { npc = 5333, npcName = "Hatecrest Serpent Guard" }, { npc = 5334, npcName = "Hatecrest Myrmidon" } }, lvl = 43, oi = 1, spotsPacked = "28.7,50.7,,40,2;27,52.6,,45,3;25.7,55.1,,48,4;25.5,49.8,,40,2;29.4,57,,56,4;33.1,56.8,,40,2;33.3,50,,40,1;27.4,62.5,,40,2,,44;25.7,66.6,,48,5,,45;23.9,64.6,,49,3,,44;28,68.3,,41,8,,46;25.4,72.4,,51,7,,45;28.6,52.2,,45,5,1;26.7,50.6,,40,1,1,42;29.3,54.2,,56,7,1;27.4,54.3,,44,7,1;30.3,54.3,,40,1,1,42;26,53.6,,40,3,1;27.1,56.9,,40,2,1;33.1,53,,40,1,1;33.5,51.5,,40,1,1;31.3,57.1,,40,2,1;32.6,55.8,,40,3,1;33.6,54.6,,40,1,1,42;26,62.5,,40,2,1,44;24.8,62.9,,75,7,1,45;26.9,64.4,,42,3,1,44;25.7,64.1,,40,2,1,44;24.8,67.1,,40,1,1,44;26.9,68.5,,55,14,1,45;27.9,70.2,,53,11,1,47", spread = true },
+				{ t = "collect", quest = 2869, item = 9247, count = 10, map = 1444, x = 28.82, y = 50.79, f = "e", fromNpcs = { { npc = 5331, npcName = "Hatecrest Warrior" }, { npc = 5335, npcName = "Hatecrest Screamer" }, { npc = 5332, npcName = "Hatecrest Wave Rider" }, { npc = 5333, npcName = "Hatecrest Serpent Guard" }, { npc = 5334, npcName = "Hatecrest Myrmidon" }, { npc = 5336, npcName = "Hatecrest Sorceress" }, { npc = 5337, npcName = "Hatecrest Siren" }, { npc = 5343, npcName = "Lady Szallah" }, { npc = 8136, npcName = "Lord Shalzaru" } }, fromNpcsAt = "1,2;1,2,3;2,1,7;1,2;7,1,3;1,2;1;5,6;6,4;5,6;6,4,8;4,6;2,1;2;2,1;2,3,1,7;2;1,2;1,3;7;1;2,7;7,2;3;5,6;5,6,4;5;5,6;6;4,6;4,6,9", lvl = 43, oi = 1, spotsPacked = "28.7,50.7,,40,2;27,52.6,,45,3;25.7,55.1,,48,4;25.5,49.8,,40,2;29.4,57,,56,4;33.1,56.8,,40,2;33.3,50,,40,1;27.4,62.5,,40,2,,44;25.7,66.6,,48,5,,45;23.9,64.6,,49,3,,44;28,68.3,,41,8,,46;25.4,72.4,,51,7,,45;28.6,52.2,,45,5,1;26.7,50.6,,40,1,1,42;29.3,54.2,,56,7,1;27.4,54.3,,44,7,1;30.3,54.3,,40,1,1,42;26,53.6,,40,3,1;27.1,56.9,,40,2,1;33.1,53,,40,1,1;33.5,51.5,,40,1,1;31.3,57.1,,40,2,1;32.6,55.8,,40,3,1;33.6,54.6,,40,1,1,42;26,62.5,,40,2,1,44;24.8,62.9,,75,7,1,45;26.9,64.4,,42,3,1,44;25.7,64.1,,40,2,1,44;24.8,67.1,,40,1,1,44;26.9,68.5,,55,14,1,45;27.9,70.2,,53,11,1,47", spread = true },
 			},
 		},
 		{
@@ -9383,7 +9394,7 @@ G(function() return {
 			note = "Ride north into the yeti valley. Every Feral Scar yeti can drop a thick hide; {npc:5346} (level 48) prowls the middle.",
 			goals = {
 				{ t = "collect", quest = 2821, item = 8973, count = 10, map = 1444, x = 55.88, y = 58.81, f = "e", fromAlso = "Hulking Feral Scar", fromAlsoId = 5293, fromId = 5292, fromKind = "npc", fromNpcs = { { npc = 5292, npcName = "Feral Scar Yeti" }, { npc = 5293, npcName = "Hulking Feral Scar" }, { npc = 5295, npcName = "Enraged Feral Scar" }, { npc = 5346, npcName = "Bloodroar the Stalker" }, { npc = 7848, npcName = "Lurking Feral Scar" } }, lvl = 44, oi = 1, spotsPacked = "55.9,56.8,,46,5;54.9,56,,47,4;55.4,54.4,,32,2,,46;53.2,55.9,,38,3,,45;52.3,60.2,,69,10,,48;52.1,57.9,,52,9,,46;55.9,58.8,,15,1,1;50.9,59,,56,6,1,46" },
-				{ t = "collect", quest = 1452, item = 6259, count = 3, map = 1444, x = 57.5, y = 56.5, f = "e", fromNpcs = { { npc = 5260, npcName = "Groddoc Ape" } }, lvl = 43, oi = 3, spotsPacked = "57.5,56.5,,145,6;58.1,55.6,,40,2,1;56.6,54.7,,40,2,1;57.5,53.9,,40,2,1;57.2,60.4,,50,3,1;59.3,60.6,,60,4,1;60.9,61.1,,40,3,1;61.7,64.2,,40,2,1;68.3,52.1,,40,1,1;73.4,53.7,,40,1,1;74.7,51.4,,40,1,1" },
+				{ t = "collect", quest = 1452, item = 6259, count = 3, map = 1444, x = 57.5, y = 56.5, f = "e", carriedTo = "forever/alliance/40-50/04-tanaris", fromNpcs = { { npc = 5260, npcName = "Groddoc Ape" } }, lvl = 43, oi = 3, spotsPacked = "57.5,56.5,,145,6;58.1,55.6,,40,2,1;56.6,54.7,,40,2,1;57.5,53.9,,40,2,1;57.2,60.4,,50,3,1;59.3,60.6,,60,4,1;60.9,61.1,,40,3,1;61.7,64.2,,40,2,1;68.3,52.1,,40,1,1;73.4,53.7,,40,1,1;74.7,51.4,,40,1,1" },
 			},
 		},
 		{
@@ -9466,7 +9477,7 @@ G(function() return {
 			title = "{area:1136}: kill these as you meet them",
 			note = "Ride back west along the road, then north into the Rage Scar hills. Every yeti here can drop a hide, and about one in thirty a {quest:7735}, which {npc:7852} pays for too.\n{npc:14637}'s quests on the coast need level 45: grind the yetis here until level 44.5, so the kills also bring {npc:7852}'s hides. Or, with a group, run the {area:978} dungeon instead.",
 			goals = {
-				{ t = "collect", quest = 1452, item = 6258, count = 3, map = 1444, x = 53.2, y = 47.3, f = "e", fromId = 5352, fromKind = "npc", fromRank = 4, oi = 2 },
+				{ t = "collect", quest = 1452, item = 6258, count = 3, map = 1444, x = 53.2, y = 47.3, f = "e", carriedTo = "forever/alliance/40-50/04-tanaris", fromId = 5352, fromKind = "npc", fromRank = 4, oi = 2 },
 				{ t = "collect", quest = 7733, item = 18947, count = 10, map = 1444, x = 54.9, y = 32.9, f = "e", fromAlso = "Rage Scar Yeti", fromAlsoId = 5296, fromId = 7848, fromKind = "npc", fromNpcs = { { npc = 7848, npcName = "Lurking Feral Scar" }, { npc = 5296, npcName = "Rage Scar Yeti" }, { npc = 5297, npcName = "Elder Rage Scar" }, { npc = 5299, npcName = "Ferocious Rage Scar" } }, lvl = 46, oi = 1, spotsPacked = "54.9,32.9,,62,8,,49;52.9,31.9,,27,3,,48;52.4,30.3,,48,3,,47;55.3,53.8,,15,1,1" },
 				{ t = "level", map = 1444, x = 54.83, y = 33.05, f = "e", note = "grind on {npc:5296}", frac = 0.5, grind = 5296, level = 44, lvl = 47, spotsPacked = "54.7,32.9,,28,3;52.6,30.9,,65,5" },
 			},
@@ -9567,12 +9578,10 @@ G(function() return {
 		},
 		{
 			title = "{area:2240}",
-			note = "The {area:2240} lies on the {area:439} in south-east {zone:1441}: {npc:4454} is in the gnomes' camp beside the track, {npc:4709} by the goblin camp.",
+			note = "The {area:2240} lies on the {area:439} in south-east {zone:1441}: {npc:4454} is in the gnomes' camp beside the track, Zamek by the goblin camp.",
 			goals = {
 				{ t = "turnin", quest = 2769, npc = 4453, map = 1441, x = 78.14, y = 77.12, z = -58.7, f = "e" },
 				{ t = "turnin", quest = 1137, npc = 4454, map = 1441, x = 78.06, y = 77.13, z = -58.7, f = "e", note = "{npc:4454}: {quest:1137}, from Martek in the {zone:1418}" },
-				{ t = "accept", minLevel = 29, quest = 1191, npc = 4709, map = 1441, x = 79.81, y = 77.03, z = -58.6, f = "e", qlvl = 41 },
-				{ t = "turnin", quest = 1191, npc = 4709, map = 1441, x = 79.81, y = 77.03, z = -58.6, f = "e", note = "He runs off to keep Rizzle busy" },
 			},
 		},
 		{
@@ -9614,7 +9623,7 @@ G(function() return {
 			note = "Ride back west toward {area:976}. The Wastewander bandits and thieves hold the dunes on the way; any of them can carry a water pouch.\nCareful: Wastewander Rogues (level 43-44) move stealthed, so they can approach unseen.",
 			goals = {
 				{ t = "kill", quest = 1690, npc = 5616, count = 10, map = 1446, x = 63.93, y = 29.09, z = 9, f = "e", lvl = 41, oi = 2, spotsPacked = "63.9,29.3,9,40,2;63.2,30.8,,49,4;63.4,33.1,9,40,5;65.2,33.1,9.2,40,2;60,23.2,11.4,70,7", spread = true, target = "Wastewander Thief" },
-				{ t = "collect", quest = 1707, item = 8483, count = 5, map = 1446, x = 63.93, y = 29.09, f = "e", fromAlso = "Wastewander Thief", fromAlsoId = 5616, fromId = 5617, fromKind = "npc", fromNpcs = { { npc = 5616, npcName = "Wastewander Thief" }, { npc = 5617, npcName = "Wastewander Shadow Mage" }, { npc = 5618, npcName = "Wastewander Bandit" }, { npc = 5615, npcName = "Wastewander Rogue" }, { npc = 5623, npcName = "Wastewander Assassin" } }, lvl = 45, oi = 1, spotsPacked = "63.8,29.4,,40,5,,42;63.3,33.3,,43,7,,42;61.9,35,,40,4,,44;60.7,32.8,,40,6;60,37.2,,40,3;61.7,38.2,,40,1,,44;63.5,38,,40,4,,44;65,39.6,,40,5;66.2,35,,40,1;65.3,32.8,,40,4,,42;58.8,39.3,,40,5;59.6,23.7,,49,5,,42;63.2,30.8,,53,6,1,42;60.7,24.1,,40,3,1,42;65.4,36.8,,52,8,1;60.5,22.9,,40,3,1,42;63.8,39.9,,40,5,1;58.7,36.8,,47,6,1;60.7,39,,40,5,1", spread = true },
+				{ t = "collect", quest = 1707, item = 8483, count = 5, map = 1446, x = 63.93, y = 29.09, f = "e", fromAlso = "Wastewander Thief", fromAlsoId = 5616, fromId = 5617, fromKind = "npc", fromNpcs = { { npc = 5616, npcName = "Wastewander Thief" }, { npc = 5617, npcName = "Wastewander Shadow Mage" }, { npc = 5618, npcName = "Wastewander Bandit" }, { npc = 5615, npcName = "Wastewander Rogue" }, { npc = 5623, npcName = "Wastewander Assassin" }, { npc = 7805, npcName = "Wastewander Scofflaw" } }, fromNpcsAt = "3,1;1,3;2,4;2,4,5;2,4,5;4;4,2;2,4,5;6;1,3;2,4,5;1,3;1,3;3;2,4,5;1,3;4,2,5;2,5,4;2,4,5", lvl = 45, oi = 1, spotsPacked = "63.8,29.4,,40,5,,42;63.3,33.3,,43,7,,42;61.9,35,,40,4,,44;60.7,32.8,,40,6;60,37.2,,40,3;61.7,38.2,,40,1,,44;63.5,38,,40,4,,44;65,39.6,,40,5;66.2,35,,40,1;65.3,32.8,,40,4,,42;58.8,39.3,,40,5;59.6,23.7,,49,5,,42;63.2,30.8,,53,6,1,42;60.7,24.1,,40,3,1,42;65.4,36.8,,52,8,1;60.5,22.9,,40,3,1,42;63.8,39.9,,40,5,1;58.7,36.8,,47,6,1;60.7,39,,40,5,1", spread = true },
 				{ t = "kill", quest = 1690, npc = 5618, count = 10, map = 1446, x = 63.75, y = 29.15, z = 9, f = "e", lvl = 42, oi = 1, spotsPacked = "63.5,30,,63,5;65.4,32.4,,43,2;63.2,33.7,,43,2;60.4,24.3,,72,4", spread = true, target = "Wastewander Bandit" },
 			},
 		},
@@ -9622,7 +9631,6 @@ G(function() return {
 			title = "{area:976}",
 			goals = {
 				{ t = "turnin", quest = 1707, npc = 7408, map = 1446, x = 52.49, y = 28.45, z = 8.8, f = "e" },
-				{ t = "accept", minLevel = 40, quest = 1878, npc = 7408, map = 1446, x = 52.49, y = 28.45, z = 8.8, f = "e", pre = { 1707 }, qlvl = 44 },
 				{ t = "turnin", quest = 1690, npc = 7407, map = 1446, x = 52.46, y = 28.51, z = 8.7, f = "e" },
 				{ t = "accept", minLevel = 40, quest = 1691, npc = 7407, map = 1446, x = 52.46, y = 28.51, z = 8.7, f = "e", pre = { 1690 }, qlvl = 44 },
 			},
@@ -9632,7 +9640,7 @@ G(function() return {
 			note = "The tougher Wastewander rogues, shadow mages and assassins camp south-east of {area:976}, south of the bandits. Leave {npc:7847} in the middle of the southern camp for later.\nCareful: Wastewander Rogues keep Sneak up while out of combat, so hidden rogues can join a fight you start at a camp.",
 			goals = {
 				{ t = "kill", quest = 1691, npc = 5617, count = 10, map = 1446, x = 58.93, y = 35.85, z = 10.6, f = "e", lvl = 43, oi = 3, spotsPacked = "58.8,36.7,,41,3;59.9,37.2,9.6,40,1;60.9,39.1,10.6,40,2;58.6,39.4,9.5,40,2;61.9,35,8.8,40,3;60.6,32.9,,40,3;63.7,37.9,9.6,40,1;63.8,40.6,9.5,40,1;65.2,39.6,9,40,3;65.6,36.6,9,40,3", spread = true, target = "Wastewander Shadow Mage" },
-				{ t = "collect", quest = 1878, item = 8483, count = 5, map = 1446, x = 58.93, y = 35.85, f = "e", fromAlso = "Wastewander Thief", fromAlsoId = 5616, fromId = 5617, fromKind = "npc", fromNpcs = { { npc = 5617, npcName = "Wastewander Shadow Mage" }, { npc = 5616, npcName = "Wastewander Thief" }, { npc = 5618, npcName = "Wastewander Bandit" }, { npc = 5615, npcName = "Wastewander Rogue" }, { npc = 5623, npcName = "Wastewander Assassin" } }, lvl = 45, oi = 1, spotsPacked = "58.7,36.8,,47,6;58.8,39.3,,40,5;60.7,39,,40,5;61.9,35,,40,4,,44;63.3,33.3,,43,7,,42;65.3,32.8,,40,4,,42;66.2,35,,40,1;65.4,36.8,,52,8;63.8,39.9,,40,5;60.7,32.8,,40,6;63.8,29.4,,40,5,,42;60.5,22.9,,40,3,,42;60,37.2,,40,3,1;61.7,38.2,,40,1,1,44;63.5,38,,40,4,1,44;63.2,30.8,,53,6,1,42;65,39.6,,40,5,1;60.7,24.1,,40,3,1,42;59.6,23.7,,49,5,1,42", spread = true },
+				{ t = "collect", item = 8483, count = 5, map = 1446, x = 58.93, y = 35.85, f = "e", fromAlso = "Wastewander Thief", fromAlsoId = 5616, fromId = 5617, fromKind = "npc", fromNpcs = { { npc = 5617, npcName = "Wastewander Shadow Mage" }, { npc = 5616, npcName = "Wastewander Thief" }, { npc = 5618, npcName = "Wastewander Bandit" }, { npc = 5615, npcName = "Wastewander Rogue" }, { npc = 5623, npcName = "Wastewander Assassin" }, { npc = 7805, npcName = "Wastewander Scofflaw" } }, fromNpcsAt = "1,5,4;1,4,5;1,4,5;1,4;2,3;2,3;6;1,4,5;4,1,5;1,4,5;3,2;2,3;1,4,5;4;4,1;2,3;1,4,5;3;2,3", lvl = 45, spotsPacked = "58.7,36.8,,47,6;58.8,39.3,,40,5;60.7,39,,40,5;61.9,35,,40,4,,44;63.3,33.3,,43,7,,42;65.3,32.8,,40,4,,42;66.2,35,,40,1;65.4,36.8,,52,8;63.8,39.9,,40,5;60.7,32.8,,40,6;63.8,29.4,,40,5,,42;60.5,22.9,,40,3,,42;60,37.2,,40,3,1;61.7,38.2,,40,1,1,44;63.5,38,,40,4,1,44;63.2,30.8,,53,6,1,42;65,39.6,,40,5,1;60.7,24.1,,40,3,1,42;59.6,23.7,,49,5,1,42", spread = true },
 				{ t = "kill", quest = 1691, npc = 5615, count = 8, map = 1446, x = 58.62, y = 36.68, z = 9, f = "e", lvl = 44, oi = 1, spotsPacked = "58.6,36.7,9,40,1;60.1,37,9.1,40,1;60.6,39.2,9,40,2;61.7,38.2,9.8,40,1;63.5,38,9.3,40,3;64,39.5,9.6,48,4;65.3,36.9,10.4,40,3;61.8,35,8.3,40,1;60.9,32.5,10.7,40,2;59,38.9,,40,2", spread = true, target = "Wastewander Rogue" },
 				{ t = "kill", quest = 1691, npc = 5623, count = 6, map = 1446, x = 58.75, y = 36.41, z = 9, f = "e", lvl = 45, oi = 2, spotsPacked = "59.5,37.5,,86,4;59,40,9.2,64,1;60.7,32.8,9.3,64,1;65.4,37.1,,64,2;64.2,40,,64,2", spread = true, target = "Wastewander Assassin" },
 			},
@@ -9642,7 +9650,7 @@ G(function() return {
 			note = "Follow the coast south to the pirate cove. Southsea pirates crowd the beach and the boats: work along the edge and pull one at a time. {npc:7883} stands on the far side; {npc:7881}'s stolen cargo lies in the camp.\nCareful: Two or three pirates stand with {npc:7883}, and many more pirates from the town join the fight once it starts.",
 			goals = {
 				{ t = "kill", quest = 8366, npc = 7855, count = 10, map = 1446, x = 70.55, y = 43.03, z = 5.6, f = "e", lvl = 45, oi = 1, spotsPacked = "71.1,43.1,,45,5;72.3,44.4,0.7,39,3;71.4,45.8,6.1,40,3;72.1,47.9,,44,4;73.6,46.2,,51,6;73.4,48.3,1.9,17,2", target = "Southsea Pirate" },
-				{ t = "collect", quest = 8365, item = 20519, count = 20, map = 1446, x = 70.55, y = 43.03, f = "e", fromNpcs = { { npc = 7855, npcName = "Southsea Pirate" }, { npc = 7856, npcName = "Southsea Freebooter" }, { npc = 7857, npcName = "Southsea Dock Worker" }, { npc = 7858, npcName = "Southsea Swashbuckler" }, { npc = 7883, npcName = "Andre Firebeard" } }, lvl = 45, oi = 1, spotsPacked = "71.1,43.1,,45,7;72.2,44.6,,54,7;71.6,46.6,,68,12;73.4,46.3,,63,9;73,48,,63,15,,47;74.5,47.4,,44,9;75.6,45.4,,65,13,1" },
+				{ t = "collect", quest = 8365, item = 20519, count = 20, map = 1446, x = 70.55, y = 43.03, f = "e", fromNpcs = { { npc = 7855, npcName = "Southsea Pirate" }, { npc = 7856, npcName = "Southsea Freebooter" }, { npc = 7857, npcName = "Southsea Dock Worker" }, { npc = 7858, npcName = "Southsea Swashbuckler" }, { npc = 7883, npcName = "Andre Firebeard" }, { npc = 8203, npcName = "Kregg Keelhaul" } }, fromNpcsAt = "1,2;2,1;2,1,4;1,2,3,5;2,1,3,4,5,6;3,1,4;4,2", lvl = 45, oi = 1, spotsPacked = "71.1,43.1,,45,7;72.2,44.6,,54,7;71.6,46.6,,68,12;73.4,46.3,,63,9;73,48,,63,15,,47;74.5,47.4,,44,9;75.6,45.4,,65,13,1" },
 				{ t = "kill", quest = 8366, npc = 7856, count = 10, map = 1446, x = 70.95, y = 43.14, z = 6.7, f = "e", lvl = 45, oi = 2, spotsPacked = "71.1,43.3,6.7,15,2;72,44.6,3.9,28,3;71.3,46.6,6.1,49,5;73,45.2,0.7,24,2;72.4,48,1.6,36,3;73.4,47,,29,3;75.9,45.3,7.5,22,4,1", target = "Southsea Freebooter" },
 				{ t = "kill", quest = 8366, npc = 7858, count = 10, map = 1446, x = 72.18, y = 46.65, z = 5, f = "e", lvl = 45, oi = 4, spotsPacked = "72.7,47.3,,49,4;75.4,45.6,1.1,65,10", target = "Southsea Swashbuckler" },
 				{ t = "collect", quest = 2873, item = 9244, count = 1, map = 1446, x = 72.13, y = 46.73, f = "e", note = "{quest:2873}; upstairs", fromId = 142181, fromKind = "object", oi = 1 },
@@ -9664,13 +9672,13 @@ G(function() return {
 			title = "{area:1937}",
 			note = "Careful: Thieves cast Disarm. Rogues stay hidden with Sneak. Assassins use Execute when your health is at 20% or lower.",
 			goals = {
-				{ t = "collect", quest = 1878, item = 8483, count = 5, map = 1446, x = 63.93, y = 29.09, f = "e", fromAlso = "Wastewander Thief", fromAlsoId = 5616, fromId = 5617, fromKind = "npc", fromNpcs = { { npc = 5616, npcName = "Wastewander Thief" }, { npc = 5617, npcName = "Wastewander Shadow Mage" }, { npc = 5618, npcName = "Wastewander Bandit" }, { npc = 5615, npcName = "Wastewander Rogue" }, { npc = 5623, npcName = "Wastewander Assassin" } }, lvl = 45, oi = 1, spotsPacked = "63.8,29.4,,40,5,,42;63.3,33.3,,43,7,,42;61.9,35,,40,4,,44;60.7,32.8,,40,6;60,37.2,,40,3;61.7,38.2,,40,1,,44;63.5,38,,40,4,,44;65,39.6,,40,5;66.2,35,,40,1;65.3,32.8,,40,4,,42;58.8,39.3,,40,5;59.6,23.7,,49,5,,42;63.2,30.8,,53,6,1,42;60.7,24.1,,40,3,1,42;65.4,36.8,,52,8,1;60.5,22.9,,40,3,1,42;63.8,39.9,,40,5,1;58.7,36.8,,47,6,1;60.7,39,,40,5,1", spread = true },
+				{ t = "collect", item = 8483, count = 5, map = 1446, x = 63.93, y = 29.09, f = "e", fromAlso = "Wastewander Thief", fromAlsoId = 5616, fromId = 5617, fromKind = "npc", fromNpcs = { { npc = 5616, npcName = "Wastewander Thief" }, { npc = 5617, npcName = "Wastewander Shadow Mage" }, { npc = 5618, npcName = "Wastewander Bandit" }, { npc = 5615, npcName = "Wastewander Rogue" }, { npc = 5623, npcName = "Wastewander Assassin" }, { npc = 7805, npcName = "Wastewander Scofflaw" } }, fromNpcsAt = "3,1;1,3;2,4;2,4,5;2,4,5;4;4,2;2,4,5;6;1,3;2,4,5;1,3;1,3;3;2,4,5;1,3;4,2,5;2,5,4;2,4,5", lvl = 45, spotsPacked = "63.8,29.4,,40,5,,42;63.3,33.3,,43,7,,42;61.9,35,,40,4,,44;60.7,32.8,,40,6;60,37.2,,40,3;61.7,38.2,,40,1,,44;63.5,38,,40,4,,44;65,39.6,,40,5;66.2,35,,40,1;65.3,32.8,,40,4,,42;58.8,39.3,,40,5;59.6,23.7,,49,5,,42;63.2,30.8,,53,6,1,42;60.7,24.1,,40,3,1,42;65.4,36.8,,52,8,1;60.5,22.9,,40,3,1,42;63.8,39.9,,40,5,1;58.7,36.8,,47,6,1;60.7,39,,40,5,1", spread = true },
 			},
 		},
 		{
 			title = "{area:976}",
 			goals = {
-				{ t = "turnin", quest = 1878, npc = 7408, map = 1446, x = 52.49, y = 28.45, z = 8.8, f = "e" },
+				{ t = "turnin", quest = 1878, npc = 7408, map = 1446, x = 52.49, y = 28.45, z = 8.8, f = "e", direct = true, qlvl = 44 },
 				{ t = "turnin", quest = 1691, npc = 7407, map = 1446, x = 52.46, y = 28.51, z = 8.7, f = "e" },
 			},
 		},
@@ -9821,7 +9829,7 @@ G(function() return {
 		{
 			title = "{quest:2641}",
 			goals = {
-				{ t = "collect", quest = 2641, item = 8526, count = 1, map = 1425, x = 41, y = 59.8, f = "e", note = "Underwater", fromId = 141853, fromKind = "object", oi = 1, spotsPacked = "41,59.8,,60,6" },
+				{ t = "collect", quest = 2641, item = 8526, count = 1, map = 1425, x = 41, y = 59.8, f = "e", note = "Underwater", carriedTo = "forever/alliance/40-50/07-un-goro-crater", fromId = 141853, fromKind = "object", oi = 1, spotsPacked = "41,59.8,,60,6" },
 			},
 		},
 	},
@@ -9950,7 +9958,7 @@ G(function() return {
 		{
 			title = "{area:348}",
 			goals = {
-				{ t = "turnin", quest = 2881, npc = 7884, map = 1425, x = 14.83, y = 44.57, z = 123.3, f = "e", optional = true, note = "Inside" },
+				{ t = "turnin", quest = 2881, npc = 7884, map = 1425, x = 14.83, y = 44.57, z = 123.3, f = "e", optional = true, note = "Inside", direct = true, qlvl = 45 },
 				{ t = "turnin", quest = 2877, npc = 7884, map = 1425, x = 14.83, y = 44.57, z = 123.3, f = "e" },
 				{ t = "turnin", quest = 2989, npc = 5636, map = 1425, x = 9.75, y = 44.47, z = 197.7, f = "e", note = "{npc:5636}, inside" },
 				{ t = "accept", minLevel = 40, quest = 2990, npc = 5636, map = 1425, x = 9.75, y = 44.47, z = 197.7, f = "e", note = "for {quest:2990} at {area:1438}, later", pre = { 2989 }, qlvl = 47 },
@@ -10170,9 +10178,9 @@ G(function() return {
 				{ t = "collect", quest = 2583, item = 8394, count = 1, map = 1419, x = 61.82, y = 26.17, f = "e", fromNpcs = { { npc = 5990, npcName = "Redstone Basilisk" }, { npc = 5991, npcName = "Redstone Crystalhide" }, { npc = 8302, npcName = "Deatheye" } }, lvl = 52, oi = 3, spotsPacked = "61.3,28.1,,52,3,,48;60.2,37,,47,4;59.6,42.9,,54,4;64.1,52.5,,47,1;46.8,50.2,,47,2;45.3,55,,47,1;44.5,27.1,,70,6,,49;45.8,19.6,,69,5,,49;49.3,20.5,,47,2,,49;55,29.1,,47,1,,48", spread = true },
 				{ t = "collect", quest = 2581, item = 8391, count = 3, map = 1419, x = 61.46, y = 35.06, f = "e", fromNpcs = { { npc = 8300, npcName = "Ravage" }, { npc = 5984, npcName = "Starving Snickerfang" }, { npc = 5985, npcName = "Snickerfang Hyena" } }, lvl = 46, oi = 1, spotsPacked = "60.5,36.6,,67,6,,51;54.9,42.6,,40,1,,50;52,39,,44,3,,50;49.5,36.6,,52,5,,51;46,35.7,,57,7,,51;50.8,28.1,,40,1;48.2,24,,40,2;46.6,20.7,,45,3;45.8,17.5,,40,1;48.3,17.8,,40,1;43.9,25.6,,40,1;56,17.6,,40,1;52.4,57.2,,40,1,1,50", spread = true },
 				{ t = "collect", quest = 2603, item = 8391, count = 2, map = 1419, x = 61.46, y = 35.06, f = "e", fromNpcs = { { npc = 8300, npcName = "Ravage" }, { npc = 5984, npcName = "Starving Snickerfang" }, { npc = 5985, npcName = "Snickerfang Hyena" } }, lvl = 46, oi = 2, spotsPacked = "60.5,36.6,,67,6,,51;54.9,42.6,,40,1,,50;52,39,,44,3,,50;49.5,36.6,,52,5,,51;46,35.7,,57,7,,51;50.8,28.1,,40,1;48.2,24,,40,2;46.6,20.7,,45,3;45.8,17.5,,40,1;48.3,17.8,,40,1;43.9,25.6,,40,1;56,17.6,,40,1;52.4,57.2,,40,1,1,50", spread = true },
-				{ t = "collect", quest = 2581, item = 8393, count = 1, map = 1419, x = 60.86, y = 35.37, f = "e", fromNpcs = { { npc = 8301, npcName = "Clack the Reaver" }, { npc = 5988, npcName = "Scorpok Stinger" } }, lvl = 51, oi = 3, spotsPacked = "59.1,36,,88,11,,53;59.4,43.3,,48,4;53.5,37.2,,40,3,,53;50.7,36.7,,40,2,,53;47.6,35.7,,40,1,,53;51.1,28.6,,40,7;54.6,30.7,,49,4,,53;48.4,22.5,,59,12;49.3,18,,63,7;46.9,17.5,,52,9;45.1,20.9,,53,9;44.2,25.6,,42,9;48.3,38.7,,40,1,1,53;44.4,28.5,,40,4,1", spread = true },
-				{ t = "collect", quest = 2583, item = 8393, count = 2, map = 1419, x = 60.86, y = 35.37, f = "e", fromNpcs = { { npc = 8301, npcName = "Clack the Reaver" }, { npc = 5988, npcName = "Scorpok Stinger" } }, lvl = 51, oi = 2, spotsPacked = "59.1,36,,88,11,,53;59.4,43.3,,48,4;53.5,37.2,,40,3,,53;50.7,36.7,,40,2,,53;47.6,35.7,,40,1,,53;51.1,28.6,,40,7;54.6,30.7,,49,4,,53;48.4,22.5,,59,12;49.3,18,,63,7;46.9,17.5,,52,9;45.1,20.9,,53,9;44.2,25.6,,42,9;48.3,38.7,,40,1,1,53;44.4,28.5,,40,4,1", spread = true },
-				{ t = "collect", quest = 2585, item = 8393, count = 3, map = 1419, x = 60.86, y = 35.37, f = "e", fromNpcs = { { npc = 8301, npcName = "Clack the Reaver" }, { npc = 5988, npcName = "Scorpok Stinger" } }, lvl = 51, oi = 1, spotsPacked = "59.1,36,,88,11,,53;59.4,43.3,,48,4;53.5,37.2,,40,3,,53;50.7,36.7,,40,2,,53;47.6,35.7,,40,1,,53;51.1,28.6,,40,7;54.6,30.7,,49,4,,53;48.4,22.5,,59,12;49.3,18,,63,7;46.9,17.5,,52,9;45.1,20.9,,53,9;44.2,25.6,,42,9;48.3,38.7,,40,1,1,53;44.4,28.5,,40,4,1", spread = true },
+				{ t = "collect", quest = 2581, item = 8393, count = 1, map = 1419, x = 60.86, y = 35.37, f = "e", fromAlso = "Clack the Reaver", fromAlsoId = 8301, fromId = 5988, fromKind = "npc", fromNpcs = { { npc = 8301, npcName = "Clack the Reaver" }, { npc = 5988, npcName = "Scorpok Stinger" } }, lvl = 51, oi = 3, spotsPacked = "59.1,36,,88,11,,53;59.4,43.3,,48,4;53.5,37.2,,40,3,,53;50.7,36.7,,40,2,,53;47.6,35.7,,40,1,,53;51.1,28.6,,40,7;54.6,30.7,,49,4,,53;48.4,22.5,,59,12;49.3,18,,63,7;46.9,17.5,,52,9;45.1,20.9,,53,9;44.2,25.6,,42,9;48.3,38.7,,40,1,1,53;44.4,28.5,,40,4,1", spread = true },
+				{ t = "collect", quest = 2583, item = 8393, count = 2, map = 1419, x = 60.86, y = 35.37, f = "e", fromAlso = "Clack the Reaver", fromAlsoId = 8301, fromId = 5988, fromKind = "npc", fromNpcs = { { npc = 8301, npcName = "Clack the Reaver" }, { npc = 5988, npcName = "Scorpok Stinger" } }, lvl = 51, oi = 2, spotsPacked = "59.1,36,,88,11,,53;59.4,43.3,,48,4;53.5,37.2,,40,3,,53;50.7,36.7,,40,2,,53;47.6,35.7,,40,1,,53;51.1,28.6,,40,7;54.6,30.7,,49,4,,53;48.4,22.5,,59,12;49.3,18,,63,7;46.9,17.5,,52,9;45.1,20.9,,53,9;44.2,25.6,,42,9;48.3,38.7,,40,1,1,53;44.4,28.5,,40,4,1", spread = true },
+				{ t = "collect", quest = 2585, item = 8393, count = 3, map = 1419, x = 60.86, y = 35.37, f = "e", fromAlso = "Clack the Reaver", fromAlsoId = 8301, fromId = 5988, fromKind = "npc", fromNpcs = { { npc = 8301, npcName = "Clack the Reaver" }, { npc = 5988, npcName = "Scorpok Stinger" } }, lvl = 51, oi = 1, spotsPacked = "59.1,36,,88,11,,53;59.4,43.3,,48,4;53.5,37.2,,40,3,,53;50.7,36.7,,40,2,,53;47.6,35.7,,40,1,,53;51.1,28.6,,40,7;54.6,30.7,,49,4,,53;48.4,22.5,,59,12;49.3,18,,63,7;46.9,17.5,,52,9;45.1,20.9,,53,9;44.2,25.6,,42,9;48.3,38.7,,40,1,1,53;44.4,28.5,,40,4,1", spread = true },
 			},
 		},
 		{
@@ -10497,7 +10505,7 @@ G(function() return {
 			goals = {
 				{ t = "kill", quest = 7729, npc = 5846, count = 15, map = 1427, x = 37.49, y = 39.64, z = 184.9, f = "e", lvl = 48, oi = 1, spotsPacked = "39.8,44.5,,30,2;34.8,45.4,,41,3;43.4,33.4,208.7,47,7;44.9,39.7,,41,3;40.1,52.3,,40,4;49.2,39.6,241.9,15,2;37.5,39.6,184.9,15,1,1;38,32,185.6,15,1,1;43.3,28.2,200.5,15,1,1;44.8,51.9,243.1,15,1,1;41.2,23.3,180.7,15,1,1;46.5,25.3,212.2,15,1,1;58,41.9,194.3,15,1,1", target = "Dark Iron Taskmaster" },
 				{ t = "kill", quest = 7729, npc = 5844, count = 15, map = 1427, x = 38.39, y = 38.04, z = 182.8, f = "e", lvl = 46, oi = 2, spotsPacked = "39.4,41.2,,77,6;42.4,31.4,,49,5;45.3,26.1,,55,3;47.7,46.9,,49,2;40.9,52.9,180.5,60,6;35.3,58.5,238,49,1;58.1,42,194.2,49,1", spread = true, target = "Dark Iron Slaver" },
-				{ t = "collect", quest = 3443, item = 10551, count = 8, map = 1427, x = 38.39, y = 38.04, f = "e", fromNpcs = { { npc = 5844, npcName = "Dark Iron Slaver" }, { npc = 15692, npcName = "Dark Iron Kidnapper" }, { npc = 5839, npcName = "Dark Iron Geologist" }, { npc = 5840, npcName = "Dark Iron Steamsmith" }, { npc = 5843, npcName = "Slave Worker" } }, lvl = 48, oi = 1, spotsPacked = "39,38.1,,53,15;48.4,42.3,,49,5;43.5,53.7,,56,11;42.7,62.8,,40,2;35.9,60.5,,40,3;33,54,,40,4;52.1,58,,60,5;63,60.4,,40,9,,45;66,45.1,,40,1,,45;69,34,,41,13,,45;58,41.9,,40,2;44.8,24.4,,45,6;40.3,43.6,,45,8,1;37.8,31.7,,55,5,1;35.3,43.2,,60,11,1;44.1,38.6,,48,6,1;42.8,31.2,,47,15,1;39.8,51.9,,62,19,1;45.9,28.8,,40,1,1,46;40.2,23.6,,64,8,1;46.3,49.2,,40,1,1,46", spread = true },
+				{ t = "collect", quest = 3443, item = 10551, count = 8, map = 1427, x = 38.39, y = 38.04, f = "e", fromNpcs = { { npc = 5844, npcName = "Dark Iron Slaver" }, { npc = 15692, npcName = "Dark Iron Kidnapper" }, { npc = 5839, npcName = "Dark Iron Geologist" }, { npc = 5840, npcName = "Dark Iron Steamsmith" }, { npc = 5843, npcName = "Slave Worker" }, { npc = 5846, npcName = "Dark Iron Taskmaster" }, { npc = 8566, npcName = "Dark Iron Lookout" }, { npc = 8637, npcName = "Dark Iron Watchman" }, { npc = 8337, npcName = "Dark Iron Steelshifter" } }, fromNpcsAt = "5,1,6;5,6,1;5,1,6,4;7;7,1;7;7;3,8;9;2,3;1,6;5,1,6;5,1,6;5,1,6;5,6,1;6,1;6,5,1;5,4,1,6;1;5,6;1", lvl = 48, oi = 1, spotsPacked = "39,38.1,,53,15;48.4,42.3,,49,5;43.5,53.7,,56,11;42.7,62.8,,40,2;35.9,60.5,,40,3;33,54,,40,4;52.1,58,,60,5;63,60.4,,40,9,,45;66,45.1,,40,1,,45;69,34,,41,13,,45;58,41.9,,40,2;44.8,24.4,,45,6;40.3,43.6,,45,8,1;37.8,31.7,,55,5,1;35.3,43.2,,60,11,1;44.1,38.6,,48,6,1;42.8,31.2,,47,15,1;39.8,51.9,,62,19,1;45.9,28.8,,40,1,1,46;40.2,23.6,,64,8,1;46.3,49.2,,40,1,1,46", spread = true },
 				{ t = "collect", quest = 7728, item = 18960, count = 1, map = 1427, x = 33.71, y = 51.92, f = "e", fromId = 8566, fromKind = "npc", fromNpcs = { { npc = 8566, npcName = "Dark Iron Lookout" } }, lvl = 48, oi = 2, spotsPacked = "33,54,,35,4;36.1,61.5,,26,2;42.7,62.8,,15,2;52.1,58,,60,5" },
 				{ t = "collect", item = 11818, count = 1, map = 1427, x = 33.71, y = 51.92, f = "e", optional = true, fromNpcs = { { npc = 8566, npcName = "Dark Iron Lookout" }, { npc = 5840, npcName = "Dark Iron Steamsmith" }, { npc = 5844, npcName = "Dark Iron Slaver" }, { npc = 5846, npcName = "Dark Iron Taskmaster" }, { npc = 15692, npcName = "Dark Iron Kidnapper" } }, lvl = 48, spotsPacked = "33,54,,40,4;35.9,60.5,,40,3;42.7,62.8,,40,2;43.7,51.9,,40,3;44.1,38.6,,48,6;49.2,41.3,,50,3;58,41.9,,40,2;68.9,34.1,,40,10,,45;46.4,26.5,,40,3;38.3,36.9,,74,4;35.1,44.5,,47,4;52.1,58,,60,5;39.8,51.4,,54,12,1;39.8,44.5,,40,4,1;41.7,56.2,,40,1,1,46;46.3,49.2,,40,1,1,46;42.9,31.6,,60,11,1;42.3,23.7,,40,2,1", spread = true },
 				{ t = "accept", minLevel = 43, quest = 4451, item = 11818, optional = true, qlvl = 47 },
@@ -10668,7 +10676,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 3448, npc = 8507, map = 1455, x = 30.96, y = 4.83, z = 509, f = "e" },
 				{ t = "accept", minLevel = 45, quest = 3449, npc = 8507, map = 1455, x = 30.96, y = 4.83, z = 509, f = "e", note = "Four rune rubbings in {zone:1447}: keep it", pre = { 3448 }, qlvl = 52 },
-				{ t = "accept", minLevel = 45, quest = 3450, npc = 8507, map = 1455, x = 30.96, y = 4.83, z = 509, f = "e", pre = { 3448 }, qlvl = 52 },
+				{ t = "accept", minLevel = 45, quest = 3450, npc = 8507, map = 1455, x = 30.96, y = 4.83, z = 509, f = "e", parent = 3449, pre = { 3448 }, qlvl = 52 },
 			},
 		},
 		{
@@ -10699,6 +10707,7 @@ G(function() return {
 	maxLevel = 50,
 	zone = 1449,
 	next = { "forever/alliance/50-60/01-burning-steppes" },
+	pitch = "For characters of 49 to 50, but most quests here are level 51-53: on purpose, for their experience. The crater's beasts are 48-55 and the Gorishi silithids 51-54, so pull them one at a time.",
 	version = 1,
 	pool = {
 		{ faction = "A", classes = { "MAGE" }, npc = 7312, map = 1455, x = 27.16, y = 8.57, z = 501.2, f = "e" },
@@ -10799,7 +10808,7 @@ G(function() return {
 			title = "Lar'korwi Mates and the raft",
 			note = "The Lar'korwi Mates prowl the jungle west of {npc:9619}. The wrecked raft lies on the shore of the lake there; the small pack sits in the water beside it. Keep the compass, map and key for {npc:8737}. Any beast in the crater may drop {item:11116}: right-click it.",
 			goals = {
-				{ t = "collect", quest = 4291, item = 11509, count = 2, map = 1449, x = 67, y = 73, f = "e", fromId = 9683, fromKind = "npc", fromNpcs = { { npc = 9683, npcName = "Lar'korwi Mate" } }, lvl = 50, oi = 1, spotsPacked = "67,73,,83,1;65,66,,114,3;68.5,60.3,,102,4;62.5,78.5,,83,2;59,75,,83,2", spread = true },
+				{ t = "collect", quest = 4291, item = 11509, count = 2, map = 1449, x = 67, y = 73, f = "e", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 9683, fromKind = "npc", fromNpcs = { { npc = 9683, npcName = "Lar'korwi Mate" } }, lvl = 50, oi = 1, spotsPacked = "67,73,,83,1;65,66,,114,3;68.5,60.3,,102,4;62.5,78.5,,83,2;59,75,,83,2", spread = true },
 				{ t = "accept", minLevel = 47, quest = 3844, object = 161505, map = 1449, x = 63.02, y = 68.6, z = -272.1, f = "e", qlvl = 52 },
 				{ t = "turnin", quest = 3844, object = 161504, map = 1449, x = 63.11, y = 69.06, z = -278.5, f = "e", note = "{object:161504}, underwater" },
 				{ t = "accept", minLevel = 47, quest = 3845, object = 161504, map = 1449, x = 63.11, y = 69.06, z = -278.5, f = "e", pre = { 3844 }, qlvl = 52 },
@@ -10909,7 +10918,7 @@ G(function() return {
 			goals = {
 				{ t = "use", quest = 3883, item = 11132, map = 1449, x = 48.7, y = 85.3, f = "e", oi = 1 },
 				{ t = "collect", quest = 3883, item = 11131, count = 1, map = 1449, x = 48.69, y = 85.32, f = "e", fromId = 174793, fromKind = "object", oi = 1 },
-				{ t = "collect", quest = 3764, item = 11018, count = 20, map = 1449, x = 48.35, y = 85.25, f = "e", fromNpcs = { { npc = 6555, npcName = "Gorishi Tunneler" }, { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6551, npcName = "Gorishi Wasp" } }, oi = 1, spotsPacked = "47.3,86.3,,81,9,,53;60,81.8,,51,1;71.8,65.1,,51,3,,50;75.3,44.4,,51,2,,50;63.3,47.9,,51,1;50.3,47.7,,51,2;36.9,47.1,,51,2,,53;30.6,68,,52,2,,53;21.9,38.6,,51,1;39.1,23.5,,101,6,,53;55.6,28.7,,51,1;69.2,20.5,,51,1,,50;49.1,81.4,,61,6,1,53;45.6,83.4,,52,7,1,53;50.5,90.1,,51,1,1;53,83.6,,72,6,1,52;44.2,80.1,,97,9,1,54;48.1,76,,76,6,1,52;53.3,76.9,,82,7,1,52;51.3,73.9,,51,3,1,52;56.6,83.5,,51,1,1;40.9,79.3,,51,2,1,53;38.2,81.7,,51,1,1,53;36.4,76.9,,60,3,1,53;36.6,69.2,,51,3,1,53;64.9,78.4,,51,1,1;31.7,77.5,,65,3,1,53;32.9,70.9,,51,2,1,53;48.9,58,,51,1,1;40.8,59.7,,51,1,1;62.3,64,,51,1,1;52.8,55.9,,51,1,1;33.6,64.6,,63,3,1,53;56,56.9,,51,1,1;45.9,53.7,,51,2,1;40.7,54,,77,5,1,53;70.5,76.2,,51,2,1;26.9,68.1,,51,1,1,53;28.7,61.2,,51,2,1,53;41.9,48.1,,51,1,1,53;30,56.8,,51,2,1,53;52.8,45.4,,51,1,1;41.9,43.8,,51,3,1,53;57.1,44.2,,51,1,1;25,57.9,,51,1,1,53;73.4,58.3,,51,1,1;53.6,39,,51,1,1;24.8,52.2,,51,1,1,53;35.2,40.8,,74,4,1,53;60.4,40.1,,51,2,1,50;63.8,42.3,,51,2,1,50;39.9,38.1,,60,3,1,53;29.9,44.3,,51,1,1,53;57.3,36.7,,51,4,1,50;50.2,34.3,,51,1,1;25.9,46.5,,51,2,1,53;44.1,33.8,,51,1,1;59.7,34.7,,51,2,1,50;28.5,40.8,,67,4,1,53;35.5,35.2,,51,2,1,53;41.2,32.5,,51,1,1,53;75.1,48.6,,63,3,1,50;63.7,33.4,,51,1,1,50;67.1,35.8,,76,4,1,50;39.8,28.6,,51,2,1,53;35.3,30.4,,51,1,1,53;72.3,39.2,,51,4,1,50;30.1,32.4,,61,4,1,53;61.1,27.6,,51,1,1,50;64.7,29.3,,51,1,1,50;32.5,28.4,,51,1,1,53;69.5,31.3,,51,3,1,50;70.7,27.7,,51,1,1,50;33.2,22.3,,51,3,1,53;68.5,24.7,,66,3,1,50;62.2,17.6,,51,1,1", spread = true },
+				{ t = "collect", quest = 3764, item = 11018, count = 20, map = 1449, x = 48.35, y = 85.25, f = "e", carriedTo = "forever/alliance/50-60/01-burning-steppes", fromNpcs = { { npc = 6555, npcName = "Gorishi Tunneler" }, { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6512, npcName = "Bloodpetal Trapper" }, { npc = 6511, npcName = "Bloodpetal Thresher" } }, fromNpcsAt = "1,3,4;;7;7;;;6;6;;6;;7;5,3,4,1;3,4,1,5;;3,5;3,1,4,5,2;3,5;3,5;3,5;;6;6;6;6;;6;6;;;;;6;;;6;;6;6;6;6;;6;;6;;;6;6;7;7;6;6;7;;6;;7;6;6;6;7;7;7;6;6;7;6;7;7;6;7;7;6;7;", oi = 1, spotsPacked = "47.3,86.3,,81,9,,53;60,81.8,,51,1;71.8,65.1,,51,3,,50;75.3,44.4,,51,2,,50;63.3,47.9,,51,1;50.3,47.7,,51,2;36.9,47.1,,51,2,,53;30.6,68,,52,2,,53;21.9,38.6,,51,1;39.1,23.5,,101,6,,53;55.6,28.7,,51,1;69.2,20.5,,51,1,,50;49.1,81.4,,61,6,1,53;45.6,83.4,,52,7,1,53;50.5,90.1,,51,1,1;53,83.6,,72,6,1,52;44.2,80.1,,97,9,1,54;48.1,76,,76,6,1,52;53.3,76.9,,82,7,1,52;51.3,73.9,,51,3,1,52;56.6,83.5,,51,1,1;40.9,79.3,,51,2,1,53;38.2,81.7,,51,1,1,53;36.4,76.9,,60,3,1,53;36.6,69.2,,51,3,1,53;64.9,78.4,,51,1,1;31.7,77.5,,65,3,1,53;32.9,70.9,,51,2,1,53;48.9,58,,51,1,1;40.8,59.7,,51,1,1;62.3,64,,51,1,1;52.8,55.9,,51,1,1;33.6,64.6,,63,3,1,53;56,56.9,,51,1,1;45.9,53.7,,51,2,1;40.7,54,,77,5,1,53;70.5,76.2,,51,2,1;26.9,68.1,,51,1,1,53;28.7,61.2,,51,2,1,53;41.9,48.1,,51,1,1,53;30,56.8,,51,2,1,53;52.8,45.4,,51,1,1;41.9,43.8,,51,3,1,53;57.1,44.2,,51,1,1;25,57.9,,51,1,1,53;73.4,58.3,,51,1,1;53.6,39,,51,1,1;24.8,52.2,,51,1,1,53;35.2,40.8,,74,4,1,53;60.4,40.1,,51,2,1,50;63.8,42.3,,51,2,1,50;39.9,38.1,,60,3,1,53;29.9,44.3,,51,1,1,53;57.3,36.7,,51,4,1,50;50.2,34.3,,51,1,1;25.9,46.5,,51,2,1,53;44.1,33.8,,51,1,1;59.7,34.7,,51,2,1,50;28.5,40.8,,67,4,1,53;35.5,35.2,,51,2,1,53;41.2,32.5,,51,1,1,53;75.1,48.6,,63,3,1,50;63.7,33.4,,51,1,1,50;67.1,35.8,,76,4,1,50;39.8,28.6,,51,2,1,53;35.3,30.4,,51,1,1,53;72.3,39.2,,51,4,1,50;30.1,32.4,,61,4,1,53;61.1,27.6,,51,1,1,50;64.7,29.3,,51,1,1,50;32.5,28.4,,51,1,1,53;69.5,31.3,,51,3,1,50;70.7,27.7,,51,1,1,50;33.2,22.3,,51,3,1,53;68.5,24.7,,66,3,1,50;62.2,17.6,,51,1,1", spread = true },
 				{ t = "level", map = 1449, x = 40.2, y = 76.2, f = "e", note = "grind on {npc:9167}", frac = 0.6, grind = 9167, level = 49, lvl = 54, spotsPacked = "40.1,76.4,,40,2;40.6,65.1,,40,4;32.2,67.2,,40,2;32.4,78.6,,40,2;21.3,60,,44,9;23.1,50,,40,5;24.5,39.8,,57,10;29.2,31.5,,53,4;37.8,34.8,,40,2;40.2,48.5,,40,2;31.1,44.8,,40,4;39.2,19.6,,40,2", spread = true },
 			},
 		},
@@ -10944,7 +10953,7 @@ G(function() return {
 				{ t = "turnin", quest = 4288, npc = 9117, map = 1449, x = 41.92, y = 2.7, z = -217.1, f = "e" },
 				{ t = "accept", minLevel = 47, quest = 4321, npc = 9117, map = 1449, x = 41.92, y = 2.7, z = -217.1, f = "e", preAll = { 4285, 4287, 4288 }, qlvl = 53 },
 				{ t = "turnin", quest = 4321, npc = 9117, map = 1449, x = 41.92, y = 2.7, z = -217.1, f = "e" },
-				{ t = "level", only = { classes = { "PRIEST" } }, level = 50 },
+				{ t = "level", only = { classes = { "PRIEST", "MAGE" } }, level = 50 },
 			},
 		},
 		{
@@ -11585,7 +11594,7 @@ G(function() return {
 			goals = {
 				{ t = "interact", quest = 3701, object = 153556, map = 1428, x = 65.26, y = 34.81, z = 131.9, f = "e", oi = 1, spotsPacked = "63,36.5,,84,6;68.8,37.5,,49,3;66.3,42.6,,71,5;59.1,40.9,,71,6;54.8,38.1,,84,7;72.4,33.9,147.7,15,1,1" },
 				{ t = "collect", quest = 4726, item = 12283, count = 8, map = 1428, x = 61.13, y = 31.24, f = "e", fromId = 175264, fromKind = "object", oi = 1, spotsPacked = "59.3,31.7,,62,3;80.3,27.4,,62,3;91.7,35.8,,62,3;90.5,50.9,,62,1;84.6,62.1,,62,1;70.9,62.1,,62,1;57.8,64.2,,62,2;37.8,62.5,,62,1;28.7,57.8,,62,1;23.4,68.9,,62,3;17,55.4,,62,1;39.8,47.5,,62,2;52.7,26,,62,1,1;72.8,27.6,,62,2,1;64.1,58.9,,62,2,1;87,31.4,,64,4,1;90.2,45.5,,62,3,1;34.6,55.4,,62,1,1;25.1,46.5,,62,2,1;22.3,58.9,,62,1,1", spread = true },
-				{ t = "collect", quest = 4283, item = 11467, count = 50, map = 1428, x = 75.54, y = 32.89, f = "e", fromNpcs = { { npc = 10077, npcName = "Deathmaw" }, { npc = 7055, npcName = "Blackrock Worg" }, { npc = 9690, npcName = "Ember Worg" }, { npc = 9694, npcName = "Slavering Ember Worg" }, { npc = 9697, npcName = "Giant Ember Worg" } }, lvl = 57, oi = 1, spotsPacked = "75.5,32.9,,40,1,,53;72.4,46.9,,40,1,,54;68.2,61,,40,1,,54;81.5,56.7,,40,1,,53;91.9,59.3,,40,1,,52;90.6,40,,40,1,,52;55.3,53.8,,62,13;44.8,57.4,,40,3,,56;40.4,34.1,,46,17,,58;26.5,57.7,,40,1,,56;24.5,69.2,,40,1,,56;17.5,29.6,,40,5;79.3,30.6,,40,1,1,52;82.7,30.4,,40,1,1,53;88.9,50.9,,46,3,1,53;86.7,55.6,,40,1,1,52;63.1,54.3,,40,1,1,54;84.1,60.6,,40,1,1,52;61.5,59.9,,40,1,1,54;58.4,63.9,,40,1,1,54;50.8,54.1,,40,6,1;50.5,61.3,,40,3,1;48.9,58.1,,40,4,1,56;43.6,34.4,,40,3,1;43,37,,40,5,1;44.8,50.8,,40,2,1,56;42.6,55.5,,40,4,1;39.5,54.9,,51,4,1;26.5,62.8,,40,1,1,56;23.6,59.5,,40,1,1,56", spread = true },
+				{ t = "collect", quest = 4283, item = 11467, count = 50, map = 1428, x = 75.54, y = 32.89, f = "e", fromNpcs = { { npc = 10077, npcName = "Deathmaw" }, { npc = 7055, npcName = "Blackrock Worg" }, { npc = 9690, npcName = "Ember Worg" }, { npc = 9694, npcName = "Slavering Ember Worg" }, { npc = 9697, npcName = "Giant Ember Worg" }, { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7028, npcName = "Blackrock Warlock" }, { npc = 7026, npcName = "Blackrock Sorcerer" }, { npc = 7025, npcName = "Blackrock Soldier" }, { npc = 7029, npcName = "Blackrock Battlemaster" } }, fromNpcsAt = "1;4;4;1;3;3;6,8,9,7,2;2,9,8;10,7,6,8;5;5;7;3;1;3,1;3;4;3;4;4;6,8,2;8,7;2,9;6,7;6,7,8;9;9,8,6;6,2;5;5", lvl = 57, oi = 1, spotsPacked = "75.5,32.9,,40,1,,53;72.4,46.9,,40,1,,54;68.2,61,,40,1,,54;81.5,56.7,,40,1,,53;91.9,59.3,,40,1,,52;90.6,40,,40,1,,52;55.3,53.8,,62,13;44.8,57.4,,40,3,,56;40.4,34.1,,46,17,,58;26.5,57.7,,40,1,,56;24.5,69.2,,40,1,,56;17.5,29.6,,40,5;79.3,30.6,,40,1,1,52;82.7,30.4,,40,1,1,53;88.9,50.9,,46,3,1,53;86.7,55.6,,40,1,1,52;63.1,54.3,,40,1,1,54;84.1,60.6,,40,1,1,52;61.5,59.9,,40,1,1,54;58.4,63.9,,40,1,1,54;50.8,54.1,,40,6,1;50.5,61.3,,40,3,1;48.9,58.1,,40,4,1,56;43.6,34.4,,40,3,1;43,37,,40,5,1;44.8,50.8,,40,2,1,56;42.6,55.5,,40,4,1;39.5,54.9,,51,4,1;26.5,62.8,,40,1,1,56;23.6,59.5,,40,1,1,56", spread = true },
 				{ t = "use", quest = 4726, item = 12284, map = 1428, x = 72.4, y = 28.2, f = "e", oi = 1 },
 				{ t = "collect", quest = 4296, item = 11470, count = 1, map = 1428, x = 54.12, y = 40.76, f = "e", fromId = 169294, fromKind = "object", oi = 1 },
 			},
@@ -11644,7 +11653,7 @@ G(function() return {
 			title = "{area:252}",
 			note = "{npc:9176} and the Blackrock orcs hold the camps and the stronghold at the foot of {area:254}, west of {area:251}. Pull them one at a time; every orc and worg may drop a medallion, so kill them until you have fifty.\nCareful: {npc:9176} has a guard linked to him that joins the fight, and a second soldier patrols close by; clear the patrol before pulling.",
 			goals = {
-				{ t = "collect", quest = 4283, item = 11467, count = 50, map = 1428, x = 89.34, y = 50.65, f = "e", note = "{item:11467}; inside", fromNpcs = { { npc = 9690, npcName = "Ember Worg" }, { npc = 7055, npcName = "Blackrock Worg" }, { npc = 9694, npcName = "Slavering Ember Worg" }, { npc = 9697, npcName = "Giant Ember Worg" }, { npc = 7025, npcName = "Blackrock Soldier" } }, lvl = 57, oi = 1, spotsPacked = "88.9,50.9,,46,3,,53;81.5,56.7,,40,1,,53;72.4,46.9,,40,1,,54;75.5,32.9,,40,1,,53;68.2,61,,40,1,,54;58.4,63.9,,40,1,,54;50.5,61.3,,40,3;39.5,54.9,,51,4;26.5,57.7,,40,1,,56;24.5,69.2,,40,1,,56;17.5,29.6,,40,5;40.4,34.1,,46,17,,58;86.7,55.6,,40,1,1,52;91.9,59.3,,40,1,1,52;90.6,40,,40,1,1,52;84.1,60.6,,40,1,1,52;82.7,30.4,,40,1,1,53;79.3,30.6,,40,1,1,52;63.1,54.3,,40,1,1,54;61.5,59.9,,40,1,1,54;55.3,53.8,,62,13,1;50.8,54.1,,40,6,1;48.9,58.1,,40,4,1,56;44.8,50.8,,40,2,1,56;44.8,57.4,,40,3,1,56;42.6,55.5,,40,4,1;43.6,34.4,,40,3,1;43,37,,40,5,1;26.5,62.8,,40,1,1,56;23.6,59.5,,40,1,1,56", spread = true },
+				{ t = "collect", quest = 4283, item = 11467, count = 50, map = 1428, x = 89.34, y = 50.65, f = "e", note = "{item:11467}; inside", fromNpcs = { { npc = 9690, npcName = "Ember Worg" }, { npc = 7055, npcName = "Blackrock Worg" }, { npc = 9694, npcName = "Slavering Ember Worg" }, { npc = 9697, npcName = "Giant Ember Worg" }, { npc = 7025, npcName = "Blackrock Soldier" }, { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7028, npcName = "Blackrock Warlock" }, { npc = 7026, npcName = "Blackrock Sorcerer" }, { npc = 7029, npcName = "Blackrock Battlemaster" }, { npc = 10077, npcName = "Deathmaw" } }, fromNpcsAt = "1,10;10;3;10;3;3;8,7;6,2;4;4;7;9,7,6,8;1;1;1;1;10;1;3;3;6,8,5,7,2;6,8,2;2,5;5;2,5,8;5,8,6;6,7;6,7,8;4;4", lvl = 57, oi = 1, spotsPacked = "88.9,50.9,,46,3,,53;81.5,56.7,,40,1,,53;72.4,46.9,,40,1,,54;75.5,32.9,,40,1,,53;68.2,61,,40,1,,54;58.4,63.9,,40,1,,54;50.5,61.3,,40,3;39.5,54.9,,51,4;26.5,57.7,,40,1,,56;24.5,69.2,,40,1,,56;17.5,29.6,,40,5;40.4,34.1,,46,17,,58;86.7,55.6,,40,1,1,52;91.9,59.3,,40,1,1,52;90.6,40,,40,1,1,52;84.1,60.6,,40,1,1,52;82.7,30.4,,40,1,1,53;79.3,30.6,,40,1,1,52;63.1,54.3,,40,1,1,54;61.5,59.9,,40,1,1,54;55.3,53.8,,62,13,1;50.8,54.1,,40,6,1;48.9,58.1,,40,4,1,56;44.8,50.8,,40,2,1,56;44.8,57.4,,40,3,1,56;42.6,55.5,,40,4,1;43.6,34.4,,40,3,1;43,37,,40,5,1;26.5,62.8,,40,1,1,56;23.6,59.5,,40,1,1,56", spread = true },
 				{ t = "collect", quest = 3824, item = 11080, count = 1, map = 1428, x = 39.33, y = 55.3, f = "e", fromId = 9176, fromKind = "npc", fromNpcs = { { npc = 9176, npcName = "Gor'tesh" } }, oi = 1 },
 			},
 		},
@@ -11713,7 +11722,7 @@ G(function() return {
 			note = "Kum'isha waits at the {area:2517}, the hill south-west of the keep. The {zone:1419} mobs on the way drop the Imperfect Draenethyst Fragments; bring her what you have.\nCareful: Felcular, {npc:7664} and Ilifar are all level 60 elites. Razelikh casts {spell:2691}, {spell:8255} and Decimate, and as its health drops it adds {object:141891}, {spell:10854} and then Enrage at 15%.",
 			goals = {
 				{ t = "accept", minLevel = 45, quest = 3501, npc = 7363, map = 1419, x = 51.98, y = 35.65, z = 0.8, f = "e", note = "{npc:7363} walks around here: look inside the circle on the map", qlvl = 55 },
-				{ t = "collect", quest = 3501, item = 10593, count = 1, map = 1419, x = 50.06, y = 41.14, f = "e", fromNpcs = { { npc = 5978, npcName = "Dreadmaul Warlock" }, { npc = 5975, npcName = "Dreadmaul Ogre Mage" }, { npc = 6009, npcName = "Shadowsworn Dreadweaver" }, { npc = 6005, npcName = "Shadowsworn Thug" }, { npc = 7670, npcName = "Servant of Allistarj" } }, lvl = 55, oi = 1, spotsPacked = "49.2,41.4,,40,4;42.9,40.8,,69,12,,56;44.3,33.6,,40,1,,53;39.3,31.9,,57,15,,56;43.7,11.6,,40,5,,54;64.7,34.2,,46,8;67.6,30.8,,64,15,,53;62.9,41,,50,13;63.9,46.6,,57,13;63,56.3,,40,2,,57;55.1,48.6,,40,1,,57;52.5,58,,40,2,,57;47.8,43.7,,65,13,1;55.3,44.1,,40,1,1,53;54.1,52.5,,40,1,1,57;61.8,51.2,,40,1,1,57;65.2,31.8,,61,13,1;42.2,13.5,,63,14,1,54", spread = true },
+				{ t = "collect", quest = 3501, item = 10593, count = 1, map = 1419, x = 50.06, y = 41.14, f = "e", fromNpcs = { { npc = 5978, npcName = "Dreadmaul Warlock" }, { npc = 5975, npcName = "Dreadmaul Ogre Mage" }, { npc = 6009, npcName = "Shadowsworn Dreadweaver" }, { npc = 6005, npcName = "Shadowsworn Thug" }, { npc = 7670, npcName = "Servant of Allistarj" }, { npc = 6004, npcName = "Shadowsworn Cultist" }, { npc = 6006, npcName = "Shadowsworn Adept" }, { npc = 5977, npcName = "Dreadmaul Mauler" }, { npc = 6008, npcName = "Shadowsworn Warlock" }, { npc = 6007, npcName = "Shadowsworn Enforcer" }, { npc = 5974, npcName = "Dreadmaul Ogre" }, { npc = 7668, npcName = "Servant of Razelikh" }, { npc = 5976, npcName = "Dreadmaul Brute" }, { npc = 7669, npcName = "Servant of Grol" }, { npc = 7671, npcName = "Servant of Sevine" }, { npc = 5981, npcName = "Portal Seeker" } }, fromNpcsAt = "8,1;9,10,3,15;16;9,10,3,15;2,13,14,11;6,4,7,5;4,6,7;4,6,7,5;7,4,6,5;12;12;12;8,1,14;16;12;12;6,4,7,5;11,2,13,14", lvl = 55, oi = 1, spotsPacked = "49.2,41.4,,40,4;42.9,40.8,,69,12,,56;44.3,33.6,,40,1,,53;39.3,31.9,,57,15,,56;43.7,11.6,,40,5,,54;64.7,34.2,,46,8;67.6,30.8,,64,15,,53;62.9,41,,50,13;63.9,46.6,,57,13;63,56.3,,40,2,,57;55.1,48.6,,40,1,,57;52.5,58,,40,2,,57;47.8,43.7,,65,13,1;55.3,44.1,,40,1,1,53;54.1,52.5,,40,1,1,57;61.8,51.2,,40,1,1,57;65.2,31.8,,61,13,1;42.2,13.5,,63,14,1,54", spread = true },
 				{ t = "turnin", quest = 3501, npc = 7363, map = 1419, x = 51.98, y = 35.65, z = 0.8, f = "e" },
 			},
 		},
@@ -11896,8 +11905,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 8460, npc = 11554, map = 1448, x = 50.93, y = 85.01, z = 220.5, f = "e" },
 				{ t = "accept", minLevel = 45, quest = 8462, npc = 11554, map = 1448, x = 50.93, y = 85.01, z = 220.5, f = "e", note = "{npc:15395} waits at the north end of {zone:1448}", pre = { 8460 }, qlvl = 55 },
-				{ t = "accept", minLevel = 45, quest = 8466, npc = 11554, map = 1448, x = 50.93, y = 85.01, z = 220.5, f = "e", optional = true, note = "Five feathers buy a little Timbermaw reputation", pre = { 8460 }, qlvl = 55 },
-				{ t = "turnin", quest = 8466, npc = 11554, map = 1448, x = 50.93, y = 85.01, z = 220.5, f = "e", optional = true },
+				{ t = "turnin", quest = 8466, npc = 11554, map = 1448, x = 50.93, y = 85.01, z = 220.5, f = "e", optional = true, direct = true, qlvl = 55 },
 			},
 		},
 		{
@@ -11914,7 +11922,7 @@ G(function() return {
 			note = "The Jadefire satyrs hold the glen west of the road, with {npc:9454} at its back.\nCareful: Jadefire Shadowstalkers (level 51-52) use Sneak and {spell:7992} and are stealthed, so they often join fights uninvited.\nCursed Oozes slide about the glen's streams: kill them and use Laris's Empty Ooze Jar on their remains.",
 			goals = {
 				{ t = "kill", quest = 4421, npc = 7109, count = 11, map = 1448, x = 44.02, y = 88.89, z = 334.2, f = "e", lvl = 51, oi = 1, spotsPacked = "43.3,88.4,310,46,4;44.2,86.4,302.6,40,1;42.1,85.7,,40,2;42.8,83.6,324.3,40,2;40.3,85.2,,59,5;38.9,82.4,339.7,42,4;37.3,69.4,,40,3;37.5,67.3,296,40,2;35.3,66.8,304.3,40,2;32.9,66.8,299.6,40,3", spread = true, target = "Jadefire Felsworn" },
-				{ t = "collect", quest = 4512, item = 11947, count = 6, map = 1448, x = 40.38, y = 72.48, f = "e", fromId = 7086, fromKind = "npc", fromNpcs = { { npc = 7086, npcName = "Cursed Ooze" } }, lvl = 50, oi = 1, spotsPacked = "40.6,71.3,,47,6;39.2,71.9,,49,7;40.4,67.6,,49,4;41.8,67.4,,30,4;40.5,66.2,,25,3" },
+				{ t = "collect", quest = 4512, item = 11947, count = 6, map = 1448, x = 40.38, y = 72.48, f = "e", carriedTo = "forever/alliance/50-60/05-silithus", fromId = 7086, fromKind = "npc", fromNpcs = { { npc = 7086, npcName = "Cursed Ooze" } }, lvl = 50, oi = 1, spotsPacked = "40.6,71.3,,47,6;39.2,71.9,,49,7;40.4,67.6,,49,4;41.8,67.4,,30,4;40.5,66.2,,25,3" },
 				{ t = "level", map = 1448, x = 37.84, y = 69.48, f = "e", note = "grind on {npc:7109}", frac = 0.74, grind = 7109, level = 52, lvl = 51, spotsPacked = "37.3,69.4,,40,3;37.5,67.3,,40,2;35.3,66.8,,40,2;32.9,66.8,,40,3;38.9,82.4,,42,4;40.3,85.2,,59,5;42.1,85.7,,40,2;42.8,83.6,,40,2;44.2,86.4,,40,1;43.3,88.4,,46,4", spread = true },
 			},
 		},
@@ -11934,7 +11942,7 @@ G(function() return {
 				{ t = "kill", quest = 5155, npc = 7113, count = 4, map = 1448, x = 34.97, y = 59.4, z = 352.1, f = "e", lvl = 51, oi = 2, spotsPacked = "35.5,59.7,,44,3;36.7,61.8,,49,4;38.5,60.4,,62,6;38.5,57.7,324.4,15,1,1", target = "Jaedenar Guardian" },
 				{ t = "kill", quest = 5155, npc = 7115, count = 6, map = 1448, x = 34.53, y = 59.73, z = 355.4, f = "e", lvl = 52, oi = 3, spotsPacked = "35.9,61.4,,30,2;38.2,61.2,275.2,54,7;34.5,59.7,355.4,15,1,1;39.2,58.5,308.4,15,1,1", target = "Jaedenar Adept" },
 				{ t = "kill", quest = 5155, npc = 7112, count = 6, map = 1448, x = 34.9, y = 60.32, z = 351, f = "e", lvl = 52, oi = 4, spotsPacked = "35.6,60.9,,54,5;38.3,61.7,278.1,43,5;39.5,58.2,308,15,1,1", target = "Jaedenar Cultist" },
-				{ t = "collect", quest = 4512, item = 11949, count = 6, map = 1448, x = 40.3, y = 58.93, f = "e", note = "{item:11949}: Tainted Oozes slide about {area:1763}'s fel pools", fromId = 7092, fromKind = "npc", fromNpcs = { { npc = 7092, npcName = "Tainted Ooze" } }, lvl = 52, oi = 2, spotsPacked = "40.6,59.3,,40,4;39.9,54.9,,47,8;42.7,50.8,,40,2;41.7,49.5,,40,3;43.3,48.2,,45,3;44,46.4,,40,1;41.4,46.3,,47,4;39.4,48.6,,59,5;34.5,48.4,,40,2", spread = true },
+				{ t = "collect", quest = 4512, item = 11949, count = 6, map = 1448, x = 40.3, y = 58.93, f = "e", note = "{item:11949}: Tainted Oozes slide about {area:1763}'s fel pools", carriedTo = "forever/alliance/50-60/05-silithus", fromId = 7092, fromKind = "npc", fromNpcs = { { npc = 7092, npcName = "Tainted Ooze" } }, lvl = 52, oi = 2, spotsPacked = "40.6,59.3,,40,4;39.9,54.9,,47,8;42.7,50.8,,40,2;41.7,49.5,,40,3;43.3,48.2,,45,3;44,46.4,,40,1;41.4,46.3,,47,4;39.4,48.6,,59,5;34.5,48.4,,40,2", spread = true },
 				{ t = "level", map = 1448, x = 39.07, y = 59.18, f = "e", note = "grind on {npc:7125}", frac = 0.87, grind = 7125, level = 52, lvl = 51, spotsPacked = "38.7,60.8,,66,5;35.1,60.3,,41,2" },
 			},
 		},
@@ -11999,14 +12007,13 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 8461, npc = 15395, map = 1448, x = 64.77, y = 8.13, z = 623.3, f = "e" },
 				{ t = "accept", minLevel = 45, quest = 8465, npc = 15395, map = 1448, x = 64.77, y = 8.13, z = 623.3, f = "e", note = "Salfa stands at the {zone:1452} end of the tunnel: keep it", pre = { 8461 }, qlvl = 55 },
-				{ t = "accept", minLevel = 45, quest = 8467, npc = 15395, map = 1448, x = 64.77, y = 8.13, z = 623.3, f = "e", optional = true, pre = { 8461 }, qlvl = 55 },
 			},
 		},
 		{
 			title = "{npc:15395}",
-			when = { { k = "complete", q = 8467 } },
+			when = { { k = "has", item = 21377, n = 5 } },
 			goals = {
-				{ t = "turnin", quest = 8467, npc = 15395, map = 1448, x = 64.77, y = 8.13, z = 623.3, f = "e" },
+				{ t = "turnin", quest = 8467, npc = 15395, map = 1448, x = 64.77, y = 8.13, z = 623.3, f = "e", direct = true, qlvl = 55 },
 			},
 		},
 		{
@@ -12109,7 +12116,7 @@ G(function() return {
 				{ t = "accept", minLevel = 50, quest = 4809, npc = 10468, map = 1452, x = 61.63, y = 38.61, z = 721.3, f = "e", pre = { 4808 }, qlvl = 54 },
 				{ t = "accept", minLevel = 52, quest = 6603, npc = 11754, map = 1452, x = 60.66, y = 38.17, z = 721.1, f = "e", note = "{npc:11754} walks around {area:2255}: look inside the circle on the map", closedBy = { 5082 }, qlvl = 56, spotsPacked = "61.15,38.3,,39,1" },
 				{ t = "accept", minLevel = 52, quest = 3783, npc = 10305, map = 1452, x = 60.88, y = 37.62, z = 721.8, f = "e", qlvl = 56 },
-				{ t = "collect", quest = 978, item = 12383, count = 10, map = 1452, x = 63.35, y = 38.36, f = "e", note = "{item:12383}, 110 yd north", fromId = 175407, fromKind = "object", oi = 1, spotsPacked = "63.4,38.4,,72,1;59.4,33.6,,103,3;58.3,27.2,,72,1;58,20.9,,72,1;56.8,13.8,,72,3;50.5,38,,72,1;47.3,44.7,,72,2;40,38.2,,72,2;35.4,44.7,,85,4;30.4,45.7,,86,5;62.9,55,,72,2;66.1,47.3,,72,1;65.4,43.3,,72,1,1;67.4,44.6,,72,1,1;63.6,48.4,,72,2,1;66.8,50.5,,72,1,1;60.7,24.4,,72,1,1;65.8,53.5,,76,3,1;49.5,40.8,,72,1,1;59.1,17,,92,3,1;44.6,43.3,,125,11,1;37.8,44.6,,90,6,1;32.3,44,,72,4,1", spread = true },
+				{ t = "collect", quest = 978, item = 12383, count = 10, map = 1452, x = 63.35, y = 38.36, f = "e", note = "{item:12383}, 110 yd north", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 175407, fromKind = "object", oi = 1, spotsPacked = "63.4,38.4,,72,1;59.4,33.6,,103,3;58.3,27.2,,72,1;58,20.9,,72,1;56.8,13.8,,72,3;50.5,38,,72,1;47.3,44.7,,72,2;40,38.2,,72,2;35.4,44.7,,85,4;30.4,45.7,,86,5;62.9,55,,72,2;66.1,47.3,,72,1;65.4,43.3,,72,1,1;67.4,44.6,,72,1,1;63.6,48.4,,72,2,1;66.8,50.5,,72,1,1;60.7,24.4,,72,1,1;65.8,53.5,,76,3,1;49.5,40.8,,72,1,1;59.1,17,,92,3,1;44.6,43.3,,125,11,1;37.8,44.6,,90,6,1;32.3,44,,72,4,1", spread = true },
 			},
 		},
 		{
@@ -12132,11 +12139,11 @@ G(function() return {
 			title = "{quest:5244}",
 			note = "The ruins lie around the frozen lake south of {area:2253}. Pick up the four relic fragments lying in the ruins and the Moontouched Feathers on the ground where the wildkin roam.",
 			goals = {
-				{ t = "collect", quest = 5245, item = 12896, count = 1, map = 1452, x = 55.14, y = 42.98, f = "e", fromId = 175888, fromKind = "object", oi = 1 },
-				{ t = "collect", quest = 5245, item = 12898, count = 1, map = 1452, x = 53.31, y = 43.44, f = "e", fromId = 175892, fromKind = "object", oi = 3 },
-				{ t = "collect", quest = 5245, item = 12899, count = 1, map = 1452, x = 52.42, y = 41.5, f = "e", fromId = 175893, fromKind = "object", oi = 4 },
-				{ t = "collect", quest = 5245, item = 12897, count = 1, map = 1452, x = 50.88, y = 41.71, f = "e", fromId = 175891, fromKind = "object", oi = 2 },
-				{ t = "collect", quest = 978, item = 12383, count = 10, map = 1452, x = 49.48, y = 40.84, f = "e", fromId = 175407, fromKind = "object", oi = 1, spotsPacked = "49.5,40.8,,72,1;44.6,43.3,,125,11;40,38.2,,72,2;35.4,44.7,,85,4;30.4,45.7,,86,5;59.4,33.6,,103,3;63.4,38.4,,72,1;67.4,44.6,,72,1;66.8,50.5,,72,1;62.9,55,,72,2;60.7,24.4,,72,1;56.8,13.8,,72,3;50.5,38,,72,1,1;47.3,44.7,,72,2,1;37.8,44.6,,90,6,1;58.3,27.2,,72,1,1;63.6,48.4,,72,2,1;58,20.9,,72,1,1;65.4,43.3,,72,1,1;66.1,47.3,,72,1,1;32.3,44,,72,4,1;65.8,53.5,,76,3,1;59.1,17,,92,3,1", spread = true },
+				{ t = "collect", quest = 5245, item = 12896, count = 1, map = 1452, x = 55.14, y = 42.98, f = "e", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 175888, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 5245, item = 12898, count = 1, map = 1452, x = 53.31, y = 43.44, f = "e", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 175892, fromKind = "object", oi = 3 },
+				{ t = "collect", quest = 5245, item = 12899, count = 1, map = 1452, x = 52.42, y = 41.5, f = "e", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 175893, fromKind = "object", oi = 4 },
+				{ t = "collect", quest = 5245, item = 12897, count = 1, map = 1452, x = 50.88, y = 41.71, f = "e", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 175891, fromKind = "object", oi = 2 },
+				{ t = "collect", quest = 978, item = 12383, count = 10, map = 1452, x = 49.48, y = 40.84, f = "e", carriedTo = "forever/alliance/50-60/04-western-plaguelands", fromId = 175407, fromKind = "object", oi = 1, spotsPacked = "49.5,40.8,,72,1;44.6,43.3,,125,11;40,38.2,,72,2;35.4,44.7,,85,4;30.4,45.7,,86,5;59.4,33.6,,103,3;63.4,38.4,,72,1;67.4,44.6,,72,1;66.8,50.5,,72,1;62.9,55,,72,2;60.7,24.4,,72,1;56.8,13.8,,72,3;50.5,38,,72,1,1;47.3,44.7,,72,2,1;37.8,44.6,,90,6,1;58.3,27.2,,72,1,1;63.6,48.4,,72,2,1;58,20.9,,72,1,1;65.4,43.3,,72,1,1;66.1,47.3,,72,1,1;32.3,44,,72,4,1;65.8,53.5,,76,3,1;59.1,17,,92,3,1", spread = true },
 			},
 		},
 		{
@@ -12153,12 +12160,12 @@ G(function() return {
 			title = "{area:2246}: kill these as you meet them",
 			note = "The western Winterfall camp sits in the hills between {npc:11556} and {npc:9298}. Any furbolg here can drop an {item:12771} (about one in ten: it comes within the kills these quests need) and a {quest:8471} (about one in thirty: it comes within the top-ups): right-click whichever drops. Keep the {item:14047} the furbolgs drop for Meilosh.\nThe rest of {zone:1452}'s work is level 55-58: stay on this camp until level 54, so your first kills also count for {npc:9298} and {npc:11556}. Or, with a group, run the {area:1584} dungeon instead.",
 			goals = {
-				{ t = "collect", item = 12771, map = 1452, x = 32.41, y = 37.65, f = "e", fromNpcs = { { npc = 7441, npcName = "Winterfall Totemic" }, { npc = 7438, npcName = "Winterfall Ursa" }, { npc = 7439, npcName = "Winterfall Shaman" }, { npc = 7440, npcName = "Winterfall Den Watcher" }, { npc = 7442, npcName = "Winterfall Pathfinder" } }, lvl = 54, spotsPacked = "32.8,37.3,,45,4,,55;34.7,37,,40,1;30.3,36.3,,54,8,,56;27.9,34.5,,40,1,,57;39.6,43.5,,58,7,,55;41.1,42.9,,51,6,,56;42.2,44.4,,40,2;65.5,37.8,,51,4,,58;67.3,39.5,,56,4,,58;69.5,38.3,,40,1,,57;68.2,35,,40,3,,56;66.5,34.9,,58,6,,56;31.4,36.3,,40,1,1;33.6,36.5,,40,3,1,55;31.2,35,,40,2,1;42.4,42.8,,40,2,1;67.3,36,,69,5,1,58;68.2,37.5,,45,5,1,58", spread = true },
+				{ t = "collect", item = 12771, map = 1452, x = 32.41, y = 37.65, f = "e", fromNpcs = { { npc = 7441, npcName = "Winterfall Totemic" }, { npc = 7438, npcName = "Winterfall Ursa" }, { npc = 7439, npcName = "Winterfall Shaman" }, { npc = 7440, npcName = "Winterfall Den Watcher" }, { npc = 7442, npcName = "Winterfall Pathfinder" }, { npc = 10916, npcName = "Winterfall Runner" } }, fromNpcsAt = "1,5;5;4,1,5;6;1,5;5,4,1;5;2;2,3;3;4;4;5;5,1;5;5;4,2,3;2,3", lvl = 54, spotsPacked = "32.8,37.3,,45,4,,55;34.7,37,,40,1;30.3,36.3,,54,8,,56;27.9,34.5,,40,1,,57;39.6,43.5,,58,7,,55;41.1,42.9,,51,6,,56;42.2,44.4,,40,2;65.5,37.8,,51,4,,58;67.3,39.5,,56,4,,58;69.5,38.3,,40,1,,57;68.2,35,,40,3,,56;66.5,34.9,,58,6,,56;31.4,36.3,,40,1,1;33.6,36.5,,40,3,1,55;31.2,35,,40,2,1;42.4,42.8,,40,2,1;67.3,36,,69,5,1,58;68.2,37.5,,45,5,1,58", spread = true },
 				{ t = "accept", minLevel = 52, quest = 5083, item = 12771, qlvl = 56 },
 				{ t = "kill", quest = 5082, npc = 7442, count = 8, map = 1452, x = 32.36, y = 37.06, z = 556.8, f = "e", lvl = 54, oi = 1, spotsPacked = "33.3,37,,67,4;34.7,37,578.7,44,1;30.9,35.7,,61,5;39,42.8,592.1,44,1;40.8,43.1,,44,4;42.4,42.8,579,44,2;42.2,44.4,,44,2", spread = true, target = "Winterfall Pathfinder" },
 				{ t = "kill", quest = 5082, npc = 7440, count = 8, map = 1452, x = 30.5, y = 36.92, z = 547.7, f = "e", lvl = 56, oi = 2, spotsPacked = "30.5,36.3,557.5,40,3;41.6,42.6,574.6,40,1;66.5,34.9,,58,6;67.6,35.9,693.6,40,3;68.3,34.7,,40,2", spread = true, target = "Winterfall Den Watcher" },
 				{ t = "kill", quest = 5082, npc = 7441, count = 8, map = 1452, x = 30.01, y = 36.23, z = 551, f = "e", lvl = 55, oi = 3, spotsPacked = "30.1,36.4,551,45,3;32.9,37,544.6,47,3;39.9,43,571.4,40,3;39.6,44.3,,40,3;41.4,42.7,573.9,40,1", spread = true, target = "Winterfall Totemic" },
-				{ t = "kill", quest = 8464, npc = 7440, count = 8, map = 1452, x = 30.34, y = 36.33, z = 557.5, f = "e", lvl = 56, oi = 2, spotsPacked = "30.5,36.3,557.5,40,3;41.6,42.6,574.6,40,1;66.5,34.9,,58,6;67.6,35.9,693.6,40,3;68.3,34.7,,40,2", spread = true, target = "Winterfall Den Watcher" },
+				{ t = "kill", quest = 8464, npc = 7440, count = 8, map = 1452, x = 30.34, y = 36.33, z = 557.5, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", lvl = 56, oi = 2, spotsPacked = "30.5,36.3,557.5,40,3;41.6,42.6,574.6,40,1;66.5,34.9,,58,6;67.6,35.9,693.6,40,3;68.3,34.7,,40,2", spread = true, target = "Winterfall Den Watcher" },
 				{ t = "level", map = 1452, x = 30.05, y = 35.6, f = "e", note = "grind on {npc:7442}", grind = 7442, level = 54, lvl = 54, spotsPacked = "30.9,35.7,,61,5;33.3,37,,67,4;34.7,37,,44,1;39,42.8,,44,1;40.8,43.1,,44,4;42.4,42.8,,44,2;42.2,44.4,,44,2", spread = true },
 			},
 		},
@@ -12184,7 +12191,7 @@ G(function() return {
 			note = "Any Winterfall furbolg can drop the totem, about one kill in thirty: if the top-up did not bring one, keep killing them here until it drops, then right-click it.",
 			goals = {
 				{ t = "goto", map = 1452, x = 31.4, y = 36, f = "e", text = "{npc:7442}" },
-				{ t = "collect", item = 20742, map = 1452, x = 31.43, y = 36.3, f = "e", fromNpcs = { { npc = 7442, npcName = "Winterfall Pathfinder" }, { npc = 7441, npcName = "Winterfall Totemic" }, { npc = 10916, npcName = "Winterfall Runner" }, { npc = 7440, npcName = "Winterfall Den Watcher" }, { npc = 7439, npcName = "Winterfall Shaman" } }, lvl = 54, spotsPacked = "31.4,36.3,,40,1;32.8,37.3,,45,4,,55;34.7,37,,40,1;39.6,43.5,,58,7,,55;41.1,42.9,,51,6,,56;42.2,44.4,,40,2;27.9,34.5,,40,1,,57;65.5,37.8,,51,4,,58;67.3,39.5,,56,4,,58;69.5,38.3,,40,1,,57;68.2,35,,40,3,,56;66.5,34.9,,58,6,,56;31.2,35,,40,2,1;30.3,36.3,,54,8,1,56;33.6,36.5,,40,3,1,55;42.4,42.8,,40,2,1;67.3,36,,69,5,1,58;68.2,37.5,,45,5,1,58", spread = true },
+				{ t = "collect", item = 20742, map = 1452, x = 31.43, y = 36.3, f = "e", fromNpcs = { { npc = 7442, npcName = "Winterfall Pathfinder" }, { npc = 7441, npcName = "Winterfall Totemic" }, { npc = 10916, npcName = "Winterfall Runner" }, { npc = 7440, npcName = "Winterfall Den Watcher" }, { npc = 7439, npcName = "Winterfall Shaman" }, { npc = 7438, npcName = "Winterfall Ursa" } }, fromNpcsAt = "1;2,1;1;2,1;1,2,4;1;3;6;6,5;5;4;4;1;2,4,1;1,2;1;4,5,6;6,5", lvl = 54, spotsPacked = "31.4,36.3,,40,1;32.8,37.3,,45,4,,55;34.7,37,,40,1;39.6,43.5,,58,7,,55;41.1,42.9,,51,6,,56;42.2,44.4,,40,2;27.9,34.5,,40,1,,57;65.5,37.8,,51,4,,58;67.3,39.5,,56,4,,58;69.5,38.3,,40,1,,57;68.2,35,,40,3,,56;66.5,34.9,,58,6,,56;31.2,35,,40,2,1;30.3,36.3,,54,8,1,56;33.6,36.5,,40,3,1,55;42.4,42.8,,40,2,1;67.3,36,,69,5,1,58;68.2,37.5,,45,5,1,58", spread = true },
 				{ t = "accept", minLevel = 50, quest = 8471, item = 20742, note = "For Kernda in {area:1769}: keep it", qlvl = 56 },
 			},
 		},
@@ -12200,9 +12207,9 @@ G(function() return {
 			title = "{area:2244}",
 			note = "The Winterfall furbolg village lies east of {area:2255}: Shaman (56-57), Den Watchers (55-56) and Ursa (57-58), all above you. Kill the Shaman first, they heal, and pull from the edge. {npc:10738} in the cave at the back is elite: stay out.",
 			goals = {
-				{ t = "kill", quest = 8464, npc = 7439, count = 8, map = 1452, x = 67.37, y = 35.22, z = 692.7, f = "e", lvl = 57, oi = 1, spotsPacked = "67.5,35.4,692.7,15,2;68,37.5,,32,2;69.5,38.3,,15,1;67.5,39.8,,15,1", target = "Winterfall Shaman" },
-				{ t = "kill", quest = 8464, npc = 7440, count = 8, map = 1452, x = 67.51, y = 35.91, z = 693.6, f = "e", lvl = 56, oi = 2, spotsPacked = "67.6,35.9,693.6,40,3;68.3,34.7,,40,2;66.5,34.9,,58,6;41.6,42.6,574.6,40,1;30.5,36.3,557.5,40,3", spread = true, target = "Winterfall Den Watcher" },
-				{ t = "kill", quest = 8464, npc = 7438, count = 8, map = 1452, x = 68.08, y = 36.86, z = 731.9, f = "e", lvl = 58, oi = 3, spotsPacked = "68.3,37.6,,39,3;67.2,39.4,,48,3;65.8,37.6,774.3,67,5", target = "Winterfall Ursa" },
+				{ t = "kill", quest = 8464, npc = 7439, count = 8, map = 1452, x = 67.37, y = 35.22, z = 692.7, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", lvl = 57, oi = 1, spotsPacked = "67.5,35.4,692.7,15,2;68,37.5,,32,2;69.5,38.3,,15,1;67.5,39.8,,15,1", target = "Winterfall Shaman" },
+				{ t = "kill", quest = 8464, npc = 7440, count = 8, map = 1452, x = 67.51, y = 35.91, z = 693.6, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", lvl = 56, oi = 2, spotsPacked = "67.6,35.9,693.6,40,3;68.3,34.7,,40,2;66.5,34.9,,58,6;41.6,42.6,574.6,40,1;30.5,36.3,557.5,40,3", spread = true, target = "Winterfall Den Watcher" },
+				{ t = "kill", quest = 8464, npc = 7438, count = 8, map = 1452, x = 68.08, y = 36.86, z = 731.9, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", lvl = 58, oi = 3, spotsPacked = "68.3,37.6,,39,3;67.2,39.4,,48,3;65.8,37.6,774.3,67,5", target = "Winterfall Ursa" },
 			},
 		},
 		{
@@ -12218,7 +12225,7 @@ G(function() return {
 				{ t = "turnin", quest = 977, npc = 10305, map = 1452, x = 60.88, y = 37.62, z = 721.8, f = "e" },
 				{ t = "accept", minLevel = 52, quest = 5163, npc = 10305, map = 1452, x = 60.88, y = 37.62, z = 721.8, f = "e", pre = { 977 }, qlvl = 58 },
 				{ t = "use", item = 12928, map = 1452, x = 61.5, y = 38.6, f = "e", note = "On {npc:10978}, by the inn", text = "{item:12928}" },
-				{ t = "kill", quest = 5163, npc = 10978, count = 1, map = 1452, x = 61.54, y = 38.61, z = 722, f = "e", note = "{npc:10978}: {npc:7583} and {npc:10977} come later", text = "Scare {npc:10978} with {item:12928}", oi = 1, target = "Legacki" },
+				{ t = "kill", quest = 5163, npc = 10978, count = 1, map = 1452, x = 61.54, y = 38.61, z = 722, f = "e", note = "{npc:10978}: {npc:7583} and {npc:10977} come later", text = "Scare {npc:10978} with {item:12928}", carriedTo = "forever/alliance/50-60/06-silithus", oi = 1, target = "Legacki" },
 			},
 		},
 		{
@@ -12325,10 +12332,7 @@ G(function() return {
 				{ t = "turnin", quest = 5241, npc = 11063, map = 1423, x = 71.7, y = 50.04, z = 86.8 },
 				{ t = "accept", minLevel = 50, quest = 5211, npc = 11063, map = 1423, x = 71.7, y = 50.04, z = 86.8, qlvl = 55 },
 				{ t = "turnin", quest = 6030, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3 },
-				{ t = "accept", minLevel = 50, quest = 5503, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3, closedBy = { 5401, 5405 }, qlvl = 55 },
-				{ t = "turnin", quest = 5503, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3 },
-				{ t = "accept", minLevel = 50, quest = 5509, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3, pre = { 5401, 5503, 5405 }, qlvl = 55 },
-				{ t = "accept", minLevel = 50, quest = 5510, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3, pre = { 5401, 5503, 5405 }, qlvl = 55 },
+				{ t = "turnin", quest = 5503, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3, direct = true, qlvl = 55 },
 				{ t = "accept", minLevel = 50, quest = 6021, npc = 11038, map = 1423, x = 69.93, y = 53.72, z = 95.9, optional = true, note = "{npc:11038}: Zaeldarr is a level 54 elite", qlvl = 55 },
 			},
 		},
@@ -12337,8 +12341,8 @@ G(function() return {
 			note = "The Scourge around {area:2264}, west of the chapel, drop both kinds of Scourgestone; Darrowshire Spirits rise from them: talk to each one to free it.\nCareful: {npc:10411} goes invisible when out of combat and calls Rockwing Gargoyles once a fight starts. Only 3 exist and they respawn every 15 min.",
 			goals = {
 				{ t = "kill", quest = 5211, npc = 11064, count = 15, map = 1423, x = 69.61, y = 46.79, text = "Free Darrowshire Spirits: talk to them", lvl = 57, oi = 1, spotsPacked = "69.6,46.8,,47,1;75,33.9,,47,1;57.5,31.4,,74,8;52.2,62.1,,51,3;34.1,42,,47,2;32.1,27.5,,51,4;36.3,16.8,,51,3;23.3,21.8,,47,2;21.4,29.6,,47,1;18.5,14.3,,47,2;11.1,25.4,,47,1;27.9,53.7,,47,2;66.4,42,,47,1,1;68.1,38.9,,47,1,1;72,35,,47,2,1;53.4,56.8,,76,4,1;52.7,54.8,,47,1,1;36.2,25.9,,47,1,1;32.1,46.6,,56,4,1;36.1,20.8,,47,2,1;30.8,22.6,,47,2,1;31.4,17.1,,47,2,1;26.8,26.3,,52,3,1;21.5,25.4,,47,3,1;14.1,24.9,,67,5,1", spread = true, target = "Darrowshire Spirit" },
-				{ t = "collect", quest = 5510, item = 12840, count = 20, map = 1423, x = 68.77, y = 55.79, fromNpcs = { { npc = 8534, npcName = "Putrid Gargoyle" }, { npc = 8551, npcName = "Dark Summoner" }, { npc = 8540, npcName = "Torn Screamer" }, { npc = 8547, npcName = "Death Cultist" }, { npc = 8524, npcName = "Cursed Mage" } }, lvl = 56, oi = 1, spotsPacked = "68.8,55.8,,40,1;50.4,68.1,,40,1;39.8,59.9,,40,1;45.6,44.5,,40,1;57.6,28.8,,52,4,,58;38.5,17.4,,53,3,,55;29,28,,56,5,,55;20.6,13.7,,40,2;6,31.1,,40,4;11.1,66.2,,40,1;21.1,78.2,,40,1;29.8,70.6,,40,1;68,53.3,,40,1,1;62.1,48.1,,40,1,1;54.5,55.8,,40,4,1,57;53.6,58.6,,64,14,1,58;53.4,49.1,,40,1,1;52.5,55.6,,63,13,1,57;52.4,61.1,,62,15,1,58;51.5,58.7,,82,22,1,58;55.6,73.7,,40,1,1;59.8,31.8,,46,7,1,58;50.5,52.4,,40,2,1,58;50.6,48.4,,40,1,1;57.4,32.4,,40,3,1,58;49.2,65.1,,40,1,1;42.7,50.5,,40,1,1;42.4,68.1,,40,1,1;38.3,71.1,,40,1,1;36.5,65.5,,40,1,1;38.6,26.3,,40,3,1,58;37,29.2,,59,6,1,58;38.7,21.4,,40,3,1,55;31,61.8,,40,1,1;34.6,29.7,,40,4,1,58;34.9,26,,52,7,1,58;37.2,20.7,,44,4,1;32.3,29,,50,5,1,55;35.6,18.1,,63,8,1,58;31.7,26.5,,40,3,1,55;35.1,14.9,,40,2,1,58;30.3,23.8,,76,8,1,58;31.5,19.9,,73,6,1,58;32.4,14.9,,46,8,1,58;30.4,17.2,,65,4,1,58;27,24.3,,48,6,1,58;25.5,27,,40,3,1,55;28,19.1,,55,7,1,58;20.3,60.8,,40,1,1;22.8,29.3,,62,6,1,58;24.2,24.2,,50,6,1,58;24.6,18.7,,47,4,1,58;21.4,24.8,,51,10,1,58;22.5,20.5,,51,4,1,57;16.7,67.9,,40,1,1;15.6,57.8,,40,1,1;20.9,17.7,,49,4,1;19,21.1,,57,5,1,58;13.4,56,,40,1,1;16.6,25.3,,40,2,1,55;18.1,17.7,,40,1,1,55;18.8,13.9,,60,7,1,58;14.6,27,,40,6,1;14.5,24.2,,47,6,1,55;13.4,24.8,,64,13,1;10.6,25.6,,71,8,1;7.5,28.7,,45,3,1", spread = true },
-				{ t = "collect", quest = 5509, item = 12841, count = 10, map = 1423, x = 69.79, y = 47.19, fromNpcs = { { npc = 8532, npcName = "Diseased Flayer" }, { npc = 8544, npcName = "Gangled Golem" }, { npc = 8528, npcName = "Dread Weaver" }, { npc = 8550, npcName = "Shadowmage" }, { npc = 8545, npcName = "Abomination" } }, lvl = 60, oi = 1, spotsPacked = "68.8,45.9,,51,9,,59;76.3,32.1,,40,4;61.2,23.2,,54,9,,59;58.3,33.3,,54,9,,59;37.5,19.4,,40,1,,55;34.9,30.6,,40,1,,55;35.4,39.6,,44,7;28.8,54.9,,63,7;22.7,29.2,,40,1,,55;26.2,15.1,,40,2,,55;10.9,17.7,,54,4;6.2,31.3,,40,1,,59;67.3,42.4,,70,22,1;69.1,37.3,,60,10,1,59;72.4,37.7,,46,4,1;71.8,34.6,,64,13,1;75.4,36.2,,59,19,1;73.6,32.1,,64,25,1;59.9,31.7,,45,6,1,59;57.1,31,,52,11,1;63.2,23.9,,42,8,1,59;58,28.7,,56,9,1;35.7,42.1,,40,9,1;35.2,44.9,,54,7,1;33.6,41.3,,51,16,1;32.6,44.2,,73,17,1;31.4,47.2,,57,15,1;29.3,50.7,,58,10,1;27.9,17.7,,40,1,1,55;25.9,21.2,,40,1,1,55;14.3,24.9,,46,3,1;14.8,21.5,,40,5,1;11.8,23.1,,40,5,1;11.4,20.5,,64,7,1;9.7,25.1,,40,1,1,59;8.7,27.9,,40,1,1,59;8.9,21.2,,40,7,1", spread = true },
+				{ t = "collect", item = 12840, count = 20, map = 1423, x = 68.77, y = 55.79, fromNpcs = { { npc = 8534, npcName = "Putrid Gargoyle" }, { npc = 8551, npcName = "Dark Summoner" }, { npc = 8540, npcName = "Torn Screamer" }, { npc = 8547, npcName = "Death Cultist" }, { npc = 8524, npcName = "Cursed Mage" }, { npc = 8541, npcName = "Hate Shrieker" }, { npc = 8543, npcName = "Stitched Horror" }, { npc = 8530, npcName = "Cannibal Ghoul" }, { npc = 8548, npcName = "Vile Tutor" }, { npc = 8523, npcName = "Scourge Soldier" }, { npc = 8526, npcName = "Dark Caster" }, { npc = 8555, npcName = "Crypt Fiend" }, { npc = 8527, npcName = "Scourge Guard" }, { npc = 8556, npcName = "Crypt Walker" }, { npc = 8531, npcName = "Gibbering Ghoul" }, { npc = 8525, npcName = "Scourge Warder" }, { npc = 8538, npcName = "Unseen Servant" } }, fromNpcsAt = "1;1;1;1;13;5,10,8;10,5,8;5,1;12,14;1;1;1;1;1;15,11,6,17;6,9,2,11,15,16,7,17;1;6,11,9,15,17;6,9,2,15,11,16,7,17;6,9,11,2,7,17,16,15;1;13;7,1;1;13;1;1;1;1;1;3,5,7;10,7,5;3,10;1;2,5,7,12;3,4,8,7,1;2,3,8,12;8,3,5,10;3,5,8,7,1;8,5,10;8,7;7,8,5,16,1;7,8,5,16,6;7,6,5,1;8,7,16,6;7,5,8;3,10,8;7,5,2,12;1;2,3,10,8,7,12;5,3,8,7;16,6,7,14;7,8,10,1;6,4,8;1;1;3,16;3,7,5;1;3,10;3;8,7,10,14,1;5,10,8,14;3,10,8,5;3,8,12,10,5,14;12,14,10,8;14,12", lvl = 56, spotsPacked = "68.8,55.8,,40,1;50.4,68.1,,40,1;39.8,59.9,,40,1;45.6,44.5,,40,1;57.6,28.8,,52,4,,58;38.5,17.4,,53,3,,55;29,28,,56,5,,55;20.6,13.7,,40,2;6,31.1,,40,4;11.1,66.2,,40,1;21.1,78.2,,40,1;29.8,70.6,,40,1;68,53.3,,40,1,1;62.1,48.1,,40,1,1;54.5,55.8,,40,4,1,57;53.6,58.6,,64,14,1,58;53.4,49.1,,40,1,1;52.5,55.6,,63,13,1,57;52.4,61.1,,62,15,1,58;51.5,58.7,,82,22,1,58;55.6,73.7,,40,1,1;59.8,31.8,,46,7,1,58;50.5,52.4,,40,2,1,58;50.6,48.4,,40,1,1;57.4,32.4,,40,3,1,58;49.2,65.1,,40,1,1;42.7,50.5,,40,1,1;42.4,68.1,,40,1,1;38.3,71.1,,40,1,1;36.5,65.5,,40,1,1;38.6,26.3,,40,3,1,58;37,29.2,,59,6,1,58;38.7,21.4,,40,3,1,55;31,61.8,,40,1,1;34.6,29.7,,40,4,1,58;34.9,26,,52,7,1,58;37.2,20.7,,44,4,1;32.3,29,,50,5,1,55;35.6,18.1,,63,8,1,58;31.7,26.5,,40,3,1,55;35.1,14.9,,40,2,1,58;30.3,23.8,,76,8,1,58;31.5,19.9,,73,6,1,58;32.4,14.9,,46,8,1,58;30.4,17.2,,65,4,1,58;27,24.3,,48,6,1,58;25.5,27,,40,3,1,55;28,19.1,,55,7,1,58;20.3,60.8,,40,1,1;22.8,29.3,,62,6,1,58;24.2,24.2,,50,6,1,58;24.6,18.7,,47,4,1,58;21.4,24.8,,51,10,1,58;22.5,20.5,,51,4,1,57;16.7,67.9,,40,1,1;15.6,57.8,,40,1,1;20.9,17.7,,49,4,1;19,21.1,,57,5,1,58;13.4,56,,40,1,1;16.6,25.3,,40,2,1,55;18.1,17.7,,40,1,1,55;18.8,13.9,,60,7,1,58;14.6,27,,40,6,1;14.5,24.2,,47,6,1,55;13.4,24.8,,64,13,1;10.6,25.6,,71,8,1;7.5,28.7,,45,3,1", spread = true },
+				{ t = "collect", item = 12841, count = 10, map = 1423, x = 69.79, y = 47.19, fromNpcs = { { npc = 8532, npcName = "Diseased Flayer" }, { npc = 8544, npcName = "Gangled Golem" }, { npc = 8528, npcName = "Dread Weaver" }, { npc = 8550, npcName = "Shadowmage" }, { npc = 8545, npcName = "Abomination" }, { npc = 14564, npcName = "Terrordale Spirit" }, { npc = 8542, npcName = "Death Singer" }, { npc = 8558, npcName = "Crypt Slayer" }, { npc = 8539, npcName = "Eyeless Watcher" }, { npc = 8546, npcName = "Dark Adept" }, { npc = 8529, npcName = "Scourge Champion" }, { npc = 8553, npcName = "Necromancer" } }, fromNpcsAt = "1,3,7;5,2;7,9;1;12;12;1,4,10,9,11,8;5,7,1,9,11;12;12;6;8;1,7,11,3;1,3,9;4,10,9,8;1,11,4,10,9,8;1,3,4,10,8,7,9,11;1,4,10,8,7,9,11;1;1,4,10,8;7,9;1,4,10,8,9;4,10,1,8,7;4,10,8,7,1,9;4,10,8,1,9;1,4,10,7,9,8,5;1,7,11,9;1,7,5,9,11;12;12;6;6;6;6;8;8;6", lvl = 60, spotsPacked = "68.8,45.9,,51,9,,59;76.3,32.1,,40,4;61.2,23.2,,54,9,,59;58.3,33.3,,54,9,,59;37.5,19.4,,40,1,,55;34.9,30.6,,40,1,,55;35.4,39.6,,44,7;28.8,54.9,,63,7;22.7,29.2,,40,1,,55;26.2,15.1,,40,2,,55;10.9,17.7,,54,4;6.2,31.3,,40,1,,59;67.3,42.4,,70,22,1;69.1,37.3,,60,10,1,59;72.4,37.7,,46,4,1;71.8,34.6,,64,13,1;75.4,36.2,,59,19,1;73.6,32.1,,64,25,1;59.9,31.7,,45,6,1,59;57.1,31,,52,11,1;63.2,23.9,,42,8,1,59;58,28.7,,56,9,1;35.7,42.1,,40,9,1;35.2,44.9,,54,7,1;33.6,41.3,,51,16,1;32.6,44.2,,73,17,1;31.4,47.2,,57,15,1;29.3,50.7,,58,10,1;27.9,17.7,,40,1,1,55;25.9,21.2,,40,1,1,55;14.3,24.9,,46,3,1;14.8,21.5,,40,5,1;11.8,23.1,,40,5,1;11.4,20.5,,64,7,1;9.7,25.1,,40,1,1,59;8.7,27.9,,40,1,1,59;8.9,21.2,,40,7,1", spread = true },
 			},
 		},
 		{
@@ -12352,8 +12356,8 @@ G(function() return {
 			title = "{area:2268}",
 			goals = {
 				{ t = "turnin", quest = 5211, npc = 11063, map = 1423, x = 71.7, y = 50.04, z = 86.8 },
-				{ t = "turnin", quest = 5509, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3 },
-				{ t = "turnin", quest = 5510, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3 },
+				{ t = "turnin", quest = 5509, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3, direct = true, qlvl = 55 },
+				{ t = "turnin", quest = 5510, npc = 11039, map = 1423, x = 71.63, y = 50.09, z = 86.3, direct = true, qlvl = 55 },
 				{ t = "turnin", quest = 6021, npc = 11038, map = 1423, x = 69.93, y = 53.72, z = 95.9, optional = true },
 				{ t = "note", text = "The next guide starts here and flies to {area:3197}." },
 			},
@@ -12492,22 +12496,14 @@ G(function() return {
 			when = { { k = "turnedin", neg = true, q = 5503 } },
 			note = "No {quest:5401} yet ({spell:437801} gives it on the {zone:1452} guide's way through)? Pureheart gives you one here: the scourgestone quests need it.",
 			goals = {
-				{ t = "accept", minLevel = 50, quest = 5401, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e", closedBy = { 5405, 5503 }, qlvl = 55 },
-				{ t = "turnin", quest = 5401, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e" },
-			},
-		},
-		{
-			title = "{npc:10840}",
-			goals = {
-				{ t = "accept", minLevel = 50, quest = 5402, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e", pre = { 5401, 5503, 5405 }, qlvl = 55 },
-				{ t = "accept", minLevel = 50, quest = 5403, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e", pre = { 5401, 5503, 5405 }, qlvl = 55 },
+				{ t = "turnin", quest = 5401, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e", direct = true, qlvl = 55 },
 			},
 		},
 		{
 			title = "{area:197}: kill these as you meet them",
 			note = "Skeletal Flayers and Slavering Ghouls roam the fields north of the camp; all the Scourge here drop Scourgestones.\nCareful: These undead notice you from far away, and other undead nearby join the fight when one is pulled.\nCareful: The {npc:10411} (3 spawns, 15 min respawn) turns invisible when out of combat and calls in Rockwing Gargoyles once a fight starts.",
 			goals = {
-				{ t = "collect", quest = 5402, item = 12840, count = 20, map = 1422, x = 47.37, y = 84.3, f = "e", fromNpcs = { { npc = 1783, npcName = "Skeletal Flayer" }, { npc = 1785, npcName = "Skeletal Terror" }, { npc = 1784, npcName = "Skeletal Sorcerer" }, { npc = 1804, npcName = "Wailing Death" }, { npc = 1802, npcName = "Hungering Wraith" } }, lvl = 56, oi = 1, spotsPacked = "47.6,83,,40,3,,51;49.9,77,,52,11,,52;47.1,71.6,,43,7;48.7,63.3,,46,6;43.5,63.3,,81,11;40.9,72.4,,66,10;36.6,56.4,,65,23,,54;47.3,50.3,,57,28,,55;54.4,65.7,,46,6;54.2,80.4,,40,15,,52;63.9,56.8,,50,15,,58;69.3,18,,40,2;49.3,82.3,,40,2,1,52;48.4,80.2,,49,7,1,52;50.2,80.5,,40,6,1,52;50.7,75.7,,40,5,1,52;45.6,74.1,,62,9,1;42.4,74.2,,59,9,1;43.9,72.3,,43,7,1;45.4,69.8,,55,13,1;48.2,68.9,,62,10,1;50,68,,42,4,1;42.1,69.4,,60,13,1;44.9,67.7,,62,10,1;39.3,70.2,,61,9,1;49.4,65.7,,40,6,1;45.8,65.6,,50,5,1;53.3,67.5,,40,10,1;47.5,64.5,,41,5,1;42,66.1,,59,9,1;39.5,67.4,,69,10,1;52.6,65.2,,52,10,1;46.1,62.2,,59,10,1;53.4,63.4,,40,3,1;45.6,54.8,,48,7,1,54;37.8,58.1,,54,12,1,54;47.5,52.7,,42,7,1,54;38.3,55,,66,27,1,54;45.7,51.8,,77,20,1,54;62.1,59.1,,68,14,1,58;64.6,59.4,,69,10,1,58;73.3,54.8,,40,1,1;78.9,56.5,,40,1,1;83.3,66.9,,40,1,1;75.6,44.6,,40,1,1;68.2,19.7,,46,4,1", spread = true },
+				{ t = "collect", item = 12840, count = 20, map = 1422, x = 47.37, y = 84.3, f = "e", fromNpcs = { { npc = 1783, npcName = "Skeletal Flayer" }, { npc = 1785, npcName = "Skeletal Terror" }, { npc = 1784, npcName = "Skeletal Sorcerer" }, { npc = 1804, npcName = "Wailing Death" }, { npc = 1802, npcName = "Hungering Wraith" }, { npc = 1789, npcName = "Skeletal Acolyte" }, { npc = 1794, npcName = "Soulless Ghoul" }, { npc = 1795, npcName = "Searing Ghoul" }, { npc = 1791, npcName = "Slavering Ghoul" }, { npc = 1787, npcName = "Skeletal Executioner" }, { npc = 4475, npcName = "Blighted Zombie" }, { npc = 4474, npcName = "Rotting Cadaver" }, { npc = 1793, npcName = "Rotting Ghoul" }, { npc = 10801, npcName = "Jabbering Ghoul" }, { npc = 1796, npcName = "Freezing Ghoul" }, { npc = 8555, npcName = "Crypt Fiend" }, { npc = 8534, npcName = "Putrid Gargoyle" }, { npc = 10580, npcName = "Fetid Zombie" }, { npc = 8556, npcName = "Crypt Walker" }, { npc = 10816, npcName = "Wandering Skeleton" }, { npc = 1847, npcName = "Foulmane" } }, fromNpcsAt = "1;9,1;6,8,10;6,7,10;6,10,7,8;7,8,6,10;1,3,14,9;2,11,12,20;13,15;3,1,9;5,4;16,19;1,9;1,9;9,1;9,1;6,7,8,10;7,6,10,8;8,7,6,10;8,10,7,6;10,7,8,6;10,7,8,6;8,6,10,7;8,10,6,7;7,10,6;7,8,6,10;7,6,10;13,15,18;6,8;6,7,8;7,8,6,10;13,15,18;6,8,7,10;13,15;12,11;1,3,9,14;11,12,2;1,9,3,14;12,11,2,21;4,5;5,4;17;17;17;17;16,19", lvl = 56, spotsPacked = "47.6,83,,40,3,,51;49.9,77,,52,11,,52;47.1,71.6,,43,7;48.7,63.3,,46,6;43.5,63.3,,81,11;40.9,72.4,,66,10;36.6,56.4,,65,23,,54;47.3,50.3,,57,28,,55;54.4,65.7,,46,6;54.2,80.4,,40,15,,52;63.9,56.8,,50,15,,58;69.3,18,,40,2;49.3,82.3,,40,2,1,52;48.4,80.2,,49,7,1,52;50.2,80.5,,40,6,1,52;50.7,75.7,,40,5,1,52;45.6,74.1,,62,9,1;42.4,74.2,,59,9,1;43.9,72.3,,43,7,1;45.4,69.8,,55,13,1;48.2,68.9,,62,10,1;50,68,,42,4,1;42.1,69.4,,60,13,1;44.9,67.7,,62,10,1;39.3,70.2,,61,9,1;49.4,65.7,,40,6,1;45.8,65.6,,50,5,1;53.3,67.5,,40,10,1;47.5,64.5,,41,5,1;42,66.1,,59,9,1;39.5,67.4,,69,10,1;52.6,65.2,,52,10,1;46.1,62.2,,59,10,1;53.4,63.4,,40,3,1;45.6,54.8,,48,7,1,54;37.8,58.1,,54,12,1,54;47.5,52.7,,42,7,1,54;38.3,55,,66,27,1,54;45.7,51.8,,77,20,1,54;62.1,59.1,,68,14,1,58;64.6,59.4,,69,10,1,58;73.3,54.8,,40,1,1;78.9,56.5,,40,1,1;83.3,66.9,,40,1,1;75.6,44.6,,40,1,1;68.2,19.7,,46,4,1", spread = true },
 			},
 		},
 		{
@@ -12523,34 +12519,31 @@ G(function() return {
 			title = "{area:200}",
 			note = "Ride north-west to the Dalson farm. The diary lies in the barn; a wandering skeleton carries the outhouse key, and {npc:10836} waits in the outhouse with the cabinet key.",
 			goals = {
-				{ t = "accept", minLevel = 52, quest = 5058, object = 175926, map = 1422, x = 47.8, y = 50.67, z = 60.4, f = "e", note = "{quest:5058}, inside", qlvl = 55 },
-				{ t = "turnin", quest = 5058, object = 175926, map = 1422, x = 47.8, y = 50.67, z = 60.4, f = "e" },
-				{ t = "accept", minLevel = 52, quest = 5059, object = 175925, map = 1422, x = 48.11, y = 49.65, z = 59.5, f = "e", qlvl = 55 },
-				{ t = "accept", minLevel = 52, quest = 5060, object = 175924, map = 1422, x = 47.35, y = 49.63, z = 65.8, f = "e", note = "Inside", qlvl = 55 },
+				{ t = "turnin", quest = 5058, object = 175926, map = 1422, x = 47.8, y = 50.67, z = 60.4, f = "e", direct = true, qlvl = 55 },
 			},
 		},
 		{
 			title = "{area:202}: kill these as you meet them",
 			goals = {
-				{ t = "collect", quest = 5403, item = 12841, count = 10, map = 1422, x = 46.11, y = 52.61, f = "e", fromNpcs = { { npc = 11077, npcName = "Cauldron Lord Malvinious" }, { npc = 11873, npcName = "Spectral Attendant" }, { npc = 11075, npcName = "Cauldron Lord Bilemaw" }, { npc = 11076, npcName = "Cauldron Lord Razarch" }, { npc = 8558, npcName = "Crypt Slayer" } }, lvl = 56, oi = 1, spotsPacked = "46.1,52.6,,150,1,,55;36.9,57.4,,150,1,,53;52.9,66.1,,150,1;54.2,80.4,,150,1;62.2,59.1,,150,1,,58;68.4,20,,150,1,,59;45.6,69.3,,150,2,1,60", spread = true },
+				{ t = "collect", item = 12841, count = 10, map = 1422, x = 46.11, y = 52.61, f = "e", fromNpcs = { { npc = 11077, npcName = "Cauldron Lord Malvinious" }, { npc = 11873, npcName = "Spectral Attendant" }, { npc = 11075, npcName = "Cauldron Lord Bilemaw" }, { npc = 11076, npcName = "Cauldron Lord Razarch" }, { npc = 8558, npcName = "Crypt Slayer" }, { npc = 1848, npcName = "Lord Maldazzar" }, { npc = 11078, npcName = "Cauldron Lord Soulwrath" } }, fromNpcsAt = "1;3;4;6;7;5;2", lvl = 56, spotsPacked = "46.1,52.6,,150,1,,55;36.9,57.4,,150,1,,53;52.9,66.1,,150,1;54.2,80.4,,150,1;62.2,59.1,,150,1,,58;68.4,20,,150,1,,59;45.6,69.3,,150,2,1,60", spread = true },
 				{ t = "kill", quest = 4984, npc = 1817, count = 8, map = 1422, x = 44.88, y = 49.51, z = 64.5, f = "e", lvl = 54, oi = 1, spotsPacked = "45.3,48.9,,45,2;46.7,43.3,,65,5;46.2,37.8,,62,4;45,32.1,101.9,45,1;48.2,27.8,,88,6;51.1,33.1,103.8,62,4;51.1,47,,45,2;51.2,51.9,,45,2;48.9,60,,56,4;43.2,55.5,62.4,50,4;40.4,48.4,,45,2;52.5,70.5,69.2,45,1;44.6,46.1,86.2,66,5,1;47.3,47.2,,45,4,1;45.1,40.9,,72,5,1;45.7,59.9,,45,2,1;49.3,37.6,,91,6,1;51.7,60.8,62.4,45,2,1;50.7,63.9,,45,2,1", spread = true, target = "Diseased Wolf" },
 			},
 		},
 		{
 			title = "{area:200}",
 			goals = {
-				{ t = "collect", quest = 5059, item = 12738, count = 1, map = 1422, x = 47.7, y = 49.9, f = "e", fromId = 10816, fromKind = "npc", fromNpcs = { { npc = 10816, npcName = "Wandering Skeleton" } }, oi = 1 },
-				{ t = "turnin", quest = 5059, object = 175925, map = 1422, x = 48.11, y = 49.65, z = 59.5, f = "e" },
-				{ t = "collect", quest = 5060, item = 12739, count = 1, map = 1422, x = 48.2, y = 49.7, f = "e", fromId = 10836, fromKind = "npc", fromNpcs = { { npc = 10836, npcName = "Farmer Dalson" } }, oi = 1 },
-				{ t = "turnin", quest = 5060, object = 175924, map = 1422, x = 47.35, y = 49.63, z = 65.8, f = "e", note = "{object:175924}, in the farmhouse; inside" },
+				{ t = "collect", item = 12738, map = 1422, x = 47.7, y = 49.9, f = "e", fromId = 10816, fromKind = "npc", fromNpcs = { { npc = 10816, npcName = "Wandering Skeleton" } } },
+				{ t = "turnin", quest = 5059, object = 175925, map = 1422, x = 48.11, y = 49.65, z = 59.5, f = "e", direct = true, qlvl = 55 },
+				{ t = "collect", item = 12739, map = 1422, x = 48.2, y = 49.7, f = "e", fromId = 10836, fromKind = "npc", fromNpcs = { { npc = 10836, npcName = "Farmer Dalson" } } },
+				{ t = "turnin", quest = 5060, object = 175924, map = 1422, x = 47.35, y = 49.63, z = 65.8, f = "e", note = "{object:175924}, in the farmhouse; inside", direct = true, qlvl = 55 },
 			},
 		},
 		{
 			title = "{area:3197}",
 			note = "Ride back south to the camp.",
 			goals = {
-				{ t = "turnin", quest = 5402, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e" },
-				{ t = "turnin", quest = 5403, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e" },
+				{ t = "turnin", quest = 5402, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e", direct = true, qlvl = 55 },
+				{ t = "turnin", quest = 5403, npc = 10840, map = 1422, x = 42.97, y = 83.55, z = 65.2, f = "e", direct = true, qlvl = 55 },
 			},
 		},
 		{
@@ -12763,8 +12756,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 5226, npc = 11053, map = 1422, x = 42.97, y = 84.5, z = 64, f = "e" },
 				{ t = "turnin", quest = 211, npc = 10838, map = 1422, x = 42.7, y = 84.03, z = 66.3, f = "e", optional = true },
-				{ t = "accept", minLevel = 50, quest = 5237, npc = 10838, map = 1422, x = 42.7, y = 84.03, z = 66.3, f = "e", pre = { 5226 }, qlvl = 58 },
-				{ t = "turnin", quest = 5237, npc = 10838, map = 1422, x = 42.7, y = 84.03, z = 66.3, f = "e" },
+				{ t = "turnin", quest = 5237, npc = 10838, map = 1422, x = 42.7, y = 84.03, z = 66.3, f = "e", direct = true, qlvl = 58 },
 				{ t = "turnin", quest = 5537, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e" },
 				{ t = "accept", minLevel = 55, quest = 5538, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", note = "{npc:5411} in {area:976}: keep it", pre = { 5537 }, qlvl = 57 },
 				{ t = "vendor", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 } },
@@ -12796,10 +12788,10 @@ G(function() return {
 			title = "{quest:5181}",
 			note = "Horgus' skull lies at {area:2624} and Marduk's sword in the {area:2623}, each where ghosts fight; grown Plaguehounds hunt the plains between.",
 			goals = {
-				{ t = "collect", quest = 5181, item = 12956, count = 1, map = 1423, x = 44.34, y = 41.18, note = "{item:12956}; underwater", fromId = 176208, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 5181, item = 12956, count = 1, map = 1423, x = 44.34, y = 41.18, note = "{item:12956}; underwater", carriedTo = "forever/alliance/50-60/05-silithus", fromId = 176208, fromKind = "object", oi = 1 },
 				{ t = "kill", quest = 5542, npc = 8597, count = 5, map = 1423, x = 42.74, y = 46.68, z = 77, lvl = 56, oi = 2, spotsPacked = "42.7,46.7,77,51,1;40.9,52.7,,51,2;46.2,51.8,75.4,51,3;50.2,50.1,,51,2;56.8,48,,51,2;62.3,51.3,77.5,51,1;64.3,45,76.4,51,1;67.3,54.2,,64,3;66.3,59.5,,61,4;70.3,60.4,,51,2;61.8,61.6,86.5,51,1;57.8,58.4,,51,3;47.4,47.2,,65,5,1;56.3,51,73.9,51,1,1;59.7,49.1,119.3,51,1,1;60.4,55.2,,51,2,1", spread = true, target = "Plaguehound" },
 				{ t = "collect", quest = 5544, item = 13853, count = 15, map = 1423, x = 44.06, y = 49.17, fromAlso = "Carrion Devourer", fromAlsoId = 8605, fromId = 8603, fromKind = "npc", fromNpcs = { { npc = 8603, npcName = "Carrion Grub" }, { npc = 8605, npcName = "Carrion Devourer" } }, lvl = 55, oi = 1, spotsPacked = "46.5,46.8,,113,7;33.4,60,,105,4;38.4,78.1,,70,1;55.1,73.4,,70,2;69.4,59.6,,70,3;65.9,26.1,,70,1,,57;42.4,21.3,,70,1,,57;27.4,34.8,,72,4,,57;14.9,21.6,,70,2,,57;4.5,36.6,,70,3;15.5,56.4,,80,3;20.9,79.8,,70,2;42.4,53.3,,88,5,1;51.6,51.5,,70,1,1;49.4,40.4,,70,2,1,57;52.1,46.1,,70,4,1;36.3,56.2,,70,2,1;44.6,35.1,,70,2,1,57;39.5,61.7,,70,2,1;39.8,32.5,,101,4,1,57;42.6,67.5,,93,3,1;48.3,67.6,,77,4,1;47.4,29.7,,91,4,1,57;54.9,36.4,,70,1,1,57;59.3,49.9,,74,4,1;59.5,55.4,,118,5,1;35.7,70.7,,70,2,1;27.4,53.4,,70,1,1;28.1,60.6,,109,4,1;59.8,61.3,,79,3,1;30.6,31.9,,70,1,1,57;54.4,26.2,,114,6,1,57;62.1,42.5,,90,3,1,57;61.1,36.1,,80,4,1,57;26.2,66.5,,70,1,1;28.8,71.6,,104,3,1;60.3,27.7,,70,2,1,57;62.3,68,,90,3,1;53,18.7,,70,2,1,57;65.6,60.2,,92,3,1;58.2,21.7,,90,5,1,57;67.3,51.4,,70,2,1;64.8,31.8,,70,1,1,57;19.4,60.7,,91,3,1;19.1,31.4,,70,1,1,57;18.9,67.9,,70,2,1;12.9,65.2,,114,5,1;7.3,48.5,,70,1,1", spread = true },
-				{ t = "collect", quest = 5181, item = 12957, count = 1, map = 1423, x = 46.86, y = 55.43, fromId = 176209, fromKind = "object", oi = 2 },
+				{ t = "collect", quest = 5181, item = 12957, count = 1, map = 1423, x = 46.86, y = 55.43, carriedTo = "forever/alliance/50-60/05-silithus", fromId = 176209, fromKind = "object", oi = 2 },
 			},
 		},
 		{
@@ -12828,7 +12820,7 @@ G(function() return {
 		{
 			title = "{area:2277}: kill these as you meet them",
 			goals = {
-				{ t = "collect", quest = 5903, item = 15043, count = 100, map = 1423, x = 16.67, y = 20.58, fromId = 177464, fromKind = "object", oi = 1, spotsPacked = "18.6,20.4,,75,5;15.9,26.8,,57,1;22.1,28.9,,94,6;27.8,29.1,,57,2;32.7,29.3,,57,3;36.9,31.9,,60,3;37.5,24.9,,102,7;39,19.8,,71,4;42.2,24,,57,1;34.7,18.9,,65,4;30,18.5,,57,3;25.5,16.3,,57,2;18.5,16,,75,4,1;22.3,17.8,,57,1,1;22.9,24.2,,57,2,1;29,23,,95,4,1", spread = true },
+				{ t = "collect", quest = 5903, item = 15043, count = 100, map = 1423, x = 16.67, y = 20.58, carriedTo = "forever/alliance/50-60/06-silithus", fromId = 177464, fromKind = "object", oi = 1, spotsPacked = "18.6,20.4,,75,5;15.9,26.8,,57,1;22.1,28.9,,94,6;27.8,29.1,,57,2;32.7,29.3,,57,3;36.9,31.9,,60,3;37.5,24.9,,102,7;39,19.8,,71,4;42.2,24,,57,1;34.7,18.9,,65,4;30,18.5,,57,3;25.5,16.3,,57,2;18.5,16,,75,4,1;22.3,17.8,,57,1,1;22.9,24.2,,57,2,1;29,23,,95,4,1", spread = true },
 				{ t = "kill", quest = 5542, npc = 8598, count = 5, map = 1423, x = 16.72, y = 20.39, z = 123.2, lvl = 58, oi = 3, spotsPacked = "16.5,18.9,126.1,58,5;19.5,28.2,,42,3;26.9,33.4,,42,2;40,30.5,102.9,81,6;45.5,24.5,,48,3;50.5,14.9,114.3,42,2;59.3,19.9,100.4,42,1;55.1,29.3,,45,3;54.8,39.3,81,42,2;49.1,37.7,79.3,42,1;61.1,39.2,,43,2;63.6,32.2,,47,3;26.3,29.4,96.3,42,1,1;29.8,33.5,,42,3,1;42.3,23.5,,42,2,1;43.6,32.3,95.8,47,4,1;44.5,28.3,96,42,1,1;45.8,31.5,90.2,42,4,1;45.4,35,89.4,42,1,1;48.7,23,,45,4,1;50.7,27.5,92.4,42,1,1;52.2,22.3,,42,2,1;54.1,25,,44,3,1;54.6,18.2,105.3,42,1,1;55.3,21.4,119.8,42,1,1;56.1,35.3,,68,3,1;57.9,25.9,,57,4,1;60.4,29.8,,42,2,1;61.5,35.3,,42,3,1", spread = true, target = "Frenzied Plaguehound" },
 				{ t = "collect", quest = 5544, item = 13853, count = 15, map = 1423, x = 14.68, y = 20.87, fromAlso = "Carrion Devourer", fromAlsoId = 8605, fromId = 8603, fromKind = "npc", fromNpcs = { { npc = 8605, npcName = "Carrion Devourer" }, { npc = 8603, npcName = "Carrion Grub" } }, lvl = 55, oi = 1, spotsPacked = "14.9,21.6,,70,2,,57;30.6,31.9,,70,1,,57;27.4,53.4,,70,1;42.4,53.3,,88,5;38.4,78.1,,70,1;55.1,73.4,,70,2;69.4,59.6,,70,3;64.8,31.8,,70,1,,57;53,18.7,,70,2,,57;7.3,48.5,,70,1;12.9,65.2,,114,5;20.9,79.8,,70,2;19.1,31.4,,70,1,1,57;4.5,36.6,,70,3,1;27.4,34.8,,72,4,1,57;15.5,56.4,,80,3,1;39.8,32.5,,101,4,1,57;19.4,60.7,,91,3,1;42.4,21.3,,70,1,1,57;28.1,60.6,,109,4,1;44.6,35.1,,70,2,1,57;18.9,67.9,,70,2,1;36.3,56.2,,70,2,1;33.4,60,,105,4,1;26.2,66.5,,70,1,1;47.4,29.7,,91,4,1,57;46.5,46.8,,113,7,1;28.8,71.6,,104,3,1;39.5,61.7,,70,2,1;49.4,40.4,,70,2,1,57;35.7,70.7,,70,2,1;54.4,26.2,,114,6,1,57;52.1,46.1,,70,4,1;54.9,36.4,,70,1,1,57;42.6,67.5,,93,3,1;51.6,51.5,,70,1,1;58.2,21.7,,90,5,1,57;48.3,67.6,,77,4,1;60.3,27.7,,70,2,1,57;61.1,36.1,,80,4,1,57;59.3,49.9,,74,4,1;62.1,42.5,,90,3,1,57;59.5,55.4,,118,5,1;65.9,26.1,,70,1,1,57;59.8,61.3,,79,3,1;67.3,51.4,,70,2,1;62.3,68,,90,3,1;65.6,60.2,,92,3,1", spread = true },
 			},
@@ -12860,14 +12852,14 @@ G(function() return {
 			title = "{item:12954}",
 			note = "{item:12954} lies in the town hall of {area:190}, west of {npc:1855}: the Scarlet guards stand close together.",
 			goals = {
-				{ t = "collect", quest = 5168, item = 12954, count = 1, map = 1422, x = 42.52, y = 18.99, f = "e", note = "{item:12954}; inside", fromId = 176206, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 5168, item = 12954, count = 1, map = 1422, x = 42.52, y = 18.99, f = "e", note = "{item:12954}; inside", carriedTo = "forever/alliance/50-60/05-silithus", fromId = 176206, fromKind = "object", oi = 1 },
 			},
 		},
 		{
 			title = "{item:12955}",
 			note = "{item:12955} lies east of the barn at {area:201}.",
 			goals = {
-				{ t = "collect", quest = 5168, item = 12955, count = 1, map = 1422, x = 63.79, y = 57.19, f = "e", fromId = 176207, fromKind = "object", oi = 2 },
+				{ t = "collect", quest = 5168, item = 12955, count = 1, map = 1422, x = 63.79, y = 57.19, f = "e", carriedTo = "forever/alliance/50-60/05-silithus", fromId = 176207, fromKind = "object", oi = 2 },
 			},
 		},
 		{
@@ -12928,8 +12920,8 @@ G(function() return {
 			goals = {
 				{ t = "accept", minLevel = 54, quest = 1047, npc = 10878, map = 1457, x = 47.81, y = 81.97, z = 1335.7, f = "e", closedBy = { 1015, 1019 }, qlvl = 55, spotsPacked = "50.83,47.9,,290,1" },
 				{ t = "accept", minLevel = 50, quest = 4493, npc = 7740, map = 1457, x = 41.83, y = 85.62, z = 1354.9, f = "e", note = "{npc:7740}: keep it for {area:976}", pre = { 162 }, qlvl = 53 },
-				{ t = "use", quest = 4441, item = 11682, map = 1457, x = 39.2, y = 85.6, f = "e", oi = 1 },
-				{ t = "collect", quest = 4441, item = 5646, count = 1, map = 1457, x = 39.2, y = 85.6, f = "e", fromId = 138498, fromKind = "object", oi = 1 },
+				{ t = "use", quest = 4441, item = 11682, map = 1457, x = 39.2, y = 85.6, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", oi = 1 },
+				{ t = "collect", quest = 4441, item = 5646, count = 1, map = 1457, x = 39.2, y = 85.6, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromId = 138498, fromKind = "object", oi = 1 },
 			},
 		},
 		{
@@ -12960,9 +12952,8 @@ G(function() return {
 				{ t = "train", zone = 1457, only = { classes = { "DRUID" } }, note = "{zone:1455}, where the next guide trains, has no druid trainer", candidates = { 97, 98, 99, 100, 101, 102, 103, 104, 105, 106 }, class = true },
 				{ t = "accept", minLevel = 47, quest = 3785, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", optional = true, note = "Ten {item:11040} from the {item:11020}", pre = { 3781 }, qlvl = 50 },
 				{ t = "turnin", quest = 3785, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", optional = true },
-				{ t = "accept", minLevel = 47, quest = 3803, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", optional = true, pre = { 3785 }, qlvl = 55 },
 				{ t = "turnin", quest = 6761, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e" },
-				{ t = "turnin", quest = 3803, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", optional = true },
+				{ t = "turnin", quest = 3803, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", optional = true, direct = true, qlvl = 55 },
 				{ t = "accept", minLevel = 54, quest = 6762, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", note = "{quest:6762} in {zone:1450}: keep it", pre = { 6761 }, qlvl = 55 },
 			},
 		},
@@ -13028,7 +13019,6 @@ G(function() return {
 			note = "{npc:7775}'s camp lies north of the {area:1119}. He brews the {item:11243} from an {item:11242}: take his errand for one.",
 			goals = {
 				{ t = "turnin", quest = 4142, npc = 7775, map = 1444, x = 45.12, y = 25.57, z = 62.8, f = "e" },
-				{ t = "accept", minLevel = 47, quest = 4041, npc = 7775, map = 1444, x = 45.12, y = 25.57, z = 62.8, f = "e", qlvl = 52 },
 			},
 		},
 		{
@@ -13042,7 +13032,7 @@ G(function() return {
 			title = "{item:11242}",
 			note = "The {item:11242} grows inside a ruined building north of {npc:7765}: climb in through the break in its wall from the ledge beside it.",
 			goals = {
-				{ t = "collect", quest = 4041, item = 11242, count = 1, map = 1444, x = 44.5, y = 10.2, f = "e", fromId = 164798, fromKind = "object", oi = 1 },
+				{ t = "collect", item = 11242, map = 1444, x = 44.5, y = 10.2, f = "e", fromId = 164798, fromKind = "object" },
 			},
 		},
 		{
@@ -13066,7 +13056,7 @@ G(function() return {
 			title = "{npc:7775}",
 			note = "Back to {npc:7775}'s camp, just south-east of {npc:7765}: the {item:11242} buys three Videre Elixirs. Keep them: {npc:9298} takes one, and {npc:9299} in {area:976} shows himself only to someone who has drunk one.",
 			goals = {
-				{ t = "turnin", quest = 4041, npc = 7775, map = 1444, x = 45.12, y = 25.57, z = 62.8, f = "e" },
+				{ t = "turnin", quest = 4041, npc = 7775, map = 1444, x = 45.12, y = 25.57, z = 62.8, f = "e", direct = true, qlvl = 52 },
 				{ t = "collect", quest = 3909, item = 11243, count = 1, map = 1444, x = 45.12, y = 25.57, f = "e", fromFaction = "AH", fromId = 7775, fromKind = "npc", fromNpcs = { { npc = 7775, npcName = "Gregan Brewspewer" } }, oi = 1 },
 			},
 		},
@@ -13148,8 +13138,8 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 4493, npc = 5594, map = 1446, x = 50.89, y = 26.96, z = 8.9, f = "e", note = "{npc:5594}, inside" },
 				{ t = "accept", minLevel = 50, quest = 4496, npc = 5594, map = 1446, x = 50.89, y = 26.96, z = 8.9, f = "e", pre = { 4493, 4494 }, qlvl = 53 },
-				{ t = "use", quest = 5163, item = 12928, map = 1446, x = 51.1, y = 26.9, f = "e", note = "On {npc:7583}", oi = 2 },
-				{ t = "kill", quest = 5163, npc = 7583, count = 1, map = 1446, x = 51.1, y = 26.9, z = 8.6, f = "e", text = "Scare {npc:7583} with {item:12928}", oi = 2, target = "Sprinkle" },
+				{ t = "use", quest = 5163, item = 12928, map = 1446, x = 51.1, y = 26.9, f = "e", note = "On {npc:7583}", carriedTo = "forever/alliance/50-60/06-silithus", oi = 2 },
+				{ t = "kill", quest = 5163, npc = 7583, count = 1, map = 1446, x = 51.1, y = 26.9, z = 8.6, f = "e", text = "Scare {npc:7583} with {item:12928}", carriedTo = "forever/alliance/50-60/06-silithus", oi = 2, target = "Sprinkle" },
 				{ t = "turnin", quest = 5538, npc = 5411, map = 1446, x = 51.46, y = 28.81, z = 8.8, f = "e" },
 				{ t = "accept", minLevel = 55, quest = 5801, npc = 5411, map = 1446, x = 51.46, y = 28.81, z = 8.8, f = "e", note = "For {area:3197}: keep it", pre = { 5538 }, qlvl = 57 },
 				{ t = "accept", minLevel = 48, quest = 4504, npc = 7876, map = 1446, x = 51.57, y = 26.76, z = 8.8, f = "e", note = "{npc:7876}, north side of town: the tar is in Un'Goro, keep it", qlvl = 54 },
@@ -13262,10 +13252,10 @@ G(function() return {
 			title = "{zone:1451}: kill these as you meet them",
 			note = "Dredge Crushers dig further west; Stonelash Pincers, Flayers and Rock Stalkers hunt the same sands.",
 			goals = {
-				{ t = "collect", quest = 8278, item = 20374, count = 3, map = 1451, x = 43.38, y = 45.05, f = "e", fromId = 11736, fromKind = "npc", fromNpcs = { { npc = 11736, npcName = "Stonelash Pincer" } }, lvl = 56, oi = 2, spotsPacked = "43.4,45.1,,40,1;42.7,58,,40,2;40.3,66.7,,40,1;34.1,66.8,,40,1;34.7,54.8,,40,3;28.5,43.2,,40,1;34.3,35.1,,40,2;30.2,28.2,,52,3;20.7,35.3,,41,2;49.6,64.2,,40,4;56.5,56.1,,40,2;64.8,61.4,,46,3;43.5,51.1,,40,2,1;46.9,52.8,,40,1,1;42,54.2,,51,3,1;39.5,54.2,,50,3,1;37.3,51.7,,40,2,1;36.4,40.7,,40,1,1;45.7,57.4,,40,2,1;34,46.7,,80,5,1;49.7,55.8,,40,2,1;33.3,40.3,,60,5,1;48.2,60.2,,41,3,1;40.5,61.6,,42,3,1;36.1,58.5,,40,4,1;42.5,63.1,,40,2,1;52.6,57.8,,59,4,1;45.9,63.6,,51,3,1;31.9,35.7,,67,6,1;35.4,61.6,,62,5,1;38.2,64.1,,43,4,1;51.8,62.6,,40,2,1;28.9,38.7,,40,1,1;56.1,58.9,,40,1,1;55.9,62.8,,48,4,1;26.1,43.7,,40,2,1;58.8,64.5,,57,4,1;60.7,61.5,,44,3,1;22.6,41.9,,66,7,1;62.5,65,,40,2,1", spread = true },
-				{ t = "kill", quest = 8281, npc = 11741, count = 20, map = 1451, x = 44.21, y = 48.19, z = 3.3, f = "e", note = "{npc:11741} walks around here: look inside the circle on the map", lvl = 58, oi = 1, spotsPacked = "44,49.7,,50,2;49.4,56.7,,89,7;52.8,65,,50,2;57.8,59,4.5,50,1;63.3,62.5,,50,2;42.1,62.8,,50,2;33.1,62.4,,76,3;34.8,53.9,,50,2;32.7,45.7,,73,4;32.4,31.3,4.2,50,1;21,36.8,0.4,50,1;20.1,47.3,-1,50,1;40.1,50.8,,50,4,1;38.5,55.9,,50,4,1;48.2,62.9,-0.9,50,1,1;35.1,39.1,,92,5,1;37.8,62.6,1.2,97,4,1;55.1,56.8,-0.3,50,1,1;54,61.1,,50,5,1;29.1,42.3,,135,10,1;27.4,27.8,,50,2,1;21,40.9,,50,2,1", spread = true, target = "Dredge Crusher" },
-				{ t = "collect", quest = 8278, item = 20377, count = 3, map = 1451, x = 40.4, y = 66.72, f = "e", fromId = 11739, fromKind = "npc", fromNpcs = { { npc = 11739, npcName = "Rock Stalker" } }, lvl = 59, oi = 3, spotsPacked = "39.5,68,,54,3;45.3,74,,40,4;41.5,79.7,,43,4;45.5,87.2,,49,4;35.8,89.8,,47,3;29.5,77,,41,3;31.8,67.8,,40,1;19.6,77.4,,40,1;23.1,88.6,,40,1;50.4,69.8,,40,1;63.4,72.5,,40,1;64.9,86.3,,40,1;41.7,68.7,,40,3,1;37.1,66.1,,40,1,1;38.9,75,,40,2,1;34.5,68.5,,40,2,1;36.3,73.8,,40,2,1;42.6,76.3,,40,3,1;48,68.5,,40,2,1;33.3,74.2,,49,5,1;45.3,79.2,,40,2,1;33.9,78.8,,53,4,1;37.2,83.2,,78,7,1;41.1,84.6,,59,4,1;44.3,83.8,,40,2,1;42.2,87.2,,40,1,1;30.8,82.1,,49,3,1;26.9,76.4,,50,3,1;27.7,83.5,,40,2,1;24.9,81.4,,40,2,1;23.1,78.2,,40,2,1;66.3,75.6,,40,3,1", spread = true },
-				{ t = "collect", quest = 8278, item = 20375, count = 3, map = 1451, x = 41.23, y = 69.7, f = "e", fromId = 11737, fromKind = "npc", fromNpcs = { { npc = 11737, npcName = "Stonelash Flayer" } }, lvl = 58, oi = 1, spotsPacked = "40.3,70.7,,65,4;41.3,81.1,,77,6;37.3,87.1,,88,6;35.1,78.9,,46,2;29.7,82.1,,53,3;27.3,74.4,,46,2;21.9,77.7,,62,4;24.3,89.9,,46,1;44.8,91.5,,46,2;48.5,68.7,,61,3;63.4,68.5,,73,6;67.4,79.2,,46,2;43.1,73.9,,46,1,1;45.1,70.5,,46,3,1;34.9,69.8,,81,5,1;35.4,74.6,,46,2,1;31.8,74.1,,63,4,1;44.4,84.3,,92,5,1;32,77.9,,46,2,1;45.4,87.2,,46,1,1;26.4,78.9,,74,8,1;23.8,84.8,,59,4,1;64.3,74.9,,65,5,1;67.6,76.1,,46,1,1", spread = true },
+				{ t = "collect", quest = 8278, item = 20374, count = 3, map = 1451, x = 43.38, y = 45.05, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromId = 11736, fromKind = "npc", fromNpcs = { { npc = 11736, npcName = "Stonelash Pincer" } }, lvl = 56, oi = 2, spotsPacked = "43.4,45.1,,40,1;42.7,58,,40,2;40.3,66.7,,40,1;34.1,66.8,,40,1;34.7,54.8,,40,3;28.5,43.2,,40,1;34.3,35.1,,40,2;30.2,28.2,,52,3;20.7,35.3,,41,2;49.6,64.2,,40,4;56.5,56.1,,40,2;64.8,61.4,,46,3;43.5,51.1,,40,2,1;46.9,52.8,,40,1,1;42,54.2,,51,3,1;39.5,54.2,,50,3,1;37.3,51.7,,40,2,1;36.4,40.7,,40,1,1;45.7,57.4,,40,2,1;34,46.7,,80,5,1;49.7,55.8,,40,2,1;33.3,40.3,,60,5,1;48.2,60.2,,41,3,1;40.5,61.6,,42,3,1;36.1,58.5,,40,4,1;42.5,63.1,,40,2,1;52.6,57.8,,59,4,1;45.9,63.6,,51,3,1;31.9,35.7,,67,6,1;35.4,61.6,,62,5,1;38.2,64.1,,43,4,1;51.8,62.6,,40,2,1;28.9,38.7,,40,1,1;56.1,58.9,,40,1,1;55.9,62.8,,48,4,1;26.1,43.7,,40,2,1;58.8,64.5,,57,4,1;60.7,61.5,,44,3,1;22.6,41.9,,66,7,1;62.5,65,,40,2,1", spread = true },
+				{ t = "kill", quest = 8281, npc = 11741, count = 20, map = 1451, x = 44.21, y = 48.19, z = 3.3, f = "e", note = "{npc:11741} walks around here: look inside the circle on the map", carriedTo = "forever/alliance/50-60/06-silithus", lvl = 58, oi = 1, spotsPacked = "44,49.7,,50,2;49.4,56.7,,89,7;52.8,65,,50,2;57.8,59,4.5,50,1;63.3,62.5,,50,2;42.1,62.8,,50,2;33.1,62.4,,76,3;34.8,53.9,,50,2;32.7,45.7,,73,4;32.4,31.3,4.2,50,1;21,36.8,0.4,50,1;20.1,47.3,-1,50,1;40.1,50.8,,50,4,1;38.5,55.9,,50,4,1;48.2,62.9,-0.9,50,1,1;35.1,39.1,,92,5,1;37.8,62.6,1.2,97,4,1;55.1,56.8,-0.3,50,1,1;54,61.1,,50,5,1;29.1,42.3,,135,10,1;27.4,27.8,,50,2,1;21,40.9,,50,2,1", spread = true, target = "Dredge Crusher" },
+				{ t = "collect", quest = 8278, item = 20377, count = 3, map = 1451, x = 40.4, y = 66.72, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromId = 11739, fromKind = "npc", fromNpcs = { { npc = 11739, npcName = "Rock Stalker" } }, lvl = 59, oi = 3, spotsPacked = "39.5,68,,54,3;45.3,74,,40,4;41.5,79.7,,43,4;45.5,87.2,,49,4;35.8,89.8,,47,3;29.5,77,,41,3;31.8,67.8,,40,1;19.6,77.4,,40,1;23.1,88.6,,40,1;50.4,69.8,,40,1;63.4,72.5,,40,1;64.9,86.3,,40,1;41.7,68.7,,40,3,1;37.1,66.1,,40,1,1;38.9,75,,40,2,1;34.5,68.5,,40,2,1;36.3,73.8,,40,2,1;42.6,76.3,,40,3,1;48,68.5,,40,2,1;33.3,74.2,,49,5,1;45.3,79.2,,40,2,1;33.9,78.8,,53,4,1;37.2,83.2,,78,7,1;41.1,84.6,,59,4,1;44.3,83.8,,40,2,1;42.2,87.2,,40,1,1;30.8,82.1,,49,3,1;26.9,76.4,,50,3,1;27.7,83.5,,40,2,1;24.9,81.4,,40,2,1;23.1,78.2,,40,2,1;66.3,75.6,,40,3,1", spread = true },
+				{ t = "collect", quest = 8278, item = 20375, count = 3, map = 1451, x = 41.23, y = 69.7, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromId = 11737, fromKind = "npc", fromNpcs = { { npc = 11737, npcName = "Stonelash Flayer" } }, lvl = 58, oi = 1, spotsPacked = "40.3,70.7,,65,4;41.3,81.1,,77,6;37.3,87.1,,88,6;35.1,78.9,,46,2;29.7,82.1,,53,3;27.3,74.4,,46,2;21.9,77.7,,62,4;24.3,89.9,,46,1;44.8,91.5,,46,2;48.5,68.7,,61,3;63.4,68.5,,73,6;67.4,79.2,,46,2;43.1,73.9,,46,1,1;45.1,70.5,,46,3,1;34.9,69.8,,81,5,1;35.4,74.6,,46,2,1;31.8,74.1,,63,4,1;44.4,84.3,,92,5,1;32,77.9,,46,2,1;45.4,87.2,,46,1,1;26.4,78.9,,74,8,1;23.8,84.8,,59,4,1;64.3,74.9,,65,5,1;67.6,76.1,,46,1,1", spread = true },
 			},
 		},
 		{
@@ -13357,14 +13347,14 @@ G(function() return {
 			title = "{area:538}: kill these as you meet them",
 			note = "The Tar Beasts and Tar Lords wallow in the {area:538}, south of the refuge on the way down into the crater.",
 			goals = {
-				{ t = "collect", quest = 4504, item = 11834, count = 12, map = 1449, x = 45.72, y = 15.49, f = "e", fromNpcs = { { npc = 6519, npcName = "Tar Lord" }, { npc = 6517, npcName = "Tar Beast" }, { npc = 6518, npcName = "Tar Lurker" }, { npc = 6527, npcName = "Tar Creeper" } }, lvl = 54, oi = 1, spotsPacked = "46.7,16.4,,50,4;44.2,17.8,,48,5;42.8,20.9,,41,4;47.9,20.7,,73,5;50.5,24.5,,61,6;49,29.8,,60,4;47.5,34.1,,61,7,,52;54.6,23.7,,40,1;53.7,19.9,,40,1;60,23.8,,40,4,,52;64.3,23.5,,40,4,,52;59.2,30.8,,60,5,,52;49.3,18.3,,40,1,1;53,26.4,,58,4,1;61.5,31.9,,40,3,1,52", spread = true },
+				{ t = "collect", quest = 4504, item = 11834, count = 12, map = 1449, x = 45.72, y = 15.49, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromNpcs = { { npc = 6519, npcName = "Tar Lord" }, { npc = 6517, npcName = "Tar Beast" }, { npc = 6518, npcName = "Tar Lurker" }, { npc = 6527, npcName = "Tar Creeper" } }, lvl = 54, oi = 1, spotsPacked = "46.7,16.4,,50,4;44.2,17.8,,48,5;42.8,20.9,,41,4;47.9,20.7,,73,5;50.5,24.5,,61,6;49,29.8,,60,4;47.5,34.1,,61,7,,52;54.6,23.7,,40,1;53.7,19.9,,40,1;60,23.8,,40,4,,52;64.3,23.5,,40,4,,52;59.2,30.8,,60,5,,52;49.3,18.3,,40,1,1;53,26.4,,58,4,1;61.5,31.9,,40,3,1,52", spread = true },
 			},
 		},
 		{
 			title = "The crater",
 			note = "Tar Beasts wallow in the {area:538}; the fire elementals of {area:537} in the middle carry the ash; the Gorishi wasps of the {area:540} in the south carry the gland. Every creature in the crater can drop {item:11018}.\nCareful: Gorishi Workers that drop below 45% health have a 50% chance to call for help from allies within 25 yd.",
 			goals = {
-				{ t = "collect", quest = 4496, item = 11837, count = 1, map = 1449, x = 45.5, y = 72.3, f = "e", fromNpcs = { { npc = 6553, npcName = "Gorishi Reaver" }, { npc = 10041, npcName = "Gorishi Hive Queen" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" } }, lvl = 53, oi = 1, spotsPacked = "46.4,73.4,,43,3;44.4,76.7,,44,4;47.7,76.5,,54,5;44,80.8,,74,12,,56;51.6,73.1,,26,3;50.9,76.9,,52,5;48.6,81.3,,66,7,1;45.5,83.6,,63,10,1;51.5,80.4,,50,3,1;53.8,75.7,,38,4,1,52;49,84.4,,41,6,1;47.2,86.4,,77,10,1;54.3,79.1,,15,1,1,52;52.4,84.5,,52,6,1;55.2,84.4,,53,5,1" },
+				{ t = "collect", quest = 4496, item = 11837, count = 1, map = 1449, x = 45.5, y = 72.3, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromNpcs = { { npc = 6553, npcName = "Gorishi Reaver" }, { npc = 10041, npcName = "Gorishi Hive Queen" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6555, npcName = "Gorishi Tunneler" }, { npc = 10040, npcName = "Gorishi Hive Guard" } }, fromNpcsAt = "1,3;1,3,4;4,3,1;4,1,5,6,2,7;4,1;3,1,4;1,3,4,6;4,1,5,6,3;4,1,5;3,4;1,6;1,6,4,5;4;1,3,4;1,3,4", lvl = 53, oi = 1, spotsPacked = "46.4,73.4,,43,3;44.4,76.7,,44,4;47.7,76.5,,54,5;44,80.8,,74,12,,56;51.6,73.1,,26,3;50.9,76.9,,52,5;48.6,81.3,,66,7,1;45.5,83.6,,63,10,1;51.5,80.4,,50,3,1;53.8,75.7,,38,4,1,52;49,84.4,,41,6,1;47.2,86.4,,77,10,1;54.3,79.1,,15,1,1,52;52.4,84.5,,52,6,1;55.2,84.4,,53,5,1" },
 			},
 		},
 		{
@@ -13428,8 +13418,8 @@ G(function() return {
 		{
 			title = "{area:1942}: kill these as you meet them",
 			goals = {
-				{ t = "collect", quest = 4496, item = 11018, count = 5, map = 1449, x = 70.65, y = 65.81, f = "e", fromNpcs = { { npc = 6511, npcName = "Bloodpetal Thresher" }, { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6551, npcName = "Gorishi Wasp" } }, oi = 2, spotsPacked = "71.8,65.1,,51,3,,50;72.3,39.2,,51,4,,50;59.7,34.7,,51,2,,50;62.2,17.6,,51,1;50.3,47.7,,51,2;36.9,47.1,,51,2,,53;28.7,61.2,,51,2,,53;21.9,38.6,,51,1;39.1,23.5,,101,6,,53;48.1,76,,76,6,,52;56.6,83.5,,51,1;38.2,81.7,,51,1,,53;73.4,58.3,,51,1,1;70.5,76.2,,51,2,1;62.3,64,,51,1,1;64.9,78.4,,51,1,1;75.1,48.6,,63,3,1,50;63.3,47.9,,51,1,1;75.3,44.4,,51,2,1,50;60,81.8,,51,1,1;56,56.9,,51,1,1;63.8,42.3,,51,2,1,50;53.3,76.9,,82,7,1,52;52.8,55.9,,51,1,1;57.1,44.2,,51,1,1;60.4,40.1,,51,2,1,50;51.3,73.9,,51,3,1,52;67.1,35.8,,76,4,1,50;53,83.6,,72,6,1,52;48.9,58,,51,1,1;52.8,45.4,,51,1,1;63.7,33.4,,51,1,1,50;69.5,31.3,,51,3,1,50;57.3,36.7,,51,4,1,50;49.1,81.4,,61,6,1,53;53.6,39,,51,1,1;64.7,29.3,,51,1,1,50;70.7,27.7,,51,1,1,50;50.5,90.1,,51,1,1;45.9,53.7,,51,2,1;47.3,86.3,,81,9,1,53;61.1,27.6,,51,1,1,50;68.5,24.7,,66,3,1,50;45.6,83.4,,52,7,1,53;44.2,80.1,,97,9,1,54;55.6,28.7,,51,1,1;50.2,34.3,,51,1,1;40.8,59.7,,51,1,1;69.2,20.5,,51,1,1,50;40.7,54,,77,5,1,53;40.9,79.3,,51,2,1,53;41.9,48.1,,51,1,1,53;41.9,43.8,,51,3,1,53;44.1,33.8,,51,1,1;36.6,69.2,,51,3,1,53;36.4,76.9,,60,3,1,53;39.9,38.1,,60,3,1,53;41.2,32.5,,51,1,1,53;33.6,64.6,,63,3,1,53;32.9,70.9,,51,2,1,53;35.2,40.8,,74,4,1,53;39.8,28.6,,51,2,1,53;31.7,77.5,,65,3,1,53;30.6,68,,52,2,1,53;35.5,35.2,,51,2,1,53;30,56.8,,51,2,1,53;35.3,30.4,,51,1,1,53;29.9,44.3,,51,1,1,53;26.9,68.1,,51,1,1,53;28.5,40.8,,67,4,1,53;32.5,28.4,,51,1,1,53;25,57.9,,51,1,1,53;30.1,32.4,,61,4,1,53;25.9,46.5,,51,2,1,53;24.8,52.2,,51,1,1,53;33.2,22.3,,51,3,1,53", spread = true },
-				{ t = "collect", quest = 4502, item = 11829, count = 9, map = 1449, x = 55.55, y = 57.9, f = "e", fromAlso = "Living Blaze", fromAlsoId = 6521, fromId = 6520, fromKind = "npc", fromNpcs = { { npc = 6521, npcName = "Living Blaze" }, { npc = 6520, npcName = "Scorching Elemental" }, { npc = 14460, npcName = "Blazing Invader" } }, lvl = 55, oi = 1, spotsPacked = "50.2,54.6,,60,3;51.9,50.4,,62,4;54.7,48,,29,2;46.5,54.4,,53,3;53.4,44.1,,66,5;47.2,51.2,,56,3;55.6,57.9,,15,1,1;54,54.8,,15,1,1,54;49.3,46.2,,94,10,1;44.7,47.7,,51,4,1,56" },
+				{ t = "collect", quest = 4496, item = 11018, count = 5, map = 1449, x = 70.65, y = 65.81, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromNpcs = { { npc = 6511, npcName = "Bloodpetal Thresher" }, { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6512, npcName = "Bloodpetal Trapper" }, { npc = 6555, npcName = "Gorishi Tunneler" } }, fromNpcsAt = "1;1;1;;;6;6;;6;3,5;;6;;;;;1;;1;;;1;3,5;;;1;3,5;1;3,5;;;1;1;1;5,3,4,7;;1;1;;;7,3,4;1;1;3,4,7,5;3,7,4,5,2;;;;1;6;6;6;6;;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6;6", oi = 2, spotsPacked = "71.8,65.1,,51,3,,50;72.3,39.2,,51,4,,50;59.7,34.7,,51,2,,50;62.2,17.6,,51,1;50.3,47.7,,51,2;36.9,47.1,,51,2,,53;28.7,61.2,,51,2,,53;21.9,38.6,,51,1;39.1,23.5,,101,6,,53;48.1,76,,76,6,,52;56.6,83.5,,51,1;38.2,81.7,,51,1,,53;73.4,58.3,,51,1,1;70.5,76.2,,51,2,1;62.3,64,,51,1,1;64.9,78.4,,51,1,1;75.1,48.6,,63,3,1,50;63.3,47.9,,51,1,1;75.3,44.4,,51,2,1,50;60,81.8,,51,1,1;56,56.9,,51,1,1;63.8,42.3,,51,2,1,50;53.3,76.9,,82,7,1,52;52.8,55.9,,51,1,1;57.1,44.2,,51,1,1;60.4,40.1,,51,2,1,50;51.3,73.9,,51,3,1,52;67.1,35.8,,76,4,1,50;53,83.6,,72,6,1,52;48.9,58,,51,1,1;52.8,45.4,,51,1,1;63.7,33.4,,51,1,1,50;69.5,31.3,,51,3,1,50;57.3,36.7,,51,4,1,50;49.1,81.4,,61,6,1,53;53.6,39,,51,1,1;64.7,29.3,,51,1,1,50;70.7,27.7,,51,1,1,50;50.5,90.1,,51,1,1;45.9,53.7,,51,2,1;47.3,86.3,,81,9,1,53;61.1,27.6,,51,1,1,50;68.5,24.7,,66,3,1,50;45.6,83.4,,52,7,1,53;44.2,80.1,,97,9,1,54;55.6,28.7,,51,1,1;50.2,34.3,,51,1,1;40.8,59.7,,51,1,1;69.2,20.5,,51,1,1,50;40.7,54,,77,5,1,53;40.9,79.3,,51,2,1,53;41.9,48.1,,51,1,1,53;41.9,43.8,,51,3,1,53;44.1,33.8,,51,1,1;36.6,69.2,,51,3,1,53;36.4,76.9,,60,3,1,53;39.9,38.1,,60,3,1,53;41.2,32.5,,51,1,1,53;33.6,64.6,,63,3,1,53;32.9,70.9,,51,2,1,53;35.2,40.8,,74,4,1,53;39.8,28.6,,51,2,1,53;31.7,77.5,,65,3,1,53;30.6,68,,52,2,1,53;35.5,35.2,,51,2,1,53;30,56.8,,51,2,1,53;35.3,30.4,,51,1,1,53;29.9,44.3,,51,1,1,53;26.9,68.1,,51,1,1,53;28.5,40.8,,67,4,1,53;32.5,28.4,,51,1,1,53;25,57.9,,51,1,1,53;30.1,32.4,,61,4,1,53;25.9,46.5,,51,2,1,53;24.8,52.2,,51,1,1,53;33.2,22.3,,51,3,1,53", spread = true },
+				{ t = "collect", quest = 4502, item = 11829, count = 9, map = 1449, x = 55.55, y = 57.9, f = "e", carriedTo = "forever/alliance/50-60/05-silithus", fromAlso = "Living Blaze", fromAlsoId = 6521, fromId = 6520, fromKind = "npc", fromNpcs = { { npc = 6521, npcName = "Living Blaze" }, { npc = 6520, npcName = "Scorching Elemental" }, { npc = 14460, npcName = "Blazing Invader" } }, lvl = 55, oi = 1, spotsPacked = "50.2,54.6,,60,3;51.9,50.4,,62,4;54.7,48,,29,2;46.5,54.4,,53,3;53.4,44.1,,66,5;47.2,51.2,,56,3;55.6,57.9,,15,1,1;54,54.8,,15,1,1,54;49.3,46.2,,94,10,1;44.7,47.7,,51,4,1,56" },
 			},
 		},
 		{
@@ -13557,7 +13547,7 @@ G(function() return {
 				{ t = "fly", area = 392, location = "Ratchet", node = 80 },
 				{ t = "sethome", npc = 6791, map = 1413, x = 62.05, y = 39.41, z = 24, f = "e", area = 392, location = "Ratchet" },
 				{ t = "turnin", quest = 4502, npc = 8496, map = 1413, x = 62.45, y = 38.73, z = 4.6, f = "e", note = "{npc:8496}, inside" },
-				{ t = "collect", quest = 3444, item = 10556, count = 1, map = 1413, x = 62.5, y = 38.5, f = "e", fromId = 149036, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 3444, item = 10556, count = 1, map = 1413, x = 62.5, y = 38.5, f = "e", carriedTo = "forever/alliance/50-60/06-silithus", fromId = 149036, fromKind = "object", oi = 1 },
 			},
 		},
 		{
@@ -13581,9 +13571,6 @@ G(function() return {
 				{ t = "accept", minLevel = 50, quest = 5048, npc = 10782, map = 1453, x = 57.17, y = 48.07, z = 108.8, pre = { 5022 }, qlvl = 52 },
 				{ t = "turnin", quest = 5048, npc = 3520, map = 1453, x = 60.2, y = 57.03, z = 108.1, note = "{npc:3520}, who walks the canals", spotsPacked = "61.77,63.4,,123,1" },
 				{ t = "accept", minLevel = 50, quest = 5050, npc = 3520, map = 1453, x = 60.2, y = 57.03, z = 108.1, note = "For {npc:10778}: keep it", pre = { 5048, 5049 }, qlvl = 52, spotsPacked = "61.77,63.4,,123,1" },
-				{ t = "accept", minLevel = 12, quest = 7791, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, qlvl = 60 },
-				{ t = "accept", minLevel = 26, quest = 7793, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, qlvl = 60 },
-				{ t = "accept", minLevel = 40, quest = 7794, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, qlvl = 60 },
 			},
 		},
 		{
@@ -13607,12 +13594,6 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 4512, npc = 9616, map = 1455, x = 75.77, y = 23.38, z = 503.4, f = "e" },
 				{ t = "accept", minLevel = 48, quest = 4513, npc = 9616, map = 1455, x = 75.77, y = 23.38, z = 503.4, f = "e", note = "Its jars are filled on the next Un'Goro visit", pre = { 4512 }, qlvl = 54 },
-				{ t = "accept", minLevel = 12, quest = 7807, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, note = "{npc:14724}, by the tram", qlvl = 60 },
-				{ t = "accept", minLevel = 26, quest = 7808, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, qlvl = 60 },
-				{ t = "accept", minLevel = 40, quest = 7809, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, qlvl = 60 },
-				{ t = "accept", minLevel = 12, quest = 7802, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, qlvl = 60 },
-				{ t = "accept", minLevel = 26, quest = 7803, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, qlvl = 60 },
-				{ t = "accept", minLevel = 40, quest = 7804, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, qlvl = 60 },
 				{ t = "accept", minLevel = 51, quest = 7261, npc = 13843, map = 1455, x = 32.21, y = 63.26, z = 501.5, f = "e", closedBy = { 7162 }, qlvl = 60 },
 				{ t = "train", zone = 1455, only = { classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK" } }, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79 }, class = true },
 			},
@@ -13660,7 +13641,7 @@ G(function() return {
 			note = "Ride south-west to the {area:2261}. The mound of dirt lies inside. {npc:11886} is elite: grouping up is advised.\nCareful: About four non-elite adds come with Mercutio. They walk to the grave instead of appearing on the spot.",
 			goals = {
 				{ t = "turnin", quest = 6024, object = 177675, map = 1423, x = 23.58, y = 73.79, z = 87.9 },
-				{ t = "collect", quest = 5781, item = 14613, count = 1, map = 1423, x = 23.85, y = 74.22, optional = true, note = "{item:14613}, from {npc:11886}", fromId = 11886, fromKind = "npc", fromNpcs = { { npc = 11886, npcName = "Mercutio Filthgorger" } }, oi = 1 },
+				{ t = "collect", quest = 5781, item = 14613, count = 1, map = 1423, x = 23.85, y = 74.22, optional = true, note = "{item:14613}, from {npc:11886}", carriedTo = "forever/alliance/50-60/06-silithus", fromId = 11886, fromKind = "npc", fromNpcs = { { npc = 11886, npcName = "Mercutio Filthgorger" } }, oi = 1 },
 			},
 		},
 	},
@@ -13900,7 +13881,7 @@ G(function() return {
 			title = "{area:1770} braziers",
 			note = "{area:1770} is the cave at the back of {area:1763}, west of the road. Use the {item:12906} on the four braziers inside. Kill the Angerclaw bears and Felpaw wolves you pass for the {item:11172}.\nCareful: Shadow Council mobs of level 53-55 fill the cave and often come in large linked groups, many with stuns. A group of 2-3 players is recommended.\nThe Jaedenar Darkweavers, Warlocks and Enforcers in here drop a {item:13140}, about one kill in thirty: keep killing them until it drops. It opens the cell of {npc:11018}, the night elf held in the cave.",
 			goals = {
-				{ t = "collect", quest = 4084, item = 11172, count = 11, map = 1448, x = 51.42, y = 80.62, f = "e", note = "Angerclaw bears and Felpaw wolves", fromNpcs = { { npc = 8959, npcName = "Felpaw Wolf" }, { npc = 8956, npcName = "Angerclaw Bear" }, { npc = 8957, npcName = "Angerclaw Grizzly" }, { npc = 8958, npcName = "Angerclaw Mauler" }, { npc = 8960, npcName = "Felpaw Scavenger" } }, lvl = 50, oi = 1, spotsPacked = "52.1,82,,66,4,,48;56.5,91.4,,40,2,,48;46,73.3,,63,8,,48;37.5,73.4,,57,3,,48;42.2,58.1,,40,2;38,43.7,,71,7;41.2,23.6,,40,1;47.7,16,,40,1;56.2,20.9,,61,5,,52;51.8,30.9,,42,7;64.7,20,,40,2,,52;56.2,7.4,,40,2,,52;49.7,80,,40,3,1,48;49.3,82.4,,62,5,1,48;50,77.1,,40,1,1,49;53.5,83.7,,43,5,1,48;48.4,77.9,,43,3,1,49;49.5,85.1,,40,2,1,48;47.8,80.5,,42,3,1,48;51.3,86.4,,73,4,1,48;54.6,84.9,,46,4,1,48;47.1,84,,40,1,1;47.9,75.1,,40,3,1,49;52.6,88.1,,40,2,1,48;48.3,86.8,,40,2,1,48;46.4,78.6,,40,1,1,48;56.2,83.9,,51,3,1,48;46.7,76.6,,49,3,1,48;45.6,82,,40,1,1,48;45.5,84.7,,40,3,1,48;45.9,87,,40,2,1,48;44.3,80.7,,57,3,1,48;55.9,89.4,,47,3,1,49;44.2,82.9,,42,3,1,48;54,91.2,,40,2,1,48;58,87.1,,40,3,1,48;43.3,76.6,,40,1,1;45.2,70.2,,47,7,1;42.1,81.4,,40,6,1,48;41.9,75.6,,40,3,1;41,78.1,,40,4,1,48;44.6,68.2,,52,5,1;40.4,80.4,,41,2,1;41.6,70.1,,40,1,1,48;44,65.3,,40,7,1;44.4,63.3,,40,2,1;39.7,70.1,,40,1,1,48;42.9,63.1,,41,5,1;38.1,56,,40,1,1;38,53.6,,40,2,1;39,51.1,,50,3,1;38.8,47.2,,40,2,1;38.8,45.4,,41,4,1;48,38.5,,40,1,1;49.3,35.7,,40,2,1;39.3,38.8,,40,1,1;37.6,39.3,,43,3,1;50,32.7,,55,4,1;40.7,33.5,,57,6,1;39.5,30.9,,40,2,1;53.7,27.4,,57,6,1,52;56.1,26.9,,40,3,1,52;56.5,24.5,,40,2,1,52;55.1,24.1,,46,3,1,52;45,24,,40,1,1;41,24.9,,41,2,1;42.9,24.1,,40,1,1;43.8,22.3,,40,2,1;46.8,19.6,,40,1,1;45,18.3,,40,2,1;62.4,19.7,,40,3,1,52;57.7,17.8,,48,3,1,52;52.6,16,,40,2,1,52;50.4,15.7,,55,3,1,52;46.3,15.6,,40,1,1;61.6,16.8,,59,3,1,52;53.9,14.4,,40,2,1,52;60.2,14.9,,40,1,1,52;50.6,12.5,,63,6,1,52;56.7,12.9,,40,1,1,52;61.9,13.5,,40,1,1,52;63.6,13.5,,40,1,1,52;55.8,10.8,,40,3,1,52", spread = true },
+				{ t = "collect", quest = 4084, item = 11172, count = 11, map = 1448, x = 51.42, y = 80.62, f = "e", note = "Angerclaw bears and Felpaw wolves", fromNpcs = { { npc = 8959, npcName = "Felpaw Wolf" }, { npc = 8956, npcName = "Angerclaw Bear" }, { npc = 8957, npcName = "Angerclaw Grizzly" }, { npc = 8958, npcName = "Angerclaw Mauler" }, { npc = 8960, npcName = "Felpaw Scavenger" }, { npc = 8961, npcName = "Felpaw Ravager" }, { npc = 14339, npcName = "Death Howl" }, { npc = 14344, npcName = "Mongress" } }, fromNpcsAt = "1;1;2;1,2;4,5;4;4;5;3,6;5;3,6;3,6;1,2;1;7;1;2,7;2;1;1;1,2;8;2,7;1;2;1;2;2,1;2;2;2;1,2;2,1,7;2;1;2;8;5;1;2,1,8;2;5,4;1,8;2;4;4;2;4;4;5;5,4;5;4,5;4;4,5;5;5;5;5,4;4;3,6;3,6;3;3;5;4,5;5;5;4;4,5;6,3;6,3;3;3,4,5;4;3;3,6;3;3;6;3;3;3", lvl = 50, oi = 1, spotsPacked = "52.1,82,,66,4,,48;56.5,91.4,,40,2,,48;46,73.3,,63,8,,48;37.5,73.4,,57,3,,48;42.2,58.1,,40,2;38,43.7,,71,7;41.2,23.6,,40,1;47.7,16,,40,1;56.2,20.9,,61,5,,52;51.8,30.9,,42,7;64.7,20,,40,2,,52;56.2,7.4,,40,2,,52;49.7,80,,40,3,1,48;49.3,82.4,,62,5,1,48;50,77.1,,40,1,1,49;53.5,83.7,,43,5,1,48;48.4,77.9,,43,3,1,49;49.5,85.1,,40,2,1,48;47.8,80.5,,42,3,1,48;51.3,86.4,,73,4,1,48;54.6,84.9,,46,4,1,48;47.1,84,,40,1,1;47.9,75.1,,40,3,1,49;52.6,88.1,,40,2,1,48;48.3,86.8,,40,2,1,48;46.4,78.6,,40,1,1,48;56.2,83.9,,51,3,1,48;46.7,76.6,,49,3,1,48;45.6,82,,40,1,1,48;45.5,84.7,,40,3,1,48;45.9,87,,40,2,1,48;44.3,80.7,,57,3,1,48;55.9,89.4,,47,3,1,49;44.2,82.9,,42,3,1,48;54,91.2,,40,2,1,48;58,87.1,,40,3,1,48;43.3,76.6,,40,1,1;45.2,70.2,,47,7,1;42.1,81.4,,40,6,1,48;41.9,75.6,,40,3,1;41,78.1,,40,4,1,48;44.6,68.2,,52,5,1;40.4,80.4,,41,2,1;41.6,70.1,,40,1,1,48;44,65.3,,40,7,1;44.4,63.3,,40,2,1;39.7,70.1,,40,1,1,48;42.9,63.1,,41,5,1;38.1,56,,40,1,1;38,53.6,,40,2,1;39,51.1,,50,3,1;38.8,47.2,,40,2,1;38.8,45.4,,41,4,1;48,38.5,,40,1,1;49.3,35.7,,40,2,1;39.3,38.8,,40,1,1;37.6,39.3,,43,3,1;50,32.7,,55,4,1;40.7,33.5,,57,6,1;39.5,30.9,,40,2,1;53.7,27.4,,57,6,1,52;56.1,26.9,,40,3,1,52;56.5,24.5,,40,2,1,52;55.1,24.1,,46,3,1,52;45,24,,40,1,1;41,24.9,,41,2,1;42.9,24.1,,40,1,1;43.8,22.3,,40,2,1;46.8,19.6,,40,1,1;45,18.3,,40,2,1;62.4,19.7,,40,3,1,52;57.7,17.8,,48,3,1,52;52.6,16,,40,2,1,52;50.4,15.7,,55,3,1,52;46.3,15.6,,40,1,1;61.6,16.8,,59,3,1,52;53.9,14.4,,40,2,1,52;60.2,14.9,,40,1,1,52;50.6,12.5,,63,6,1,52;56.7,12.9,,40,1,1,52;61.9,13.5,,40,1,1,52;63.6,13.5,,40,1,1,52;55.8,10.8,,40,3,1,52", spread = true },
 				{ t = "interact", quest = 5165, object = 176159, map = 1448, x = 37.68, y = 52.69, z = 296.6, f = "e", note = "{object:176159}, below ground", oi = 2 },
 				{ t = "interact", quest = 5165, object = 176160, map = 1448, x = 36.73, y = 53.27, z = 298.2, f = "e", note = "{object:176160}, below ground", oi = 3 },
 				{ t = "interact", quest = 5165, object = 176158, map = 1448, x = 36.27, y = 56.3, z = 316, f = "e", note = "{object:176158}, below ground", oi = 1 },
@@ -13933,8 +13914,8 @@ G(function() return {
 			title = "{area:1767}",
 			note = "Follow the road north to {area:1767}. The Irontree Stompers carry the heart; finish the claws on the Angerclaw Grizzlies and Felpaw Ravagers of the north.",
 			goals = {
-				{ t = "collect", quest = 4084, item = 11172, count = 11, map = 1448, x = 51.42, y = 80.62, f = "e", fromNpcs = { { npc = 8959, npcName = "Felpaw Wolf" }, { npc = 8956, npcName = "Angerclaw Bear" }, { npc = 8957, npcName = "Angerclaw Grizzly" }, { npc = 8958, npcName = "Angerclaw Mauler" }, { npc = 8960, npcName = "Felpaw Scavenger" } }, lvl = 50, oi = 1, spotsPacked = "52.1,82,,66,4,,48;56.5,91.4,,40,2,,48;46,73.3,,63,8,,48;37.5,73.4,,57,3,,48;42.2,58.1,,40,2;38,43.7,,71,7;41.2,23.6,,40,1;47.7,16,,40,1;56.2,20.9,,61,5,,52;51.8,30.9,,42,7;64.7,20,,40,2,,52;56.2,7.4,,40,2,,52;49.7,80,,40,3,1,48;49.3,82.4,,62,5,1,48;50,77.1,,40,1,1,49;53.5,83.7,,43,5,1,48;48.4,77.9,,43,3,1,49;49.5,85.1,,40,2,1,48;47.8,80.5,,42,3,1,48;51.3,86.4,,73,4,1,48;54.6,84.9,,46,4,1,48;47.1,84,,40,1,1;47.9,75.1,,40,3,1,49;52.6,88.1,,40,2,1,48;48.3,86.8,,40,2,1,48;46.4,78.6,,40,1,1,48;56.2,83.9,,51,3,1,48;46.7,76.6,,49,3,1,48;45.6,82,,40,1,1,48;45.5,84.7,,40,3,1,48;45.9,87,,40,2,1,48;44.3,80.7,,57,3,1,48;55.9,89.4,,47,3,1,49;44.2,82.9,,42,3,1,48;54,91.2,,40,2,1,48;58,87.1,,40,3,1,48;43.3,76.6,,40,1,1;45.2,70.2,,47,7,1;42.1,81.4,,40,6,1,48;41.9,75.6,,40,3,1;41,78.1,,40,4,1,48;44.6,68.2,,52,5,1;40.4,80.4,,41,2,1;41.6,70.1,,40,1,1,48;44,65.3,,40,7,1;44.4,63.3,,40,2,1;39.7,70.1,,40,1,1,48;42.9,63.1,,41,5,1;38.1,56,,40,1,1;38,53.6,,40,2,1;39,51.1,,50,3,1;38.8,47.2,,40,2,1;38.8,45.4,,41,4,1;48,38.5,,40,1,1;49.3,35.7,,40,2,1;39.3,38.8,,40,1,1;37.6,39.3,,43,3,1;50,32.7,,55,4,1;40.7,33.5,,57,6,1;39.5,30.9,,40,2,1;53.7,27.4,,57,6,1,52;56.1,26.9,,40,3,1,52;56.5,24.5,,40,2,1,52;55.1,24.1,,46,3,1,52;45,24,,40,1,1;41,24.9,,41,2,1;42.9,24.1,,40,1,1;43.8,22.3,,40,2,1;46.8,19.6,,40,1,1;45,18.3,,40,2,1;62.4,19.7,,40,3,1,52;57.7,17.8,,48,3,1,52;52.6,16,,40,2,1,52;50.4,15.7,,55,3,1,52;46.3,15.6,,40,1,1;61.6,16.8,,59,3,1,52;53.9,14.4,,40,2,1,52;60.2,14.9,,40,1,1,52;50.6,12.5,,63,6,1,52;56.7,12.9,,40,1,1,52;61.9,13.5,,40,1,1,52;63.6,13.5,,40,1,1,52;55.8,10.8,,40,3,1,52", spread = true },
-				{ t = "collect", quest = 4084, item = 11173, count = 1, map = 1448, x = 48.51, y = 29.84, f = "e", note = "Irontree Stompers", fromNpcs = { { npc = 7139, npcName = "Irontree Stomper" }, { npc = 7138, npcName = "Irontree Wanderer" } }, lvl = 53, oi = 2, spotsPacked = "48.5,29.5,,15,2;47.9,27.2,,31,2;46.6,23.9,,49,5;51.8,24.8,,47,4;53.2,23.4,,16,2;48.8,20.3,,37,4;49.8,29.1,,15,1,1;51,20.7,,54,4,1;52.9,21.7,,26,2,1;49.7,18.3,,39,3,1" },
+				{ t = "collect", quest = 4084, item = 11172, count = 11, map = 1448, x = 51.42, y = 80.62, f = "e", fromNpcs = { { npc = 8959, npcName = "Felpaw Wolf" }, { npc = 8956, npcName = "Angerclaw Bear" }, { npc = 8957, npcName = "Angerclaw Grizzly" }, { npc = 8958, npcName = "Angerclaw Mauler" }, { npc = 8960, npcName = "Felpaw Scavenger" }, { npc = 8961, npcName = "Felpaw Ravager" }, { npc = 14339, npcName = "Death Howl" }, { npc = 14344, npcName = "Mongress" } }, fromNpcsAt = "1;1;2;1,2;4,5;4;4;5;3,6;5;3,6;3,6;1,2;1;7;1;2,7;2;1;1;1,2;8;2,7;1;2;1;2;2,1;2;2;2;1,2;2,1,7;2;1;2;8;5;1;2,1,8;2;5,4;1,8;2;4;4;2;4;4;5;5,4;5;4,5;4;4,5;5;5;5;5,4;4;3,6;3,6;3;3;5;4,5;5;5;4;4,5;6,3;6,3;3;3,4,5;4;3;3,6;3;3;6;3;3;3", lvl = 50, oi = 1, spotsPacked = "52.1,82,,66,4,,48;56.5,91.4,,40,2,,48;46,73.3,,63,8,,48;37.5,73.4,,57,3,,48;42.2,58.1,,40,2;38,43.7,,71,7;41.2,23.6,,40,1;47.7,16,,40,1;56.2,20.9,,61,5,,52;51.8,30.9,,42,7;64.7,20,,40,2,,52;56.2,7.4,,40,2,,52;49.7,80,,40,3,1,48;49.3,82.4,,62,5,1,48;50,77.1,,40,1,1,49;53.5,83.7,,43,5,1,48;48.4,77.9,,43,3,1,49;49.5,85.1,,40,2,1,48;47.8,80.5,,42,3,1,48;51.3,86.4,,73,4,1,48;54.6,84.9,,46,4,1,48;47.1,84,,40,1,1;47.9,75.1,,40,3,1,49;52.6,88.1,,40,2,1,48;48.3,86.8,,40,2,1,48;46.4,78.6,,40,1,1,48;56.2,83.9,,51,3,1,48;46.7,76.6,,49,3,1,48;45.6,82,,40,1,1,48;45.5,84.7,,40,3,1,48;45.9,87,,40,2,1,48;44.3,80.7,,57,3,1,48;55.9,89.4,,47,3,1,49;44.2,82.9,,42,3,1,48;54,91.2,,40,2,1,48;58,87.1,,40,3,1,48;43.3,76.6,,40,1,1;45.2,70.2,,47,7,1;42.1,81.4,,40,6,1,48;41.9,75.6,,40,3,1;41,78.1,,40,4,1,48;44.6,68.2,,52,5,1;40.4,80.4,,41,2,1;41.6,70.1,,40,1,1,48;44,65.3,,40,7,1;44.4,63.3,,40,2,1;39.7,70.1,,40,1,1,48;42.9,63.1,,41,5,1;38.1,56,,40,1,1;38,53.6,,40,2,1;39,51.1,,50,3,1;38.8,47.2,,40,2,1;38.8,45.4,,41,4,1;48,38.5,,40,1,1;49.3,35.7,,40,2,1;39.3,38.8,,40,1,1;37.6,39.3,,43,3,1;50,32.7,,55,4,1;40.7,33.5,,57,6,1;39.5,30.9,,40,2,1;53.7,27.4,,57,6,1,52;56.1,26.9,,40,3,1,52;56.5,24.5,,40,2,1,52;55.1,24.1,,46,3,1,52;45,24,,40,1,1;41,24.9,,41,2,1;42.9,24.1,,40,1,1;43.8,22.3,,40,2,1;46.8,19.6,,40,1,1;45,18.3,,40,2,1;62.4,19.7,,40,3,1,52;57.7,17.8,,48,3,1,52;52.6,16,,40,2,1,52;50.4,15.7,,55,3,1,52;46.3,15.6,,40,1,1;61.6,16.8,,59,3,1,52;53.9,14.4,,40,2,1,52;60.2,14.9,,40,1,1,52;50.6,12.5,,63,6,1,52;56.7,12.9,,40,1,1,52;61.9,13.5,,40,1,1,52;63.6,13.5,,40,1,1,52;55.8,10.8,,40,3,1,52", spread = true },
+				{ t = "collect", quest = 4084, item = 11173, count = 1, map = 1448, x = 48.51, y = 29.84, f = "e", note = "Irontree Stompers", fromAlso = "Irontree Stomper", fromAlsoId = 7139, fromId = 7138, fromKind = "npc", fromNpcs = { { npc = 7139, npcName = "Irontree Stomper" }, { npc = 7138, npcName = "Irontree Wanderer" } }, lvl = 53, oi = 2, spotsPacked = "48.5,29.5,,15,2;47.9,27.2,,31,2;46.6,23.9,,49,5;51.8,24.8,,47,4;53.2,23.4,,16,2;48.8,20.3,,37,4;49.8,29.1,,15,1,1;51,20.7,,54,4,1;52.9,21.7,,26,2,1;49.7,18.3,,39,3,1" },
 			},
 		},
 		{
@@ -14065,9 +14046,9 @@ G(function() return {
 			title = "{area:2742}: kill these as you meet them",
 			note = "The Twilight's Hammer dig fills the north-west corner: tablet fragments lie on the ground and the Dust Stormers and Desert Rumblers carry them too. Every cultist can drop an {item:20404}: keep twenty, ten for {npc:15306} and ten for {npc:15194} later.",
 			goals = {
-				{ t = "collect", quest = 8318, item = 20404, count = 10, map = 1451, x = 41.84, y = 44.13, f = "e", note = "Twilight's Hammer cultists", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 15213, npcName = "Twilight Overlord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 15201, npcName = "Twilight Flamereaver" }, { npc = 11881, npcName = "Twilight Geolord" } }, lvl = 60, oi = 1, spotsPacked = "40.9,44.7,,54,13;39,41.7,,40,5;27.5,32.8,,66,14;24.9,36.7,,51,9;18,31.2,,40,1,,59;22.8,68.7,,40,1,,59;18.4,81.7,,43,8;19.9,87.8,,45,5;57.1,17.5,,40,2,,59;66.1,16,,59,6,,61;66.4,20.9,,54,12,,61;73.6,12.5,,40,4,,61;39,46.5,,59,10,1;38.3,44.2,,60,15,1;25.7,33.6,,73,16,1;68,18,,40,5,1,61;20.6,84.5,,47,8,1;71.1,13.4,,54,9,1,61;18,84.8,,67,14,1;72.7,14.8,,40,4,1,61", spread = true },
+				{ t = "collect", quest = 8318, item = 20404, count = 10, map = 1451, x = 41.84, y = 44.13, f = "e", note = "Twilight's Hammer cultists", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 15213, npcName = "Twilight Overlord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 15201, npcName = "Twilight Flamereaver" }, { npc = 11881, npcName = "Twilight Geolord" }, { npc = 11883, npcName = "Twilight Master" }, { npc = 14479, npcName = "Twilight Lord Everun" }, { npc = 15542, npcName = "Twilight Marauder" } }, fromNpcsAt = "1,5;5,1;5,3,1,7;1,5;1;1;1,5,6;5,1;8;2,1,6;2,1,6;4,2;1,3,5,7;3,1,5,7;1,3,5,7;2,6,1;5,1,6;4,2;3,1,5,6,7;4,2", lvl = 60, oi = 1, spotsPacked = "40.9,44.7,,54,13;39,41.7,,40,5;27.5,32.8,,66,14;24.9,36.7,,51,9;18,31.2,,40,1,,59;22.8,68.7,,40,1,,59;18.4,81.7,,43,8;19.9,87.8,,45,5;57.1,17.5,,40,2,,59;66.1,16,,59,6,,61;66.4,20.9,,54,12,,61;73.6,12.5,,40,4,,61;39,46.5,,59,10,1;38.3,44.2,,60,15,1;25.7,33.6,,73,16,1;68,18,,40,5,1,61;20.6,84.5,,47,8,1;71.1,13.4,,54,9,1,61;18,84.8,,67,14,1;72.7,14.8,,40,4,1,61", spread = true },
 				{ t = "collect", quest = 8284, item = 20378, count = 8, map = 1451, x = 28.49, y = 27.24, f = "e", note = "Twilight Tablet Fragments", fromAlso = "Desert Rumbler", fromAlsoId = 11746, fromId = 11744, fromKind = "npc", fromNpcs = { { npc = 14455, npcName = "Whirling Invader" }, { npc = 11744, npcName = "Dust Stormer" }, { npc = 11746, npcName = "Desert Rumbler" } }, lvl = 57, oi = 1, spotsPacked = "28.5,26.9,,40,3,,58;29,22,,40,5;31.1,16.5,,66,15;28.2,14.7,,68,12,,58;24.6,11.1,,49,9,,58;23.2,15.3,,77,11,,58;20.2,17.3,,64,15,,58;21.7,8.6,,43,6,,58;17.8,26.1,,65,12;19.2,31.2,,71,12;23.2,27.1,,40,3;34.8,12.9,,40,4;29.2,18.7,,54,9,1;21.6,29.1,,45,7,1;21.1,25.1,,61,11,1;22,20.8,,64,12,1,58;33.2,14.3,,60,12,1;19.2,21.4,,55,13,1;27.2,12,,43,8,1,58;21.3,11.7,,71,15,1,58", spread = true },
-				{ t = "collect", item = 20404, count = 20, map = 1451, x = 28.38, y = 30.99, f = "e", optional = true, note = "Ten more for {quest:8323}", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 15213, npcName = "Twilight Overlord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 15201, npcName = "Twilight Flamereaver" }, { npc = 11881, npcName = "Twilight Geolord" } }, lvl = 60, spotsPacked = "27.5,32.8,,66,14;24.9,36.7,,51,9;18,31.2,,40,1,,59;39,41.7,,40,5;40.9,44.7,,54,13;22.8,68.7,,40,1,,59;18.4,81.7,,43,8;19.9,87.8,,45,5;57.1,17.5,,40,2,,59;66.1,16,,59,6,,61;66.4,20.9,,54,12,,61;73.6,12.5,,40,4,,61;25.7,33.6,,73,16,1;38.3,44.2,,60,15,1;39,46.5,,59,10,1;20.6,84.5,,47,8,1;18,84.8,,67,14,1;68,18,,40,5,1,61;71.1,13.4,,54,9,1,61;72.7,14.8,,40,4,1,61", spread = true },
+				{ t = "collect", item = 20404, count = 20, map = 1451, x = 28.38, y = 30.99, f = "e", optional = true, note = "Ten more for {quest:8323}", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 15213, npcName = "Twilight Overlord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 15201, npcName = "Twilight Flamereaver" }, { npc = 11881, npcName = "Twilight Geolord" }, { npc = 11883, npcName = "Twilight Master" }, { npc = 14479, npcName = "Twilight Lord Everun" }, { npc = 15542, npcName = "Twilight Marauder" } }, fromNpcsAt = "5,3,1,7;1,5;1;5,1;1,5;1;1,5,6;5,1;8;2,1,6;2,1,6;4,2;1,3,5,7;3,1,5,7;1,3,5,7;5,1,6;3,1,5,6,7;2,6,1;4,2;4,2", lvl = 60, spotsPacked = "27.5,32.8,,66,14;24.9,36.7,,51,9;18,31.2,,40,1,,59;39,41.7,,40,5;40.9,44.7,,54,13;22.8,68.7,,40,1,,59;18.4,81.7,,43,8;19.9,87.8,,45,5;57.1,17.5,,40,2,,59;66.1,16,,59,6,,61;66.4,20.9,,54,12,,61;73.6,12.5,,40,4,,61;25.7,33.6,,73,16,1;38.3,44.2,,60,15,1;39,46.5,,59,10,1;20.6,84.5,,47,8,1;18,84.8,,67,14,1;68,18,,40,5,1,61;71.1,13.4,,54,9,1,61;72.7,14.8,,40,4,1,61", spread = true },
 			},
 		},
 		{
@@ -14317,21 +14298,20 @@ G(function() return {
 			title = "{npc:11556}",
 			goals = {
 				{ t = "turnin", quest = 8464, npc = 11556, map = 1452, x = 27.73, y = 34.5, z = 586.1, f = "e" },
-				{ t = "accept", minLevel = 50, quest = 8469, npc = 11556, map = 1452, x = 27.73, y = 34.5, z = 586.1, f = "e", pre = { 8464 }, qlvl = 56 },
 			},
 		},
 		{
 			title = "{zone:1452}: kill these as you meet them",
 			note = "The western Winterfall furbolgs drop the beads.\nCareful: Turning in spawns three or four level 56-57 Winterfall ambushers that attack you; you can escape them while mounted, in stealth or with {spell:5384}, and they then gather by the lake so you can take the next quest.",
 			goals = {
-				{ t = "collect", quest = 8469, item = 21383, count = 5, map = 1452, x = 27.9, y = 34.48, f = "e", fromNpcs = { { npc = 10916, npcName = "Winterfall Runner" }, { npc = 7442, npcName = "Winterfall Pathfinder" }, { npc = 7440, npcName = "Winterfall Den Watcher" }, { npc = 7441, npcName = "Winterfall Totemic" }, { npc = 7438, npcName = "Winterfall Ursa" } }, lvl = 54, oi = 1, spotsPacked = "27.9,34.5,,40,1,,57;31.4,36.3,,40,1;32.8,37.3,,45,4,,55;34.7,37,,40,1;39.6,43.5,,58,7,,55;41.1,42.9,,51,6,,56;42.2,44.4,,40,2;65.5,37.8,,51,4,,58;67.3,39.5,,56,4,,58;69.5,38.3,,40,1,,57;68.2,35,,40,3,,56;66.5,34.9,,58,6,,56;30.3,36.3,,54,8,1,56;31.2,35,,40,2,1;33.6,36.5,,40,3,1,55;42.4,42.8,,40,2,1;67.3,36,,69,5,1,58;68.2,37.5,,45,5,1,58", spread = true },
+				{ t = "collect", item = 21383, count = 5, map = 1452, x = 27.9, y = 34.48, f = "e", fromNpcs = { { npc = 10916, npcName = "Winterfall Runner" }, { npc = 7442, npcName = "Winterfall Pathfinder" }, { npc = 7440, npcName = "Winterfall Den Watcher" }, { npc = 7441, npcName = "Winterfall Totemic" }, { npc = 7438, npcName = "Winterfall Ursa" }, { npc = 7439, npcName = "Winterfall Shaman" } }, fromNpcsAt = "1;2;2,4;2;4,2;2,3,4;2;5;5,6;6;3;3;3,4,2;2;2,4;2;3,5,6;5,6", lvl = 54, spotsPacked = "27.9,34.5,,40,1,,57;31.4,36.3,,40,1;32.8,37.3,,45,4,,55;34.7,37,,40,1;39.6,43.5,,58,7,,55;41.1,42.9,,51,6,,56;42.2,44.4,,40,2;65.5,37.8,,51,4,,58;67.3,39.5,,56,4,,58;69.5,38.3,,40,1,,57;68.2,35,,40,3,,56;66.5,34.9,,58,6,,56;30.3,36.3,,54,8,1,56;31.2,35,,40,2,1;33.6,36.5,,40,3,1,55;42.4,42.8,,40,2,1;67.3,36,,69,5,1,58;68.2,37.5,,45,5,1,58", spread = true },
 				{ t = "collect", quest = 5087, item = 12829, count = 1, map = 1452, x = 27.9, y = 34.5, f = "e", fromId = 10916, fromKind = "npc", fromNpcs = { { npc = 10916, npcName = "Winterfall Runner" } }, oi = 1 },
 			},
 		},
 		{
 			title = "{npc:11556}",
 			goals = {
-				{ t = "turnin", quest = 8469, npc = 11556, map = 1452, x = 27.73, y = 34.5, z = 586.1, f = "e" },
+				{ t = "turnin", quest = 8469, npc = 11556, map = 1452, x = 27.73, y = 34.5, z = 586.1, f = "e", direct = true, qlvl = 56 },
 			},
 		},
 		{
@@ -14366,8 +14346,7 @@ G(function() return {
 		{
 			title = "{npc:11939}",
 			goals = {
-				{ t = "accept", minLevel = 54, quest = 1185, npc = 11939, map = 1450, x = 44.88, y = 35.6, z = 494.1, f = "e", note = "{npc:11939} walks around {area:2361}: look inside the circle on the map", pre = { 6845 }, qlvl = 57, spotsPacked = "46.17,37.71,,48,1" },
-				{ t = "turnin", quest = 1185, npc = 11939, map = 1450, x = 44.88, y = 35.6, z = 494.1, f = "e", spotsPacked = "46.17,37.71,,48,1" },
+				{ t = "turnin", quest = 1185, npc = 11939, map = 1450, x = 44.88, y = 35.6, z = 494.1, f = "e", direct = true, qlvl = 57, spotsPacked = "46.17,37.71,,48,1" },
 			},
 		},
 		{
@@ -14449,15 +14428,14 @@ G(function() return {
 			note = "{npc:14722} takes sixty Silk, sixty Mageweave and sixty {item:14047}: hand in what you carry (or buy at the Auction House), skip the rest.",
 			goals = {
 				{ t = "train", zone = 1453, only = { classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, candidates = { 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182 }, class = true },
-				{ t = "collect", quest = 7793, item = 4306, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:4306}, from your bags", oi = 1 },
-				{ t = "collect", quest = 7794, item = 4338, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:4338}, from your bags", oi = 1 },
-				{ t = "turnin", quest = 7793, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, note = "{npc:14722}, in the {object:2096}" },
-				{ t = "turnin", quest = 7794, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true },
-				{ t = "collect", quest = 7791, item = 2592, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:2592}, from your bags", fromNpcs = { { npc = 4969, npcName = "Old Town Thug" }, { npc = 2044, npcName = "Forlorn Spirit" } }, oi = 1, spotsPacked = "61.2,71.3,,15,0;73.8,59.2,,15,1,1,26;42.8,72.4,,15,1,1,26" },
-				{ t = "turnin", quest = 7791, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true },
-				{ t = "accept", minLevel = 50, quest = 7795, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, preAll = { 7791, 7793, 7794 }, qlvl = 60 },
-				{ t = "collect", quest = 7795, item = 14047, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:14047}, from your bags", fromNpcs = { { npc = 466, npcName = "General Marcus Jonathan" } }, oi = 1, spotsPacked = "61.2,71.3,,15,0" },
-				{ t = "turnin", quest = 7795, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true },
+				{ t = "collect", item = 4306, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:4306}, from your bags" },
+				{ t = "collect", item = 4338, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:4338}, from your bags" },
+				{ t = "turnin", quest = 7793, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, note = "{npc:14722}, in the {object:2096}", direct = true, qlvl = 60 },
+				{ t = "turnin", quest = 7794, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, direct = true, qlvl = 60 },
+				{ t = "collect", item = 2592, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:2592}, from your bags", fromNpcs = { { npc = 4969, npcName = "Old Town Thug" }, { npc = 2044, npcName = "Forlorn Spirit" } }, spotsPacked = "61.2,71.3,,15,0;73.8,59.2,,15,1,1,26;42.8,72.4,,15,1,1,26" },
+				{ t = "turnin", quest = 7791, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, direct = true, qlvl = 60 },
+				{ t = "collect", item = 14047, count = 60, map = 1453, x = 61.2, y = 71.3, optional = true, note = "{item:14047}, from your bags", fromNpcs = { { npc = 466, npcName = "General Marcus Jonathan" } }, spotsPacked = "61.2,71.3,,15,0" },
+				{ t = "turnin", quest = 7795, npc = 14722, map = 1453, x = 53.93, y = 81.69, z = 97.4, optional = true, direct = true, qlvl = 60 },
 			},
 		},
 		{
@@ -14471,24 +14449,22 @@ G(function() return {
 			note = "Take the {area:2257} to {zone:1455}. {npc:14724} and {npc:14723} each take sixty Wool, sixty Silk and sixty Mageweave, then sixty {item:14047}: hand in what you carry (or buy at the Auction House), skip the rest.",
 			goals = {
 				{ t = "turnin", quest = 4513, npc = 9616, map = 1455, x = 75.77, y = 23.38, z = 503.4, f = "e" },
-				{ t = "collect", quest = 7807, item = 2592, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:2592}, from your bags", oi = 1 },
-				{ t = "collect", quest = 7808, item = 4306, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4306}, from your bags", oi = 1 },
-				{ t = "collect", quest = 7809, item = 4338, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4338}, from your bags", oi = 1 },
-				{ t = "turnin", quest = 7807, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true },
-				{ t = "turnin", quest = 7808, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true },
-				{ t = "turnin", quest = 7809, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true },
-				{ t = "accept", minLevel = 50, quest = 7811, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, preAll = { 7807, 7808, 7809 }, qlvl = 60 },
-				{ t = "collect", quest = 7811, item = 14047, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:14047}, from your bags", oi = 1 },
-				{ t = "turnin", quest = 7811, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true },
-				{ t = "collect", quest = 7802, item = 2592, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:2592}, from your bags", oi = 1 },
-				{ t = "collect", quest = 7803, item = 4306, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4306}, from your bags", oi = 1 },
-				{ t = "collect", quest = 7804, item = 4338, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4338}, from your bags", oi = 1 },
-				{ t = "turnin", quest = 7802, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true },
-				{ t = "turnin", quest = 7803, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true },
-				{ t = "turnin", quest = 7804, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true },
-				{ t = "accept", minLevel = 50, quest = 7805, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, preAll = { 7802, 7803, 7804 }, qlvl = 60 },
-				{ t = "collect", quest = 7805, item = 14047, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:14047}, from your bags", oi = 1 },
-				{ t = "turnin", quest = 7805, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true },
+				{ t = "collect", item = 2592, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:2592}, from your bags" },
+				{ t = "collect", item = 4306, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4306}, from your bags" },
+				{ t = "collect", item = 4338, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4338}, from your bags" },
+				{ t = "turnin", quest = 7807, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "turnin", quest = 7808, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "turnin", quest = 7809, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "collect", item = 14047, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:14047}, from your bags" },
+				{ t = "turnin", quest = 7811, npc = 14724, map = 1455, x = 74.09, y = 48.22, z = 502, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "collect", item = 2592, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:2592}, from your bags" },
+				{ t = "collect", item = 4306, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4306}, from your bags" },
+				{ t = "collect", item = 4338, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:4338}, from your bags" },
+				{ t = "turnin", quest = 7802, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "turnin", quest = 7803, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "turnin", quest = 7804, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, direct = true, qlvl = 60 },
+				{ t = "collect", item = 14047, count = 60, map = 1455, x = 24.2, y = 74.7, f = "e", optional = true, note = "{item:14047}, from your bags" },
+				{ t = "turnin", quest = 7805, npc = 14723, map = 1455, x = 43.22, y = 31.57, z = 502.3, f = "e", optional = true, direct = true, qlvl = 60 },
 				{ t = "train", zone = 1455, only = { classes = { "SHAMAN" } }, note = "{zone:1453} has no shaman trainer", candidates = { 183, 184, 185 }, class = true },
 			},
 		},
@@ -14636,8 +14612,7 @@ G(function() return {
 				{ t = "turnin", quest = 6185, npc = 12425, map = 1422, x = 43.61, y = 84.51, z = 62.6, f = "e" },
 				{ t = "note", text = "Flint's next task goes to {zone:1453}: you are level 60 now, skip it." },
 				{ t = "turnin", quest = 5803, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", optional = true },
-				{ t = "accept", minLevel = 55, quest = 5505, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", optional = true, pre = { 5803 }, qlvl = 60 },
-				{ t = "turnin", quest = 5505, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", optional = true },
+				{ t = "turnin", quest = 5505, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", optional = true, direct = true, qlvl = 60 },
 			},
 		},
 	},
@@ -14889,7 +14864,7 @@ G(function() return {
 			title = "{npc:786}",
 			goals = {
 				{ t = "turnin", quest = 3365, npc = 12738, map = 1426, x = 24.98, y = 75.96, z = 385.8, f = "e", note = "{npc:12738}, next to him" },
-				{ t = "collect", only = { classes = { "SHAMAN" } }, quest = 94373, item = 264356, count = 2, map = 1426, x = 25.86, y = 78.26, f = "e", note = "Iceclaw Bear Pendants, from the Frostmane Troll Whelps on the slopes above the camp", fromId = 706, fromKind = "npc", fromNpcs = { { npc = 706, npcName = "Frostmane Troll Whelp" }, { npc = 946, npcName = "Frostmane Novice" } }, lvl = 4, oi = 1, spotsPacked = "26.7,79.4,,57,11;28.6,80.5,,60,15;29,82.5,,55,6;30.2,80.4,,53,11;22.8,79.5,,55,9;20.9,76.5,,54,9", spread = true },
+				{ t = "collect", only = { classes = { "SHAMAN" } }, quest = 94373, item = 264356, count = 2, map = 1426, x = 25.86, y = 78.26, f = "e", note = "Iceclaw Bear Pendants, from the Frostmane Troll Whelps on the slopes above the camp", fromAlso = "Frostmane Novice", fromAlsoId = 946, fromId = 706, fromKind = "npc", fromNpcs = { { npc = 706, npcName = "Frostmane Troll Whelp" }, { npc = 946, npcName = "Frostmane Novice" } }, lvl = 4, oi = 1, spotsPacked = "26.7,79.4,,57,11;28.6,80.5,,60,15;29,82.5,,55,6;30.2,80.4,,53,11;22.8,79.5,,55,9;20.9,76.5,,54,9", spread = true },
 				{ t = "turnin", quest = 218, npc = 786, map = 1426, x = 25.08, y = 75.71, z = 385.9, f = "e" },
 				{ t = "accept", minLevel = 1, quest = 282, npc = 786, map = 1426, x = 25.08, y = 75.71, z = 385.9, f = "e", closedBy = { 287 }, pre = { 218 }, qlvl = 5 },
 			},
@@ -14921,7 +14896,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 282, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e" },
 				{ t = "accept", minLevel = 1, quest = 420, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e", pre = { 282 }, qlvl = 5 },
-				{ t = "accept", minLevel = 4, quest = 96628, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e", closedBy = { 96608, 96627, 96630, 96638, 96652, 96656, 96659 }, pre = { 282 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96628, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e", closedBy = { 96627, 96630, 96638, 96652, 96656, 96659 }, pre = { 282 }, qlvl = 6 },
 				{ t = "accept", minLevel = 1, quest = 2160, npc = 6782, map = 1426, x = 33.85, y = 72.24, z = 431.7, f = "e", qlvl = 5 },
 			},
 		},
@@ -14938,7 +14913,7 @@ G(function() return {
 			note = "Sit by Eric's campfire (type /sit) and wait for the buff. With a profession learned, Eric also offers its Camping 101, which its trainer takes: blacksmithing with {npc:1241} and {skill:129} with {npc:2326} in {area:131}, mining and engineering at {area:189}.",
 			goals = {
 				{ t = "turnin", quest = 96628, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: {quest:96628}" },
-				{ t = "accept", minLevel = 4, quest = 96608, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", closedBy = { 95998, 96101, 96604, 96605, 96606, 96607 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96608, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", closedBy = { 95998, 96101, 96604, 96605, 96606, 96607 }, pre = { 96628 }, qlvl = 6 },
 				{ t = "complete", quest = 96608, objs = { { count = 1, text = "Sit near the campfire (Optional)" }, { count = 1, text = "Gain the Boosted Rest buff" } } },
 				{ t = "turnin", quest = 96608, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e" },
 				{ t = "accept", minLevel = 4, quest = 96629, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", closedBy = { 96626, 96634, 96646, 96655, 96658, 96661 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, qlvl = 6 },
@@ -14946,28 +14921,28 @@ G(function() return {
 		},
 		{
 			title = "{quest:96044}",
-			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 } },
+			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 }, { k = "knows", spell = 1230171, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96044, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:1241}, in the cellar west of the distillery", closedBy = { 97900, 97916, 97928, 97939, 97952, 97964 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 164, profName = "Blacksmithing", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96047}",
-			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 } },
+			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 }, { k = "knows", spell = 1230117, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96047, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:2326} in the {area:2102}", closedBy = { 97903, 97919, 97931, 97942, 97955, 97965 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 129, profName = "First Aid", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96046}",
-			when = { { k = "skill", n = 1, name = "Mining", skillLine = 186 } },
+			when = { { k = "skill", n = 1, name = "Mining", skillLine = 186 }, { k = "knows", spell = 1230161, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96046, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:5392} at {area:189}", closedBy = { 97907, 97923, 97935, 97948, 97959, 97970 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 186, profName = "Mining", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96058}",
-			when = { { k = "skill", n = 1, name = "Engineering", skillLine = 202 } },
+			when = { { k = "skill", n = 1, name = "Engineering", skillLine = 202 }, { k = "knows", spell = 1230656, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96058, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:1702} at {area:189}", closedBy = { 97902, 97918, 97930, 97941, 97954, 98285, 98287 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 202, profName = "Engineering", profRank = 1, qlvl = 6 },
 			},
@@ -15522,7 +15497,7 @@ G(function() return {
 			goals = {
 				{ t = "kill", quest = 224, npc = 1161, count = 10, map = 1432, x = 29.63, y = 72.54, z = 374.6, f = "e", lvl = 12, oi = 1, spotsPacked = "30.8,74.4,365.6,51,10;33,70.9,365.4,40,6;34.9,72.4,358.2,40,4;32.1,79,372.9,41,8;27.1,55.9,366.3,40,3;26.8,49.3,363.2,51,8", spread = true, target = "Stonesplinter Trogg" },
 				{ t = "kill", quest = 224, npc = 1162, count = 10, map = 1432, x = 29.57, y = 72.89, z = 374.9, f = "e", lvl = 12, oi = 2, spotsPacked = "31.1,74.3,366.5,50,7;34.2,75.9,366.2,40,5;34.3,71.2,363.8,40,3;31.6,80.5,380.8,40,3;27.2,57.4,365.4,50,6;26.4,48.9,365.7,40,4", spread = true, target = "Stonesplinter Scout" },
-				{ t = "collect", quest = 267, item = 2536, count = 8, map = 1432, x = 29.57, y = 72.89, f = "e", fromNpcs = { { npc = 1162, npcName = "Stonesplinter Scout" }, { npc = 1161, npcName = "Stonesplinter Trogg" }, { npc = 1163, npcName = "Stonesplinter Skullthumper" }, { npc = 1164, npcName = "Stonesplinter Bonesnapper" }, { npc = 1165, npcName = "Stonesplinter Geomancer" } }, lvl = 14, oi = 1, spotsPacked = "31,74.5,,55,18,,12;30.9,80.2,,83,13;28.3,85.3,,72,11;35.3,83.8,,51,13;35.6,93.8,,50,12,,16;27.1,56.9,,59,9,,12;26.7,49.1,,53,12,,12;48.8,29,,49,7;48,21.1,,42,9;54.2,26.5,,40,8,,16;68.8,61.1,,59,10,,20;72,63.7,,40,6,,20;33.8,71.2,,49,12,1,12;34.1,75.9,,42,7,1,12;30.7,84.7,,40,2,1;36.2,80,,45,5,1;37.2,86.5,,40,6,1,16;34.4,89.6,,50,17,1,16;36.9,90.5,,43,4,1,16;51.6,23.9,,47,14,1,16;69.5,66.2,,43,10,1,20;71.9,68,,40,4,1,19", spread = true },
+				{ t = "collect", quest = 267, item = 2536, count = 8, map = 1432, x = 29.57, y = 72.89, f = "e", fromNpcs = { { npc = 1162, npcName = "Stonesplinter Scout" }, { npc = 1161, npcName = "Stonesplinter Trogg" }, { npc = 1163, npcName = "Stonesplinter Skullthumper" }, { npc = 1164, npcName = "Stonesplinter Bonesnapper" }, { npc = 1165, npcName = "Stonesplinter Geomancer" }, { npc = 1166, npcName = "Stonesplinter Seer" }, { npc = 1197, npcName = "Stonesplinter Shaman" }, { npc = 1167, npcName = "Stonesplinter Digger" }, { npc = 1393, npcName = "Berserk Trogg" } }, fromNpcsAt = "2,1;2,1,6,3;6,3;6,3;7,4;1,2;2,1;6,3;6,3;7,4;5,8,9;5,9,8;2,1;1,2;3,6;6,3;3,7,4,6;6,3,4,7;7,4,3,6;4,6,7,3;8,5,9;8,5", lvl = 14, oi = 1, spotsPacked = "31,74.5,,55,18,,12;30.9,80.2,,83,13;28.3,85.3,,72,11;35.3,83.8,,51,13;35.6,93.8,,50,12,,16;27.1,56.9,,59,9,,12;26.7,49.1,,53,12,,12;48.8,29,,49,7;48,21.1,,42,9;54.2,26.5,,40,8,,16;68.8,61.1,,59,10,,20;72,63.7,,40,6,,20;33.8,71.2,,49,12,1,12;34.1,75.9,,42,7,1,12;30.7,84.7,,40,2,1;36.2,80,,45,5,1;37.2,86.5,,40,6,1,16;34.4,89.6,,50,17,1,16;36.9,90.5,,43,4,1,16;51.6,23.9,,47,14,1,16;69.5,66.2,,43,10,1,20;71.9,68,,40,4,1,19", spread = true },
 			},
 		},
 		{
@@ -15550,7 +15525,7 @@ G(function() return {
 			title = "The west hills and the {area:925}",
 			note = "North through the hills west of the road to {npc:1343} at the {area:925}. The Tunnel Rat kobolds dig in the hills on the way; Elder Black Bears, Mountain Boars and Forest Lurkers roam the same ground.",
 			goals = {
-				{ t = "collect", quest = 416, item = 3110, count = 12, map = 1432, x = 27.4, y = 44.59, f = "e", note = "{item:3110}: Tunnel Rat kobolds", fromAlso = "Tunnel Rat Scout", fromAlsoId = 1173, fromId = 1172, fromKind = "npc", fromNpcs = { { npc = 1172, npcName = "Tunnel Rat Vermin" }, { npc = 1173, npcName = "Tunnel Rat Scout" }, { npc = 1174, npcName = "Tunnel Rat Geomancer" }, { npc = 1175, npcName = "Tunnel Rat Digger" }, { npc = 1176, npcName = "Tunnel Rat Forager" } }, lvl = 11, oi = 1, spotsPacked = "26.6,43.4,,54,12,,12;25,33.9,,40,3;24.2,29.1,,58,10;26.5,26.9,,40,1;35.8,24.2,,62,27,,14;37.1,27.2,,46,7,,13;40.1,24.2,,40,2;38.2,21,,50,4,,13;40.3,18.7,,40,2;36.2,16.9,,62,15,,13;38.7,12,,62,9;34,11.6,,40,2;26.5,31.8,,40,4,1", spread = true },
+				{ t = "collect", quest = 416, item = 3110, count = 12, map = 1432, x = 27.4, y = 44.59, f = "e", note = "{item:3110}: Tunnel Rat kobolds", fromAlso = "Tunnel Rat Scout", fromAlsoId = 1173, fromId = 1172, fromKind = "npc", fromNpcs = { { npc = 1172, npcName = "Tunnel Rat Vermin" }, { npc = 1173, npcName = "Tunnel Rat Scout" }, { npc = 1174, npcName = "Tunnel Rat Geomancer" }, { npc = 1175, npcName = "Tunnel Rat Digger" }, { npc = 1176, npcName = "Tunnel Rat Forager" }, { npc = 1202, npcName = "Tunnel Rat Kobold" }, { npc = 1177, npcName = "Tunnel Rat Surveyor" } }, fromNpcsAt = "1,6,5;1;1,2;2;4,3,5,7,1,2,6;1,3,2,4,5,6;1;1,4;1;1,5,6,2,4;1,6;1;1,2", lvl = 11, oi = 1, spotsPacked = "26.6,43.4,,54,12,,12;25,33.9,,40,3;24.2,29.1,,58,10;26.5,26.9,,40,1;35.8,24.2,,62,27,,14;37.1,27.2,,46,7,,13;40.1,24.2,,40,2;38.2,21,,50,4,,13;40.3,18.7,,40,2;36.2,16.9,,62,15,,13;38.7,12,,62,9;34,11.6,,40,2;26.5,31.8,,40,4,1", spread = true },
 				{ t = "collect", quest = 418, item = 3172, count = 3, map = 1432, x = 29.91, y = 46.84, f = "e", note = "{item:3172}: Mountain Boars", fromNpcs = { { npc = 1190, npcName = "Mountain Boar" }, { npc = 1191, npcName = "Mangy Mountain Boar" }, { npc = 1192, npcName = "Elder Mountain Boar" } }, lvl = 15, oi = 1, spotsPacked = "29.9,46.8,,42,1,,11;34.2,62.6,,42,1;41.8,55.3,,42,1;52.3,74.1,,42,2;62,58.9,,58,5;60.9,35.8,,65,4,,17;70.1,37.8,,42,1,,17;76.5,46.9,,42,2,,17;77.9,73.7,,42,1;39.5,29.2,,42,1,,11;31.8,24.1,,42,1,,11;25.3,13.9,,42,1,,11;27.3,39.1,,42,1,1,11;29.5,34.6,,42,2,1,11;39,51.3,,42,1,1;34.1,33.5,,58,6,1,11;37.7,36.8,,59,7,1,11;28.2,24.9,,42,2,1,11;24.3,21.4,,42,1,1,11;44.9,64.6,,42,2,1;30.6,16,,42,2,1,11;49.9,70.1,,42,2,1;59,63.6,,69,6,1;62,39.8,,42,4,1,17;64.1,48.7,,42,3,1;64.7,58.1,,42,3,1;64.4,64.5,,42,2,1;66.2,40,,43,6,1,17;66.4,68.9,,42,1,1;74.6,51.6,,42,2,1,17;74.8,42.1,,42,1,1,17;74.7,72.5,,42,1,1", spread = true },
 				{ t = "collect", quest = 418, item = 3173, count = 3, map = 1432, x = 29.39, y = 40.28, f = "e", note = "{item:3173}: Elder Black Bears", fromNpcs = { { npc = 1186, npcName = "Elder Black Bear" }, { npc = 1189, npcName = "Black Bear Patriarch" }, { npc = 1188, npcName = "Grizzled Black Bear" } }, lvl = 12, oi = 2, spotsPacked = "29.4,40.3,,49,1;38.5,33,,49,2;38.7,53.8,,63,3;39.9,73.1,,49,2;58.6,75,,49,1,,14;78.1,68.7,,49,1,,14;77.2,41.7,,49,2,,17;65.7,44.5,,91,6,,17;59.2,28.3,,75,4,,17;28.6,12.1,,63,4;23.8,25.4,,49,1;19.8,76.4,,49,2;25.5,38.4,,49,2,1;27.5,28.7,,49,1,1;34,30.4,,64,4,1;30.6,53.9,,49,1,1;30.1,24.7,,49,1,1;42.2,63.5,,71,4,1,14;63.8,32.7,,63,4,1,17;58.4,69.1,,49,1,1,14;67.9,49.3,,49,1,1,14;71,38,,92,6,1,17;66.4,73.2,,69,6,1,14;63.2,80.2,,49,1,1,14;74.3,44.6,,49,3,1,17;75.1,53.2,,51,4,1,14", spread = true },
 				{ t = "collect", quest = 418, item = 3174, count = 3, map = 1432, x = 31.08, y = 41.56, f = "e", note = "{item:3174}: Forest Lurkers", fromNpcs = { { npc = 1195, npcName = "Forest Lurker" }, { npc = 1185, npcName = "Wood Lurker" }, { npc = 14266, npcName = "Shanda the Spinner" }, { npc = 1184, npcName = "Cliff Lurker" } }, lvl = 11, oi = 3, spotsPacked = "29.8,43.3,,63,4;28.6,57,,42,1;38.6,73.9,,47,3;48.7,72.9,,66,4,,14;56.7,77.8,,42,2,,14;63.3,54.5,,44,3,,14;78.1,52.4,,42,1,,19;80,40.4,,42,3,,18;59.3,23.3,,42,1,,18;36.9,32,,52,4;32.1,17.1,,42,1;19.3,83.5,,42,1;33.7,40.7,,42,2,1;29.6,50.1,,61,5,1;25.3,37.8,,42,1,1;31.3,31.1,,72,4,1;35,53.5,,42,2,1;28.9,19.6,,63,6,1;21.2,71.6,,42,1,1;56.8,65.5,,42,2,1,14;62.6,64.1,,42,1,1,14;66.5,51.7,,42,2,1,14;60.2,77.5,,42,1,1,14;70.5,51.2,,42,2,1,14;75.9,36.4,,59,7,1,18", spread = true },
@@ -15620,7 +15595,7 @@ G(function() return {
 				{ t = "accept", minLevel = 12, quest = 1647, npc = 6179, map = 1455, x = 27.63, y = 12.18, z = 524.8, f = "e", pre = { 1646 }, qlvl = 12 },
 				{ t = "turnin", quest = 1647, npc = 6175, map = 1455, x = 23.34, y = 61.86, z = 501.7, f = "e", spotsPacked = "32.33,67.94,,120,1" },
 				{ t = "accept", minLevel = 12, quest = 1648, npc = 6175, map = 1455, x = 23.34, y = 61.86, z = 501.7, f = "e", pre = { 1647 }, qlvl = 13, spotsPacked = "32.33,67.94,,120,1" },
-				{ t = "collect", quest = 1648, item = 2589, count = 10, map = 1432, x = 34.58, y = 27.07, f = "e", fromNpcs = { { npc = 1425, npcName = "Grizlak" }, { npc = 1981, npcName = "Dark Iron Ambusher" }, { npc = 1175, npcName = "Tunnel Rat Digger" }, { npc = 1166, npcName = "Stonesplinter Seer" }, { npc = 2149, npcName = "Dark Iron Raider" } }, lvl = 11, oi = 1, spotsPacked = "35.8,24.3,,62,28,,15;38.7,12,,62,9;48,21.1,,42,9,,14;48.8,29,,49,7,,14;54.2,26.5,,40,8,,16;25,33.9,,40,3;26.6,43.4,,54,12,,12;27.1,56.9,,59,9,,12;31,74.5,,55,18,,12;35.3,83.8,,51,13,,14;35.6,93.8,,50,12,,16;28.3,85.3,,72,11,,14;37.1,27.2,,46,7,1,13;38.2,21,,50,4,1,13;40.1,24.2,,40,2,1;36.2,16.9,,62,15,1,13;40.3,18.7,,40,2,1;26.5,26.9,,40,1,1;26.5,31.8,,40,4,1;34,11.6,,40,2,1;24.2,29.1,,58,10,1;26.7,49.1,,53,12,1,12;51.6,23.9,,47,14,1,16;33.8,71.2,,49,12,1,12;34.1,75.9,,42,7,1,12;52.1,69.3,,40,1,1,10;36.2,80,,45,5,1,14;30.9,80.2,,83,13,1,14;63.1,65.9,,40,1,1,14;30.7,84.7,,40,2,1,14;37.2,86.5,,40,6,1,16;34.4,89.6,,50,17,1,16;36.9,90.5,,43,4,1,16", spread = true },
+				{ t = "collect", quest = 1648, item = 2589, count = 10, map = 1432, x = 34.58, y = 27.07, f = "e", fromNpcs = { { npc = 1425, npcName = "Grizlak" }, { npc = 1981, npcName = "Dark Iron Ambusher" }, { npc = 1175, npcName = "Tunnel Rat Digger" }, { npc = 1166, npcName = "Stonesplinter Seer" }, { npc = 2149, npcName = "Dark Iron Raider" }, { npc = 1172, npcName = "Tunnel Rat Vermin" }, { npc = 1161, npcName = "Stonesplinter Trogg" }, { npc = 1163, npcName = "Stonesplinter Skullthumper" }, { npc = 1162, npcName = "Stonesplinter Scout" }, { npc = 1197, npcName = "Stonesplinter Shaman" }, { npc = 1164, npcName = "Stonesplinter Bonesnapper" }, { npc = 1174, npcName = "Tunnel Rat Geomancer" }, { npc = 1202, npcName = "Tunnel Rat Kobold" }, { npc = 1173, npcName = "Tunnel Rat Scout" }, { npc = 1176, npcName = "Tunnel Rat Forager" }, { npc = 1177, npcName = "Tunnel Rat Surveyor" } }, fromNpcsAt = "3,12,16,15,6,14,1,13;6,13;4,8;4,8;10,11;6;6,13,15;9,7;7,9;4,8;10,11;4,8;6,12,3,14,15,13;6,3;6;6,15,13,3,14;6;14;6,14;6;6,14;7,9;11,4,10,8;7,9;9,7;2;4,8;7,9,4,8;5;4,8;8,10,4,11;4,8,11,10;10,11,4,8", lvl = 11, oi = 1, spotsPacked = "35.8,24.3,,62,28,,15;38.7,12,,62,9;48,21.1,,42,9,,14;48.8,29,,49,7,,14;54.2,26.5,,40,8,,16;25,33.9,,40,3;26.6,43.4,,54,12,,12;27.1,56.9,,59,9,,12;31,74.5,,55,18,,12;35.3,83.8,,51,13,,14;35.6,93.8,,50,12,,16;28.3,85.3,,72,11,,14;37.1,27.2,,46,7,1,13;38.2,21,,50,4,1,13;40.1,24.2,,40,2,1;36.2,16.9,,62,15,1,13;40.3,18.7,,40,2,1;26.5,26.9,,40,1,1;26.5,31.8,,40,4,1;34,11.6,,40,2,1;24.2,29.1,,58,10,1;26.7,49.1,,53,12,1,12;51.6,23.9,,47,14,1,16;33.8,71.2,,49,12,1,12;34.1,75.9,,42,7,1,12;52.1,69.3,,40,1,1,10;36.2,80,,45,5,1,14;30.9,80.2,,83,13,1,14;63.1,65.9,,40,1,1,14;30.7,84.7,,40,2,1,14;37.2,86.5,,40,6,1,16;34.4,89.6,,50,17,1,16;36.9,90.5,,43,4,1,16", spread = true },
 				{ t = "turnin", quest = 1648, npc = 6175, map = 1455, x = 23.34, y = 61.86, z = 501.7, f = "e", spotsPacked = "32.33,67.94,,120,1" },
 				{ t = "accept", minLevel = 12, quest = 1778, npc = 6175, map = 1455, x = 23.34, y = 61.86, z = 501.7, f = "e", pre = { 1648 }, qlvl = 13, spotsPacked = "32.33,67.94,,120,1" },
 				{ t = "turnin", quest = 1778, npc = 6179, map = 1455, x = 27.63, y = 12.18, z = 524.8, f = "e" },
@@ -16105,7 +16080,7 @@ G(function() return {
 			title = "{npc:786}",
 			goals = {
 				{ t = "turnin", quest = 3365, npc = 12738, map = 1426, x = 24.98, y = 75.96, z = 385.8, f = "e", note = "{npc:12738}, next to him" },
-				{ t = "collect", only = { classes = { "SHAMAN" } }, quest = 94373, item = 264356, count = 2, map = 1426, x = 25.86, y = 78.26, f = "e", note = "Iceclaw Bear Pendants, from the Frostmane Troll Whelps on the slopes above the camp", fromId = 706, fromKind = "npc", fromNpcs = { { npc = 706, npcName = "Frostmane Troll Whelp" }, { npc = 946, npcName = "Frostmane Novice" } }, lvl = 4, oi = 1, spotsPacked = "26.7,79.4,,57,11;28.6,80.5,,60,15;29,82.5,,55,6;30.2,80.4,,53,11;22.8,79.5,,55,9;20.9,76.5,,54,9", spread = true },
+				{ t = "collect", only = { classes = { "SHAMAN" } }, quest = 94373, item = 264356, count = 2, map = 1426, x = 25.86, y = 78.26, f = "e", note = "Iceclaw Bear Pendants, from the Frostmane Troll Whelps on the slopes above the camp", fromAlso = "Frostmane Novice", fromAlsoId = 946, fromId = 706, fromKind = "npc", fromNpcs = { { npc = 706, npcName = "Frostmane Troll Whelp" }, { npc = 946, npcName = "Frostmane Novice" } }, lvl = 4, oi = 1, spotsPacked = "26.7,79.4,,57,11;28.6,80.5,,60,15;29,82.5,,55,6;30.2,80.4,,53,11;22.8,79.5,,55,9;20.9,76.5,,54,9", spread = true },
 				{ t = "turnin", quest = 218, npc = 786, map = 1426, x = 25.08, y = 75.71, z = 385.9, f = "e" },
 				{ t = "accept", minLevel = 1, quest = 282, npc = 786, map = 1426, x = 25.08, y = 75.71, z = 385.9, f = "e", closedBy = { 287 }, pre = { 218 }, qlvl = 5 },
 			},
@@ -16137,7 +16112,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 282, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e" },
 				{ t = "accept", minLevel = 1, quest = 420, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e", pre = { 282 }, qlvl = 5 },
-				{ t = "accept", minLevel = 4, quest = 96628, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e", closedBy = { 96608, 96627, 96630, 96638, 96652, 96656, 96659 }, pre = { 282 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96628, npc = 1965, map = 1426, x = 33.48, y = 71.84, z = 428.4, f = "e", closedBy = { 96627, 96630, 96638, 96652, 96656, 96659 }, pre = { 282 }, qlvl = 6 },
 				{ t = "accept", minLevel = 1, quest = 2160, npc = 6782, map = 1426, x = 33.85, y = 72.24, z = 431.7, f = "e", qlvl = 5 },
 			},
 		},
@@ -16146,7 +16121,7 @@ G(function() return {
 			note = "Sit by Eric's campfire (type /sit) and wait for the buff. With a profession learned, Eric also offers its Camping 101, which its trainer takes: blacksmithing with {npc:1241} and {skill:129} with {npc:2326} in {area:131}, mining and engineering at {area:189}.",
 			goals = {
 				{ t = "turnin", quest = 96628, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: {quest:96628}" },
-				{ t = "accept", minLevel = 4, quest = 96608, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", closedBy = { 95998, 96101, 96604, 96605, 96606, 96607 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96608, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", closedBy = { 95998, 96101, 96604, 96605, 96606, 96607 }, pre = { 96628 }, qlvl = 6 },
 				{ t = "complete", quest = 96608, objs = { { count = 1, text = "Sit near the campfire (Optional)" }, { count = 1, text = "Gain the Boosted Rest buff" } } },
 				{ t = "turnin", quest = 96608, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e" },
 				{ t = "accept", minLevel = 4, quest = 96629, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", closedBy = { 96626, 96634, 96646, 96655, 96658, 96661 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, qlvl = 6 },
@@ -16154,28 +16129,28 @@ G(function() return {
 		},
 		{
 			title = "{quest:96044}",
-			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 } },
+			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 }, { k = "knows", spell = 1230171, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96044, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:1241}, in the cellar west of the distillery", closedBy = { 97900, 97916, 97928, 97939, 97952, 97964 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 164, profName = "Blacksmithing", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96047}",
-			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 } },
+			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 }, { k = "knows", spell = 1230117, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96047, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:2326} in the {area:2102}", closedBy = { 97903, 97919, 97931, 97942, 97955, 97965 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 129, profName = "First Aid", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96046}",
-			when = { { k = "skill", n = 1, name = "Mining", skillLine = 186 } },
+			when = { { k = "skill", n = 1, name = "Mining", skillLine = 186 }, { k = "knows", spell = 1230161, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96046, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:5392} at {area:189}", closedBy = { 97907, 97923, 97935, 97948, 97959, 97970 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 186, profName = "Mining", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96058}",
-			when = { { k = "skill", n = 1, name = "Engineering", skillLine = 202 } },
+			when = { { k = "skill", n = 1, name = "Engineering", skillLine = 202 }, { k = "knows", spell = 1230656, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 96058, npc = 265813, map = 1426, x = 46.7, y = 53.94, z = 396.6, f = "e", note = "{npc:265813}: for {npc:1702} at {area:189}", closedBy = { 97902, 97918, 97930, 97941, 97954, 98285, 98287 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 202, profName = "Engineering", profRank = 1, qlvl = 6 },
 			},
@@ -16422,7 +16397,7 @@ G(function() return {
 			goals = {
 				{ t = "level", only = { classes = { "HUNTER" } }, level = 10 },
 				{ t = "level", only = { classes = { "SHAMAN" } }, level = 10 },
-				{ t = "accept", minLevel = 10, only = { classes = { "SHAMAN" } }, quest = 94449, npc = 258113, map = 1426, x = 47.58, y = 51.95, z = 403.6, f = "e", note = "{npc:258113}: {npc:257597} by the South Gate takes it", qlvl = 10 },
+				{ t = "accept", minLevel = 10, only = { classes = { "SHAMAN" } }, quest = 94449, npc = 257446, map = 1426, x = 28.79, y = 66.18, z = 399, f = "e", note = "{npc:258113}: {npc:257597} by the South Gate takes it", qlvl = 10 },
 				{ t = "level", only = { classes = { "PRIEST" } }, level = 10 },
 				{ t = "accept", minLevel = 10, only = { races = { "GNOME" }, classes = { "PRIEST" } }, quest = 94824, npc = 1226, map = 1426, x = 47.34, y = 52.19, z = 399.7, f = "e", note = "{npc:1226}: {npc:258785} in {zone:1455} takes it", qlvl = 10 },
 			},
@@ -16715,7 +16690,7 @@ G(function() return {
 			goals = {
 				{ t = "kill", quest = 224, npc = 1161, count = 10, map = 1432, x = 29.63, y = 72.54, z = 374.6, f = "e", lvl = 12, oi = 1, spotsPacked = "30.8,74.4,365.6,51,10;33,70.9,365.4,40,6;34.9,72.4,358.2,40,4;32.1,79,372.9,41,8;27.1,55.9,366.3,40,3;26.8,49.3,363.2,51,8", spread = true, target = "Stonesplinter Trogg" },
 				{ t = "kill", quest = 224, npc = 1162, count = 10, map = 1432, x = 29.57, y = 72.89, z = 374.9, f = "e", lvl = 12, oi = 2, spotsPacked = "31.1,74.3,366.5,50,7;34.2,75.9,366.2,40,5;34.3,71.2,363.8,40,3;31.6,80.5,380.8,40,3;27.2,57.4,365.4,50,6;26.4,48.9,365.7,40,4", spread = true, target = "Stonesplinter Scout" },
-				{ t = "collect", quest = 267, item = 2536, count = 8, map = 1432, x = 29.57, y = 72.89, f = "e", fromNpcs = { { npc = 1162, npcName = "Stonesplinter Scout" }, { npc = 1161, npcName = "Stonesplinter Trogg" }, { npc = 1163, npcName = "Stonesplinter Skullthumper" }, { npc = 1164, npcName = "Stonesplinter Bonesnapper" }, { npc = 1165, npcName = "Stonesplinter Geomancer" } }, lvl = 14, oi = 1, spotsPacked = "31,74.5,,55,18,,12;30.9,80.2,,83,13;28.3,85.3,,72,11;35.3,83.8,,51,13;35.6,93.8,,50,12,,16;27.1,56.9,,59,9,,12;26.7,49.1,,53,12,,12;48.8,29,,49,7;48,21.1,,42,9;54.2,26.5,,40,8,,16;68.8,61.1,,59,10,,20;72,63.7,,40,6,,20;33.8,71.2,,49,12,1,12;34.1,75.9,,42,7,1,12;30.7,84.7,,40,2,1;36.2,80,,45,5,1;37.2,86.5,,40,6,1,16;34.4,89.6,,50,17,1,16;36.9,90.5,,43,4,1,16;51.6,23.9,,47,14,1,16;69.5,66.2,,43,10,1,20;71.9,68,,40,4,1,19", spread = true },
+				{ t = "collect", quest = 267, item = 2536, count = 8, map = 1432, x = 29.57, y = 72.89, f = "e", fromNpcs = { { npc = 1162, npcName = "Stonesplinter Scout" }, { npc = 1161, npcName = "Stonesplinter Trogg" }, { npc = 1163, npcName = "Stonesplinter Skullthumper" }, { npc = 1164, npcName = "Stonesplinter Bonesnapper" }, { npc = 1165, npcName = "Stonesplinter Geomancer" }, { npc = 1166, npcName = "Stonesplinter Seer" }, { npc = 1197, npcName = "Stonesplinter Shaman" }, { npc = 1167, npcName = "Stonesplinter Digger" }, { npc = 1393, npcName = "Berserk Trogg" } }, fromNpcsAt = "2,1;2,1,6,3;6,3;6,3;7,4;1,2;2,1;6,3;6,3;7,4;5,8,9;5,9,8;2,1;1,2;3,6;6,3;3,7,4,6;6,3,4,7;7,4,3,6;4,6,7,3;8,5,9;8,5", lvl = 14, oi = 1, spotsPacked = "31,74.5,,55,18,,12;30.9,80.2,,83,13;28.3,85.3,,72,11;35.3,83.8,,51,13;35.6,93.8,,50,12,,16;27.1,56.9,,59,9,,12;26.7,49.1,,53,12,,12;48.8,29,,49,7;48,21.1,,42,9;54.2,26.5,,40,8,,16;68.8,61.1,,59,10,,20;72,63.7,,40,6,,20;33.8,71.2,,49,12,1,12;34.1,75.9,,42,7,1,12;30.7,84.7,,40,2,1;36.2,80,,45,5,1;37.2,86.5,,40,6,1,16;34.4,89.6,,50,17,1,16;36.9,90.5,,43,4,1,16;51.6,23.9,,47,14,1,16;69.5,66.2,,43,10,1,20;71.9,68,,40,4,1,19", spread = true },
 			},
 		},
 		{
@@ -16743,7 +16718,7 @@ G(function() return {
 			title = "The west hills and the {area:925}",
 			note = "North through the hills west of the road to {npc:1343} at the {area:925}. The Tunnel Rat kobolds dig in the hills on the way; Elder Black Bears, Mountain Boars and Forest Lurkers roam the same ground.",
 			goals = {
-				{ t = "collect", quest = 416, item = 3110, count = 12, map = 1432, x = 27.4, y = 44.59, f = "e", note = "{item:3110}: Tunnel Rat kobolds", fromAlso = "Tunnel Rat Scout", fromAlsoId = 1173, fromId = 1172, fromKind = "npc", fromNpcs = { { npc = 1172, npcName = "Tunnel Rat Vermin" }, { npc = 1173, npcName = "Tunnel Rat Scout" }, { npc = 1174, npcName = "Tunnel Rat Geomancer" }, { npc = 1175, npcName = "Tunnel Rat Digger" }, { npc = 1176, npcName = "Tunnel Rat Forager" } }, lvl = 11, oi = 1, spotsPacked = "26.6,43.4,,54,12,,12;25,33.9,,40,3;24.2,29.1,,58,10;26.5,26.9,,40,1;35.8,24.2,,62,27,,14;37.1,27.2,,46,7,,13;40.1,24.2,,40,2;38.2,21,,50,4,,13;40.3,18.7,,40,2;36.2,16.9,,62,15,,13;38.7,12,,62,9;34,11.6,,40,2;26.5,31.8,,40,4,1", spread = true },
+				{ t = "collect", quest = 416, item = 3110, count = 12, map = 1432, x = 27.4, y = 44.59, f = "e", note = "{item:3110}: Tunnel Rat kobolds", fromAlso = "Tunnel Rat Scout", fromAlsoId = 1173, fromId = 1172, fromKind = "npc", fromNpcs = { { npc = 1172, npcName = "Tunnel Rat Vermin" }, { npc = 1173, npcName = "Tunnel Rat Scout" }, { npc = 1174, npcName = "Tunnel Rat Geomancer" }, { npc = 1175, npcName = "Tunnel Rat Digger" }, { npc = 1176, npcName = "Tunnel Rat Forager" }, { npc = 1202, npcName = "Tunnel Rat Kobold" }, { npc = 1177, npcName = "Tunnel Rat Surveyor" } }, fromNpcsAt = "1,6,5;1;1,2;2;4,3,5,7,1,2,6;1,3,2,4,5,6;1;1,4;1;1,5,6,2,4;1,6;1;1,2", lvl = 11, oi = 1, spotsPacked = "26.6,43.4,,54,12,,12;25,33.9,,40,3;24.2,29.1,,58,10;26.5,26.9,,40,1;35.8,24.2,,62,27,,14;37.1,27.2,,46,7,,13;40.1,24.2,,40,2;38.2,21,,50,4,,13;40.3,18.7,,40,2;36.2,16.9,,62,15,,13;38.7,12,,62,9;34,11.6,,40,2;26.5,31.8,,40,4,1", spread = true },
 				{ t = "collect", quest = 418, item = 3172, count = 3, map = 1432, x = 29.91, y = 46.84, f = "e", note = "{item:3172}: Mountain Boars", fromNpcs = { { npc = 1190, npcName = "Mountain Boar" }, { npc = 1191, npcName = "Mangy Mountain Boar" }, { npc = 1192, npcName = "Elder Mountain Boar" } }, lvl = 15, oi = 1, spotsPacked = "29.9,46.8,,42,1,,11;34.2,62.6,,42,1;41.8,55.3,,42,1;52.3,74.1,,42,2;62,58.9,,58,5;60.9,35.8,,65,4,,17;70.1,37.8,,42,1,,17;76.5,46.9,,42,2,,17;77.9,73.7,,42,1;39.5,29.2,,42,1,,11;31.8,24.1,,42,1,,11;25.3,13.9,,42,1,,11;27.3,39.1,,42,1,1,11;29.5,34.6,,42,2,1,11;39,51.3,,42,1,1;34.1,33.5,,58,6,1,11;37.7,36.8,,59,7,1,11;28.2,24.9,,42,2,1,11;24.3,21.4,,42,1,1,11;44.9,64.6,,42,2,1;30.6,16,,42,2,1,11;49.9,70.1,,42,2,1;59,63.6,,69,6,1;62,39.8,,42,4,1,17;64.1,48.7,,42,3,1;64.7,58.1,,42,3,1;64.4,64.5,,42,2,1;66.2,40,,43,6,1,17;66.4,68.9,,42,1,1;74.6,51.6,,42,2,1,17;74.8,42.1,,42,1,1,17;74.7,72.5,,42,1,1", spread = true },
 				{ t = "collect", quest = 418, item = 3173, count = 3, map = 1432, x = 29.39, y = 40.28, f = "e", note = "{item:3173}: Elder Black Bears", fromNpcs = { { npc = 1186, npcName = "Elder Black Bear" }, { npc = 1189, npcName = "Black Bear Patriarch" }, { npc = 1188, npcName = "Grizzled Black Bear" } }, lvl = 12, oi = 2, spotsPacked = "29.4,40.3,,49,1;38.5,33,,49,2;38.7,53.8,,63,3;39.9,73.1,,49,2;58.6,75,,49,1,,14;78.1,68.7,,49,1,,14;77.2,41.7,,49,2,,17;65.7,44.5,,91,6,,17;59.2,28.3,,75,4,,17;28.6,12.1,,63,4;23.8,25.4,,49,1;19.8,76.4,,49,2;25.5,38.4,,49,2,1;27.5,28.7,,49,1,1;34,30.4,,64,4,1;30.6,53.9,,49,1,1;30.1,24.7,,49,1,1;42.2,63.5,,71,4,1,14;63.8,32.7,,63,4,1,17;58.4,69.1,,49,1,1,14;67.9,49.3,,49,1,1,14;71,38,,92,6,1,17;66.4,73.2,,69,6,1,14;63.2,80.2,,49,1,1,14;74.3,44.6,,49,3,1,17;75.1,53.2,,51,4,1,14", spread = true },
 				{ t = "collect", quest = 418, item = 3174, count = 3, map = 1432, x = 31.08, y = 41.56, f = "e", note = "{item:3174}: Forest Lurkers", fromNpcs = { { npc = 1195, npcName = "Forest Lurker" }, { npc = 1185, npcName = "Wood Lurker" }, { npc = 14266, npcName = "Shanda the Spinner" }, { npc = 1184, npcName = "Cliff Lurker" } }, lvl = 11, oi = 3, spotsPacked = "29.8,43.3,,63,4;28.6,57,,42,1;38.6,73.9,,47,3;48.7,72.9,,66,4,,14;56.7,77.8,,42,2,,14;63.3,54.5,,44,3,,14;78.1,52.4,,42,1,,19;80,40.4,,42,3,,18;59.3,23.3,,42,1,,18;36.9,32,,52,4;32.1,17.1,,42,1;19.3,83.5,,42,1;33.7,40.7,,42,2,1;29.6,50.1,,61,5,1;25.3,37.8,,42,1,1;31.3,31.1,,72,4,1;35,53.5,,42,2,1;28.9,19.6,,63,6,1;21.2,71.6,,42,1,1;56.8,65.5,,42,2,1,14;62.6,64.1,,42,1,1,14;66.5,51.7,,42,2,1,14;60.2,77.5,,42,1,1,14;70.5,51.2,,42,2,1,14;75.9,36.4,,59,7,1,18", spread = true },
@@ -17022,7 +16997,7 @@ G(function() return {
 			only = { classes = { "MAGE" } },
 			note = "Leave {zone:1453} by the main gate. The {quest:1861} waterfall is south-west of the gates, on the way west to {zone:1436}: fill {item:7207} at its base.",
 			goals = {
-				{ t = "collect", quest = 1861, item = 7206, count = 1, map = 1429, x = 28.57, y = 61.39, f = "e", fromId = 174794, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 1861, item = 7206, count = 1, map = 1429, x = 28.57, y = 61.39, f = "e", carriedTo = "forever/alliance/02-westfall", fromId = 174794, fromKind = "object", oi = 1 },
 			},
 		},
 		{
@@ -17275,7 +17250,7 @@ G(function() return {
 		},
 		{
 			title = "Inside {area:34}",
-			note = "Kobold Laborers work the tunnels inside the mine. {npc:248362} waits down the second turn on the right.",
+			note = "Kobold Laborers work the tunnels inside the mine. {npc:248362} waits down the second turn on the right.\nCareful: {npc:248362} (3) is elite: leave him unless you have a friend.",
 			goals = {
 				{ t = "kill", quest = 21, npc = 80, count = 12, map = 1429, x = 47.79, y = 31.64, z = 92.1, f = "e", note = "{npc:80} walks around {area:34}: look inside the circle on the map", lvl = 4, oi = 1, spotsPacked = "48.3,29.7,86.3,49,11;49.5,26.8,,35,10", target = "Kobold Laborer" },
 			},
@@ -17295,7 +17270,7 @@ G(function() return {
 				{ t = "turnin", quest = 6, npc = 823, map = 1429, x = 48.17, y = 42.94, z = 83.4, f = "e", note = "{npc:823}, at the Abbey steps" },
 				{ t = "turnin", quest = 21, npc = 197, map = 1429, x = 48.92, y = 41.61, z = 82, f = "e", note = "{npc:197}, inside" },
 				{ t = "accept", minLevel = 1, quest = 54, npc = 197, map = 1429, x = 48.92, y = 41.61, z = 82, f = "e", pre = { 21 }, qlvl = 5 },
-				{ t = "accept", minLevel = 4, quest = 96627, npc = 197, map = 1429, x = 48.92, y = 41.61, z = 82, f = "e", closedBy = { 95998, 96628, 96630, 96638, 96652, 96656, 96659 }, pre = { 21 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96627, npc = 197, map = 1429, x = 48.92, y = 41.61, z = 82, f = "e", closedBy = { 96628, 96630, 96638, 96652, 96656, 96659 }, pre = { 21 }, qlvl = 6 },
 				{ t = "train", zone = 1429, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 90, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89 }, class = true },
 				{ t = "accept", minLevel = 5, only = { classes = { "PRIEST" } }, quest = 5623, npc = 375, map = 1429, x = 49.81, y = 39.49, z = 82.1, f = "e", note = "{npc:375}, the priest trainer: {npc:377} in {area:87} takes it", closedBy = { 5624 }, qlvl = 4 },
 				{ t = "turnin", quest = 3905, npc = 952, map = 1429, x = 49.47, y = 41.59, z = 113.2, f = "e", note = "{npc:952}, upstairs" },
@@ -17363,7 +17338,7 @@ G(function() return {
 			note = "{npc:263399} camps north-east of the inn. With a profession learned, he also offers its Camping 101, which its trainer takes: skinning, leatherworking and fishing on the lake shore, {skill:129} and blacksmithing in {area:87}.",
 			goals = {
 				{ t = "turnin", quest = 96627, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e" },
-				{ t = "accept", minLevel = 4, quest = 95998, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", closedBy = { 96101, 96604, 96605, 96606, 96607, 96608 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 95998, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", closedBy = { 96101, 96604, 96605, 96606, 96607, 96608 }, pre = { 96627 }, qlvl = 6 },
 				{ t = "complete", quest = 95998, map = 1429, x = 44.9, y = 63.2, f = "e", note = "Sit (/sit) by his campfire until you have {spell:1229451}", objs = { { count = 1, text = "Sit near the campfire (Optional)" }, { count = 1, text = "Gain the Boosted Rest buff" } } },
 				{ t = "turnin", quest = 95998, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e" },
 				{ t = "accept", minLevel = 4, quest = 96626, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", closedBy = { 96629, 96634, 96646, 96655, 96658, 96661 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, qlvl = 6 },
@@ -17371,35 +17346,35 @@ G(function() return {
 		},
 		{
 			title = "{quest:96056}",
-			when = { { k = "skill", n = 1, name = "Skinning", skillLine = 393 } },
+			when = { { k = "skill", n = 1, name = "Skinning", skillLine = 393 }, { k = "knows", spell = 1229517, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97924, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", note = "{npc:263399}: for {npc:6306} on the lake shore", closedBy = { 96056, 97908, 97936, 97949, 97960, 97971 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 393, profName = "Skinning", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96031}",
-			when = { { k = "skill", n = 1, name = "Leatherworking", skillLine = 165 } },
+			when = { { k = "skill", n = 1, name = "Leatherworking", skillLine = 165 }, { k = "knows", spell = 1229432, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97922, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", note = "{npc:263399}: for {npc:1632} on the lake shore", closedBy = { 96031, 97906, 97934, 97946, 97958, 97969 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 165, profName = "Leatherworking", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96050}",
-			when = { { k = "skill", n = 1, name = "Fishing", skillLine = 356 } },
+			when = { { k = "skill", n = 1, name = "Fishing", skillLine = 356 }, { k = "knows", spell = 1229745, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97920, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", note = "{npc:263399}: for {npc:1651} on the lake shore", closedBy = { 96050, 97904, 97932, 97943, 97956, 97967 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 356, profName = "Fishing", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96047}",
-			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 } },
+			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 }, { k = "knows", spell = 1230117, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97919, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", note = "{npc:263399}: for {npc:2329} in the Lion's Pride Inn", closedBy = { 96047, 97903, 97931, 97942, 97955, 97965 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 129, profName = "First Aid", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96044}",
-			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 } },
+			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 }, { k = "knows", spell = 1230171, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97916, npc = 263399, map = 1429, x = 44.9, y = 63.36, z = 64.2, f = "e", note = "{npc:263399}: for {npc:514} at the {area:87} smithy", closedBy = { 96044, 97900, 97928, 97939, 97952, 97964 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 164, profName = "Blacksmithing", profRank = 1, qlvl = 6 },
 			},
@@ -17542,7 +17517,7 @@ G(function() return {
 			title = "{zone:1429}: kill these as you meet them",
 			note = "{object:694855} grows in the fields around the vineyards and the Stonefield farm; Stonetusk Boars around them give the blood.\nStonetusk Boars graze between the vineyards and the farm.",
 			goals = {
-				{ t = "collect", quest = 99130, item = 286215, count = 6, map = 1429, x = 42.9, y = 86.56, f = "e", note = "{item:286215}: Stonetusk Boars", fromNpcs = { { npc = 113, npcName = "Stonetusk Boar" }, { npc = 822, npcName = "Young Forest Bear" } }, lvl = 9, oi = 1, spotsPacked = "41.6,86.1,,47,5,,6;32.3,81.1,,59,6,,6;26.2,90,,40,8;22.6,75.6,,40,2;44.1,69.4,,40,1,,6;53.5,83.7,,40,3;58.8,68.2,,40,1;65.7,78,,40,4;71.9,61,,40,5;87.1,64.6,,40,6;88.7,77.4,,40,3;79.2,83.5,,40,2;45.7,86,,40,3,1;40.8,89.4,,59,5,1,6;43.6,80.7,,40,3,1;38.6,86.2,,40,1,1,6;38.2,89.7,,55,8,1;47.1,79.7,,40,2,1;44.9,77,,40,4,1;38.8,78.6,,40,1,1,6;49.1,82.1,,40,2,1;41.5,76.1,,40,3,1,6;35.2,89.1,,68,8,1;38.1,76.4,,40,3,1,6;43,72.3,,40,3,1,6;49.1,75.3,,55,4,1;32.2,85.5,,55,7,1,6;39.6,69.9,,72,5,1,6;54,75.4,,40,2,1;28,81.3,,40,3,1;57.1,75.6,,40,3,1;25.3,83.5,,44,6,1;60.6,79.9,,40,4,1;60.7,75.3,,40,2,1;63.3,77.6,,42,4,1;64.6,63,,40,2,1;70.5,74.6,,40,3,1;68.7,64.7,,40,3,1;73.4,81,,40,3,1;74.9,67.5,,40,5,1;76.8,76.6,,40,1,1;78.3,79.4,,40,2,1;81.2,77.2,,40,1,1;78.2,60.9,,40,6,1;82.8,84,,40,1,1;81.8,59,,40,5,1;86,77.2,,40,1,1;87.5,69.4,,40,3,1", spread = true },
+				{ t = "collect", quest = 99130, item = 286215, count = 6, map = 1429, x = 42.9, y = 86.56, f = "e", note = "{item:286215}: Stonetusk Boars", fromAlso = "Young Forest Bear", fromAlsoId = 822, fromId = 113, fromKind = "npc", fromNpcs = { { npc = 113, npcName = "Stonetusk Boar" }, { npc = 822, npcName = "Young Forest Bear" } }, lvl = 9, oi = 1, spotsPacked = "41.6,86.1,,47,5,,6;32.3,81.1,,59,6,,6;26.2,90,,40,8;22.6,75.6,,40,2;44.1,69.4,,40,1,,6;53.5,83.7,,40,3;58.8,68.2,,40,1;65.7,78,,40,4;71.9,61,,40,5;87.1,64.6,,40,6;88.7,77.4,,40,3;79.2,83.5,,40,2;45.7,86,,40,3,1;40.8,89.4,,59,5,1,6;43.6,80.7,,40,3,1;38.6,86.2,,40,1,1,6;38.2,89.7,,55,8,1;47.1,79.7,,40,2,1;44.9,77,,40,4,1;38.8,78.6,,40,1,1,6;49.1,82.1,,40,2,1;41.5,76.1,,40,3,1,6;35.2,89.1,,68,8,1;38.1,76.4,,40,3,1,6;43,72.3,,40,3,1,6;49.1,75.3,,55,4,1;32.2,85.5,,55,7,1,6;39.6,69.9,,72,5,1,6;54,75.4,,40,2,1;28,81.3,,40,3,1;57.1,75.6,,40,3,1;25.3,83.5,,44,6,1;60.6,79.9,,40,4,1;60.7,75.3,,40,2,1;63.3,77.6,,42,4,1;64.6,63,,40,2,1;70.5,74.6,,40,3,1;68.7,64.7,,40,3,1;73.4,81,,40,3,1;74.9,67.5,,40,5,1;76.8,76.6,,40,1,1;78.3,79.4,,40,2,1;81.2,77.2,,40,1,1;78.2,60.9,,40,6,1;82.8,84,,40,1,1;81.8,59,,40,5,1;86,77.2,,40,1,1;87.5,69.4,,40,3,1", spread = true },
 				{ t = "collect", quest = 99130, item = 286214, count = 18, map = 1429, x = 43.3, y = 87, f = "e", fromId = 694855, fromKind = "object", oi = 2, spotsPacked = "42.6,87.9,,37,4;41,86.2,,44,6;32.9,85.4,,46,7" },
 				{ t = "collect", quest = 86, item = 769, count = 4, map = 1429, x = 42.9, y = 86.56, f = "e", note = "Chunks of Boar Meat", fromNpcs = { { npc = 113, npcName = "Stonetusk Boar" }, { npc = 119, npcName = "Longsnout" }, { npc = 454, npcName = "Young Goretusk" }, { npc = 524, npcName = "Rockhide Boar" }, { npc = 390, npcName = "Porcine Entourage" } }, lvl = 8, oi = 1, spotsPacked = "43.7,86.9,,40,2;37.5,90,,54,6,,6;31.6,82.2,,50,6,,6;25.7,79.8,,40,1,,11;20.8,86.9,,40,1,,13;16.7,76.9,,40,1,,13;38.2,76.9,,44,4,,6;44.1,69.4,,40,1,,6;53.3,83.4,,51,5;58.9,74.4,,50,6;66.2,76.8,,40,3;73.6,79.6,,75,6;41.4,85.8,,40,3,1,6;40.4,87.6,,73,5,1,6;45.3,88.8,,40,2,1;45.6,83.9,,44,3,1;40.5,90.9,,40,3,1,6;43.9,80.4,,50,4,1;43.3,77.9,,40,1,1;47.2,79.8,,48,6,1;41.5,76.1,,40,3,1,6;34.4,89.2,,47,4,1,6;50.1,79.2,,40,2,1;48.4,75.9,,40,4,1;43,72.3,,40,3,1,6;33.5,80.7,,40,2,1,6;32.4,86,,40,5,1,6;39.6,69.9,,72,5,1,6;53.8,79.3,,66,5,1;53.1,75.2,,52,5,1;55.7,84.9,,40,2,1;57.6,81.6,,40,2,1;56.4,75.2,,46,5,1;60.5,81.4,,40,1,1;25.1,83.1,,50,5,1,11;24.7,87.1,,40,3,1,11;60.9,78.6,,40,5,1;63.9,79.6,,40,4,1;63.5,76.1,,53,4,1;66.5,81.2,,40,3,1;69.6,79.2,,40,1,1,7;70.5,74.3,,50,4,1;71.7,83,,42,3,1", spread = true },
 			},
@@ -17582,11 +17557,11 @@ G(function() return {
 		},
 		{
 			title = "{quest:87}",
-			note = "{quest:87} is inside the {area:57}, not on the hill above it: go in at the mouth and keep left to the back of the mine floor; don't take the stairs up. Defias Bandits around the vineyards drop a {item:1972} now and then: right-click it.",
+			note = "{quest:87} is inside the {area:57}, not on the hill above it: go in at the mouth and keep left to the back of the mine floor; don't take the stairs up. Defias Bandits around the vineyards drop a {item:1972} now and then: right-click it.\nCareful: {npc:248464} (6), a kobold deep in the mine, is elite, and {npc:79} (10, rare) walks the tunnels: pull the kobolds one at a time.",
 			goals = {
 				{ t = "goto", map = 1429, x = 39.5, y = 82.4, f = "e", text = "{area:57}", area = 57 },
 				{ t = "collect", quest = 87, item = 981, count = 1, map = 1429, x = 41.71, y = 78.03, f = "e", note = "{item:981}; below ground", fromId = 327, fromKind = "npc", fromNpcs = { { npc = 327, npcName = "Goldtooth" } }, oi = 1 },
-				{ t = "collect", item = 1972, count = 1, map = 1429, x = 44.37, y = 74.93, f = "e", optional = true, fromNpcs = { { npc = 116, npcName = "Defias Bandit" }, { npc = 6846, npcName = "Defias Dockmaster" }, { npc = 6866, npcName = "Defias Bodyguard" }, { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 880, npcName = "Erlan Drudgemoor" } }, lvl = 9, spotsPacked = "45.6,75.1,,43,4;48.3,87.2,,40,3,,10;55.3,59.9,,40,1;73.3,55,,49,5,,10;73.5,46.7,,40,2,,10;71.3,76.7,,40,1;68.3,81.2,,40,2;89.5,79.3,,40,8;34.1,55.6,,40,1;30.1,57.9,,40,3;30.7,65,,40,4;25,58.5,,48,9;47.5,74.1,,40,1,1;47.5,81.2,,40,1,1;47.5,83.7,,53,4,1;50.1,82.8,,46,4,1,10;52.4,59.1,,40,3,1,10;29,60.5,,51,7,1,10;68.3,77.4,,40,4,1;70.8,80.5,,40,4,1;73.6,51.2,,76,10,1,10;76.9,52.5,,40,2,1,10;76.4,48,,40,2,1,10", spread = true },
+				{ t = "collect", item = 1972, count = 1, map = 1429, x = 44.37, y = 74.93, f = "e", optional = true, fromNpcs = { { npc = 116, npcName = "Defias Bandit" }, { npc = 6846, npcName = "Defias Dockmaster" }, { npc = 6866, npcName = "Defias Bodyguard" }, { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 880, npcName = "Erlan Drudgemoor" }, { npc = 6927, npcName = "Defias Dockworker" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 881, npcName = "Surena Caledon" } }, fromNpcsAt = "1;2,3,6;1;4;4;1;1;1;7;1;1;1;1;1;1;1,4;1,4;4,1;1;1,5,8;4;4;4", lvl = 9, spotsPacked = "45.6,75.1,,43,4;48.3,87.2,,40,3,,10;55.3,59.9,,40,1;73.3,55,,49,5,,10;73.5,46.7,,40,2,,10;71.3,76.7,,40,1;68.3,81.2,,40,2;89.5,79.3,,40,8;34.1,55.6,,40,1;30.1,57.9,,40,3;30.7,65,,40,4;25,58.5,,48,9;47.5,74.1,,40,1,1;47.5,81.2,,40,1,1;47.5,83.7,,53,4,1;50.1,82.8,,46,4,1,10;52.4,59.1,,40,3,1,10;29,60.5,,51,7,1,10;68.3,77.4,,40,4,1;70.8,80.5,,40,4,1;73.6,51.2,,76,10,1,10;76.9,52.5,,40,2,1,10;76.4,48,,40,2,1,10", spread = true },
 				{ t = "accept", minLevel = 8, quest = 184, item = 1972, optional = true, qlvl = 9 },
 			},
 		},
@@ -17657,7 +17632,7 @@ G(function() return {
 			title = "{area:18}: kill these as you meet them",
 			note = "The murlocs on the east shore drop the kelp. Skinners: Gray Forest Wolves roam the woods between the lake and the {area:91}; Prowlers further east give pelts too.",
 			goals = {
-				{ t = "collect", quest = 112, item = 1256, count = 4, map = 1429, x = 50.45, y = 62.32, f = "e", note = "Crystal Kelp Fronds", fromNpcs = { { npc = 735, npcName = "Murloc Streamrunner" }, { npc = 285, npcName = "Murloc" } }, lvl = 7, oi = 1, spotsPacked = "51.1,66.9,,65,13;54.3,64.1,,47,5;54.4,67.3,,78,11;57.2,63,,17,2;56.9,67,,64,10;50.5,62.3,,15,1,1" },
+				{ t = "collect", quest = 112, item = 1256, count = 4, map = 1429, x = 50.45, y = 62.32, f = "e", note = "Crystal Kelp Fronds", fromAlso = "Murloc Streamrunner", fromAlsoId = 735, fromId = 285, fromKind = "npc", fromNpcs = { { npc = 735, npcName = "Murloc Streamrunner" }, { npc = 285, npcName = "Murloc" } }, lvl = 7, oi = 1, spotsPacked = "51.1,66.9,,65,13;54.3,64.1,,47,5;54.4,67.3,,78,11;57.2,63,,17,2;56.9,67,,64,10;50.5,62.3,,15,1,1" },
 				{ t = "collect", quest = 91751, item = 247877, count = 7, map = 1429, x = 58.44, y = 62.13, f = "e", optional = true, note = "{quest:91751}", fromNpcs = { { npc = 1922, npcName = "Gray Forest Wolf" }, { npc = 118, npcName = "Prowler" } }, lvl = 10, oi = 1, profLine = 393, profName = "Skinning", profRank = 1, spotsPacked = "59.8,64.4,,71,10,,8;64.6,60.3,,40,1,,8;70.6,62.1,,50,6,,8;78.1,62.1,,63,5;84.7,61,,61,4;85.9,72.3,,40,1;90,82.4,,40,1;82.9,84.5,,40,3;76.3,75.9,,52,6;77.7,41,,45,3;71.4,37.5,,40,1;64.6,43.3,,40,1;61,60.8,,40,3,1,8;60.2,67.5,,56,6,1,8;64.6,63.9,,50,3,1,8;61.3,70.8,,40,3,1,8;63.1,69,,40,1,1,8;66.2,66.7,,40,2,1,8;67.8,63,,42,4,1,8;68,58.3,,56,4,1,8;68.7,65,,40,3,1,8;69.9,69.5,,40,1,1,8;66.7,45.2,,40,1,1;72.8,65,,54,9,1;73.4,68.2,,40,2,1,8;70.8,40.8,,47,4,1;74.4,39.1,,54,7,1;81,60.7,,40,2,1;79.4,78.2,,57,5,1;81.6,77.5,,40,2,1;80.4,81.7,,50,7,1;83.8,72,,40,1,1;86.8,64.4,,40,4,1;87.6,68.8,,40,4,1;88.4,71.5,,40,2,1;85.5,84,,40,3,1;87.7,78.1,,41,4,1;87.5,81.6,,40,2,1;90.4,77.2,,58,3,1", spread = true },
 			},
 		},
@@ -17745,7 +17720,7 @@ G(function() return {
 			title = "{area:86}",
 			note = "Defias Rogue Wizards camp on the shores of {area:86}; they drop the Red Linen Bandanas too. {object:56} lies in the murloc village on the north-east shore.",
 			goals = {
-				{ t = "collect", quest = 83, item = 1019, count = 6, map = 1429, x = 72.5, y = 56.41, f = "e", note = "Red Linen Bandanas", fromNpcs = { { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 116, npcName = "Defias Bandit" }, { npc = 473, npcName = "Morgan the Collector" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 880, npcName = "Erlan Drudgemoor" } }, lvl = 9, oi = 1, spotsPacked = "73.3,55,,49,5,,10;76.4,48,,40,2,,10;71.3,76.7,,40,1;68.3,81.2,,40,2;48.3,87.2,,40,3,,10;47.5,74.1,,40,1;52.4,59.1,,40,3,,10;34.1,55.6,,40,1;30.1,57.9,,40,3;30.7,65,,40,4;25,58.5,,48,9;89.5,79.3,,40,8;73.6,51.2,,76,10,1,10;76.9,52.5,,40,2,1,10;73.5,46.7,,40,2,1,10;68.3,77.4,,40,4,1;70.9,80.5,,40,5,1,10;55.3,59.9,,40,1,1;50.1,82.8,,46,4,1,10;45.6,75.1,,43,4,1;47.5,81.2,,40,1,1;47.5,83.7,,53,4,1;29,60.5,,51,7,1,10", spread = true },
+				{ t = "collect", quest = 83, item = 1019, count = 6, map = 1429, x = 72.5, y = 56.41, f = "e", note = "Red Linen Bandanas", fromNpcs = { { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 116, npcName = "Defias Bandit" }, { npc = 473, npcName = "Morgan the Collector" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 880, npcName = "Erlan Drudgemoor" }, { npc = 881, npcName = "Surena Caledon" }, { npc = 6846, npcName = "Defias Dockmaster" }, { npc = 6866, npcName = "Defias Bodyguard" }, { npc = 6927, npcName = "Defias Dockworker" } }, fromNpcsAt = "1;1;2;2;7,8,9;2;2,1;4;2;2;2;2;1;1;1;2;2,3,5,6;2;2,1;2;2;2;1,2", lvl = 9, oi = 1, spotsPacked = "73.3,55,,49,5,,10;76.4,48,,40,2,,10;71.3,76.7,,40,1;68.3,81.2,,40,2;48.3,87.2,,40,3,,10;47.5,74.1,,40,1;52.4,59.1,,40,3,,10;34.1,55.6,,40,1;30.1,57.9,,40,3;30.7,65,,40,4;25,58.5,,48,9;89.5,79.3,,40,8;73.6,51.2,,76,10,1,10;76.9,52.5,,40,2,1,10;73.5,46.7,,40,2,1,10;68.3,77.4,,40,4,1;70.9,80.5,,40,5,1,10;55.3,59.9,,40,1,1;50.1,82.8,,46,4,1,10;45.6,75.1,,43,4,1;47.5,81.2,,40,1,1;47.5,83.7,,53,4,1;29,60.5,,51,7,1,10", spread = true },
 				{ t = "turnin", quest = 45, object = 56, map = 1429, x = 79.8, y = 55.5, z = 73.4, f = "e" },
 				{ t = "accept", minLevel = 7, quest = 71, object = 56, map = 1429, x = 79.8, y = 55.5, z = 73.4, f = "e", pre = { 45 }, qlvl = 10 },
 			},
@@ -17765,7 +17740,7 @@ G(function() return {
 		},
 		{
 			title = "{area:54}: kill these as you meet them",
-			note = "The mine is south-west of the gnoll camps. {item:247816} lie near the entrance; Kobold Geomancers hold the tunnels.",
+			note = "The mine is south-west of the gnoll camps. {item:247816} lie near the entrance; Kobold Geomancers hold the tunnels.\nCareful: {npc:471} (7-10), the Mine Spiders (7-9) and {npc:248474} (7) are elites deep in the mine: pull the kobolds one at a time near the entrance and back out if an elite comes; they're easier with a friend.",
 			goals = {
 				{ t = "collect", quest = 91732, item = 247816, count = 4, map = 1429, x = 61.6, y = 53.3, f = "e", fromId = 562114, fromKind = "object", oi = 1, spotsPacked = "61.2,51.7,,40,6" },
 				{ t = "complete", quest = 76, map = 1429, x = 60.2, y = 49.2, f = "e", note = "Walk into the mine", objs = { { count = 1, text = "Scout through the Jasperlode Mine" } } },
@@ -17876,7 +17851,7 @@ G(function() return {
 			only = { classes = { "MAGE" } },
 			note = "Leave {zone:1453} by the main gate. The {quest:1861} waterfall is south-west of the gates, on the way west to {zone:1436}: fill {item:7207} at its base.",
 			goals = {
-				{ t = "collect", quest = 1861, item = 7206, count = 1, map = 1429, x = 28.57, y = 61.39, f = "e", fromId = 174794, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 1861, item = 7206, count = 1, map = 1429, x = 28.57, y = 61.39, f = "e", carriedTo = "forever/alliance/02-westfall", fromId = 174794, fromKind = "object", oi = 1 },
 			},
 		},
 		{
@@ -17962,7 +17937,7 @@ G(function() return {
 			title = "{area:60}",
 			note = "Riverpaw Runts and Outrunners hold the hills south of the garrison, along the {zone:1436} border.",
 			goals = {
-				{ t = "collect", quest = 11, item = 782, count = 8, map = 1429, x = 27.45, y = 79.89, f = "e", note = "Painted Gnoll Armbands", fromNpcs = { { npc = 478, npcName = "Riverpaw Outrunner" }, { npc = 97, npcName = "Riverpaw Runt" } }, lvl = 10, oi = 1, spotsPacked = "27.3,81.3,,40,4;31.2,81.7,,40,2,,9;30.9,89.1,,40,1,,9;27.6,94.3,,47,3;25,93.2,,51,9;25.8,88.9,,61,9;68.6,54.8,,40,1;68.2,49.9,,40,2;68.1,45.1,,57,10;66.8,40.6,,52,14;72.9,38.3,,40,1;76.8,40.2,,40,1;27.7,87.1,,70,11,1;69.1,39.1,,60,11,1", spread = true },
+				{ t = "collect", quest = 11, item = 782, count = 8, map = 1429, x = 27.45, y = 79.89, f = "e", note = "Painted Gnoll Armbands", fromAlso = "Riverpaw Outrunner", fromAlsoId = 478, fromId = 97, fromKind = "npc", fromNpcs = { { npc = 478, npcName = "Riverpaw Outrunner" }, { npc = 97, npcName = "Riverpaw Runt" } }, lvl = 10, oi = 1, spotsPacked = "27.3,81.3,,40,4;31.2,81.7,,40,2,,9;30.9,89.1,,40,1,,9;27.6,94.3,,47,3;25,93.2,,51,9;25.8,88.9,,61,9;68.6,54.8,,40,1;68.2,49.9,,40,2;68.1,45.1,,57,10;66.8,40.6,,52,14;72.9,38.3,,40,1;76.8,40.2,,40,1;27.7,87.1,,70,11,1;69.1,39.1,,60,11,1", spread = true },
 			},
 		},
 		{
@@ -18096,7 +18071,7 @@ G(function() return {
 			goals = {
 				{ t = "kill", quest = 456, npc = 2031, count = 7, map = 1438, x = 57.87, y = 44.69, z = 1333.1, f = "e", lvl = 1, oi = 1, spotsPacked = "57.2,44.6,,35,2;58.5,46.1,,23,3;61.3,44.9,1335.2,63,7;61.5,40.1,,30,2;62.4,42.1,1326.5,50,5;64.3,41.3,,29,2;57.9,39,1314,15,1,1", target = "Young Nightsaber" },
 				{ t = "kill", quest = 456, npc = 1984, count = 4, map = 1438, x = 57.44, y = 45.02, z = 1331.5, f = "e", lvl = 2, oi = 2, spotsPacked = "57.1,45,,34,3;59,44.7,1328,47,4;55.7,42.4,1327.5,48,6;60.9,46,,18,2;61.7,42.6,1325.6,51,4;57.8,42.4,1323.4,15,1,1;57.6,39.5,1312.7,15,1,1;63.2,42.2,1328.2,15,1,1", target = "Young Thistle Boar" },
-				{ t = "collect", quest = 459, item = 3297, count = 8, map = 1438, x = 56.16, y = 45.81, f = "e", fromId = 1989, fromKind = "npc", fromNpcs = { { npc = 1988, npcName = "Grell" }, { npc = 1989, npcName = "Grellkin" } }, lvl = 4, oi = 1, spotsPacked = "55.9,45.9,,40,6,,3;54.6,44.1,,40,6;55.8,41.6,,40,1,,3;56.2,38.5,,40,1;54.4,39.1,,40,7;56.3,34.6,,40,1;59.6,35,,40,1;62.3,35.7,,40,1;64.2,42.2,,40,1", spread = true },
+				{ t = "collect", quest = 459, item = 3297, count = 8, map = 1438, x = 56.16, y = 45.81, f = "e", fromAlso = "Grell", fromAlsoId = 1988, fromId = 1989, fromKind = "npc", fromNpcs = { { npc = 1988, npcName = "Grell" }, { npc = 1989, npcName = "Grellkin" } }, lvl = 4, oi = 1, spotsPacked = "55.9,45.9,,40,6,,3;54.6,44.1,,40,6;55.8,41.6,,40,1,,3;56.2,38.5,,40,1;54.4,39.1,,40,7;56.3,34.6,,40,1;59.6,35,,40,1;62.3,35.7,,40,1;64.2,42.2,,40,1", spread = true },
 				{ t = "collect", quest = 97977, item = 279082, count = 4, map = 1438, x = 56, y = 46.1, f = "e", oi = 1, spotsPacked = "55.8,45.7,,17,2;54.9,44,,47,3;54.4,39.3,,40,4;56.2,39.4,,15,1,1;55.5,37.6,,15,1,1" },
 			},
 		},
@@ -18196,7 +18171,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 921, npc = 3514, map = 1438, x = 59.06, y = 39.45, z = 1397.4, f = "e", note = "Upstairs" },
 				{ t = "accept", minLevel = 1, quest = 928, npc = 3514, map = 1438, x = 59.06, y = 39.45, z = 1397.4, f = "e", pre = { 921 }, qlvl = 5 },
-				{ t = "accept", minLevel = 4, quest = 96630, object = 654846, map = 1438, x = 59.07, y = 39.55, z = 1399, f = "e", note = "{object:654846}, upstairs", closedBy = { 96606, 96627, 96628, 96638, 96652, 96656, 96659 }, pre = { 921 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96630, object = 654846, map = 1438, x = 59.07, y = 39.55, z = 1399, f = "e", note = "{object:654846}, upstairs", closedBy = { 96627, 96628, 96638, 96652, 96656, 96659 }, pre = { 921 }, qlvl = 6 },
 				{ t = "accept", minLevel = 5, only = { classes = { "PRIEST" } }, quest = 5622, npc = 3595, map = 1438, x = 59.17, y = 40.44, z = 1346.8, f = "e", note = "{npc:3595}, the priest trainer, on the second level of {area:256} on the way down: {npc:3600} in {area:186} takes it", closedBy = { 5621 }, qlvl = 4 },
 			},
 		},
@@ -18226,7 +18201,7 @@ G(function() return {
 			title = "{area:186}",
 			goals = {
 				{ t = "turnin", quest = 96630, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", note = "{npc:265811}, by the campfire" },
-				{ t = "accept", minLevel = 4, quest = 96606, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", closedBy = { 95998, 96101, 96604, 96605, 96607, 96608 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96606, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", closedBy = { 95998, 96101, 96604, 96605, 96607, 96608 }, pre = { 96630 }, qlvl = 6 },
 			},
 		},
 		{
@@ -18240,35 +18215,35 @@ G(function() return {
 		},
 		{
 			title = "{quest:96045}",
-			when = { { k = "skill", n = 1, name = "Alchemy", skillLine = 171 } },
+			when = { { k = "skill", n = 1, name = "Alchemy", skillLine = 171 }, { k = "knows", spell = 1230564, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97938, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", note = "{npc:265811}: for {npc:3603}, beside {npc:6286}", closedBy = { 96045, 97899, 97915, 97927, 97951, 97963 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 171, profName = "Alchemy", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96055}",
-			when = { { k = "skill", n = 1, name = "Herbalism", skillLine = 182 } },
+			when = { { k = "skill", n = 1, name = "Herbalism", skillLine = 182 }, { k = "knows", spell = 1229705, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97944, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", note = "{npc:265811}: for {npc:3604}, beside {npc:6286}", closedBy = { 96055, 97905, 97921, 97933, 97957, 97968 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 182, profName = "Herbalism", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96047}",
-			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 } },
+			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 }, { k = "knows", spell = 1230117, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97942, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", note = "{npc:265811}: for {npc:6094} in the inn", closedBy = { 96047, 97903, 97919, 97931, 97955, 97965 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 129, profName = "First Aid", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96056}",
-			when = { { k = "skill", n = 1, name = "Skinning", skillLine = 393 } },
+			when = { { k = "skill", n = 1, name = "Skinning", skillLine = 393 }, { k = "knows", spell = 1229517, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97949, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", note = "{npc:265811}: for {npc:6287}, by the road west", closedBy = { 96056, 97908, 97924, 97936, 97960, 97971 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 393, profName = "Skinning", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96031}",
-			when = { { k = "skill", n = 1, name = "Leatherworking", skillLine = 165 } },
+			when = { { k = "skill", n = 1, name = "Leatherworking", skillLine = 165 }, { k = "knows", spell = 1229432, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97946, npc = 265811, map = 1438, x = 57.58, y = 56.64, f = "e", note = "{npc:265811}: for {npc:3605}, by the road west", closedBy = { 96031, 97906, 97922, 97934, 97958, 97969 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 165, profName = "Leatherworking", profRank = 1, qlvl = 6 },
 			},
@@ -18467,7 +18442,7 @@ G(function() return {
 			title = "{area:262}",
 			note = "The barrow is south of the road. {npc:275744} is held inside, {npc:7317} sleeps in its depths, and the four relic chests sit in the lower rooms. Its furbolgs drop Shayla's fangs.",
 			goals = {
-				{ t = "collect", quest = 490, item = 5220, count = 15, map = 1438, x = 44.36, y = 58.54, f = "e", note = "{item:5220}: any Gnarlpine furbolg", fromNpcs = { { npc = 2009, npcName = "Gnarlpine Shaman" }, { npc = 2006, npcName = "Gnarlpine Ursa" }, { npc = 2007, npcName = "Gnarlpine Gardener" }, { npc = 2008, npcName = "Gnarlpine Warrior" }, { npc = 2010, npcName = "Gnarlpine Defender" } }, lvl = 7, oi = 1, spotsPacked = "44.5,57.6,,54,19,,9;48.2,53.6,,40,3;49.7,66.7,,49,9,,8;47,77.7,,63,8,,9;42.7,79.3,,40,3,,10;38.8,80,,63,13,,11;41.4,72.8,,40,7,,9;38.3,66.7,,54,11,,8;56.3,75.9,,74,9,,9;65.7,63.9,,80,13;68.2,58.8,,40,4;70.2,52.8,,40,4;45.5,58.5,,58,12,1,9;43.7,60.4,,58,17,1,9;44.5,61.8,,40,6,1,9;46,53.8,,50,8,1;46.3,52.1,,40,4,1;50.2,62.3,,40,9,1,8;41.3,77.5,,40,2,1,10;48.5,77.9,,44,6,1,8;40.9,79.6,,55,9,1,11;65.8,58.4,,63,10,1;66.9,59.9,,49,7,1;67,56.7,,49,5,1;68.6,52.6,,44,10,1;69.7,54.6,,40,2,1", spread = true },
+				{ t = "collect", quest = 490, item = 5220, count = 15, map = 1438, x = 44.36, y = 58.54, f = "e", note = "{item:5220}: any Gnarlpine furbolg", fromNpcs = { { npc = 2009, npcName = "Gnarlpine Shaman" }, { npc = 2006, npcName = "Gnarlpine Ursa" }, { npc = 2007, npcName = "Gnarlpine Gardener" }, { npc = 2008, npcName = "Gnarlpine Warrior" }, { npc = 2010, npcName = "Gnarlpine Defender" }, { npc = 2011, npcName = "Gnarlpine Augur" }, { npc = 2152, npcName = "Gnarlpine Ambusher" }, { npc = 2012, npcName = "Gnarlpine Pathfinder" }, { npc = 2013, npcName = "Gnarlpine Avenger" }, { npc = 7235, npcName = "Gnarlpine Mystic" }, { npc = 2014, npcName = "Gnarlpine Totemic" }, { npc = 14428, npcName = "Uruson" }, { npc = 14429, npcName = "Grimmaw" } }, fromNpcsAt = "5,1,6;7;4,1,5;1,5,6;8,9;8,11,9;6,5;5,1;1,5,6;3,2,4;2,4,12;4,10;1,6,5;1,5,6;6,1,5;7;7;4,5,1;8,9;1,5;9,8,13;4,2,3;4,3,2;4,3;10,4;4,10", lvl = 7, oi = 1, spotsPacked = "44.5,57.6,,54,19,,9;48.2,53.6,,40,3;49.7,66.7,,49,9,,8;47,77.7,,63,8,,9;42.7,79.3,,40,3,,10;38.8,80,,63,13,,11;41.4,72.8,,40,7,,9;38.3,66.7,,54,11,,8;56.3,75.9,,74,9,,9;65.7,63.9,,80,13;68.2,58.8,,40,4;70.2,52.8,,40,4;45.5,58.5,,58,12,1,9;43.7,60.4,,58,17,1,9;44.5,61.8,,40,6,1,9;46,53.8,,50,8,1;46.3,52.1,,40,4,1;50.2,62.3,,40,9,1,8;41.3,77.5,,40,2,1,10;48.5,77.9,,44,6,1,8;40.9,79.6,,55,9,1,11;65.8,58.4,,63,10,1;66.9,59.9,,49,7,1;67,56.7,,49,5,1;68.6,52.6,,44,10,1;69.7,54.6,,40,2,1", spread = true },
 				{ t = "collect", quest = 483, item = 3405, count = 1, map = 1438, x = 45.65, y = 57.44, f = "e", note = "Below ground", fromId = 2740, fromKind = "object", oi = 1 },
 				{ t = "accept", minLevel = 3, quest = 2541, npc = 7317, map = 1438, x = 44.94, y = 61.59, z = 1280.4, f = "e", note = "{npc:7317}, below ground", qlvl = 8 },
 				{ t = "collect", quest = 483, item = 3406, count = 1, map = 1438, x = 43.7, y = 61.22, f = "e", note = "Below ground", fromId = 2739, fromKind = "object", oi = 2 },
@@ -18503,7 +18478,7 @@ G(function() return {
 			note = "South of the pools. The {object:6751} grows by the Hold; the furbolgs around it drop the rest of the fangs.",
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 930, object = 6751, map = 1438, x = 42.61, y = 76.19, z = 1303.6, f = "e", pre = { 918 }, qlvl = 10 },
-				{ t = "collect", quest = 490, item = 5220, count = 15, map = 1438, x = 41.3, y = 77.01, f = "e", note = "{item:5220}: any Gnarlpine furbolg", fromNpcs = { { npc = 2013, npcName = "Gnarlpine Avenger" }, { npc = 2006, npcName = "Gnarlpine Ursa" }, { npc = 2007, npcName = "Gnarlpine Gardener" }, { npc = 2008, npcName = "Gnarlpine Warrior" }, { npc = 2009, npcName = "Gnarlpine Shaman" } }, lvl = 7, oi = 1, spotsPacked = "41.3,77.5,,40,2,,10;38.8,80,,63,13,,11;41.4,72.8,,40,7,,9;38.3,66.7,,54,11,,8;44.5,61.8,,40,6,,9;49.7,66.7,,49,9,,8;48.5,77.9,,44,6,,8;56.3,75.9,,74,9,,9;65.7,63.9,,80,13;68.2,58.8,,40,4;70.2,52.8,,40,4;46.3,52.1,,40,4;40.9,79.6,,55,9,1,11;42.7,79.3,,40,3,1,10;47,77.7,,63,8,1,9;43.7,60.4,,58,17,1,9;45.5,58.5,,58,12,1,9;50.2,62.3,,40,9,1,8;44.5,57.6,,54,19,1,9;46,53.8,,50,8,1;48.2,53.6,,40,3,1;65.8,58.4,,63,10,1;66.9,59.9,,49,7,1;67,56.7,,49,5,1;68.6,52.6,,44,10,1;69.7,54.6,,40,2,1", spread = true },
+				{ t = "collect", quest = 490, item = 5220, count = 15, map = 1438, x = 41.3, y = 77.01, f = "e", note = "{item:5220}: any Gnarlpine furbolg", fromNpcs = { { npc = 2013, npcName = "Gnarlpine Avenger" }, { npc = 2006, npcName = "Gnarlpine Ursa" }, { npc = 2007, npcName = "Gnarlpine Gardener" }, { npc = 2008, npcName = "Gnarlpine Warrior" }, { npc = 2009, npcName = "Gnarlpine Shaman" }, { npc = 2010, npcName = "Gnarlpine Defender" }, { npc = 2011, npcName = "Gnarlpine Augur" }, { npc = 2152, npcName = "Gnarlpine Ambusher" }, { npc = 2012, npcName = "Gnarlpine Pathfinder" }, { npc = 7235, npcName = "Gnarlpine Mystic" }, { npc = 2014, npcName = "Gnarlpine Totemic" }, { npc = 14428, npcName = "Uruson" }, { npc = 14429, npcName = "Grimmaw" } }, fromNpcsAt = "9,1;9,11,1;7,6;6,5;7,5,6;4,5,6;5,6;5,6,7;3,2,4;2,4,12;4,10;8;1,9,13;9,1;5,6,7;5,6,7;5,7,6;4,6,5;6,5,7;8;8;4,2,3;4,3,2;4,3;10,4;4,10", lvl = 7, oi = 1, spotsPacked = "41.3,77.5,,40,2,,10;38.8,80,,63,13,,11;41.4,72.8,,40,7,,9;38.3,66.7,,54,11,,8;44.5,61.8,,40,6,,9;49.7,66.7,,49,9,,8;48.5,77.9,,44,6,,8;56.3,75.9,,74,9,,9;65.7,63.9,,80,13;68.2,58.8,,40,4;70.2,52.8,,40,4;46.3,52.1,,40,4;40.9,79.6,,55,9,1,11;42.7,79.3,,40,3,1,10;47,77.7,,63,8,1,9;43.7,60.4,,58,17,1,9;45.5,58.5,,58,12,1,9;50.2,62.3,,40,9,1,8;44.5,57.6,,54,19,1,9;46,53.8,,50,8,1;48.2,53.6,,40,3,1;65.8,58.4,,63,10,1;66.9,59.9,,49,7,1;67,56.7,,49,5,1;68.6,52.6,,44,10,1;69.7,54.6,,40,2,1", spread = true },
 			},
 		},
 		{
@@ -18575,7 +18550,7 @@ G(function() return {
 			title = "Bloodfeather harpies",
 			note = "The Bloodfeather harpies nest on the slopes west and north of the glade. {quest:938}, an injured sabercat, lies by the glade's west wall among them: lead her back to Sentinel Arynia at the moonwell before her time runs out.\nCareful: The harpies stand packed together, so extra ones often join a fight. Casters are mixed in among them.",
 			goals = {
-				{ t = "collect", quest = 937, item = 5204, count = 6, map = 1438, x = 37.32, y = 37.79, f = "e", fromNpcs = { { npc = 2017, npcName = "Bloodfeather Rogue" }, { npc = 2015, npcName = "Bloodfeather Harpy" }, { npc = 2018, npcName = "Bloodfeather Sorceress" }, { npc = 2019, npcName = "Bloodfeather Fury" }, { npc = 2020, npcName = "Bloodfeather Wind Witch" } }, lvl = 9, oi = 1, spotsPacked = "36.8,38.1,,40,4;35.6,38,,40,7;34.5,35,,50,12;32.2,32.3,,46,6,,11;33.2,29.7,,49,9,,11;34.5,27.7,,61,8,,11;36.6,27.5,,57,5,,11;38.6,40.5,,40,1;37.1,41,,52,6;37.7,43.5,,57,7", spread = true },
+				{ t = "collect", quest = 937, item = 5204, count = 6, map = 1438, x = 37.32, y = 37.79, f = "e", fromNpcs = { { npc = 2017, npcName = "Bloodfeather Rogue" }, { npc = 2015, npcName = "Bloodfeather Harpy" }, { npc = 2018, npcName = "Bloodfeather Sorceress" }, { npc = 2019, npcName = "Bloodfeather Fury" }, { npc = 2020, npcName = "Bloodfeather Wind Witch" }, { npc = 2021, npcName = "Bloodfeather Matriarch" }, { npc = 14431, npcName = "Fury Shelda" } }, fromNpcsAt = "1,2;1,3,2;1,2,3,7;6,5;6,5,4;6,4,5;5,4,6;2;1,2;2,1,3", lvl = 9, oi = 1, spotsPacked = "36.8,38.1,,40,4;35.6,38,,40,7;34.5,35,,50,12;32.2,32.3,,46,6,,11;33.2,29.7,,49,9,,11;34.5,27.7,,61,8,,11;36.6,27.5,,57,5,,11;38.6,40.5,,40,1;37.1,41,,52,6;37.7,43.5,,57,7", spread = true },
 				{ t = "accept", minLevel = 7, quest = 938, npc = 3568, map = 1438, x = 31.54, y = 31.61, z = 1331.6, f = "e", note = "{quest:938}, by the west wall", escort = true, limit = 540, qlvl = 12 },
 				{ t = "complete", quest = 938, map = 1438, x = 38.3, y = 34.4, f = "e", note = "Lead {quest:938} to the moonwell", escort = true, objs = { { count = 1, text = "Lead Mist safely to Sentinel Arynia Cloudsbreak" } } },
 			},
@@ -18661,8 +18636,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 930, npc = 2080, map = 1438, x = 60.9, y = 68.49, z = 1255.9, f = "e" },
 				{ t = "turnin", quest = 931, npc = 2080, map = 1438, x = 60.9, y = 68.49, z = 1255.9, f = "e" },
-				{ t = "accept", minLevel = 4, quest = 2399, object = 7510, map = 1438, x = 60.75, y = 68.56, z = 1255.9, f = "e", note = "{object:7510}, beside him", pre = { 931 }, qlvl = 10 },
-				{ t = "turnin", quest = 2399, object = 7510, map = 1438, x = 60.75, y = 68.56, z = 1255.9, f = "e" },
+				{ t = "turnin", quest = 2399, object = 7510, map = 1438, x = 60.75, y = 68.56, z = 1255.9, f = "e", direct = true, qlvl = 10 },
 				{ t = "collect", quest = 99050, item = 286017, count = 6, map = 1438, x = 62.07, y = 68.84, f = "e", fromNpcs = { { npc = 275703, npcName = "Lasher Sproutling" }, { npc = 275708, npcName = "Blooming Lasher" }, { npc = 276099, npcName = "Wrathvine" } }, lvl = 7, oi = 1, spotsPacked = "61,69.3,,62,10;57.8,71.2,,69,9;57.6,66,,40,3;59.8,62.8,,40,3;54.4,65.4,,49,7;53.2,69.9,,64,12,,8;53.3,74.6,,40,3;50,72.2,,76,7;43.7,44.1,,40,4,,10;40.9,40.5,,60,9,,10;43.5,35.1,,44,6,,10;42.8,26.3,,66,5,,10;61.1,66.4,,45,8,1;62.4,65.5,,40,3,1;59.8,72.1,,59,10,1,8;60,65,,40,5,1;57.9,64.4,,48,6,1;56.1,67,,40,7,1,8;55.5,70.2,,55,7,1;54.4,67.6,,59,8,1,8;53.5,71.6,,47,5,1,8;52.2,73.6,,51,7,1;42.4,42.9,,49,8,1,10;43.8,40,,40,4,1,10;42.4,37.8,,56,8,1,10;43.2,32.4,,46,5,1,10;41.6,34,,55,6,1,10;43.3,29.2,,66,10,1,10;44.3,27,,40,7,1,10", spread = true },
 			},
 		},
@@ -19217,7 +19191,7 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 954, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e" },
 				{ t = "accept", minLevel = 7, quest = 955, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e", pre = { 954 }, qlvl = 12 },
-				{ t = "collect", quest = 955, item = 5336, count = 8, map = 1439, x = 44.6, y = 36.6, f = "e", note = "Grell Earrings", fromNpcs = { { npc = 2189, npcName = "Vile Sprite" }, { npc = 2190, npcName = "Wild Grell" } }, lvl = 12, oi = 1, spotsPacked = "44.6,36.6,,99,6;44.7,38.5,,54,10,1;46,39.3,,61,10,1;46.9,37.8,,46,8,1;47.6,36.7,,51,6,1" },
+				{ t = "collect", quest = 955, item = 5336, count = 8, map = 1439, x = 44.6, y = 36.6, f = "e", note = "Grell Earrings", fromAlso = "Wild Grell", fromAlsoId = 2190, fromId = 2189, fromKind = "npc", fromNpcs = { { npc = 2189, npcName = "Vile Sprite" }, { npc = 2190, npcName = "Wild Grell" } }, lvl = 12, oi = 1, spotsPacked = "44.6,36.6,,99,6;44.7,38.5,,54,10,1;46,39.3,,61,10,1;46.9,37.8,,46,8,1;47.6,36.7,,51,6,1" },
 				{ t = "turnin", quest = 955, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e" },
 				{ t = "accept", minLevel = 7, quest = 956, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e", pre = { 955 }, qlvl = 13 },
 				{ t = "collect", quest = 956, item = 5338, count = 1, map = 1439, x = 45.5, y = 36.5, f = "e", note = "{item:5338}: Deth'ryll Satyrs", fromId = 2212, fromKind = "npc", fromNpcs = { { npc = 2212, npcName = "Deth'ryll Satyr" } }, lvl = 13, oi = 1, spotsPacked = "45.5,36.5,,15,1;46.6,39.2,,15,1,1;45.4,39.7,,15,1,1;47.6,37.1,,33,3,1" },
@@ -19603,7 +19577,7 @@ G(function() return {
 				{ t = "turnin", quest = 92473, npc = 257551, map = 2521, x = 42.41, y = 25.17, z = 980.8 },
 				{ t = "turnin", quest = 92470, npc = 251366, map = 2521, x = 42.76, y = 23.66, z = 977.3 },
 				{ t = "accept", minLevel = 3, quest = 92472, npc = 251366, map = 2521, x = 42.76, y = 23.66, z = 977.3, pre = { 92470 }, qlvl = 5 },
-				{ t = "accept", minLevel = 4, quest = 96638, npc = 251366, map = 2521, x = 42.76, y = 23.66, z = 977.3, closedBy = { 96101, 96627, 96628, 96630, 96652, 96656, 96659 }, pre = { 92470 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96638, npc = 251366, map = 2521, x = 42.76, y = 23.66, z = 977.3, closedBy = { 96627, 96628, 96630, 96652, 96656, 96659 }, pre = { 92470 }, qlvl = 6 },
 				{ t = "train", zone = 2521, candidates = { 3, 4, 5, 1, 2, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89 }, class = true },
 			},
 		},
@@ -19637,7 +19611,7 @@ G(function() return {
 			title = "{npc:263664}",
 			note = "With a profession learned, {npc:263664} also offers its Camping 101, which its trainer in {area:16624} takes on the village round.",
 			goals = {
-				{ t = "accept", minLevel = 4, quest = 96101, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, closedBy = { 95998, 96604, 96605, 96606, 96607, 96608 }, qlvl = 6 },
+				{ t = "accept", minLevel = 4, quest = 96101, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, closedBy = { 95998, 96604, 96605, 96606, 96607, 96608 }, pre = { 96638 }, qlvl = 6 },
 				{ t = "complete", quest = 96101, map = 2521, x = 41.73, y = 44.78, note = "/sit by {npc:263664}'s campfire until you get {spell:1229451}", objs = { { count = 1, text = "Sit near the campfire (Optional)" }, { count = 1, text = "Gain the Boosted Rest buff" } } },
 				{ t = "turnin", quest = 96101, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6 },
 				{ t = "accept", minLevel = 4, quest = 96646, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, closedBy = { 96626, 96629, 96634, 96655, 96658, 96661 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, qlvl = 6 },
@@ -19645,63 +19619,63 @@ G(function() return {
 		},
 		{
 			title = "{quest:96045}",
-			when = { { k = "skill", n = 1, name = "Alchemy", skillLine = 171 } },
+			when = { { k = "skill", n = 1, name = "Alchemy", skillLine = 171 }, { k = "knows", spell = 1230564, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97963, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:257019}", closedBy = { 96045, 97899, 97915, 97927, 97938, 97951 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 171, profName = "Alchemy", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96044}",
-			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 } },
+			when = { { k = "skill", n = 1, name = "Blacksmithing", skillLine = 164 }, { k = "knows", spell = 1230171, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97964, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:251913}", closedBy = { 96044, 97900, 97916, 97928, 97939, 97952 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 164, profName = "Blacksmithing", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96047}",
-			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 } },
+			when = { { k = "skill", n = 1, name = "First Aid", skillLine = 129 }, { k = "knows", spell = 1230117, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97965, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:257018}", closedBy = { 96047, 97903, 97919, 97931, 97942, 97955 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 129, profName = "First Aid", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96050}",
-			when = { { k = "skill", n = 1, name = "Fishing", skillLine = 356 } },
+			when = { { k = "skill", n = 1, name = "Fishing", skillLine = 356 }, { k = "knows", spell = 1229745, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97967, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:251992}", closedBy = { 96050, 97904, 97920, 97932, 97943, 97956 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 356, profName = "Fishing", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96031}",
-			when = { { k = "skill", n = 1, name = "Leatherworking", skillLine = 165 } },
+			when = { { k = "skill", n = 1, name = "Leatherworking", skillLine = 165 }, { k = "knows", spell = 1229432, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97969, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:251993}", closedBy = { 96031, 97906, 97922, 97934, 97946, 97958 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 165, profName = "Leatherworking", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96046}",
-			when = { { k = "skill", n = 1, name = "Mining", skillLine = 186 } },
+			when = { { k = "skill", n = 1, name = "Mining", skillLine = 186 }, { k = "knows", spell = 1230161, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97970, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:257022}", closedBy = { 96046, 97907, 97923, 97935, 97948, 97959 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 186, profName = "Mining", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96056}",
-			when = { { k = "skill", n = 1, name = "Skinning", skillLine = 393 } },
+			when = { { k = "skill", n = 1, name = "Skinning", skillLine = 393 }, { k = "knows", spell = 1229517, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97971, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:257024}", closedBy = { 96056, 97908, 97924, 97936, 97949, 97960 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 393, profName = "Skinning", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96057}",
-			when = { { k = "skill", n = 1, name = "Tailoring", skillLine = 197 } },
+			when = { { k = "skill", n = 1, name = "Tailoring", skillLine = 197 }, { k = "knows", spell = 1263425, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 97973, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:251991}", closedBy = { 96057, 96102, 97925, 97937, 97950, 97961, 97972 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 197, profName = "Tailoring", profRank = 1, qlvl = 6 },
 			},
 		},
 		{
 			title = "{quest:96059}",
-			when = { { k = "skill", n = 1, name = "Enchanting", skillLine = 333 } },
+			when = { { k = "skill", n = 1, name = "Enchanting", skillLine = 333 }, { k = "knows", spell = 1230643, neg = true } },
 			goals = {
 				{ t = "accept", minLevel = 4, quest = 98286, npc = 263664, map = 2521, x = 41.66, y = 44.8, z = 837.6, note = "{npc:263664}: for {npc:257020}", closedBy = { 96059, 97901, 97917, 97929, 97940, 97953, 98284 }, pre = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 }, profLine = 333, profName = "Enchanting", profRank = 1, qlvl = 6 },
 			},
@@ -20173,7 +20147,7 @@ G(function() return {
 				{ t = "turnin", quest = 93320, npc = 252378, map = 2521, x = 69.65, y = 67.07, z = 737.9 },
 				{ t = "accept", minLevel = 6, quest = 92642, npc = 252378, map = 2521, x = 69.65, y = 67.07, z = 737.9, pre = { 93320 }, qlvl = 11 },
 				{ t = "accept", minLevel = 6, quest = 92645, npc = 252378, map = 2521, x = 69.65, y = 67.07, z = 737.9, pre = { 93320 }, qlvl = 11 },
-				{ t = "collect", quest = 92834, item = 255658, count = 10, map = 2521, x = 66.24, y = 65.15, fromNpcs = { { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252664, npcName = "Al'Aketh Stormchaser" }, { npc = 252665, npcName = "Al'Aketh Footsoldier" }, { npc = 252762, npcName = "Al'Aketh Guardian" } }, lvl = 11, oi = 1, spotsPacked = "66.1,64.2,,42,8,,9;63.2,60.5,,48,9,,9;60.2,62.1,,40,1,,9;61,68.8,,56,12,,9;64.5,55.1,,52,13;65,50.1,,51,12;63.4,46.1,,92,14;62.7,38.3,,70,14;59.4,35.9,,40,1;66.8,38.6,,40,1;69.7,50.3,,56,18;59.4,53,,46,10;65,66.8,,52,8,1,9;66.1,62.4,,42,7,1,9;64.4,65.3,,58,8,1,9;64.4,63,,50,11,1,9;63.1,64.1,,60,12,1,9;62.4,66.6,,61,14,1,9;62.2,61.7,,66,16,1,9;64.5,58.4,,40,5,1,9;61.1,65.5,,84,16,1,9;65.8,57.2,,40,5,1,10;63.9,53.3,,55,20,1;65.8,52.4,,53,10,1;67.2,51.3,,48,9,1;62.1,52.4,,62,35,1;62.7,50.6,,48,13,1;66.7,49.2,,67,11,1;61.5,49.5,,63,21,1;59.9,50.6,,96,29,1;65.1,47.5,,44,9,1;62.9,48.1,,52,19,1;64.7,45.4,,59,8,1;64.4,38.2,,59,12,1;65.6,36.5,,68,8,1;62.6,36.5,,83,12,1;63.8,35.9,,46,6,1;41,64.1,,40,1,1,8", spread = true },
+				{ t = "collect", quest = 92834, item = 255658, count = 10, map = 2521, x = 66.24, y = 65.15, fromNpcs = { { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252664, npcName = "Al'Aketh Stormchaser" }, { npc = 252665, npcName = "Al'Aketh Footsoldier" }, { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252765, npcName = "Al'Aketh Blademaster" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 252767, npcName = "Al'Aketh Honor Guard" }, { npc = 256966, npcName = "Skypriest Aanders" } }, fromNpcsAt = "1,2;2,1;1;2,1;5,7,6,9,8;8,9,6;5,6,7;3,4;3;4;8,9;5,7,6;2,1;1,2;2,1;2,1;1,2;2,1;1,2;1,2;1,2;1,2,7;5,7,6,8,9;9,8,6;8,9;5,6,7,8,9;5,6,7,8,9;9,8;6,5,7,8,9;5,7,6;5,7,8,9,6;5,6,7;5,6,7;3,4;3,4;3,4;3,4;10", lvl = 11, oi = 1, spotsPacked = "66.1,64.2,,42,8,,9;63.2,60.5,,48,9,,9;60.2,62.1,,40,1,,9;61,68.8,,56,12,,9;64.5,55.1,,52,13;65,50.1,,51,12;63.4,46.1,,92,14;62.7,38.3,,70,14;59.4,35.9,,40,1;66.8,38.6,,40,1;69.7,50.3,,56,18;59.4,53,,46,10;65,66.8,,52,8,1,9;66.1,62.4,,42,7,1,9;64.4,65.3,,58,8,1,9;64.4,63,,50,11,1,9;63.1,64.1,,60,12,1,9;62.4,66.6,,61,14,1,9;62.2,61.7,,66,16,1,9;64.5,58.4,,40,5,1,9;61.1,65.5,,84,16,1,9;65.8,57.2,,40,5,1,10;63.9,53.3,,55,20,1;65.8,52.4,,53,10,1;67.2,51.3,,48,9,1;62.1,52.4,,62,35,1;62.7,50.6,,48,13,1;66.7,49.2,,67,11,1;61.5,49.5,,63,21,1;59.9,50.6,,96,29,1;65.1,47.5,,44,9,1;62.9,48.1,,52,19,1;64.7,45.4,,59,8,1;64.4,38.2,,59,12,1;65.6,36.5,,68,8,1;62.6,36.5,,83,12,1;63.8,35.9,,46,6,1;41,64.1,,40,1,1,8", spread = true },
 				{ t = "kill", quest = 92645, npc = 252666, count = 1, map = 2521, x = 65.58, y = 65.62, z = 696, oi = 1, target = "Commander Belguilos" },
 				{ t = "kill", quest = 92642, npc = 254596, count = 4, map = 2521, x = 65.4, y = 68.4, z = 696, lvl = 10, oi = 1, spotsPacked = "65.4,68.4,696,68,6;63.7,68.7,,15,1,1;65.5,65.5,,53,6,1;67.3,67.3,,24,2,1", target = "Al'Aketh Healer" },
 				{ t = "kill", quest = 92642, npc = 270201, count = 8, map = 2521, x = 65.57, y = 68.23, lvl = 10, oi = 2, spotsPacked = "65.3,68.9,695,47,6;65.5,66.4,684.4,55,11;67.1,67.5,711.8,41,5;63.6,68.7,,45,4;65.5,71.4,,23,2;66,64.2,,42,3;68.7,67.4,,19,2,1", target = "Al'Aketh Brawler" },
@@ -20308,7 +20282,7 @@ G(function() return {
 				{ t = "collect", item = 265476, map = 2521, x = 65.53, y = 36.32, optional = true, fromId = 253622, fromKind = "npc", fromNpcs = { { npc = 253622, npcName = "Commander Haalien" } } },
 				{ t = "accept", minLevel = 9, quest = 94490, item = 265476, optional = true, preAll = { 94485, 94486, 94487 }, qlvl = 12 },
 				{ t = "collect", quest = 94488, item = 265475, count = 1, map = 2521, x = 65.53, y = 36.32, fromId = 253622, fromKind = "npc", fromNpcs = { { npc = 253622, npcName = "Commander Haalien" } }, oi = 1 },
-				{ t = "kill", quest = 94489, npc = 258134, count = 1, map = 2521, x = 64.96, y = 34.95, z = 802.9, note = "Below ground", text = "Heal the injured druids in the Nightfang Den", oi = 1, target = "Naaleos Leafwhisper" },
+				{ t = "kill", quest = 94489, npc = 258134, count = 1, map = 2521, x = 64.96, y = 34.95, z = 802.9, note = "Below ground", text = "Heal the injured druids in the Nightfang Den", fromNpcs = { { npc = 258134, npcName = "Naaleos Leafwhisper" }, { npc = 258137, npcName = "Telenos Leafwhisper" }, { npc = 258138, npcName = "Nayeela Snarlfang" }, { npc = 258275, npcName = "Neyasteel Mossmender" }, { npc = 258277, npcName = "Bryaes Galechaser" } }, oi = 1, target = "Naaleos Leafwhisper" },
 				{ t = "talk", quest = 94489, npc = 258130, map = 2521, x = 64.48, y = 34.74, z = 804.3, note = "Below ground", text = "Find {npc:258130}", oi = 2 },
 				{ t = "collect", quest = 93165, item = 258771, count = 10, map = 2521, x = 63.7, y = 37.1, note = "{item:258771}: the Stormchasers and Footsoldiers around {npc:254151}'s camp", oi = 1 },
 				{ t = "turnin", quest = 93165, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2 },
@@ -20517,7 +20491,7 @@ G(function() return {
 			only = { classes = { "MAGE" } },
 			note = "Leave {zone:1453} by the main gate. The {quest:1861} waterfall is south-west of the gates, on the way west to {zone:1436}: fill {item:7207} at its base.",
 			goals = {
-				{ t = "collect", quest = 1861, item = 7206, count = 1, map = 1429, x = 28.57, y = 61.39, f = "e", fromId = 174794, fromKind = "object", oi = 1 },
+				{ t = "collect", quest = 1861, item = 7206, count = 1, map = 1429, x = 28.57, y = 61.39, f = "e", carriedTo = "forever/alliance/02-westfall", fromId = 174794, fromKind = "object", oi = 1 },
 			},
 		},
 		{
@@ -21299,7 +21273,7 @@ G(function() return {
 			title = "Minion's Scourgestones",
 			note = "Kill the Scourge of the {zone:1422} with the Commission on: skeletons, ghouls and cultists (level 50-58) drop a {item:12840} about two kills in five. {area:197}, just east of {area:3197} around {area:196}, is the closest farm. Avoid the Flesh Golems that patrol the fields; Skeletal Guardians cast {spell:120} and {spell:1449} up close, Dark Summoners run for help at low health.",
 			goals = {
-				{ t = "collect", quest = 8414, item = 12840, count = 20, map = 1422, x = 47.37, y = 84.3, f = "e", note = "{item:12840} x20", fromNpcs = { { npc = 1783, npcName = "Skeletal Flayer" }, { npc = 1785, npcName = "Skeletal Terror" }, { npc = 1784, npcName = "Skeletal Sorcerer" }, { npc = 1804, npcName = "Wailing Death" }, { npc = 1802, npcName = "Hungering Wraith" } }, lvl = 56, oi = 1, spotsPacked = "47.6,83,,40,3,,51;49.9,77,,52,11,,52;47.1,71.6,,43,7;48.7,63.3,,46,6;43.5,63.3,,81,11;40.9,72.4,,66,10;36.6,56.4,,65,23,,54;47.3,50.3,,57,28,,55;54.4,65.7,,46,6;54.2,80.4,,40,15,,52;63.9,56.8,,50,15,,58;69.3,18,,40,2;49.3,82.3,,40,2,1,52;48.4,80.2,,49,7,1,52;50.2,80.5,,40,6,1,52;50.7,75.7,,40,5,1,52;45.6,74.1,,62,9,1;42.4,74.2,,59,9,1;43.9,72.3,,43,7,1;45.4,69.8,,55,13,1;48.2,68.9,,62,10,1;50,68,,42,4,1;42.1,69.4,,60,13,1;44.9,67.7,,62,10,1;39.3,70.2,,61,9,1;49.4,65.7,,40,6,1;45.8,65.6,,50,5,1;53.3,67.5,,40,10,1;47.5,64.5,,41,5,1;42,66.1,,59,9,1;39.5,67.4,,69,10,1;52.6,65.2,,52,10,1;46.1,62.2,,59,10,1;53.4,63.4,,40,3,1;45.6,54.8,,48,7,1,54;37.8,58.1,,54,12,1,54;47.5,52.7,,42,7,1,54;38.3,55,,66,27,1,54;45.7,51.8,,77,20,1,54;62.1,59.1,,68,14,1,58;64.6,59.4,,69,10,1,58;73.3,54.8,,40,1,1;78.9,56.5,,40,1,1;83.3,66.9,,40,1,1;75.6,44.6,,40,1,1;68.2,19.7,,46,4,1", spread = true },
+				{ t = "collect", quest = 8414, item = 12840, count = 20, map = 1422, x = 47.37, y = 84.3, f = "e", note = "{item:12840} x20", fromNpcs = { { npc = 1783, npcName = "Skeletal Flayer" }, { npc = 1785, npcName = "Skeletal Terror" }, { npc = 1784, npcName = "Skeletal Sorcerer" }, { npc = 1804, npcName = "Wailing Death" }, { npc = 1802, npcName = "Hungering Wraith" }, { npc = 1789, npcName = "Skeletal Acolyte" }, { npc = 1794, npcName = "Soulless Ghoul" }, { npc = 1795, npcName = "Searing Ghoul" }, { npc = 1791, npcName = "Slavering Ghoul" }, { npc = 1787, npcName = "Skeletal Executioner" }, { npc = 4475, npcName = "Blighted Zombie" }, { npc = 4474, npcName = "Rotting Cadaver" }, { npc = 1793, npcName = "Rotting Ghoul" }, { npc = 10801, npcName = "Jabbering Ghoul" }, { npc = 1796, npcName = "Freezing Ghoul" }, { npc = 8555, npcName = "Crypt Fiend" }, { npc = 8534, npcName = "Putrid Gargoyle" }, { npc = 10580, npcName = "Fetid Zombie" }, { npc = 8556, npcName = "Crypt Walker" }, { npc = 10816, npcName = "Wandering Skeleton" }, { npc = 1847, npcName = "Foulmane" } }, fromNpcsAt = "1;9,1;6,8,10;6,7,10;6,10,7,8;7,8,6,10;1,3,14,9;2,11,12,20;13,15;3,1,9;5,4;16,19;1,9;1,9;9,1;9,1;6,7,8,10;7,6,10,8;8,7,6,10;8,10,7,6;10,7,8,6;10,7,8,6;8,6,10,7;8,10,6,7;7,10,6;7,8,6,10;7,6,10;13,15,18;6,8;6,7,8;7,8,6,10;13,15,18;6,8,7,10;13,15;12,11;1,3,9,14;11,12,2;1,9,3,14;12,11,2,21;4,5;5,4;17;17;17;17;16,19", lvl = 56, oi = 1, spotsPacked = "47.6,83,,40,3,,51;49.9,77,,52,11,,52;47.1,71.6,,43,7;48.7,63.3,,46,6;43.5,63.3,,81,11;40.9,72.4,,66,10;36.6,56.4,,65,23,,54;47.3,50.3,,57,28,,55;54.4,65.7,,46,6;54.2,80.4,,40,15,,52;63.9,56.8,,50,15,,58;69.3,18,,40,2;49.3,82.3,,40,2,1,52;48.4,80.2,,49,7,1,52;50.2,80.5,,40,6,1,52;50.7,75.7,,40,5,1,52;45.6,74.1,,62,9,1;42.4,74.2,,59,9,1;43.9,72.3,,43,7,1;45.4,69.8,,55,13,1;48.2,68.9,,62,10,1;50,68,,42,4,1;42.1,69.4,,60,13,1;44.9,67.7,,62,10,1;39.3,70.2,,61,9,1;49.4,65.7,,40,6,1;45.8,65.6,,50,5,1;53.3,67.5,,40,10,1;47.5,64.5,,41,5,1;42,66.1,,59,9,1;39.5,67.4,,69,10,1;52.6,65.2,,52,10,1;46.1,62.2,,59,10,1;53.4,63.4,,40,3,1;45.6,54.8,,48,7,1,54;37.8,58.1,,54,12,1,54;47.5,52.7,,42,7,1,54;38.3,55,,66,27,1,54;45.7,51.8,,77,20,1,54;62.1,59.1,,68,14,1,58;64.6,59.4,,69,10,1,58;73.3,54.8,,40,1,1;78.9,56.5,,40,1,1;83.3,66.9,,40,1,1;75.6,44.6,,40,1,1;68.2,19.7,,46,4,1", spread = true },
 			},
 		},
 		{
@@ -21610,7 +21584,7 @@ G(function() return {
 			title = "{npc:6241}",
 			note = "{npc:6241} is downstairs in the house of {area:144} that has a tailoring merchant outside. His quest only opens once you hold Jordan's.",
 			goals = {
-				{ t = "accept", minLevel = 20, quest = 1655, npc = 6241, map = 1432, x = 35.95, y = 44.91, z = 322.2, f = "e", qlvl = 22 },
+				{ t = "accept", minLevel = 20, quest = 1655, npc = 6241, map = 1432, x = 35.95, y = 44.91, z = 322.2, f = "e", parent = 1654, qlvl = 22 },
 			},
 		},
 		{
@@ -21648,7 +21622,7 @@ G(function() return {
 			title = "{npc:3649}",
 			note = "{npc:3649} is in {area:442}. Take his quest before you hunt naga: the Kor Gem never drops without it.",
 			goals = {
-				{ t = "accept", minLevel = 20, quest = 1442, npc = 3649, map = 1439, x = 37.4, y = 40.13, z = 8.3, f = "e", qlvl = 22 },
+				{ t = "accept", minLevel = 20, quest = 1442, npc = 3649, map = 1439, x = 37.4, y = 40.13, z = 8.3, f = "e", parent = 1654, qlvl = 22 },
 			},
 		},
 		{
@@ -22023,7 +21997,7 @@ G(function() return {
 		{
 			title = "{quest:94773}: {npc:376}",
 			when = { { k = "onquest", neg = true, q = { 94773, 94774, 94775, 94776, 94777, 94778, 94779 } } },
-			note = "At 10, go to {npc:376} at the altar of the Cathedral of Light, in {zone:1453}'s {object:2098}, and take her quest: she teaches {quest:94773} on the spot. No letter needed; one from another trainer works too (next steps). {quest:94773} instantly heals a friend below half health and clears {spell:6788}, so you can shield them again (5-minute cooldown); it does not work on yourself. Human priests do not get Desperate Prayer in Forever: this is their spell instead.",
+			note = "At 10, go to {npc:376} at the altar of the Cathedral of Light, in {zone:1453}'s {object:2098}, and take her quest: she teaches {quest:94773} on the spot. No letter needed; one from another trainer works too (next steps). {quest:94773} instantly heals a friend below half health and clears {spell:6788}, so you can shield them again (5-minute cooldown); it does not work on yourself. Human priests do not get {spell:13908} in Forever: this is their spell instead.",
 			goals = {
 				{ t = "level", level = 10 },
 				{ t = "accept", minLevel = 10, quest = 94773, npc = 376, map = 1453, x = 49.53, y = 44.6, z = 109.9, qlvl = 10 },
@@ -22750,7 +22724,7 @@ G(function() return {
 		},
 		{
 			title = "{npc:332}",
-			note = "Head north through Elwynn to {zone:1453}; Mathias Shaw is upstairs in SI:7. He teaches Poisons and gives you the {item:7676} recipe. Poisons are made, not bought: each batch of {item:6947} takes a {item:2928} and an {item:3371}, which {npc:1325} and {npc:1326} sell in {object:2100} next to SI:7. Buy a stack of each, open Poisons from your spellbook to make them, then use a poison on your weapon.",
+			note = "Head north through Elwynn to {zone:1453}; Mathias Shaw is upstairs in SI:7. He teaches Poisons and gives you the {item:7676} recipe. Poisons are made, not bought: each batch of {spell:8681} takes a {item:2928} and an {item:3371}, which {npc:1325} and {npc:1326} sell in {object:2100} next to SI:7. Buy a stack of each, open Poisons from your spellbook to make them, then use a poison on your weapon.",
 			goals = {
 				{ t = "turnin", quest = 2359, npc = 332, map = 1453, x = 78.31, y = 70.74, z = 109.6, note = "{npc:332}: Poisons", rewards = { items = { { item = 18160, itemName = "Recipe: Thistle Tea" } } } },
 				{ t = "accept", minLevel = 20, quest = 2607, npc = 332, map = 1453, x = 78.31, y = 70.74, z = 109.6, pre = { 2359 }, qlvl = 20 },
@@ -22837,6 +22811,7 @@ G(function() return {
 			title = "Twisted Fire Totems",
 			note = "Five Twisted Fire Totems. The Stonevault troggs (Skullthumpers, Bonesnappers and Shamans, level 37-41) south of {area:338} in the {zone:1418} carry them; the Shamans drop Fire Nova Totems and a {npc:3560}, the Bonesnappers run for help when hurt. Respawn about five minutes.",
 			goals = {
+				{ t = "level", level = 36 },
 				{ t = "collect", quest = 79358, item = 274044, count = 5, map = 1418, x = 50.46, y = 68.43, f = "e", fromNpcs = { { npc = 2893, npcName = "Stonevault Bonesnapper" }, { npc = 2894, npcName = "Stonevault Shaman" } }, lvl = 41, oi = 3, spotsPacked = "49.8,69.6,,67,12;51,66.1,,47,7" },
 			},
 		},
@@ -22844,20 +22819,23 @@ G(function() return {
 			title = "Twisted Earth Totems",
 			note = "Five Twisted Earth Totems. The Lost Ones (murlocs, level 34-39) north and north-east of {area:75} in the {zone:1435} carry them; most run for help when hurt.",
 			goals = {
-				{ t = "collect", quest = 79358, item = 274045, count = 5, map = 1435, x = 48.46, y = 31.13, f = "e", fromNpcs = { { npc = 755, npcName = "Lost One Mudlurker" }, { npc = 757, npcName = "Lost One Fisherman" }, { npc = 759, npcName = "Lost One Hunter" }, { npc = 760, npcName = "Lost One Muckdweller" }, { npc = 761, npcName = "Lost One Seer" } }, lvl = 36, oi = 2, spotsPacked = "50.2,31.2,,61,7;45.3,30,,41,3;43.4,36.5,,32,2;55.7,31.2,,50,9,,37;57.7,25.8,,64,10,,37;61.4,21.8,,42,11,,39;62.9,24.3,,79,13,1,39;64.4,20.4,,51,4,1,39" },
+				{ t = "level", level = 33 },
+				{ t = "collect", quest = 79358, item = 274045, count = 5, map = 1435, x = 48.46, y = 31.13, f = "e", fromNpcs = { { npc = 755, npcName = "Lost One Mudlurker" }, { npc = 757, npcName = "Lost One Fisherman" }, { npc = 759, npcName = "Lost One Hunter" }, { npc = 760, npcName = "Lost One Muckdweller" }, { npc = 761, npcName = "Lost One Seer" }, { npc = 1106, npcName = "Lost One Cook" }, { npc = 763, npcName = "Lost One Chieftain" }, { npc = 762, npcName = "Lost One Riftseeker" } }, fromNpcsAt = "1,2;1,2;1,2;4,2,3;3,4,2;7,6,3,8,4,5;4,6,3,8,7,5;4,6,8,3,5,7", lvl = 36, oi = 2, spotsPacked = "50.2,31.2,,61,7;45.3,30,,41,3;43.4,36.5,,32,2;55.7,31.2,,50,9,,37;57.7,25.8,,64,10,,37;61.4,21.8,,42,11,,39;62.9,24.3,,79,13,1,39;64.4,20.4,,51,4,1,39" },
 			},
 		},
 		{
 			title = "Twisted Water Totems",
 			note = "Five Twisted Water Totems. The Mirefin murlocs (level 35-38) north-east of {area:496} in northern {zone:1445} carry them.",
 			goals = {
-				{ t = "collect", quest = 79358, item = 274046, count = 5, map = 1445, x = 57.15, y = 21.37, f = "e", fromNpcs = { { npc = 4358, npcName = "Mirefin Puddlejumper" }, { npc = 4359, npcName = "Mirefin Murloc" }, { npc = 4360, npcName = "Mirefin Warrior" }, { npc = 4361, npcName = "Mirefin Muckdweller" }, { npc = 4362, npcName = "Mirefin Coastrunner" } }, lvl = 38, oi = 1, spotsPacked = "56.9,22,,56,15,,36;57.7,20.1,,40,7,,36;58.6,15.8,,40,7,,37;57.6,10.9,,49,9;59.4,10.2,,40,7;59.8,7.7,,40,4;63,7.5,,64,18;62.4,18.6,,53,6;64.8,26.7,,40,2;64.5,28.6,,40,2;63.4,27.6,,49,5;54.5,15.4,,62,11,,37;57.4,15.7,,73,13,1,37;58.7,9.1,,50,11,1", spread = true },
+				{ t = "level", level = 34 },
+				{ t = "collect", quest = 79358, item = 274046, count = 5, map = 1445, x = 57.15, y = 21.37, f = "e", fromNpcs = { { npc = 4358, npcName = "Mirefin Puddlejumper" }, { npc = 4359, npcName = "Mirefin Murloc" }, { npc = 4360, npcName = "Mirefin Warrior" }, { npc = 4361, npcName = "Mirefin Muckdweller" }, { npc = 4362, npcName = "Mirefin Coastrunner" }, { npc = 4363, npcName = "Mirefin Oracle" } }, fromNpcsAt = "1,2;1,2;2,5;3,4,6;3,4,6;3,4,6;3,4,6;3;3;3;3;2,5;2,5;3,4,6", lvl = 38, oi = 1, spotsPacked = "56.9,22,,56,15,,36;57.7,20.1,,40,7,,36;58.6,15.8,,40,7,,37;57.6,10.9,,49,9;59.4,10.2,,40,7;59.8,7.7,,40,4;63,7.5,,64,18;62.4,18.6,,53,6;64.8,26.7,,40,2;64.5,28.6,,40,2;63.4,27.6,,49,5;54.5,15.4,,62,11,,37;57.4,15.7,,73,13,1,37;58.7,9.1,,50,11,1", spread = true },
 			},
 		},
 		{
 			title = "Twisted Air Totems",
 			note = "Five Twisted Air Totems. The Maraudine centaurs (level 36-40) north and north-east of {area:2408} in western {zone:1443} carry them; the Scouts drop one nearly every other kill. Wranglers Net and Disarm, Windchasers heal, Stormers throw {spell:9654}: pull one at a time. Respawn about five minutes.",
 			goals = {
+				{ t = "level", level = 36 },
 				{ t = "collect", quest = 79358, item = 274047, count = 5, map = 1443, x = 32.59, y = 59.75, f = "e", fromNpcs = { { npc = 4654, npcName = "Maraudine Scout" } }, lvl = 38, oi = 4, spotsPacked = "34.9,57.6,,77,3;31,54.6,,39,3;30.7,66.2,,28,2;30.7,61.1,,15,1,1;35.8,61.3,,15,1,1;33,65.9,,15,1,1" },
 			},
 		},
@@ -22872,6 +22850,7 @@ G(function() return {
 			title = "The steam pools",
 			note = "{npc:259023} hands you the {item:268582}. {zone:1441} is far: the boat to Theramore and the road west, or fly to {area:489} on the {zone:1444} border and head east into the canyon. Place the {item:268582} at the steam pools north-west of {area:484} to call the corrupted elementals and then the {npc:216474}; Razormane quilboar join the fight while the ritual runs. A group quest: bring at least one or two friends. The {item:212792} drops about every other kill, and every group member can loot it.",
 			goals = {
+				{ t = "level", level = 38 },
 				{ t = "collect", quest = 96135, item = 212792, count = 1, map = 1441, x = 36.72, y = 39.25, f = "e", note = "{item:212792}, from the {npc:216474}", fromId = 216474, fromKind = "npc", fromNpcs = { { npc = 216474, npcName = "Ravaging Tempest" } }, fromRank = 1, group = { kind = "group", size = 3 }, lvl = 40, oi = 1, spotsPacked = "36.5,37.8,,39,3;37,40.7,,28,3" },
 			},
 		},
@@ -22933,7 +22912,7 @@ G(function() return {
 			title = "Iceclaw Bear Pendants",
 			note = "The Frostmane Troll Whelps (level 3-4) hold the snowy slopes west and south-west of {area:77}, and the Frostmane Novices (level 3-4, they throw Frostbolts from range) camp south of it. Both carry the pendants; they respawn in about three minutes.",
 			goals = {
-				{ t = "collect", quest = 94373, item = 264356, count = 2, map = 1426, x = 27.7, y = 78.82, f = "e", fromId = 706, fromKind = "npc", fromNpcs = { { npc = 706, npcName = "Frostmane Troll Whelp" }, { npc = 946, npcName = "Frostmane Novice" } }, lvl = 4, oi = 1, spotsPacked = "26.7,79.4,,57,11;28.6,80.5,,60,15;29,82.5,,55,6;30.2,80.4,,53,11;22.8,79.5,,55,9;20.9,76.5,,54,9", spread = true },
+				{ t = "collect", quest = 94373, item = 264356, count = 2, map = 1426, x = 27.7, y = 78.82, f = "e", fromAlso = "Frostmane Novice", fromAlsoId = 946, fromId = 706, fromKind = "npc", fromNpcs = { { npc = 706, npcName = "Frostmane Troll Whelp" }, { npc = 946, npcName = "Frostmane Novice" } }, lvl = 4, oi = 1, spotsPacked = "26.7,79.4,,57,11;28.6,80.5,,60,15;29,82.5,,55,6;30.2,80.4,,53,11;22.8,79.5,,55,9;20.9,76.5,,54,9", spread = true },
 			},
 		},
 		{
@@ -23635,8 +23614,9 @@ G(function() return {
 		},
 		{
 			title = "Charred and Galvanized Horns",
-			note = "The chimaeras live south-west of {area:460} in the {area:465}: you need 12 Charred Horns from the Fledgling (level 25-27) and Young Chimaeras (23-25), four kills in five, and the {item:6840} from the {npc:6167} (28, the big one), also four in five. Only three Fledglings, two Young and one Matriarch live there, each back in 5 minutes, so expect to wait. Fledglings and the Matriarch spit {spell:3396}, the Young cast {spell:403}. Alliance: fly to {area:467} and head south.",
+			note = "The chimaeras live south-west of {area:460} in the {area:465}; the guide waits for level 26 first. You need 12 Charred Horns from the Fledgling (level 25-27) and Young Chimaeras (23-25), four kills in five, and the {item:6840} from the {npc:6167} (28, the big one), also four in five. Only three Fledglings, two Young and one Matriarch live there, each back in 5 minutes, so expect to wait. Fledglings and the Matriarch spit {spell:3396}, the Young cast {spell:403}. Alliance: fly to {area:467} and head south.",
 			goals = {
+				{ t = "level", level = 26 },
 				{ t = "collect", quest = 1701, item = 6839, count = 12, map = 1442, x = 32.99, y = 72.07, f = "e", note = "{item:6839}, from the young chimaeras", fromAlso = "Young Chimaera", fromAlsoId = 4032, fromId = 4031, fromKind = "npc", fromNpcs = { { npc = 4031, npcName = "Fledgling Chimaera" }, { npc = 4032, npcName = "Young Chimaera" } }, lvl = 25, oi = 2, spotsPacked = "32.1,72.7,,37,2,,27;34.7,70.9,,15,1,,27;36.3,65.5,,15,1;29,65.5,,15,1" },
 				{ t = "collect", quest = 1701, item = 6840, count = 1, map = 1442, x = 33.64, y = 74.66, f = "e", note = "{item:6840}, from the {npc:6167}", fromId = 6167, fromKind = "npc", fromNpcs = { { npc = 6167, npcName = "Chimaera Matriarch" } }, oi = 3 },
 			},
@@ -23672,9 +23652,17 @@ G(function() return {
 		{
 			title = "{quest:1705}",
 			only = { races = { "HUMAN", "SKYBORNE" } },
-			note = "The Nightbane worgen of {zone:1431} (Dark Runners, Vile Fangs, Shadow Weavers, Worgen and Tainted Ones, level 26-31) south and west of {area:42} drop the {quest:1705} four kills in five. {npc:6170} (level 32, not elite) carries the {item:6845} (also four in five): he walks between the inside and the mouth of the {area:2161} mine south-east of {area:42}, so wait at the entrance and pull him outside. {npc:6170} and the Tainted Ones poison and howl; Vile Fangs cause {spell:3427}.",
+			note = "The Nightbane worgen of {zone:1431} (Dark Runners, Vile Fangs, Shadow Weavers, Worgen and Tainted Ones, level 26-31) south and west of {area:42} drop the {quest:1705} four kills in five. The Tainted Ones poison and howl; Vile Fangs cause {spell:3427}.",
 			goals = {
 				{ t = "collect", quest = 1705, item = 6844, count = 20, map = 1431, x = 64.05, y = 58.91, f = "e", note = "{quest:1705}, from the Nightbane worgen", fromAlso = "Nightbane Vile Fang", fromAlsoId = 206, fromId = 205, fromKind = "npc", fromNpcs = { { npc = 205, npcName = "Nightbane Dark Runner" }, { npc = 206, npcName = "Nightbane Vile Fang" }, { npc = 533, npcName = "Nightbane Shadow Weaver" }, { npc = 898, npcName = "Nightbane Worgen" }, { npc = 920, npcName = "Nightbane Tainted One" } }, lvl = 29, oi = 1, spotsPacked = "61.9,53.4,,40,3,,28;60.9,46.7,,40,4;61.1,40.6,,60,12;66.2,38.9,,40,4,,28;67,47.7,,40,3;65.2,67.3,,40,12;61.3,70.1,,67,7;66.2,76,,40,10;62.3,81.5,,60,12,,31;73.7,77.8,,44,6,,31;72.9,69.2,,40,7,,30;59,26.6,,40,2,,27;63.6,51,,60,7,1;58.8,52.2,,40,4,1,28;66.4,70.1,,40,5,1;65,43.6,,58,6,1;62.5,74.4,,58,13,1;72.2,72.7,,40,9,1,30;63.7,35,,40,4,1,28;61.5,30.7,,54,6,1,28;57.9,29.6,,40,6,1,28", spread = true },
+			},
+		},
+		{
+			title = "{npc:6170}",
+			only = { races = { "HUMAN", "SKYBORNE" } },
+			note = "{npc:6170} (level 32, not elite) carries the {item:6845}, four kills in five; the guide waits for level 30 first. He walks between the inside and the mouth of the {area:2161} mine south-east of {area:42}, so wait at the entrance and pull him outside. He poisons and howls.",
+			goals = {
+				{ t = "level", level = 30 },
 				{ t = "collect", quest = 1705, item = 6845, count = 1, map = 1431, x = 73.89, y = 77.17, f = "e", note = "{item:6845}, from {npc:6170}", fromId = 6170, fromKind = "npc", fromNpcs = { { npc = 6170, npcName = "Gutspill" } }, oi = 2 },
 			},
 		},
@@ -24238,7 +24226,7 @@ G(function() return {
 			note = "{npc:2357} breeds horses in {area:271}'s stable. She makes the {quest:7645} from the 20 biscuits and 50 gold, taken at the hand-in.",
 			goals = {
 				{ t = "money", money = 500000 },
-				{ t = "accept", minLevel = 60, quest = 7645, npc = 2357, map = 1424, x = 52.19, y = 55.48, z = 15.2, f = "e", qlvl = 60 },
+				{ t = "accept", minLevel = 60, quest = 7645, npc = 2357, map = 1424, x = 52.19, y = 55.48, z = 15.2, f = "e", parent = 7643, qlvl = 60 },
 				{ t = "buy", npc = 10857, item = 13724, count = 20, map = 1422, x = 42.84, y = 83.72, z = 65.3, f = "e", note = "Enriched Manna Biscuits: {npc:10857}, {area:3197}" },
 				{ t = "turnin", quest = 7645, npc = 2357, map = 1424, x = 52.19, y = 55.48, z = 15.2, f = "e", note = "{quest:7645}", rewards = { items = { { item = 18775, itemName = "Manna-Enriched Horse Feed" } } } },
 			},
@@ -24954,7 +24942,7 @@ G(function() return {
 			goals = {
 				{ t = "kill", quest = 456, npc = 2031, count = 7, map = 1438, x = 60.3, y = 45.99, z = 1341.8, f = "e", lvl = 1, oi = 1, spotsPacked = "61.3,44.9,1335.2,63,7;58.5,46.1,,23,3;57.2,44.6,,35,2;62.4,42.1,1326.5,50,5;61.5,40.1,,30,2;64.3,41.3,,29,2;57.9,39,1314,15,1,1", target = "Young Nightsaber" },
 				{ t = "kill", quest = 456, npc = 1984, count = 4, map = 1438, x = 60.61, y = 46.26, z = 1345.1, f = "e", lvl = 2, oi = 2, spotsPacked = "60.9,46,,18,2;59,44.7,1328,47,4;61.7,42.6,1325.6,51,4;57.1,45,,34,3;55.7,42.4,1327.5,48,6;63.2,42.2,1328.2,15,1,1;57.8,42.4,1323.4,15,1,1;57.6,39.5,1312.7,15,1,1", target = "Young Thistle Boar" },
-				{ t = "collect", quest = 459, item = 3297, count = 8, map = 1438, x = 56.2, y = 46.25, f = "e", fromId = 1989, fromKind = "npc", fromNpcs = { { npc = 1988, npcName = "Grell" }, { npc = 1989, npcName = "Grellkin" } }, lvl = 4, oi = 1, spotsPacked = "55.9,45.9,,40,6,,3;54.6,44.1,,40,6;55.8,41.6,,40,1,,3;56.2,38.5,,40,1;54.4,39.1,,40,7;56.3,34.6,,40,1;59.6,35,,40,1;62.3,35.7,,40,1;64.2,42.2,,40,1", spread = true },
+				{ t = "collect", quest = 459, item = 3297, count = 8, map = 1438, x = 56.2, y = 46.25, f = "e", fromAlso = "Grell", fromAlsoId = 1988, fromId = 1989, fromKind = "npc", fromNpcs = { { npc = 1988, npcName = "Grell" }, { npc = 1989, npcName = "Grellkin" } }, lvl = 4, oi = 1, spotsPacked = "55.9,45.9,,40,6,,3;54.6,44.1,,40,6;55.8,41.6,,40,1,,3;56.2,38.5,,40,1;54.4,39.1,,40,7;56.3,34.6,,40,1;59.6,35,,40,1;62.3,35.7,,40,1;64.2,42.2,,40,1", spread = true },
 				{ t = "collect", quest = 97977, item = 279082, count = 4, map = 1438, x = 56, y = 46.1, f = "e", oi = 1, spotsPacked = "55.8,45.7,,17,2;54.9,44,,47,3;54.4,39.3,,40,4;56.2,39.4,,15,1,1;55.5,37.6,,15,1,1" },
 				{ t = "collect", quest = 916, item = 5166, count = 10, map = 1438, x = 56.57, y = 34.34, f = "e", fromId = 1986, fromKind = "npc", fromNpcs = { { npc = 1986, npcName = "Webwood Spider" } }, lvl = 4, oi = 1, spotsPacked = "57.1,33,,53,10;56.7,29.9,,51,7;56.2,27.3,,48,9;57.7,27.1,,45,9;56.4,25.4,,39,7;58.8,33.4,,15,1,1" },
 				{ t = "turnin", quest = 4495, npc = 8584, map = 1438, x = 54.59, y = 32.99, z = 1347.3, f = "e" },
@@ -25139,7 +25127,7 @@ G(function() return {
 				{ t = "kill", quest = 985, npc = 2167, count = 8, map = 1439, x = 39.34, y = 52.24, z = 21.7, f = "e", lvl = 13, oi = 1, spotsPacked = "39.5,53.4,,52,8;39.7,56.3,21,36,4", target = "Blackwood Pathfinder" },
 				{ t = "kill", quest = 985, npc = 2324, count = 5, map = 1439, x = 39.06, y = 52.63, z = 24.6, f = "e", lvl = 14, oi = 2, spotsPacked = "39.7,53.6,21.6,60,9;39.8,56.1,21.3,39,4", target = "Blackwood Windtalker" },
 				{ t = "kill", quest = 2138, npc = 2164, count = 20, map = 1439, x = 38.21, y = 52.59, z = 14.8, f = "e", lvl = 14, oi = 1, spotsPacked = "38.2,52.6,14.8,44,1;39.1,60.8,,67,7;41.8,65.8,,54,4;45,66.8,76.8,44,1;38.3,69.3,,71,5;38.5,79,42.3,44,1;47.3,33.7,,59,6;44.8,30.5,,57,3;47.7,24.5,18.2,44,1;43,22.8,12.4,44,1;53.3,25.8,,44,3;51.8,32.1,47.3,44,2;38.6,54.6,17.6,44,1,1;38.4,57.9,15.3,61,4,1;40.1,58.3,26.3,44,1,1;39.2,63.8,,44,2,1;41.4,63.2,33.7,44,1,1;38.7,65.7,22,44,4,1;43,64.7,32.6,44,1,1;44.6,63,60.5,44,1,1;39.6,68.3,31.7,44,1,1;42.8,68.7,,44,2,1;40,71,,44,2,1;43.8,70.1,,53,3,1;38.1,73.1,,62,6,1;44.7,33,24.1,44,1,1;39.1,75.8,,58,3,1;48.8,35.4,,44,3,1;40.6,76.1,31,44,2,1;48.9,33.4,,44,2,1;48.2,31.1,39.2,70,3,1;51.2,35,,44,2,1;47.4,28.4,30,44,2,1;45.1,26.5,8.8,44,1,1;43.7,25.4,11.5,44,1,1;49.2,29.3,42.3,44,1,1;50.6,30.7,,44,3,1;46.3,24.7,,44,2,1;44.4,23.6,10.7,44,1,1;50.4,27.8,34.6,44,1,1;49.3,26.4,,67,5,1;52.9,28.5,,44,3,1;54.4,29.5,51.5,44,1,1", spread = true, target = "Rabid Thistle Bear" },
-				{ t = "collect", quest = 955, item = 5336, count = 8, map = 1439, x = 44.87, y = 39.71, f = "e", fromNpcs = { { npc = 2189, npcName = "Vile Sprite" }, { npc = 2190, npcName = "Wild Grell" } }, lvl = 12, oi = 1, spotsPacked = "44.7,38.5,,54,10;46,39.3,,61,10;45.2,36.5,,59,6;46.9,37.8,,46,8;47.6,36.7,,51,6" },
+				{ t = "collect", quest = 955, item = 5336, count = 8, map = 1439, x = 44.87, y = 39.71, f = "e", fromAlso = "Wild Grell", fromAlsoId = 2190, fromId = 2189, fromKind = "npc", fromNpcs = { { npc = 2189, npcName = "Vile Sprite" }, { npc = 2190, npcName = "Wild Grell" } }, lvl = 12, oi = 1, spotsPacked = "44.7,38.5,,54,10;46,39.3,,61,10;45.2,36.5,,59,6;46.9,37.8,,46,8;47.6,36.7,,51,6" },
 				{ t = "collect", quest = 4681, item = 12289, count = 1, map = 1439, x = 31.82, y = 46.31, f = "e", fromId = 176189, fromKind = "object", oi = 1 },
 				{ t = "turnin", quest = 955, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e" },
 				{ t = "accept", minLevel = 7, quest = 956, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e", pre = { 955 }, qlvl = 13 },
@@ -25167,7 +25155,7 @@ G(function() return {
 				{ t = "interact", quest = 957, object = 16393, map = 1439, x = 42.37, y = 61.82, z = 32.3, f = "e", note = "the seal at the ancient flame", oi = 1 },
 				{ t = "turnin", quest = 957, npc = 3650, map = 1439, x = 44.17, y = 36.29, z = 48.7, f = "e" },
 				{ t = "kill", quest = 2139, npc = 6788, count = 1, map = 1439, x = 51.48, y = 38.26, z = 75.2, f = "e", oi = 1, target = "Den Mother" },
-				{ t = "collect", quest = 986, item = 5386, count = 5, map = 1439, x = 60.07, y = 13.37, f = "e", fromNpcs = { { npc = 2237, npcName = "Moonstalker Sire" }, { npc = 2071, npcName = "Moonstalker Matriarch" } }, lvl = 18, oi = 1, spotsPacked = "60.7,12.3,,68,5,,20;62.7,7,,64,2,,20;39.8,70.7,,64,1;38.3,77.2,,64,1;36.9,83,,64,2;40.6,82.5,,80,3;43.7,81.8,,83,6;42.8,89.4,,64,2,,20;44.7,92,,64,1;39.5,90.9,,66,4,,20;39.3,94.5,,64,1;36.2,90.1,,97,4,,20;37.4,92.7,,64,2,1,20", spread = true },
+				{ t = "collect", quest = 986, item = 5386, count = 5, map = 1439, x = 60.07, y = 13.37, f = "e", fromAlso = "Moonstalker Sire", fromAlsoId = 2237, fromId = 2071, fromKind = "npc", fromNpcs = { { npc = 2237, npcName = "Moonstalker Sire" }, { npc = 2071, npcName = "Moonstalker Matriarch" } }, lvl = 18, oi = 1, spotsPacked = "60.7,12.3,,68,5,,20;62.7,7,,64,2,,20;39.8,70.7,,64,1;38.3,77.2,,64,1;36.9,83,,64,2;40.6,82.5,,80,3;43.7,81.8,,83,6;42.8,89.4,,64,2,,20;44.7,92,,64,1;39.5,90.9,,66,4,,20;39.3,94.5,,64,1;36.2,90.1,,97,4,,20;37.4,92.7,,64,2,1,20", spread = true },
 				{ t = "turnin", quest = 2139, npc = 3701, map = 1439, x = 38.84, y = 43.42, z = 11.8, f = "e" },
 				{ t = "turnin", quest = 986, npc = 3693, map = 1439, x = 39.37, y = 43.48, z = 14, f = "e" },
 			},
@@ -25252,7 +25240,7 @@ G(function() return {
 			when = { { k = "done", label = "dn-morrowgrain" } },
 			note = "Dig {quest:3764} from the dirt mounds all over the crater; most of the crater's beasts and the Gorishi silithids drop it too, about one kill in three. Take far more than 20: every pouch use takes 2, about 18 for each 10 {item:11040}.",
 			goals = {
-				{ t = "collect", quest = 3764, item = 11018, count = 20, map = 1449, x = 46.7, y = 52.71, f = "e", fromNpcs = { { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6555, npcName = "Gorishi Tunneler" } }, oi = 1, spotsPacked = "45.9,53.7,,51,2;35.2,40.8,,74,4,,53;30,56.8,,51,2,,53;31.7,77.5,,65,3,,53;50.5,90.1,,51,1;62.3,64,,51,1;70.5,76.2,,51,2;75.1,48.6,,63,3,,50;57.3,36.7,,51,4,,50;69.2,20.5,,51,1,,50;39.1,23.5,,101,6,,53;21.9,38.6,,51,1;48.9,58,,51,1,1;50.3,47.7,,51,2,1;41.9,48.1,,51,1,1,53;40.7,54,,77,5,1,53;52.8,55.9,,51,1,1;40.8,59.7,,51,1,1;41.9,43.8,,51,3,1,53;52.8,45.4,,51,1,1;56,56.9,,51,1,1;36.9,47.1,,51,2,1,53;53.6,39,,51,1,1;57.1,44.2,,51,1,1;39.9,38.1,,60,3,1,53;50.2,34.3,,51,1,1;44.1,33.8,,51,1,1;41.2,32.5,,51,1,1,53;51.3,73.9,,51,3,1,52;36.6,69.2,,51,3,1,53;33.6,64.6,,63,3,1,53;48.1,76,,76,6,1,52;60.4,40.1,,51,2,1,50;35.5,35.2,,51,2,1,53;63.3,47.9,,51,1,1;53.3,76.9,,82,7,1,52;39.8,28.6,,51,2,1,53;59.7,34.7,,51,2,1,50;29.9,44.3,,51,1,1,53;55.6,28.7,,51,1,1;32.9,70.9,,51,2,1,53;44.2,80.1,,97,9,1,54;63.8,42.3,,51,2,1,50;40.9,79.3,,51,2,1,53;35.3,30.4,,51,1,1,53;28.7,61.2,,51,2,1,53;30.6,68,,52,2,1,53;36.4,76.9,,60,3,1,53;49.1,81.4,,61,6,1,53;28.5,40.8,,67,4,1,53;45.6,83.4,,52,7,1,53;38.2,81.7,,51,1,1,53;25.9,46.5,,51,2,1,53;63.7,33.4,,51,1,1,50;30.1,32.4,,61,4,1,53;53,83.6,,72,6,1,52;32.5,28.4,,51,1,1,53;24.8,52.2,,51,1,1,53;25,57.9,,51,1,1,53;61.1,27.6,,51,1,1,50;26.9,68.1,,51,1,1,53;47.3,86.3,,81,9,1,53;56.6,83.5,,51,1,1;67.1,35.8,,76,4,1,50;60,81.8,,51,1,1;64.7,29.3,,51,1,1,50;33.2,22.3,,51,3,1,53;64.9,78.4,,51,1,1;71.8,65.1,,51,3,1,50;69.5,31.3,,51,3,1,50;73.4,58.3,,51,1,1;72.3,39.2,,51,4,1,50;62.2,17.6,,51,1,1;68.5,24.7,,66,3,1,50;75.3,44.4,,51,2,1,50;70.7,27.7,,51,1,1,50", spread = true },
+				{ t = "collect", quest = 3764, item = 11018, count = 20, map = 1449, x = 46.7, y = 52.71, f = "e", fromNpcs = { { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6555, npcName = "Gorishi Tunneler" }, { npc = 6512, npcName = "Bloodpetal Trapper" }, { npc = 6511, npcName = "Bloodpetal Thresher" } }, fromNpcsAt = ";6;6;6;;;;7;7;7;6;;;;6;6;;;6;;;6;;;6;;;6;2,4;6;6;2,4;7;6;;2,4;6;7;6;;6;2,5,3,4,1;7;6;6;6;6;6;4,2,3,5;6;2,3,5,4;6;6;7;6;2,4;6;6;6;7;6;5,2,3;;7;;7;6;;7;7;;7;;7;7;7", oi = 1, spotsPacked = "45.9,53.7,,51,2;35.2,40.8,,74,4,,53;30,56.8,,51,2,,53;31.7,77.5,,65,3,,53;50.5,90.1,,51,1;62.3,64,,51,1;70.5,76.2,,51,2;75.1,48.6,,63,3,,50;57.3,36.7,,51,4,,50;69.2,20.5,,51,1,,50;39.1,23.5,,101,6,,53;21.9,38.6,,51,1;48.9,58,,51,1,1;50.3,47.7,,51,2,1;41.9,48.1,,51,1,1,53;40.7,54,,77,5,1,53;52.8,55.9,,51,1,1;40.8,59.7,,51,1,1;41.9,43.8,,51,3,1,53;52.8,45.4,,51,1,1;56,56.9,,51,1,1;36.9,47.1,,51,2,1,53;53.6,39,,51,1,1;57.1,44.2,,51,1,1;39.9,38.1,,60,3,1,53;50.2,34.3,,51,1,1;44.1,33.8,,51,1,1;41.2,32.5,,51,1,1,53;51.3,73.9,,51,3,1,52;36.6,69.2,,51,3,1,53;33.6,64.6,,63,3,1,53;48.1,76,,76,6,1,52;60.4,40.1,,51,2,1,50;35.5,35.2,,51,2,1,53;63.3,47.9,,51,1,1;53.3,76.9,,82,7,1,52;39.8,28.6,,51,2,1,53;59.7,34.7,,51,2,1,50;29.9,44.3,,51,1,1,53;55.6,28.7,,51,1,1;32.9,70.9,,51,2,1,53;44.2,80.1,,97,9,1,54;63.8,42.3,,51,2,1,50;40.9,79.3,,51,2,1,53;35.3,30.4,,51,1,1,53;28.7,61.2,,51,2,1,53;30.6,68,,52,2,1,53;36.4,76.9,,60,3,1,53;49.1,81.4,,61,6,1,53;28.5,40.8,,67,4,1,53;45.6,83.4,,52,7,1,53;38.2,81.7,,51,1,1,53;25.9,46.5,,51,2,1,53;63.7,33.4,,51,1,1,50;30.1,32.4,,61,4,1,53;53,83.6,,72,6,1,52;32.5,28.4,,51,1,1,53;24.8,52.2,,51,1,1,53;25,57.9,,51,1,1,53;61.1,27.6,,51,1,1,50;26.9,68.1,,51,1,1,53;47.3,86.3,,81,9,1,53;56.6,83.5,,51,1,1;67.1,35.8,,76,4,1,50;60,81.8,,51,1,1;64.7,29.3,,51,1,1,50;33.2,22.3,,51,3,1,53;64.9,78.4,,51,1,1;71.8,65.1,,51,3,1,50;69.5,31.3,,51,3,1,50;73.4,58.3,,51,1,1;72.3,39.2,,51,4,1,50;62.2,17.6,,51,1,1;68.5,24.7,,66,3,1,50;75.3,44.4,,51,2,1,50;70.7,27.7,,51,1,1,50", spread = true },
 			},
 		},
 		{
@@ -26174,7 +26162,7 @@ G(function() return {
 			goals = {
 				{ t = "interact", quest = 3701, object = 153556, map = 1428, x = 67.59, y = 43.73, z = 136.3, f = "e", oi = 1, spotsPacked = "66.3,42.6,,71,5;68.8,37.5,,49,3;63,36.5,,84,6;59.1,40.9,,71,6;54.8,38.1,,84,7;72.4,33.9,147.7,15,1,1" },
 				{ t = "collect", quest = 3824, item = 11080, count = 1, map = 1428, x = 39.33, y = 55.3, f = "e", fromId = 9176, fromKind = "npc", fromNpcs = { { npc = 9176, npcName = "Gor'tesh" } }, oi = 1 },
-				{ t = "collect", quest = 4283, item = 11467, count = 50, map = 1428, x = 39.33, y = 55.58, f = "e", fromNpcs = { { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7055, npcName = "Blackrock Worg" }, { npc = 9690, npcName = "Ember Worg" }, { npc = 9694, npcName = "Slavering Ember Worg" }, { npc = 9697, npcName = "Giant Ember Worg" } }, lvl = 57, oi = 1, spotsPacked = "39.5,54.9,,51,4;50.8,54.1,,40,6;61.5,59.9,,40,1,,54;72.4,46.9,,40,1,,54;75.5,32.9,,40,1,,53;90.6,40,,40,1,,52;91.9,59.3,,40,1,,52;81.5,56.7,,40,1,,53;43.6,34.4,,40,3;26.5,57.7,,40,1,,56;24.5,69.2,,40,1,,56;17.5,29.6,,40,5;42.6,55.5,,40,4,1;44.8,57.4,,40,3,1,56;44.8,50.8,,40,2,1,56;48.9,58.1,,40,4,1,56;50.5,61.3,,40,3,1;43,37,,40,5,1;26.5,62.8,,40,1,1,56;40.4,34.1,,46,17,1,58;23.6,59.5,,40,1,1,56;55.3,53.8,,62,13,1;58.4,63.9,,40,1,1,54;63.1,54.3,,40,1,1,54;68.2,61,,40,1,1,54;79.3,30.6,,40,1,1,52;84.1,60.6,,40,1,1,52;82.7,30.4,,40,1,1,53;86.7,55.6,,40,1,1,52;88.9,50.9,,46,3,1,53", spread = true },
+				{ t = "collect", quest = 4283, item = 11467, count = 50, map = 1428, x = 39.33, y = 55.58, f = "e", fromNpcs = { { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7055, npcName = "Blackrock Worg" }, { npc = 9690, npcName = "Ember Worg" }, { npc = 9694, npcName = "Slavering Ember Worg" }, { npc = 9697, npcName = "Giant Ember Worg" }, { npc = 7028, npcName = "Blackrock Warlock" }, { npc = 7026, npcName = "Blackrock Sorcerer" }, { npc = 7025, npcName = "Blackrock Soldier" }, { npc = 7029, npcName = "Blackrock Battlemaster" }, { npc = 10077, npcName = "Deathmaw" } }, fromNpcsAt = "1,2;1,7,2;4;4;10;3;3;10;1,6;5;5;6;8,7,1;2,8,7;8;2,8;7,6;1,6,7;5;9,6,1,7;5;1,7,8,6,2;4;4;4;3;3;10;3;3,10", lvl = 57, oi = 1, spotsPacked = "39.5,54.9,,51,4;50.8,54.1,,40,6;61.5,59.9,,40,1,,54;72.4,46.9,,40,1,,54;75.5,32.9,,40,1,,53;90.6,40,,40,1,,52;91.9,59.3,,40,1,,52;81.5,56.7,,40,1,,53;43.6,34.4,,40,3;26.5,57.7,,40,1,,56;24.5,69.2,,40,1,,56;17.5,29.6,,40,5;42.6,55.5,,40,4,1;44.8,57.4,,40,3,1,56;44.8,50.8,,40,2,1,56;48.9,58.1,,40,4,1,56;50.5,61.3,,40,3,1;43,37,,40,5,1;26.5,62.8,,40,1,1,56;40.4,34.1,,46,17,1,58;23.6,59.5,,40,1,1,56;55.3,53.8,,62,13,1;58.4,63.9,,40,1,1,54;63.1,54.3,,40,1,1,54;68.2,61,,40,1,1,54;79.3,30.6,,40,1,1,52;84.1,60.6,,40,1,1,52;82.7,30.4,,40,1,1,53;86.7,55.6,,40,1,1,52;88.9,50.9,,46,3,1,53", spread = true },
 			},
 		},
 		{
@@ -26690,7 +26678,7 @@ G(function() return {
 				{ t = "turnin", quest = 239, npc = 963, map = 1429, x = 24.23, y = 74.45, z = 36.9, f = "e" },
 				{ t = "accept", minLevel = 6, quest = 11, npc = 963, map = 1429, x = 24.23, y = 74.45, z = 36.9, f = "e", pre = { 76 }, qlvl = 10 },
 				{ t = "accept", minLevel = 5, quest = 176, object = 68, map = 1429, x = 24.55, y = 74.69, z = 36.3, f = "e", qlvl = 11 },
-				{ t = "collect", quest = 11, item = 782, count = 8, map = 1429, x = 27.45, y = 79.89, f = "e", note = "{item:782}, from the Riverpaw gnolls", fromNpcs = { { npc = 478, npcName = "Riverpaw Outrunner" }, { npc = 97, npcName = "Riverpaw Runt" } }, lvl = 10, oi = 1, spotsPacked = "27.3,81.3,,40,4;31.2,81.7,,40,2,,9;30.9,89.1,,40,1,,9;27.6,94.3,,47,3;25,93.2,,51,9;25.8,88.9,,61,9;68.6,54.8,,40,1;68.2,49.9,,40,2;68.1,45.1,,57,10;66.8,40.6,,52,14;72.9,38.3,,40,1;76.8,40.2,,40,1;27.7,87.1,,70,11,1;69.1,39.1,,60,11,1", spread = true },
+				{ t = "collect", quest = 11, item = 782, count = 8, map = 1429, x = 27.45, y = 79.89, f = "e", note = "{item:782}, from the Riverpaw gnolls", fromAlso = "Riverpaw Outrunner", fromAlsoId = 478, fromId = 97, fromKind = "npc", fromNpcs = { { npc = 478, npcName = "Riverpaw Outrunner" }, { npc = 97, npcName = "Riverpaw Runt" } }, lvl = 10, oi = 1, spotsPacked = "27.3,81.3,,40,4;31.2,81.7,,40,2,,9;30.9,89.1,,40,1,,9;27.6,94.3,,47,3;25,93.2,,51,9;25.8,88.9,,61,9;68.6,54.8,,40,1;68.2,49.9,,40,2;68.1,45.1,,57,10;66.8,40.6,,52,14;72.9,38.3,,40,1;76.8,40.2,,40,1;27.7,87.1,,70,11,1;69.1,39.1,,60,11,1", spread = true },
 				{ t = "collect", quest = 176, item = 1931, count = 1, map = 1429, x = 25.02, y = 92.9, f = "e", note = "{item:1931}, from {npc:448}", fromId = 448, fromKind = "npc", fromNpcs = { { npc = 448, npcName = "Hogger" } }, fromRank = 1, group = { kind = "elite", lvl = 11, rank = 1 }, oi = 1 },
 				{ t = "turnin", quest = 11, npc = 963, map = 1429, x = 24.23, y = 74.45, z = 36.9, f = "e" },
 			},
@@ -26726,7 +26714,7 @@ G(function() return {
 				{ t = "turnin", quest = 87, npc = 246, map = 1429, x = 34.49, y = 84.25, z = 36.6, f = "e" },
 				{ t = "turnin", quest = 107, npc = 253, map = 1429, x = 43.32, y = 65.7, z = 57, f = "e" },
 				{ t = "accept", minLevel = 5, quest = 112, npc = 253, map = 1429, x = 43.32, y = 65.7, z = 57, f = "e", pre = { 107 }, qlvl = 7 },
-				{ t = "collect", quest = 112, item = 1256, count = 4, map = 1429, x = 49.83, y = 66.41, f = "e", note = "{item:1256}, from the murlocs of {area:18}", fromNpcs = { { npc = 285, npcName = "Murloc" }, { npc = 735, npcName = "Murloc Streamrunner" } }, lvl = 7, oi = 1, spotsPacked = "51.1,66.9,,65,13;54.4,67.3,,78,11;54.3,64.1,,47,5;56.9,67,,64,10;57.2,63,,17,2;50.5,62.3,,15,1,1" },
+				{ t = "collect", quest = 112, item = 1256, count = 4, map = 1429, x = 49.83, y = 66.41, f = "e", note = "{item:1256}, from the murlocs of {area:18}", fromAlso = "Murloc Streamrunner", fromAlsoId = 735, fromId = 285, fromKind = "npc", fromNpcs = { { npc = 285, npcName = "Murloc" }, { npc = 735, npcName = "Murloc Streamrunner" } }, lvl = 7, oi = 1, spotsPacked = "51.1,66.9,,65,13;54.4,67.3,,78,11;54.3,64.1,,47,5;56.9,67,,64,10;57.2,63,,17,2;50.5,62.3,,15,1,1" },
 			},
 		},
 		{
@@ -26774,7 +26762,7 @@ G(function() return {
 				{ t = "accept", minLevel = 7, quest = 39, npc = 261, map = 1429, x = 73.97, y = 72.18, z = 41.3, f = "e", pre = { 71 }, qlvl = 10 },
 				{ t = "kill", quest = 52, npc = 118, count = 8, map = 1429, x = 75.49, y = 76.54, z = 40.7, f = "e", lvl = 10, oi = 1, spotsPacked = "76.3,75.9,40.9,52,6;81.6,77.5,47.6,40,2;82.9,84.5,,40,3;87.7,78.1,48.7,41,4;90,82.4,25.8,40,1;85.9,72.3,57.5,40,1;84.7,61,63.4,61,4;78.1,62.1,,63,5;72.2,65.3,55.8,40,4;64.6,43.3,82.9,40,1;71.4,37.5,73.7,40,1;77.7,41,75.7,45,3;79.4,78.2,,57,5,1;80.4,81.7,35.3,50,7,1;83.8,72,54.6,40,1,1;85.5,84,34,40,3,1;81,60.7,,40,2,1;87.5,81.6,39.5,40,2,1;87.6,68.8,62.1,40,4,1;88.4,71.5,,40,2,1;86.8,64.4,,40,4,1;90.4,77.2,49.7,58,3,1;66.7,45.2,72.2,40,1,1;70.8,40.8,,47,4,1;74.4,39.1,,54,7,1", spread = true, target = "Prowler" },
 				{ t = "kill", quest = 52, npc = 822, count = 5, map = 1429, x = 73.4, y = 80.4, z = 39.4, f = "e", lvl = 9, oi = 2, spotsPacked = "73.4,81,39.4,40,3;82.8,84,,40,1;88.7,77.4,51,40,3;87.1,64.6,,40,6;78.2,60.9,,40,6;64.6,63,67.9,40,2;60.6,79.9,,40,4;54,75.4,,40,2;47.1,79.7,,40,2;36,88.3,34.4,40,3;26.2,90,,40,8;22.6,75.6,32.1,40,2;76.8,76.6,39.9,40,1,1;70.5,74.6,42.3,40,3,1;78.3,79.4,37.8,40,2,1;79.2,83.5,,40,2,1;65.7,78,41.5,40,4,1;81.2,77.2,52,40,1,1;74.9,67.5,,40,5,1;63.3,77.6,,42,4,1;68.7,64.7,,40,3,1;86,77.2,,40,1,1;71.9,61,,40,5,1;60.7,75.3,,40,2,1;87.5,69.4,60.3,40,3,1;81.8,59,,40,5,1;57.1,75.6,51.6,40,3,1;58.8,68.2,,40,1,1;53.5,83.7,,40,3,1;49.1,82.1,,40,2,1;49.1,75.3,,55,4,1;45.7,86,,40,3,1;44.9,77,,40,4,1;43.6,80.7,31.5,40,3,1;38.5,89.2,,40,2,1;28,81.3,,40,3,1;25.3,83.5,,44,6,1", spread = true, target = "Young Forest Bear" },
-				{ t = "collect", quest = 83, item = 1019, count = 6, map = 1429, x = 71.09, y = 80.65, f = "e", fromNpcs = { { npc = 473, npcName = "Morgan the Collector" }, { npc = 116, npcName = "Defias Bandit" }, { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 880, npcName = "Erlan Drudgemoor" } }, lvl = 9, oi = 1, spotsPacked = "70.9,80.5,,40,5,,10;73.3,55,,49,5,,10;73.5,46.7,,40,2,,10;55.3,59.9,,40,1;47.5,74.1,,40,1;47.5,81.2,,40,1;48.3,87.2,,40,3,,10;30.7,65,,40,4;30.1,57.9,,40,3;34.1,55.6,,40,1;25,58.5,,48,9;89.5,79.3,,40,8;71.3,76.7,,40,1,1;68.3,81.2,,40,2,1;68.3,77.4,,40,4,1;76.9,52.5,,40,2,1,10;73.6,51.2,,76,10,1,10;50.1,82.8,,46,4,1,10;76.4,48,,40,2,1,10;52.4,59.1,,40,3,1,10;47.5,83.7,,53,4,1;45.6,75.1,,43,4,1;29,60.5,,51,7,1,10", spread = true },
+				{ t = "collect", quest = 83, item = 1019, count = 6, map = 1429, x = 71.09, y = 80.65, f = "e", fromNpcs = { { npc = 473, npcName = "Morgan the Collector" }, { npc = 116, npcName = "Defias Bandit" }, { npc = 474, npcName = "Defias Rogue Wizard" }, { npc = 583, npcName = "Defias Ambusher" }, { npc = 880, npcName = "Erlan Drudgemoor" }, { npc = 881, npcName = "Surena Caledon" }, { npc = 6846, npcName = "Defias Dockmaster" }, { npc = 6866, npcName = "Defias Bodyguard" }, { npc = 6927, npcName = "Defias Dockworker" } }, fromNpcsAt = "2,1,5,6;3;3;2;2;2;7,8,9;2;2;4;2;2;2;2;2;3;3;2,3;3;2,3;2;2;3,2", lvl = 9, oi = 1, spotsPacked = "70.9,80.5,,40,5,,10;73.3,55,,49,5,,10;73.5,46.7,,40,2,,10;55.3,59.9,,40,1;47.5,74.1,,40,1;47.5,81.2,,40,1;48.3,87.2,,40,3,,10;30.7,65,,40,4;30.1,57.9,,40,3;34.1,55.6,,40,1;25,58.5,,48,9;89.5,79.3,,40,8;71.3,76.7,,40,1,1;68.3,81.2,,40,2,1;68.3,77.4,,40,4,1;76.9,52.5,,40,2,1,10;73.6,51.2,,76,10,1,10;50.1,82.8,,46,4,1,10;76.4,48,,40,2,1,10;52.4,59.1,,40,3,1,10;47.5,83.7,,53,4,1;45.6,75.1,,43,4,1;29,60.5,,51,7,1,10", spread = true },
 				{ t = "kill", quest = 91723, npc = 476, count = 8, map = 1429, x = 63.53, y = 58.32, z = 65.3, f = "e", lvl = 8, oi = 1, spotsPacked = "63.2,56.8,,78,5;61.2,50.5,,29,2", target = "Kobold Geomancer" },
 				{ t = "collect", quest = 91725, item = 247805, count = 5, map = 1429, x = 68.7, y = 51.1, f = "e", fromId = 561159, fromKind = "object", oi = 1, spotsPacked = "68.3,50.4,,24,2;68.3,45.5,,15,2;67,42.3,,39,4;68.8,39.2,,36,4;65.5,40.2,,40,4" },
 				{ t = "collect", quest = 91732, item = 247816, count = 4, map = 1429, x = 61.5, y = 51.4, f = "e", fromId = 562114, fromKind = "object", oi = 1, spotsPacked = "61.2,51.7,,40,6" },

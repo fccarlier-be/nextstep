@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.3.6 (67bf2ef63706, 2026-11-10). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.3.7.2 (19bd636e7d6f, 2026-11-12). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -441,7 +441,7 @@ G(function() return {
 			title = "Gorishi Stings and {item:22434}",
 			note = "Eight of each. The Gorishi Wasps and Stingers (level 51-52) in and around the {area:540}, the hive in the south-west of the crater, drop a sting about one kill in seven; the wasps share spawn points with the other bugs, so kill whatever stands near you to make room for more wasps (respawn five minutes). The bugs' {spell:8137} makes you take more physical damage for 30 minutes; Workers call for help when hurt. The Bloodpetal Sprouts grow all over the crater (around {area:541} and the western half): open them, about every other one gives a {item:22434}, back in three to five minutes.",
 			goals = {
-				{ t = "collect", quest = 9052, item = 22435, count = 8, map = 1449, x = 56.37, y = 84.9, f = "e", fromNpcs = { { npc = 6553, npcName = "Gorishi Reaver" }, { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" } }, lvl = 53, oi = 1, spotsPacked = "55.2,84.4,,53,5;52.4,84.5,,52,6;51.5,80.4,,50,3;53.8,75.7,,38,4,,52;49,84.4,,41,6;50.9,76.9,,52,5;54.3,79.1,,15,1,1,52;48.6,81.3,,66,7,1;51.6,73.1,,26,3,1;47.2,86.4,,77,10,1;47.7,76.5,,54,5,1;45.5,83.6,,63,10,1;46.4,73.4,,43,3,1;44,80.8,,74,11,1,54;44.4,76.7,,44,4,1" },
+				{ t = "collect", quest = 9052, item = 22435, count = 8, map = 1449, x = 56.37, y = 84.9, f = "e", fromNpcs = { { npc = 6553, npcName = "Gorishi Reaver" }, { npc = 10040, npcName = "Gorishi Hive Guard" }, { npc = 6551, npcName = "Gorishi Wasp" }, { npc = 6552, npcName = "Gorishi Worker" }, { npc = 6554, npcName = "Gorishi Stinger" }, { npc = 6555, npcName = "Gorishi Tunneler" } }, fromNpcsAt = "1,3,4;1,3,4;4,1,5;3,4;1,6;3,1,4;4;1,3,4,6;4,1;1,6,4,5;4,3,1;4,1,5,6,3;1,3;4,1,5,6,2;1,3,4", lvl = 53, oi = 1, spotsPacked = "55.2,84.4,,53,5;52.4,84.5,,52,6;51.5,80.4,,50,3;53.8,75.7,,38,4,,52;49,84.4,,41,6;50.9,76.9,,52,5;54.3,79.1,,15,1,1,52;48.6,81.3,,66,7,1;51.6,73.1,,26,3,1;47.2,86.4,,77,10,1;47.7,76.5,,54,5,1;45.5,83.6,,63,10,1;46.4,73.4,,43,3,1;44,80.8,,74,11,1,54;44.4,76.7,,44,4,1" },
 				{ t = "collect", quest = 9052, item = 22434, count = 8, map = 1449, x = 53.34, y = 70.37, f = "e", fromId = 164958, fromKind = "object", oi = 2, spotsPacked = "50.3,69.9,,114,2;41.2,63.2,,145,3;31.3,67,,161,5;27.1,52.8,,170,6;28.6,37.1,,146,3;36.6,24.9,,162,6;45.7,37.7,,168,4;61.5,41.5,,114,2;73.1,39.3,,128,3;63.8,21.8,,188,6;52.3,15.3,,162,4;67.1,71.5,,168,4;56.9,67.2,,114,1,1;41.1,75.3,,210,5,1;41.4,50.3,,114,1,1;73.7,63.1,,114,2,1;72.9,52.7,,136,5,1;55.1,33,,155,3,1;34.6,41.7,,123,4,1;66.7,31.7,,151,3,1;45.9,21.5,,127,3,1", spread = true },
 			},
 		},
@@ -456,7 +456,7 @@ G(function() return {
 			title = "{quest:9051}",
 			note = "Any {npc:6498} counts, the Ironhide and Tyrant Devilsaurs too. They are elite (level 54-55), hit with {spell:14099} and outrun travel form. Grouping up is encouraged, but a druid can do it alone: Hibernate or {spell:339} it from range, stab it with the {item:22432} (the barb does not break {spell:2637}), then leave. The credit counts the moment the barb lands, even if you die after. The arrow points at the plain Devilsaurs of the west and north; an {npc:6499} roams the middle of the crater's south, nearer {npc:9619}.",
 			goals = {
-				{ t = "kill", quest = 9051, npc = 6498, count = 1, map = 1449, x = 57.26, y = 23.68, z = -272.1, f = "e", note = "{npc:6498}: stab it with the {item:22432}", text = "Stab a {npc:6498} with the {item:22432}", group = { kind = "elite", lvl = 55, rank = 1 }, lvl = 55, oi = 1, spotsPacked = "57.3,23.7,-272.1,15,1;34.6,22.4,-270.2,15,1;31.2,36.4,-271.3,15,1", spread = true, target = "Devilsaur" },
+				{ t = "kill", quest = 9051, npc = 6498, count = 1, map = 1449, x = 57.26, y = 23.68, z = -272.1, f = "e", note = "{npc:6498}: stab it with the {item:22432}", text = "Stab a {npc:6498} with the {item:22432}", fromNpcs = { { npc = 6498, npcName = "Devilsaur" }, { npc = 6499, npcName = "Ironhide Devilsaur" }, { npc = 6500, npcName = "Tyrant Devilsaur" } }, group = { kind = "elite", lvl = 55, rank = 1 }, lvl = 55, oi = 1, spotsPacked = "57.3,23.7,-272.1,15,1;34.6,22.4,-270.2,15,1;31.2,36.4,-271.3,15,1", spread = true, target = "Devilsaur" },
 			},
 		},
 		{
@@ -501,7 +501,7 @@ G(function() return {
 		{
 			title = "{area:1658}",
 			only = { races = { "NIGHTELF", "SKYBORNE" }, factions = { "Alliance" } },
-			note = "{npc:4217} stands in the {area:1658}. Skyborne far from {zone:1457}: cast {spell:18960} and take {npc:11800}'s flight from the middle of {area:2361} (she flies druids to {area:702}, no flight path needed), then the portal up. No Aquatic Form yet? Take A Lesson to Learn from him too: it also goes to {npc:11802}, and its Trial of the Lake (the Aquatic Form guide) is in the same {area:493}.",
+			note = "{npc:4217} stands in the {area:1658}. Skyborne far from {zone:1457}: cast {spell:18960} and take {npc:11800}'s flight from the middle of {area:2361} (she flies druids to {area:702}, no flight path needed), then the portal up. No {spell:1066} yet? Take A Lesson to Learn from him too: it also goes to {npc:11802}, and its Trial of the Lake (the {spell:1066} guide) is in the same {area:493}.",
 			goals = {
 				{ t = "level", level = 20 },
 				{ t = "goto", map = 1457, x = 35.8, y = 11.6, f = "e", text = "{area:1658}", area = 1658 },
@@ -510,7 +510,7 @@ G(function() return {
 		{
 			title = "{quest:98393}",
 			only = { races = { "NIGHTELF", "SKYBORNE" }, factions = { "Alliance" } },
-			note = "{npc:4217} stands in the {area:1658}. Skyborne far from {zone:1457}: cast {spell:18960} and take {npc:11800}'s flight from the middle of {area:2361} (she flies druids to {area:702}, no flight path needed), then the portal up. No Aquatic Form yet? Take A Lesson to Learn from him too: it also goes to {npc:11802}, and its Trial of the Lake (the Aquatic Form guide) is in the same {area:493}.",
+			note = "{npc:4217} stands in the {area:1658}. Skyborne far from {zone:1457}: cast {spell:18960} and take {npc:11800}'s flight from the middle of {area:2361} (she flies druids to {area:702}, no flight path needed), then the portal up. No {spell:1066} yet? Take A Lesson to Learn from him too: it also goes to {npc:11802}, and its Trial of the Lake (the {spell:1066} guide) is in the same {area:493}.",
 			goals = {
 				{ t = "level", level = 20 },
 				{ t = "accept", minLevel = 20, quest = 98393, npc = 4217, map = 1457, x = 35.37, y = 8.4, z = 1340.1, f = "e", qlvl = 20 },
@@ -578,7 +578,7 @@ G(function() return {
 		{
 			title = "{quest:98340}",
 			only = { races = { "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
-			note = "{npc:3033} stands in the druids' hut on {area:1639}. No Aquatic Form yet? Take A Lesson to Learn from him too: it also goes to {npc:11802}, and its Trial of the Lake (the Aquatic Form guide) is in the same {area:493}.",
+			note = "{npc:3033} stands in the druids' hut on {area:1639}. No {spell:1066} yet? Take A Lesson to Learn from him too: it also goes to {npc:11802}, and its Trial of the Lake (the {spell:1066} guide) is in the same {area:493}.",
 			goals = {
 				{ t = "level", level = 20 },
 				{ t = "accept", minLevel = 20, quest = 98340, npc = 3033, map = 1456, x = 76.48, y = 27.22, z = 159.1, f = "e", qlvl = 20 },
@@ -914,7 +914,7 @@ G(function() return {
 		},
 		{
 			title = "{npc:14536}",
-			note = "{npc:14536}, a gnome, walks around the gates of {area:3428} in the far south-west of {zone:1451}. Talk to him and he becomes {npc:14530}. He enrages with {spell:23272} as he turns: drop a {object:164639}, {spell:5384}, and he resets without the enrage. {spell:2974} roots him for a long time; while rooted he fears you and sends beetles ({npc:14761}): kill them fast with traps and {spell:2643} before they wear you down.",
+			note = "{npc:14536}, a gnome, walks around the gates of {area:3428} in the far south-west of {zone:1451}. Talk to him and he becomes {npc:14530}. He enrages with {spell:23272} as he turns: drop a {spell:13809}, {spell:5384}, and he resets without the enrage. {spell:2974} roots him for a long time; while rooted he fears you and sends beetles ({npc:14761}): kill them fast with traps and {spell:2643} before they wear you down.",
 			goals = {
 				{ t = "talk", npc = 14536, map = 1451, x = 24.72, y = 76.02, z = 7.1, f = "e", spotsPacked = "25.23,82.14,,180,1" },
 				{ t = "collect", quest = 7636, item = 18954, count = 1, map = 1451, x = 24.72, y = 76.02, f = "e", fromId = 14536, fromKind = "npc", fromNpcs = { { npc = 14536, npcName = "Nelson the Nice" } }, fromRank = 1, group = { kind = "elite", lvl = 60, rank = 1 }, oi = 3 },
@@ -1220,9 +1220,10 @@ G(function() return {
 		},
 		{
 			title = "{quest:1955}",
-			note = "Back at {npc:6546}'s. Kill the critters around the cottage first: they join the fight. Accepting {quest:1955} starts a 3 minute timer, and {npc:6546} calls the {npc:6549} out in her garden: a level 40 elite that resists many spells, roots and slows. Grouping up is encouraged: a mage of 40 may need help or potions, at about 45 it is soloable. You can pull it from range from the dock. The timer keeps running after it dies, so hand the quest in straight away. If time runs out, abandon the quest and take it again; she calls the demon again.",
+			note = "Back at {npc:6546}'s. Hand in the orb now; {quest:1955} waits for level 38. Kill the critters around the cottage first: they join the fight. Accepting {quest:1955} starts a 3 minute timer, and {npc:6546} calls the {npc:6549} out in her garden: a level 40 elite that resists many spells, roots and slows. Grouping up is encouraged: a mage of 40 may need help or potions, at about 45 it is soloable. You can pull it from range from the dock. The timer keeps running after it dies, so hand the quest in straight away. If time runs out, abandon the quest and take it again; she calls the demon again.",
 			goals = {
 				{ t = "turnin", quest = 1954, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e" },
+				{ t = "level", level = 38 },
 				{ t = "accept", minLevel = 35, quest = 1955, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e", limit = 180, pre = { 1954 }, qlvl = 40 },
 				{ t = "kill", quest = 1955, npc = 6549, count = 1, map = 1445, x = 45.79, y = 56.97, f = "e", note = "{npc:6549} (elite, 40)", group = { kind = "elite", lvl = 40, rank = 1 }, oi = 1, target = "Demon of the Orb" },
 				{ t = "turnin", quest = 1955, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e" },
@@ -1231,8 +1232,9 @@ G(function() return {
 		},
 		{
 			title = "{quest:1956}",
-			note = "{area:1517} is a dungeon in the northern {zone:1418}: a group of five. Go in by the rear entrance, a cave in {area:1898} south-east of the main entrance (elite dragons fly nearby): the {npc:7023} (level 42 elite) stands just past the first door. At 80, 60, 40 and 20 percent it breaks off an {npc:7209}, an elite too; while a shard lives, both reflect targeted spells, so use area spells and your wand on them. A solo trick: step out through the nearby zone line each time a shard appears; the Sentinel heals but keeps shrinking. It always drops the power source, and takes 2 hours to come back.",
+			note = "{area:1517} is a dungeon in the northern {zone:1418}: a group of five, from level 40 here. Go in by the rear entrance, a cave in {area:1898} south-east of the main entrance (elite dragons fly nearby): the {npc:7023} (level 42 elite) stands just past the first door. At 80, 60, 40 and 20 percent it breaks off an {npc:7209}, an elite too; while a shard lives, both reflect targeted spells, so use area spells and your wand on them. A solo trick: step out through the nearby zone line each time a shard appears; the Sentinel heals but keeps shrinking. It always drops the power source, and takes 2 hours to come back.",
 			goals = {
+				{ t = "level", level = 40 },
 				{ t = "collect", quest = 1956, item = 8053, count = 1, map = 1418, x = 49.1, y = 13.7, f = "e", note = "{item:8053}: {npc:7023}", group = { kind = "elite", lvl = 42, rank = 1 }, oi = 1 },
 			},
 		},
@@ -1250,14 +1252,22 @@ G(function() return {
 		},
 		{
 			title = "{quest:2861} (optional)",
-			note = "At 40 the mage trainers who send you to {npc:6546} ({npc:5497}, Bink, {npc:4568}, {npc:5885}) also have {quest:2861}, a quest any class can do. {npc:6546} then wants the {quest:2846} from {npc:7795}, a level 46 elite naga in {area:978}, the troll dungeon in north-western {zone:1446}: a group of five, level 44-54. She is one of the bosses by the sacred pool, and the tiara always drops. The reward window shows the {item:9527} and the {item:9531}.",
+			note = "At 40 the mage trainers who send you to {npc:6546} ({npc:5497}, Bink, {npc:4568}, {npc:5885}) also have {quest:2861}, a quest any class can do. {npc:6546} then wants the {quest:2846} from {npc:7795}, a level 46 elite naga in {area:978}, the troll dungeon in north-western {zone:1446}: a group of five, level 44-54. The reward window shows the {item:9527} and the {item:9531}.",
 			goals = {
 				{ t = "level", level = 40 },
 				{ t = "accept", minLevel = 40, quest = 2861, npc = 5885, map = 1454, x = 38.45, y = 86.13, z = 43, f = "e", optional = true, closedBy = { 2846 }, qlvl = 46 },
 				{ t = "turnin", quest = 2861, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e", optional = true },
 				{ t = "accept", minLevel = 40, quest = 2846, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e", optional = true, group = { map = 209, kind = "dungeon", name = "Zul'Farrak" }, qlvl = 46 },
-				{ t = "collect", quest = 2846, item = 9234, count = 1, map = 1445, x = 38.7, y = 20, f = "e", optional = true, note = "{quest:2846}: {npc:7795}, {area:978}", group = { map = 209, kind = "dungeon", name = "Zul'Farrak" }, oi = 1 },
-				{ t = "turnin", quest = 2846, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e", optional = true, group = { map = 209, kind = "dungeon", name = "Zul'Farrak" } },
+			},
+		},
+		{
+			title = "{quest:2846} in {area:978}",
+			when = { { k = "onquest", q = { 2846 } } },
+			note = "{area:978}, the troll dungeon in north-western {zone:1446}, needs a group of five; the guide waits for level 44. {npc:7795} is one of the bosses by the sacred pool, and the tiara always drops.",
+			goals = {
+				{ t = "level", level = 44 },
+				{ t = "collect", quest = 2846, item = 9234, count = 1, map = 1446, x = 38.7, y = 20, f = "e", note = "{quest:2846}: {npc:7795}, {area:978}", group = { map = 209, kind = "dungeon", name = "Zul'Farrak" }, oi = 1 },
+				{ t = "turnin", quest = 2846, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e", group = { map = 209, kind = "dungeon", name = "Zul'Farrak" } },
 			},
 		},
 	},
@@ -1415,7 +1425,7 @@ G(function() return {
 			title = "Witherbark trolls and the {item:7272}",
 			note = "The Witherbark trolls (level 30-36) hold the villages in south-eastern Arathi and south of {area:321}; every kind of them drops a {item:7273} about two times in five: you need ten. Then go to the {area:336} (the outer one, not the Inner circle). Three elementals (level 33-39) stand around its middle stone: pull them one at a time and clear them first. Stand at the middle stone and use a totem stick; about ten seconds later the {item:7272} forms on the stone: click it. If you die before you pick it up, the bramble and the sticks are lost and you need ten more.",
 			goals = {
-				{ t = "collect", item = 7273, count = 10, map = 1417, x = 42.87, y = 45.71, f = "e", fromNpcs = { { npc = 2552, npcName = "Witherbark Troll" }, { npc = 2553, npcName = "Witherbark Shadowcaster" }, { npc = 2554, npcName = "Witherbark Axe Thrower" }, { npc = 2555, npcName = "Witherbark Witch Doctor" }, { npc = 2556, npcName = "Witherbark Headhunter" } }, lvl = 35, spotsPacked = "37.5,41,,40,1,,31;35.6,49.4,,40,1,,31;30.8,43,,40,2,,34;61.1,72.4,,62,9;64.4,72.8,,43,10;63.9,68.1,,53,8;66.3,63.5,,48,6,,34;70.5,68.6,,58,9;68.7,72.7,,60,4;69.3,80.9,,57,13,,36;73.2,60.3,,40,1,,33;74.1,45.8,,40,3;35.1,46.2,,40,1,1,31;34.6,39.5,,40,1,1,32;32.1,45.5,,40,3,1,34;66.7,71,,40,2,1;70.7,61.4,,92,7,1;71.4,59,,40,2,1,33;72.9,65,,65,10,1;68.9,77.8,,57,12,1,36;67.2,80.8,,51,18,1,36", spread = true },
+				{ t = "collect", item = 7273, count = 10, map = 1417, x = 42.87, y = 45.71, f = "e", fromNpcs = { { npc = 2552, npcName = "Witherbark Troll" }, { npc = 2553, npcName = "Witherbark Shadowcaster" }, { npc = 2554, npcName = "Witherbark Axe Thrower" }, { npc = 2555, npcName = "Witherbark Witch Doctor" }, { npc = 2556, npcName = "Witherbark Headhunter" }, { npc = 2557, npcName = "Witherbark Shadow Hunter" } }, fromNpcsAt = "1;1;2,4;3,5,4;3,4,5;3,4,5;3,4;4,5;5,4;5,6,4;3;1,2,5;1;2;4,1;4,5;3,4,5;3;3,4,5;5,4,6;6,5,4", lvl = 35, spotsPacked = "37.5,41,,40,1,,31;35.6,49.4,,40,1,,31;30.8,43,,40,2,,34;61.1,72.4,,62,9;64.4,72.8,,43,10;63.9,68.1,,53,8;66.3,63.5,,48,6,,34;70.5,68.6,,58,9;68.7,72.7,,60,4;69.3,80.9,,57,13,,36;73.2,60.3,,40,1,,33;74.1,45.8,,40,3;35.1,46.2,,40,1,1,31;34.6,39.5,,40,1,1,32;32.1,45.5,,40,3,1,34;66.7,71,,40,2,1;70.7,61.4,,92,7,1;71.4,59,,40,2,1,33;72.9,65,,65,10,1;68.9,77.8,,57,12,1,36;67.2,80.8,,51,18,1,36", spread = true },
 				{ t = "use", quest = 1948, item = 7273, map = 1417, x = 52.04, y = 50.74, f = "e", note = "at the middle stone of the {area:336}", oi = 2 },
 				{ t = "collect", quest = 1948, item = 7272, count = 1, map = 1417, x = 52.04, y = 50.74, f = "e", fromId = 103662, fromKind = "object", oi = 2 },
 			},
@@ -1695,7 +1705,6 @@ G(function() return {
 				{ t = "kill", quest = 6681, npc = 13936, count = 1, map = 1424, x = 78.64, y = 17.84, z = 176.4, f = "e", note = "Rite of Cunning: {spell:1846} beside the tunnel chest", oi = 1, target = "Ravenholdt" },
 				{ t = "turnin", quest = 6681, npc = 6707, map = 1416, x = 84.45, y = 80.32, z = 203.9, f = "e" },
 				{ t = "accept", minLevel = 24, quest = 96779, npc = 13085, map = 1416, x = 84.93, y = 80.38, z = 195.1, f = "e", qlvl = 24 },
-				{ t = "accept", minLevel = 24, quest = 6701, npc = 6766, map = 1416, x = 85.27, y = 79.56, z = 195.5, f = "e", optional = true, note = "{npc:6766}: {quest:6701}, repeatable; take it now, the emblems are quest items", pre = { 6681 }, qlvl = 60, spotsPacked = "85,79.2,195.5,17,4;81.7,77.5,173.9,15,2;82.4,73.8,168.5,15,1,1" },
 			},
 		},
 		{
@@ -1703,14 +1712,14 @@ G(function() return {
 			note = "{npc:266216} is inside {area:275}, the Syndicate fortress south of the manor; he can stand in any of fifteen spots in the keep, so search. Quick and quiet, says {npc:13085}. Pick the pockets of the level 20-21 Syndicate Rogues, Shadow Mages and Watchmen on your way: they carry {quest:6701} for the guards' repeatable reputation quest.",
 			goals = {
 				{ t = "kill", quest = 96779, npc = 266216, count = 1, map = 1424, x = 79.35, y = 46.02, f = "e", lvl = 24, oi = 1, spotsPacked = "79.4,46,,28,7", target = "Lord Tomas" },
-				{ t = "collect", quest = 6701, item = 17124, count = 1, map = 1424, x = 79.28, y = 46.37, f = "e", optional = true, text = "Pick Pocket Syndicate members for {quest:6701}", fromNpcs = { { npc = 2260, npcName = "Syndicate Rogue" }, { npc = 2319, npcName = "Syndicate Wizard" }, { npc = 2261, npcName = "Syndicate Watchman" }, { npc = 2241, npcName = "Syndicate Thief" }, { npc = 2240, npcName = "Syndicate Footpad" } }, lvl = 22, oi = 1, spotsPacked = "78.2,45.4,,63,15;81.1,45.5,,63,17;82.3,41,,49,11;79.2,40.9,,61,17;75.7,41.1,,70,18;66.3,47.3,,52,12;67,50.4,,40,3;50.8,19.9,,47,19,,34;59.9,8,,64,26,,35", spread = true },
+				{ t = "collect", item = 17124, map = 1424, x = 79.28, y = 46.37, f = "e", optional = true, text = "Pick Pocket Syndicate members for {quest:6701}", fromNpcs = { { npc = 2260, npcName = "Syndicate Rogue" }, { npc = 2319, npcName = "Syndicate Wizard" }, { npc = 2261, npcName = "Syndicate Watchman" }, { npc = 2241, npcName = "Syndicate Thief" }, { npc = 2240, npcName = "Syndicate Footpad" }, { npc = 2244, npcName = "Syndicate Shadow Mage" } }, fromNpcsAt = "3,1,6;3,6,1;3,6,1;3,6,1;3,6,1;1,3,6;1,3,6;4,5;5,4,2", lvl = 22, spotsPacked = "78.2,45.4,,63,15;81.1,45.5,,63,17;82.3,41,,49,11;79.2,40.9,,61,17;75.7,41.1,,70,18;66.3,47.3,,52,12;67,50.4,,40,3;50.8,19.9,,47,19,,34;59.9,8,,64,26,,35", spread = true },
 			},
 		},
 		{
 			title = "{npc:13085}",
 			goals = {
 				{ t = "turnin", quest = 96779, npc = 13085, map = 1416, x = 84.93, y = 80.38, z = 195.1, f = "e" },
-				{ t = "turnin", quest = 6701, npc = 6766, map = 1416, x = 85.27, y = 79.56, z = 195.5, f = "e", optional = true, note = "{npc:6766}: one emblem each time, 100 reputation", spotsPacked = "85,79.2,195.5,17,4;81.7,77.5,173.9,15,2;82.4,73.8,168.5,15,1,1" },
+				{ t = "turnin", quest = 6701, npc = 6766, map = 1416, x = 85.27, y = 79.56, z = 195.5, f = "e", optional = true, note = "{npc:6766}: one emblem each time, 100 reputation", direct = true, qlvl = 60, spotsPacked = "85,79.2,195.5,17,4;81.7,77.5,173.9,15,2;82.4,73.8,168.5,15,1,1" },
 			},
 		},
 		{
@@ -1971,7 +1980,7 @@ G(function() return {
 	names = { ["zone:1453"] = "Stormwind" },
 	reward = { { item = 6900, itemName = "Enchanted Gold Bloodrobe" } },
 	version = 1,
-	why = "A rare cloth robe for your 30s, which {npc:6266} makes from the parts you bring her.",
+	why = "A rare cloth robe for your 30s from {npc:6266}; its last parts wait for levels 35 and 37.",
 	steps = {
 		{
 			title = "{quest:4736} ({zone:1453})",
@@ -2049,10 +2058,17 @@ G(function() return {
 			},
 		},
 		{
-			title = "{zone:1443} demons",
-			note = "The Hatefury satyrs (level 31-32) hold {area:603} in the far north-east of {zone:1443}, past {area:608}: two kills in five give a vial, so plan on about 25. The Lesser Infernals (36-37) and Demon Portal Guardians (38) of {area:602}, in the south, drop the stone half the time; they resist fire, so use {spell:686} and Corruption.",
+			title = "Hatefury satyrs",
+			note = "The Hatefury satyrs (level 31-32) hold {area:603} in the far north-east of {zone:1443}, past {area:608}: two kills in five give a vial, so plan on about 25.",
 			goals = {
-				{ t = "collect", quest = 4783, item = 6989, count = 10, map = 1443, x = 74.7, y = 17.82, f = "e", note = "Vials of Hatefury Blood", fromNpcs = { { npc = 4670, npcName = "Hatefury Rogue" }, { npc = 4671, npcName = "Hatefury Trickster" }, { npc = 4672, npcName = "Hatefury Felsworn" }, { npc = 4673, npcName = "Hatefury Betrayer" }, { npc = 4674, npcName = "Hatefury Shadowstalker" } }, lvl = 33, oi = 1, spotsPacked = "74.5,16.3,,40,3;72.4,18.2,,70,9;70.7,15.7,,40,3;74.2,11,,67,8;77,16.7,,58,8;76,20.1,,61,7;76.7,24.1,,60,6;78.9,24.6,,40,1,,32;79,19,,43,4;80.5,17,,40,2;74.1,24.2,,56,6;76.5,29,,40,3;73.5,21.6,,55,6,1;73.5,13.7,,65,5,1;78.6,21.9,,48,8,1;79.2,15.5,,56,6,1;75.3,26.8,,40,5,1;77.8,26.3,,40,2,1", spread = true },
+				{ t = "collect", quest = 4783, item = 6989, count = 10, map = 1443, x = 74.7, y = 17.82, f = "e", note = "Vials of Hatefury Blood", fromNpcs = { { npc = 4670, npcName = "Hatefury Rogue" }, { npc = 4671, npcName = "Hatefury Trickster" }, { npc = 4672, npcName = "Hatefury Felsworn" }, { npc = 4673, npcName = "Hatefury Betrayer" }, { npc = 4674, npcName = "Hatefury Shadowstalker" }, { npc = 4675, npcName = "Hatefury Hellcaller" }, { npc = 14225, npcName = "Prince Kellen" } }, fromNpcsAt = "6,1;6,1,3,4,2;1,4,5;1,6,2,3,4;3,5,1,2,4;2,3,4,5,6;5,6,1,4;2;2,1,6;3,4,6;1,2,3,6;2,3,5;3,1,2,4,6;4,2,3,5,6;4,6,1,2,5,7;5,2,3,4,6;3,5,4;2,4", lvl = 33, oi = 1, spotsPacked = "74.5,16.3,,40,3;72.4,18.2,,70,9;70.7,15.7,,40,3;74.2,11,,67,8;77,16.7,,58,8;76,20.1,,61,7;76.7,24.1,,60,6;78.9,24.6,,40,1,,32;79,19,,43,4;80.5,17,,40,2;74.1,24.2,,56,6;76.5,29,,40,3;73.5,21.6,,55,6,1;73.5,13.7,,65,5,1;78.6,21.9,,48,8,1;79.2,15.5,,56,6,1;75.3,26.8,,40,5,1;77.8,26.3,,40,2,1", spread = true },
+			},
+		},
+		{
+			title = "{area:602}",
+			note = "The Lesser Infernals (36-37) and Demon Portal Guardians (38) of {area:602}, in the south of {zone:1443}, drop the stone half the time. The guide waits for level 35 first: at 31 they are too strong to solo. They resist fire, so use {spell:686} and Corruption.",
+			goals = {
+				{ t = "level", level = 35 },
 				{ t = "collect", quest = 4783, item = 6990, count = 1, map = 1443, x = 56.8, y = 71.13, f = "e", fromAlso = "Demon Portal Guardian", fromAlsoId = 11937, fromId = 4676, fromKind = "npc", fromNpcs = { { npc = 4676, npcName = "Lesser Infernal" }, { npc = 11937, npcName = "Demon Portal Guardian" } }, lvl = 39, oi = 2, spotsPacked = "55,71.3,,32,3;50.9,70.7,,36,3;54.5,79.7,,42,6;50.2,74.1,,18,2;52.3,80.9,,68,6;49.5,77.1,,34,5;56.8,71.1,,15,1,1,37;54.6,73.6,,15,1,1,37;57.6,77.1,,15,1,1,37;52.7,72.2,,15,1,1,37;52.6,77.4,,15,1,1;51.5,75.6,,15,1,1,37;53.6,83.3,,39,4,1;53,86.1,,15,1,1,37" },
 			},
 		},
@@ -2067,15 +2083,15 @@ G(function() return {
 			title = "{quest:4785}",
 			note = "Back to {npc:2670} in {area:35}: he offers {quest:4785} as a quest you hand straight back to him. He may show no quest marker; talk to him anyway.",
 			goals = {
-				{ t = "accept", minLevel = 31, quest = 4785, npc = 2670, map = 1434, x = 28.71, y = 76.89, z = 32.4, f = "e", pre = { 4783 }, qlvl = 37 },
-				{ t = "turnin", quest = 4785, npc = 2670, map = 1434, x = 28.71, y = 76.89, z = 32.4, f = "e", note = "{npc:2670}: {quest:4785}" },
+				{ t = "turnin", quest = 4785, npc = 2670, map = 1434, x = 28.71, y = 76.89, z = 32.4, f = "e", note = "{npc:2670}: {quest:4785}, handed straight back", direct = true, qlvl = 37 },
 				{ t = "collect", quest = 4784, item = 12293, count = 1, map = 1434, x = 28.71, y = 76.89, f = "e", fromId = 2670, fromKind = "npc", fromNpcs = { { npc = 2670, npcName = "Xizk Goodstitch" } }, oi = 1 },
 			},
 		},
 		{
 			title = "{item:6991}",
-			note = "The Burning Exiles (level 38-39), fire elementals at the {area:334} in western {zone:1417}, drop the coal about one time in three. They resist fire: {spell:686} and Corruption. Below 38 they hit hard; the Cresting Charms from the Cresting Exiles near {area:321} finish one off once you have hurt it. Make a {item:6265} with {spell:1120} on the way.",
+			note = "The Burning Exiles (level 38-39), fire elementals at the {area:334} in western {zone:1417}, drop the coal about one time in three. The guide waits for level 37 first: below it they hit too hard to solo. They resist fire: {spell:686} and Corruption. The Cresting Charms from the Cresting Exiles near {area:321} finish one off once you have hurt it. Make a {item:6265} with {spell:1120} on the way.",
 			goals = {
+				{ t = "level", level = 37 },
 				{ t = "collect", quest = 4784, item = 6991, count = 2, map = 1417, x = 25.61, y = 30.4, f = "e", fromId = 2760, fromKind = "npc", fromNpcs = { { npc = 2760, npcName = "Burning Exile" } }, lvl = 39, oi = 2, spotsPacked = "25.3,30.1,,69,11;26.8,31.7,,25,3" },
 				{ t = "collect", quest = 4784, item = 6265, count = 1, map = 1417, x = 24.9, y = 30.5, f = "e", note = "{item:6265}: {spell:1120} on an Exile as it dies", oi = 3 },
 			},
@@ -2153,7 +2169,7 @@ G(function() return {
 			title = "{item:14256}",
 			note = "One {item:14256}: the Jadefire satyrs of {zone:1448} drop it about one kill in fourteen, and so do the Legashi satyrs and the Felguard Sentries you hunt for Niby's essences. Quicker: buy one at the Auction House. You need it for the trainer's {quest:8419} or for {npc:14470}'s own {quest:8420}, the same errand: whichever you hold.",
 			goals = {
-				{ t = "collect", item = 14256, map = 1448, x = 32.23, y = 67.11, f = "e", fromNpcs = { { npc = 9454, npcName = "Xavathras" }, { npc = 9860, npcName = "Salia" }, { npc = 9518, npcName = "Rakaiah" }, { npc = 9877, npcName = "Prince Xavalis" }, { npc = 9862, npcName = "Jaedenar Legionnaire" } }, lvl = 51, spotsPacked = "32.3,66.6,,40,7,,54;37.5,69.1,,46,10,,52;36.6,56.4,,40,4,,55;38.5,50.7,,40,2,,56;37.7,45.9,,40,1,,55;39.3,22,,40,7,,55;42.5,18,,45,6,,53;46.2,14.4,,40,1,,53;38.9,82.4,,42,4;40.3,85.9,,40,3;42.8,83.6,,40,2;43.3,88.4,,46,4;33.6,66.7,,40,2,1,52;35.4,66.8,,40,3,1;37.3,66.9,,40,7,1,52;37.8,54,,40,2,1,55;40.5,84.2,,40,2,1;40,49.2,,40,1,1,55;36.2,46.1,,40,2,1,55;38.8,46.8,,40,2,1,54;42.1,85.7,,40,2,1;44.2,86.4,,40,1,1;41.7,21.7,,40,1,1,54;41.4,19.8,,62,8,1,54;42.9,15.1,,48,9,1,54;44.7,14,,40,3,1,53", spread = true },
+				{ t = "collect", item = 14256, map = 1448, x = 32.23, y = 67.11, f = "e", fromNpcs = { { npc = 9454, npcName = "Xavathras" }, { npc = 9860, npcName = "Salia" }, { npc = 9518, npcName = "Rakaiah" }, { npc = 9877, npcName = "Prince Xavalis" }, { npc = 9862, npcName = "Jaedenar Legionnaire" }, { npc = 7109, npcName = "Jadefire Felsworn" }, { npc = 7107, npcName = "Jadefire Trickster" }, { npc = 7110, npcName = "Jadefire Shadowstalker" }, { npc = 7111, npcName = "Jadefire Hellcaller" }, { npc = 7108, npcName = "Jadefire Betrayer" }, { npc = 7106, npcName = "Jadefire Rogue" }, { npc = 9861, npcName = "Moora" }, { npc = 10648, npcName = "Xavaric" } }, fromNpcsAt = "8,6,1,11;8,6,11;4,5,9,7;3,5;5;9,10,13;7,10;7;6;6;6;6;6,8;6,11;11,8,6;5;6;5;5;2,12;6;6;9;10,7,9;7,9,10;7,10", lvl = 51, spotsPacked = "32.3,66.6,,40,7,,54;37.5,69.1,,46,10,,52;36.6,56.4,,40,4,,55;38.5,50.7,,40,2,,56;37.7,45.9,,40,1,,55;39.3,22,,40,7,,55;42.5,18,,45,6,,53;46.2,14.4,,40,1,,53;38.9,82.4,,42,4;40.3,85.9,,40,3;42.8,83.6,,40,2;43.3,88.4,,46,4;33.6,66.7,,40,2,1,52;35.4,66.8,,40,3,1;37.3,66.9,,40,7,1,52;37.8,54,,40,2,1,55;40.5,84.2,,40,2,1;40,49.2,,40,1,1,55;36.2,46.1,,40,2,1,55;38.8,46.8,,40,2,1,54;42.1,85.7,,40,2,1;44.2,86.4,,40,1,1;41.7,21.7,,40,1,1,54;41.4,19.8,,62,8,1,54;42.9,15.1,,48,9,1,54;44.7,14,,40,3,1,53", spread = true },
 			},
 		},
 		{
@@ -2299,9 +2315,10 @@ G(function() return {
 		},
 		{
 			title = "{npc:6546}",
-			note = "{npc:6546} lives at her farm in the middle of {zone:1445}, south of the road from the {zone:1413} and south-west of Theramore; a spirit healer stands beside it. Deadmire, a level 45 crocolisk, patrols the creeks just north-east. Before you accept Cleansing, clear the spiders and crocolisks around her paddock. Accepting starts a 3-minute timer: she walks to the paddock and lets the {npc:6549} out. It is elite (level 40): grouping up is encouraged; a warlock of about 40 can solo it with Fear or {spell:710} and damage over time, a level 35-38 one brings a friend. The timer keeps running after the kill, so hand in at once. If time runs out, abandon the quest and take it from {npc:6546} again.",
+			note = "{npc:6546} lives at her farm in the middle of {zone:1445}, south of the road from the {zone:1413} and south-west of Theramore; a spirit healer stands beside it. Deadmire, a level 45 crocolisk, patrols the creeks just north-east. Hand in the orb now; Cleansing waits for level 38. Before you accept it, clear the spiders and crocolisks around her paddock. Accepting starts a 3-minute timer: she walks to the paddock and lets the {npc:6549} out. It is elite (level 40): grouping up is encouraged; a warlock of about 40 can solo it with Fear or {spell:710} and damage over time, a level 38 one brings a friend. The timer keeps running after the kill, so hand in at once. If time runs out, abandon the quest and take it from {npc:6546} again.",
 			goals = {
 				{ t = "turnin", quest = 1799, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e" },
+				{ t = "level", level = 38 },
 				{ t = "accept", minLevel = 35, quest = 4961, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e", limit = 180, preAll = { 1799, 4962 }, qlvl = 40 },
 				{ t = "kill", quest = 4961, npc = 6549, count = 1, map = 1445, x = 45.79, y = 56.97, f = "e", group = { kind = "elite", lvl = 40, rank = 1 }, oi = 1, target = "Demon of the Orb" },
 				{ t = "turnin", quest = 4961, npc = 6546, map = 1445, x = 46.06, y = 57.09, z = 39, f = "e" },
@@ -2404,17 +2421,18 @@ G(function() return {
 			},
 		},
 		{
-			title = "{area:1763}",
-			note = "{area:1763} lies just south of {area:1997}, west of the road. Of its two caves, {area:1770} is the northern one, further up the hill; the other has no Legionnaires. {area:1770}'s tunnels run north under the hills, and the Jaedenar Legionnaires (level 55) stand in its deeper halls, from the first ramps on toward {npc:9516}'s chamber; they Uppercut anyone in melee. Three kills in four give the essence, but only about eleven spawn: clear your way in and wait out a five-minute respawn if you must. The cultists of {area:1763} and {area:1770} are all hostile.",
-			goals = {
-				{ t = "collect", quest = 7602, item = 18622, count = 1, map = 1448, x = 40.01, y = 49.15, f = "e", fromId = 9862, fromKind = "npc", fromNpcs = { { npc = 9862, npcName = "Jaedenar Legionnaire" } }, lvl = 55, oi = 2, spotsPacked = "39.3,50,,53,2;36.7,46,,58,3;37.3,54.5,,71,3" },
-			},
-		},
-		{
 			title = "{zone:1447}",
 			note = "The Legashi satyrs (level 51-53) hold the Legash Encampment on {zone:1447}'s northern coast. Every kind drops the essence three times in four; the satyrs burn mana and the Hellcallers rain fire, so pull them singly.",
 			goals = {
 				{ t = "collect", quest = 7602, item = 18624, count = 1, map = 1447, x = 61.42, y = 20.92, f = "e", fromAlso = "Legashi Rogue", fromAlsoId = 6201, fromId = 6200, fromKind = "npc", fromNpcs = { { npc = 6200, npcName = "Legashi Satyr" }, { npc = 6201, npcName = "Legashi Rogue" }, { npc = 6202, npcName = "Legashi Hellcaller" } }, lvl = 53, oi = 1, spotsPacked = "62.2,24,,40,4;60.9,24.5,,44,9;62.1,26.2,,50,5;66.6,18.6,,44,7;65.7,16.9,,40,6;66.6,15.8,,40,3;68.3,18,,40,2;52,20.6,,40,2;51.5,18.4,,83,9", spread = true },
+			},
+		},
+		{
+			title = "{area:1763}",
+			note = "{area:1763} lies just south of {area:1997}, west of the road. The guide waits for level 53 first: its Legionnaires are 55. Of its two caves, {area:1770} is the northern one, further up the hill; the other has no Legionnaires. {area:1770}'s tunnels run north under the hills, and the Jaedenar Legionnaires (level 55) stand in its deeper halls, from the first ramps on toward {npc:9516}'s chamber; they Uppercut anyone in melee. Three kills in four give the essence, but only about eleven spawn: clear your way in and wait out a five-minute respawn if you must. The cultists of {area:1763} and {area:1770} are all hostile.",
+			goals = {
+				{ t = "level", level = 53 },
+				{ t = "collect", quest = 7602, item = 18622, count = 1, map = 1448, x = 37.58, y = 50.21, f = "e", fromId = 9862, fromKind = "npc", fromNpcs = { { npc = 9862, npcName = "Jaedenar Legionnaire" } }, lvl = 55, oi = 2, spotsPacked = "39.3,50,,53,2;37.3,54.5,,71,3;36.7,46,,58,3" },
 			},
 		},
 		{
@@ -2773,42 +2791,42 @@ G(function() return {
 		},
 		{
 			title = "{npc:6176}",
-			note = "{npc:6176} camps by ruins on the east bank of the river that runs past {area:272}, a short walk north-east of the town, just over the border in {zone:1416}; his cauldron stands beside him. Horde: fly to {area:272}. Alliance: fly to {area:271} and go north along the river; {area:272}'s guards are level 42 elites, so keep away from the town. Accepting {quest:1712} gives you {item:6929}, the list of what he needs: 8 {item:3357}, 30 Bloodscalp Tusks and the {quest:1714} from his cauldron. Click the cauldron for that quest.",
+			note = "{npc:6176} camps by ruins on the east bank of the river that runs past {area:272}, a short walk north-east of the town, just over the border in {zone:1416}; his cauldron stands beside him. Horde: fly to {area:272}. Alliance: fly to {area:271} and go north along the river; {area:272}'s guards are level 42 elites, so keep away from the town. Accepting {quest:1712} gives you {item:6929}, the list of what he needs: 8 {item:3357}, 30 Bloodscalp Tusks and the {item:6851} from his cauldron. The cauldron's {item:6851} is not a quest you take: it never shows in your quest log. Come back with its charms and hand them in at the cauldron.",
 			goals = {
 				{ t = "turnin", quest = 1791, npc = 6176, map = 1416, x = 80.5, y = 66.92, z = 55.4, f = "e", spotsPacked = "79.83,64.72,,46,1" },
 				{ t = "accept", minLevel = 30, quest = 1712, npc = 6176, map = 1416, x = 80.5, y = 66.92, z = 55.4, f = "e", pre = { 1791 }, qlvl = 40, spotsPacked = "79.83,64.72,,46,1" },
-				{ t = "accept", minLevel = 30, quest = 1714, object = 89931, map = 1416, x = 79.32, y = 66.8, z = 49.9, f = "e", qlvl = 37 },
-			},
-		},
-		{
-			title = "The exiles of Arathi",
-			note = "The cauldron wants 8 of each charm, 24 in all, and each exile drops its charm about one kill in three, so plan on some 70 kills. All are level 38-39, not elite, and hit hard at 30-33: bring a friend or come at 35 or more. Burning Exiles (fire) by the {area:334} in the north-west, north-west of {area:320}; Thundering Exiles (air) by the {area:336} south-east of {area:320}, casting {spell:403} from 40 yards; Cresting Exiles (water) by the {area:333}, north-west of {area:321}, with {spell:122}. About a dozen of each, back in under 7 minutes. The charms trade and sell on the auction house; using one banishes another kind of exile for a while (Burning on Thundering, Thundering on Cresting, Cresting on Burning).",
-			goals = {
-				{ t = "collect", quest = 1714, item = 4479, count = 8, map = 1417, x = 25.61, y = 30.4, f = "e", note = "{item:4479}, from Burning Exiles", fromNpcs = { { npc = 2760, npcName = "Burning Exile" } }, lvl = 39, oi = 2, spotsPacked = "25.3,30.1,,69,11;26.8,31.7,,25,3" },
-				{ t = "collect", quest = 1714, item = 4480, count = 8, map = 1417, x = 50.39, y = 50.83, f = "e", note = "{item:4480}, from Thundering Exiles", fromNpcs = { { npc = 2762, npcName = "Thundering Exile" } }, lvl = 39, oi = 1, spotsPacked = "51.5,51.3,,61,8;52.7,49.3,,43,4" },
-				{ t = "collect", quest = 1714, item = 4481, count = 8, map = 1417, x = 65.36, y = 31.01, f = "e", note = "{item:4481}, from Cresting Exiles", fromNpcs = { { npc = 2761, npcName = "Cresting Exile" } }, lvl = 39, oi = 3, spotsPacked = "66.7,29.8,,63,14" },
-			},
-		},
-		{
-			title = "{quest:1714}",
-			note = "Put the 24 charms into {object:89931}: it hands you the {quest:1714}.",
-			goals = {
-				{ t = "turnin", quest = 1714, object = 89931, map = 1416, x = 79.32, y = 66.8, z = 49.9, f = "e", note = "{object:89931}: {quest:1714}" },
-				{ t = "collect", quest = 1712, item = 6851, count = 1, map = 1416, x = 80.5, y = 66.9, f = "e", note = "{quest:1714}, from the cauldron by {npc:6176}", oi = 3 },
 			},
 		},
 		{
 			title = "{item:3357}",
 			note = "You need 8 {item:3357}. Herbalists pick it by rivers and lakes in the {zone:1437}, {zone:1417} and {zone:1434}; otherwise the auction house. Herb vendors keep only one at a time and restock every two hours: {npc:1302} and {npc:1313} in {zone:1453}, {npc:844} on the road in eastern Elwynn, Jeeda at {area:460} in Stonetalon, Montarr in {zone:1441}. Kurzen Medicine Men in northern Stranglethorn drop one about one kill in twelve.",
 			goals = {
-				{ t = "collect", quest = 1712, item = 3357, count = 8, map = 1416, x = 79.85, y = 61.46, f = "e", oi = 1, spotsPacked = "79.4,60.3,,40,2;83.5,52.6,,40,2;72.6,69.3,,40,1;36.1,25.4,,40,2;37.7,20.8,,40,2;34.8,9.8,,40,1;32.3,31.5,,70,7;29.6,39.4,,40,1;26,43.6,,40,2;20.5,49.8,,40,4;16.8,53.5,,40,4;9.2,55.3,,40,2;76.7,63.4,,40,2,1;81.1,56.3,,40,2,1;74,65.2,,40,1,1;36.8,13.5,,40,4,1;23.6,46.6,,40,2,1;32.2,7.9,,41,6,1;13.6,55.2,,40,3,1", spread = true },
+				{ t = "collect", quest = 1712, item = 3357, count = 8, map = 1416, x = 77.21, y = 64.4, f = "e", oi = 1, spotsPacked = "76.7,63.4,,40,2;72.6,69.3,,40,1;83.5,52.6,,40,2;37.7,20.8,,40,2;36.1,25.4,,40,2;32.3,31.5,,70,7;29.6,39.4,,40,1;26,43.6,,40,2;20.5,49.8,,40,4;16.8,53.5,,40,4;9.2,55.3,,40,2;34.8,9.8,,40,1;74,65.2,,40,1,1;79.4,60.3,,40,2,1;81.1,56.3,,40,2,1;36.8,13.5,,40,4,1;23.6,46.6,,40,2,1;32.2,7.9,,41,6,1;13.6,55.2,,40,3,1", spread = true },
 			},
 		},
 		{
 			title = "Bloodscalp Tusks",
 			note = "You need 30 tusks. Every Bloodscalp troll (level 33-37) of north-west Stranglethorn drops one about one kill in three, so plan on some 80 kills: the camps and ruins north and north-west of {area:117} and around the {area:123} on the coast. They enrage below 30% health and the Warriors disarm; back in 5 minutes.",
 			goals = {
-				{ t = "collect", quest = 1712, item = 3901, count = 30, map = 1434, x = 32.26, y = 17.17, f = "e", fromNpcs = { { npc = 587, npcName = "Bloodscalp Warrior" }, { npc = 588, npcName = "Bloodscalp Scout" }, { npc = 595, npcName = "Bloodscalp Hunter" }, { npc = 597, npcName = "Bloodscalp Berserker" }, { npc = 660, npcName = "Bloodscalp Witch Doctor" } }, lvl = 34, oi = 2, spotsPacked = "30.5,17.4,,40,2;30,21.2,,40,2;34.3,14.6,,40,1;31.4,12.2,,40,4;27.5,11.3,,40,4,,35;26.1,12.3,,56,12,,35;24.6,12.7,,64,14,,35;23,10.7,,49,9,,37;21.3,10.2,,40,1,,37;20,11.9,,58,10,,37;20.9,15.4,,40,1,,37;25.8,9.2,,45,15,,35;33.9,16.1,,48,6,1;30.7,19.4,,40,1,1;31.7,14,,40,2,1;33,13.5,,40,3,1;29.4,19.5,,43,8,1;24.9,10.4,,54,19,1,37;22.9,12.6,,46,11,1,35;23.5,9.1,,69,18,1,37;20.6,13.5,,40,5,1,37", spread = true },
+				{ t = "collect", quest = 1712, item = 3901, count = 30, map = 1434, x = 32.26, y = 17.17, f = "e", fromNpcs = { { npc = 587, npcName = "Bloodscalp Warrior" }, { npc = 588, npcName = "Bloodscalp Scout" }, { npc = 595, npcName = "Bloodscalp Hunter" }, { npc = 597, npcName = "Bloodscalp Berserker" }, { npc = 660, npcName = "Bloodscalp Witch Doctor" }, { npc = 701, npcName = "Bloodscalp Mystic" }, { npc = 671, npcName = "Bloodscalp Headhunter" }, { npc = 694, npcName = "Bloodscalp Axe Thrower" }, { npc = 702, npcName = "Bloodscalp Scavenger" }, { npc = 697, npcName = "Bloodscalp Shaman" }, { npc = 699, npcName = "Bloodscalp Beastmaster" } }, fromNpcsAt = "10;1,10;1;9;6,2,11;6,3,2,11;2,6,3;7,4,3,11;7;4,5,7;5;6,2,3,11;8,1;10;9;9,1;8,10,1;6,2,4,7,3,5,11;2,6,3;4,7,5,11;5,7", lvl = 34, oi = 2, spotsPacked = "30.5,17.4,,40,2;30,21.2,,40,2;34.3,14.6,,40,1;31.4,12.2,,40,4;27.5,11.3,,40,4,,35;26.1,12.3,,56,12,,35;24.6,12.7,,64,14,,35;23,10.7,,49,9,,37;21.3,10.2,,40,1,,37;20,11.9,,58,10,,37;20.9,15.4,,40,1,,37;25.8,9.2,,45,15,,35;33.9,16.1,,48,6,1;30.7,19.4,,40,1,1;31.7,14,,40,2,1;33,13.5,,40,3,1;29.4,19.5,,43,8,1;24.9,10.4,,54,19,1,37;22.9,12.6,,46,11,1,35;23.5,9.1,,69,18,1,37;20.6,13.5,,40,5,1,37", spread = true },
+			},
+		},
+		{
+			title = "The exiles of Arathi",
+			note = "The cauldron wants 8 of each charm, 24 in all, and each exile drops its charm about one kill in three, so plan on some 70 kills. All are level 38-39, not elite: the guide waits for level 37 first, and a friend helps. Burning Exiles (fire) by the {area:334} in the north-west, north-west of {area:320}; Thundering Exiles (air) by the {area:336} south-east of {area:320}, casting {spell:403} from 40 yards; Cresting Exiles (water) by the {area:333}, north-west of {area:321}, with {spell:122}. About a dozen of each, back in under 7 minutes. The charms trade and sell on the auction house; using one banishes another kind of exile for a while (Burning on Thundering, Thundering on Cresting, Cresting on Burning).",
+			goals = {
+				{ t = "level", level = 37 },
+				{ t = "collect", item = 4479, count = 8, map = 1417, x = 25.61, y = 30.4, f = "e", note = "{item:4479}, from Burning Exiles", fromNpcs = { { npc = 2760, npcName = "Burning Exile" } }, lvl = 39, spotsPacked = "25.3,30.1,,69,11;26.8,31.7,,25,3" },
+				{ t = "collect", item = 4480, count = 8, map = 1417, x = 50.39, y = 50.83, f = "e", note = "{item:4480}, from Thundering Exiles", fromNpcs = { { npc = 2762, npcName = "Thundering Exile" } }, lvl = 39, spotsPacked = "51.5,51.3,,61,8;52.7,49.3,,43,4" },
+				{ t = "collect", item = 4481, count = 8, map = 1417, x = 65.36, y = 31.01, f = "e", note = "{item:4481}, from Cresting Exiles", fromNpcs = { { npc = 2761, npcName = "Cresting Exile" } }, lvl = 39, spotsPacked = "66.7,29.8,,63,14" },
+			},
+		},
+		{
+			title = "{quest:1714}",
+			note = "Click {object:89931} with the 24 charms in your bags and {quest:1712} in your log. Its window asks for the charms straight away, with nothing to accept: Continue, then Complete, and it hands you the {quest:1714}.",
+			goals = {
+				{ t = "turnin", quest = 1714, object = 89931, map = 1416, x = 79.32, y = 66.8, z = 49.9, f = "e", note = "{object:89931}: {quest:1714}", direct = true, qlvl = 37 },
+				{ t = "collect", quest = 1712, item = 6851, count = 1, map = 1416, x = 80.5, y = 66.9, f = "e", note = "{quest:1714}, from the cauldron by {npc:6176}", oi = 3 },
 			},
 		},
 		{
@@ -2816,6 +2834,7 @@ G(function() return {
 			note = "Back to {npc:6176}. Accepting {quest:1713} starts his ritual, and {quest:1712} appears just north of his camp. {quest:1712} is elite (level 40): grouping up is encouraged; it needs a group of two or three around level 40. It deals nature damage (a {item:6052} soaks it), whirls, and {spell:10101} throws you far while it heals itself as you run back: fight with your back to a slope or rock. The {item:6894} always drops. If the fight fails {npc:6176} stops answering: abandon {quest:1713} and take it again for a new summon; the earlier items are not needed again.",
 			goals = {
 				{ t = "turnin", quest = 1712, npc = 6176, map = 1416, x = 80.5, y = 66.92, z = 55.4, f = "e", spotsPacked = "79.83,64.72,,46,1" },
+				{ t = "level", level = 38 },
 				{ t = "accept", minLevel = 30, quest = 1713, npc = 6176, map = 1416, x = 80.5, y = 66.92, z = 55.4, f = "e", pre = { 1712 }, qlvl = 40, spotsPacked = "79.83,64.72,,46,1" },
 				{ t = "kill", npc = 6239, map = 1416, x = 80.32, y = 62.14, f = "e", group = { kind = "group", size = 3 }, target = "Cyclonian" },
 				{ t = "collect", quest = 1713, item = 6894, count = 1, map = 1416, x = 80.32, y = 62.14, f = "e", note = "{item:6894}, from {quest:1712}", fromId = 6239, fromKind = "npc", fromNpcs = { { npc = 6239, npcName = "Cyclonian" } }, fromRank = 1, group = { kind = "elite", lvl = 40, rank = 1 }, oi = 1 },
@@ -3315,23 +3334,23 @@ G(function() return {
 	steps = {
 		{
 			title = "{npc:15077}",
-			note = "The {item:276275} costs one {item:274026}, the prize for winning the Stranglethorn Fishing Extravaganza. The contest runs on Sundays from 2 to 4 pm server time: be on the {area:35} docks when it starts and take {quest:8193} from {npc:15077}. Bring your best {skill:356} skill and lures so no fish gets away, a mount and empty bags, and bind your hearthstone in {area:35}.",
+			note = "The {item:276275} costs one {item:274026}, the prize for winning the Stranglethorn Fishing Extravaganza. The contest runs on Sundays from 2 to 4 pm server time: be on the {area:35} docks by {npc:15077} when it starts. {quest:8193} is not a quest you take: {npc:15077} takes the fish straight from his window when you bring them. Bring your best {skill:356} skill and lures so no fish gets away, a mount and empty bags, and bind your hearthstone in {area:35}.",
 			goals = {
-				{ t = "accept", minLevel = 1, quest = 8193, npc = 15077, map = 1434, x = 27.35, y = 76.88, z = 16, f = "e", note = "{npc:15077}, during the contest", qlvl = 60 },
+				{ t = "goto", map = 1434, x = 27.4, y = 76.9, f = "e", text = "{npc:15077}" },
 			},
 		},
 		{
 			title = "Schools of Tastyfish",
 			note = "While the contest runs, schools of {item:19807} appear along the Stranglethorn coast, none inside {area:35}. Fish 40 {item:19807} from them; each school lasts only a few casts, so ride on to the next as soon as one is gone. The arrow takes you up the west coast north of {area:35}; more schools lie further north and just south of {area:35}.",
 			goals = {
-				{ t = "collect", quest = 8193, item = 19807, count = 40, map = 1434, x = 24.9, y = 66.2, f = "e", oi = 1, spotsPacked = "24.9,66.2,,30;23.8,62.5,,30;26.2,58.3,,30;22.9,56.4,,30;26,48.8,,30;27,44.3,,30", spread = true },
+				{ t = "collect", item = 19807, count = 40, map = 1434, x = 24.9, y = 66.2, f = "e", spotsPacked = "24.9,66.2,,30;23.8,62.5,,30;26.2,58.3,,30;22.9,56.4,,30;26,48.8,,30;27,44.3,,30", spread = true },
 			},
 		},
 		{
 			title = "Back to {npc:15077}",
 			note = "Hurry back and hand the 40 Tastyfish to {npc:15077}: the first players to do so win, and the winners get the coin with their prize. If you are too late to win, {npc:15078} still pays a little gold for every 5 Tastyfish.",
 			goals = {
-				{ t = "turnin", quest = 8193, npc = 15077, map = 1434, x = 27.35, y = 76.88, z = 16, f = "e" },
+				{ t = "turnin", quest = 8193, npc = 15077, map = 1434, x = 27.35, y = 76.88, z = 16, f = "e", direct = true, qlvl = 60 },
 				{ t = "collect", item = 274026, map = 1434, x = 27.4, y = 76.9, f = "e", note = "The winner's coin, from {npc:15077}" },
 			},
 		},
@@ -6222,7 +6241,7 @@ G(function() return {
 	zone = 1436,
 	collects = { 211527, 221498 },
 	keywords = { "Cozy Sleeping Bag", "Old Toolbox", "Student Fodder", "... and that note you found", "Stepping Stones", "Scramble", "Wet Job", "Eagle's Fist", "This Must Be The Place", "Burned-Out Remains", "Nailed Plank", "Thoradin's Wall" },
-	names = { ["zone:1413"] = "Barrens" },
+	names = { ["area:1276"] = "Talondeep Path", ["zone:1413"] = "Barrens" },
 	reward = { { item = 211527, itemName = "Cozy Sleeping Bag" }, { item = 221498, itemName = "Old Toolbox" } },
 	version = 1,
 	why = "A trail of hidden notes across both continents: the {item:211527} at the end, a 12-slot {item:221498} on the way.",
@@ -6264,11 +6283,12 @@ G(function() return {
 			},
 		},
 		{
-			title = "Round {area:1702}",
+			title = "Stonetalon from the north",
 			only = { factions = { "Alliance" } },
 			when = { { k = "zone", area = 406, name = "Stonetalon Mountains", neg = true } },
+			note = "{zone:1413}' way into Stonetalon runs through {area:1702}, and the road on to the hills passes {area:2539} and {area:460}: all Horde posts. Come in from the north instead. With the {area:467} flight path, fly there and follow the road south. Otherwise fly to {area:415} and walk south-west to the {area:1276}, the tunnel from {zone:1440} into Stonetalon.",
 			goals = {
-				{ t = "goto", map = 1413, x = 40.2, y = 24.88, f = "e", r = 30, note = "The road west runs through {area:1702}, a Horde post; this way goes round it.", text = "North of Honor's Stand" },
+				{ t = "goto", map = 1440, x = 42.4, y = 71, f = "e", r = 25, text = "{area:1276}", area = 1276 },
 			},
 		},
 		{
@@ -6297,8 +6317,16 @@ G(function() return {
 			},
 		},
 		{
+			title = "Out of the river",
+			note = "Careful: off the dam's ledge you land in the river below it, in the {zone:1437}. Climb out on its west bank well before the waterfall at about 65,77: the fall kills. Then head north-west to the road and follow it north over {area:880} into Arathi.",
+			goals = {
+				{ t = "goto", map = 1437, x = 64.4, y = 79.4, f = "e", r = 12, text = "West bank, before the waterfall" },
+				{ t = "goto", map = 1437, x = 62.2, y = 76.8, f = "e", r = 15, text = "West bank" },
+			},
+		},
+		{
 			title = "{area:1057}",
-			note = "Careful: off the dam's ledge you land in the river below it, in the {zone:1437}. Climb out on its west bank well before the waterfall at about 65,77: the fall kills. Then head north-west to the road and follow it north over {area:880} into Arathi.\nAt the gate in {area:1057} between Arathi and {area:287}, turn north and follow the wall on the {area:287} side to a fallen cart leaning against it. Jump up the cart and its ladder onto the wall, then over the rocks to the hidden camp. Some characters cannot fit under the cargo netting at the camp; another race or a smaller form gets through.",
+			note = "At the gate in {area:1057} between Arathi and {area:287}, turn north and follow the wall on the {area:287} side to a fallen cart leaning against it. Jump up the cart and its ladder onto the wall, then over the rocks to the hidden camp. Some characters cannot fit under the cargo netting at the camp; another race or a smaller form gets through.",
 			goals = {
 				{ t = "goto", map = 1424, x = 87.5, y = 47.7, f = "e", text = "Fallen cart" },
 			},
@@ -6772,21 +6800,23 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 947,
+	sections = { { from = 1, skill = "Alchemy", skillLine = 171, to = 75 }, { from = 75, skill = "Alchemy", skillLine = 171, to = 150 }, { from = 150, skill = "Alchemy", skillLine = 171, to = 225 }, { from = 225, skill = "Alchemy", skillLine = 171, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "H", npc = 3184, map = 1411, x = 55.41, y = 73.95, z = 23, f = "e" },
-		{ faction = "H", npc = 2391, map = 1416, x = 60.3, y = 80.9, z = 57.6, f = "e" },
 		{ faction = "H", npc = 2132, map = 1420, x = 59.43, y = 52.19, z = 36.1, f = "e" },
 		{ faction = "A", npc = 1215, map = 1429, x = 39.84, y = 48.23, z = 115.1, f = "e" },
 		{ faction = "A", npc = 1470, map = 1432, x = 37.07, y = 49.38, z = 327.7, f = "e" },
 		{ faction = "A", npc = 3603, map = 1438, x = 57.64, y = 60.8, z = 1297.8, f = "e" },
-		{ faction = "A", npc = 3964, map = 1440, x = 50.85, y = 67.11, z = 101.9, f = "e" },
-		{ faction = "A", npc = 5499, map = 1453, x = 55.66, y = 86.09, z = 98.4 },
-		{ faction = "H", npc = 3347, map = 1454, x = 56.84, y = 33.03, z = 25.8, f = "e" },
+		{ faction = "A", npc = 5500, map = 1453, x = 55.46, y = 85.65, z = 98.4 },
+		{ faction = "H", npc = 11046, map = 1454, x = 55.79, y = 32.9, z = 25.8, f = "e" },
 		{ faction = "A", npc = 1246, map = 1455, x = 66.33, y = 55.69, z = 501.8, f = "e" },
-		{ faction = "H", npc = 3009, map = 1456, x = 46.62, y = 33.17, z = 140.9, f = "e" },
-		{ faction = "A", npc = 4160, map = 1457, x = 54.88, y = 24.02, z = 1321.7, f = "e" },
-		{ faction = "H", npc = 4609, map = 1458, x = 50.93, y = 74.56, z = -66, f = "e" },
+		{ faction = "H", npc = 11047, map = 1456, x = 46.68, y = 34.43, z = 140.9, f = "e" },
+		{ faction = "A", npc = 11041, map = 1457, x = 55.39, y = 22.72, z = 1321.7, f = "e" },
+		{ faction = "H", npc = 11044, map = 1458, x = 46.61, y = 74.09, z = -80.3, f = "e" },
+		{ faction = "A", npc = 253004, map = 2521, x = 66.34, y = 79.5, z = 658.8 },
+		{ faction = "AH", npc = 257005, map = 2521, x = 59.25, y = 76.32, z = 668.7 },
+		{ faction = "AH", npc = 257019, map = 2521, x = 43.69, y = 43.42, z = 828.1 },
 		{ faction = "H", npc = 3168, map = 1411, x = 52.98, y = 41.97, z = 12.6, f = "e" },
 		{ faction = "H", npc = 3187, map = 1411, x = 56.41, y = 73.79, z = 22.3, f = "e" },
 		{ faction = "H", npc = 3081, map = 1412, x = 45.56, y = 61.73, z = -9.3 },
@@ -6857,12 +6887,19 @@ G(function() return {
 		{ faction = "H", npc = 2225, map = 1459, x = 50.08, y = 82.15, f = "e" },
 		{ faction = "A", npc = 5135, map = 1459, x = 42.82, y = 16.88, f = "e" },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
-		{ faction = "A", npc = 253004, map = 2521, x = 66.34, y = 79.5, z = 658.8 },
 		{ faction = "AH", npc = 254360, map = 2521, x = 44.77, y = 45.05, z = 827.3 },
 		{ faction = "AH", npc = 255897, map = 2548, x = 77.15, y = 52.92 },
 		{ faction = "A", npc = 260559, map = 2548, x = 79.74, y = 54.04 },
-		{ faction = "H", npc = 4611, map = 1458, x = 47.77, y = 73.34, z = -84.9, f = "e" },
-		{ faction = "A", npc = 5500, map = 1453, x = 55.46, y = 85.65, z = 98.4 },
+		{ faction = "H", npc = 4609, map = 1458, x = 50.93, y = 74.56, z = -66, f = "e" },
+		{ faction = "H", npc = 2391, map = 1416, x = 60.3, y = 80.9, z = 57.6, f = "e" },
+		{ faction = "A", npc = 5177, map = 1455, x = 66.62, y = 55.69, z = 501.8, f = "e" },
+		{ faction = "A", npc = 5499, map = 1453, x = 55.66, y = 86.09, z = 98.4 },
+		{ faction = "AH", npc = 2837, map = 1434, x = 28.04, y = 77.99, z = 34.7, f = "e" },
+		{ faction = "A", npc = 3964, map = 1440, x = 50.85, y = 67.11, z = 101.9, f = "e" },
+		{ faction = "A", npc = 4900, map = 1445, x = 63.94, y = 47.64, z = 11.5, f = "e" },
+		{ faction = "H", npc = 3347, map = 1454, x = 56.84, y = 33.03, z = 25.8, f = "e" },
+		{ faction = "H", npc = 3009, map = 1456, x = 46.62, y = 33.17, z = 140.9, f = "e" },
+		{ faction = "A", npc = 11042, map = 1457, x = 56.38, y = 24.23, z = 1321.7, f = "e" },
 		{ faction = "H", npc = 3548, map = 1420, x = 61.76, y = 50.03, z = 28.5, f = "e" },
 		{ faction = "H", npc = 3556, map = 1421, x = 43.22, y = 40.66, z = 104.7, f = "e" },
 		{ faction = "A", npc = 2381, map = 1424, x = 48.94, y = 55.03, z = 18.9, f = "e" },
@@ -6874,9 +6911,8 @@ G(function() return {
 		{ faction = "AH", npc = 260560, map = 2548, x = 76.81, y = 51.17 },
 		{ faction = "A", npc = 8934, map = 1436, x = 52.23, y = 52.83, z = 35.3, f = "e" },
 		{ faction = "H", npc = 3490, map = 1413, x = 51.39, y = 30.2, z = 95.9, f = "e" },
-		{ faction = "AH", npc = 257005, map = 2521, x = 59.25, y = 76.32, z = 668.7 },
-		{ faction = "AH", npc = 257019, map = 2521, x = 43.69, y = 43.42, z = 828.1 },
-		{ faction = "H", npc = 11044, map = 1458, x = 46.61, y = 74.09, z = -80.3, f = "e" },
+		{ faction = "H", npc = 4611, map = 1458, x = 47.77, y = 73.34, z = -84.9, f = "e" },
+		{ faction = "A", npc = 4160, map = 1457, x = 54.88, y = 24.02, z = 1321.7, f = "e" },
 		{ faction = "H", npc = 4585, map = 1458, x = 75.2, y = 51.18, z = -62.1, f = "e" },
 		{ faction = "A", npc = 8157, map = 1444, x = 32.67, y = 44.03, z = 17.7, f = "e" },
 		{ faction = "H", npc = 8363, map = 1456, x = 40.64, y = 64, z = 129.8, f = "e" },
@@ -6893,22 +6929,25 @@ G(function() return {
 		{
 			title = "Learn {skill:171}",
 			note = "Apprentice {skill:171} lets you craft up to 75 for 10c, at any character level. Any {skill:171} trainer of your faction teaches it; the arrow picks the nearest. Pair it with {skill:182}: {item:2447} and {item:765} grow in every starting zone, and Empty Vials cost 4c at any alchemy or trade supplies vendor. 1-75 takes about 3s 28c of vendor goods, plus 82 {item:765} and 110 {item:2447} to gather or buy.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 }, rank = 1, rankMax = 75, skill = "Alchemy", skillLine = 171 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 }, rank = 1, rankMax = 75, skill = "Alchemy", skillLine = 171 },
 				{ t = "skill", level = 1, skill = "Alchemy", skillLine = 171 },
 			},
 		},
 		{
 			title = "{skill:171} 1-75: vendor goods",
 			note = "Buy the whole bracket's share in one go: 82 {item:3371} (3s 28c); about 3s 28c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1286}, Eldraeith and {npc:1325}; {zone:1454}: {npc:3367}, {npc:3348} and {npc:3334}).",
+			section = 1,
 			goals = {
-				{ t = "buy", item = 3371, count = 82, candidates = { 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87 } },
+				{ t = "buy", item = 3371, count = 82, candidates = { 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 12, 85, 86, 87 } },
 			},
 		},
 		{
 			title = "{item:765} ({zone:1429})",
 			only = { races = { "HUMAN" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:1429} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 1429, x = 23.3, y = 77.7, f = "e", spotsPacked = "23.3,77.7,,204,2;16.2,71.6,,103,1,1;26.8,91.5,,148,5,1;31.9,69.3,,166,7,1;36.8,83,,149,4,1;34.1,58,,123,5,1;41.6,75.7,,115,4,1;44.8,87.1,,104,4,1;42,54.4,,118,6,1;51.3,80.4,,103,2,1;52.4,69.8,,103,2,1;54.1,61.9,,149,5,1;59.7,77.2,,103,2,1;64.6,64.7,,173,8,1;67.7,78.6,,103,2,1;65.5,52.3,,103,2,1;68.9,42.4,,103,2,1;75.6,66.4,,185,5,1;78.8,78.9,,142,5,1;78.6,44,,103,2,1;82,58,,114,3,1;87.3,72.9,,103,1,1;87.6,80.4,,103,3,1" },
 			},
@@ -6917,6 +6956,7 @@ G(function() return {
 			title = "{item:765} ({zone:1426})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:1426} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 1426, x = 50.8, y = 60.4, f = "e", spotsPacked = "50.8,60.4,,209,6;55.6,57.7,,75,3,1;56.3,61.3,,67,1,1;44.9,57.5,,67,5,1;58.1,54.6,,67,1,1;39,59.9,,100,6,1;62.8,55.3,,67,2,1;46.8,42.3,,94,6,1;63.9,59.4,,67,2,1;34.1,57.6,,72,3,1;44,36.6,,67,1,1;30.9,55.2,,93,5,1;43.9,31.7,,67,3,1;70.6,50.9,,100,5,1;37.8,34.8,,67,2,1;29.5,49.2,,67,2,1;30.8,43.4,,67,1,1;34.7,33.7,,67,1,1;74.8,56.1,,81,3,1;74.8,50.5,,67,1,1;29.8,38.5,,67,1,1;27.3,43.6,,67,3,1;78.9,56.9,,67,1,1" },
 			},
@@ -6925,6 +6965,7 @@ G(function() return {
 			title = "{item:765} ({zone:1438})",
 			only = { races = { "NIGHTELF" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:1438} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 1438, x = 49, y = 58.3, f = "e", spotsPacked = "49,58.3,,153,3;53.3,60.2,,116,1,1;51.4,52.4,,116,1,1;42.7,54,,116,2,1;56.5,54.7,,116,1,1;39.1,63.4,,116,2,1;46.4,73.6,,173,4,1;40.8,46.5,,116,1,1;55.3,73.8,,229,6,1;45.5,40.3,,116,3,1;61.9,64.4,,156,5,1;46.3,78.5,,116,1,1;40.8,79.5,,116,2,1;37.2,39.9,,116,2,1;63.8,71.5,,116,3,1;67.3,60.3,,116,3,1;68.1,52.7,,116,5,1;43.9,26.4,,116,2,1;37.3,28.3,,162,4,1" },
 			},
@@ -6933,6 +6974,7 @@ G(function() return {
 			title = "{item:765} ({zone:2521})",
 			only = { races = { "SKYBORNE" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:2521} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 2521, x = 39.7, y = 52.5, spotsPacked = "39.7,52.5,,177,5;39.8,49,,75,6,1;37.6,54.1,,84,4,1;42.2,49.6,,59,2,1;37.9,46.3,,70,4,1;41.4,44.1,,59,3,1;33.9,54.6,,79,4,1;39.1,43.4,,79,3,1;42.7,60.5,,66,4,1;46.5,54.8,,59,2,1;45.8,58,,76,6,1;42.1,64.7,,59,1,1;43.1,40.2,,89,3,1;46.1,41.3,,59,2,1;50.4,57.2,,59,2,1;44.6,36.4,,59,1,1;46.1,68.8,,101,6,1;38.3,33.4,,59,2,1;48.6,67.7,,59,2,1;49.1,37.5,,59,1,1;51.3,64.4,,77,3,1;44.8,73.5,,90,3,1;40.6,29.9,,59,1,1;54.7,44.2,,59,1,1;55,62.8,,91,4,1;46.4,29.2,,59,1,1;48,74.8,,64,3,1;44.3,27.8,,78,4,1;40.1,26.8,,59,1,1;50.4,73.3,,59,1,1;57.4,48.2,,59,2,1;53.9,70.5,,92,3,1;57.9,60.3,,111,6,1;57.7,43.3,,59,2,1;47.9,78.5,,59,3,1;56.4,67.6,,59,1,1;50.9,76.6,,59,2,1;59.3,52.3,,59,3,1;57.9,39.6,,67,4,1;45,22.6,,59,1,1;42.8,21.3,,59,2,1;59.9,42.9,,59,2,1;47.5,82.3,,92,4,1;58.3,35.8,,59,3,1;60.2,63.3,,59,2,1;56.6,32,,68,3,1;59.7,67.9,,59,3,1;46.4,19.9,,59,1,1;61.1,38,,89,4,1;48.8,19.5,,59,1,1;53.3,82.4,,59,2,1;59.4,30.4,,59,1,1;64.3,39,,59,1,1" },
 			},
@@ -6941,6 +6983,7 @@ G(function() return {
 			title = "{item:765} ({zone:1411})",
 			only = { races = { "ORC", "TROLL" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:1411} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 1411, x = 51.4, y = 73.9, f = "e", spotsPacked = "51.4,73.9,,74,2;52,76.9,,40,2,1;49.3,74.1,,40,1,1;54,73.1,,40,1,1;54.3,80.4,,40,2,1;55.9,68.8,,40,4,1;51.5,65.4,,40,1,1;55.4,66.9,,40,4,1;44.7,72.6,,40,1,1;51.3,62.5,,40,1,1;54.9,62.5,,40,4,1;42.3,70.6,,40,1,1;52.2,59.1,,40,4,1;55.6,59.6,,40,1,1;60.4,83,,40,3,1;41.9,66,,40,4,1;50.6,56.8,,40,1,1;60.5,60.8,,40,1,1;64.1,75.7,,40,2,1;58.5,57.9,,40,2,1;50,54.4,,40,1,1;64.6,73.6,,40,1,1;54.8,54.7,,40,1,1;61.3,58,,40,1,1;60.7,91.5,,40,1,1;65.5,82.3,,40,2,1;60.4,55.4,,40,5,1;50.2,51,,40,1,1;64.9,87.4,,40,1,1;60.3,52.8,,40,1,1;50.2,48.1,,47,4,1;43.2,50.9,,40,2,1;44.7,49.6,,40,1,1;47.5,48.2,,48,5,1;69,70.9,,40,1,1;66.8,87.6,,40,1,1;56.5,47.5,,40,3,1;49.8,46.1,,40,1,1;40.1,48.4,,40,1,1;44.6,42.9,,40,1,1;56.8,41.4,,56,5,1;58.4,41.3,,40,3,1;56.7,38.4,,40,2,1;39.6,40.7,,43,4,1;46.9,36,,40,1,1;55.8,35,,40,2,1;55.9,32.7,,40,3,1;57.1,30.9,,40,1,1;52.3,29.8,,40,1,1;46.2,29.3,,40,1,1;58.5,29.1,,40,1,1;55.4,28,,40,1,1;43.6,28.8,,40,1,1;56.3,26.3,,40,1,1;37.2,30,,40,2,1;58.9,25.9,,40,1,1;44.1,24.1,,40,1,1;42.7,24.4,,40,2,1;58,23.1,,40,1,1;44.2,21.4,,40,1,1;57.5,20.8,,40,2,1;37.9,21.1,,40,3,1;39.5,20.2,,40,2,1;56.8,17.6,,40,3,1;53.6,16.8,,40,1,1;58.2,16.6,,40,2,1;42.1,14.9,,40,3,1;40.3,14.7,,40,3,1;43.3,13.6,,40,2,1;49.8,12.2,,40,3,1;52.3,11,,60,4,1;54.4,10.5,,40,2,1" },
 			},
@@ -6949,6 +6992,7 @@ G(function() return {
 			title = "{item:765} ({zone:1412})",
 			only = { races = { "TAUREN" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:1412} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 1412, x = 46, y = 27.1, spotsPacked = "46,27.1,,181,2;42.2,23.1,,98,1,1;48.9,19.6,,98,2,1;51.7,29.6,,98,1,1;46.8,36.2,,98,2,1;38.1,24.7,,136,3,1;56.4,28.7,,98,1,1;45,43.3,,98,3,1;56.2,34.9,,98,1,1;34.7,30.8,,98,2,1;54.5,41,,98,2,1;36.8,42.4,,98,2,1;50.7,47.1,,141,4,1;31.3,32.8,,98,1,1;39.2,48.9,,98,1,1;35.2,47.3,,119,4,1;45.5,54.2,,121,5,1;55.2,52.9,,110,3,1;39.5,55.1,,98,3,1;53.9,63.1,,152,5,1;37.7,64,,119,4,1;58.2,62,,126,14,1;61.3,62.9,,112,9,1;44.2,69.6,,171,4,1;60.4,72.6,,98,1,1;36.9,78.8,,98,3,1" },
 			},
@@ -6957,6 +7001,7 @@ G(function() return {
 			title = "{item:765} ({zone:1420})",
 			only = { races = { "SCOURGE" } },
 			note = "82 {item:765} for {item:5997}: {skill:182}: {item:765} (skill 1); or the Auction House. The densest patch of {item:765} in {zone:1420} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 765, count = 82, map = 1420, x = 53.3, y = 43.3, f = "e", spotsPacked = "53.3,43.3,,332,6;53.8,50.4,,134,5,1;58,47.7,,103,3,1;46.5,48.6,,150,5,1;58,33.9,,103,1,1;51.1,29.9,,103,2,1;54.1,58.4,,103,3,1;49.1,58.9,,133,6,1;64.2,36.8,,103,2,1;59.9,58.8,,103,1,1;64.5,52.4,,103,1,1;39.8,45.1,,171,4,1;40.7,52.2,,146,4,1;39,39.7,,103,2,1;50.1,67.5,,121,4,1;43.2,65.5,,145,5,1;33.5,52.2,,103,1,1;73.4,35.6,,126,3,1;70.9,60.4,,103,1,1;75,52.1,,103,2,1;79.4,40.1,,103,1,1;75.3,66.4,,103,1,1;78.7,60.3,,103,2,1;83.3,54.2,,103,1,1;83.7,65.8,,103,1,1;89.4,48.9,,103,1,1;89.7,40.6,,103,1,1" },
 			},
@@ -6965,6 +7010,7 @@ G(function() return {
 			title = "{item:2447} ({zone:1429})",
 			only = { races = { "HUMAN" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:1429} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 1429, x = 26.2, y = 81.6, f = "e", spotsPacked = "26.2,81.6,,218,3;25.8,86.8,,105,2,1;38.3,88.5,,105,3,1;39.9,76.5,,105,1,1;40.1,70,,156,3,1;36.1,59.5,,105,2,1;46.8,74.6,,105,1,1;48.9,83.6,,155,4,1;43.4,58.4,,138,4,1;49.5,59.6,,105,1,1;59.7,78.6,,157,4,1;63.8,62.6,,114,5,1;70,81.5,,165,4,1;70.6,61.6,,105,1,1;77,76.4,,105,1,1;53.9,15.9,,105,1,1;76.7,56,,105,2,1;87,81.2,,138,3,1;86.4,65.8,,124,3,1" },
 			},
@@ -6973,6 +7019,7 @@ G(function() return {
 			title = "{item:2447} ({zone:1426})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:1426} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 1426, x = 50.1, y = 53.6, f = "e", spotsPacked = "50.1,53.6,,127,3;49.9,47.3,,116,4,1;47.8,61.2,,119,5,1;55.8,56.5,,81,2,1;44.5,47.9,,83,3,1;55.7,47.9,,80,2,1;57.5,51.8,,80,2,1;42.4,56.6,,112,4,1;45.4,41.8,,80,1,1;60.9,57.4,,131,4,1;39.6,60.9,,80,2,1;35.3,59.7,,85,4,1;66,51.7,,80,3,1;37.3,35.5,,80,1,1;33.7,34.3,,80,2,1;28.8,49.6,,86,3,1;72.9,53.4,,120,4,1;27.7,42.6,,91,3,1;75.7,58.9,,80,2,1" },
 			},
@@ -6981,6 +7028,7 @@ G(function() return {
 			title = "{item:2447} ({zone:1438})",
 			only = { races = { "NIGHTELF" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:1438} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 1438, x = 41, y = 33.4, f = "e", spotsPacked = "41,33.4,,273,4;37.1,39.5,,160,3,1;45.4,39,,102,3,1;44.5,44.8,,140,4,1;41.3,50.8,,102,2,1;40.5,60.3,,102,1,1;50.6,59.1,,142,3,1;39.3,68.1,,102,2,1;60.7,54.6,,102,2,1;49.6,68.1,,102,1,1;55.1,64.8,,131,5,1;62.1,61.1,,118,5,1;66.7,51.8,,102,2,1;45.2,76,,102,1,1;55.4,72.1,,155,3,1;41.2,79,,102,1,1;68.1,60.1,,102,3,1;63.2,71.6,,102,1,1" },
 			},
@@ -6989,6 +7037,7 @@ G(function() return {
 			title = "{item:2447} ({zone:2521})",
 			only = { races = { "SKYBORNE" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:2521} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 2521, x = 42.6, y = 27.4, spotsPacked = "42.6,27.4,,83,5;41.4,24.9,,40,4,1;44.6,28.5,,40,1,1;44.7,26.2,,52,5,1;39.6,27.5,,40,1,1;45,23.7,,40,1,1;39.7,30.5,,51,3,1;46.3,26.6,,40,2,1;44.6,20.9,,40,1,1;46.7,23.2,,48,3,1;47.7,28.8,,40,2,1;37.5,29.4,,40,1,1;40.2,34.7,,40,2,1;42.9,35.6,,40,1,1;38,34.4,,40,1,1;42.1,38.9,,62,5,1;45.4,38.9,,40,1,1;43.3,40.8,,40,3,1;47.3,39.3,,40,2,1;44.8,42.1,,42,4,1;39.3,42.2,,40,2,1;42.4,43.6,,40,1,1;39.4,43.6,,40,2,1;41,44.9,,59,5,1;42.4,46.9,,40,3,1;36.3,46,,40,4,1;38.1,47.6,,40,2,1;44.6,48.5,,40,1,1;42.3,50,,51,3,1;44.2,50.5,,40,1,1;38.8,50.7,,40,1,1;37.4,51.1,,40,2,1;40.4,52.6,,56,4,1;47.9,53.8,,40,3,1;41.3,55.7,,40,3,1;46.2,55.7,,40,2,1;49.5,55.3,,40,1,1;43.5,57.6,,40,1,1;38.1,57,,40,1,1;45.8,57.6,,50,4,1;35.9,57.3,,40,1,1;49.1,58.4,,40,1,1;41.7,61.5,,40,1,1;44.7,62.1,,40,1,1;48.7,62.5,,40,1,1;43.4,64.2,,43,4,1;53,61.6,,40,1,1;55.1,62.2,,40,1,1;44.3,68.1,,40,1,1;52.5,65.6,,40,1,1;43.2,69.4,,40,2,1;45.7,70,,40,1,1;57.4,65.7,,40,1,1;62.2,61.3,,40,2,1;45.6,72.1,,40,2,1;52.7,70.6,,40,4,1;50.6,71.7,,40,1,1;47.1,73.8,,40,1,1;57,69.5,,59,5,1;63.3,64.3,,40,3,1;49.1,74.9,,43,6,1;50.8,74.5,,40,1,1;59.6,69.3,,40,1,1;55.6,72.9,,78,6,1;58.6,70.8,,40,2,1;45.4,77.8,,40,1,1;61.8,69.1,,40,2,1;64.2,67.5,,40,1,1;50.7,77.8,,40,3,1;55.1,75.8,,71,6,1;47,78.9,,40,2,1;49.3,79.8,,40,2,1;45.6,80.9,,40,1,1;51.7,79.8,,40,3,1;49.6,82.2,,40,3,1;54.4,81.1,,40,2,1;47.3,83.8,,40,1,1;50.6,85.1,,40,1,1;48.5,86,,40,1,1" },
 			},
@@ -6997,6 +7046,7 @@ G(function() return {
 			title = "{item:2447} ({zone:1411})",
 			only = { races = { "ORC", "TROLL" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:1411} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 1411, x = 41.4, y = 49.8, f = "e", spotsPacked = "41.4,49.8,,216,4;37.3,51.2,,185,6,1;45.3,46.6,,120,2,1;39.8,37.5,,182,6,1;44.6,34.5,,163,4,1;53.8,49.6,,133,3,1;53,57.3,,120,4,1;36.5,28.9,,120,3,1;53.2,63.8,,120,2,1;53.7,35.9,,160,3,1;58.7,51.8,,120,2,1;58.7,44.6,,120,2,1;54.6,30.3,,120,1,1;54.4,70.8,,184,4,1;42.3,19.2,,202,6,1;53.3,79,,120,2,1;56.6,21.3,,120,2,1;50.7,15.9,,160,3,1;56,14.6,,120,2,1;69,71.8,,120,1,1;60.1,89.3,,120,1,1;65.4,86.2,,120,1,1" },
 			},
@@ -7005,6 +7055,7 @@ G(function() return {
 			title = "{item:2447} ({zone:1412})",
 			only = { races = { "TAUREN" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:1412} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 1412, x = 39, y = 47.4, spotsPacked = "39,47.4,,285,4;37,43.8,,116,3,1;42.1,54.3,,202,5,1;46.3,46.1,,185,5,1;34.6,34,,172,4,1;47.4,38.6,,160,6,1;39.2,65.7,,187,5,1;53.7,49.6,,199,5,1;45,26.9,,142,3,1;38.9,24.2,,116,3,1;51.7,28.8,,116,3,1;45.4,21.1,,116,2,1;51.9,68.7,,116,2,1;56.4,61.8,,149,4,1;50.8,22.6,,116,2,1;56.3,31,,116,1,1;62.3,62.1,,116,1,1;60.9,69.5,,127,4,1" },
 			},
@@ -7013,6 +7064,7 @@ G(function() return {
 			title = "{item:2447} ({zone:1420})",
 			only = { races = { "SCOURGE" } },
 			note = "110 {item:2447} for {item:5997} and {spell:2331} (28 of them for 75-150: pick them all now): {skill:182}: {item:2447} (skill 1); or the Auction House. The densest patch of {item:2447} in {zone:1420} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2447, count = 110, map = 1420, x = 46.8, y = 35, f = "e", spotsPacked = "46.8,35,,279,6;45.6,41.1,,130,2,1;46.7,50,,130,4,1;52.1,50.4,,137,3,1;58.9,40.2,,130,2,1;43.4,57.1,,209,5,1;33.3,48.6,,134,3,1;65.1,38.2,,130,2,1;58.2,57.5,,130,4,1;51.8,64.8,,200,8,1;67.2,54.9,,164,4,1;72,34,,130,1,1;73.5,47.6,,130,3,1;77.2,38,,130,1,1;72.9,62.2,,130,2,1;79.5,61.9,,130,1,1;84.9,46.5,,130,2,1;79.5,70.5,,145,4,1" },
 			},
@@ -7020,33 +7072,37 @@ G(function() return {
 		{
 			title = "{item:5997} to 75",
 			note = "{item:5997} is orange at 1 (yellow 55, green 75, grey 95): about 82 crafts to 75. Each takes 1 {item:765}, 1 {item:2447} and 1 {item:3371}. Known from the start and the cheapest way through the Apprentice range. Keep the elixirs (armour while you level) or sell them.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 5997, spell = 7183, reagents = { { item = 765, count = 1, itemName = "Silverleaf" }, { item = 2447, count = 1, itemName = "Peacebloom" }, { item = 3371, count = 1, itemName = "Empty Vial" } }, skillLine = 171, untilSkill = 75 },
+				{ t = "craft", item = 5997, spell = 7183, grey = 95, reagents = { { item = 765, count = 1, itemName = "Silverleaf" }, { item = 2447, count = 1, itemName = "Peacebloom" }, { item = 3371, count = 1, itemName = "Empty Vial" } }, skillLine = 171, untilSkill = 75, yellow = 55 },
 				{ t = "skill", level = 75, skill = "Alchemy", skillLine = 171 },
 			},
 		},
 		{
 			title = "Journeyman {skill:171}",
-			note = "Journeyman raises the cap from 75 to 150 for 4s 50c (Classic's price; Forever's is not in the data); it needs {skill:171} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:171} trainer teaches it: Alliance {npc:4160} ({zone:1457}), {npc:4900} ({zone:1445}), {npc:2837} ({zone:1434}), {npc:3964} ({zone:1440}), {npc:7948} ({zone:1444}), {npc:5499} ({zone:1453}), {npc:11042} ({zone:1457}) and {npc:5177} ({zone:1455}); Horde {npc:3009} ({zone:1456}), {npc:4611} ({zone:1458}), {npc:4609} ({zone:1458}), {npc:2837} ({zone:1434}), {npc:1386} ({zone:1435}), {npc:2391} ({zone:1424}) and {npc:3347} ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:2331} (from 25, 1s). Also learn {spell:1230564} (1s): Forever's {skill:171} camp item, 1 {item:2447} and 1 {item:3371}, placed at a campsite beside a campfire for its buff. The Camping 101: {skill:171} quest from your starting area's camping guide (after The Great Outdoors) sends you to an alchemy trainer who teaches it free. 75-150 takes about 1s of recipes and 9s 8c of vendor goods, plus 77 {item:785}, 152 {item:2450} and 54 {item:2453} to gather or buy.",
+			note = "Journeyman raises the cap from 75 to 150 for 4s 50c (Classic's price; Forever's is not in the data); it needs {skill:171} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:171} trainer teaches it: Alliance {npc:4900} ({zone:1445}), {npc:2837} ({zone:1434}), {npc:3964} ({zone:1440}), {npc:5499} ({zone:1453}), {npc:11042} ({zone:1457}) and {npc:5177} ({zone:1455}); Horde {npc:3009} ({zone:1456}), {npc:4609} ({zone:1458}), {npc:2837} ({zone:1434}), {npc:2391} ({zone:1424}) and {npc:3347} ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:2331} (from 25, 1s). Also learn {spell:1230564} (1s): Forever's {skill:171} camp item, 1 {item:2447} and 1 {item:3371}, placed at a campsite beside a campfire for its buff. The Camping 101: {skill:171} quest from your starting area's camping guide (after The Great Outdoors) sends you to an alchemy trainer who teaches it free. 75-150 takes about 1s of recipes and 9s 8c of vendor goods, plus 77 {item:785}, 152 {item:2450} and 54 {item:2453} to gather or buy.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 3, 88, 2, 10, 5, 89, 4, 1, 6, 7, 9, 11, 12 }, rank = 2, rankMax = 150, skill = "Alchemy", skillLine = 171 },
-				{ t = "learn", spell = 2331, candidates = { 3, 88, 2, 10, 5, 89, 4, 1, 6, 7, 9, 11, 12 }, skillLine = 171 },
-				{ t = "learn", spell = 1230564, candidates = { 3, 88, 2, 10, 5, 89, 4, 1, 6, 7, 9, 11, 12 }, skillLine = 171 },
+				{ t = "train", candidates = { 88, 89, 90, 91, 92, 93, 94, 95, 96, 97 }, rank = 2, rankMax = 150, skill = "Alchemy", skillLine = 171 },
+				{ t = "learn", spell = 2331, candidates = { 2, 11, 8, 4, 6, 3, 1, 5, 7, 9, 10, 12, 13, 14 }, skillLine = 171 },
+				{ t = "learn", spell = 1230564, candidates = { 2, 11, 8, 4, 6, 3, 1, 5, 7, 9, 10, 12, 13, 14 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{skill:171} 75-150: vendor goods",
 			note = "Buy the whole bracket's share in one go: 77 {item:3371} (3s 8c) and 15 {item:3372} (6s); about 9s 8c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1286}, Eldraeith and {npc:1325}; {zone:1454}: {npc:3367}, {npc:3348} and {npc:3334}).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 3371, count = 77, candidates = { 90, 79, 80, 21, 91, 23, 20, 22, 92, 32, 24, 93, 26, 30, 46, 47, 94, 73, 33, 40, 69, 95, 34, 96, 37, 36, 97, 98, 87, 99, 38, 39, 44, 27, 42, 43, 14, 15, 16, 17, 18, 19, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 70, 71, 72, 75, 76, 77, 78, 81, 82, 83, 84, 85 } },
-				{ t = "buy", item = 3372, count = 15, candidates = { 90, 79, 80, 21, 91, 23, 20, 22, 92, 32, 24, 93, 26, 30, 46, 47, 94, 73, 69, 95, 96, 37, 36, 35, 98, 87, 99, 38, 39, 44, 27, 42, 43, 17, 100, 19, 50, 51, 52, 53, 54, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 70, 71, 72, 75, 76, 77, 78, 81, 82, 84, 101, 102 } },
+				{ t = "buy", item = 3371, count = 77, candidates = { 98, 80, 81, 22, 99, 24, 21, 23, 100, 33, 25, 101, 27, 31, 47, 48, 102, 74, 34, 41, 70, 103, 35, 104, 38, 37, 105, 106, 87, 107, 39, 40, 45, 28, 43, 44, 15, 16, 17, 18, 19, 20, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 76, 77, 78, 79, 82, 83, 84, 12, 85 } },
+				{ t = "buy", item = 3372, count = 15, candidates = { 98, 80, 81, 22, 99, 24, 21, 23, 100, 33, 25, 101, 27, 31, 47, 48, 102, 74, 70, 103, 104, 38, 37, 36, 106, 87, 107, 39, 40, 45, 28, 43, 44, 18, 108, 20, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 76, 77, 78, 79, 82, 83, 12, 13, 14 } },
 			},
 		},
 		{
 			title = "{item:785} ({zone:1436})",
 			only = { races = { "HUMAN" } },
 			note = "77 {item:785} for {spell:2331} and {spell:3171}: {skill:182}: {item:785} (skill 50); or the Auction House. The densest patch of {item:785} in {zone:1436} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 785, count = 77, map = 1436, x = 32.9, y = 71.5, f = "e", spotsPacked = "32.9,71.5,,178,2;35.3,80.7,,93,2,1;40,71.9,,93,1,1;27.3,60.2,,93,1,1;39.3,60.8,,93,1,1;27.2,50.1,,93,1,1;50.5,65,,93,2,1;48.6,57.2,,93,2,1;41.4,40.9,,95,3,1;36.9,32.9,,103,8,1;31,30.5,,128,3,1;53.9,43.9,,111,3,1;39.1,30.5,,216,10,1;61.5,68.6,,93,1,1;59.6,55.7,,93,1,1;50,31.3,,93,2,1;61.8,47.3,,93,1,1;69.3,75.2,,93,1,1;58.6,27.6,,123,5,1;43.2,11,,93,1,1;49.7,12.8,,93,1,1;56.9,9,,93,1,1" },
 			},
@@ -7055,6 +7111,7 @@ G(function() return {
 			title = "{item:785} ({zone:1432})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "77 {item:785} for {spell:2331} and {spell:3171}: {skill:182}: {item:785} (skill 50); or the Auction House. The densest patch of {item:785} in {zone:1432} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 785, count = 77, map = 1432, x = 47.6, y = 27.5, f = "e", spotsPacked = "47.6,27.5,,301,4;57.1,25.6,,155,4,1;40.3,38,,153,5,1;65.3,31.8,,115,1,1;54.3,54.3,,115,2,1;28.8,50.1,,115,2,1;65.8,56.2,,115,3,1;52.8,74.4,,115,1,1;77.8,51.8,,115,2,1;68.6,74.3,,115,2,1" },
 			},
@@ -7063,6 +7120,7 @@ G(function() return {
 			title = "{item:785} ({zone:1438})",
 			only = { races = { "NIGHTELF" } },
 			note = "77 {item:785} for {spell:2331} and {spell:3171}: {skill:182}: {item:785} (skill 50); or the Auction House. The densest patch of {item:785} in {zone:1438} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 785, count = 77, map = 1438, x = 49.1, y = 78, f = "e", spotsPacked = "49.1,78,,249,2;41.8,76.1,,150,1,1;57.5,66.3,,150,1,1;50,57.6,,150,1,1;38.8,61.5,,150,1,1;63.7,66.5,,150,2,1;45.8,53,,150,1,1;67.5,54.3,,150,3,1;41.8,34.1,,150,1,1" },
 			},
@@ -7071,6 +7129,7 @@ G(function() return {
 			title = "{item:785} ({zone:2521})",
 			only = { races = { "SKYBORNE" } },
 			note = "77 {item:785} for {spell:2331} and {spell:3171}: {skill:182}: {item:785} (skill 50); or the Auction House. The densest patch of {item:785} in {zone:2521} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 785, count = 77, map = 2521, x = 59.7, y = 42, spotsPacked = "59.7,42,,85,3;58.1,38.7,,68,2,1;61.1,37,,98,6,1;55.9,41.4,,68,1,1;62.4,48.1,,68,2,1;58.6,49.3,,68,3,1;64.3,38,,68,2,1;55.6,36.9,,68,1,1" },
 			},
@@ -7079,6 +7138,7 @@ G(function() return {
 			title = "{item:785} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN" } },
 			note = "77 {item:785} for {spell:2331} and {spell:3171}: {skill:182}: {item:785} (skill 50); or the Auction House. The densest patch of {item:785} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 785, count = 77, map = 1413, x = 42.8, y = 21.2, f = "e", spotsPacked = "42.8,21.2,,105,4;44.3,21.7,,50,3,1;41.8,23.7,,50,2,1;44.5,19.2,,50,1,1;42.8,16.2,,50,2,1;46.4,24.2,,50,1,1;44.5,15.2,,50,1,1;45.7,26.7,,50,1,1;41.5,14.4,,91,4,1;42,29,,50,1,1;47.9,25.1,,50,2,1;47.5,15.9,,50,2,1;38.3,15.3,,50,2,1;46.7,14.4,,50,1,1;40.3,29.6,,50,1,1;49.1,24.9,,50,1,1;49.1,16.1,,50,2,1;49.4,27.1,,50,1,1;48.2,12.7,,50,2,1;43.8,33,,50,1,1;47.6,11.5,,50,1,1;45.8,33.6,,50,2,1;47.6,32.3,,52,2,1;44.4,34.6,,50,1,1;47.4,34.2,,50,1,1;43.1,36,,50,1,1;49.4,33.3,,50,1,1;46.8,35.8,,59,3,1;45.8,36.7,,63,3,1;53.3,15.3,,50,2,1;43.8,38.5,,50,1,1;48.7,36.5,,50,2,1;43.3,40,,55,4,1;55.4,17.5,,50,1,1;44.5,40.6,,50,3,1;46.1,40.3,,95,7,1;46.3,41.4,,55,4,1;56.6,17.7,,50,2,1;47.9,41,,52,4,1;56,12.4,,75,9,1;49.1,40.9,,50,1,1;56.7,14.1,,55,3,1;57.4,16,,50,1,1;54.3,36.4,,50,2,1;48.5,43.1,,50,3,1;44.2,44.7,,50,1,1;47.6,44.6,,50,2,1;57.3,9.9,,50,1,1;56.9,34.5,,50,1,1;46.4,45.9,,50,1,1;59.9,22.8,,50,2,1;58.6,10.7,,50,2,1;56.7,5.6,,50,1,1;48.5,47.2,,50,1,1;57.1,4.1,,50,1,1;56.1,40.3,,50,2,1;53.5,43.7,,78,5,1;44.6,48.8,,50,1,1;58.3,36.9,,50,1,1;61.7,17.6,,50,1,1;46.1,49.8,,50,1,1;55.5,43.7,,50,3,1;53.7,46,,50,1,1;42.6,51,,50,1,1;62.6,15.2,,57,4,1;61.8,10.5,,50,2,1;62.4,12.7,,53,3,1;47.8,51.2,,50,1,1;52,49.4,,67,6,1;53.4,48.4,,50,2,1;54.9,47,,50,2,1;44.8,52.8,,50,1,1;62.9,10.8,,50,1,1;56.2,47.1,,50,3,1;53.9,49.7,,50,2,1;53,50.5,,66,4,1;46.5,54.2,,50,2,1;63,6.3,,62,4,1;42.9,55.5,,50,1,1;44.2,56.2,,50,2,1;51,54.3,,71,4,1;52.1,53.8,,66,4,1;46.1,56.6,,50,1,1;43.1,57.5,,50,1,1;49.7,56.6,,50,1,1;51.7,56.6,,50,1,1;42.8,60.1,,50,1,1;45.2,61.6,,50,1,1;44,61.8,,50,4,1;59.8,53.3,,50,1,1;44,63.6,,50,1,1;46.6,63.3,,50,1,1;48.5,63,,50,2,1;45.4,63.8,,50,3,1;45.1,65.7,,50,2,1;47,65.5,,56,4,1;45.4,67.9,,50,2,1;47.2,68.9,,50,1,1;43.8,69.6,,59,4,1;44.9,71.3,,50,1,1;48,71.3,,50,1,1;43.4,72.6,,71,3,1;46.8,72.5,,50,2,1;47.7,73.9,,50,1,1;49.2,75.2,,50,2,1;43.8,76.3,,50,2,1;46.5,77.9,,50,1,1;41.5,78.4,,50,1,1;48,78.5,,50,1,1;48.5,80.9,,50,2,1;47.4,81.8,,50,1,1;43.1,82.4,,50,2,1;44,83.7,,50,1,1;46.3,83.6,,50,2,1;46,85.6,,50,1,1;44.2,90.4,,50,2,1" },
 			},
@@ -7087,6 +7147,7 @@ G(function() return {
 			title = "{item:785} ({zone:1421})",
 			only = { races = { "SCOURGE" } },
 			note = "77 {item:785} for {spell:2331} and {spell:3171}: {skill:182}: {item:785} (skill 50); or the Auction House. The densest patch of {item:785} in {zone:1421} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 785, count = 77, map = 1421, x = 52.6, y = 29.2, f = "e", spotsPacked = "52.6,29.2,,192,3;55.7,35.9,,108,6,1;47.1,27.8,,90,3,1;56.4,22.5,,89,5,1;47.6,33.9,,87,1,1;49.5,18.4,,87,1,1;58.6,16.9,,87,2,1;42,17.1,,87,1,1;68.5,30.3,,87,1,1;64.5,12,,87,3,1;54.2,55.5,,87,1,1;34.5,16.2,,87,2,1;68.4,8.9,,87,1,1;73,17.2,,87,1,1;53,71.9,,87,2,1;42.8,70.6,,87,1,1;45.2,80.1,,87,1,1;49.9,81.5,,87,1,1" },
 			},
@@ -7095,6 +7156,7 @@ G(function() return {
 			title = "{item:2450} ({zone:1436})",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "152 {item:2450} for {spell:3171} and {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2450} (skill 70); or the Auction House. The densest patch of {item:2450} in {zone:1436} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2450, count = 152, map = 1436, x = 31.6, y = 79.5, f = "e", spotsPacked = "31.6,79.5,,185,2;38.1,80.1,,118,3,1;41.9,68.5,,149,6,1;34.4,60.4,,108,3,1;52.6,72,,142,5,1;43.1,46.5,,106,1,1;56.7,63.9,,106,2,1;34.9,38.1,,264,13,1;53.2,50.8,,106,1,1;38.5,31.5,,138,7,1;46.8,32.3,,106,1,1;53.7,36.6,,106,1,1;64,53.3,,146,4,1;69.1,73.4,,136,3,1;63,39.3,,106,2,1;45.7,20.6,,106,1,1;62.9,22.6,,106,1,1" },
 			},
@@ -7103,6 +7165,7 @@ G(function() return {
 			title = "{item:2450} ({zone:1432})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "152 {item:2450} for {spell:3171} and {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2450} (skill 70); or the Auction House. The densest patch of {item:2450} in {zone:1432} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2450, count = 152, map = 1432, x = 74.4, y = 46.3, f = "e", spotsPacked = "74.4,46.3,,158,5;71,38.5,,109,1,1;62,40,,109,1,1;71.1,25.1,,109,2,1;77.5,69.8,,109,3,1;68.1,73.3,,109,1,1;58,66.8,,109,1,1;54.8,31,,109,2,1;56.5,15.2,,109,1,1" },
 			},
@@ -7111,6 +7174,7 @@ G(function() return {
 			title = "{item:2450} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "152 {item:2450} for {spell:3171} and {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2450} (skill 70); or the Auction House. The densest patch of {item:2450} in {zone:1439} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2450, count = 152, map = 1439, x = 44.2, y = 55.1, f = "e", spotsPacked = "44.2,55.1,,82,1;45,59.8,,82,2,1;39.6,53.6,,82,2,1;39.3,58.8,,82,1,1;41.8,47.3,,82,2,1;40,63.3,,98,5,1;45.7,42.9,,82,3,1;42.9,67.7,,98,4,1;39,69.4,,102,4,1;39.3,39.7,,82,1,1;43.1,38,,82,3,1;47.6,38.1,,82,2,1;41.1,34.4,,82,1,1;39.1,75.6,,82,1,1;46.9,31.8,,120,6,1;41.2,82.2,,115,5,1;49.9,27.5,,82,1,1;52.5,27.8,,82,2,1;47,24,,82,1,1;57.3,28,,82,1,1;38.9,90.7,,82,2,1;35.6,90,,82,1,1;61,24.6,,82,1,1;62.4,20.1,,82,1,1;59.4,14.1,,82,2,1;63.1,6.6,,82,1,1" },
 			},
@@ -7119,6 +7183,7 @@ G(function() return {
 			title = "{item:2450} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "152 {item:2450} for {spell:3171} and {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2450} (skill 70); or the Auction House. The densest patch of {item:2450} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2450, count = 152, map = 1413, x = 45.6, y = 15.6, f = "e", spotsPacked = "45.6,15.6,,199,2;42.1,14.3,,134,2,1;45.5,21.5,,134,1,1;48.8,10.6,,134,3,1;40.6,19.4,,134,6,1;44.4,24.2,,134,4,1;39,15.8,,152,4,1;41.2,23,,202,4,1;38.9,12.6,,134,1,1;53.8,9.9,,134,2,1;54.6,12.9,,134,2,1;45.3,30.8,,134,2,1;56.8,15.4,,134,1,1;54.2,26.8,,134,2,1;41.1,31.5,,134,2,1;57.3,24.8,,173,3,1;55,30.6,,134,1,1;58.4,7,,182,3,1;45.1,36.8,,214,5,1;61.3,9.2,,134,2,1;56.2,35.6,,134,2,1;60,30.2,,134,1,1;44.4,41.9,,134,2,1;61.8,4.2,,134,2,1;59.2,36.3,,182,3,1;54.8,41.5,,157,4,1;48.7,47,,159,3,1;52.3,47.3,,134,1,1;64.4,35,,134,1,1;61.4,41,,134,1,1;44.9,50.4,,134,3,1;50.3,50.5,,134,1,1;54,50.5,,134,2,1;61.8,44.8,,134,1,1;47.2,54.3,,134,3,1;44.1,54.5,,134,2,1;58.3,50.5,,134,4,1;64.3,46.4,,134,1,1;62.1,49.7,,144,3,1;49.4,58.9,,134,2,1;42.6,59.7,,204,4,1;62.2,54.1,,134,3,1;45.4,63.4,,181,4,1;46.1,69.8,,134,2,1;48.5,72.2,,134,2,1;43.9,73.5,,134,1,1;47.8,77.5,,134,3,1;43.2,77.5,,159,3,1;45.2,83.6,,164,4,1;48.8,87,,134,1,1" },
 			},
@@ -7127,6 +7192,7 @@ G(function() return {
 			title = "{item:2450} ({zone:1421})",
 			only = { races = { "SCOURGE" } },
 			note = "152 {item:2450} for {spell:3171} and {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2450} (skill 70); or the Auction House. The densest patch of {item:2450} in {zone:1421} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2450, count = 152, map = 1421, x = 50, y = 74.1, f = "e", spotsPacked = "50,74.1,,222,5;53.3,77.1,,70,1,1;50,68,,70,1,1;54.6,65.8,,91,3,1;56.2,60.1,,70,3,1;52.1,57.1,,70,3,1;61.8,77,,84,3,1;56.4,53.5,,70,1,1;66.1,77.3,,70,1,1;44.3,51.1,,70,3,1;52.8,41.7,,104,3,1;49.1,33.7,,74,3,1" },
 			},
@@ -7135,6 +7201,7 @@ G(function() return {
 			title = "{item:2453} ({zone:1436})",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "54 {item:2453} for {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2453} (skill 100); or the Auction House. The densest patch of {item:2453} in {zone:1436} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2453, count = 54, map = 1436, x = 31.1, y = 78.6, f = "e", spotsPacked = "31.1,78.6,,54,2;34.3,72.1,,40,1,1;30.7,86.7,,40,2,1;39,83.4,,40,2,1;42.4,72.4,,40,2,1;41.9,66.5,,40,2,1;44.9,81.4,,40,2,1;44.3,70.8,,40,1,1;36.9,56.9,,40,3,1;39.1,57.3,,40,2,1;35.3,53.4,,40,4,1;43.3,55.3,,40,2,1;41,47.7,,40,3,1;37.2,45.2,,40,1,1;31.3,43.8,,40,1,1;53.9,54.4,,40,2,1;39.9,38.8,,40,1,1;59.9,76.8,,40,1,1;56.6,52.5,,40,1,1;47,37.3,,40,1,1;60.1,58.8,,42,4,1;62.6,68.6,,40,3,1;57.4,48.2,,40,1,1;65.9,77.3,,40,1,1;58.3,43.4,,40,4,1;43.8,26.5,,40,4,1;50.9,31.5,,40,2,1;44.6,23.9,,45,4,1;48.3,25,,40,1,1;55.5,31.3,,40,2,1;55.9,30.2,,40,2,1;48,21.9,,40,1,1;40.5,18,,40,1,1;55.5,26.9,,40,2,1;43.1,16.8,,40,2,1;49.5,18.6,,40,1,1;59.5,22,,56,5,1;62.3,25.2,,40,2,1;56.8,18.5,,40,3,1;61.2,18.7,,40,2,1;59.7,16.1,,40,2,1" },
 			},
@@ -7143,6 +7210,7 @@ G(function() return {
 			title = "{item:2453} ({zone:1432})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "54 {item:2453} for {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2453} (skill 100); or the Auction House. The densest patch of {item:2453} in {zone:1432} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2453, count = 54, map = 1432, x = 68.4, y = 26.2, f = "e", spotsPacked = "68.4,26.2,,55,2;69.1,30.6,,43,7,1;64.8,24.2,,45,6,1;72.3,29.2,,40,3,1;70.1,20.1,,60,5,1;72.5,22.6,,40,2,1;70.5,35.8,,40,4,1;75.2,27.5,,40,1,1;77.5,37.3,,44,3,1;72.1,44.3,,44,3,1;69.2,47.5,,57,7,1;78.6,42.9,,40,2,1;73,48.9,,40,3,1;69.9,53.7,,40,2,1;77.1,54.4,,40,2,1;73.3,57.7,,40,1,1;82.1,63.9,,46,5,1;79.6,76.8,,40,1,1" },
 			},
@@ -7151,6 +7219,7 @@ G(function() return {
 			title = "{item:2453} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "54 {item:2453} for {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2453} (skill 100); or the Auction House. The densest patch of {item:2453} in {zone:1439} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2453, count = 54, map = 1439, x = 56.2, y = 21.7, f = "e", spotsPacked = "56.2,21.7,,112,4;59,21.5,,54,3,1;60,16.1,,54,3,1;61.7,20.5,,54,1,1;47.9,37.1,,54,1,1;45.5,36.6,,69,7,1;44.8,40.3,,54,3,1;43.2,57.8,,60,4,1;43.3,61.1,,58,3,1;41.8,62.6,,54,3,1;36.1,85.1,,92,6,1;38.6,87.1,,54,1,1;34,94.7,,54,1,1;31.1,92.7,,54,2,1" },
 			},
@@ -7159,6 +7228,7 @@ G(function() return {
 			title = "{item:2453} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "54 {item:2453} for {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2453} (skill 100); or the Auction House. The densest patch of {item:2453} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2453, count = 54, map = 1413, x = 57.5, y = 54.3, f = "e", spotsPacked = "57.5,54.3,,59,1;60.7,53.3,,88,3,1;54.4,52.5,,59,1,1;57.2,48.5,,59,1,1;53.6,55.6,,59,1,1;62.1,55.1,,91,5,1;52.9,51.8,,59,1,1;58.9,47,,59,2,1;58.2,45.5,,59,2,1;61,46.4,,59,1,1;62.1,44.8,,59,1,1;60.6,43.3,,59,2,1;47.8,58.6,,59,2,1;46.5,57.7,,59,1,1;49.2,68.8,,59,1,1;47.4,68.2,,74,5,1;43.2,51.7,,59,1,1;48.2,71.6,,59,1,1;45.2,68.6,,59,3,1;42.1,50.3,,59,2,1;48.3,35.2,,59,2,1;43.6,43.1,,59,1,1;42.3,47.6,,59,2,1;46.4,36.7,,59,2,1;45.1,70.5,,59,2,1;49.2,33,,59,1,1;46.8,34.4,,59,2,1;41.6,44.8,,59,2,1;45.3,36.1,,69,3,1;47.9,32.7,,59,1,1;43.2,69.5,,82,7,1;43.8,72.5,,59,3,1;45.8,33.1,,59,2,1;42.3,71,,59,3,1;43.7,81,,59,2,1;48.1,85.2,,85,5,1;44.1,83.5,,62,2,1;41.1,80.9,,82,4,1;42.1,82.6,,59,2,1;44.7,86.2,,59,2,1;47.2,19.6,,59,2,1;48.4,18,,59,4,1;57,15.2,,59,1,1;46.5,17.3,,59,2,1;58,12.5,,85,4,1;40.9,14.8,,59,2,1;61.6,6.8,,59,1,1;60.3,6.5,,78,4,1;36.7,16.6,,59,2,1;38.1,14.7,,59,3,1;61.2,4.6,,59,2,1;38.4,11.5,,59,2,1" },
 			},
@@ -7167,6 +7237,7 @@ G(function() return {
 			title = "{item:2453} ({zone:1421})",
 			only = { races = { "SCOURGE" } },
 			note = "54 {item:2453} for {spell:3176} (24 of them for 150-225: pick them all now): {skill:182}: {item:2453} (skill 100); or the Auction House. The densest patch of {item:2453} in {zone:1421} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2453, count = 54, map = 1421, x = 60.9, y = 62, f = "e", spotsPacked = "60.9,62,,76,7;60,66.2,,45,6,1;64,60.7,,42,4,1;64.3,56.7,,40,5,1;49.2,57.1,,41,3,1;47.4,71,,40,1,1;46.8,54.9,,40,4,1;46.5,68.4,,50,8,1;46.6,51.1,,40,2,1;48.3,46.2,,40,2,1" },
 			},
@@ -7174,50 +7245,57 @@ G(function() return {
 		{
 			title = "{spell:2331} to 90",
 			note = "{spell:2331} is yellow at 75 (yellow 65, green 85, grey 105): about 28 crafts to 90. Each takes 1 {item:785}, 1 {item:2447} and 1 {item:3371}. The trainer teaches it from 25. It is yellow already, so count on about two crafts a point until {spell:3171} takes over at 90. {item:785} grows in the 10-25 zones.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 2455, spell = 2331, reagents = { { item = 785, count = 1, itemName = "Mageroyal" }, { item = 2447, count = 1, itemName = "Peacebloom" }, { item = 3371, count = 1, itemName = "Empty Vial" } }, skillLine = 171, untilSkill = 90 },
+				{ t = "craft", item = 2455, spell = 2331, grey = 105, reagents = { { item = 785, count = 1, itemName = "Mageroyal" }, { item = 2447, count = 1, itemName = "Peacebloom" }, { item = 3371, count = 1, itemName = "Empty Vial" } }, skillLine = 171, untilSkill = 90, yellow = 65 },
 			},
 		},
 		{
 			title = "{skill:171} recipes at 90",
 			note = "Back to an {skill:171} trainer: {spell:3171} (from 90).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3171, candidates = { 103, 2, 3, 10, 5, 89, 4, 1, 6, 7, 9, 11, 12 }, skillLine = 171 },
+				{ t = "learn", spell = 3171, candidates = { 88, 89, 90, 91, 92, 93, 94, 95, 96, 97 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{spell:3171} to 135",
 			note = "{spell:3171} is orange at 90 (yellow 120, green 140, grey 160): about 49 crafts to 135. Each takes 1 {item:785}, 2 {item:2450} and 1 {item:3371}. Two {item:2450} and a {item:785} a craft, both from the 10-25 zones; orange to 120.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 3383, spell = 3171, reagents = { { item = 785, count = 1, itemName = "Mageroyal" }, { item = 2450, count = 2, itemName = "Briarthorn" }, { item = 3371, count = 1, itemName = "Empty Vial" } }, skillLine = 171, untilSkill = 135 },
+				{ t = "craft", item = 3383, spell = 3171, grey = 160, reagents = { { item = 785, count = 1, itemName = "Mageroyal" }, { item = 2450, count = 2, itemName = "Briarthorn" }, { item = 3371, count = 1, itemName = "Empty Vial" } }, skillLine = 171, untilSkill = 135, yellow = 120 },
 			},
 		},
 		{
 			title = "{skill:171} recipes at 135",
 			note = "Back to an {skill:171} trainer: {spell:3176} (from 125).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3176, candidates = { 103, 2, 3, 10, 5, 89, 4, 1, 6, 7, 9, 11, 12 }, skillLine = 171 },
+				{ t = "learn", spell = 3176, candidates = { 109, 89, 90, 91, 92, 93, 94, 95, 96, 110 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{spell:3176} to 150",
 			note = "{spell:3176} is orange at 135 (yellow 150, green 170, grey 190): about 15 crafts to 150, a point every craft. Each takes 2 {item:2453}, 2 {item:2450} and 1 {item:3372}. Two {item:2453} and two {item:2450} a craft; {item:2453} grows in the 15-30 zones. {skill:171} 150 is a Legacy System milestone.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 3388, spell = 3176, reagents = { { item = 2453, count = 2, itemName = "Bruiseweed" }, { item = 2450, count = 2, itemName = "Briarthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 150 },
+				{ t = "craft", item = 3388, spell = 3176, grey = 190, reagents = { { item = 2453, count = 2, itemName = "Bruiseweed" }, { item = 2450, count = 2, itemName = "Briarthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 150, yellow = 150 },
 				{ t = "skill", level = 150, skill = "Alchemy", skillLine = 171 },
 			},
 		},
 		{
 			title = "{skill:171} 150-225: vendor goods",
 			note = "Buy the whole bracket's share in one go: 83 {item:3372} (33s 20c); about 33s 20c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1286}, Eldraeith and {npc:1325}; {zone:1454}: {npc:3367}, {npc:3348} and {npc:3334}).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 3372, count = 83, candidates = { 23, 29, 21, 80, 92, 104, 20, 90, 22, 24, 93, 32, 46, 26, 47, 94, 73, 30, 69, 95, 37, 96, 36, 35, 98, 87, 99, 39, 38, 44, 27, 42, 43, 17, 100, 19, 50, 51, 52, 53, 54, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 70, 71, 72, 75, 76, 77, 78, 81, 82, 84, 101, 102 } },
+				{ t = "buy", item = 3372, count = 83, candidates = { 24, 30, 22, 81, 100, 111, 21, 98, 23, 25, 101, 33, 47, 27, 48, 102, 74, 31, 70, 103, 38, 104, 37, 36, 106, 87, 107, 40, 39, 45, 28, 43, 44, 18, 108, 20, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 76, 77, 78, 79, 82, 83, 12, 13, 14 } },
 			},
 		},
 		{
 			title = "{object:1623} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "40 {object:1623} for {item:8951} (8 of them for 225-300: pick them all now): {skill:182}: {object:1623} (skill 115) in {zone:1442} (15-27), {zone:1417} (30-40) and {zone:1434} (30-45); or the Auction House. The densest patch of {object:1623} in {zone:1434} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3355, count = 40, map = 1434, x = 26.6, y = 9.9, f = "e", fromId = 1623, fromKind = "object", spotsPacked = "26.6,9.9,,312,5;25.6,15.9,,182,7,1;20.9,7,,117,1,1;32,16,,169,3,1;33.7,5.8,,117,1,1;34.4,24.5,,117,2,1;40.4,6.9,,117,1,1;45.9,5.6,,117,1,1;46,15.8,,117,1,1;49.5,8.9,,117,1,1;51,19.2,,117,1,1;50.4,27.9,,117,2,1;42.3,45,,117,1,1;26.6,53.6,,117,2,1;50.9,34.1,,117,2,1;31,53.7,,117,2,1;38.9,51,,117,2,1;47.4,44.1,,117,2,1;35.1,57.5,,117,2,1;27.3,62.3,,159,7,1;34.1,63,,117,2,1;33.3,68.7,,117,2,1" },
 			},
@@ -7226,6 +7304,7 @@ G(function() return {
 			title = "{object:1623} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "40 {object:1623} for {item:8951} (8 of them for 225-300: pick them all now): {skill:182}: {object:1623} (skill 115) in {zone:1442} (15-27), {zone:1417} (30-40) and {zone:1434} (30-45); or the Auction House. The densest patch of {object:1623} in {zone:1442} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3355, count = 40, map = 1442, x = 25.8, y = 71.2, f = "e", fromId = 1623, fromKind = "object", spotsPacked = "25.8,71.2,,177,3;31.7,75.4,,80,2,1;31.4,57.3,,80,2,1;36.4,76.3,,80,1,1;38.7,67.6,,80,2,1;37.5,61.2,,80,2,1;34.8,47.8,,80,1,1;38.8,49.9,,80,1,1;37.5,40.5,,80,2,1;46.4,49.5,,85,3,1;53.8,65.9,,80,1,1;44.6,37.1,,85,4,1;54.4,53.6,,80,1,1;57.8,73.1,,80,1,1;58.6,83.9,,80,2,1;43.7,27.1,,80,1,1;58.3,52,,80,3,1;32.4,18.8,,80,2,1;38.8,21.3,,114,6,1;54.1,37,,80,4,1;62.3,72.8,,80,1,1;62.8,67.3,,80,1,1;51.7,30.8,,80,1,1;46.8,21.3,,80,1,1;63.3,95.5,,80,1,1;44.5,14.7,,80,1,1;30.7,7.1,,80,2,1;64,39.9,,80,3,1;42,9.7,,80,2,1;36,5.2,,80,1,1;68.5,42,,80,4,1;72.3,59,,80,2,1;74.1,89.7,,80,2,1;75.3,83,,80,1,1;72.9,40.6,,80,2,1;77.6,95.6,,80,1,1;78.1,49,,80,2,1;79.3,87,,80,2,1;79.9,44.1,,80,1,1;83.4,89.7,,80,1,1;85.1,84.4,,80,3,1" },
 			},
@@ -7234,6 +7313,7 @@ G(function() return {
 			title = "{item:3356} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "39 {item:3356} for {spell:3452}: {skill:182}: {item:3356} (skill 125) in {zone:1440} (18-30), {zone:1437} (20-30) and {zone:1434} (30-45); or the Auction House. The densest patch of {item:3356} in {zone:1434} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3356, count = 39, map = 1434, x = 31.2, y = 16.4, f = "e", spotsPacked = "31.2,16.4,,88,1;33.8,18.8,,88,1,1;28.4,14.5,,88,2,1;31.7,22.7,,94,3,1;29.6,10.2,,88,2,1;34.4,11.6,,88,3,1;25.5,16.2,,88,1,1;37.6,16.5,,88,1,1;34.9,26.2,,88,2,1;41.6,27,,88,3,1;43.6,22.1,,88,2,1;44.6,16.3,,99,4,1;38.2,34.3,,88,1,1;46.5,21.5,,88,1,1;33.4,40.1,,88,2,1;47.6,12.3,,88,1,1;46.8,27,,88,2,1;45.3,33.2,,88,3,1;29.9,43.5,,115,4,1;41.1,39.9,,88,2,1;48.7,33,,88,2,1;46.5,37.5,,98,4,1;32.4,52.7,,88,1,1;40.1,50.4,,88,3,1;24.3,53.1,,88,1,1;35.9,57.7,,88,1,1;31.8,59.1,,88,2,1;32.7,65.7,,102,3,1;32.2,72.5,,88,1,1;40.6,81.1,,88,2,1" },
 			},
@@ -7242,6 +7322,7 @@ G(function() return {
 			title = "{item:3356} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "39 {item:3356} for {spell:3452}: {skill:182}: {item:3356} (skill 125) in {zone:1413} (10-25), {zone:1440} (18-30) and {zone:1434} (30-45); or the Auction House. The densest patch of {item:3356} in {zone:1413} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3356, count = 39, map = 1413, x = 47.4, y = 74.5, f = "e", spotsPacked = "47.4,74.5,,273,4;48,70.3,,124,1,1;47.9,80,,168,4,1;44.1,71.7,,124,2,1;45.4,65.5,,124,2,1;43.4,81.9,,124,2,1;45.2,84.3,,124,2,1;49,60,,143,3,1;50.1,56.3,,124,1,1;45,54.9,,124,1,1;53,53.2,,124,1,1;57.9,51.4,,124,1,1;56.4,48.5,,124,1,1;47.5,33,,136,4,1" },
 			},
@@ -7250,6 +7331,7 @@ G(function() return {
 			title = "{object:2045} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "39 {object:2045} for {spell:3452}: {skill:182}: {object:2045} (skill 85) in {zone:1437} (20-30), {zone:1434} (30-45) and {zone:1425} (40-50); or the Auction House. The densest patch of {object:2045} in {zone:1434} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3820, count = 39, map = 1434, x = 23, y = 62.4, f = "e", fromId = 2045, fromKind = "object", spotsPacked = "23,62.4,,107,2;23.3,58.9,,68,2,1;24.8,67.5,,68,2,1;22.1,68.5,,68,2,1;26.9,57.1,,98,3,1;26.8,68.9,,68,3,1;21.8,52.7,,68,3,1;22.6,49,,68,1,1;25.7,47.5,,69,3,1;26.6,44.4,,68,1,1;36.2,71.3,,68,2,1;26.8,41,,95,4,1;26.8,84.5,,108,10,1;35.3,75.9,,68,3,1;38.4,63.7,,68,2,1;32.1,82.9,,68,4,1;29.4,87.5,,99,12,1;27.6,34.1,,68,1,1;34,86.9,,68,1,1;31.3,34.9,,68,2,1;34.1,36,,68,2,1;27.3,31.6,,102,4,1;30.1,31,,76,3,1;28.2,26.8,,68,2,1;23.4,25.5,,68,1,1;21.1,25,,68,1,1;25.6,24.7,,68,1,1;18.8,22.7,,68,1,1;26.7,21.8,,69,2,1;23.4,21.1,,68,1,1;13.9,13.3,,68,1,1" },
 			},
@@ -7258,6 +7340,7 @@ G(function() return {
 			title = "{object:2045} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "39 {object:2045} for {spell:3452}: {skill:182}: {object:2045} (skill 85) in {zone:1413} (10-25), {zone:1434} (30-45) and {zone:1425} (40-50); or the Auction House. The densest patch of {object:2045} in {zone:1413} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3820, count = 39, map = 1413, x = 65.9, y = 44.6, f = "e", fromId = 2045, fromKind = "object", spotsPacked = "65.9,44.6,,127,3;66,42.4,,64,3,1;64.4,42.4,,86,5,1;65.5,48.2,,74,3,1;67,48.7,,64,1,1;65.8,39.7,,84,4,1;67.2,39.3,,64,1,1;62.2,42.2,,101,6,1;68.9,48.8,,107,9,1;63.9,39.2,,101,5,1;64.3,50.7,,64,2,1;65.1,37.1,,64,4,1;63.5,52.9,,89,3,1;64.1,55.2,,64,2,1" },
 			},
@@ -7266,6 +7349,7 @@ G(function() return {
 			title = "{object:2046} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "40 {object:2046} for {item:8951} (8 of them for 225-300: pick them all now): {skill:182}: {object:2046} (skill 170) in {zone:1417} (30-40), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest patch of {object:2046} in {zone:1417} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3821, count = 40, map = 1417, x = 49.8, y = 72.7, f = "e", fromId = 2046, fromKind = "object", spotsPacked = "49.8,72.7,,40,1;50.2,76.2,,40,2,1;53.4,72.4,,40,2,1;46.9,76.5,,40,1,1;46.1,69,,40,1,1;50.4,80.6,,40,2,1;46.4,80.7,,40,1,1;56.2,73,,40,1,1;54.7,64.8,,40,3,1;42.3,75.2,,40,1,1;42.4,64.7,,40,4,1;53.4,50.5,,40,1,1;34.4,61,,40,3,1;40.3,48.6,,40,1,1;57.8,47.3,,40,2,1;40.8,44.1,,40,1,1;43.2,42.1,,40,1,1;61.9,44.1,,40,1,1;38.4,43.1,,40,1,1;41.3,40.6,,40,1,1;48.5,37.6,,40,1,1;51,37.1,,40,5,1;46.3,36.7,,40,1,1;30.7,44.2,,40,1,1;38.1,34.1,,40,1,1;73.6,49.3,,40,2,1;41.4,31.1,,40,2,1;60.4,31.6,,40,2,1;18.6,71.7,,40,1,1;19.5,57.3,,40,4,1;17.6,62.6,,40,3,1;77,44.7,,40,1,1;25.6,37.4,,51,4,1;28.7,33,,40,2,1;65.2,27.4,,40,2,1;26.5,34.1,,40,1,1;14.9,68.7,,40,3,1;33.1,25.8,,40,1,1;17.9,47.8,,40,3,1;69.6,27.4,,40,2,1;21.1,38.5,,40,3,1;76.8,32.6,,40,1,1;31.6,22.6,,40,1,1;79.1,36.1,,44,6,1;74.2,28.4,,56,10,1;23.7,29.2,,40,2,1;19.7,33.5,,40,2,1;26.9,19.6,,40,6,1" },
 			},
@@ -7274,73 +7358,83 @@ G(function() return {
 			title = "{object:2046} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "40 {object:2046} for {item:8951} (8 of them for 225-300: pick them all now): {skill:182}: {object:2046} (skill 170) in {zone:1417} (30-40), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest patch of {object:2046} in {zone:1444} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 3821, count = 40, map = 1444, x = 45, y = 26.1, f = "e", fromId = 2046, fromKind = "object", spotsPacked = "45,26.1,,124,1;50.2,27.8,,178,5,1;40.1,22.5,,128,3,1;50.1,35.1,,124,2,1;48.1,11,,124,1,1;39.5,8.6,,124,1,1;46,50,,124,1,1;56.4,50.2,,124,1,1;48,56.2,,124,1,1;60.5,50.4,,124,2,1;56.9,58,,124,2,1;67.8,43.9,,124,2,1;65.6,51.7,,124,2,1;61,58.4,,124,2,1;46,67.2,,124,1,1;56.2,69.6,,124,1,1;27.2,65.3,,124,1,1;61.8,67.2,,124,2,1;77,34.2,,241,8,1;23.2,66.4,,124,1,1;56.7,75.2,,124,1,1;70.8,64.8,,124,1,1;60.9,75.6,,124,1,1;76.7,56.1,,124,2,1;80.8,46.6,,124,2,1" },
 			},
 		},
 		{
 			title = "Expert {skill:171}",
-			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:171} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:4160} ({zone:1457}) and {npc:7948} ({zone:1444}); Horde {npc:4611} ({zone:1458}) and {npc:1386} ({zone:1435}). The arrow picks the nearest of your faction. 150-225 takes about 33s 20c of vendor goods, plus 40 {object:1623}, 39 {item:3356}, 39 {object:2045} and 40 {object:2046} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {spell:3452} (from 160) and {item:8951} (from 195), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3.",
+			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:171} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:4160} ({zone:1457}); Horde {npc:4611} ({zone:1458}). The arrow picks the nearest of your faction. 150-225 takes about 33s 20c of vendor goods, plus 40 {object:1623}, 39 {item:3356}, 39 {object:2045} and 40 {object:2046} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {spell:3452} (from 160) and {item:8951} (from 195), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", candidates = { 11, 9, 12, 8, 10, 88 }, rank = 3, rankMax = 225, skill = "Alchemy", skillLine = 171 },
+				{ t = "train", candidates = { 110, 109 }, rank = 3, rankMax = 225, skill = "Alchemy", skillLine = 171 },
 			},
 		},
 		{
 			title = "{spell:3176} to 160",
 			note = "{spell:3176} is yellow at 150 (yellow 150, green 170, grey 190): about 12 crafts to 160. Each takes 2 {item:2453}, 2 {item:2450} and 1 {item:3372}. Two {item:2453} and two {item:2450} a craft; {item:2453} grows in the 15-30 zones.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 3388, spell = 3176, reagents = { { item = 2453, count = 2, itemName = "Bruiseweed" }, { item = 2450, count = 2, itemName = "Briarthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 160 },
+				{ t = "craft", item = 3388, spell = 3176, grey = 190, reagents = { { item = 2453, count = 2, itemName = "Bruiseweed" }, { item = 2450, count = 2, itemName = "Briarthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 160, yellow = 150 },
 			},
 		},
 		{
 			title = "{skill:171} recipes at 160",
 			note = "Still at the Expert trainer: {spell:3452} (from 160).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 3452, candidates = { 11, 9, 12, 8, 10, 88 }, skillLine = 171 },
+				{ t = "learn", spell = 3452, candidates = { 110, 109 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{spell:3452} to 195",
 			note = "{spell:3452} is orange at 160 (yellow 180, green 200, grey 220): about 39 crafts to 195. Each takes 1 {item:3820}, 1 {item:3356} and 1 {item:3372}. {item:3820} grows under water along the coasts: bring a water breathing elixir or come up for air. {item:3356} grows in the 20-40 zones.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 3827, spell = 3452, reagents = { { item = 3820, count = 1, itemName = "Stranglekelp" }, { item = 3356, count = 1, itemName = "Kingsblood" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 195 },
+				{ t = "craft", item = 3827, spell = 3452, grey = 220, reagents = { { item = 3820, count = 1, itemName = "Stranglekelp" }, { item = 3356, count = 1, itemName = "Kingsblood" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 195, yellow = 180 },
 			},
 		},
 		{
 			title = "{skill:171} recipes at 195",
 			note = "Still at the Expert trainer: {spell:11450} (from 195).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 11450, candidates = { 11, 9, 12, 8, 10, 88 }, skillLine = 171 },
+				{ t = "learn", spell = 11450, candidates = { 110, 109 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{item:8951} to 225",
 			note = "{item:8951} is orange at 195 (yellow 215, green 235, grey 255): about 32 crafts to 225. Each takes 1 {item:3355}, 1 {item:3821} and 1 {item:3372}. {item:3355} and {item:3821} are the herbs of the 30-45 zones (Stranglethorn, Arathi, the {zone:1418}). {skill:171} 225 is a Legacy System milestone.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 8951, spell = 11450, reagents = { { item = 3355, count = 1, itemName = "Wild Steelbloom" }, { item = 3821, count = 1, itemName = "Goldthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 225 },
+				{ t = "craft", item = 8951, spell = 11450, grey = 255, reagents = { { item = 3355, count = 1, itemName = "Wild Steelbloom" }, { item = 3821, count = 1, itemName = "Goldthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 225, yellow = 215 },
 				{ t = "skill", level = 225, skill = "Alchemy", skillLine = 171 },
 			},
 		},
 		{
 			title = "{skill:171} 225-300: vendor goods",
 			note = "Buy the whole bracket's share in one go: 51 {item:3372} (20s 40c) and 86 {item:8925} (4g 30s); about 4g 50s 40c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1286}, Eldraeith and {npc:1325}; {zone:1454}: {npc:3367}, {npc:3348} and {npc:3334}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 3372, count = 51, candidates = { 105, 57, 60, 56, 17, 58, 106, 65, 54, 53, 100, 19, 52, 107, 51, 62, 72, 70, 71, 63, 50, 66, 64, 67, 77, 108, 20, 21, 22, 23, 24, 25, 26, 27, 90, 29, 30, 31, 32, 35, 36, 37, 38, 39, 41, 42, 43, 44, 99, 46, 47, 68, 69, 73, 74, 79, 80, 81, 82, 84, 101, 102, 86, 87 } },
-				{ t = "buy", item = 8925, count = 86, candidates = { 105, 57, 60, 56, 17, 58, 106, 65, 100, 52, 107, 51, 62, 72, 70, 71, 63, 50, 66, 64, 67, 77, 108, 21, 22, 23, 24, 25, 26, 27, 90, 29, 30, 31, 32, 35, 36, 37, 39, 109, 96, 42, 43, 44, 99, 46, 47, 68, 69, 110, 79, 80, 81, 82, 84, 101, 102, 86, 87 } },
+				{ t = "buy", item = 3372, count = 51, candidates = { 112, 58, 61, 57, 18, 59, 113, 66, 55, 54, 108, 20, 53, 114, 52, 63, 73, 71, 72, 64, 51, 67, 65, 68, 78, 115, 21, 22, 23, 24, 25, 26, 27, 28, 98, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42, 43, 44, 45, 107, 47, 48, 69, 70, 74, 75, 80, 81, 82, 83, 12, 13, 14, 86, 87 } },
+				{ t = "buy", item = 8925, count = 86, candidates = { 112, 58, 61, 57, 18, 59, 113, 66, 108, 53, 114, 52, 63, 73, 71, 72, 64, 51, 67, 65, 68, 78, 115, 22, 23, 24, 25, 26, 27, 28, 98, 30, 31, 32, 33, 36, 37, 38, 40, 116, 104, 43, 44, 45, 107, 47, 48, 69, 70, 117, 80, 81, 82, 83, 12, 13, 14, 86, 87 } },
 			},
 		},
 		{
 			title = "{item:13478}",
 			note = "{item:13478} teaches {item:13445} ({skill:171} 265) for 1g 30s. Sold by Alliance: {npc:5178} ({zone:1455}), limited stock; Horde: {npc:3348} ({zone:1454}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; the Auction House often has it too.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 13478, candidates = { 111, 112 } },
+				{ t = "buy", item = 13478, candidates = { 118, 119 } },
 			},
 		},
 		{
 			title = "{item:8836} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "43 {item:8836} for {item:9154}: {skill:182}: {item:8836} (skill 220) in {zone:1448} (48-55), {zone:1422} (51-58) and {zone:1423} (53-60); or the Auction House. The densest patch of {item:8836} in {zone:1422} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8836, count = 43, map = 1422, x = 45.5, y = 67.5, f = "e", fromId = 142141, fromKind = "object", spotsPacked = "45.5,67.5,,91,3;48,63.6,,40,1,1;44.5,73.3,,40,2,1;49.3,69.4,,40,1,1;40.8,66.7,,40,1,1;47.1,59.3,,56,5,1;40.3,63.3,,40,2,1;50.8,63.3,,40,1,1;39.4,69.5,,40,1,1;51.9,69.2,,40,1,1;38,65.7,,40,1,1;48.9,79.9,,40,5,1;52.5,79,,40,3,1;41.9,52.8,,40,1,1;56.5,63.7,,40,1,1;44.1,50.4,,40,1,1;33.5,63.1,,40,4,1;35.5,54.3,,40,2,1;46.5,45.9,,42,3,1;57.2,53.9,,40,1,1;30.8,60.8,,40,2,1;60.4,61.4,,40,1,1;31,56.2,,40,2,1;46.3,42.1,,40,1,1;53.3,44.3,,40,1,1;60.7,54.3,,40,4,1;44.8,36.1,,40,1,1;62.9,49.2,,40,1,1;65.7,57.2,,40,1,1;49.6,32.9,,40,1,1;55.3,32.2,,40,1,1;53.8,23.2,,40,1,1;45.4,17,,40,1,1;46.1,12.8,,40,1,1" },
 			},
@@ -7349,6 +7443,7 @@ G(function() return {
 			title = "{item:8836} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "43 {item:8836} for {item:9154}: {skill:182}: {item:8836} (skill 220) in {zone:1448} (48-55), {zone:1422} (51-58) and {zone:1423} (53-60); or the Auction House. The densest patch of {item:8836} in {zone:1448} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8836, count = 43, map = 1448, x = 37.8, y = 45.1, f = "e", fromId = 142141, fromKind = "object", spotsPacked = "37.8,45.1,,61,2;41.4,40.3,,44,2,1;43.1,43.3,,44,1,1;45.5,37.6,,44,1,1;37.7,60.8,,44,4,1;43.7,67,,44,2,1;41.4,21.3,,44,2,1;43.4,14.1,,44,2,1;47.8,76.7,,44,1,1;39.5,80.3,,44,1,1;41.7,81.2,,44,2,1;52.9,15.4,,44,2,1;43.7,82,,44,1,1;47.1,87.5,,44,1,1;55.3,91.3,,44,1,1" },
 			},
@@ -7357,6 +7452,7 @@ G(function() return {
 			title = "{item:8838} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "43 {item:8838} for {item:13445}: {skill:182}: {item:8838} (skill 230) in {zone:1425} (40-50), {zone:1444} (40-50) and {zone:1447} (45-55); or the Auction House. The densest patch of {item:8838} in {zone:1425} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8838, count = 43, map = 1425, x = 21.7, y = 57.3, f = "e", fromId = 142142, fromKind = "object", spotsPacked = "21.7,57.3,,58,3;22.8,52.9,,40,3,1;25,58.2,,55,3,1;17.9,54.3,,40,2,1;26.2,55.2,,40,1,1;18.3,51.3,,40,3,1;26.8,61.6,,40,1,1;29.5,53.7,,40,2,1;28.7,65.5,,42,5,1;31.3,63.4,,40,1,1;34.5,61.5,,40,1,1;34.4,46.9,,40,1,1;36.7,58.9,,40,2,1;36.9,51.9,,57,4,1;37.8,54.9,,40,2,1;36.6,46.5,,40,2,1;37.8,63.7,,40,1,1;40.9,49.9,,40,1,1;41,45.7,,45,7,1;43.4,66.9,,40,1,1;44.4,62.8,,40,1,1;45.4,57.8,,40,2,1;46.2,55.1,,46,5,1;46.3,51,,40,1,1;48.5,55,,40,2,1;49.5,62.9,,40,1,1;49.6,47.2,,40,1,1;51.1,57.6,,40,1,1;50.7,65.9,,40,1,1;52.4,50,,40,1,1;51.5,42.8,,40,2,1;54.1,51.9,,40,1,1;53.8,47.2,,40,1,1;54.1,41.8,,40,4,1;56.2,45.1,,40,2,1;58.1,52.2,,40,1,1;58.9,49,,40,1,1;61.1,54.8,,40,1,1;61.8,48.8,,40,1,1;62.4,45,,40,1,1;64.6,49.7,,40,1,1;65.8,53.9,,40,1,1;66.1,57.8,,40,1,1;66,47.2,,40,1,1;68.4,51,,40,1,1;69.9,48.2,,40,1,1;71.3,60.4,,40,1,1;72,64.6,,40,1,1;75.6,51.1,,40,1,1" },
 			},
@@ -7365,6 +7461,7 @@ G(function() return {
 			title = "{item:8838} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "43 {item:8838} for {item:13445}: {skill:182}: {item:8838} (skill 230) in {zone:1425} (40-50), {zone:1444} (40-50) and {zone:1447} (45-55); or the Auction House. The densest patch of {item:8838} in {zone:1444} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8838, count = 43, map = 1444, x = 55.7, y = 74, f = "e", fromId = 142142, fromKind = "object", spotsPacked = "55.7,74,,348,3;61.2,71.7,,144,2,1;57.1,63,,156,5,1;58.5,55.6,,144,1,1;59,49.1,,201,6,1;53.2,48.3,,150,4,1;70.9,58.6,,177,4,1;75,56.3,,144,2,1;70,44.8,,207,6,1;71.1,39.9,,144,4,1;50.2,30.6,,144,1,1;78.5,39.1,,144,3,1;51.3,23.3,,144,1,1;84,45.1,,144,2,1;46.8,24.2,,144,1,1;42.9,23.3,,144,2,1;37.8,23.2,,144,1,1;86.3,38.3,,144,1,1;42.1,14.3,,144,2,1" },
 			},
@@ -7373,6 +7470,7 @@ G(function() return {
 			title = "{item:13422} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "43 {item:13422} for {item:13445}: {skill:356}; or the Auction House. Fish {object:180712} here.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 13422, count = 43, map = 1434, x = 27.5, y = 76.5, f = "e", fromId = 180712, fromKind = "object", spotsPacked = "27.5,76.5,,135,4;27.4,83.6,,122,4,1;31.7,81.9,,85,3,1;26.1,68.4,,82,2,1;33.9,76.4,,82,2,1;23.8,63.3,,90,3,1;36.4,69.9,,82,1,1;25.3,58.9,,82,2,1;38.5,62.8,,82,1,1;22.5,55.8,,82,2,1;23,50.7,,108,4,1;41.4,59.3,,82,3,1;25.7,47.5,,122,3,1;27,42.6,,82,3,1;28.7,38,,82,3,1;33.6,35.8,,119,5,1" },
 			},
@@ -7381,6 +7479,7 @@ G(function() return {
 			title = "{item:13422} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "43 {item:13422} for {item:13445}: {skill:356}; or the Auction House. Fish {object:180712} here.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 13422, count = 43, map = 1444, x = 44.2, y = 46.5, f = "e", fromId = 180712, fromKind = "object", spotsPacked = "44.2,46.5,,77,3;44.4,50.9,,86,3,1;43.9,41.2,,109,5,1;48.2,52.7,,155,5,1;40.6,38.5,,98,3,1;38.8,33.8,,77,1,1;36.8,36.3,,77,1,1;34.4,34,,93,3,1" },
 			},
@@ -7388,46 +7487,52 @@ G(function() return {
 		{
 			title = "Artisan {skill:171}",
 			note = "Artisan raises the cap from 225 to 300 for 4g 50s (Classic's price; Forever's is not in the data); it needs {skill:171} 200 and character level 35, so you can take it on any visit from 200. Only a few trainers teach it: Alliance {npc:7948} ({zone:1444}); Horde {npc:1386} ({zone:1435}). The arrow picks the nearest of your faction. 225-300 takes about 1g 30s of recipes and 4g 50s 40c of vendor goods, plus 43 {item:8836}, 43 {item:8838} and 43 {item:13422} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {item:9154} (from 230) and {item:13423} (from 250), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 35 },
-				{ t = "train", candidates = { 113, 114 }, rank = 4, rankMax = 300, skill = "Alchemy", skillLine = 171 },
+				{ t = "train", candidates = { 120, 121 }, rank = 4, rankMax = 300, skill = "Alchemy", skillLine = 171 },
 			},
 		},
 		{
 			title = "{item:8951} to 230",
 			note = "{item:8951} is yellow at 225 (yellow 215, green 235, grey 255): about 8 crafts to 230. Each takes 1 {item:3355}, 1 {item:3821} and 1 {item:3372}. {item:3355} and {item:3821} are the herbs of the 30-45 zones (Stranglethorn, Arathi, the {zone:1418}).",
+			section = 4,
 			goals = {
-				{ t = "craft", item = 8951, spell = 11450, reagents = { { item = 3355, count = 1, itemName = "Wild Steelbloom" }, { item = 3821, count = 1, itemName = "Goldthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 230 },
+				{ t = "craft", item = 8951, spell = 11450, grey = 255, reagents = { { item = 3355, count = 1, itemName = "Wild Steelbloom" }, { item = 3821, count = 1, itemName = "Goldthorn" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171, untilSkill = 230, yellow = 215 },
 			},
 		},
 		{
 			title = "{skill:171} recipes at 230",
 			note = "Still at the Artisan trainer: {spell:11460} (from 230).",
+			section = 4,
 			goals = {
-				{ t = "learn", spell = 11460, candidates = { 113, 114 }, skillLine = 171 },
+				{ t = "learn", spell = 11460, candidates = { 120, 121 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{item:9154} to 265",
 			note = "{item:9154} is orange at 230 (yellow 245, green 265, grey 285): about 43 crafts to 265. Each takes 1 {item:8836} and 1 {item:8925}. {item:8836} grow in the Plaguelands and {zone:1448} ({skill:182} 220); Crystal Vials come from alchemy vendors.",
+			section = 4,
 			goals = {
-				{ t = "craft", item = 9154, spell = 11460, reagents = { { item = 8836, count = 1, itemName = "Arthas' Tears" }, { item = 8925, count = 1, itemName = "Crystal Vial" } }, skillLine = 171, untilSkill = 265 },
+				{ t = "craft", item = 9154, spell = 11460, grey = 285, reagents = { { item = 8836, count = 1, itemName = "Arthas' Tears" }, { item = 8925, count = 1, itemName = "Crystal Vial" } }, skillLine = 171, untilSkill = 265, yellow = 245 },
 			},
 		},
 		{
 			title = "{skill:171} recipes at 265",
 			note = "Still at the Artisan trainer: {spell:17551} (from 250).",
+			section = 4,
 			goals = {
-				{ t = "learn", spell = 17551, candidates = { 113, 114 }, skillLine = 171 },
+				{ t = "learn", spell = 17551, candidates = { 120, 121 }, skillLine = 171 },
 			},
 		},
 		{
 			title = "{item:13445} to 300",
 			note = "{item:13445} is orange at 265 (yellow 280, green 300, grey 320): about 43 crafts to 300. Each takes 2 {item:13423}, 1 {item:8838} and 1 {item:8925}. Make the 86 {item:13423} (43 crafts) first. {item:13422} comes from the {item:13422} schools on the coasts of the 40-55 zones, or the Auction House (fishers sell them in stacks). {item:8838} grows in the 40-55 zones. {skill:171} 300 is a Legacy System milestone.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 13478, spell = 17554, note = "from the recipe in your bags", skillLine = 171 },
 				{ t = "craft", item = 13423, spell = 17551, count = 86, reagents = { { item = 13422, count = 1, itemName = "Stonescale Eel" }, { item = 3372, count = 1, itemName = "Leaded Vial" } }, skillLine = 171 },
-				{ t = "craft", item = 13445, spell = 17554, reagents = { { item = 13423, count = 2, itemName = "Stonescale Oil" }, { item = 8838, count = 1, itemName = "Sungrass" }, { item = 8925, count = 1, itemName = "Crystal Vial" } }, skillLine = 171, untilSkill = 300 },
+				{ t = "craft", item = 13445, spell = 17554, grey = 320, reagents = { { item = 13423, count = 2, itemName = "Stonescale Oil" }, { item = 8838, count = 1, itemName = "Sungrass" }, { item = 8925, count = 1, itemName = "Crystal Vial" } }, skillLine = 171, untilSkill = 300, yellow = 280 },
 				{ t = "skill", level = 300, skill = "Alchemy", skillLine = 171 },
 			},
 		},
@@ -7441,17 +7546,28 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 947,
+	sections = { { from = 1, skill = "Blacksmithing", skillLine = 164, to = 75 }, { from = 75, skill = "Blacksmithing", skillLine = 164, to = 150 }, { from = 150, skill = "Blacksmithing", skillLine = 164, to = 225 }, { from = 225, skill = "Blacksmithing", skillLine = 164, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "H", npc = 3174, map = 1411, x = 52.03, y = 40.72, z = 15.9, f = "e" },
+		{ faction = "H", npc = 276067, map = 1420, x = 20.81, y = 46.27, f = "e" },
 		{ faction = "A", npc = 1241, map = 1426, x = 45.34, y = 51.94, z = 397.3, f = "e" },
 		{ faction = "A", npc = 514, map = 1429, x = 41.71, y = 65.54, z = 58.4, f = "e" },
-		{ faction = "A", npc = 5511, map = 1453, x = 63.66, y = 37.01, z = 95.5 },
-		{ faction = "H", npc = 3355, map = 1454, x = 82.35, y = 22.97, z = 24.4, f = "e" },
-		{ faction = "A", npc = 4258, map = 1455, x = 52.55, y = 41.46, z = 498.9, f = "e" },
-		{ faction = "H", npc = 2998, map = 1456, x = 39.38, y = 55.09, z = 129.5, f = "e" },
-		{ faction = "H", npc = 4596, map = 1458, x = 61.26, y = 30.63, z = -62.1, f = "e" },
+		{ faction = "A", npc = 6299, map = 1439, x = 38.19, y = 40.93, z = 7.7, f = "e" },
+		{ faction = "A", npc = 957, map = 1453, x = 64.12, y = 37.02, z = 95.3 },
+		{ faction = "H", npc = 10266, map = 1454, x = 80.77, y = 23.7, z = 22.5, f = "e" },
+		{ faction = "A", npc = 10277, map = 1455, x = 52.26, y = 41.94, z = 498.9, f = "e" },
+		{ faction = "H", npc = 10278, map = 1456, x = 39.43, y = 56.66, z = 129.1, f = "e" },
 		{ faction = "H", npc = 4605, map = 1458, x = 60.17, y = 29.09, z = -62.1, f = "e" },
+		{ faction = "AH", npc = 251913, map = 2521, x = 44.88, y = 44.37, z = 823.2 },
+		{ faction = "AH", npc = 252479, map = 2521, x = 65.47, y = 80.28, z = 648.2 },
+		{ faction = "H", npc = 4596, map = 1458, x = 61.26, y = 30.63, z = -62.1, f = "e" },
+		{ faction = "A", npc = 10276, map = 1455, x = 52.36, y = 42.55, z = 498.9, f = "e" },
+		{ faction = "A", npc = 5511, map = 1453, x = 63.66, y = 37.01, z = 95.5 },
+		{ faction = "A", npc = 3136, map = 1431, x = 74, y = 48.55, z = 30.1, f = "e" },
+		{ faction = "H", npc = 3478, map = 1413, x = 51.3, y = 28.91, z = 97.7, f = "e" },
+		{ faction = "H", npc = 1383, map = 1454, x = 79.6, y = 23.31, z = 22.9, f = "e" },
+		{ faction = "H", npc = 2998, map = 1456, x = 39.38, y = 55.09, z = 129.5, f = "e" },
 		{ faction = "H", npc = 2118, map = 1420, x = 61.03, y = 52.37, z = 34.9, f = "e" },
 		{ faction = "H", npc = 4597, map = 1458, x = 61.41, y = 30.08, z = -62.1, f = "e" },
 		{ faction = "H", npc = 267325, map = 1420, x = 32.22, y = 65.82, z = 99.2, f = "e" },
@@ -7530,9 +7646,10 @@ G(function() return {
 		{ faction = "H", npc = 2225, map = 1459, x = 50.08, y = 82.15, f = "e" },
 		{ faction = "A", npc = 4257, map = 1459, x = 43.41, y = 15.64, f = "e" },
 		{ faction = "A", npc = 243855, map = 2482, x = 69, y = 47.36 },
-		{ faction = "AH", npc = 251913, map = 2521, x = 44.88, y = 44.37, z = 823.2 },
 		{ faction = "AH", npc = 252388, map = 2521, x = 65.44, y = 80.47, z = 648.3 },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
+		{ faction = "A", npc = 4258, map = 1455, x = 52.55, y = 41.46, z = 498.9, f = "e" },
+		{ faction = "H", npc = 3355, map = 1454, x = 82.35, y = 22.97, z = 24.4, f = "e" },
 		{ faction = "A", npc = 2816, map = 1417, x = 45.08, y = 46.83, z = 22.1, f = "e" },
 		{ faction = "H", npc = 2698, map = 1424, x = 92.02, y = 38.23, z = 73.3, f = "e" },
 		{ faction = "H", npc = 2394, map = 1416, x = 60.6, y = 82.9, z = 55.8, f = "e" },
@@ -7592,7 +7709,6 @@ G(function() return {
 		{ faction = "A", npc = 6298, map = 1439, x = 38.22, y = 41.2, z = 7.4, f = "e" },
 		{ faction = "AH", npc = 12957, map = 1447, x = 45.21, y = 90.85, z = 21.2, f = "e" },
 		{ faction = "AH", npc = 11186, map = 1452, x = 61.79, y = 38.59, z = 721.7, f = "e" },
-		{ faction = "AH", npc = 252479, map = 2521, x = 65.47, y = 80.28, z = 648.2 },
 		{ faction = "AH", npc = 2836, map = 1434, x = 28.99, y = 75.56, z = 24, f = "e" },
 		{ faction = "AH", npc = 11278, map = 1422, x = 68.12, y = 77.57, z = 62.1, f = "e" },
 	},
@@ -7600,8 +7716,9 @@ G(function() return {
 		{
 			title = "Learn {skill:164}",
 			note = "Apprentice {skill:164} lets you craft up to 75 for 10c, at any character level. Any {skill:164} trainer of your faction teaches it; the arrow picks the nearest. Buy a {item:5956} (any blacksmithing supplier) and pair it with {skill:186}: {item:2835} and {item:2770} come from the Copper Veins of every starting zone. 1-75 takes about 1s of recipes, plus 286 {item:2835} to gather or buy.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8 }, rank = 1, rankMax = 75, skill = "Blacksmithing", skillLine = 164 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, rank = 1, rankMax = 75, skill = "Blacksmithing", skillLine = 164 },
 				{ t = "skill", level = 1, skill = "Blacksmithing", skillLine = 164 },
 			},
 		},
@@ -7609,6 +7726,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1429})",
 			only = { races = { "HUMAN" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1429} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 1429, x = 45.6, y = 72.6, f = "e", spotsPacked = "45.6,72.6,,90,3;51.2,75.2,,63,2,1;39.7,72,,63,2,1;40.1,80.4,,157,21,1;51.8,65.4,,63,2,1;51.6,84,,96,6,1;34.3,72.5,,63,1,1;52,58.6,,63,1,1;57.8,79.1,,85,5,1;30.6,71.3,,63,2,1;42.8,49.6,,63,2,1;39,51.4,,76,3,1;57.3,56.8,,63,1,1;60.9,64.2,,63,3,1;31,61.7,,63,2,1;30.9,55.3,,63,2,1;27.1,67.6,,63,3,1;29.2,88.1,,63,1,1;61.1,50,,96,13,1;67.2,70.5,,76,3,1;65.4,56.5,,63,1,1;24.2,84.4,,63,1,1;20.7,76.3,,63,2,1;73.5,64.1,,63,2,1;70.1,47.6,,63,1,1;75.1,79,,63,2,1;74.6,59.2,,63,2,1;74.5,53.1,,76,3,1;76.4,85.2,,63,2,1;73.2,43.8,,63,1,1;79.5,77.7,,63,2,1;78.6,49.5,,63,1,1;82.6,55,,63,1,1;84.9,80.4,,63,3,1;80.8,42.6,,63,1,1;79.1,37.2,,63,1,1;88.1,61.1,,63,2,1" },
 			},
@@ -7617,6 +7735,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1426})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1426} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 1426, x = 70.4, y = 55.1, f = "e", spotsPacked = "70.4,55.1,,374,22;73.2,60.8,,131,4,1;64.8,49.6,,140,3,1;79.3,56.3,,96,3,1;81.7,49.1,,94,2,1;57.1,55.4,,94,3,1;80.2,39.5,,109,3,1;57.9,42,,94,1,1;80.1,33.6,,94,1,1;51.7,52.5,,94,1,1;51.2,58,,94,2,1;51.8,43.7,,96,3,1;49.6,63.8,,94,3,1;48.5,35.8,,94,1,1;44.8,56.4,,94,2,1;45.2,45.1,,94,1,1;42.8,63.5,,94,1,1;40.7,49,,223,13,1;41.5,35.5,,134,6,1;39.8,68.1,,94,1,1;37,61.5,,94,2,1;41.3,29,,94,1,1;36.9,40.8,,137,4,1;32.8,51.2,,94,1,1;32.5,56.7,,94,2,1;27.1,34.8,,94,1,1;22,52.6,,94,3,1" },
 			},
@@ -7625,6 +7744,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1439} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 1439, x = 39.1, y = 81.5, f = "e", spotsPacked = "39.1,81.5,,188,2;44.3,79.9,,100,2,1;34.7,86.1,,153,9,1;43.9,85.7,,100,3,1;33.5,80.4,,100,2,1;37.4,89.8,,100,2,1;39.2,72.6,,100,3,1;43.8,72.3,,100,3,1;31.4,90,,134,5,1;39.5,61.1,,100,1,1;42.2,58.3,,100,1,1;35.5,55.6,,100,1,1;45.6,51.6,,137,6,1;37.8,49.4,,100,1,1;44.4,45.6,,129,3,1;47.2,39.6,,100,2,1;42.9,37.1,,146,5,1;49.9,35.7,,100,2,1;39.6,31.2,,100,2,1;54.6,33.8,,103,9,1;40.3,26.6,,100,1,1;44.2,27.1,,100,1,1;49.6,27.5,,100,2,1;56.2,28.1,,100,2,1;43.1,22.3,,100,1,1;52.9,23.1,,100,1,1;48.9,20.7,,100,1,1;59.2,25.6,,113,3,1;55.7,19.2,,100,2,1;52.7,17.4,,130,3,1;61.2,21.2,,100,2,1;61.4,16.3,,100,2,1;58.4,14.1,,100,2,1;61.4,9.2,,100,3,1" },
 			},
@@ -7633,6 +7753,7 @@ G(function() return {
 			title = "{item:2835} ({zone:2521})",
 			only = { races = { "SKYBORNE" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:2521} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 2521, x = 40.2, y = 28, spotsPacked = "40.2,28,,74,4;40,32.2,,50,1,1;37.9,24.8,,50,3,1;43.5,29.6,,50,2,1;36.9,30.1,,50,3,1;44.5,24.8,,50,3,1;38.9,35.3,,50,1,1;36,23.1,,50,2,1;36.6,34.2,,50,1,1;45.8,29.8,,50,2,1;43.3,35.3,,50,2,1;34.9,33.3,,50,1,1;44.7,20.5,,50,2,1;45.7,35.7,,50,1,1;48.1,26.3,,50,3,1;40.4,41.1,,50,1,1;46.5,17.6,,50,1,1;49.5,23.5,,50,1,1;43.7,41.8,,50,1,1;48.7,20.4,,50,1,1;49,35.4,,50,2,1;42.1,43.1,,50,2,1;37.2,43.2,,50,2,1;46.4,41.7,,50,1,1;46.2,46.6,,50,2,1;39.8,48.9,,90,9,1;43.9,48.4,,50,6,1;35.9,49.4,,76,5,1;54.6,37.1,,50,1,1;56.2,31.2,,50,1,1;42.2,53,,50,3,1;57.3,28.7,,50,1,1;48.1,51.4,,50,1,1;37,54.3,,50,3,1;53.4,46.5,,50,1,1;33.8,53.6,,50,3,1;42.7,55.3,,50,2,1;57.9,36,,65,3,1;44.9,55.6,,50,1,1;55.9,44.9,,50,1,1;40.7,57.3,,50,2,1;47.7,55.6,,50,2,1;60,31,,50,2,1;60.2,34.1,,50,1,1;38.2,58.8,,50,2,1;51.1,55,,72,3,1;45.8,59.3,,50,1,1;59.8,41.8,,50,1,1;48.2,59.5,,50,2,1;59.6,45.9,,50,3,1;58.3,51.3,,50,1,1;42.4,65,,50,2,1;57.7,55.1,,50,2,1;45.5,65.3,,50,2,1;49,63.9,,50,1,1;55.7,58.5,,50,2,1;60.5,53.1,,50,2,1;53.3,63.4,,50,2,1;58.3,59.6,,50,2,1;51.6,67.2,,50,3,1;56.6,63.3,,62,6,1;62.9,54.4,,50,2,1;49.5,69.4,,66,3,1;62.1,59.3,,50,1,1;55.9,66.9,,50,2,1;60.9,61.5,,50,3,1;54.1,68.7,,55,3,1;44.8,74.3,,54,3,1;60.2,65.5,,50,3,1;51.4,73.5,,50,2,1;65.4,59.5,,50,1,1;46.3,76.9,,50,2,1;63.5,64.9,,50,3,1;53.5,75.4,,50,2,1;52.1,77.1,,50,1,1;45.3,80.3,,50,3,1;56.1,76.4,,50,1,1;69.8,59.3,,50,1,1;48,81.5,,50,1,1;54.8,78.8,,50,2,1;46.9,84.1,,50,2,1;52.1,83.4,,50,1,1;48.8,85.5,,50,1,1" },
 			},
@@ -7641,6 +7762,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1411})",
 			only = { races = { "ORC", "TROLL" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1411} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 1411, x = 49.5, y = 35.9, f = "e", spotsPacked = "49.5,35.9,,121,3;46.6,37.2,,63,1,1;49.8,41.1,,63,1,1;52.1,31.5,,64,2,1;47,31.3,,65,2,1;54.7,36.2,,96,3,1;43.8,34.6,,63,1,1;53.7,28.7,,63,2,1;51.9,26.5,,105,9,1;42.9,38.9,,63,2,1;53.3,45.9,,63,2,1;56.6,40.3,,63,2,1;48.4,48.6,,122,6,1;40.9,33.9,,63,1,1;43,25.7,,96,9,1;52.4,22.4,,85,4,1;45.2,49.3,,63,3,1;50.1,51.1,,63,2,1;59.2,41.1,,63,1,1;39.5,40.2,,63,1,1;39.6,30.2,,76,5,1;55.5,22.6,,63,2,1;50.1,18.9,,120,7,1;39.7,25.5,,84,9,1;58.9,47.1,,63,1,1;53.9,18.4,,63,4,1;42.7,51.6,,63,1,1;50.6,54.9,,63,2,1;36.4,35.4,,68,3,1;40.5,50.3,,63,1,1;42.1,18.8,,63,2,1;36.1,27.6,,63,2,1;61,49.3,,63,1,1;36,44.8,,63,2,1;56.3,16.1,,63,1,1;54.2,13.9,,63,1,1;37.8,51.1,,63,2,1;37.6,20.9,,63,1,1;59.5,17.8,,63,1,1;38.9,54.5,,63,1,1;54.2,59.8,,89,4,1;60.4,55.6,,63,1,1;39.6,14.4,,63,1,1;52.7,9.5,,96,8,1;50.5,63.1,,63,1,1;55.5,9.1,,75,4,1;55.5,63.2,,63,1,1;60.6,60.9,,63,2,1;55.3,68.1,,80,4,1;61.7,65.7,,63,1,1;50.4,71.3,,63,2,1;59.3,69.5,,63,1,1;56.5,71.5,,63,1,1;51.1,75,,77,3,1;48.5,79.1,,91,5,1;68.5,69.8,,63,1,1;59.5,78.1,,63,1,1;68.1,73.5,,63,1,1" },
 			},
@@ -7649,6 +7771,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1412})",
 			only = { races = { "TAUREN" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1412} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 1412, x = 56.4, y = 44.1, spotsPacked = "56.4,44.1,,189,5;57.4,39.4,,103,6,1;60.3,45.3,,106,4,1;58.4,52.5,,106,3,1;59.6,32.9,,83,1,1;58.9,58.4,,83,2,1;48.2,33.8,,83,1,1;53.1,24.2,,101,4,1;63.9,69.4,,142,5,1;44.2,23.2,,83,1,1;49.7,18,,83,2,1;58.2,73.4,,83,1,1;52.5,74.8,,105,3,1;34.6,41.7,,83,2,1;34.4,47,,97,3,1;37.6,26,,83,2,1;47.4,75.3,,83,1,1;34.9,56.3,,131,5,1;40.2,18.9,,83,2,1;43.1,74.4,,83,2,1;31.4,35.9,,83,2,1;34,63.7,,115,8,1;35.4,71.5,,83,2,1;35.1,78.3,,83,2,1" },
 			},
@@ -7657,6 +7780,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1420})",
 			only = { races = { "SCOURGE" } },
 			note = "286 {item:2835} for {spell:2660} and {spell:3320} (116 of them for 75-150: pick them all now): {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1420} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 286, map = 1420, x = 50.7, y = 34.3, f = "e", spotsPacked = "50.7,34.3,,169,2;51.5,26.8,,90,2,1;54.1,43.7,,122,4,1;57.6,29.7,,90,2,1;49,47.3,,90,2,1;38.1,38,,123,5,1;54.3,53.9,,90,2,1;63.5,27.2,,90,1,1;65.9,45.1,,90,1,1;38.8,54.5,,106,3,1;69.8,42.7,,90,1,1;33.5,52.8,,90,1,1;29.7,42.5,,90,1,1;68.6,54.3,,90,1,1;45.5,68.5,,171,4,1;49.7,70.4,,90,2,1;76.8,31.4,,117,3,1;77.7,38,,107,3,1;76,55.3,,103,4,1;70.3,67.1,,90,1,1;81,42.5,,90,2,1;81.7,26.4,,90,2,1;81.2,50.6,,90,2,1;85.3,37.3,,111,5,1;81.4,58.8,,90,2,1;83.7,68.3,,90,1,1;81.4,74,,90,3,1;91.2,51.6,,90,1,1" },
 			},
@@ -7664,47 +7788,53 @@ G(function() return {
 		{
 			title = "{spell:2660} to 35",
 			note = "{spell:2660} is orange at 1 (yellow 15, green 35, grey 55): about 42 crafts to 35. Each takes 1 {item:2835}. One {item:2835} a craft, a point every craft to 15.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2862, spell = 2660, reagents = { { item = 2835, count = 1, itemName = "Rough Stone" } }, skillLine = 164, untilSkill = 35 },
+				{ t = "craft", item = 2862, spell = 2660, grey = 55, reagents = { { item = 2835, count = 1, itemName = "Rough Stone" } }, skillLine = 164, untilSkill = 35, yellow = 15 },
 			},
 		},
 		{
 			title = "{skill:164} recipes at 35",
 			note = "Back to a {skill:164} trainer: {spell:3320} (from 25, 1s). Also learn {spell:1230171} (1s): Forever's {skill:164} camp item, 1 {item:2835} and 1 {item:2840}, placed at a campsite beside a campfire for its buff. The Camping 101: {skill:164} quest from your starting area's camping guide (after The Great Outdoors) sends you to a blacksmithing trainer who teaches it free.",
+			section = 1,
 			goals = {
-				{ t = "learn", spell = 3320, candidates = { 9, 6, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
-				{ t = "learn", spell = 1230171, candidates = { 9, 6, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
+				{ t = "learn", spell = 3320, candidates = { 10, 2, 8, 3, 6, 4, 1, 5, 7, 9, 11, 12 }, skillLine = 164 },
+				{ t = "learn", spell = 1230171, candidates = { 10, 2, 8, 3, 6, 4, 1, 5, 7, 9, 11, 12 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{spell:3320} to 75",
 			note = "{spell:3320} is orange at 35 (yellow 45, green 65, grey 85): about 64 crafts to 75. Each takes 2 {item:2835}. Two {item:2835} a craft. Grinding stones are parts for later plans; the extras sell to vendors.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 3470, spell = 3320, reagents = { { item = 2835, count = 2, itemName = "Rough Stone" } }, skillLine = 164, untilSkill = 75 },
+				{ t = "craft", item = 3470, spell = 3320, grey = 85, reagents = { { item = 2835, count = 2, itemName = "Rough Stone" } }, skillLine = 164, untilSkill = 75, yellow = 45 },
 				{ t = "skill", level = 75, skill = "Blacksmithing", skillLine = 164 },
 			},
 		},
 		{
 			title = "Journeyman {skill:164}",
-			note = "Journeyman raises the cap from 75 to 150 for 5s; it needs {skill:164} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:164} trainer teaches it: Alliance {npc:4258} ({zone:1455}), {npc:2836} ({zone:1434}), {npc:3136} ({zone:1431}), {npc:252479} ({zone:2521}), {npc:10276} ({zone:1455}) and {npc:5511} ({zone:1453}); Horde {npc:2836} ({zone:1434}), {npc:252479} ({zone:2521}), {npc:4596} ({zone:1458}), {npc:2998} ({zone:1456}), {npc:3355} ({zone:1454}), Snarl ({zone:1454}) and Traugh ({zone:1413}). The arrow picks the nearest of your faction. Learn now: {spell:2666} (from 45, 2s) and {spell:3326} (from 50, 2s 50c). 75-150 takes about 19s 50c of recipes and 18c of vendor goods, plus 256 {item:2836}, 28 {item:2838}, 210 {item:2840} and 320 {item:2841} to gather or buy.",
+			note = "Journeyman raises the cap from 75 to 150 for 5s; it needs {skill:164} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:164} trainer teaches it: Alliance {npc:3136} ({zone:1431}), {npc:252479} ({zone:2521}), {npc:10276} ({zone:1455}) and {npc:5511} ({zone:1453}); Horde {npc:276067} ({zone:1420}), {npc:252479} ({zone:2521}), {npc:4596} ({zone:1458}), {npc:2998} ({zone:1456}), {npc:1383} ({zone:1454}) and {npc:3478} ({zone:1413}). The arrow picks the nearest of your faction. Learn now: {spell:2666} (from 45, 2s) and {spell:3326} (from 50, 2s 50c). 75-150 takes about 19s 50c of recipes and 18c of vendor goods, plus 256 {item:2836}, 28 {item:2838}, 210 {item:2840} and 320 {item:2841} to gather or buy.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 9, 6, 2, 4, 3, 1, 5, 7 }, rank = 2, rankMax = 150, skill = "Blacksmithing", skillLine = 164 },
-				{ t = "learn", spell = 2666, candidates = { 9, 6, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
-				{ t = "learn", spell = 3326, candidates = { 9, 6, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
+				{ t = "train", candidates = { 13, 2, 14, 15, 16, 17, 18, 19, 12 }, rank = 2, rankMax = 150, skill = "Blacksmithing", skillLine = 164 },
+				{ t = "learn", spell = 2666, candidates = { 10, 2, 8, 3, 6, 4, 1, 5, 7, 9, 11, 12 }, skillLine = 164 },
+				{ t = "learn", spell = 3326, candidates = { 10, 2, 8, 3, 15, 4, 16, 1, 17, 5, 18, 19, 11, 12 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{skill:164} 75-150: vendor goods",
 			note = "Buy the whole bracket's share in one go: {item:5956} (a tool: one, kept in your bags, 18c); about 18c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:5519}, {npc:1286} and {npc:5512}; {zone:1454}: {npc:3367}, {npc:5817} and Sovik).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 5956, note = "a tool, keep it in your bags", candidates = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90 } },
+				{ t = "buy", item = 5956, note = "a tool, keep it in your bags", candidates = { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 11, 98, 99 } },
 			},
 		},
 		{
 			title = "{item:2836} ({zone:1436})",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "256 {item:2836} for {spell:2672}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1436} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 256, map = 1436, x = 26.2, y = 64.5, f = "e", spotsPacked = "26.2,64.5,,40,1;26.8,72.3,,40,1,1;23.7,57.4,,40,1,1;31.6,59.9,,40,3,1;28.9,54.8,,40,1,1;33.9,63.7,,40,1,1;29.9,75.9,,40,1,1;29.8,49.1,,53,9,1;30.3,45.8,,58,12,1;33.2,81.8,,40,1,1;37.8,76.9,,40,1,1;33,45.5,,40,1,1;39.8,75.2,,40,2,1;29.4,40.9,,40,1,1;40.4,79.1,,46,7,1;42.9,72.9,,40,2,1;42.1,76.9,,46,4,1;31.5,38.8,,40,2,1;40.5,82.4,,78,9,1;37,87.9,,40,1,1;44.5,76.2,,48,4,1;43.5,79.6,,48,4,1;39.4,41.7,,40,1,1;46.2,59.2,,40,1,1;30.4,34.5,,40,1,1;27.8,33.1,,40,1,1;34.6,34.6,,40,1,1;47.7,70.8,,40,1,1;32,30.9,,40,1,1;47.7,77.5,,40,1,1;41.1,92.5,,40,1,1;50,59.8,,40,1,1;49.4,75.9,,40,1,1;47.9,45.8,,40,1,1;28.5,27,,40,1,1;45.1,39.7,,40,1,1;36.8,29.6,,40,1,1;32.9,26.1,,40,1,1;35,24.3,,40,1,1;49.7,39.2,,40,1,1;48.6,35.9,,40,1,1;53.7,80.5,,40,1,1;36.3,21,,40,1,1;56.1,79.6,,40,1,1;40.9,22.2,,40,1,1;58.8,69.4,,40,1,1;44.8,22.4,,68,17,1;57.6,45.7,,40,1,1;61.5,54.8,,40,1,1;45.7,19.3,,47,17,1;62.3,69,,40,1,1;63.1,79,,40,2,1;54.3,21.9,,40,1,1;49.5,14.6,,40,1,1;66.5,54.6,,40,1,1;64.1,40.4,,40,1,1;66.7,76.9,,40,1,1;61.1,26.1,,40,1,1;63.5,31.5,,40,1,1;55.4,14.4,,40,1,1;60.9,22.2,,40,1,1;57.4,15.3,,40,1,1;58.5,8.7,,40,1,1" },
 			},
@@ -7713,6 +7843,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1432})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "256 {item:2836} for {spell:2672}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1432} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 256, map = 1432, x = 23.1, y = 24.5, f = "e", spotsPacked = "23.1,24.5,,185,3;35.1,23.2,,100,12,1;35.8,12.6,,71,2,1;25.9,47.6,,71,3,1;41.3,30,,71,2,1;41.6,19.1,,71,1,1;41.3,11,,71,2,1;26.7,57.4,,71,3,1;34.7,58.7,,71,3,1;43.3,49.5,,71,3,1;48.1,37.3,,112,4,1;50.3,23.2,,71,1,1;52,13.4,,71,1,1;43.6,60.5,,102,4,1;49.9,52.5,,71,2,1;41.9,66,,71,2,1;32.8,73.3,,99,5,1;57.8,14.2,,71,1,1;41.1,72,,94,3,1;56.7,46,,71,2,1;29.2,83.9,,73,4,1;56.3,59.5,,71,1,1;66.2,25.5,,71,2,1;35.9,89.6,,91,7,1;59.4,69.8,,113,6,1;71.1,19.6,,96,4,1;71.1,31.4,,71,2,1;70.5,47.4,,90,3,1;76.9,26,,71,2,1;76.9,15.3,,71,3,1;69.8,65.6,,71,5,1;77.9,35.5,,71,2,1;67.4,76.2,,103,4,1;76.6,57,,91,4,1;78.9,46.9,,71,1,1;76.3,65.4,,71,1,1;77.8,74.4,,71,2,1;84.2,57.3,,71,1,1" },
 			},
@@ -7721,6 +7852,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "256 {item:2836} for {spell:2672}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1439} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 256, map = 1439, x = 59.3, y = 19.6, f = "e", spotsPacked = "59.3,19.6,,242,4;61.2,14.6,,150,3,1;61.4,8.8,,150,1,1;50.6,21.7,,150,1,1;48.2,29.1,,150,1,1;45.6,19,,150,2,1;48.1,42.5,,150,1,1;38.6,24.9,,150,1,1;45.8,54.5,,150,1,1;45.3,59.2,,150,2,1;36,57.7,,150,2,1;37.8,63.2,,150,1,1;45,86.8,,150,2,1;32.3,78.7,,150,1,1;39.8,85.5,,150,1,1" },
 			},
@@ -7729,6 +7861,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "256 {item:2836} for {spell:2672}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 256, map = 1413, x = 40.6, y = 45.7, f = "e", spotsPacked = "40.6,45.7,,150,1;44.9,51.2,,150,1,1;45.4,36.1,,150,1,1;51.2,57.9,,150,1,1;39.5,23.6,,150,1,1;45,23.6,,150,1,1;48,66.7,,150,1,1;57.1,43.6,,150,1,1;55.4,27.7,,150,1,1;43.4,74.6,,150,1,1;37.8,14.7,,150,2,1;41.4,78.5,,150,2,1;48.6,14.8,,150,1,1;64.2,49.5,,150,1,1;50.9,11.6,,150,1,1;43.2,83.5,,150,1,1;47.7,85.4,,203,11,1;59.5,3,,150,1,1" },
 			},
@@ -7737,6 +7870,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1421})",
 			only = { races = { "SCOURGE" } },
 			note = "256 {item:2836} for {spell:2672}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1421} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 256, map = 1421, x = 41.6, y = 27.4, f = "e", spotsPacked = "41.6,27.4,,177,6;40.8,32,,76,2,1;41.1,21.7,,94,3,1;49.1,24.2,,113,4,1;47.5,35.4,,91,4,1;45,15.6,,76,2,1;35.2,18.8,,125,6,1;49.1,13.2,,76,2,1;35.4,11.2,,87,8,1;53.9,23.4,,76,1,1;53.8,33.5,,109,6,1;49.5,43.3,,82,3,1;53,16.8,,76,2,1;56.7,27.1,,76,1,1;48.6,48.3,,76,1,1;45,50.6,,130,5,1;57.6,33,,76,1,1;54.3,10,,82,3,1;57.8,43.2,,76,3,1;56.3,47.4,,107,5,1;47.4,57.6,,76,2,1;56.8,54.7,,76,3,1;62,7.4,,76,1,1;65,16.1,,76,1,1;66.4,27.9,,102,3,1;64.5,43.8,,76,2,1;50.9,65.5,,76,3,1;47.3,68.7,,76,2,1;41.2,70.5,,76,2,1;60,61,,76,1,1;71.1,13.1,,76,1,1;67.8,52.7,,76,1,1;73.4,29.3,,76,1,1;47.3,76.4,,76,1,1;65.9,61.3,,76,1,1;43.2,78.6,,107,4,1;58.8,71.9,,103,7,1;76.7,20.3,,76,1,1;56,80.3,,76,1,1;52,85.9,,76,2,1;62.3,81,,76,3,1" },
 			},
@@ -7745,6 +7879,7 @@ G(function() return {
 			title = "{item:2838} ({zone:1417})",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "28 {item:2838} for {spell:2674}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1417} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2838, count = 28, map = 1417, x = 15.8, y = 63.2, f = "e", spotsPacked = "15.8,63.2,,53,2;15.7,67.2,,40,2,1;18.5,56.2,,40,1,1;16.7,71.2,,40,2,1;18.7,71.6,,40,1,1;17.2,52.7,,40,1,1;20.8,71.5,,40,1,1;23.7,54.3,,40,1,1;24,72,,54,4,1;21.6,76.2,,42,3,1;17.3,47.7,,40,1,1;25.8,70.2,,40,2,1;19.2,83.9,,40,1,1;22.3,43.6,,40,1,1;29.8,69.5,,40,4,1;31.3,61.7,,40,1,1;20.7,39.5,,40,1,1;31.8,70.2,,40,1,1;32.9,65,,40,2,1;18.3,89.5,,40,1,1;25,86.1,,43,4,1;20.2,36,,40,1,1;22.3,89.5,,50,3,1;34.6,68.4,,40,2,1;34.9,61.9,,40,1,1;35.3,65.7,,40,1,1;24.7,36.6,,40,1,1;21.7,91.9,,40,1,1;19.2,33.3,,40,3,1;32.1,45,,72,11,1;19.2,93.3,,40,1,1;28.4,88.2,,40,1,1;36.2,56.2,,41,3,1;25.2,91.7,,40,2,1;37.4,65.9,,40,1,1;37.2,68.8,,40,1,1;34.8,46.4,,51,4,1;34.1,43.5,,47,8,1;38.7,61.7,,40,1,1;26,31,,40,2,1;23.9,29.5,,40,1,1;28.5,32.6,,40,1,1;39.1,72.3,,40,2,1;40.6,60.5,,40,1,1;41.1,64.5,,40,1,1;40.2,49,,40,1,1;38.7,43.2,,40,1,1;44,70.2,,40,1,1;42.5,78.8,,40,1,1;45,65.9,,40,1,1;38,34.4,,40,3,1;46.1,71.8,,40,2,1;27.1,18.5,,40,1,1;47.7,67.6,,40,1,1;48.3,64.4,,40,1,1;34.2,21.7,,58,5,1;41.7,31.5,,40,1,1;31.3,18.7,,40,3,1;49.4,70.8,,40,2,1;29.6,15.9,,40,3,1;39.4,25,,40,2,1;38.3,22.9,,46,4,1;48.3,83.6,,41,3,1;48.2,41.3,,40,1,1;50,47.8,,40,2,1;44.6,31,,40,1,1;50.5,80.8,,40,3,1;51.5,76.6,,45,4,1;47.8,35.7,,40,1,1;48.1,32.9,,45,5,1;50,35.4,,40,3,1;54.4,70.8,,40,4,1;54.8,64.6,,40,1,1;53.2,45.1,,40,1,1;54.8,75,,40,1,1;54.3,79.4,,60,13,1;54.9,49.6,,45,3,1;57.9,71.4,,60,5,1;57.5,75.7,,40,2,1;57.5,48.1,,40,2,1;55.2,32.7,,40,1,1;62.2,66.7,,40,1,1;62.9,70.9,,40,1,1;59,33.7,,40,2,1;61.9,44.1,,40,2,1;64.3,74.5,,40,2,1;65.3,65.7,,40,1,1;61.6,31.4,,40,1,1;67.4,69.4,,40,1,1;67.3,75.4,,52,6,1;64.3,34.2,,40,2,1;68,66.2,,40,2,1;67,80.8,,52,10,1;69.5,74.3,,40,4,1;69.4,78.1,,43,8,1;69,81.8,,40,5,1;70.9,57.8,,40,3,1;71.1,70.6,,48,5,1;71.3,67.5,,49,4,1;66,26.9,,40,1,1;72,52.5,,51,3,1;72.2,49.6,,51,4,1;73,60.9,,47,5,1;73.8,64.5,,40,3,1;70,29,,52,4,1;74.7,47.4,,41,4,1;76.9,44.6,,40,5,1;79.7,43,,40,1,1;77.6,29.6,,44,3,1;79.7,37.1,,52,5,1;80.2,32.8,,40,1,1;82.7,38.9,,40,1,1" },
 			},
@@ -7753,22 +7888,25 @@ G(function() return {
 			title = "{item:2838} ({zone:1440})",
 			only = { races = { "NIGHTELF" } },
 			note = "28 {item:2838} for {spell:2674}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1440} is marked.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2838, count = 28, map = 1440, x = 70.7, y = 53.5, f = "e", spotsPacked = "70.7,53.5,,56,1;71.2,60.6,,112,1,1;64.6,55.4,,147,4,1;76.9,54.6,,112,2,1;63.6,47.4,,204,6,1;69.1,67.4,,112,4,1;64.6,64.3,,114,2,1;80.1,63.6,,146,4,1,30;65.3,74.5,,112,2,1;56.6,41,,112,2,1;74.4,77.8,,112,1,1;65.8,79.6,,112,1,1;83.3,73,,214,5,1,30;86,69.5,,112,2,1;51.8,48.8,,112,3,1;58.3,31.2,,112,1,1;70.5,83.5,,175,4,1;82.9,78.2,,112,3,1,30;91.4,49.4,,112,1,1;63,84,,112,1,1;93.3,56.4,,112,1,1;90.3,76.4,,112,1,1" },
+				{ t = "collect", item = 2838, count = 28, map = 1440, x = 70.7, y = 53.5, f = "e", fromNpcs = { { npc = 6073, npcName = "Searing Infernal" } }, fromNpcsAt = ";;;;;;;1;;;;;1;;;;;1;;;;", spotsPacked = "70.7,53.5,,56,1;71.2,60.6,,112,1,1;64.6,55.4,,147,4,1;76.9,54.6,,112,2,1;63.6,47.4,,204,6,1;69.1,67.4,,112,4,1;64.6,64.3,,114,2,1;80.1,63.6,,146,4,1,30;65.3,74.5,,112,2,1;56.6,41,,112,2,1;74.4,77.8,,112,1,1;65.8,79.6,,112,1,1;83.3,73,,214,5,1,30;86,69.5,,112,2,1;51.8,48.8,,112,3,1;58.3,31.2,,112,1,1;70.5,83.5,,175,4,1;82.9,78.2,,112,3,1,30;91.4,49.4,,112,1,1;63,84,,112,1,1;93.3,56.4,,112,1,1;90.3,76.4,,112,1,1" },
 			},
 		},
 		{
 			title = "{item:2838} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "28 {item:2838} for {spell:2674}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2838, count = 28, map = 1413, x = 45.2, y = 94.5, f = "e", spotsPacked = "45.2,94.5,,70,2;46.9,96.8,,43,1,1;42.3,95.1,,43,2,1;48.5,96.5,,43,3,1;48.9,97.3,,53,5,1;40.6,92.8,,43,2,1;49.5,98.6,,43,3,1;51.7,88.2,,43,2,1;52.9,91.5,,43,1,1;55.2,89.4,,43,2,1;52.8,79.9,,43,1,1;52.6,65.8,,43,2,1;51.5,65.1,,46,4,1;54.8,60.4,,43,1,1;60.5,61.2,,43,1,1;66.5,58.3,,43,1,1;68.3,57.5,,43,1,1;54.8,0.8,,43,1,1,30" },
+				{ t = "collect", item = 2838, count = 28, map = 1413, x = 45.2, y = 94.5, f = "e", fromNpcs = { { npc = 6073, npcName = "Searing Infernal" } }, fromNpcsAt = ";;;;;;;;;;;;;;;;;1", spotsPacked = "45.2,94.5,,70,2;46.9,96.8,,43,1,1;42.3,95.1,,43,2,1;48.5,96.5,,43,3,1;48.9,97.3,,53,5,1;40.6,92.8,,43,2,1;49.5,98.6,,43,3,1;51.7,88.2,,43,2,1;52.9,91.5,,43,1,1;55.2,89.4,,43,2,1;52.8,79.9,,43,1,1;52.6,65.8,,43,2,1;51.5,65.1,,46,4,1;54.8,60.4,,43,1,1;60.5,61.2,,43,1,1;66.5,58.3,,43,1,1;68.3,57.5,,43,1,1;54.8,0.8,,43,1,1,30" },
 			},
 		},
 		{
 			title = "{item:2838} ({zone:1417})",
 			only = { races = { "SCOURGE" } },
 			note = "28 {item:2838} for {spell:2674}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1417} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2838, count = 28, map = 1417, x = 15.8, y = 63.2, f = "e", spotsPacked = "15.8,63.2,,53,2;15.7,67.2,,40,2,1;18.5,56.2,,40,1,1;16.7,71.2,,40,2,1;18.7,71.6,,40,1,1;17.2,52.7,,40,1,1;20.8,71.5,,40,1,1;23.7,54.3,,40,1,1;24,72,,54,4,1;21.6,76.2,,42,3,1;17.3,47.7,,40,1,1;25.8,70.2,,40,2,1;19.2,83.9,,40,1,1;22.3,43.6,,40,1,1;29.8,69.5,,40,4,1;31.3,61.7,,40,1,1;20.7,39.5,,40,1,1;31.8,70.2,,40,1,1;32.9,65,,40,2,1;18.3,89.5,,40,1,1;25,86.1,,43,4,1;20.2,36,,40,1,1;22.3,89.5,,50,3,1;34.6,68.4,,40,2,1;34.9,61.9,,40,1,1;35.3,65.7,,40,1,1;24.7,36.6,,40,1,1;21.7,91.9,,40,1,1;19.2,33.3,,40,3,1;32.1,45,,72,11,1;19.2,93.3,,40,1,1;28.4,88.2,,40,1,1;36.2,56.2,,41,3,1;25.2,91.7,,40,2,1;37.4,65.9,,40,1,1;37.2,68.8,,40,1,1;34.8,46.4,,51,4,1;34.1,43.5,,47,8,1;38.7,61.7,,40,1,1;26,31,,40,2,1;23.9,29.5,,40,1,1;28.5,32.6,,40,1,1;39.1,72.3,,40,2,1;40.6,60.5,,40,1,1;41.1,64.5,,40,1,1;40.2,49,,40,1,1;38.7,43.2,,40,1,1;44,70.2,,40,1,1;42.5,78.8,,40,1,1;45,65.9,,40,1,1;38,34.4,,40,3,1;46.1,71.8,,40,2,1;27.1,18.5,,40,1,1;47.7,67.6,,40,1,1;48.3,64.4,,40,1,1;34.2,21.7,,58,5,1;41.7,31.5,,40,1,1;31.3,18.7,,40,3,1;49.4,70.8,,40,2,1;29.6,15.9,,40,3,1;39.4,25,,40,2,1;38.3,22.9,,46,4,1;48.3,83.6,,41,3,1;48.2,41.3,,40,1,1;50,47.8,,40,2,1;44.6,31,,40,1,1;50.5,80.8,,40,3,1;51.5,76.6,,45,4,1;47.8,35.7,,40,1,1;48.1,32.9,,45,5,1;50,35.4,,40,3,1;54.4,70.8,,40,4,1;54.8,64.6,,40,1,1;53.2,45.1,,40,1,1;54.8,75,,40,1,1;54.3,79.4,,60,13,1;54.9,49.6,,45,3,1;57.9,71.4,,60,5,1;57.5,75.7,,40,2,1;57.5,48.1,,40,2,1;55.2,32.7,,40,1,1;62.2,66.7,,40,1,1;62.9,70.9,,40,1,1;59,33.7,,40,2,1;61.9,44.1,,40,2,1;64.3,74.5,,40,2,1;65.3,65.7,,40,1,1;61.6,31.4,,40,1,1;67.4,69.4,,40,1,1;67.3,75.4,,52,6,1;64.3,34.2,,40,2,1;68,66.2,,40,2,1;67,80.8,,52,10,1;69.5,74.3,,40,4,1;69.4,78.1,,43,8,1;69,81.8,,40,5,1;70.9,57.8,,40,3,1;71.1,70.6,,48,5,1;71.3,67.5,,49,4,1;66,26.9,,40,1,1;72,52.5,,51,3,1;72.2,49.6,,51,4,1;73,60.9,,47,5,1;73.8,64.5,,40,3,1;70,29,,52,4,1;74.7,47.4,,41,4,1;76.9,44.6,,40,5,1;79.7,43,,40,1,1;77.6,29.6,,44,3,1;79.7,37.1,,52,5,1;80.2,32.8,,40,1,1;82.7,38.9,,40,1,1" },
 			},
@@ -7776,69 +7914,78 @@ G(function() return {
 		{
 			title = "{spell:3320} to 83",
 			note = "{spell:3320} is green at 75 (yellow 45, green 65, grey 85): about 58 crafts to 83. Each takes 2 {item:2835}. Two {item:2835} a craft. Grinding stones are parts for later plans; the extras sell to vendors.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 3470, spell = 3320, reagents = { { item = 2835, count = 2, itemName = "Rough Stone" } }, skillLine = 164, untilSkill = 83 },
+				{ t = "craft", item = 3470, spell = 3320, grey = 85, reagents = { { item = 2835, count = 2, itemName = "Rough Stone" } }, skillLine = 164, untilSkill = 83, yellow = 45 },
 			},
 		},
 		{
 			title = "{spell:2666} to 100",
 			note = "{spell:2666} is orange at 83 (yellow 85, green 105, grey 125): about 21 crafts to 100. Each takes 10 {item:2840}. Forever teaches {spell:2666} from 45; it stays orange to 85. Ten Copper Bars a craft: smelt your {item:2770}. Needs an anvil nearby. {item:5956} is a tool: keep it in your bags. {item:2840} (210 for 75-150): {skill:186}: smelt {item:2770}; or the Auction House.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 2857, spell = 2666, reagents = { { item = 2840, count = 10, itemName = "Copper Bar" } }, skillLine = 164, untilSkill = 100 },
+				{ t = "craft", item = 2857, spell = 2666, grey = 125, reagents = { { item = 2840, count = 10, itemName = "Copper Bar" } }, skillLine = 164, untilSkill = 100, yellow = 85 },
 			},
 		},
 		{
 			title = "{skill:164} recipes at 100",
 			note = "Back to a {skill:164} trainer: {spell:2674} (from 100, 10s).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2674, candidates = { 6, 8, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
+				{ t = "learn", spell = 2674, candidates = { 14, 13, 2, 15, 16, 17, 18, 19, 12 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{spell:2674} to 113",
 			note = "{spell:2674} is yellow at 100 (yellow 100, green 107, grey 115): about 28 crafts to 113. Each takes 1 {item:2838}. {item:2838} comes from Iron Deposits; one a craft.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 2871, spell = 2674, reagents = { { item = 2838, count = 1, itemName = "Heavy Stone" } }, skillLine = 164, untilSkill = 113 },
+				{ t = "craft", item = 2871, spell = 2674, grey = 115, reagents = { { item = 2838, count = 1, itemName = "Heavy Stone" } }, skillLine = 164, untilSkill = 113, yellow = 100 },
 			},
 		},
 		{
 			title = "{skill:164} recipes at 113",
 			note = "Back to a {skill:164} trainer: {spell:2672} (from 95, 5s).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2672, candidates = { 6, 8, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
+				{ t = "learn", spell = 2672, candidates = { 14, 13, 2, 15, 16, 17, 18, 19, 12 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{spell:2672} to 150",
 			note = "{spell:2672} is orange at 113 (yellow 125, green 140, grey 155): about 64 crafts to 150. Each takes 5 {item:2841} and 2 {spell:3326}. Make the 128 {spell:3326} first. Each bracer takes two Coarse Grinding Stones ({item:2836} from Tin Veins): make them first; they give points too. Needs an anvil nearby. {item:2841} (320 for 75-150): {skill:186}: smelt {item:2840} and {item:3576}; or the Auction House. {skill:164} 150 is a Legacy System milestone.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 3478, spell = 3326, count = 128, reagents = { { item = 2836, count = 2, itemName = "Coarse Stone" } }, skillLine = 164 },
-				{ t = "craft", item = 2868, spell = 2672, reagents = { { item = 2841, count = 5, itemName = "Bronze Bar" }, { item = 3478, count = 2, itemName = "Coarse Grinding Stone" } }, skillLine = 164, untilSkill = 150 },
+				{ t = "craft", item = 2868, spell = 2672, grey = 155, reagents = { { item = 2841, count = 5, itemName = "Bronze Bar" }, { item = 3478, count = 2, itemName = "Coarse Grinding Stone" } }, skillLine = 164, untilSkill = 150, yellow = 125 },
 				{ t = "skill", level = 150, skill = "Blacksmithing", skillLine = 164 },
 			},
 		},
 		{
 			title = "Expert {skill:164}",
-			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:164} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:4258} ({zone:1455}) and {npc:2836} ({zone:1434}); Horde {npc:2836} ({zone:1434}) and {npc:3355} ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:3501} (from 140) and {spell:3337} (from 100, 10s). 150-225 takes about 10s of recipes and 28s of vendor goods, plus 234 {item:2838}, 168 {item:3575}, 195 {item:3859}, 320 {item:3860} and 30 {item:7912} to gather or buy.",
+			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:164} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:4258} ({zone:1455}); Horde {npc:3355} ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:3501} (from 140) and {spell:3337} (from 100, 10s). 150-225 takes about 10s of recipes and 28s of vendor goods, plus 234 {item:2838}, 168 {item:3575}, 195 {item:3859}, 320 {item:3860} and 30 {item:7912} to gather or buy.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", candidates = { 6, 8, 4, 5, 7 }, rank = 3, rankMax = 225, skill = "Blacksmithing", skillLine = 164 },
-				{ t = "learn", spell = 3501, candidates = { 6, 8, 4, 5, 7 }, skillLine = 164 },
-				{ t = "learn", spell = 3337, candidates = { 6, 8, 2, 4, 3, 1, 5, 7 }, skillLine = 164 },
+				{ t = "train", candidates = { 100, 101 }, rank = 3, rankMax = 225, skill = "Blacksmithing", skillLine = 164 },
+				{ t = "learn", spell = 3501, candidates = { 100, 13, 2, 15, 16, 17, 18, 19, 12 }, skillLine = 164 },
+				{ t = "learn", spell = 3337, candidates = { 14, 13, 2, 15, 16, 17, 18, 19, 12 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{skill:164} 150-225: vendor goods",
 			note = "Buy the whole bracket's share in one go: 28 {item:2605} (28s); about 28s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}). If you smelt the 195 {item:3859} yourself ({skill:186} 165: an {item:3575} and a Coal each), buy 195 Coal too (9g 75s, trade and blacksmithing suppliers); skip them if you buy the bars.",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 2605, count = 28, candidates = { 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 59, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 82, 130, 131, 85, 132, 133, 134, 90 } },
-				{ t = "buy", item = 3857, count = 195, optional = true, candidates = { 21, 19, 16, 18, 22, 135, 136, 137, 138, 139, 25, 29, 140, 141, 142, 33, 34, 143, 144, 38, 145, 43, 45, 46, 44, 47, 49, 146, 55, 147, 61, 62, 64, 67, 68, 69, 70, 71, 73, 74, 148, 76, 77, 78, 149, 80, 81, 82, 83, 84, 85, 86, 87, 88, 150 } },
+				{ t = "buy", item = 2605, count = 28, candidates = { 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 69, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 92, 141, 142, 95, 143, 144, 145, 99 } },
+				{ t = "buy", item = 3857, count = 195, optional = true, candidates = { 31, 29, 26, 28, 32, 146, 147, 148, 149, 150, 35, 39, 151, 152, 153, 43, 44, 154, 155, 48, 156, 53, 55, 56, 54, 57, 59, 157, 65, 158, 71, 72, 74, 77, 78, 79, 80, 81, 83, 84, 159, 86, 87, 88, 160, 90, 91, 92, 93, 94, 95, 96, 97, 11, 12 } },
 			},
 		},
 		{
 			title = "{item:2838} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "234 {item:2838} for {item:6040}: {skill:186}: {object:1735} (skill 125) in {zone:1417} (30-40), {zone:1434} (30-45) and {zone:1443} (30-40); or the Auction House. The densest cluster of {object:1735} in {zone:1417} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 2838, count = 234, map = 1417, x = 15.8, y = 63.2, f = "e", spotsPacked = "15.8,63.2,,53,2;15.7,67.2,,40,2,1;18.5,56.2,,40,1,1;16.7,71.2,,40,2,1;18.7,71.6,,40,1,1;17.2,52.7,,40,1,1;20.8,71.5,,40,1,1;23.7,54.3,,40,1,1;24,72,,54,4,1;21.6,76.2,,42,3,1;17.3,47.7,,40,1,1;25.8,70.2,,40,2,1;19.2,83.9,,40,1,1;22.3,43.6,,40,1,1;29.8,69.5,,40,4,1;31.3,61.7,,40,1,1;20.7,39.5,,40,1,1;31.8,70.2,,40,1,1;32.9,65,,40,2,1;18.3,89.5,,40,1,1;25,86.1,,43,4,1;20.2,36,,40,1,1;22.3,89.5,,50,3,1;34.6,68.4,,40,2,1;34.9,61.9,,40,1,1;35.3,65.7,,40,1,1;24.7,36.6,,40,1,1;21.7,91.9,,40,1,1;19.2,33.3,,40,3,1;32.1,45,,72,11,1;19.2,93.3,,40,1,1;28.4,88.2,,40,1,1;36.2,56.2,,41,3,1;25.2,91.7,,40,2,1;37.4,65.9,,40,1,1;37.2,68.8,,40,1,1;34.8,46.4,,51,4,1;34.1,43.5,,47,8,1;38.7,61.7,,40,1,1;26,31,,40,2,1;23.9,29.5,,40,1,1;28.5,32.6,,40,1,1;39.1,72.3,,40,2,1;40.6,60.5,,40,1,1;41.1,64.5,,40,1,1;40.2,49,,40,1,1;38.7,43.2,,40,1,1;44,70.2,,40,1,1;42.5,78.8,,40,1,1;45,65.9,,40,1,1;38,34.4,,40,3,1;46.1,71.8,,40,2,1;27.1,18.5,,40,1,1;47.7,67.6,,40,1,1;48.3,64.4,,40,1,1;34.2,21.7,,58,5,1;41.7,31.5,,40,1,1;31.3,18.7,,40,3,1;49.4,70.8,,40,2,1;29.6,15.9,,40,3,1;39.4,25,,40,2,1;38.3,22.9,,46,4,1;48.3,83.6,,41,3,1;48.2,41.3,,40,1,1;50,47.8,,40,2,1;44.6,31,,40,1,1;50.5,80.8,,40,3,1;51.5,76.6,,45,4,1;47.8,35.7,,40,1,1;48.1,32.9,,45,5,1;50,35.4,,40,3,1;54.4,70.8,,40,4,1;54.8,64.6,,40,1,1;53.2,45.1,,40,1,1;54.8,75,,40,1,1;54.3,79.4,,60,13,1;54.9,49.6,,45,3,1;57.9,71.4,,60,5,1;57.5,75.7,,40,2,1;57.5,48.1,,40,2,1;55.2,32.7,,40,1,1;62.2,66.7,,40,1,1;62.9,70.9,,40,1,1;59,33.7,,40,2,1;61.9,44.1,,40,2,1;64.3,74.5,,40,2,1;65.3,65.7,,40,1,1;61.6,31.4,,40,1,1;67.4,69.4,,40,1,1;67.3,75.4,,52,6,1;64.3,34.2,,40,2,1;68,66.2,,40,2,1;67,80.8,,52,10,1;69.5,74.3,,40,4,1;69.4,78.1,,43,8,1;69,81.8,,40,5,1;70.9,57.8,,40,3,1;71.1,70.6,,48,5,1;71.3,67.5,,49,4,1;66,26.9,,40,1,1;72,52.5,,51,3,1;72.2,49.6,,51,4,1;73,60.9,,47,5,1;73.8,64.5,,40,3,1;70,29,,52,4,1;74.7,47.4,,41,4,1;76.9,44.6,,40,5,1;79.7,43,,40,1,1;77.6,29.6,,44,3,1;79.7,37.1,,52,5,1;80.2,32.8,,40,1,1;82.7,38.9,,40,1,1" },
 			},
@@ -7847,14 +7994,16 @@ G(function() return {
 			title = "{item:2838} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "234 {item:2838} for {item:6040}: {skill:186}: {object:1735} (skill 125) in {zone:1441} (25-35), {zone:1417} (30-40) and {zone:1434} (30-45); or the Auction House. The densest cluster of {object:1735} in {zone:1441} is marked.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 2838, count = 234, map = 1441, x = 8.9, y = 34.3, f = "e", spotsPacked = "8.9,34.3,,75,3;12.4,37.7,,86,4,1;14.9,34.5,,53,2,1;14.3,27.2,,53,1,1,29;12.2,24.3,,53,2,1;17.2,31,,53,1,1;16.5,40.6,,79,5,1;18.1,36.3,,53,2,1;16.7,26.1,,53,1,1;19.4,40.1,,53,1,1;15.8,18.9,,53,1,1;21.1,30.6,,53,1,1;22.1,40.9,,53,1,1;13.3,11.4,,53,1,1;24.6,29.1,,53,1,1;24.1,23.8,,53,2,1;27.5,41.9,,53,1,1;28.3,28.5,,53,2,1;27,46.6,,53,1,1;26.6,54,,80,15,1;29.3,50.1,,53,2,1;31.6,27.6,,53,1,1;32.3,47.2,,53,2,1;33.9,34.6,,53,1,1;32,52.6,,53,1,1;35.3,27.8,,53,3,1;38,37.3,,53,1,1;36.9,54.7,,105,4,1;40.2,50.8,,53,1,1;42.9,33.7,,95,10,1;40.1,57.7,,53,1,1;42.5,53.1,,53,2,1;45.3,39.3,,53,2,1;43.7,60.4,,53,2,1;48,41.2,,53,2,1;46.7,54.8,,53,1,1;48.1,58.7,,53,1,1;51.6,43.2,,53,1,1;52.7,47.1,,53,1,1;51.2,56.8,,53,1,1;55.2,52.3,,53,2,1;59.2,49.6,,53,2,1;58.5,55.2,,53,2,1;62,47.8,,53,1,1;63.3,60.3,,53,2,1,29;66.2,51.7,,53,3,1,29;66.6,60.8,,53,1,1,29;68.7,54.2,,53,1,1;69.8,69.2,,53,1,1;68.4,77.9,,53,1,1;66.3,84.5,,53,1,1;75.3,51,,53,1,1;77.7,62,,53,1,1;70,91.8,,56,3,1;80.1,63.5,,53,1,1;77.9,88.3,,66,3,1" },
+				{ t = "collect", item = 2838, count = 234, map = 1441, x = 8.9, y = 34.3, f = "e", fromNpcs = { { npc = 4120, npcName = "Thundering Boulderkin" } }, fromNpcsAt = ";;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1;1;1;;;;;;;;;", spotsPacked = "8.9,34.3,,75,3;12.4,37.7,,86,4,1;14.9,34.5,,53,2,1;14.3,27.2,,53,1,1,29;12.2,24.3,,53,2,1;17.2,31,,53,1,1;16.5,40.6,,79,5,1;18.1,36.3,,53,2,1;16.7,26.1,,53,1,1;19.4,40.1,,53,1,1;15.8,18.9,,53,1,1;21.1,30.6,,53,1,1;22.1,40.9,,53,1,1;13.3,11.4,,53,1,1;24.6,29.1,,53,1,1;24.1,23.8,,53,2,1;27.5,41.9,,53,1,1;28.3,28.5,,53,2,1;27,46.6,,53,1,1;26.6,54,,80,15,1;29.3,50.1,,53,2,1;31.6,27.6,,53,1,1;32.3,47.2,,53,2,1;33.9,34.6,,53,1,1;32,52.6,,53,1,1;35.3,27.8,,53,3,1;38,37.3,,53,1,1;36.9,54.7,,105,4,1;40.2,50.8,,53,1,1;42.9,33.7,,95,10,1;40.1,57.7,,53,1,1;42.5,53.1,,53,2,1;45.3,39.3,,53,2,1;43.7,60.4,,53,2,1;48,41.2,,53,2,1;46.7,54.8,,53,1,1;48.1,58.7,,53,1,1;51.6,43.2,,53,1,1;52.7,47.1,,53,1,1;51.2,56.8,,53,1,1;55.2,52.3,,53,2,1;59.2,49.6,,53,2,1;58.5,55.2,,53,2,1;62,47.8,,53,1,1;63.3,60.3,,53,2,1,29;66.2,51.7,,53,3,1,29;66.6,60.8,,53,1,1,29;68.7,54.2,,53,1,1;69.8,69.2,,53,1,1;68.4,77.9,,53,1,1;66.3,84.5,,53,1,1;75.3,51,,53,1,1;77.7,62,,53,1,1;70,91.8,,56,3,1;80.1,63.5,,53,1,1;77.9,88.3,,66,3,1" },
 			},
 		},
 		{
 			title = "{item:7912} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "30 {item:7912} for {item:7964}: {skill:186}: {object:2040} (skill 175) in {zone:1434} (30-45), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest cluster of {object:2040} in {zone:1434} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 7912, count = 30, map = 1434, x = 29.4, y = 60.1, f = "e", spotsPacked = "29.4,60.1,,55,1;27.8,63.4,,49,2,1;26.3,63,,49,2,1;33,62,,49,2,1;31.4,65.3,,49,1,1;25.4,61,,49,2,1;30.3,52.9,,49,1,1;27.7,67.3,,49,2,1;24.8,55.1,,49,2,1;35.4,60,,50,3,1;34.9,56.2,,49,2,1;29.5,69.5,,49,3,1;33.1,68,,49,2,1;25.3,52.6,,49,1,1;35.3,65.6,,66,4,1;36.9,63.8,,49,1,1;37.7,56.9,,49,3,1;37,54.1,,49,1,1;33,72,,49,1,1;36.4,68.7,,49,1,1;34.8,72.4,,49,2,1;32.3,75,,49,2,1;37.9,49.5,,49,3,1;40.8,57.1,,49,1,1;31.6,77.3,,49,2,1;40.4,52.2,,77,3,1;39.7,49.4,,49,1,1;33.3,42.2,,49,2,1;29.3,41.1,,49,2,1;28.6,81.1,,49,1,1;31,38.8,,49,2,1;40.1,45.5,,49,2,1;26.3,81.9,,49,1,1;42.4,49.3,,82,5,1;42.4,46.8,,76,5,1;44.3,48.1,,49,2,1;39.1,81.2,,60,4,1;42.2,42.8,,72,5,1;41.6,41.4,,49,1,1;39.4,36,,49,1,1;45.6,44.9,,79,4,1;41.9,37,,49,1,1;45,38.5,,49,1,1;47.6,38.3,,49,1,1;51,36.6,,49,1,1;49.9,33.8,,49,1,1;44.6,26.2,,49,2,1;27,18,,49,2,1;30,17.7,,49,1,1;32,17.7,,49,1,1;48,27.7,,49,2,1;29.3,15.3,,49,1,1;25.8,15.4,,49,1,1;48.1,24.5,,49,1,1;50.8,27.9,,120,10,1;34.3,14.2,,49,1,1;27.4,13.6,,49,1,1;52.3,28,,49,3,1;31.7,13.1,,49,3,1;47.6,21.4,,64,3,1;29.8,12.1,,49,1,1;38.2,13.9,,49,2,1;41.5,14.3,,49,1,1;46.2,17.1,,49,1,1;31.7,10.2,,49,2,1;45.2,13,,49,2,1;43.4,11.4,,49,1,1;28.9,7,,49,1,1;30.5,6.8,,49,2,1;40.7,9.5,,49,1,1;37.8,7.8,,49,1,1;33.1,6.4,,49,1,1;36.3,6.9,,49,1,1;42.4,8.4,,49,1,1;50.6,14.9,,49,1,1;39.8,6.6,,49,1,1;46.7,8,,49,2,1;49.2,7.8,,65,7,1;47.6,5.7,,65,5,1;50.1,4.1,,49,2,1" },
 			},
@@ -7863,6 +8012,7 @@ G(function() return {
 			title = "{item:7912} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "30 {item:7912} for {item:7964}: {skill:186}: {object:2040} (skill 175) in {zone:1443} (30-40), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest cluster of {object:2040} in {zone:1443} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 7912, count = 30, map = 1443, x = 31.5, y = 59.4, f = "e" },
 			},
@@ -7870,85 +8020,96 @@ G(function() return {
 		{
 			title = "{spell:3501} to 175",
 			note = "{spell:3501} is orange at 150 (yellow 165, green 177, grey 190): about 28 crafts to 175. Each takes 6 {item:3575} and 1 {item:2605}. Six Iron Bars and a {item:2605} a craft; {item:2605} comes from tailoring, leatherworking and trade supplies vendors. Orange to 165 on Forever, so a point every craft for the first fifteen. Needs an anvil nearby. {item:3575} (168 for 150-225): {skill:186}: smelt {item:2772}; or the Auction House.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 3835, spell = 3501, reagents = { { item = 3575, count = 6, itemName = "Iron Bar" }, { item = 2605, count = 1, itemName = "Green Dye" } }, skillLine = 164, untilSkill = 175 },
+				{ t = "craft", item = 3835, spell = 3501, grey = 190, reagents = { { item = 3575, count = 6, itemName = "Iron Bar" }, { item = 2605, count = 1, itemName = "Green Dye" } }, skillLine = 164, untilSkill = 175, yellow = 165 },
 			},
 		},
 		{
 			title = "{skill:164} recipes at 175",
 			note = "Back to a {skill:164} trainer: {spell:9918} (from 175).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 9918, candidates = { 7, 5, 4, 6, 8 }, skillLine = 164 },
+				{ t = "learn", spell = 9918, candidates = { 101, 100 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{item:7964} to 185",
 			note = "{item:7964} is yellow at 175 (yellow 175, green 180, grey 185): about 30 crafts to 185. Each takes 1 {item:7912}. One {item:7912} a craft (Mithril Deposits): cheap points between the iron and the steel bracers. Use the stones on your weapons or sell them.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 7964, spell = 9918, reagents = { { item = 7912, count = 1, itemName = "Solid Stone" } }, skillLine = 164, untilSkill = 185 },
+				{ t = "craft", item = 7964, spell = 9918, grey = 185, reagents = { { item = 7912, count = 1, itemName = "Solid Stone" } }, skillLine = 164, untilSkill = 185, yellow = 175 },
 			},
 		},
 		{
 			title = "{skill:164} recipes at 185",
 			note = "Back to a {skill:164} trainer: {spell:7223} (from 160).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 7223, candidates = { 7, 5, 4, 6, 8 }, skillLine = 164 },
+				{ t = "learn", spell = 7223, candidates = { 101, 100 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{item:6040} to 205",
 			note = "{item:6040} is yellow at 185 (yellow 185, green 197, grey 210): about 39 crafts to 205. Each takes 5 {item:3859} and 2 {spell:3337}. Make the 78 {spell:3337} first. Steel Bars are smelted from an {item:3575} and a Coal ({skill:186} 165; Coal from trade and blacksmithing suppliers), so each bracer is five of each. Each bracer takes two Heavy Grinding Stones: make them first. Specialisation (optional): at 200 and character level 40, {npc:5164} ({zone:1455}) or {npc:11177} ({zone:1454}) starts The Art of the {spell:9788}: 4 Ornate Mithril Helms, 2 {item:7936} and an {item:7935}, whose plans come from a Mithril Order quest chain. {npc:11146} ({zone:1455}) or {npc:11178} ({zone:1454}) starts The Way of the Weaponsmith: 4 Moonsteel Broadswords, 4 Massive Iron Axes, 2 Heavy Mithril Axes and 2 Big Black Maces; on Forever the {item:3853} plans ({npc:2482}, {area:35}) and {item:3855} plans bind when picked up, so buy and use them yourself. You can take only one; neither is needed for 300, and the beta never tested them (it stopped at level 30). Needs an anvil nearby. {item:3859} (195 for 150-225): {skill:186}: smelt {item:3575} and Coal; or the Auction House.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 3486, spell = 3337, count = 78, reagents = { { item = 2838, count = 3, itemName = "Heavy Stone" } }, skillLine = 164 },
-				{ t = "craft", item = 6040, spell = 7223, reagents = { { item = 3859, count = 5, itemName = "Steel Bar" }, { item = 3486, count = 2, itemName = "Heavy Grinding Stone" } }, skillLine = 164, untilSkill = 205 },
+				{ t = "craft", item = 6040, spell = 7223, grey = 210, reagents = { { item = 3859, count = 5, itemName = "Steel Bar" }, { item = 3486, count = 2, itemName = "Heavy Grinding Stone" } }, skillLine = 164, untilSkill = 205, yellow = 185 },
 			},
 		},
 		{
 			title = "{skill:164} recipes at 205",
 			note = "Back to a {skill:164} trainer: {spell:9959} (from 205).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 9959, candidates = { 7, 5, 4, 6, 8 }, skillLine = 164 },
+				{ t = "learn", spell = 9959, candidates = { 101, 161, 100 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{item:7930} to 225",
 			note = "{item:7930} is orange at 205 (yellow 225, green 235, grey 245): about 20 crafts to 225, a point every craft. Each takes 16 {item:3860}. Sixteen Mithril Bars a craft and nothing else; orange to 225 on Forever, so a point every craft to the Artisan cap. Needs an anvil nearby. {item:3860} (320 for 150-225): {skill:186}: smelt {item:3858}; or the Auction House. {skill:164} 225 is a Legacy System milestone.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 7930, spell = 9959, reagents = { { item = 3860, count = 16, itemName = "Mithril Bar" } }, skillLine = 164, untilSkill = 225 },
+				{ t = "craft", item = 7930, spell = 9959, grey = 245, reagents = { { item = 3860, count = 16, itemName = "Mithril Bar" } }, skillLine = 164, untilSkill = 225, yellow = 225 },
 				{ t = "skill", level = 225, skill = "Blacksmithing", skillLine = 164 },
 			},
 		},
 		{
 			title = "Artisan {skill:164}",
 			note = "Artisan raises the cap from 225 to 300 for 5g (Classic's price; Forever's is not in the data); it needs {skill:164} 200 and character level 35, so you can take it on any visit from 200. Only a few trainers teach it: Alliance {npc:2836} ({zone:1434}); Horde {npc:2836} ({zone:1434}). The arrow picks the nearest of your faction. Learn now: {spell:16640} (from 225), {spell:9968} (from 210), {spell:9920} (from 175), {spell:10001} (from 205) and {spell:16639} (from 225). 225-300 takes about 3g 60s of recipes, plus 44 {item:1210}, 596 {item:3860}, 142 {item:4304}, 19 {item:7909}, 19 {item:7910}, 44 {item:7912}, 11 {item:7971}, 206 {item:8170}, 2026 {item:12359}, 801 {item:12365} and 10 {item:12799} to gather or buy.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 35 },
-				{ t = "train", candidates = { 151 }, rank = 4, rankMax = 300, skill = "Blacksmithing", skillLine = 164 },
-				{ t = "learn", spell = 16640, candidates = { 151 }, skillLine = 164 },
-				{ t = "learn", spell = 9968, candidates = { 151 }, skillLine = 164 },
-				{ t = "learn", spell = 9920, candidates = { 7, 5, 4, 6, 8 }, skillLine = 164 },
-				{ t = "learn", spell = 10001, candidates = { 151 }, skillLine = 164 },
-				{ t = "learn", spell = 16639, candidates = { 151 }, skillLine = 164 },
+				{ t = "train", candidates = { 161 }, rank = 4, rankMax = 300, skill = "Blacksmithing", skillLine = 164 },
+				{ t = "learn", spell = 16640, candidates = { 101, 161, 100 }, skillLine = 164 },
+				{ t = "learn", spell = 9968, candidates = { 101, 161, 100 }, skillLine = 164 },
+				{ t = "learn", spell = 9920, candidates = { 101, 100 }, skillLine = 164 },
+				{ t = "learn", spell = 10001, candidates = { 101, 161, 100 }, skillLine = 164 },
+				{ t = "learn", spell = 16639, candidates = { 101, 161, 100 }, skillLine = 164 },
 			},
 		},
 		{
 			title = "{item:12819}",
 			note = "{item:12819} teaches {item:12773} ({skill:164} 250) for 1g 60s. Sold by {npc:11278} ({zone:1422}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 12819, candidates = { 152 } },
+				{ t = "buy", item = 12819, candidates = { 162 } },
 			},
 		},
 		{
 			title = "{item:12823}",
 			note = "{item:12823} teaches {item:12775} ({skill:164} 255) for 2g. Sold by {npc:11278} ({zone:1422}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 12823, candidates = { 152 } },
+				{ t = "buy", item = 12823, candidates = { 162 } },
 			},
 		},
 		{
 			title = "{item:4304} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "142 {item:4304} for {item:7933} and {item:7945}: {skill:393}: beasts of level 38-50; or the Auction House. Skin {npc:2729}, {npc:2730}, {npc:2732} and {npc:2734} here (level 38-50); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 4304, count = 142, map = 1418, x = 35, y = 64.3, f = "e" },
 			},
@@ -7957,6 +8118,7 @@ G(function() return {
 			title = "{item:4304} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "142 {item:4304} for {item:7933} and {item:7945}: {skill:393}: beasts of level 38-50; or the Auction House. Skin {npc:5292}, {npc:5300}, {npc:5304}, {npc:5272}, {npc:5260}, {npc:5262}, {npc:5268}, {npc:5274}, {npc:5287}, {npc:5286} and {npc:5296} here (level 38-50); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 4304, count = 142, map = 1444, x = 54.9, y = 60.8, f = "e" },
 			},
@@ -7965,6 +8127,7 @@ G(function() return {
 			title = "{item:7912} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "44 {item:7912} for {item:7945}: {skill:186}: {object:2040} (skill 175) in {zone:1425} (40-50), {zone:1444} (40-50) and {zone:1447} (45-55); or the Auction House. The densest cluster of {object:2040} in {zone:1425} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 7912, count = 44, map = 1425, x = 20.8, y = 58.8, f = "e", spotsPacked = "20.8,58.8,,53,2;23.3,59.8,,41,1,1;24.7,66.6,,60,6,1;28,58.9,,41,1,1;27.3,69.3,,41,2,1;30.1,55,,41,1,1;31.8,60,,61,4,1;30.5,68.6,,41,1,1;33.9,64.1,,41,1,1;33.5,41.2,,41,1,1;37.2,67.4,,41,3,1;35.5,74.8,,41,1,1;35.6,42.3,,41,1,1;38.8,50.2,,41,2,1;41.2,59,,45,4,1;40.6,66.5,,41,3,1;39.8,43.8,,41,1,1;43.5,70.8,,41,1,1;47.4,70.6,,41,1,1;46.3,37.8,,41,1,1;50,48.2,,41,1,1;50.4,70.6,,41,3,1;46.9,33.4,,41,1,1;52.4,59.7,,41,1,1;52.2,65.6,,94,7,1;54.9,55,,41,2,1;55.3,67.8,,41,4,1;56.5,43.8,,48,7,1;57.7,68.4,,41,2,1;58.1,49.5,,41,1,1;55.7,84.6,,41,3,1;56.6,35.6,,41,1,1;58.4,41.2,,67,4,1;60.2,58.1,,41,3,1;59.7,43.2,,41,2,1;58.4,82.5,,41,2,1;62.6,59.4,,41,2,1;62.5,64.2,,41,1,1;62.3,72.5,,41,1,1;60.7,34.4,,41,1,1;58.6,27.7,,41,1,1;63.6,41.7,,51,3,1;59,23.2,,41,1,1;57.9,19.6,,41,1,1;64.2,36.6,,41,1,1;66.8,52.4,,41,1,1;65.7,41.8,,41,1,1;68,55.3,,41,2,1;68.9,72.3,,41,1,1;68.4,77,,41,1,1;71.7,66.2,,41,1,1;72.2,52.4,,41,1,1;73.4,62.1,,41,3,1;68.2,19.8,,41,1,1;75.2,57.1,,41,1,1;74,87.3,,41,1,1;77.3,59.5,,41,1,1;77.3,56,,41,1,1;79.4,50,,41,1,1;79.5,74,,41,1,1;83,50.4,,41,1,1" },
 			},
@@ -7973,6 +8136,7 @@ G(function() return {
 			title = "{item:7912} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "44 {item:7912} for {item:7945}: {skill:186}: {object:2040} (skill 175) in {zone:1443} (30-40), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest cluster of {object:2040} in {zone:1443} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 7912, count = 44, map = 1443, x = 31.5, y = 59.4, f = "e" },
 			},
@@ -7980,15 +8144,17 @@ G(function() return {
 		{
 			title = "{item:8170} (Alliance)",
 			only = { factions = { "Alliance" } },
-			note = "206 {item:8170} for {item:12773} and {item:12775}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:1815}, {npc:1816} and {npc:1817} here (level 48-60); the {skill:393} guide routes this.",
+			note = "206 {item:8170} for {item:12773} and {item:12775}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:8598}, Plaguehound and {npc:8596} here (level 48-60); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 8170, count = 206, map = 1422, x = 34.2, y = 62.1, f = "e" },
+				{ t = "collect", item = 8170, count = 206, map = 1423, x = 56, y = 46.8 },
 			},
 		},
 		{
 			title = "{item:8170} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "206 {item:8170} for {item:12773} and {item:12775}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:6369}, {npc:8760}, {npc:6380}, {npc:6379}, {npc:6378} and {npc:6377} here (level 48-60); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8170, count = 206, map = 1447, x = 58.8, y = 21.5, f = "e" },
 			},
@@ -7997,6 +8163,7 @@ G(function() return {
 			title = "{item:12365} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "801 {item:12365} for {item:12643}, {item:12773} and {item:12775}: {skill:186}: {object:324} (skill 245) in {zone:1419} (45-55), {zone:1448} (48-55) and {zone:1452} (55-60); or the Auction House. The densest cluster of {object:324} in {zone:1419} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 12365, count = 801, map = 1419, x = 43.5, y = 30.8, f = "e", spotsPacked = "43.5,30.8,,113,7;46,29.3,,40,1,1;41.9,37.1,,40,2,1;42.1,24.2,,40,1,1;38.9,28.9,,40,2,1;38.1,33.9,,40,2,1;49.8,27.5,,40,1,1;49.9,34.2,,54,5,1;43.7,20,,40,2,1;46.6,20.4,,40,1,1;42.8,43,,40,1,1;51.7,31.9,,40,1,1;47.1,16.5,,40,2,1;49.2,43.7,,40,2,1;51,41.6,,40,2,1;42,14.6,,40,2,1;45.2,13.9,,40,2,1;49.4,48,,40,1,1;42.5,10.7,,40,1,1;55.3,42,,40,1,1;45.6,52.2,,40,3,1;57.4,36.7,,40,1,1;58.6,33,,40,1,1;54.3,13.1,,40,1,1;53.1,10.1,,40,2,1;59.7,40.7,,40,3,1;61.4,30.6,,40,3,1;57.7,13.1,,49,6,1;58.2,47.8,,40,1,1;50.9,56.6,,40,3,1;56.6,52.5,,40,3,1;56.6,8.8,,40,3,1;62.9,36.8,,40,1,1;63.2,24.9,,40,1,1;54.9,5.9,,40,2,1;54.8,56.6,,40,2,1;65.3,34.5,,40,1,1;65.5,30.8,,57,7,1;64.5,42.4,,40,2,1;60.8,7.4,,40,1,1;57.1,60,,40,2,1;64.8,50.1,,40,1,1;68.9,30.6,,40,3,1;62.2,57.8,,66,6,1;62,2.3,,40,3,1;65,2.9,,40,2,1;70.6,16,,40,1,1;68.8,9.4,,40,1,1;69.3,4.8,,40,1,1;71.4,6.4,,40,1,1;72,2.6,,40,1,1" },
 			},
@@ -8005,6 +8172,7 @@ G(function() return {
 			title = "{item:12365} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "801 {item:12365} for {item:12643}, {item:12773} and {item:12775}: {skill:186}: {object:324} (skill 245) in {zone:1448} (48-55), {zone:1451} (55-60) and {zone:1452} (55-60); or the Auction House. The densest cluster of {object:324} in {zone:1448} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 12365, count = 801, map = 1448, x = 34.7, y = 61.8, f = "e", spotsPacked = "34.7,61.8,,150,1;36.3,55.4,,150,1,1;36.2,68.9,,150,1,1;38.2,45.7,,150,1,1;43.2,46.7,,150,1,1;39.8,22.3,,150,1,1;48.6,23.8,,150,1,1;47.8,14.2,,150,1,1;57.6,17.3,,150,1,1;59.6,6.1,,150,1,1" },
 			},
@@ -8012,46 +8180,52 @@ G(function() return {
 		{
 			title = "{item:12643} to 235",
 			note = "{item:12643} is orange at 225 (yellow 230, green 232, grey 235): about 17 crafts to 235. Each takes 1 {item:12365}. One {item:12365} a craft (Thorium veins): cheap points at the start of Artisan.",
+			section = 4,
 			goals = {
-				{ t = "craft", item = 12643, spell = 16640, reagents = { { item = 12365, count = 1, itemName = "Dense Stone" } }, skillLine = 164, untilSkill = 235 },
+				{ t = "craft", item = 12643, spell = 16640, grey = 235, reagents = { { item = 12365, count = 1, itemName = "Dense Stone" } }, skillLine = 164, untilSkill = 235, yellow = 230 },
 			},
 		},
 		{
 			title = "{item:7933} to 247",
 			note = "{item:7933} is yellow at 235 (yellow 230, green 240, grey 250): about 30 crafts to 247. Each takes 14 {item:3860} and 4 {item:4304}. Mithril Bars from Mithril Deposits; {item:4304} from skinners or the Auction House. Needs an anvil nearby. {item:3860} (596 for 225-300): {skill:186}: smelt {item:3858}; or the Auction House.",
+			section = 4,
 			goals = {
-				{ t = "craft", item = 7933, spell = 9968, reagents = { { item = 3860, count = 14, itemName = "Mithril Bar" }, { item = 4304, count = 4, itemName = "Thick Leather" } }, skillLine = 164, untilSkill = 247 },
+				{ t = "craft", item = 7933, spell = 9968, grey = 250, reagents = { { item = 3860, count = 14, itemName = "Mithril Bar" }, { item = 4304, count = 4, itemName = "Thick Leather" } }, skillLine = 164, untilSkill = 247, yellow = 230 },
 			},
 		},
 		{
 			title = "{item:7945} to 250",
 			note = "{item:7945} is green at 247 (yellow 230, green 242, grey 255): about 11 crafts to 250. Each takes 16 {item:3860}, 1 {item:7971}, 4 {item:1210}, 1 {item:7966} and 2 {item:4304}. Make the 11 {item:7966} first. Only about 11 crafts to bridge 247-250, but each wants four Shadowgems (about one {object:1732} in a hundred) and a {item:7971}: buy those at the Auction House unless your bags already hold them. Needs an anvil nearby. {item:1210} (44 for 225-300): {item:1210} turns up in about one {object:1731}, {object:1732} or {object:1733} in 100: buy it at the Auction House, or keep the ones you find while mining. {item:7971} (11 for 225-300): {item:7971} is a rare drop (no mob gives it one time in 50): buy it at the Auction House, or keep the ones you find.",
+			section = 4,
 			goals = {
 				{ t = "craft", item = 7966, spell = 9920, count = 11, reagents = { { item = 7912, count = 4, itemName = "Solid Stone" } }, skillLine = 164 },
-				{ t = "craft", item = 7945, spell = 10001, reagents = { { item = 3860, count = 16, itemName = "Mithril Bar" }, { item = 7971, count = 1, itemName = "Black Pearl" }, { item = 1210, count = 4, itemName = "Shadowgem" }, { item = 7966, count = 1, itemName = "Solid Grinding Stone" }, { item = 4304, count = 2, itemName = "Thick Leather" } }, skillLine = 164, untilSkill = 250 },
+				{ t = "craft", item = 7945, spell = 10001, grey = 255, reagents = { { item = 3860, count = 16, itemName = "Mithril Bar" }, { item = 7971, count = 1, itemName = "Black Pearl" }, { item = 1210, count = 4, itemName = "Shadowgem" }, { item = 7966, count = 1, itemName = "Solid Grinding Stone" }, { item = 4304, count = 2, itemName = "Thick Leather" } }, skillLine = 164, untilSkill = 250, yellow = 230 },
 			},
 		},
 		{
 			title = "{item:12773} to 255",
 			note = "{item:12773} is orange at 250 (yellow 275, green 287, grey 300): about 5 crafts to 255, a point every craft. Each takes 20 {item:12359}, 2 {item:12799}, 2 {item:12644} and 4 {item:8170}. Make the 10 {item:12644} first. {item:12799} turns up in about one Thorium vein in 130: buy the ten at the Auction House. Five crafts only, until the battleaxe plans can be used at 255. Needs an anvil nearby. {item:12359} (2026 for 225-300): {skill:186}: smelt {item:10620}; or the Auction House. {item:12799} (10 for 225-300): {item:12799} turns up in about one {object:175404}, {object:177388} or {object:180215} in 143: buy it at the Auction House, or keep the ones you find while mining.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 12819, spell = 16969, note = "from the recipe in your bags", skillLine = 164 },
 				{ t = "craft", item = 12644, spell = 16639, count = 10, reagents = { { item = 12365, count = 4, itemName = "Dense Stone" } }, skillLine = 164 },
-				{ t = "craft", item = 12773, spell = 16969, reagents = { { item = 12359, count = 20, itemName = "Thorium Bar" }, { item = 12799, count = 2, itemName = "Large Opal" }, { item = 12644, count = 2, itemName = "Dense Grinding Stone" }, { item = 8170, count = 4, itemName = "Rugged Leather" } }, skillLine = 164, untilSkill = 255 },
+				{ t = "craft", item = 12773, spell = 16969, grey = 300, reagents = { { item = 12359, count = 20, itemName = "Thorium Bar" }, { item = 12799, count = 2, itemName = "Large Opal" }, { item = 12644, count = 2, itemName = "Dense Grinding Stone" }, { item = 8170, count = 4, itemName = "Rugged Leather" } }, skillLine = 164, untilSkill = 255, yellow = 275 },
 			},
 		},
 		{
 			title = "{item:12775} to 285",
 			note = "{item:12775} is orange at 255 (yellow 280, green 292, grey 305): about 31 crafts to 285. Each takes 40 {item:12359}, 6 {item:12644} and 6 {item:8170}. Make the 186 {item:12644} first. Plans from {npc:11278} ({area:2298}, {zone:1422}), unlimited stock, but they bind when picked up. Forty Thorium Bars and six Dense Grinding Stones a craft: the dearest stretch, so stop where the {quest:7654} take over. Other ways through: world-drop plans from the Auction House (the Radiant pieces: about 820 Thorium Bars and 190 Hearts of Fire for the Radiant route) or the Merchant's Favor sets. Needs an anvil nearby.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 12823, spell = 16971, note = "from the recipe in your bags", skillLine = 164 },
 				{ t = "craft", item = 12644, spell = 16639, count = 186, reagents = { { item = 12365, count = 4, itemName = "Dense Stone" } }, skillLine = 164 },
-				{ t = "craft", item = 12775, spell = 16971, reagents = { { item = 12359, count = 40, itemName = "Thorium Bar" }, { item = 12644, count = 6, itemName = "Dense Grinding Stone" }, { item = 8170, count = 6, itemName = "Rugged Leather" } }, skillLine = 164, untilSkill = 285 },
+				{ t = "craft", item = 12775, spell = 16971, grey = 305, reagents = { { item = 12359, count = 40, itemName = "Thorium Bar" }, { item = 12644, count = 6, itemName = "Dense Grinding Stone" }, { item = 8170, count = 6, itemName = "Rugged Leather" } }, skillLine = 164, untilSkill = 285, yellow = 280 },
 			},
 		},
 		{
 			title = "{item:12700}",
 			note = "{npc:14567} ({zone:1446}) trades {item:12700} ({skill:164} 270) for 40 {item:12359} in {quest:7654}, which needs {skill:164} 265 and character level 50; take {quest:7652} first (it asks for nothing). The plans bind when picked up.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 50 },
 				{ t = "accept", minLevel = 50, quest = 7652, npc = 14567, map = 1446, x = 51.38, y = 28.67, z = 8.9, f = "e", profLine = 164, profName = "Blacksmithing", profRank = 265, qlvl = 60 },
@@ -8063,9 +8237,10 @@ G(function() return {
 		{
 			title = "{item:12426} to 300",
 			note = "{item:12426} is orange at 285 (yellow 290, green 300, grey 310): about 19 crafts to 300. Each takes 34 {item:12359}, 1 {item:7910} and 1 {item:7909}. About 34 Thorium Bars a craft against the battleaxe's 40 and its grinding stones, orange to 290. Below character level 50 {npc:14567} has no quest for you: keep making Huge Thorium Battleaxes to 300 instead (yellow to 292, grey at 305: about twice the Thorium Bars). Needs an anvil nearby. {item:7909} (19 for 225-300): {item:7909} turns up in about one {object:2047} or {object:123309} in 500: buy it at the Auction House, or keep the ones you find while mining. {item:7910} (19 for 225-300): {item:7910} turns up in about one {object:2047} or {object:123309} in 143: buy it at the Auction House, or keep the ones you find while mining. {skill:164} 300 is a Legacy System milestone.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 12700, spell = 16657, note = "from the recipe in your bags", skillLine = 164 },
-				{ t = "craft", item = 12426, spell = 16657, reagents = { { item = 12359, count = 34, itemName = "Thorium Bar" }, { item = 7910, count = 1, itemName = "Star Ruby" }, { item = 7909, count = 1, itemName = "Aquamarine" } }, skillLine = 164, untilSkill = 300 },
+				{ t = "craft", item = 12426, spell = 16657, grey = 310, reagents = { { item = 12359, count = 34, itemName = "Thorium Bar" }, { item = 7910, count = 1, itemName = "Star Ruby" }, { item = 7909, count = 1, itemName = "Aquamarine" } }, skillLine = 164, untilSkill = 300, yellow = 290 },
 				{ t = "skill", level = 300, skill = "Blacksmithing", skillLine = 164 },
 			},
 		},
@@ -8080,18 +8255,27 @@ G(function() return {
 	maxLevel = 60,
 	zone = 1455,
 	names = { ["zone:1453"] = "Stormwind" },
+	sections = { { from = 1, skill = "Cooking", skillLine = 185, to = 50 }, { from = 50, skill = "Cooking", skillLine = 185, to = 130 }, { from = 130, skill = "Cooking", skillLine = 185, to = 175 }, { from = 175, skill = "Cooking", skillLine = 185, to = 225 }, { from = 225, skill = "Cooking", skillLine = 185, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "A", npc = 5159, map = 1455, x = 60.08, y = 36.43, z = 509.5, f = "e" },
 		{ faction = "A", npc = 1699, map = 1426, x = 47.67, y = 52.31, z = 398.9, f = "e" },
+		{ faction = "A", npc = 1355, map = 1426, x = 68.38, y = 54.49, z = 383.2, f = "e" },
 		{ faction = "A", npc = 5482, map = 1453, x = 78.17, y = 53.1, z = 99.7 },
+		{ faction = "A", npc = 3087, map = 1433, x = 17.69, y = 43.47, z = 78.1 },
 		{ faction = "A", npc = 1430, map = 1429, x = 44.37, y = 65.99, z = 57, f = "e" },
 		{ faction = "H", npc = 4552, map = 1458, x = 62.14, y = 44.91, z = -55.3, f = "e" },
+		{ faction = "H", npc = 265944, map = 1420, x = 61.75, y = 51.44, z = 34.3, f = "e" },
+		{ faction = "H", npc = 1382, map = 1434, x = 31.34, y = 27.97, z = 4.1, f = "e" },
+		{ faction = "H", npc = 3191, map = 1411, x = 51.11, y = 42.45, z = 16.4, f = "e" },
+		{ faction = "H", npc = 3067, map = 1412, x = 44.92, y = 61.67, z = -9.3 },
 		{ faction = "H", npc = 8306, map = 1413, x = 55.29, y = 31.78, z = 93.1, f = "e" },
 		{ faction = "A", npc = 6286, map = 1438, x = 57.12, y = 61.3, z = 1295.6, f = "e" },
 		{ faction = "H", npc = 3399, map = 1454, x = 57.4, y = 53.96, z = 45.5, f = "e" },
 		{ faction = "H", npc = 3026, map = 1456, x = 50.72, y = 53.11, z = 165.9, f = "e" },
 		{ faction = "A", npc = 4210, map = 1457, x = 49.03, y = 21.24, z = 1321.7, f = "e" },
+		{ faction = "AH", npc = 251905, map = 2521, x = 43.85, y = 43.84, z = 827.7 },
+		{ faction = "AH", npc = 257006, map = 2521, x = 60.64, y = 72.66, z = 672 },
 		{ faction = "AH", npc = 1549, map = 1422, x = 32.3, y = 28.9, f = "e", lvl = { max = 10, min = 9 }, rate = 0.879, spawns = 3 },
 		{ faction = "AH", npc = 1549, map = 1422, x = 29.5, y = 24.3, f = "e", lvl = { max = 10, min = 9 }, rate = 0.879, spawns = 2 },
 		{ faction = "AH", npc = 1549, map = 1422, x = 33.8, y = 26.9, f = "e", lvl = { max = 10, min = 9 }, rate = 0.879, spawns = 2 },
@@ -8160,7 +8344,6 @@ G(function() return {
 		{ faction = "AH", npc = 11189, map = 1452, x = 61.2, y = 37.21, z = 724, f = "e" },
 		{ faction = "A", npc = 4223, map = 1457, x = 48.53, y = 21.6, z = 1321.7, f = "e" },
 		{ faction = "A", npc = 5135, map = 1459, x = 42.82, y = 16.88, f = "e" },
-		{ faction = "AH", npc = 251905, map = 2521, x = 43.85, y = 43.84, z = 827.7 },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
 		{ faction = "A", npc = 1194, map = 1432, x = 76.2, y = 72.8, f = "e", lvl = { max = 16, min = 15 }, rate = 0.707, spawns = 6 },
 		{ faction = "A", npc = 1194, map = 1432, x = 77.7, y = 57.7, f = "e", lvl = { max = 16, min = 15 }, rate = 0.707, spawns = 5 },
@@ -8410,7 +8593,6 @@ G(function() return {
 		{ faction = "H", npc = 5814, map = 1434, x = 31.49, y = 29.75, z = 2.4, f = "e" },
 		{ faction = "H", npc = 4553, map = 1458, x = 62.31, y = 43.09, z = -55.3, f = "e" },
 		{ faction = "H", npc = 12097, map = 1459, x = 46.62, y = 84.22, f = "e" },
-		{ faction = "AH", npc = 257006, map = 2521, x = 60.64, y = 72.66, z = 672 },
 		{ faction = "H", npc = 3245, map = 1413, x = 37.3, y = 28.4, f = "e", lvl = { max = 17, min = 16 }, rate = 0.361, spawns = 1 },
 		{ faction = "H", npc = 3245, map = 1413, x = 38.3, y = 26.1, f = "e", lvl = { max = 17, min = 16 }, rate = 0.361, spawns = 1 },
 		{ faction = "H", npc = 3245, map = 1413, x = 39.9, y = 24.7, f = "e", lvl = { max = 17, min = 16 }, rate = 0.361, spawns = 1 },
@@ -8574,404 +8756,453 @@ G(function() return {
 	steps = {
 		{
 			title = "Learn {skill:185}",
-			note = "Any {skill:185} trainer of your faction teaches Apprentice {skill:185} (character level 5, 1s); the arrow picks the nearest. Forever: every cook knows {object:29784}. Craft a {item:279981} from one {item:4470} (38c) with {item:4471} (1s 35c, kept in your bags), then place the kit to light a cooking fire anywhere; make a few in advance (one use every 5 minutes). The first kits also raise {skill:185} to about 5. The Camping 101: {skill:185} quest at your starting area's camp sends you to this trainer.",
+			note = "Any {skill:185} trainer of your faction teaches Apprentice {skill:185} (any character level, 1s); the arrow picks the nearest. Forever: every cook knows {object:29784}. Craft a {item:279981} from one {item:4470} (38c) with {item:4471} (1s 35c, kept in your bags), then place the kit to light a cooking fire anywhere; make a few in advance (one use every 5 minutes). The first kits also raise {skill:185} to about 5. The Camping 101: {skill:185} quest at your starting area's camp sends you to this trainer.",
+			section = 1,
 			goals = {
-				{ t = "level", level = 5 },
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, rank = 1, rankMax = 75, skill = "Cooking", skillLine = 185 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 }, rank = 1, rankMax = 75, skill = "Cooking", skillLine = 185 },
 			},
 		},
 		{
 			title = "{spell:2538}: ingredients",
 			only = { races = { "HUMAN" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 2672, count = 50, note = "Prowler (86%) in {zone:1429}, or wherever the arrow points", candidates = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 } },
+				{ t = "collect", item = 2672, count = 50, note = "Prowler (86%) in {zone:1429}, or wherever the arrow points", candidates = { 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 } },
 			},
 		},
 		{
 			title = "{spell:2538} (1-50)",
 			only = { races = { "HUMAN" } },
 			note = "{spell:2538} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2679, spell = 2538, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 2679, spell = 2538, grey = 85, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "{spell:2540}: ingredients",
 			only = { races = { "DWARF", "GNOME" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 769, count = 50, note = "{npc:1126} (36%), {npc:1125} (34%) in {zone:1426}, or wherever the arrow points", candidates = { 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38 } },
+				{ t = "collect", item = 769, count = 50, note = "{npc:1126} (36%), {npc:1125} (34%) in {zone:1426}, or wherever the arrow points", candidates = { 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 } },
 			},
 		},
 		{
 			title = "{spell:2540} (1-50)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "{spell:2540} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2681, spell = 2540, reagents = { { item = 769, count = 1, itemName = "Chunk of Boar Meat" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 2681, spell = 2540, grey = 85, reagents = { { item = 769, count = 1, itemName = "Chunk of Boar Meat" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "{item:6888}: shopping",
 			only = { races = { "NIGHTELF" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 50 {item:2678} (1s).",
+			section = 1,
 			goals = {
-				{ t = "buy", item = 2678, count = 50, candidates = { 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 } },
+				{ t = "buy", item = 2678, count = 50, candidates = { 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 17, 87 } },
 			},
 		},
 		{
 			title = "{item:6888}: ingredients",
 			only = { races = { "NIGHTELF" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 6889, count = 50, note = "{npc:1995} (58%) in {zone:1438}, or wherever the arrow points", candidates = { 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123 } },
+				{ t = "collect", item = 6889, count = 50, note = "{npc:1995} (58%) in {zone:1438}, or wherever the arrow points", candidates = { 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130 } },
 			},
 		},
 		{
 			title = "{item:6888} (1-50)",
 			only = { races = { "NIGHTELF" } },
 			note = "{item:6888} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}. {item:6888} comes with {skill:185} (the client teaches it with the skill); {item:2678} are a cooking vendor's. The Strigid owls of {zone:1438} drop a {item:6889} more often than not, and {zone:1439}'s moonkin drop them too. Fishers can cook {item:6290} (recipe 40c) from Rut'theran's waters instead, and {npc:6286} in {area:186} gives Recipe of the Kaldorei (seven Small Spider Legs from the Webwood spiders) for {item:5472}, orange from 10 to 50.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 6888, spell = 8604, reagents = { { item = 6889, count = 1, itemName = "Small Egg" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 6888, spell = 8604, grey = 85, reagents = { { item = 6889, count = 1, itemName = "Small Egg" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "{spell:2538}: ingredients",
 			only = { races = { "SKYBORNE" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 2672, count = 50, note = "{npc:250873} in Zephras Isle, or wherever the arrow points", candidates = { 124, 125, 126, 127, 128, 11, 129, 130, 12, 13, 131, 14, 15, 16, 17, 18, 132, 133, 134, 135, 136, 137, 138, 139, 19, 140, 20, 21, 22, 141, 142, 143 } },
+				{ t = "collect", item = 2672, count = 50, note = "{npc:250873} in Zephras Isle, or wherever the arrow points", candidates = { 131, 132, 133, 134, 135, 19, 136, 137, 20, 21, 138, 22, 23, 24, 25, 26, 139, 140, 141, 142, 143, 144, 145, 146, 27, 147, 28, 29, 30, 148, 149, 150 } },
 			},
 		},
 		{
 			title = "{spell:2538} (1-50)",
 			only = { races = { "SKYBORNE" } },
 			note = "{spell:2538} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}. The Vuldren of Zephras Isle drop {item:2672}.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2679, spell = 2538, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 2679, spell = 2538, grey = 85, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "{spell:2540}: ingredients",
 			only = { races = { "ORC", "TROLL" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 769, count = 50, note = "{npc:3099} (99%) in {zone:1411}, or wherever the arrow points", candidates = { 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157 } },
+				{ t = "collect", item = 769, count = 50, note = "{npc:3099} (99%) in {zone:1411}, or wherever the arrow points", candidates = { 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164 } },
 			},
 		},
 		{
 			title = "{spell:2540} (1-50)",
 			only = { races = { "ORC", "TROLL" } },
 			note = "{spell:2540} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2681, spell = 2540, reagents = { { item = 769, count = 1, itemName = "Chunk of Boar Meat" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 2681, spell = 2540, grey = 85, reagents = { { item = 769, count = 1, itemName = "Chunk of Boar Meat" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "{spell:2538}: ingredients",
 			only = { races = { "TAUREN" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 2672, count = 50, note = "{npc:2960} (82%), {npc:2959} (77%) in {zone:1412}, or wherever the arrow points", candidates = { 124, 125, 126, 127, 128, 11, 129, 130, 12, 13, 131, 17, 132, 133, 134, 135, 136, 137, 138, 139, 19, 140, 20, 21, 22, 141, 142, 143 } },
+				{ t = "collect", item = 2672, count = 50, note = "{npc:2960} (82%), {npc:2959} (77%) in {zone:1412}, or wherever the arrow points", candidates = { 131, 132, 133, 134, 135, 19, 136, 137, 20, 21, 138, 25, 139, 140, 141, 142, 143, 144, 145, 146, 27, 147, 28, 29, 30, 148, 149, 150 } },
 			},
 		},
 		{
 			title = "{spell:2538} (1-50)",
 			only = { races = { "TAUREN" } },
 			note = "{spell:2538} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2679, spell = 2538, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 2679, spell = 2538, grey = 85, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "{spell:2538}: ingredients",
 			only = { races = { "SCOURGE" } },
+			section = 1,
 			goals = {
-				{ t = "collect", item = 2672, count = 50, note = "{npc:1547} (72%), {npc:1548} (33%) in {zone:1420}, or wherever the arrow points", candidates = { 124, 125, 126, 127, 128, 11, 129, 130, 12, 13, 131, 17, 132, 133, 134, 135, 136, 137, 138, 139, 19, 140, 20, 21, 22, 141, 142, 143 } },
+				{ t = "collect", item = 2672, count = 50, note = "{npc:1547} (72%), {npc:1548} (33%) in {zone:1420}, or wherever the arrow points", candidates = { 131, 132, 133, 134, 135, 19, 136, 137, 20, 21, 138, 25, 139, 140, 141, 142, 143, 144, 145, 146, 27, 147, 28, 29, 30, 148, 149, 150 } },
 			},
 		},
 		{
 			title = "{spell:2538} (1-50)",
 			only = { races = { "SCOURGE" } },
 			note = "{spell:2538} is orange from 1 (yellow at 45, green at 65, grey at 85): about 50 crafts to 50. Cook at any fire: a town hearth or your own {object:29784}.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2679, spell = 2538, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50 },
+				{ t = "craft", item = 2679, spell = 2538, grey = 85, reagents = { { item = 2672, count = 1, itemName = "Stringy Wolf Meat" } }, skillLine = 185, untilSkill = 50, yellow = 45 },
 			},
 		},
 		{
 			title = "Journeyman {skill:185}",
-			note = "Journeyman {skill:185} raises the cap to 150; it needs skill 50 and character level 10: the arrow picks the nearest {skill:185} trainer of your faction; training costs 5s.",
+			note = "Journeyman {skill:185} raises the cap to 150; it needs skill 50 and no character level: the arrow picks the nearest {skill:185} trainer of your faction; training costs 5s.",
+			section = 2,
 			goals = {
-				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 5, 1, 2, 3, 4, 6, 7, 8, 9, 10 }, rank = 2, rankMax = 150, skill = "Cooking", skillLine = 185 },
+				{ t = "train", candidates = { 8, 7, 1, 2, 3, 4, 6, 5, 9, 11, 12, 13, 14, 15, 16, 17, 18 }, rank = 2, rankMax = 150, skill = "Cooking", skillLine = 185 },
 			},
 		},
 		{
 			title = "{spell:2541}: ingredients",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2673, count = 40, note = "{npc:834} (54%), {npc:833} (51%) in {zone:1436}, or wherever the arrow points", candidates = { 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168 } },
+				{ t = "collect", item = 2673, count = 40, note = "{npc:834} (54%), {npc:833} (51%) in {zone:1436}, or wherever the arrow points", candidates = { 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175 } },
 			},
 		},
 		{
 			title = "{spell:2541} (50-90)",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "{spell:2541} is orange from 50 (yellow at 90, green at 110, grey at 130): about 40 crafts to 90. Cook at any fire: a town hearth or your own {object:29784}. Any {skill:185} trainer teaches it from skill 50 for 1s. Coyotes roam the middle of {zone:1436}; {npc:235} on the farm north of {area:108} also gives {item:733} and {item:724} quests that use what you loot here.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2541, candidates = { 4, 3, 2, 1, 7, 10 }, skillLine = 185 },
-				{ t = "craft", item = 2684, spell = 2541, reagents = { { item = 2673, count = 1, itemName = "Coyote Meat" } }, skillLine = 185, untilSkill = 90 },
+				{ t = "learn", spell = 2541, candidates = { 6, 4, 5, 2, 3, 1, 13, 16, 17, 18 }, skillLine = 185 },
+				{ t = "craft", item = 2684, spell = 2541, grey = 130, reagents = { { item = 2673, count = 1, itemName = "Coyote Meat" } }, skillLine = 185, untilSkill = 90, yellow = 90 },
 			},
 		},
 		{
 			title = "{spell:2544}: shopping",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 44 {item:2678} (90c).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 2678, count = 44, candidates = { 169, 48, 45, 44, 52, 47, 49, 46, 61, 39, 40, 170, 54, 43, 42, 56, 57, 51, 50, 55, 58, 59, 60, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 } },
+				{ t = "buy", item = 2678, count = 44, candidates = { 176, 56, 53, 52, 60, 55, 57, 54, 69, 47, 48, 177, 62, 51, 50, 64, 65, 59, 58, 63, 66, 67, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 17, 87 } },
 			},
 		},
 		{
 			title = "{spell:2544}: ingredients",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2674, count = 44, note = "{npc:830} (43%) in {zone:1436}, or wherever the arrow points", candidates = { 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194 } },
+				{ t = "collect", item = 2674, count = 44, note = "{npc:830} (43%) in {zone:1436}, or wherever the arrow points", candidates = { 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201 } },
 			},
 		},
 		{
 			title = "{spell:2544} (90-130)",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "{spell:2544} is orange from 90 (yellow at 115, green at 135, grey at 155): about 44 crafts to 130. Cook at any fire: a town hearth or your own {object:29784}. Any {skill:185} trainer teaches it from skill 75 for 2s. Crawlers line the whole {zone:1436} coast. Cook it to 130, where {spell:3376} takes over.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2544, candidates = { 4, 3, 2, 1, 7, 10 }, skillLine = 185 },
-				{ t = "craft", item = 2683, spell = 2544, reagents = { { item = 2674, count = 1, itemName = "Crawler Meat" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 130 },
+				{ t = "learn", spell = 2544, candidates = { 6, 4, 5, 2, 3, 1, 13, 16, 17, 18 }, skillLine = 185 },
+				{ t = "craft", item = 2683, spell = 2544, grey = 155, reagents = { { item = 2674, count = 1, itemName = "Crawler Meat" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 130, yellow = 115 },
 			},
 		},
 		{
 			title = "{item:6890}: shopping",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "The arrow picks the nearest vendor of your faction for each item.",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 6892, count = 1, candidates = { 43 } },
+				{ t = "buy", item = 6892, count = 1, candidates = { 51 } },
 			},
 		},
 		{
 			title = "{item:6890}: ingredients",
 			only = { races = { "DWARF", "GNOME" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 3173, count = 30, note = "{npc:1189} (39%) in {zone:1432}, or wherever the arrow points", candidates = { 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216 } },
+				{ t = "collect", item = 3173, count = 30, note = "{npc:1189} (39%) in {zone:1432}, or wherever the arrow points", candidates = { 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223 } },
 			},
 		},
 		{
 			title = "{item:6890} (50-80)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "{item:6890} is orange from 50 (yellow at 80, green at 100, grey at 120): about 30 crafts to 80. Cook at any fire: a town hearth or your own {object:29784}. {item:6892} costs 2s 50c at its vendor; the arrow picks the nearest one of your faction. Black bears roam the hills of {zone:1432}.",
+			section = 2,
 			goals = {
 				{ t = "learn", item = 6892, spell = 8607, skillLine = 185 },
-				{ t = "craft", item = 6890, spell = 8607, reagents = { { item = 3173, count = 1, itemName = "Bear Meat" } }, skillLine = 185, untilSkill = 80 },
+				{ t = "craft", item = 6890, spell = 8607, grey = 120, reagents = { { item = 3173, count = 1, itemName = "Bear Meat" } }, skillLine = 185, untilSkill = 80, yellow = 80 },
 			},
 		},
 		{
 			title = "{spell:2546}: shopping",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 52 {item:2678} (1s 10c).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 2678, count = 52, candidates = { 43, 170, 40, 39, 42, 56, 57, 46, 54, 50, 49, 47, 44, 59, 45, 48, 51, 52, 60, 55, 58, 53, 62, 61, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 } },
+				{ t = "buy", item = 2678, count = 52, candidates = { 51, 177, 48, 47, 50, 64, 65, 54, 62, 58, 57, 55, 52, 67, 53, 56, 59, 60, 68, 63, 66, 61, 70, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 17, 87 } },
 			},
 		},
 		{
 			title = "{spell:2546}: ingredients",
 			only = { races = { "DWARF", "GNOME" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2677, count = 52, note = "{npc:1191} (31%) in {zone:1432}, or wherever the arrow points", candidates = { 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232 } },
+				{ t = "collect", item = 2677, count = 52, note = "{npc:1191} (31%) in {zone:1432}, or wherever the arrow points", candidates = { 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239 } },
 			},
 		},
 		{
 			title = "{spell:2546} (80-130)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "{spell:2546} is orange from 80 (yellow at 120, green at 140, grey at 160): about 52 crafts to 130. Cook at any fire: a town hearth or your own {object:29784}. Any {skill:185} trainer teaches it from skill 80 for 1s 50c. Mountain boars roam all of {zone:1432}. Cook it to 130, where {spell:3376} takes over.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2546, candidates = { 1, 2, 3, 4, 7, 10 }, skillLine = 185 },
-				{ t = "craft", item = 2687, spell = 2546, reagents = { { item = 2677, count = 1, itemName = "Boar Ribs" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 130 },
+				{ t = "learn", spell = 2546, candidates = { 3, 1, 2, 5, 4, 6, 13, 16, 17, 18 }, skillLine = 185 },
+				{ t = "craft", item = 2687, spell = 2546, grey = 160, reagents = { { item = 2677, count = 1, itemName = "Boar Ribs" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 130, yellow = 120 },
 			},
 		},
 		{
 			title = "{item:5525}: shopping",
 			only = { races = { "NIGHTELF" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 40 {item:159} (2s).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 159, count = 40, candidates = { 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 46, 244, 47, 245, 44, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 61, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283 } },
+				{ t = "buy", item = 159, count = 40, candidates = { 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 54, 251, 55, 252, 52, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 69, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290 } },
 			},
 		},
 		{
 			title = "{item:5525}: ingredients",
 			only = { races = { "NIGHTELF" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 5523, count = 40, note = "{npc:3812} (42%), {npc:3814} (42%), {npc:3944} (42%) in {zone:1439}, or wherever the arrow points; open each {item:5523} for its {item:5503}", candidates = { 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307 } },
+				{ t = "collect", item = 5523, count = 40, note = "{npc:3812} (42%), {npc:3814} (42%), {npc:3944} (42%) in {zone:1439}, or wherever the arrow points; open each {item:5523} for its {item:5503}", candidates = { 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314 } },
 			},
 		},
 		{
 			title = "{item:5525} (50-90)",
 			only = { races = { "NIGHTELF" } },
 			note = "{item:5525} is orange from 50 (yellow at 90, green at 110, grey at 130): about 40 crafts to 90. Cook at any fire: a town hearth or your own {object:29784}. Any {skill:185} trainer teaches it from skill 50 for 1s. The same coastal crawlers drop {item:2674} for {spell:2544} next: keep it.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 6499, candidates = { 7, 10, 2, 4, 3, 1 }, skillLine = 185 },
-				{ t = "craft", item = 5525, spell = 6499, reagents = { { item = 5503, count = 1, itemName = "Clam Meat" }, { item = 159, count = 1, itemName = "Refreshing Spring Water" } }, skillLine = 185, untilSkill = 90 },
+				{ t = "learn", spell = 6499, candidates = { 13, 16, 3, 2, 6, 5, 4, 1, 17, 18 }, skillLine = 185 },
+				{ t = "craft", item = 5525, spell = 6499, grey = 130, reagents = { { item = 5503, count = 1, itemName = "Clam Meat" }, { item = 159, count = 1, itemName = "Refreshing Spring Water" } }, skillLine = 185, untilSkill = 90, yellow = 90 },
 			},
 		},
 		{
 			title = "{spell:2544}: shopping",
 			only = { races = { "NIGHTELF" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 44 {item:2678} (90c).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 2678, count = 44, candidates = { 66, 65, 73, 67, 75, 308, 68, 76, 309, 72, 69, 63, 71, 70, 74, 58, 55, 50, 62, 51, 60, 59, 39, 48, 47, 52, 43, 310, 49, 61, 53, 42, 45, 44, 40, 170, 78, 79, 80, 56, 57, 54 } },
+				{ t = "buy", item = 2678, count = 44, candidates = { 74, 73, 81, 75, 83, 315, 76, 84, 316, 80, 77, 71, 79, 78, 82, 66, 63, 58, 70, 59, 68, 67, 47, 56, 55, 60, 51, 317, 57, 69, 61, 50, 53, 52, 48, 177, 86, 17, 87, 64, 65, 62 } },
 			},
 		},
 		{
 			title = "{spell:2544}: ingredients",
 			only = { races = { "NIGHTELF" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2674, count = 44, note = "{npc:3814} (42%), {npc:3812} (40%) in {zone:1439}, or wherever the arrow points", candidates = { 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194 } },
+				{ t = "collect", item = 2674, count = 44, note = "{npc:3814} (42%), {npc:3812} (40%) in {zone:1439}, or wherever the arrow points", candidates = { 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201 } },
 			},
 		},
 		{
 			title = "{spell:2544} (90-130)",
 			only = { races = { "NIGHTELF" } },
 			note = "{spell:2544} is orange from 90 (yellow at 115, green at 135, grey at 155): about 44 crafts to 130. Cook at any fire: a town hearth or your own {object:29784}. Any {skill:185} trainer teaches it from skill 75 for 2s. Crawlers line the whole {zone:1439} coast. Cook it to 130, where {spell:3376} takes over.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2544, candidates = { 7, 10, 2, 4, 3, 1 }, skillLine = 185 },
-				{ t = "craft", item = 2683, spell = 2544, reagents = { { item = 2674, count = 1, itemName = "Crawler Meat" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 130 },
+				{ t = "learn", spell = 2544, candidates = { 13, 16, 3, 2, 6, 5, 4, 1, 17, 18 }, skillLine = 185 },
+				{ t = "craft", item = 2683, spell = 2544, grey = 155, reagents = { { item = 2674, count = 1, itemName = "Crawler Meat" }, { item = 2678, count = 1, itemName = "Mild Spices" } }, skillLine = 185, untilSkill = 130, yellow = 115 },
 			},
 		},
 		{
 			title = "{item:5477}: shopping",
 			only = { factions = { "Horde" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 52 {item:4536} (2s 75c).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 5486, count = 1, candidates = { 311 } },
-				{ t = "buy", item = 4536, count = 52, candidates = { 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 55, 324, 325, 59, 61, 326, 327, 328, 79, 329, 56 } },
+				{ t = "buy", item = 5486, count = 1, candidates = { 318 } },
+				{ t = "buy", item = 4536, count = 52, candidates = { 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 63, 331, 332, 67, 69, 333, 334, 335, 17, 18, 64 } },
 			},
 		},
 		{
 			title = "{item:5477}: ingredients",
 			only = { factions = { "Horde" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 5469, count = 52, note = "{npc:3246} (32%) in {zone:1413}, or wherever the arrow points", candidates = { 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342 } },
+				{ t = "collect", item = 5469, count = 52, note = "{npc:3246} (32%) in {zone:1413}, or wherever the arrow points", candidates = { 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348 } },
 			},
 		},
 		{
 			title = "{item:5477} (50-100)",
 			only = { factions = { "Horde" } },
 			note = "{item:5477} is orange from 50 (yellow at 90, green at 110, grey at 130): about 52 crafts to 100. Cook at any fire: a town hearth or your own {object:29784}. {item:5486} costs 4s 40c at its vendor; the arrow picks the nearest one of your faction.",
+			section = 2,
 			goals = {
 				{ t = "learn", item = 5486, spell = 6416, skillLine = 185 },
-				{ t = "craft", item = 5477, spell = 6416, reagents = { { item = 5469, count = 1, itemName = "Strider Meat" }, { item = 4536, count = 1, itemName = "Shiny Red Apple" } }, skillLine = 185, untilSkill = 100 },
+				{ t = "craft", item = 5477, spell = 6416, grey = 130, reagents = { { item = 5469, count = 1, itemName = "Strider Meat" }, { item = 4536, count = 1, itemName = "Shiny Red Apple" } }, skillLine = 185, untilSkill = 100, yellow = 90 },
 			},
 		},
 		{
 			title = "{item:5479}: shopping",
 			only = { factions = { "Horde" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 30 {item:2692} (12s).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 5488, count = 1, candidates = { 311 } },
-				{ t = "buy", item = 3735, count = 1, candidates = { 343, 69 } },
-				{ t = "buy", item = 2692, count = 30, candidates = { 316, 311, 63, 344, 345, 346, 314, 313, 69, 347, 348, 72, 321, 74, 76, 73, 349, 55, 350, 351, 62, 60, 325, 59, 352, 61, 353, 327, 354, 79, 80, 56 } },
+				{ t = "buy", item = 5488, count = 1, candidates = { 318 } },
+				{ t = "buy", item = 3735, count = 1, candidates = { 349, 77 } },
+				{ t = "buy", item = 2692, count = 30, candidates = { 323, 318, 71, 350, 351, 352, 321, 320, 77, 353, 354, 80, 328, 82, 84, 81, 355, 63, 356, 357, 70, 68, 332, 67, 358, 69, 359, 334, 360, 17, 87, 64 } },
 			},
 		},
 		{
 			title = "{item:5479}: ingredients",
 			only = { factions = { "Horde" } },
+			section = 2,
 			goals = {
-				{ t = "collect", item = 5470, count = 30, note = "{npc:3239} (59%), Owatanka (35%) in {zone:1413}, or wherever the arrow points", candidates = { 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370 } },
+				{ t = "collect", item = 5470, count = 30, note = "{npc:3239} (59%), Owatanka (35%) in {zone:1413}, or wherever the arrow points", candidates = { 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376 } },
 			},
 		},
 		{
 			title = "{item:5479} (100-130)",
 			only = { factions = { "Horde" } },
 			note = "{item:5479} is orange from 100 (yellow at 140, green at 160, grey at 180): about 30 crafts to 130. Cook at any fire: a town hearth or your own {object:29784}. {item:5488} costs 4s at its vendor; the arrow picks the nearest one of your faction. {npc:3489}, the butcher beside this vendor at the Crossroads, sells {item:3735} (18s), the recipe after Expert: buy it now.",
+			section = 2,
 			goals = {
 				{ t = "learn", item = 5488, spell = 6418, skillLine = 185 },
-				{ t = "craft", item = 5479, spell = 6418, reagents = { { item = 5470, count = 1, itemName = "Thunder Lizard Tail" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 130 },
+				{ t = "craft", item = 5479, spell = 6418, grey = 180, reagents = { { item = 5470, count = 1, itemName = "Thunder Lizard Tail" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 130, yellow = 140 },
 			},
 		},
 		{
 			title = "Expert {skill:185}",
 			note = "Expert {skill:185} raises the cap to 225; it needs skill 125 and character level 20: it is a book, {item:16072} (1g); the arrow picks its nearest seller for your faction. Buy it and read it.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", text = "Buy and read {item:16072} (Expert {skill:185})", candidates = { 68, 321 }, rank = 3, rankMax = 225, skill = "Cooking", skillLine = 185 },
+				{ t = "train", text = "Buy and read {item:16072} (Expert {skill:185})", candidates = { 76, 328 }, rank = 3, rankMax = 225, skill = "Cooking", skillLine = 185 },
 			},
 		},
 		{
 			title = "{spell:3376}: shopping",
 			only = { factions = { "Alliance" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 46 {item:2692} (18s 40c).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 3682, count = 1, candidates = { 371 } },
-				{ t = "buy", item = 2692, count = 46, candidates = { 63, 71, 68, 69, 67, 72, 74, 70, 65, 66, 76, 75, 73, 308, 309, 58, 55, 50, 62, 51, 60, 59, 52, 43, 310, 49, 61, 53, 42, 45, 44, 40, 170, 78, 79, 80, 56, 57, 54 } },
+				{ t = "buy", item = 3682, count = 1, candidates = { 377 } },
+				{ t = "buy", item = 2692, count = 46, candidates = { 71, 79, 76, 77, 75, 80, 82, 78, 73, 74, 84, 83, 81, 315, 316, 66, 63, 58, 70, 59, 68, 67, 60, 51, 317, 57, 69, 61, 50, 53, 52, 48, 177, 86, 17, 87, 64, 65, 62 } },
 			},
 		},
 		{
 			title = "{spell:3376}: ingredients",
 			only = { factions = { "Alliance" } },
+			section = 3,
 			goals = {
-				{ t = "collect", item = 3685, count = 46, note = "{npc:1018} (72%), {npc:1019} (67%) in {zone:1437}, or wherever the arrow points", candidates = { 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387 } },
+				{ t = "collect", item = 3685, count = 46, note = "{npc:1018} (72%), {npc:1019} (67%) in {zone:1437}, or wherever the arrow points", candidates = { 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393 } },
 			},
 		},
 		{
 			title = "{spell:3376} (130-175)",
 			only = { factions = { "Alliance" } },
 			note = "{spell:3376} is orange from 130 (yellow at 170, green at 190, grey at 210): about 46 crafts to 175. Cook at any fire: a town hearth or your own {object:29784}. {item:3682} costs 16s at its vendor; the arrow picks the nearest one of your faction. The raptors of the {zone:1437} drop a {item:3685} about two kills in three. {npc:340} in {zone:1453} sells the recipe.",
+			section = 3,
 			goals = {
 				{ t = "learn", item = 3682, spell = 3376, skillLine = 185 },
-				{ t = "craft", item = 3665, spell = 3376, reagents = { { item = 3685, count = 1, itemName = "Raptor Egg" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 175 },
+				{ t = "craft", item = 3665, spell = 3376, grey = 210, reagents = { { item = 3685, count = 1, itemName = "Raptor Egg" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 175, yellow = 170 },
 			},
 		},
 		{
 			title = "{spell:3398}: shopping",
 			only = { factions = { "Horde" } },
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 45 {item:2692} (18s).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 3735, count = 1, candidates = { 343, 69 } },
-				{ t = "buy", item = 2692, count = 45, candidates = { 350, 59, 325, 323, 60, 55, 56, 351, 388, 62, 353, 352, 61, 311, 63, 316, 345, 348, 347, 389, 69, 346, 72, 73, 74, 76, 390, 314, 344, 354, 79, 80 } },
+				{ t = "buy", item = 3735, count = 1, candidates = { 349, 77 } },
+				{ t = "buy", item = 2692, count = 45, candidates = { 356, 67, 332, 330, 68, 63, 64, 357, 394, 70, 359, 358, 69, 318, 71, 323, 351, 354, 353, 395, 77, 352, 80, 81, 82, 84, 396, 321, 350, 360, 17, 87 } },
 			},
 		},
 		{
 			title = "{spell:3398}: ingredients",
 			only = { factions = { "Horde" } },
+			section = 3,
 			goals = {
-				{ t = "collect", item = 3731, count = 45, note = "{npc:2384} (42%) in {zone:1424}, or wherever the arrow points", candidates = { 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407 } },
+				{ t = "collect", item = 3731, count = 45, note = "{npc:2384} (42%) in {zone:1424}, or wherever the arrow points", candidates = { 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413 } },
 			},
 		},
 		{
 			title = "{spell:3398} (130-175)",
 			only = { factions = { "Horde" } },
 			note = "{spell:3398} is orange from 130 (yellow at 175, green at 195, grey at 215): about 45 crafts to 175. Cook at any fire: a town hearth or your own {object:29784}. {item:3735} costs 18s at its vendor; the arrow picks the nearest one of your faction. The Feral and Hulking Mountain Lions of Hillsbrad Foothills drop {item:3731} more often than the Starving ones.",
+			section = 3,
 			goals = {
 				{ t = "learn", item = 3735, spell = 3398, skillLine = 185 },
-				{ t = "craft", item = 3727, spell = 3398, reagents = { { item = 3731, count = 1, itemName = "Lion Meat" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 175 },
+				{ t = "craft", item = 3727, spell = 3398, grey = 215, reagents = { { item = 3731, count = 1, itemName = "Lion Meat" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 175, yellow = 175 },
 			},
 		},
 		{
 			title = "{item:12210}: shopping",
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 52 {item:2692} (20s 80c).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 12228, count = 1, candidates = { 50, 350, 255, 352, 69, 408, 71 } },
-				{ t = "buy", item = 2692, count = 52, candidates = { 51, 349, 55, 58, 50, 388, 351, 60, 350, 42, 59, 41, 325, 40, 43, 62, 44, 45, 46, 49, 56, 57, 54, 52, 53, 353, 352, 61, 311, 63, 316, 308, 65, 66, 67, 68, 345, 348, 347, 389, 69, 70, 346, 71, 72, 73, 74, 75, 76, 390, 314, 344, 77, 354, 78, 79, 80 } },
+				{ t = "buy", item = 12228, count = 1, candidates = { 58, 356, 262, 358, 77, 414, 79 } },
+				{ t = "buy", item = 2692, count = 52, candidates = { 59, 355, 63, 66, 58, 394, 357, 68, 356, 50, 67, 49, 332, 48, 51, 70, 52, 53, 54, 57, 64, 65, 62, 60, 61, 359, 358, 69, 318, 71, 323, 315, 73, 74, 75, 76, 351, 354, 353, 395, 77, 78, 352, 79, 80, 81, 82, 83, 84, 396, 321, 350, 85, 360, 86, 17, 87 } },
 			},
 		},
 		{
 			title = "{item:12210}: ingredients",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 12184, count = 52, note = "{npc:2560} (38%) in {zone:1417}, or wherever the arrow points", candidates = { 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440 } },
+				{ t = "collect", item = 12184, count = 52, note = "{npc:2560} (38%) in {zone:1417}, or wherever the arrow points", candidates = { 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446 } },
 			},
 		},
 		{
 			title = "{item:12210} (175-225)",
 			note = "{item:12210} is orange from 175 (yellow at 215, green at 235, grey at 255): about 52 crafts to 225. Cook at any fire: a town hearth or your own {object:29784}. {item:12228} costs 50s at its vendor; the arrow picks the nearest one of your faction. {zone:1417}: {npc:2810} at {area:320} (Alliance) and {npc:2821} at {area:321} (Horde) sell the recipe and {item:2692} beside the raptors. {item:17222} (any trainer from 200, 40s) is the alternative, but it takes two {item:12205} a craft and Dustwallow's spiders drop one about two kills in five.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 12228, spell = 15855, skillLine = 185 },
-				{ t = "craft", item = 12210, spell = 15855, reagents = { { item = 12184, count = 1, itemName = "Raptor Flesh" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 225 },
+				{ t = "craft", item = 12210, spell = 15855, grey = 255, reagents = { { item = 12184, count = 1, itemName = "Raptor Flesh" }, { item = 2692, count = 1, itemName = "Hot Spices" } }, skillLine = 185, untilSkill = 225, yellow = 215 },
 			},
 		},
 		{
 			title = "{npc:8125}",
 			only = { factions = { "Alliance" } },
 			note = "Artisan {skill:185} comes from {npc:8125} in {area:976} ({zone:1446}). The cooking trainer in {zone:1455} sends you; it needs skill 225 and level 35.",
+			section = 5,
 			goals = {
 				{ t = "skill", level = 225, skill = "Cooking", skillLine = 185 },
 				{ t = "level", level = 35 },
@@ -8982,6 +9213,7 @@ G(function() return {
 			title = "{npc:8125}",
 			only = { factions = { "Horde" } },
 			note = "Artisan {skill:185} comes from {npc:8125} in {area:976} ({zone:1446}). The cooking trainer in {zone:1454} sends you; it needs skill 225 and level 35.",
+			section = 5,
 			goals = {
 				{ t = "skill", level = 225, skill = "Cooking", skillLine = 185 },
 				{ t = "level", level = 35 },
@@ -8991,6 +9223,7 @@ G(function() return {
 		{
 			title = "Giant Eggs",
 			note = "{quest:6610} asks for 12 Giant Eggs, 10 {item:7974} and 20 {item:8932}: bring all three before you go to {zone:1446}, so you make the trip once. Giant Eggs drop from the owlbeasts of {zone:1425}: {npc:2929} (54%). {item:12218} takes about 120 more after Artisan: farm them now too if you like.",
+			section = 5,
 			goals = {
 				{ t = "collect", item = 12207, count = 12, map = 1425, x = 58.76, y = 51.05, f = "e", fromNpcs = { { npc = 7808, npcName = "Marauding Owlbeast" }, { npc = 2929, npcName = "Savage Owlbeast" }, { npc = 2928, npcName = "Primitive Owlbeast" }, { npc = 2927, npcName = "Vicious Owlbeast" }, { npc = 8210, npcName = "Razortalon" } }, lvl = 47, spotsPacked = "58.8,52.8,,60,13;65.6,57.5,,40,3;62.1,42.6,,48,10;51.4,42.2,,40,1,,45;45.4,53,,40,3,,45;41.3,63.3,,47,3,,45;33.9,63.2,,40,1,,43;34.7,51.3,,44,3,,43;41.4,42.5,,40,1,,45;51.8,62.3,,40,4;26.2,68.1,,40,3,,43;23.7,49.4,,40,1,,43;58.7,48.7,,66,10,1;55.5,52.2,,60,12,1;61.6,55.3,,57,10,1;56,46.5,,56,8,1;61.6,46.4,,47,8,1;63.3,50.6,,59,14,1;63.5,47.1,,49,5,1;64.6,53.9,,50,9,1;52.6,50,,62,12,1;52.9,54.8,,60,14,1;54.6,43.2,,59,11,1;52.4,46.4,,52,8,1;51.7,58.7,,45,7,1;49.5,59.8,,40,1,1,45;46.7,56.9,,40,2,1,45;43.5,55.4,,40,3,1,45;43.9,58.9,,40,2,1,45;42.4,45.6,,47,5,1,45;41,52.3,,40,1,1,45;41,56.6,,40,2,1,45;39.5,48.5,,50,3,1,45;38.9,52.5,,40,2,1,45;39.2,44.7,,54,5,1,45;37.5,58.4,,60,4,1,45;38.1,62.5,,40,2,1,45;36.8,45.8,,53,4,1,44;35.2,55.4,,40,2,1,43;34,60.2,,40,2,1,43;31,52.8,,40,1,1,43;31.1,63,,40,1,1,43;29.7,55.3,,40,1,1,43;27.9,65.9,,40,1,1,43;26.8,59.6,,40,1,1,43;26.1,53.6,,40,3,1,43;26.4,62.9,,41,4,1,43", spread = true },
 			},
@@ -8998,19 +9231,22 @@ G(function() return {
 		{
 			title = "{item:8932}",
 			note = "Innkeepers and food vendors sell {item:8932}; the arrow picks the nearest.",
+			section = 5,
 			goals = {
-				{ t = "buy", item = 8932, count = 20, candidates = { 441, 253, 442, 443, 444, 235, 241, 445, 446, 247, 447, 448, 249, 449, 450, 451, 452, 283, 453 } },
+				{ t = "buy", item = 8932, count = 20, candidates = { 447, 260, 448, 449, 450, 242, 248, 451, 452, 254, 453, 454, 256, 455, 456, 457, 458, 290, 459 } },
 			},
 		},
 		{
 			title = "{item:7974}",
 			note = "{item:7974} comes from Big-mouth Clams: open each one, every clam holds one. The Muckshell crabs on the {zone:1445} coast south-west of Theramore drop a clam about seven kills in ten, so ten clams take about fifteen kills, on your way to {zone:1446}. The Steeljaw Snappers on {zone:1446}'s east coast drop them about one kill in three.",
+			section = 5,
 			goals = {
 				{ t = "collect", item = 7974, count = 10, map = 1445, x = 55.6, y = 63.5, f = "e" },
 			},
 		},
 		{
 			title = "{quest:6610}",
+			section = 5,
 			goals = {
 				{ t = "turnin", only = { factions = { "Alliance" } }, quest = 6612, npc = 8125, map = 1446, x = 52.63, y = 28.11, z = 8.8, f = "e", profLine = 185, profName = "Cooking", profRank = 225 },
 				{ t = "turnin", only = { factions = { "Horde" } }, quest = 6611, npc = 8125, map = 1446, x = 52.63, y = 28.11, z = 8.8, f = "e", profLine = 185, profName = "Cooking", profRank = 225 },
@@ -9021,23 +9257,26 @@ G(function() return {
 		{
 			title = "{item:12218}: shopping",
 			note = "The arrow picks the nearest vendor of your faction for each item. You need 240 {item:3713} (3g 84s).",
+			section = 5,
 			goals = {
-				{ t = "buy", item = 16110, count = 1, candidates = { 454, 273, 455 } },
-				{ t = "buy", item = 3713, count = 240, candidates = { 345, 71, 74, 346, 316, 315, 456, 70, 347, 69, 314, 321, 313, 72, 68, 67, 76, 75, 66, 73, 308, 309, 349, 58, 55, 50, 350, 62, 51, 60, 325, 59, 52, 46, 49, 352, 61, 353, 169, 42, 45, 44, 40, 170, 327, 354, 78, 79, 56, 57, 54 } },
+				{ t = "buy", item = 16110, count = 1, candidates = { 460, 280, 461 } },
+				{ t = "buy", item = 3713, count = 240, candidates = { 351, 79, 82, 352, 323, 322, 462, 78, 353, 77, 321, 328, 320, 80, 76, 75, 84, 83, 74, 81, 315, 316, 355, 66, 63, 58, 356, 70, 59, 68, 332, 67, 60, 54, 57, 358, 69, 359, 176, 50, 53, 52, 48, 177, 334, 360, 86, 17, 64, 65, 62 } },
 			},
 		},
 		{
 			title = "{item:12218}: ingredients",
+			section = 5,
 			goals = {
-				{ t = "collect", item = 12207, count = 120, note = "{npc:2929} (54%) in {zone:1425}, or wherever the arrow points", candidates = { 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488 } },
+				{ t = "collect", item = 12207, count = 120, note = "{npc:2929} (54%) in {zone:1425}, or wherever the arrow points", candidates = { 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494 } },
 			},
 		},
 		{
 			title = "{item:12218} (225-300)",
 			note = "{item:12218} is orange from 225 (yellow at 265, green at 285, grey at 305): about 120 crafts to 300. Cook at any fire: a town hearth or your own {object:29784}. {item:16110} costs 1g 20s at its vendor; the arrow picks the nearest one of your faction. {item:12218} is orange to 265 and green from 285, yet it still carries you to 300. Fishers can finish on {item:13931} ({npc:8137}, {area:977}; yellow to 310) instead; {item:13932} needs an {item:279982} on Forever.",
+			section = 5,
 			goals = {
 				{ t = "learn", item = 16110, spell = 15933, skillLine = 185 },
-				{ t = "craft", item = 12218, spell = 15933, reagents = { { item = 12207, count = 1, itemName = "Giant Egg" }, { item = 3713, count = 2, itemName = "Soothing Spices" } }, skillLine = 185, untilSkill = 300 },
+				{ t = "craft", item = 12218, spell = 15933, grey = 305, reagents = { { item = 12207, count = 1, itemName = "Giant Egg" }, { item = 3713, count = 2, itemName = "Soothing Spices" } }, skillLine = 185, untilSkill = 300, yellow = 265 },
 			},
 		},
 	},
@@ -9050,18 +9289,20 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 947,
+	sections = { { from = 1, skill = "Enchanting", skillLine = 333, to = 75 }, { from = 75, skill = "Enchanting", skillLine = 333, to = 150 }, { from = 150, skill = "Enchanting", skillLine = 333, to = 225 }, { from = 225, skill = "Enchanting", skillLine = 333, to = 300 } },
 	version = 1,
 	pool = {
+		{ faction = "H", npc = 266881, map = 1411, x = 56.69, y = 73.74, z = 23, f = "e" },
 		{ faction = "H", npc = 5695, map = 1420, x = 61.77, y = 51.56, z = 41.2, f = "e" },
-		{ faction = "A", npc = 11072, map = 1429, x = 64.93, y = 70.71, z = 99.3, f = "e" },
 		{ faction = "A", npc = 3606, map = 1438, x = 36.71, y = 34.16, z = 1335.3, f = "e" },
-		{ faction = "H", npc = 11074, map = 1442, x = 49.18, y = 57.18, z = 165.1, f = "e" },
-		{ faction = "A", npc = 1317, map = 1453, x = 52.9, y = 74.46, z = 96.5 },
-		{ faction = "H", npc = 3345, map = 1454, x = 53.9, y = 38.67, z = 24.7, f = "e" },
-		{ faction = "A", npc = 5157, map = 1455, x = 59.77, y = 45.45, z = 512.6, f = "e" },
-		{ faction = "H", npc = 3011, map = 1456, x = 44.91, y = 37.49, z = 140.5, f = "e" },
-		{ faction = "A", npc = 4213, map = 1457, x = 58.4, y = 13.12, z = 1333.1, f = "e" },
-		{ faction = "H", npc = 4616, map = 1458, x = 62.47, y = 61.8, z = -62.1, f = "e" },
+		{ faction = "A", npc = 11068, map = 1453, x = 53.03, y = 73.73, z = 96.4 },
+		{ faction = "H", npc = 11066, map = 1454, x = 53.47, y = 38.55, z = 24.6, f = "e" },
+		{ faction = "A", npc = 11065, map = 1455, x = 60.27, y = 45.37, z = 505.9, f = "e" },
+		{ faction = "H", npc = 11071, map = 1456, x = 44.61, y = 38.5, z = 141.2, f = "e" },
+		{ faction = "A", npc = 11070, map = 1457, x = 58.79, y = 12.74, z = 1333.1, f = "e" },
+		{ faction = "H", npc = 11067, map = 1458, x = 62.54, y = 60.35, z = -62.1, f = "e" },
+		{ faction = "AH", npc = 257004, map = 2521, x = 59.19, y = 76.4, z = 668.7 },
+		{ faction = "AH", npc = 257020, map = 2521, x = 43.24, y = 43.15, z = 829.4 },
 		{ faction = "H", npc = 3168, map = 1411, x = 52.98, y = 41.97, z = 12.6, f = "e" },
 		{ faction = "H", npc = 3187, map = 1411, x = 56.41, y = 73.79, z = 22.3, f = "e" },
 		{ faction = "H", npc = 3081, map = 1412, x = 45.56, y = 61.73, z = -9.3 },
@@ -9124,8 +9365,15 @@ G(function() return {
 		{ faction = "A", npc = 1318, map = 1453, x = 52.8, y = 74.26, z = 96.5 },
 		{ faction = "A", npc = 5158, map = 1455, x = 61.03, y = 44, z = 505.9, f = "e" },
 		{ faction = "H", npc = 4617, map = 1458, x = 62.38, y = 60.98, z = -62.1, f = "e" },
-		{ faction = "AH", npc = 257004, map = 2521, x = 59.19, y = 76.4, z = 668.7 },
-		{ faction = "AH", npc = 257020, map = 2521, x = 43.24, y = 43.15, z = 829.4 },
+		{ faction = "A", npc = 7949, map = 1444, x = 31.55, y = 44.25, z = 12.4, f = "e" },
+		{ faction = "A", npc = 1317, map = 1453, x = 52.9, y = 74.46, z = 96.5 },
+		{ faction = "H", npc = 3345, map = 1454, x = 53.9, y = 38.67, z = 24.7, f = "e" },
+		{ faction = "A", npc = 5157, map = 1455, x = 59.77, y = 45.45, z = 512.6, f = "e" },
+		{ faction = "H", npc = 3011, map = 1456, x = 44.91, y = 37.49, z = 140.5, f = "e" },
+		{ faction = "A", npc = 4213, map = 1457, x = 58.4, y = 13.12, z = 1333.1, f = "e" },
+		{ faction = "H", npc = 4616, map = 1458, x = 62.47, y = 61.8, z = -62.1, f = "e" },
+		{ faction = "A", npc = 11072, map = 1429, x = 64.93, y = 70.71, z = 99.3, f = "e" },
+		{ faction = "H", npc = 11074, map = 1442, x = 49.18, y = 57.18, z = 165.1, f = "e" },
 		{ faction = "A", npc = 3969, map = 1440, x = 36.49, y = 49.46, z = 111.5, f = "e" },
 		{ faction = "H", npc = 3010, map = 1456, x = 47.41, y = 33.74, z = 140.9, f = "e" },
 		{ faction = "H", npc = 3334, map = 1454, x = 42.09, y = 49.48, z = 7.2, f = "e" },
@@ -9167,81 +9415,91 @@ G(function() return {
 	steps = {
 		{
 			title = "Learn {skill:333}",
-			note = "Apprentice {skill:333} lets you craft up to 75 for 10c, at any character level. Not every {skill:333} trainer teaches it: Alliance {npc:3606} ({zone:1438}), {npc:11068} ({zone:1453}), {npc:257004} (Zephras Isle), {npc:5157} ({zone:1455}), {npc:11072} ({zone:1429}), {npc:11070} ({zone:1457}), {npc:1317} ({zone:1453}), {npc:257020} (Zephras Isle), {npc:4213} ({zone:1457}), {npc:11065} ({zone:1455}), {npc:5158} ({zone:1455}) and {npc:7949} ({zone:1444}); Horde {npc:257004} (Zephras Isle), {npc:3345} ({zone:1454}), {npc:11074} ({zone:1442}), Jhag ({zone:1454}), {npc:4616} ({zone:1458}), {npc:11067} ({zone:1458}), {npc:11071} ({zone:1456}), {npc:257020} (Zephras Isle), {npc:3011} ({zone:1456}) and {npc:5695} ({zone:1420}). The arrow picks the nearest of your faction. Buy a {item:6217} and {item:247786} from an enchanting supplies vendor (in the capitals and on Zephras Isle; the starting-area trainers have none beside them, and the next step's arrow picks the nearest). From now on, disenchant every green you do not wear: that is where the dust and essences come from. Two starter quests teach Disenchant on a quest item: An Enchanting Lesson from {npc:11072} ({area:91}, {zone:1429}) and A Pain in the Neck from {npc:266881} ({area:367}, {zone:1411}). 1-75 takes about 50c of recipes and 4s 44c of vendor goods, plus 51 {item:10940} to gather or buy.",
+			note = "Apprentice {skill:333} lets you craft up to 75 for 10c, at any character level. Not every {skill:333} trainer teaches it: Alliance {npc:3606} ({zone:1438}), {npc:11068} ({zone:1453}), {npc:257004} (Zephras Isle), {npc:11070} ({zone:1457}), {npc:257020} (Zephras Isle) and {npc:11065} ({zone:1455}); Horde {npc:257004} (Zephras Isle), {npc:11066} ({zone:1454}), {npc:11067} ({zone:1458}), {npc:11071} ({zone:1456}), {npc:257020} (Zephras Isle), {npc:266881} ({zone:1411}) and {npc:5695} ({zone:1420}). The arrow picks the nearest of your faction. Buy a {item:6217} and {item:247786} from an enchanting supplies vendor (in the capitals and on Zephras Isle; the starting-area trainers have none beside them, and the next step's arrow picks the nearest). From now on, disenchant every green you do not wear: that is where the dust and essences come from. Two starter quests teach Disenchant on a quest item: An Enchanting Lesson from {npc:11072} ({area:91}, {zone:1429}) and A Pain in the Neck from {npc:266881} ({area:367}, {zone:1411}). 1-75 takes about 50c of recipes and 4s 44c of vendor goods, plus 51 {item:10940} to gather or buy.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, rank = 1, rankMax = 75, skill = "Enchanting", skillLine = 333 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, rank = 1, rankMax = 75, skill = "Enchanting", skillLine = 333 },
 				{ t = "skill", level = 1, skill = "Enchanting", skillLine = 333 },
 			},
 		},
 		{
 			title = "{skill:333} 1-75: vendor goods",
 			note = "Buy the whole bracket's share in one go: 1 {item:6217} (1s 24c) and 32 {item:247786} (3s 20c); about 4s 44c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1286} and {npc:1318}; {zone:1454}: {npc:3367}, {npc:3346} and {npc:5817}).",
+			section = 1,
 			goals = {
-				{ t = "buy", item = 6217, count = 1, candidates = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 } },
-				{ t = "buy", item = 247786, count = 32, candidates = { 22, 23, 69, 70, 56, 71, 60, 62, 72, 73, 74 } },
+				{ t = "buy", item = 6217, count = 1, candidates = { 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 } },
+				{ t = "buy", item = 247786, count = 32, candidates = { 23, 24, 70, 71, 57, 72, 61, 63, 73, 10, 11 } },
 			},
 		},
 		{
 			title = "{spell:7418} to 25",
 			note = "{spell:7418} is orange at 1 (yellow 20, green 22, grey 25): about 31 crafts to 25. Each takes 1 {item:247786}. One {item:247786} (10c) a craft; grey at 25 on Forever. Make the {item:6218} first: the recipe needs it in your bags, so keep it there. Enchant any item for that slot in your bags, even a grey one.",
+			section = 1,
 			goals = {
 				{ t = "craft", item = 6218, spell = 7421, count = 1, note = "a tool: keep it in your bags", reagents = { { item = 6217, count = 1, itemName = "Copper Rod" }, { item = 247786, count = 1, itemName = "Mote of Magic" } }, skillLine = 333 },
-				{ t = "craft", spell = 7418, reagents = { { item = 247786, count = 1, itemName = "Mote of Magic" } }, skillLine = 333, untilSkill = 25 },
+				{ t = "craft", spell = 7418, grey = 25, reagents = { { item = 247786, count = 1, itemName = "Mote of Magic" } }, skillLine = 333, untilSkill = 25, yellow = 20 },
 			},
 		},
 		{
 			title = "{skill:333} recipes at 25",
 			note = "Back to an {skill:333} trainer: {spell:7420} (from 15, 50c). Also learn {spell:1230643} (1s): Forever's {skill:333} camp item, 1 {item:4470} and 1 {item:10940}, placed at a campsite beside a campfire for its buff. The Camping 101: {skill:333} quest from your starting area's camping guide (after The Great Outdoors) sends you to an enchanting trainer who teaches it free.",
+			section = 1,
 			goals = {
-				{ t = "learn", spell = 7420, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 333 },
-				{ t = "learn", spell = 1230643, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 333 },
+				{ t = "learn", spell = 7420, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, skillLine = 333 },
+				{ t = "learn", spell = 1230643, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, skillLine = 333 },
 			},
 		},
 		{
 			title = "{spell:7420} to 75",
 			note = "{spell:7420} is orange at 25 (yellow 70, green 90, grey 110): about 51 crafts to 75. Each takes 1 {item:10940}. One {item:10940} a craft: the dust most level 5-20 greens break into, armour above all. {item:10938} (from weapons) does the same job through Bracer - Minor Deflect or Chest - {spell:7423} if you have more of it. {item:10940} (51 for 1-75): {skill:333}: disenchant green items of item level 5-20; or the Auction House. Enchant any item for that slot in your bags, even a grey one.",
+			section = 1,
 			goals = {
-				{ t = "craft", spell = 7420, reagents = { { item = 10940, count = 1, itemName = "Strange Dust" } }, skillLine = 333, untilSkill = 75 },
+				{ t = "craft", spell = 7420, grey = 110, reagents = { { item = 10940, count = 1, itemName = "Strange Dust" } }, skillLine = 333, untilSkill = 75, yellow = 70 },
 				{ t = "skill", level = 75, skill = "Enchanting", skillLine = 333 },
 			},
 		},
 		{
 			title = "Journeyman {skill:333}",
-			note = "Journeyman raises the cap from 75 to 150 for 5s (Classic's price; Forever's is not in the data); it needs {skill:333} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:333} trainer teaches it: Alliance {npc:5157} ({zone:1455}), {npc:11072} ({zone:1429}), {npc:1317} ({zone:1453}), {npc:4213} ({zone:1457}) and {npc:7949} ({zone:1444}); Horde {npc:3345} ({zone:1454}), {npc:11074} ({zone:1442}), {npc:4616} ({zone:1458}) and {npc:3011} ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:7771} (from 70, 2s). 75-150 takes about 2s of recipes, plus 1 {item:1210}, 1 {item:6338}, 4 {item:10938}, 121 {item:10940} and 20 {item:11083} to gather or buy.",
+			note = "Journeyman raises the cap from 75 to 150 for 5s (Classic's price; Forever's is not in the data); it needs {skill:333} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:333} trainer teaches it: Alliance {npc:5157} ({zone:1455}), {npc:1317} ({zone:1453}), {npc:4213} ({zone:1457}) and {npc:7949} ({zone:1444}); Horde {npc:3345} ({zone:1454}), {npc:4616} ({zone:1458}) and {npc:3011} ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:7771} (from 70, 2s). 75-150 takes about 2s of recipes, plus 1 {item:1210}, 1 {item:6338}, 4 {item:10938}, 121 {item:10940} and 20 {item:11083} to gather or buy.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, rank = 2, rankMax = 150, skill = "Enchanting", skillLine = 333 },
-				{ t = "learn", item = 6345, spell = 7771, skillLine = 333 },
+				{ t = "train", candidates = { 74, 75, 76, 77, 78, 79, 80 }, rank = 2, rankMax = 150, skill = "Enchanting", skillLine = 333 },
+				{ t = "learn", spell = 7771, candidates = { 1, 2, 3, 74, 75, 76, 77, 78, 79, 80, 10, 11 }, skillLine = 333 },
 			},
 		},
 		{
 			title = "{spell:7420} to 90",
 			note = "{spell:7420} is yellow at 75 (yellow 70, green 90, grey 110): about 22 crafts to 90. Each takes 1 {item:10940}. One {item:10940} a craft: the dust most level 5-20 greens break into, armour above all. {item:10938} (from weapons) does the same job through Bracer - Minor Deflect or Chest - {spell:7423} if you have more of it. {item:10940} (121 for 75-150): {skill:333}: disenchant green items of item level 5-20; or the Auction House. Enchant any item for that slot in your bags, even a grey one.",
+			section = 2,
 			goals = {
-				{ t = "craft", spell = 7420, reagents = { { item = 10940, count = 1, itemName = "Strange Dust" } }, skillLine = 333, untilSkill = 90 },
+				{ t = "craft", spell = 7420, grey = 110, reagents = { { item = 10940, count = 1, itemName = "Strange Dust" } }, skillLine = 333, untilSkill = 90, yellow = 70 },
 			},
 		},
 		{
 			title = "{spell:7771} to 130",
 			note = "{spell:7771} is orange at 90 (yellow 110, green 130, grey 150): about 48 crafts to 130. Each takes 2 {item:10940}. Two {item:10940} a craft (the trainer teaches it from 70 for 2s); keep disenchanting the greens of the 10-20 zones. Enchant any item for that slot in your bags, even a grey one.",
+			section = 2,
 			goals = {
-				{ t = "craft", spell = 7771, reagents = { { item = 10940, count = 2, itemName = "Strange Dust" } }, skillLine = 333, untilSkill = 130 },
+				{ t = "craft", spell = 7771, grey = 150, reagents = { { item = 10940, count = 2, itemName = "Strange Dust" } }, skillLine = 333, untilSkill = 130, yellow = 110 },
 			},
 		},
 		{
 			title = "{skill:333} recipes at 130",
 			note = "Back to an {skill:333} trainer: {spell:7795} (from 100) and {spell:13501} (from 130).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 7795, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 333 },
-				{ t = "learn", spell = 13501, candidates = { 5, 6, 7, 8, 9, 10 }, skillLine = 333 },
+				{ t = "learn", spell = 7795, candidates = { 74, 75, 76, 77, 78, 79, 80 }, skillLine = 333 },
+				{ t = "learn", spell = 13501, candidates = { 81, 82, 74, 75, 76, 77, 78, 79, 80 }, skillLine = 333 },
 			},
 		},
 		{
 			title = "{spell:13501} to 150",
 			note = "{spell:13501} is orange at 130 (yellow 155, green 175, grey 195): about 20 crafts to 150, a point every craft. Each takes 1 {item:11083}. One {item:11083} a craft (level 21-30 greens). Make the {item:6339} first: the recipe needs it in your bags, so keep it there. {item:1210} (1 for 75-150): {item:1210} turns up in about one {object:1731}, {object:1732} or {object:1733} in 100: buy it at the Auction House, or keep the ones you find while mining. {item:6338} (1 for 75-150): {skill:164}: {item:6338}; or the Auction House. {item:10938} (4 for 75-150): {skill:333}: disenchant green items of item level 5-15; or the Auction House. {item:11083} (20 for 75-150): {skill:333}: disenchant green items of item level 21-30; or the Auction House. Enchant any item for that slot in your bags, even a grey one. {skill:333} 150 is a Legacy System milestone.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 6339, spell = 7795, count = 1, note = "a tool: keep it in your bags", reagents = { { item = 6338, count = 1, itemName = "Silver Rod" }, { item = 10940, count = 3, itemName = "Strange Dust" }, { item = 10938, count = 4, itemName = "Lesser Magic Essence" }, { item = 1210, count = 1, itemName = "Shadowgem" } }, skillLine = 333 },
-				{ t = "craft", spell = 13501, reagents = { { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333, untilSkill = 150 },
+				{ t = "craft", spell = 13501, grey = 195, reagents = { { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333, untilSkill = 150, yellow = 155 },
 				{ t = "skill", level = 150, skill = "Enchanting", skillLine = 333 },
 			},
 		},
@@ -9249,6 +9507,7 @@ G(function() return {
 			title = "{item:5500} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "1 {item:5500} for {item:11130}: open the Giant Clams at the marked spot, or buy it at the Auction House.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 5500, count = 1, map = 1437, x = 20.7, y = 18.1, f = "e", spotsPacked = "20.7,18.1,,220,7;26.9,15,,93,3,1;13.1,26.2,,93,2,1;11.9,31.8,,93,2,1;11.7,41,,93,1,1;7,39.6,,93,3,1;5.4,48.9,,93,1,1;16.6,59.8,,93,2,1;11.6,64.6,,93,2,1" },
 			},
@@ -9257,6 +9516,7 @@ G(function() return {
 			title = "{item:5500} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "1 {item:5500} for {item:11130}: open the Giant Clams at the marked spot, or buy it at the Auction House.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 5500, count = 1, map = 1440, x = 12.3, y = 10, f = "e", spotsPacked = "12.3,10,,52,2;14.4,8.4,,24,2,1" },
 			},
@@ -9264,54 +9524,61 @@ G(function() return {
 		{
 			title = "Expert {skill:333}",
 			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:333} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:11072} ({zone:1429}); Horde {npc:11074} ({zone:1442}). The arrow picks the nearest of your faction. Learn now: {spell:13628} (from 150). 150-225 takes 1 {item:5500}, 1 {item:7971}, 1 {item:11082}, 71 {item:11083}, 1 {item:11128}, 1 {item:11135}, 21 {item:11137} and 1 {item:11144} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {spell:13637} (from 160), {item:11145} (from 200) and {spell:13746} (from 205), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", candidates = { 8, 6, 9, 5, 7, 10 }, rank = 3, rankMax = 225, skill = "Enchanting", skillLine = 333 },
-				{ t = "learn", spell = 13628, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 333 },
+				{ t = "train", candidates = { 82, 81 }, rank = 3, rankMax = 225, skill = "Enchanting", skillLine = 333 },
+				{ t = "learn", spell = 13628, candidates = { 82, 78, 76, 79, 74, 81, 75, 77, 80 }, skillLine = 333 },
 			},
 		},
 		{
 			title = "{spell:13501} to 160",
 			note = "{spell:13501} is orange at 150 (yellow 155, green 175, grey 195): about 11 crafts to 160. Each takes 1 {item:11083}. One {item:11083} a craft (level 21-30 greens). Make the {item:11130} now, while it still gives a point: a later recipe needs it in your bags, so keep it there. {item:11082} (1 for 150-225): {skill:333}: disenchant green items of item level 16-25; or the Auction House. {item:11083} (71 for 150-225): {skill:333}: disenchant green items of item level 21-30; or the Auction House. {item:11128} (1 for 150-225): {skill:164}: {item:11128}; or the Auction House. Enchant any item for that slot in your bags, even a grey one.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 11130, spell = 13628, count = 1, note = "a tool: keep it in your bags", reagents = { { item = 11128, count = 1, itemName = "Golden Rod" }, { item = 5500, count = 1, itemName = "Iridescent Pearl" }, { item = 11082, count = 1, itemName = "Greater Astral Essence" }, { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333 },
-				{ t = "craft", spell = 13501, reagents = { { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333, untilSkill = 160 },
+				{ t = "craft", spell = 13501, grey = 195, reagents = { { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333, untilSkill = 160, yellow = 155 },
 			},
 		},
 		{
 			title = "{skill:333} recipes at 160",
 			note = "Still at the Expert trainer: {spell:13637} (from 160).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 13637, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 333 },
+				{ t = "learn", spell = 13637, candidates = { 82, 81 }, skillLine = 333 },
 			},
 		},
 		{
 			title = "{spell:13637} to 205",
 			note = "{spell:13637} is orange at 160 (yellow 180, green 200, grey 220): about 59 crafts to 205. Each takes 1 {item:11083}. {item:11083} again. Enchant any item for that slot in your bags, even a grey one.",
+			section = 3,
 			goals = {
-				{ t = "craft", spell = 13637, reagents = { { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333, untilSkill = 205 },
+				{ t = "craft", spell = 13637, grey = 220, reagents = { { item = 11083, count = 1, itemName = "Soul Dust" } }, skillLine = 333, untilSkill = 205, yellow = 180 },
 			},
 		},
 		{
 			title = "{skill:333} recipes at 205",
 			note = "Still at the Expert trainer: {spell:13702} (from 200) and {spell:13746} (from 205).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 13702, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 333 },
-				{ t = "learn", spell = 13746, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 333 },
+				{ t = "learn", spell = 13702, candidates = { 82, 81 }, skillLine = 333 },
+				{ t = "learn", spell = 13746, candidates = { 82, 81 }, skillLine = 333 },
 			},
 		},
 		{
 			title = "{spell:13746} to 225",
 			note = "{spell:13746} is orange at 205 (yellow 225, green 245, grey 265): about 20 crafts to 225, a point every craft. Each takes 1 {item:11137}. One {item:11137} a craft (level 31-40 greens). Make the {item:11145} first: the recipe needs it in your bags, so keep it there. {item:7971} (1 for 150-225): {item:7971} is a rare drop (no mob gives it one time in 50): buy it at the Auction House, or keep the ones you find. {item:11135} (1 for 150-225): {skill:333}: disenchant green items of item level 26-35; or the Auction House. {item:11137} (21 for 150-225): {skill:333}: disenchant green items of item level 31-40; or the Auction House. {item:11144} (1 for 150-225): {skill:164}: {item:11144}; or the Auction House. Enchant any item for that slot in your bags, even a grey one. {skill:333} 225 is a Legacy System milestone.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 11145, spell = 13702, count = 1, note = "a tool: keep it in your bags", reagents = { { item = 11144, count = 1, itemName = "Truesilver Rod" }, { item = 7971, count = 1, itemName = "Black Pearl" }, { item = 11135, count = 1, itemName = "Greater Mystic Essence" }, { item = 11137, count = 1, itemName = "Vision Dust" } }, skillLine = 333 },
-				{ t = "craft", spell = 13746, reagents = { { item = 11137, count = 1, itemName = "Vision Dust" } }, skillLine = 333, untilSkill = 225 },
+				{ t = "craft", spell = 13746, grey = 265, reagents = { { item = 11137, count = 1, itemName = "Vision Dust" } }, skillLine = 333, untilSkill = 225, yellow = 225 },
 				{ t = "skill", level = 225, skill = "Enchanting", skillLine = 333 },
 			},
 		},
 		{
 			title = "Artisan {skill:333}",
 			note = "Artisan raises the cap from 225 to 300 for 5g (Classic's price; Forever's is not in the data); it needs {skill:333} 200 and character level 35, so you can take it on any visit from 200. {npc:11073} teaches Artisan {skill:333} inside the {area:1517} dungeon ({zone:1418}); bring a group. Learn now: {spell:13815} (from 210). 225-300 takes about 2g 20s of recipes and 1g 70s of vendor goods, plus 34 {item:8831}, 39 {item:11137} and 208 {item:11176} to gather or buy.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 35 },
 				{ t = "train", npc = 11073 },
@@ -9321,28 +9588,32 @@ G(function() return {
 		{
 			title = "{skill:333} 225-300: vendor goods",
 			note = "Buy the whole bracket's share in one go: 34 {item:8925} (1g 70s); about 1g 70s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1286}, Eldraeith and {npc:1325}; {zone:1454}: {npc:3367}, {npc:3348} and {npc:3334}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 8925, count = 34, candidates = { 75, 39, 41, 51, 46, 76, 44, 61, 53, 77, 78, 79, 80, 57, 81, 82, 45, 50, 48, 47, 83, 52, 84, 85, 86, 17, 87, 18, 19, 88, 89, 90, 24, 91, 26, 92, 93, 94, 95, 96, 97, 33, 98, 99, 100, 101, 102, 103, 104, 105, 63, 106, 64, 65, 107, 108, 109, 110, 68 } },
+				{ t = "buy", item = 8925, count = 34, candidates = { 83, 40, 42, 52, 47, 84, 45, 62, 54, 85, 86, 87, 88, 58, 89, 90, 46, 51, 49, 48, 91, 53, 92, 93, 94, 18, 95, 19, 20, 96, 97, 98, 25, 99, 27, 100, 101, 102, 103, 104, 105, 34, 106, 107, 108, 109, 110, 111, 112, 113, 64, 114, 65, 66, 115, 116, 117, 118, 69 } },
 			},
 		},
 		{
 			title = "{item:20754}",
 			note = "{item:20754} teaches {item:20747} ({skill:333} 250) for 1g. Sold by {npc:15419} ({zone:1451}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 20754, candidates = { 69 } },
+				{ t = "buy", item = 20754, candidates = { 70 } },
 			},
 		},
 		{
 			title = "{item:16217}",
 			note = "{item:16217} teaches {spell:20017} ({skill:333} 265) for 1g 20s. Sold by Alliance: {npc:4229} ({zone:1457}), limited stock; Horde: {npc:4561} ({zone:1458}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; it binds when picked up, so the Auction House never has it.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 16217, candidates = { 111, 63 } },
+				{ t = "buy", item = 16217, candidates = { 119, 64 } },
 			},
 		},
 		{
 			title = "{item:8831} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "34 {item:8831} for {item:20747}: {skill:182}: {item:8831} (skill 210) in {zone:1425} (40-50), {zone:1444} (40-50) and {zone:1447} (45-55); or the Auction House. The densest patch of {item:8831} in {zone:1425} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8831, count = 34, map = 1425, x = 66.3, y = 71.6, f = "e", fromId = 142140, fromKind = "object", spotsPacked = "66.3,71.6,,63,2;68.7,69.7,,43,2,1;68,75.5,,43,2,1;63.4,69.6,,43,2,1;66.2,66.5,,68,6,1;62.2,73.4,,43,1,1;68,78.2,,43,1,1;63.1,66.1,,51,3,1;64.7,82.9,,43,1,1;57.6,72.5,,43,2,1;60.2,81,,43,2,1;50.6,67.5,,43,1,1;49.5,63,,43,1,1;48.2,69.5,,43,2,1;49.9,53.3,,43,2,1;57.7,43,,43,3,1;40.2,65.1,,43,2,1;36.2,73.3,,43,1,1;32.3,73.8,,43,2,1;31.5,66.9,,43,2,1;32,58.2,,43,4,1;23.3,58.4,,43,2,1" },
 			},
@@ -9351,6 +9622,7 @@ G(function() return {
 			title = "{item:8831} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "34 {item:8831} for {item:20747}: {skill:182}: {item:8831} (skill 210) in {zone:1425} (40-50), {zone:1444} (40-50) and {zone:1447} (45-55); or the Auction House. The densest patch of {item:8831} in {zone:1444} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8831, count = 34, map = 1444, x = 56.7, y = 68.9, f = "e", fromId = 142140, fromKind = "object", spotsPacked = "56.7,68.9,,431,5;59.8,65.6,,100,2,1;61.5,72.8,,100,1,1;60.1,62.3,,100,1,1;60.8,56.2,,104,3,1;56.2,44.6,,100,1,1;64.4,32.1,,100,1,1;64.5,27.2,,100,1,1;25.7,67.1,,100,1,1;25.7,53.7,,100,3,1;23.9,63.6,,100,1,1;51.7,17.3,,145,5,1;39.5,13.5,,127,5,1;41.4,9.4,,100,1,1" },
 			},
@@ -9358,24 +9630,27 @@ G(function() return {
 		{
 			title = "{spell:13815} to 253",
 			note = "{spell:13815} is orange at 225 (yellow 230, green 250, grey 270): about 39 crafts to 253. Each takes 1 {item:11137}. {npc:11073} teaches it with Artisan: learn it on that visit. {item:11137} again; bring about 40. {item:11137} (39 for 225-300): {skill:333}: disenchant green items of item level 31-40; or the Auction House. Enchant any item for that slot in your bags, even a grey one.",
+			section = 4,
 			goals = {
-				{ t = "craft", spell = 13815, reagents = { { item = 11137, count = 1, itemName = "Vision Dust" } }, skillLine = 333, untilSkill = 253 },
+				{ t = "craft", spell = 13815, grey = 270, reagents = { { item = 11137, count = 1, itemName = "Vision Dust" } }, skillLine = 333, untilSkill = 253, yellow = 230 },
 			},
 		},
 		{
 			title = "{item:20747} to 275",
 			note = "{item:20747} is orange at 253 (yellow 260, green 270, grey 280): about 34 crafts to 275. Each takes 1 {item:11176}, 1 {item:8831} and 1 {item:8925}. One {item:11176} (level 41-50 greens) and one {item:8831} (herbalists) a craft; the oil sells well. {npc:15419} sells the formula at the inn of {area:3425} ({zone:1451}): fly there, the mobs around it are level 55 and up. {item:11176} (208 for 225-300): {skill:333}: disenchant green items of item level 41-50; or the Auction House.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 20754, spell = 25127, note = "from the recipe in your bags", skillLine = 333 },
-				{ t = "craft", item = 20747, spell = 25127, reagents = { { item = 11176, count = 1, itemName = "Dream Dust" }, { item = 8831, count = 1, itemName = "Purple Lotus" }, { item = 8925, count = 1, itemName = "Crystal Vial" } }, skillLine = 333, untilSkill = 275 },
+				{ t = "craft", item = 20747, spell = 25127, grey = 280, reagents = { { item = 11176, count = 1, itemName = "Dream Dust" }, { item = 8831, count = 1, itemName = "Purple Lotus" }, { item = 8925, count = 1, itemName = "Crystal Vial" } }, skillLine = 333, untilSkill = 275, yellow = 260 },
 			},
 		},
 		{
 			title = "{spell:20017} to 300",
 			note = "{spell:20017} is orange at 275 (yellow 285, green 305, grey 325): about 29 crafts to 300. Each takes 6 {item:11176}. Six {item:11176} a craft: the dearest stretch, so disenchant every level 41-50 green you find. Enchant any item for that slot in your bags, even a grey one. {skill:333} 300 is a Legacy System milestone.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 16217, spell = 20017, note = "from the recipe in your bags", skillLine = 333 },
-				{ t = "craft", spell = 20017, reagents = { { item = 11176, count = 6, itemName = "Dream Dust" } }, skillLine = 333, untilSkill = 300 },
+				{ t = "craft", spell = 20017, grey = 325, reagents = { { item = 11176, count = 6, itemName = "Dream Dust" } }, skillLine = 333, untilSkill = 300, yellow = 285 },
 				{ t = "skill", level = 300, skill = "Enchanting", skillLine = 333 },
 			},
 		},
@@ -9389,15 +9664,18 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 947,
+	sections = { { from = 1, skill = "Engineering", skillLine = 202, to = 75 }, { from = 75, skill = "Engineering", skillLine = 202, to = 150 }, { from = 150, skill = "Engineering", skillLine = 202, to = 225 }, { from = 225, skill = "Engineering", skillLine = 202, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "H", npc = 11025, map = 1411, x = 52.18, y = 40.8, z = 13.4, f = "e" },
+		{ faction = "AH", npc = 10993, map = 1412, x = 58.65, y = 39.38, z = 141.8 },
 		{ faction = "A", npc = 1702, map = 1426, x = 50.18, y = 50.38, z = 393.4, f = "e" },
 		{ faction = "A", npc = 11037, map = 1439, x = 38.3, y = 41.12, z = 7.5, f = "e" },
-		{ faction = "A", npc = 5518, map = 1453, x = 62.09, y = 30.31, z = 95.8 },
-		{ faction = "H", npc = 3412, map = 1454, x = 75.99, y = 25.41, z = 29.2, f = "e" },
-		{ faction = "A", npc = 5174, map = 1455, x = 68.46, y = 43.54, z = 502.1, f = "e" },
+		{ faction = "A", npc = 11026, map = 1453, x = 61.88, y = 30.56, z = 95.9 },
+		{ faction = "H", npc = 2857, map = 1454, x = 75.96, y = 24.15, z = 29.2, f = "e" },
+		{ faction = "A", npc = 11028, map = 1455, x = 67.66, y = 44.21, z = 502.1, f = "e" },
 		{ faction = "H", npc = 4586, map = 1458, x = 75.34, y = 73.13, z = -62.3, f = "e" },
+		{ faction = "AH", npc = 251684, map = 2521, x = 53.96, y = 38.9, z = 814.9 },
 		{ faction = "H", npc = 3167, map = 1411, x = 51.9, y = 41.14, z = 14.5, f = "e" },
 		{ faction = "H", npc = 3187, map = 1411, x = 56.41, y = 73.79, z = 22.3, f = "e" },
 		{ faction = "H", npc = 3081, map = 1412, x = 45.56, y = 61.73, z = -9.3 },
@@ -9487,6 +9765,10 @@ G(function() return {
 		{ faction = "A", npc = 4259, map = 1455, x = 51.74, y = 42.78, z = 498.9, f = "e" },
 		{ faction = "AH", npc = 252388, map = 2521, x = 65.44, y = 80.47, z = 648.3 },
 		{ faction = "A", npc = 11029, map = 1455, x = 67.48, y = 42.91, z = 502.1, f = "e" },
+		{ faction = "A", npc = 5518, map = 1453, x = 62.09, y = 30.31, z = 95.8 },
+		{ faction = "A", npc = 1676, map = 1431, x = 77.38, y = 48.82, z = 37.5, f = "e" },
+		{ faction = "H", npc = 11031, map = 1458, x = 76.12, y = 74.03, z = -62.2, f = "e" },
+		{ faction = "H", npc = 3412, map = 1454, x = 75.99, y = 25.41, z = 29.2, f = "e" },
 		{ faction = "H", npc = 4597, map = 1458, x = 61.41, y = 30.08, z = -62.1, f = "e" },
 		{ faction = "A", npc = 5163, map = 1455, x = 46.4, y = 26.88, z = 502.9, f = "e" },
 		{ faction = "A", npc = 1694, map = 1426, x = 50.08, y = 49.42, z = 395.4, f = "e" },
@@ -9494,7 +9776,8 @@ G(function() return {
 		{ faction = "A", npc = 8934, map = 1436, x = 52.23, y = 52.83, z = 35.3, f = "e" },
 		{ faction = "H", npc = 8176, map = 1435, x = 45.46, y = 51.41, z = 22, f = "e" },
 		{ faction = "AH", npc = 2844, map = 1434, x = 28.97, y = 75.06, z = 24.4, f = "e" },
-		{ faction = "H", npc = 11031, map = 1458, x = 76.12, y = 74.03, z = -62.2, f = "e" },
+		{ faction = "A", npc = 5174, map = 1455, x = 68.46, y = 43.54, z = 502.1, f = "e" },
+		{ faction = "H", npc = 11017, map = 1454, x = 76.17, y = 25.17, z = 29.2, f = "e" },
 		{ faction = "A", npc = 2383, map = 1424, x = 50.63, y = 60.95, z = 7, f = "e" },
 		{ faction = "A", npc = 3178, map = 1437, x = 8.02, y = 58.35, z = 8.2, f = "e" },
 		{ faction = "AH", npc = 12958, map = 1425, x = 34.46, y = 38.59, z = 165.2, f = "e" },
@@ -9524,38 +9807,6 @@ G(function() return {
 		{ faction = "A", npc = 4222, map = 1457, x = 46.94, y = 57, z = 1315.9, f = "e" },
 		{ faction = "A", npc = 5135, map = 1459, x = 42.82, y = 16.88, f = "e" },
 		{ faction = "AH", npc = 254360, map = 2521, x = 44.77, y = 45.05, z = 827.3 },
-		{ faction = "A", npc = 568, map = 1433, x = 71.7, y = 38.4, lvl = { max = 25, min = 24 }, rate = 0.235, spawns = 11 },
-		{ faction = "A", npc = 909, map = 1431, x = 22.2, y = 72.4, f = "e", lvl = { max = 26, min = 25 }, rate = 0.242, spawns = 10 },
-		{ faction = "A", npc = 437, map = 1433, x = 72.3, y = 69.2, lvl = { max = 22, min = 21 }, rate = 0.241, spawns = 9 },
-		{ faction = "A", npc = 1727, map = 1436, x = 39.6, y = 77.7, f = "e", lvl = { max = 17, min = 16 }, rate = 0.189, spawns = 11 },
-		{ faction = "A", npc = 2103, map = 1437, x = 47.9, y = 75.7, f = "e", lvl = { max = 20, min = 19 }, rate = 0.254, spawns = 8 },
-		{ faction = "AH", npc = 2260, map = 1424, x = 80.3, y = 45.5, f = "e", lvl = { max = 22, min = 21 }, rate = 0.244, spawns = 7 },
-		{ faction = "AH", npc = 435, map = 1428, x = 69.3, y = 84.5, f = "e", lvl = { max = 25, min = 24 }, rate = 0.239, spawns = 7 },
-		{ faction = "AH", npc = 615, map = 1428, x = 70.4, y = 85.4, f = "e", lvl = { max = 24, min = 23 }, rate = 0.242, spawns = 6 },
-		{ faction = "H", npc = 1973, map = 1421, x = 58.3, y = 71.3, f = "e", lvl = { max = 21, min = 20 }, rate = 0.191, spawns = 7 },
-		{ faction = "H", npc = 1974, map = 1421, x = 58.6, y = 71, f = "e", lvl = { max = 20, min = 19 }, rate = 0.198, spawns = 4 },
-		{ faction = "H", npc = 1940, map = 1421, x = 65.8, y = 27, f = "e", lvl = { max = 18, min = 17 }, rate = 0.198, spawns = 4 },
-		{ faction = "AH", npc = 2557, map = 1417, x = 67.3, y = 80.8, f = "e", lvl = { max = 36, min = 35 }, rate = 0.039, spawns = 11 },
-		{ faction = "AH", npc = 2564, map = 1417, x = 32.2, y = 44.8, f = "e", lvl = { max = 34, min = 33 }, rate = 0.038, spawns = 11 },
-		{ faction = "A", npc = 771, map = 1431, x = 14.2, y = 34.7, f = "e", lvl = { max = 32, min = 32 }, rate = 0.072, spawns = 5 },
-		{ faction = "A", npc = 771, map = 1431, x = 17.2, y = 36.2, f = "e", lvl = { max = 32, min = 32 }, rate = 0.072, spawns = 5 },
-		{ faction = "AH", npc = 446, map = 1428, x = 60.8, y = 90.4, f = "e", lvl = { max = 20, min = 19 }, rate = 0.191, spawns = 1 },
-		{ faction = "AH", npc = 4027, map = 1442, x = 27.1, y = 69.6, f = "e", lvl = { max = 27, min = 26 }, rate = 0.252, spawns = 8 },
-		{ faction = "A", npc = 2336, map = 1439, x = 56.1, y = 27.1, f = "e", lvl = { max = 17, min = 16 }, rate = 0.199, spawns = 10 },
-		{ faction = "AH", npc = 4026, map = 1442, x = 30.6, y = 62.9, f = "e", lvl = { max = 25, min = 24 }, rate = 0.24, spawns = 8 },
-		{ faction = "AH", npc = 11918, map = 1442, x = 59.1, y = 92.2, f = "e", lvl = { max = 18, min = 17 }, rate = 0.213, spawns = 9 },
-		{ faction = "AH", npc = 11918, map = 1443, x = 86.2, y = 17.9, f = "e", lvl = { max = 18, min = 17 }, rate = 0.213, spawns = 9 },
-		{ faction = "A", npc = 2168, map = 1439, x = 52.4, y = 33.5, f = "e", lvl = { max = 17, min = 16 }, rate = 0.195, spawns = 9 },
-		{ faction = "H", npc = 3457, map = 1413, x = 43.1, y = 82.9, f = "e", lvl = { max = 23, min = 22 }, rate = 0.248, spawns = 6 },
-		{ faction = "H", npc = 3457, map = 1413, x = 44, y = 83.4, f = "e", lvl = { max = 23, min = 22 }, rate = 0.248, spawns = 5 },
-		{ faction = "H", npc = 3283, map = 1413, x = 59.9, y = 3.4, f = "e", lvl = { max = 17, min = 14 }, rate = 0.199, spawns = 5 },
-		{ faction = "H", npc = 3286, map = 1413, x = 59.7, y = 3.3, f = "e", lvl = { max = 18, min = 15 }, rate = 0.195, spawns = 5 },
-		{ faction = "AH", npc = 4104, map = 1441, x = 26.6, y = 53.2, f = "e", lvl = { max = 30, min = 30 }, rate = 0.096, spawns = 4 },
-		{ faction = "AH", npc = 4663, map = 1443, x = 56.6, y = 22.9, f = "e", lvl = { max = 31, min = 30 }, rate = 0.04, spawns = 8 },
-		{ faction = "A", npc = 2160, map = 1439, x = 36.4, y = 86.3, f = "e", lvl = { max = 21, min = 21 }, rate = 0.24, spawns = 1 },
-		{ faction = "A", npc = 2337, map = 1439, x = 56.3, y = 26.2, f = "e", lvl = { max = 29, min = 28 }, rate = 0.096, spawns = 2 },
-		{ faction = "H", npc = 7404, map = 1413, x = 48.4, y = 96.4, f = "e", lvl = { max = 30, min = 30 }, rate = 0.096, spawns = 1 },
-		{ faction = "A", npc = 3660, map = 1439, x = 56, y = 26.3, f = "e", lvl = { max = 31, min = 31 }, rate = 0.076, spawns = 1 },
 		{ faction = "AH", npc = 8736, map = 1446, x = 52.34, y = 27.72, z = 8.6, f = "e" },
 		{ faction = "H", npc = 3413, map = 1454, x = 75.49, y = 25.36, z = 29.2, f = "e" },
 		{ faction = "A", npc = 5175, map = 1455, x = 67.84, y = 42.5, z = 502.1, f = "e" },
@@ -9564,23 +9815,26 @@ G(function() return {
 		{
 			title = "Learn {skill:202}",
 			note = "Apprentice {skill:202} lets you craft up to 75 for 10c, at any character level. Any {skill:202} trainer of your faction teaches it; the arrow picks the nearest. Buy a {item:5956} and pair it with {skill:186}: {item:2835} and {item:2770} are the first parts. 1-75 takes about 4s 15c of recipes and 18s 18c of vendor goods, plus 46 {item:2835} and 75 {item:2840} to gather or buy.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7 }, rank = 1, rankMax = 75, skill = "Engineering", skillLine = 202 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, rank = 1, rankMax = 75, skill = "Engineering", skillLine = 202 },
 				{ t = "skill", level = 1, skill = "Engineering", skillLine = 202 },
 			},
 		},
 		{
 			title = "{skill:202} 1-75: vendor goods",
 			note = "Buy the whole bracket's share in one go: 18 {item:2880} (18s) and {item:5956} (a tool: one, kept in your bags, 18c); about 18s 18c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:5519}, {npc:5514} and {npc:1286}; {zone:1454}: {npc:3367}, Gorina and {npc:5817}).",
+			section = 1,
 			goals = {
-				{ t = "buy", item = 2880, count = 18, candidates = { 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83 } },
-				{ t = "buy", item = 5956, note = "a tool, keep it in your bags", candidates = { 84, 9, 85, 10, 86, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 87, 22, 23, 24, 26, 27, 28, 29, 30, 88, 31, 32, 33, 89, 34, 90, 36, 37, 38, 39, 40, 41, 42, 43, 44, 91, 45, 92, 47, 48, 49, 50, 51, 93, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 94, 72, 73, 74, 75, 76, 77, 78, 79, 95, 80, 82, 83 } },
+				{ t = "buy", item = 2880, count = 18, candidates = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85 } },
+				{ t = "buy", item = 5956, note = "a tool, keep it in your bags", candidates = { 86, 11, 87, 12, 88, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 89, 24, 25, 26, 28, 29, 30, 31, 32, 90, 33, 34, 35, 91, 36, 92, 38, 39, 40, 41, 42, 43, 44, 45, 46, 93, 47, 94, 49, 50, 51, 52, 53, 95, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 96, 74, 75, 76, 77, 78, 79, 80, 81, 97, 82, 84, 85 } },
 			},
 		},
 		{
 			title = "{item:2835} ({zone:1429})",
 			only = { races = { "HUMAN" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1429} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 1429, x = 45.6, y = 72.6, f = "e", spotsPacked = "45.6,72.6,,90,3;51.2,75.2,,63,2,1;39.7,72,,63,2,1;40.1,80.4,,157,21,1;51.8,65.4,,63,2,1;51.6,84,,96,6,1;34.3,72.5,,63,1,1;52,58.6,,63,1,1;57.8,79.1,,85,5,1;30.6,71.3,,63,2,1;42.8,49.6,,63,2,1;39,51.4,,76,3,1;57.3,56.8,,63,1,1;60.9,64.2,,63,3,1;31,61.7,,63,2,1;30.9,55.3,,63,2,1;27.1,67.6,,63,3,1;29.2,88.1,,63,1,1;61.1,50,,96,13,1;67.2,70.5,,76,3,1;65.4,56.5,,63,1,1;24.2,84.4,,63,1,1;20.7,76.3,,63,2,1;73.5,64.1,,63,2,1;70.1,47.6,,63,1,1;75.1,79,,63,2,1;74.6,59.2,,63,2,1;74.5,53.1,,76,3,1;76.4,85.2,,63,2,1;73.2,43.8,,63,1,1;79.5,77.7,,63,2,1;78.6,49.5,,63,1,1;82.6,55,,63,1,1;84.9,80.4,,63,3,1;80.8,42.6,,63,1,1;79.1,37.2,,63,1,1;88.1,61.1,,63,2,1" },
 			},
@@ -9589,6 +9843,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1426})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1426} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 1426, x = 70.4, y = 55.1, f = "e", spotsPacked = "70.4,55.1,,374,22;73.2,60.8,,131,4,1;64.8,49.6,,140,3,1;79.3,56.3,,96,3,1;81.7,49.1,,94,2,1;57.1,55.4,,94,3,1;80.2,39.5,,109,3,1;57.9,42,,94,1,1;80.1,33.6,,94,1,1;51.7,52.5,,94,1,1;51.2,58,,94,2,1;51.8,43.7,,96,3,1;49.6,63.8,,94,3,1;48.5,35.8,,94,1,1;44.8,56.4,,94,2,1;45.2,45.1,,94,1,1;42.8,63.5,,94,1,1;40.7,49,,223,13,1;41.5,35.5,,134,6,1;39.8,68.1,,94,1,1;37,61.5,,94,2,1;41.3,29,,94,1,1;36.9,40.8,,137,4,1;32.8,51.2,,94,1,1;32.5,56.7,,94,2,1;27.1,34.8,,94,1,1;22,52.6,,94,3,1" },
 			},
@@ -9597,6 +9852,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1439} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 1439, x = 39.1, y = 81.5, f = "e", spotsPacked = "39.1,81.5,,188,2;44.3,79.9,,100,2,1;34.7,86.1,,153,9,1;43.9,85.7,,100,3,1;33.5,80.4,,100,2,1;37.4,89.8,,100,2,1;39.2,72.6,,100,3,1;43.8,72.3,,100,3,1;31.4,90,,134,5,1;39.5,61.1,,100,1,1;42.2,58.3,,100,1,1;35.5,55.6,,100,1,1;45.6,51.6,,137,6,1;37.8,49.4,,100,1,1;44.4,45.6,,129,3,1;47.2,39.6,,100,2,1;42.9,37.1,,146,5,1;49.9,35.7,,100,2,1;39.6,31.2,,100,2,1;54.6,33.8,,103,9,1;40.3,26.6,,100,1,1;44.2,27.1,,100,1,1;49.6,27.5,,100,2,1;56.2,28.1,,100,2,1;43.1,22.3,,100,1,1;52.9,23.1,,100,1,1;48.9,20.7,,100,1,1;59.2,25.6,,113,3,1;55.7,19.2,,100,2,1;52.7,17.4,,130,3,1;61.2,21.2,,100,2,1;61.4,16.3,,100,2,1;58.4,14.1,,100,2,1;61.4,9.2,,100,3,1" },
 			},
@@ -9605,6 +9861,7 @@ G(function() return {
 			title = "{item:2835} ({zone:2521})",
 			only = { races = { "SKYBORNE" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:2521} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 2521, x = 40.2, y = 28, spotsPacked = "40.2,28,,74,4;40,32.2,,50,1,1;37.9,24.8,,50,3,1;43.5,29.6,,50,2,1;36.9,30.1,,50,3,1;44.5,24.8,,50,3,1;38.9,35.3,,50,1,1;36,23.1,,50,2,1;36.6,34.2,,50,1,1;45.8,29.8,,50,2,1;43.3,35.3,,50,2,1;34.9,33.3,,50,1,1;44.7,20.5,,50,2,1;45.7,35.7,,50,1,1;48.1,26.3,,50,3,1;40.4,41.1,,50,1,1;46.5,17.6,,50,1,1;49.5,23.5,,50,1,1;43.7,41.8,,50,1,1;48.7,20.4,,50,1,1;49,35.4,,50,2,1;42.1,43.1,,50,2,1;37.2,43.2,,50,2,1;46.4,41.7,,50,1,1;46.2,46.6,,50,2,1;39.8,48.9,,90,9,1;43.9,48.4,,50,6,1;35.9,49.4,,76,5,1;54.6,37.1,,50,1,1;56.2,31.2,,50,1,1;42.2,53,,50,3,1;57.3,28.7,,50,1,1;48.1,51.4,,50,1,1;37,54.3,,50,3,1;53.4,46.5,,50,1,1;33.8,53.6,,50,3,1;42.7,55.3,,50,2,1;57.9,36,,65,3,1;44.9,55.6,,50,1,1;55.9,44.9,,50,1,1;40.7,57.3,,50,2,1;47.7,55.6,,50,2,1;60,31,,50,2,1;60.2,34.1,,50,1,1;38.2,58.8,,50,2,1;51.1,55,,72,3,1;45.8,59.3,,50,1,1;59.8,41.8,,50,1,1;48.2,59.5,,50,2,1;59.6,45.9,,50,3,1;58.3,51.3,,50,1,1;42.4,65,,50,2,1;57.7,55.1,,50,2,1;45.5,65.3,,50,2,1;49,63.9,,50,1,1;55.7,58.5,,50,2,1;60.5,53.1,,50,2,1;53.3,63.4,,50,2,1;58.3,59.6,,50,2,1;51.6,67.2,,50,3,1;56.6,63.3,,62,6,1;62.9,54.4,,50,2,1;49.5,69.4,,66,3,1;62.1,59.3,,50,1,1;55.9,66.9,,50,2,1;60.9,61.5,,50,3,1;54.1,68.7,,55,3,1;44.8,74.3,,54,3,1;60.2,65.5,,50,3,1;51.4,73.5,,50,2,1;65.4,59.5,,50,1,1;46.3,76.9,,50,2,1;63.5,64.9,,50,3,1;53.5,75.4,,50,2,1;52.1,77.1,,50,1,1;45.3,80.3,,50,3,1;56.1,76.4,,50,1,1;69.8,59.3,,50,1,1;48,81.5,,50,1,1;54.8,78.8,,50,2,1;46.9,84.1,,50,2,1;52.1,83.4,,50,1,1;48.8,85.5,,50,1,1" },
 			},
@@ -9613,6 +9870,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1411})",
 			only = { races = { "ORC", "TROLL" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1411} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 1411, x = 49.5, y = 35.9, f = "e", spotsPacked = "49.5,35.9,,121,3;46.6,37.2,,63,1,1;49.8,41.1,,63,1,1;52.1,31.5,,64,2,1;47,31.3,,65,2,1;54.7,36.2,,96,3,1;43.8,34.6,,63,1,1;53.7,28.7,,63,2,1;51.9,26.5,,105,9,1;42.9,38.9,,63,2,1;53.3,45.9,,63,2,1;56.6,40.3,,63,2,1;48.4,48.6,,122,6,1;40.9,33.9,,63,1,1;43,25.7,,96,9,1;52.4,22.4,,85,4,1;45.2,49.3,,63,3,1;50.1,51.1,,63,2,1;59.2,41.1,,63,1,1;39.5,40.2,,63,1,1;39.6,30.2,,76,5,1;55.5,22.6,,63,2,1;50.1,18.9,,120,7,1;39.7,25.5,,84,9,1;58.9,47.1,,63,1,1;53.9,18.4,,63,4,1;42.7,51.6,,63,1,1;50.6,54.9,,63,2,1;36.4,35.4,,68,3,1;40.5,50.3,,63,1,1;42.1,18.8,,63,2,1;36.1,27.6,,63,2,1;61,49.3,,63,1,1;36,44.8,,63,2,1;56.3,16.1,,63,1,1;54.2,13.9,,63,1,1;37.8,51.1,,63,2,1;37.6,20.9,,63,1,1;59.5,17.8,,63,1,1;38.9,54.5,,63,1,1;54.2,59.8,,89,4,1;60.4,55.6,,63,1,1;39.6,14.4,,63,1,1;52.7,9.5,,96,8,1;50.5,63.1,,63,1,1;55.5,9.1,,75,4,1;55.5,63.2,,63,1,1;60.6,60.9,,63,2,1;55.3,68.1,,80,4,1;61.7,65.7,,63,1,1;50.4,71.3,,63,2,1;59.3,69.5,,63,1,1;56.5,71.5,,63,1,1;51.1,75,,77,3,1;48.5,79.1,,91,5,1;68.5,69.8,,63,1,1;59.5,78.1,,63,1,1;68.1,73.5,,63,1,1" },
 			},
@@ -9621,6 +9879,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1412})",
 			only = { races = { "TAUREN" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1412} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 1412, x = 56.4, y = 44.1, spotsPacked = "56.4,44.1,,189,5;57.4,39.4,,103,6,1;60.3,45.3,,106,4,1;58.4,52.5,,106,3,1;59.6,32.9,,83,1,1;58.9,58.4,,83,2,1;48.2,33.8,,83,1,1;53.1,24.2,,101,4,1;63.9,69.4,,142,5,1;44.2,23.2,,83,1,1;49.7,18,,83,2,1;58.2,73.4,,83,1,1;52.5,74.8,,105,3,1;34.6,41.7,,83,2,1;34.4,47,,97,3,1;37.6,26,,83,2,1;47.4,75.3,,83,1,1;34.9,56.3,,131,5,1;40.2,18.9,,83,2,1;43.1,74.4,,83,2,1;31.4,35.9,,83,2,1;34,63.7,,115,8,1;35.4,71.5,,83,2,1;35.1,78.3,,83,2,1" },
 			},
@@ -9629,6 +9888,7 @@ G(function() return {
 			title = "{item:2835} ({zone:1420})",
 			only = { races = { "SCOURGE" } },
 			note = "46 {item:2835} for {spell:3918}: {skill:186}: {object:1731} (skill 1); or the Auction House. The densest cluster of {object:1731} in {zone:1420} is marked.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2835, count = 46, map = 1420, x = 50.7, y = 34.3, f = "e", spotsPacked = "50.7,34.3,,169,2;51.5,26.8,,90,2,1;54.1,43.7,,122,4,1;57.6,29.7,,90,2,1;49,47.3,,90,2,1;38.1,38,,123,5,1;54.3,53.9,,90,2,1;63.5,27.2,,90,1,1;65.9,45.1,,90,1,1;38.8,54.5,,106,3,1;69.8,42.7,,90,1,1;33.5,52.8,,90,1,1;29.7,42.5,,90,1,1;68.6,54.3,,90,1,1;45.5,68.5,,171,4,1;49.7,70.4,,90,2,1;76.8,31.4,,117,3,1;77.7,38,,107,3,1;76,55.3,,103,4,1;70.3,67.1,,90,1,1;81,42.5,,90,2,1;81.7,26.4,,90,2,1;81.2,50.6,,90,2,1;85.3,37.3,,111,5,1;81.4,58.8,,90,2,1;83.7,68.3,,90,1,1;81.4,74,,90,3,1;91.2,51.6,,90,1,1" },
 			},
@@ -9636,63 +9896,71 @@ G(function() return {
 		{
 			title = "{spell:3918} to 35",
 			note = "{spell:3918} is orange at 1 (yellow 20, green 30, grey 40): about 46 crafts to 35. Each takes 1 {item:2835}. One {item:2835} a craft; {item:2835} comes with the {item:2770} from Copper Veins.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 4357, spell = 3918, reagents = { { item = 2835, count = 1, itemName = "Rough Stone" } }, skillLine = 202, untilSkill = 35 },
+				{ t = "craft", item = 4357, spell = 3918, grey = 40, reagents = { { item = 2835, count = 1, itemName = "Rough Stone" } }, skillLine = 202, untilSkill = 35, yellow = 20 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 35",
 			note = "Back to an {skill:202} trainer: {spell:3922} (from 30, 1s 15c). Also learn {spell:1230656} (1s): Forever's {skill:202} camp item, placed at a campsite beside a campfire. It takes a {spell:3922} and a {spell:3924}, which you learn at 30 and 50, so it gives no points. The Camping 101: {skill:202} quest from your starting area's camping guide (after The Great Outdoors) sends you to an engineering trainer who teaches it free.",
+			section = 1,
 			goals = {
-				{ t = "learn", spell = 3922, candidates = { 7, 96, 2, 4, 1, 3, 5 }, skillLine = 202 },
-				{ t = "learn", spell = 1230656, candidates = { 7, 96, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "learn", spell = 3922, candidates = { 8, 7, 3, 5, 1, 2, 4, 6, 9 }, skillLine = 202 },
+				{ t = "learn", spell = 1230656, candidates = { 8, 7, 3, 5, 1, 2, 4, 6, 9 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{spell:3922} to 57",
 			note = "{spell:3922} is orange at 35 (yellow 45, green 52, grey 60): about 33 crafts to 57. Each takes 1 {item:2840}. One {item:2840} a craft. Keep the bolts: Practice Locks and later gadgets take them. Needs an anvil nearby. {item:5956} is a tool: keep it in your bags. {item:2840} (75 for 1-75): {skill:186}: smelt {item:2770}; or the Auction House.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 4359, spell = 3922, reagents = { { item = 2840, count = 1, itemName = "Copper Bar" } }, skillLine = 202, untilSkill = 57 },
+				{ t = "craft", item = 4359, spell = 3922, grey = 60, reagents = { { item = 2840, count = 1, itemName = "Copper Bar" } }, skillLine = 202, untilSkill = 57, yellow = 45 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 57",
 			note = "Back to an {skill:202} trainer: {spell:7430} (from 50, 1s 50c) and {spell:3924} (from 50, 1s 50c).",
+			section = 1,
 			goals = {
-				{ t = "learn", spell = 7430, candidates = { 7, 96, 2, 4, 1, 3, 5 }, skillLine = 202 },
-				{ t = "learn", spell = 3924, candidates = { 7, 96, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "learn", spell = 7430, candidates = { 8, 98, 3, 99, 100, 1, 2, 4, 6, 9 }, skillLine = 202 },
+				{ t = "learn", spell = 3924, candidates = { 8, 98, 3, 99, 100, 1, 2, 4, 6, 9 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{spell:3924} to 75",
 			note = "{spell:3924} is orange at 57 (yellow 80, green 95, grey 110): about 18 crafts to 75, a point every craft. Each takes 2 {item:2840} and 1 {item:2880}. Two Copper Bars and a {item:2880} a craft (blacksmithing and engineering suppliers). Needs an anvil nearby. Make the {item:6219} now, while it still gives a point: a later recipe needs it in your bags, so keep it there.",
+			section = 1,
 			goals = {
 				{ t = "craft", item = 6219, spell = 7430, count = 1, note = "a tool: keep it in your bags", reagents = { { item = 2840, count = 6, itemName = "Copper Bar" } }, skillLine = 202 },
-				{ t = "craft", item = 4361, spell = 3924, reagents = { { item = 2840, count = 2, itemName = "Copper Bar" }, { item = 2880, count = 1, itemName = "Weak Flux" } }, skillLine = 202, untilSkill = 75 },
+				{ t = "craft", item = 4361, spell = 3924, grey = 110, reagents = { { item = 2840, count = 2, itemName = "Copper Bar" }, { item = 2880, count = 1, itemName = "Weak Flux" } }, skillLine = 202, untilSkill = 75, yellow = 80 },
 				{ t = "skill", level = 75, skill = "Engineering", skillLine = 202 },
 			},
 		},
 		{
 			title = "Journeyman {skill:202}",
-			note = "Journeyman raises the cap from 75 to 150 for 5s (Classic's price; Forever's is not in the data); it needs {skill:202} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:202} trainer teaches it: Alliance {npc:8736} ({zone:1446}), {npc:1676} ({zone:1431}), {npc:5518} ({zone:1453}), {npc:5174} ({zone:1455}) and {npc:11029} ({zone:1455}); Horde {npc:8736} ({zone:1446}), {npc:11031} ({zone:1458}), {npc:3412} ({zone:1454}) and Roxxik ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:3929} (from 75, 2s 50c) and {spell:3930} (from 75, 2s 50c). 75-150 takes about 5s of recipes and 45s of vendor goods, plus 15 {item:2836}, 27 {item:2838}, 72 {item:2840}, 61 {item:2841} and 2 {item:2842} to gather or buy.",
+			note = "Journeyman raises the cap from 75 to 150 for 5s (Classic's price; Forever's is not in the data); it needs {skill:202} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:202} trainer teaches it: Alliance {npc:1676} ({zone:1431}), {npc:5518} ({zone:1453}) and {npc:11029} ({zone:1455}); Horde {npc:11031} ({zone:1458}) and {npc:3412} ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:3929} (from 75, 2s 50c) and {spell:3930} (from 75, 2s 50c). 75-150 takes about 5s of recipes and 45s of vendor goods, plus 15 {item:2836}, 27 {item:2838}, 72 {item:2840}, 61 {item:2841} and 2 {item:2842} to gather or buy.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 7, 96, 2, 4, 1, 3, 5 }, rank = 2, rankMax = 150, skill = "Engineering", skillLine = 202 },
-				{ t = "learn", spell = 3929, candidates = { 7, 96, 2, 4, 1, 3, 5 }, skillLine = 202 },
-				{ t = "learn", spell = 3930, candidates = { 7, 96, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "train", candidates = { 101, 98, 99, 100, 102 }, rank = 2, rankMax = 150, skill = "Engineering", skillLine = 202 },
+				{ t = "learn", spell = 3929, candidates = { 8, 98, 3, 99, 100, 1, 2, 4, 6, 9 }, skillLine = 202 },
+				{ t = "learn", spell = 3930, candidates = { 8, 98, 3, 99, 100, 1, 2, 4, 6, 9 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{skill:202} 75-150: vendor goods",
 			note = "Buy the whole bracket's share in one go: 45 {item:2880} (45s); about 45s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:5519}, {npc:5514} and {npc:1286}; {zone:1454}: {npc:3367}, Gorina and {npc:5817}).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 2880, count = 45, candidates = { 21, 97, 75, 14, 22, 16, 25, 13, 15, 26, 24, 27, 17, 18, 23, 43, 28, 42, 30, 98, 71, 99, 35, 31, 19, 20, 100, 65, 32, 36, 33, 83, 82, 101, 34, 102, 37, 39, 103, 8, 9, 10, 11, 12, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 67, 68, 69, 72, 73, 76, 77, 78, 79, 80, 81 } },
+				{ t = "buy", item = 2880, count = 45, candidates = { 23, 103, 77, 16, 24, 18, 27, 15, 17, 28, 26, 29, 19, 20, 25, 45, 30, 44, 32, 104, 73, 105, 37, 33, 21, 22, 106, 67, 34, 38, 35, 85, 84, 107, 36, 108, 39, 41, 109, 10, 11, 12, 13, 14, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 74, 75, 78, 79, 80, 81, 82, 83 } },
 			},
 		},
 		{
 			title = "{item:2836} ({zone:1436})",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "15 {item:2836} for {spell:3930}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1436} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 15, map = 1436, x = 26.2, y = 64.5, f = "e", spotsPacked = "26.2,64.5,,40,1;26.8,72.3,,40,1,1;23.7,57.4,,40,1,1;31.6,59.9,,40,3,1;28.9,54.8,,40,1,1;33.9,63.7,,40,1,1;29.9,75.9,,40,1,1;29.8,49.1,,53,9,1;30.3,45.8,,58,12,1;33.2,81.8,,40,1,1;37.8,76.9,,40,1,1;33,45.5,,40,1,1;39.8,75.2,,40,2,1;29.4,40.9,,40,1,1;40.4,79.1,,46,7,1;42.9,72.9,,40,2,1;42.1,76.9,,46,4,1;31.5,38.8,,40,2,1;40.5,82.4,,78,9,1;37,87.9,,40,1,1;44.5,76.2,,48,4,1;43.5,79.6,,48,4,1;39.4,41.7,,40,1,1;46.2,59.2,,40,1,1;30.4,34.5,,40,1,1;27.8,33.1,,40,1,1;34.6,34.6,,40,1,1;47.7,70.8,,40,1,1;32,30.9,,40,1,1;47.7,77.5,,40,1,1;41.1,92.5,,40,1,1;50,59.8,,40,1,1;49.4,75.9,,40,1,1;47.9,45.8,,40,1,1;28.5,27,,40,1,1;45.1,39.7,,40,1,1;36.8,29.6,,40,1,1;32.9,26.1,,40,1,1;35,24.3,,40,1,1;49.7,39.2,,40,1,1;48.6,35.9,,40,1,1;53.7,80.5,,40,1,1;36.3,21,,40,1,1;56.1,79.6,,40,1,1;40.9,22.2,,40,1,1;58.8,69.4,,40,1,1;44.8,22.4,,68,17,1;57.6,45.7,,40,1,1;61.5,54.8,,40,1,1;45.7,19.3,,47,17,1;62.3,69,,40,1,1;63.1,79,,40,2,1;54.3,21.9,,40,1,1;49.5,14.6,,40,1,1;66.5,54.6,,40,1,1;64.1,40.4,,40,1,1;66.7,76.9,,40,1,1;61.1,26.1,,40,1,1;63.5,31.5,,40,1,1;55.4,14.4,,40,1,1;60.9,22.2,,40,1,1;57.4,15.3,,40,1,1;58.5,8.7,,40,1,1" },
 			},
@@ -9701,6 +9969,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1432})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "15 {item:2836} for {spell:3930}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1432} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 15, map = 1432, x = 23.1, y = 24.5, f = "e", spotsPacked = "23.1,24.5,,185,3;35.1,23.2,,100,12,1;35.8,12.6,,71,2,1;25.9,47.6,,71,3,1;41.3,30,,71,2,1;41.6,19.1,,71,1,1;41.3,11,,71,2,1;26.7,57.4,,71,3,1;34.7,58.7,,71,3,1;43.3,49.5,,71,3,1;48.1,37.3,,112,4,1;50.3,23.2,,71,1,1;52,13.4,,71,1,1;43.6,60.5,,102,4,1;49.9,52.5,,71,2,1;41.9,66,,71,2,1;32.8,73.3,,99,5,1;57.8,14.2,,71,1,1;41.1,72,,94,3,1;56.7,46,,71,2,1;29.2,83.9,,73,4,1;56.3,59.5,,71,1,1;66.2,25.5,,71,2,1;35.9,89.6,,91,7,1;59.4,69.8,,113,6,1;71.1,19.6,,96,4,1;71.1,31.4,,71,2,1;70.5,47.4,,90,3,1;76.9,26,,71,2,1;76.9,15.3,,71,3,1;69.8,65.6,,71,5,1;77.9,35.5,,71,2,1;67.4,76.2,,103,4,1;76.6,57,,91,4,1;78.9,46.9,,71,1,1;76.3,65.4,,71,1,1;77.8,74.4,,71,2,1;84.2,57.3,,71,1,1" },
 			},
@@ -9709,6 +9978,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "15 {item:2836} for {spell:3930}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1439} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 15, map = 1439, x = 59.3, y = 19.6, f = "e", spotsPacked = "59.3,19.6,,242,4;61.2,14.6,,150,3,1;61.4,8.8,,150,1,1;50.6,21.7,,150,1,1;48.2,29.1,,150,1,1;45.6,19,,150,2,1;48.1,42.5,,150,1,1;38.6,24.9,,150,1,1;45.8,54.5,,150,1,1;45.3,59.2,,150,2,1;36,57.7,,150,2,1;37.8,63.2,,150,1,1;45,86.8,,150,2,1;32.3,78.7,,150,1,1;39.8,85.5,,150,1,1" },
 			},
@@ -9717,6 +9987,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "15 {item:2836} for {spell:3930}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 15, map = 1413, x = 40.6, y = 45.7, f = "e", spotsPacked = "40.6,45.7,,150,1;44.9,51.2,,150,1,1;45.4,36.1,,150,1,1;51.2,57.9,,150,1,1;39.5,23.6,,150,1,1;45,23.6,,150,1,1;48,66.7,,150,1,1;57.1,43.6,,150,1,1;55.4,27.7,,150,1,1;43.4,74.6,,150,1,1;37.8,14.7,,150,2,1;41.4,78.5,,150,2,1;48.6,14.8,,150,1,1;64.2,49.5,,150,1,1;50.9,11.6,,150,1,1;43.2,83.5,,150,1,1;47.7,85.4,,203,11,1;59.5,3,,150,1,1" },
 			},
@@ -9725,6 +9996,7 @@ G(function() return {
 			title = "{item:2836} ({zone:1421})",
 			only = { races = { "SCOURGE" } },
 			note = "15 {item:2836} for {spell:3930}: {skill:186}: {object:1732} (skill 65); or the Auction House. The densest cluster of {object:1732} in {zone:1421} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2836, count = 15, map = 1421, x = 41.6, y = 27.4, f = "e", spotsPacked = "41.6,27.4,,177,6;40.8,32,,76,2,1;41.1,21.7,,94,3,1;49.1,24.2,,113,4,1;47.5,35.4,,91,4,1;45,15.6,,76,2,1;35.2,18.8,,125,6,1;49.1,13.2,,76,2,1;35.4,11.2,,87,8,1;53.9,23.4,,76,1,1;53.8,33.5,,109,6,1;49.5,43.3,,82,3,1;53,16.8,,76,2,1;56.7,27.1,,76,1,1;48.6,48.3,,76,1,1;45,50.6,,130,5,1;57.6,33,,76,1,1;54.3,10,,82,3,1;57.8,43.2,,76,3,1;56.3,47.4,,107,5,1;47.4,57.6,,76,2,1;56.8,54.7,,76,3,1;62,7.4,,76,1,1;65,16.1,,76,1,1;66.4,27.9,,102,3,1;64.5,43.8,,76,2,1;50.9,65.5,,76,3,1;47.3,68.7,,76,2,1;41.2,70.5,,76,2,1;60,61,,76,1,1;71.1,13.1,,76,1,1;67.8,52.7,,76,1,1;73.4,29.3,,76,1,1;47.3,76.4,,76,1,1;65.9,61.3,,76,1,1;43.2,78.6,,107,4,1;58.8,71.9,,103,7,1;76.7,20.3,,76,1,1;56,80.3,,76,1,1;52,85.9,,76,2,1;62.3,81,,76,3,1" },
 			},
@@ -9733,6 +10005,7 @@ G(function() return {
 			title = "{item:2838} ({zone:1417})",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "27 {item:2838} for {spell:3945}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1417} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2838, count = 27, map = 1417, x = 15.8, y = 63.2, f = "e", spotsPacked = "15.8,63.2,,53,2;15.7,67.2,,40,2,1;18.5,56.2,,40,1,1;16.7,71.2,,40,2,1;18.7,71.6,,40,1,1;17.2,52.7,,40,1,1;20.8,71.5,,40,1,1;23.7,54.3,,40,1,1;24,72,,54,4,1;21.6,76.2,,42,3,1;17.3,47.7,,40,1,1;25.8,70.2,,40,2,1;19.2,83.9,,40,1,1;22.3,43.6,,40,1,1;29.8,69.5,,40,4,1;31.3,61.7,,40,1,1;20.7,39.5,,40,1,1;31.8,70.2,,40,1,1;32.9,65,,40,2,1;18.3,89.5,,40,1,1;25,86.1,,43,4,1;20.2,36,,40,1,1;22.3,89.5,,50,3,1;34.6,68.4,,40,2,1;34.9,61.9,,40,1,1;35.3,65.7,,40,1,1;24.7,36.6,,40,1,1;21.7,91.9,,40,1,1;19.2,33.3,,40,3,1;32.1,45,,72,11,1;19.2,93.3,,40,1,1;28.4,88.2,,40,1,1;36.2,56.2,,41,3,1;25.2,91.7,,40,2,1;37.4,65.9,,40,1,1;37.2,68.8,,40,1,1;34.8,46.4,,51,4,1;34.1,43.5,,47,8,1;38.7,61.7,,40,1,1;26,31,,40,2,1;23.9,29.5,,40,1,1;28.5,32.6,,40,1,1;39.1,72.3,,40,2,1;40.6,60.5,,40,1,1;41.1,64.5,,40,1,1;40.2,49,,40,1,1;38.7,43.2,,40,1,1;44,70.2,,40,1,1;42.5,78.8,,40,1,1;45,65.9,,40,1,1;38,34.4,,40,3,1;46.1,71.8,,40,2,1;27.1,18.5,,40,1,1;47.7,67.6,,40,1,1;48.3,64.4,,40,1,1;34.2,21.7,,58,5,1;41.7,31.5,,40,1,1;31.3,18.7,,40,3,1;49.4,70.8,,40,2,1;29.6,15.9,,40,3,1;39.4,25,,40,2,1;38.3,22.9,,46,4,1;48.3,83.6,,41,3,1;48.2,41.3,,40,1,1;50,47.8,,40,2,1;44.6,31,,40,1,1;50.5,80.8,,40,3,1;51.5,76.6,,45,4,1;47.8,35.7,,40,1,1;48.1,32.9,,45,5,1;50,35.4,,40,3,1;54.4,70.8,,40,4,1;54.8,64.6,,40,1,1;53.2,45.1,,40,1,1;54.8,75,,40,1,1;54.3,79.4,,60,13,1;54.9,49.6,,45,3,1;57.9,71.4,,60,5,1;57.5,75.7,,40,2,1;57.5,48.1,,40,2,1;55.2,32.7,,40,1,1;62.2,66.7,,40,1,1;62.9,70.9,,40,1,1;59,33.7,,40,2,1;61.9,44.1,,40,2,1;64.3,74.5,,40,2,1;65.3,65.7,,40,1,1;61.6,31.4,,40,1,1;67.4,69.4,,40,1,1;67.3,75.4,,52,6,1;64.3,34.2,,40,2,1;68,66.2,,40,2,1;67,80.8,,52,10,1;69.5,74.3,,40,4,1;69.4,78.1,,43,8,1;69,81.8,,40,5,1;70.9,57.8,,40,3,1;71.1,70.6,,48,5,1;71.3,67.5,,49,4,1;66,26.9,,40,1,1;72,52.5,,51,3,1;72.2,49.6,,51,4,1;73,60.9,,47,5,1;73.8,64.5,,40,3,1;70,29,,52,4,1;74.7,47.4,,41,4,1;76.9,44.6,,40,5,1;79.7,43,,40,1,1;77.6,29.6,,44,3,1;79.7,37.1,,52,5,1;80.2,32.8,,40,1,1;82.7,38.9,,40,1,1" },
 			},
@@ -9741,22 +10014,25 @@ G(function() return {
 			title = "{item:2838} ({zone:1440})",
 			only = { races = { "NIGHTELF" } },
 			note = "27 {item:2838} for {spell:3945}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1440} is marked.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2838, count = 27, map = 1440, x = 70.7, y = 53.5, f = "e", spotsPacked = "70.7,53.5,,56,1;71.2,60.6,,112,1,1;64.6,55.4,,147,4,1;76.9,54.6,,112,2,1;63.6,47.4,,204,6,1;69.1,67.4,,112,4,1;64.6,64.3,,114,2,1;80.1,63.6,,146,4,1,30;65.3,74.5,,112,2,1;56.6,41,,112,2,1;74.4,77.8,,112,1,1;65.8,79.6,,112,1,1;83.3,73,,214,5,1,30;86,69.5,,112,2,1;51.8,48.8,,112,3,1;58.3,31.2,,112,1,1;70.5,83.5,,175,4,1;82.9,78.2,,112,3,1,30;91.4,49.4,,112,1,1;63,84,,112,1,1;93.3,56.4,,112,1,1;90.3,76.4,,112,1,1" },
+				{ t = "collect", item = 2838, count = 27, map = 1440, x = 70.7, y = 53.5, f = "e", fromNpcs = { { npc = 6073, npcName = "Searing Infernal" } }, fromNpcsAt = ";;;;;;;1;;;;;1;;;;;1;;;;", spotsPacked = "70.7,53.5,,56,1;71.2,60.6,,112,1,1;64.6,55.4,,147,4,1;76.9,54.6,,112,2,1;63.6,47.4,,204,6,1;69.1,67.4,,112,4,1;64.6,64.3,,114,2,1;80.1,63.6,,146,4,1,30;65.3,74.5,,112,2,1;56.6,41,,112,2,1;74.4,77.8,,112,1,1;65.8,79.6,,112,1,1;83.3,73,,214,5,1,30;86,69.5,,112,2,1;51.8,48.8,,112,3,1;58.3,31.2,,112,1,1;70.5,83.5,,175,4,1;82.9,78.2,,112,3,1,30;91.4,49.4,,112,1,1;63,84,,112,1,1;93.3,56.4,,112,1,1;90.3,76.4,,112,1,1" },
 			},
 		},
 		{
 			title = "{item:2838} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "27 {item:2838} for {spell:3945}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1413} is marked.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2838, count = 27, map = 1413, x = 45.2, y = 94.5, f = "e", spotsPacked = "45.2,94.5,,70,2;46.9,96.8,,43,1,1;42.3,95.1,,43,2,1;48.5,96.5,,43,3,1;48.9,97.3,,53,5,1;40.6,92.8,,43,2,1;49.5,98.6,,43,3,1;51.7,88.2,,43,2,1;52.9,91.5,,43,1,1;55.2,89.4,,43,2,1;52.8,79.9,,43,1,1;52.6,65.8,,43,2,1;51.5,65.1,,46,4,1;54.8,60.4,,43,1,1;60.5,61.2,,43,1,1;66.5,58.3,,43,1,1;68.3,57.5,,43,1,1;54.8,0.8,,43,1,1,30" },
+				{ t = "collect", item = 2838, count = 27, map = 1413, x = 45.2, y = 94.5, f = "e", fromNpcs = { { npc = 6073, npcName = "Searing Infernal" } }, fromNpcsAt = ";;;;;;;;;;;;;;;;;1", spotsPacked = "45.2,94.5,,70,2;46.9,96.8,,43,1,1;42.3,95.1,,43,2,1;48.5,96.5,,43,3,1;48.9,97.3,,53,5,1;40.6,92.8,,43,2,1;49.5,98.6,,43,3,1;51.7,88.2,,43,2,1;52.9,91.5,,43,1,1;55.2,89.4,,43,2,1;52.8,79.9,,43,1,1;52.6,65.8,,43,2,1;51.5,65.1,,46,4,1;54.8,60.4,,43,1,1;60.5,61.2,,43,1,1;66.5,58.3,,43,1,1;68.3,57.5,,43,1,1;54.8,0.8,,43,1,1,30" },
 			},
 		},
 		{
 			title = "{item:2838} ({zone:1417})",
 			only = { races = { "SCOURGE" } },
 			note = "27 {item:2838} for {spell:3945}: {skill:186}: {object:1735} (skill 125); or the Auction House. The densest cluster of {object:1735} in {zone:1417} is marked.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2838, count = 27, map = 1417, x = 15.8, y = 63.2, f = "e", spotsPacked = "15.8,63.2,,53,2;15.7,67.2,,40,2,1;18.5,56.2,,40,1,1;16.7,71.2,,40,2,1;18.7,71.6,,40,1,1;17.2,52.7,,40,1,1;20.8,71.5,,40,1,1;23.7,54.3,,40,1,1;24,72,,54,4,1;21.6,76.2,,42,3,1;17.3,47.7,,40,1,1;25.8,70.2,,40,2,1;19.2,83.9,,40,1,1;22.3,43.6,,40,1,1;29.8,69.5,,40,4,1;31.3,61.7,,40,1,1;20.7,39.5,,40,1,1;31.8,70.2,,40,1,1;32.9,65,,40,2,1;18.3,89.5,,40,1,1;25,86.1,,43,4,1;20.2,36,,40,1,1;22.3,89.5,,50,3,1;34.6,68.4,,40,2,1;34.9,61.9,,40,1,1;35.3,65.7,,40,1,1;24.7,36.6,,40,1,1;21.7,91.9,,40,1,1;19.2,33.3,,40,3,1;32.1,45,,72,11,1;19.2,93.3,,40,1,1;28.4,88.2,,40,1,1;36.2,56.2,,41,3,1;25.2,91.7,,40,2,1;37.4,65.9,,40,1,1;37.2,68.8,,40,1,1;34.8,46.4,,51,4,1;34.1,43.5,,47,8,1;38.7,61.7,,40,1,1;26,31,,40,2,1;23.9,29.5,,40,1,1;28.5,32.6,,40,1,1;39.1,72.3,,40,2,1;40.6,60.5,,40,1,1;41.1,64.5,,40,1,1;40.2,49,,40,1,1;38.7,43.2,,40,1,1;44,70.2,,40,1,1;42.5,78.8,,40,1,1;45,65.9,,40,1,1;38,34.4,,40,3,1;46.1,71.8,,40,2,1;27.1,18.5,,40,1,1;47.7,67.6,,40,1,1;48.3,64.4,,40,1,1;34.2,21.7,,58,5,1;41.7,31.5,,40,1,1;31.3,18.7,,40,3,1;49.4,70.8,,40,2,1;29.6,15.9,,40,3,1;39.4,25,,40,2,1;38.3,22.9,,46,4,1;48.3,83.6,,41,3,1;48.2,41.3,,40,1,1;50,47.8,,40,2,1;44.6,31,,40,1,1;50.5,80.8,,40,3,1;51.5,76.6,,45,4,1;47.8,35.7,,40,1,1;48.1,32.9,,45,5,1;50,35.4,,40,3,1;54.4,70.8,,40,4,1;54.8,64.6,,40,1,1;53.2,45.1,,40,1,1;54.8,75,,40,1,1;54.3,79.4,,60,13,1;54.9,49.6,,45,3,1;57.9,71.4,,60,5,1;57.5,75.7,,40,2,1;57.5,48.1,,40,2,1;55.2,32.7,,40,1,1;62.2,66.7,,40,1,1;62.9,70.9,,40,1,1;59,33.7,,40,2,1;61.9,44.1,,40,2,1;64.3,74.5,,40,2,1;65.3,65.7,,40,1,1;61.6,31.4,,40,1,1;67.4,69.4,,40,1,1;67.3,75.4,,52,6,1;64.3,34.2,,40,2,1;68,66.2,,40,2,1;67,80.8,,52,10,1;69.5,74.3,,40,4,1;69.4,78.1,,43,8,1;69,81.8,,40,5,1;70.9,57.8,,40,3,1;71.1,70.6,,48,5,1;71.3,67.5,,49,4,1;66,26.9,,40,1,1;72,52.5,,51,3,1;72.2,49.6,,51,4,1;73,60.9,,47,5,1;73.8,64.5,,40,3,1;70,29,,52,4,1;74.7,47.4,,41,4,1;76.9,44.6,,40,5,1;79.7,43,,40,1,1;77.6,29.6,,44,3,1;79.7,37.1,,52,5,1;80.2,32.8,,40,1,1;82.7,38.9,,40,1,1" },
 			},
@@ -9764,85 +10040,96 @@ G(function() return {
 		{
 			title = "{spell:3930} to 94",
 			note = "{spell:3930} is orange at 75 (yellow 85, green 90, grey 95): about 15 crafts to 94. Each takes 1 {spell:3929} and 1 {item:2840} and makes 200. Make the 15 {spell:3929} first: it gives points too while not grey. The {spell:3929} in each gives its own point while it is not grey: two chances a craft. Sell the shot to hunters or a vendor. {item:2840} (72 for 75-150): {skill:186}: smelt {item:2770}; or the Auction House.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 4364, spell = 3929, count = 15, reagents = { { item = 2836, count = 1, itemName = "Coarse Stone" } }, skillLine = 202 },
-				{ t = "craft", item = 8068, spell = 3930, reagents = { { item = 4364, count = 1, itemName = "Coarse Blasting Powder" }, { item = 2840, count = 1, itemName = "Copper Bar" } }, skillLine = 202, untilSkill = 94 },
+				{ t = "craft", item = 8068, spell = 3930, grey = 95, reagents = { { item = 4364, count = 1, itemName = "Coarse Blasting Powder" }, { item = 2840, count = 1, itemName = "Copper Bar" } }, skillLine = 202, untilSkill = 94, yellow = 85 },
 			},
 		},
 		{
 			title = "{spell:3924} to 100",
 			note = "{spell:3924} is yellow at 94 (yellow 80, green 95, grey 110): about 14 crafts to 100. Each takes 2 {item:2840} and 1 {item:2880}. Two Copper Bars and a {item:2880} a craft (blacksmithing and engineering suppliers). Needs an anvil nearby.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 4361, spell = 3924, reagents = { { item = 2840, count = 2, itemName = "Copper Bar" }, { item = 2880, count = 1, itemName = "Weak Flux" } }, skillLine = 202, untilSkill = 100 },
+				{ t = "craft", item = 4361, spell = 3924, grey = 110, reagents = { { item = 2840, count = 2, itemName = "Copper Bar" }, { item = 2880, count = 1, itemName = "Weak Flux" } }, skillLine = 202, untilSkill = 100, yellow = 80 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 100",
 			note = "Back to an {skill:202} trainer: {spell:8334} (from 100).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 8334, candidates = { 96, 104, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "learn", spell = 8334, candidates = { 98, 101, 99, 100, 102 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{item:6712} to 125",
 			note = "{item:6712} is orange at 100 (yellow 115, green 122, grey 130): about 31 crafts to 125. Each takes 1 {item:2841}, 2 {spell:3922} and 1 {item:2880}. Make the 29 {spell:3922} first. Use the 33 {spell:3922} you made earlier; the counts above leave them out. Practice Locks sell to rogues, or open them yourself. Needs an anvil nearby. {item:2841} (61 for 75-150): {skill:186}: smelt {item:2840} and {item:3576}; or the Auction House.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 4359, spell = 3922, count = 29, reagents = { { item = 2840, count = 1, itemName = "Copper Bar" } }, skillLine = 202 },
-				{ t = "craft", item = 6712, spell = 8334, reagents = { { item = 2841, count = 1, itemName = "Bronze Bar" }, { item = 4359, count = 2, itemName = "Handful of Copper Bolts" }, { item = 2880, count = 1, itemName = "Weak Flux" } }, skillLine = 202, untilSkill = 125 },
+				{ t = "craft", item = 6712, spell = 8334, grey = 130, reagents = { { item = 2841, count = 1, itemName = "Bronze Bar" }, { item = 4359, count = 2, itemName = "Handful of Copper Bolts" }, { item = 2880, count = 1, itemName = "Weak Flux" } }, skillLine = 202, untilSkill = 125, yellow = 115 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 125",
 			note = "Back to an {skill:202} trainer: {spell:3945} (from 125).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3945, candidates = { 96, 104, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "learn", spell = 3945, candidates = { 98, 101, 99, 100, 102 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{spell:3945} to 140",
 			note = "{spell:3945} is yellow at 125 (yellow 125, green 135, grey 145): about 27 crafts to 140. Each takes 1 {item:2838}. One {item:2838} a craft (Iron Deposits). Keep some: Iron Grenades take one each.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 4377, spell = 3945, reagents = { { item = 2838, count = 1, itemName = "Heavy Stone" } }, skillLine = 202, untilSkill = 140 },
+				{ t = "craft", item = 4377, spell = 3945, grey = 145, reagents = { { item = 2838, count = 1, itemName = "Heavy Stone" } }, skillLine = 202, untilSkill = 140, yellow = 125 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 140",
 			note = "Back to an {skill:202} trainer: {spell:3973} (from 90) and {spell:3950} (from 140).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3973, candidates = { 96, 104, 2, 4, 1, 3, 5 }, skillLine = 202 },
-				{ t = "learn", spell = 3950, candidates = { 96, 104, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "learn", spell = 3973, candidates = { 98, 101, 99, 100, 102 }, skillLine = 202 },
+				{ t = "learn", spell = 3950, candidates = { 98, 101, 99, 100, 102 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{spell:3950} to 150",
 			note = "{spell:3950} is yellow at 140 (yellow 140, green 165, grey 190): about 10 crafts to 150. Each takes 2 {item:4377}, 3 {item:2841} and 1 {spell:3973} and makes 3. Make the 10 {spell:3973} (2 crafts) first. Use the 20 {item:4377} you made earlier; the counts above leave them out. The trainer teaches it, and it is the cheapest way through these points in the data. Needs an anvil nearby. {item:2842} (2 for 75-150): {skill:186}: smelt {item:2775}; or the Auction House. {skill:202} 150 is a Legacy System milestone.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 4404, spell = 3973, count = 10, reagents = { { item = 2842, count = 1, itemName = "Silver Bar" } }, skillLine = 202 },
-				{ t = "craft", item = 4380, spell = 3950, reagents = { { item = 4377, count = 2, itemName = "Heavy Blasting Powder" }, { item = 2841, count = 3, itemName = "Bronze Bar" }, { item = 4404, count = 1, itemName = "Silver Contact" } }, skillLine = 202, untilSkill = 150 },
+				{ t = "craft", item = 4380, spell = 3950, grey = 190, reagents = { { item = 4377, count = 2, itemName = "Heavy Blasting Powder" }, { item = 2841, count = 3, itemName = "Bronze Bar" }, { item = 4404, count = 1, itemName = "Silver Contact" } }, skillLine = 202, untilSkill = 150, yellow = 140 },
 				{ t = "skill", level = 150, skill = "Engineering", skillLine = 202 },
 			},
 		},
 		{
 			title = "Expert {skill:202}",
-			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:202} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:8736} ({zone:1446}) and {npc:5174} ({zone:1455}); Horde {npc:8736} ({zone:1446}) and Roxxik ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:9271} (from 150) and {spell:3953} (from 145). 150-225 takes about 31s of vendor goods, plus 19 {item:2319}, 19 {item:2592}, 31 {item:2836}, 74 {item:2838}, 100 {item:2841}, 6 {item:2842}, 81 {item:3575}, 19 {item:3860} and 62 {item:7912} to gather or buy.",
+			note = "Expert raises the cap from 150 to 225 for 50s (Classic's price; Forever's is not in the data); it needs {skill:202} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:5174} ({zone:1455}); Horde {npc:11017} ({zone:1454}). The arrow picks the nearest of your faction. Learn now: {spell:9271} (from 150) and {spell:3953} (from 145). 150-225 takes about 31s of vendor goods, plus 19 {item:2319}, 19 {item:2592}, 31 {item:2836}, 74 {item:2838}, 100 {item:2841}, 6 {item:2842}, 81 {item:3575}, 19 {item:3860} and 62 {item:7912} to gather or buy.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", candidates = { 6, 7, 4, 5 }, rank = 3, rankMax = 225, skill = "Engineering", skillLine = 202 },
-				{ t = "learn", spell = 9271, candidates = { 96, 104, 2, 4, 1, 3, 5 }, skillLine = 202 },
-				{ t = "learn", spell = 3953, candidates = { 96, 104, 2, 4, 1, 3, 5 }, skillLine = 202 },
+				{ t = "train", candidates = { 110, 111 }, rank = 3, rankMax = 225, skill = "Engineering", skillLine = 202 },
+				{ t = "learn", spell = 9271, candidates = { 98, 101, 99, 100, 102 }, skillLine = 202 },
+				{ t = "learn", spell = 3953, candidates = { 98, 101, 99, 100, 102 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{skill:202} 150-225: vendor goods",
 			note = "Buy the whole bracket's share in one go: 31 {item:6530} (31s); about 31s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:5494} and {npc:1286}; {zone:1454}: {npc:3367}, {npc:3333} and {npc:5817}).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 6530, count = 31, candidates = { 105, 17, 13, 18, 106, 107, 16, 108, 71, 109, 110, 22, 111, 112, 113, 23, 65, 36, 114, 115, 116, 34, 40, 41, 37, 117, 118, 119, 120, 121, 122, 45, 123, 47, 48, 124, 50, 51, 52, 53, 54, 125, 56, 58, 126, 61, 127, 63, 128, 129, 69, 130, 131, 73, 76, 132, 80, 133 } },
+				{ t = "buy", item = 6530, count = 31, candidates = { 112, 19, 15, 20, 113, 114, 18, 115, 73, 116, 117, 24, 118, 119, 120, 25, 67, 38, 121, 122, 123, 36, 42, 43, 39, 124, 125, 126, 127, 128, 129, 47, 130, 49, 50, 131, 52, 53, 54, 55, 56, 132, 58, 60, 133, 63, 134, 65, 135, 136, 71, 137, 138, 75, 78, 139, 82, 140 } },
 			},
 		},
 		{
 			title = "{item:2319} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "19 {item:2319} for {spell:3953}: {skill:393}: beasts of level 18-30; or the Auction House. Skin {npc:2248}, {npc:2356}, {npc:2385}, {npc:2351}, Snapjaw, {npc:2384} and {npc:2354} here (level 18-30); the {skill:393} guide routes this.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 2319, count = 19, map = 1424, x = 45.4, y = 34.9, f = "e" },
 			},
@@ -9851,21 +10138,24 @@ G(function() return {
 			title = "{item:2319} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "19 {item:2319} for {spell:3953}: {skill:393}: beasts of level 18-30; or the Auction House. Skin {npc:3809}, {npc:3810}, {npc:3818}, {npc:3823}, {npc:3811} and {npc:3817} here (level 18-30); the {skill:393} guide routes this.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 2319, count = 19, map = 1440, x = 68.7, y = 50.2, f = "e" },
 			},
 		},
 		{
 			title = "{item:2592}",
-			note = "19 {item:2592} for {spell:3953}: humanoids of level 15-30 drop it; or the Auction House. The arrow picks a farm spot for your level and faction.",
+			note = "19 {item:2592} for {spell:3953}: humanoids of level 15-30 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 2592, count = 19, candidates = { 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165 } },
+				{ t = "collect", item = 2592, count = 19 },
 			},
 		},
 		{
 			title = "{item:2836} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "31 {item:2836} for {item:6533}: {skill:186}: {object:1732} (skill 65) in {zone:1432} (10-20), {zone:1440} (18-30) and {zone:1424} (20-30); or the Auction House. The densest cluster of {object:1732} in {zone:1432} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 2836, count = 31, map = 1432, x = 23.1, y = 24.5, f = "e", spotsPacked = "23.1,24.5,,185,3;35.1,23.2,,100,12,1;35.8,12.6,,71,2,1;25.9,47.6,,71,3,1;41.3,30,,71,2,1;41.6,19.1,,71,1,1;41.3,11,,71,2,1;26.7,57.4,,71,3,1;34.7,58.7,,71,3,1;43.3,49.5,,71,3,1;48.1,37.3,,112,4,1;50.3,23.2,,71,1,1;52,13.4,,71,1,1;43.6,60.5,,102,4,1;49.9,52.5,,71,2,1;41.9,66,,71,2,1;32.8,73.3,,99,5,1;57.8,14.2,,71,1,1;41.1,72,,94,3,1;56.7,46,,71,2,1;29.2,83.9,,73,4,1;56.3,59.5,,71,1,1;66.2,25.5,,71,2,1;35.9,89.6,,91,7,1;59.4,69.8,,113,6,1;71.1,19.6,,96,4,1;71.1,31.4,,71,2,1;70.5,47.4,,90,3,1;76.9,26,,71,2,1;76.9,15.3,,71,3,1;69.8,65.6,,71,5,1;77.9,35.5,,71,2,1;67.4,76.2,,103,4,1;76.6,57,,91,4,1;78.9,46.9,,71,1,1;76.3,65.4,,71,1,1;77.8,74.4,,71,2,1;84.2,57.3,,71,1,1" },
 			},
@@ -9874,6 +10164,7 @@ G(function() return {
 			title = "{item:2836} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "31 {item:2836} for {item:6533}: {skill:186}: {object:1732} (skill 65) in {zone:1413} (10-25), {zone:1440} (18-30) and {zone:1424} (20-30); or the Auction House. The densest cluster of {object:1732} in {zone:1440} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 2836, count = 31, map = 1440, x = 88.7, y = 86.1, f = "e", spotsPacked = "88.7,86.1,,197,3;81.4,80.2,,150,1,1;91.2,66.5,,150,1,1;80.5,62.9,,150,1,1;93.7,50.5,,150,1,1;66,66.5,,150,2,1;76,47.3,,150,1,1;51.9,76.7,,150,1,1;55,61.5,,150,1,1;54.4,54.9,,150,2,1;47.1,47.4,,150,2,1;41,34.3,,150,3,1;30.8,69.6,,150,1,1;29.9,41.3,,150,1,1;29.5,32.2,,150,2,1;22.5,42.7,,150,4,1;22.1,31.8,,150,2,1;25.3,22,,150,1,1;15,44.7,,150,1,1;25.9,14.2,,150,1,1;16.5,31,,150,1,1;13.7,11.9,,150,1,1;8,14.3,,150,3,1" },
 			},
@@ -9882,6 +10173,7 @@ G(function() return {
 			title = "{item:2838} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "74 {item:2838} for {spell:3967}: {skill:186}: {object:1735} (skill 125) in {zone:1417} (30-40), {zone:1434} (30-45) and {zone:1443} (30-40); or the Auction House. The densest cluster of {object:1735} in {zone:1417} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 2838, count = 74, map = 1417, x = 15.8, y = 63.2, f = "e", spotsPacked = "15.8,63.2,,53,2;15.7,67.2,,40,2,1;18.5,56.2,,40,1,1;16.7,71.2,,40,2,1;18.7,71.6,,40,1,1;17.2,52.7,,40,1,1;20.8,71.5,,40,1,1;23.7,54.3,,40,1,1;24,72,,54,4,1;21.6,76.2,,42,3,1;17.3,47.7,,40,1,1;25.8,70.2,,40,2,1;19.2,83.9,,40,1,1;22.3,43.6,,40,1,1;29.8,69.5,,40,4,1;31.3,61.7,,40,1,1;20.7,39.5,,40,1,1;31.8,70.2,,40,1,1;32.9,65,,40,2,1;18.3,89.5,,40,1,1;25,86.1,,43,4,1;20.2,36,,40,1,1;22.3,89.5,,50,3,1;34.6,68.4,,40,2,1;34.9,61.9,,40,1,1;35.3,65.7,,40,1,1;24.7,36.6,,40,1,1;21.7,91.9,,40,1,1;19.2,33.3,,40,3,1;32.1,45,,72,11,1;19.2,93.3,,40,1,1;28.4,88.2,,40,1,1;36.2,56.2,,41,3,1;25.2,91.7,,40,2,1;37.4,65.9,,40,1,1;37.2,68.8,,40,1,1;34.8,46.4,,51,4,1;34.1,43.5,,47,8,1;38.7,61.7,,40,1,1;26,31,,40,2,1;23.9,29.5,,40,1,1;28.5,32.6,,40,1,1;39.1,72.3,,40,2,1;40.6,60.5,,40,1,1;41.1,64.5,,40,1,1;40.2,49,,40,1,1;38.7,43.2,,40,1,1;44,70.2,,40,1,1;42.5,78.8,,40,1,1;45,65.9,,40,1,1;38,34.4,,40,3,1;46.1,71.8,,40,2,1;27.1,18.5,,40,1,1;47.7,67.6,,40,1,1;48.3,64.4,,40,1,1;34.2,21.7,,58,5,1;41.7,31.5,,40,1,1;31.3,18.7,,40,3,1;49.4,70.8,,40,2,1;29.6,15.9,,40,3,1;39.4,25,,40,2,1;38.3,22.9,,46,4,1;48.3,83.6,,41,3,1;48.2,41.3,,40,1,1;50,47.8,,40,2,1;44.6,31,,40,1,1;50.5,80.8,,40,3,1;51.5,76.6,,45,4,1;47.8,35.7,,40,1,1;48.1,32.9,,45,5,1;50,35.4,,40,3,1;54.4,70.8,,40,4,1;54.8,64.6,,40,1,1;53.2,45.1,,40,1,1;54.8,75,,40,1,1;54.3,79.4,,60,13,1;54.9,49.6,,45,3,1;57.9,71.4,,60,5,1;57.5,75.7,,40,2,1;57.5,48.1,,40,2,1;55.2,32.7,,40,1,1;62.2,66.7,,40,1,1;62.9,70.9,,40,1,1;59,33.7,,40,2,1;61.9,44.1,,40,2,1;64.3,74.5,,40,2,1;65.3,65.7,,40,1,1;61.6,31.4,,40,1,1;67.4,69.4,,40,1,1;67.3,75.4,,52,6,1;64.3,34.2,,40,2,1;68,66.2,,40,2,1;67,80.8,,52,10,1;69.5,74.3,,40,4,1;69.4,78.1,,43,8,1;69,81.8,,40,5,1;70.9,57.8,,40,3,1;71.1,70.6,,48,5,1;71.3,67.5,,49,4,1;66,26.9,,40,1,1;72,52.5,,51,3,1;72.2,49.6,,51,4,1;73,60.9,,47,5,1;73.8,64.5,,40,3,1;70,29,,52,4,1;74.7,47.4,,41,4,1;76.9,44.6,,40,5,1;79.7,43,,40,1,1;77.6,29.6,,44,3,1;79.7,37.1,,52,5,1;80.2,32.8,,40,1,1;82.7,38.9,,40,1,1" },
 			},
@@ -9890,14 +10182,16 @@ G(function() return {
 			title = "{item:2838} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "74 {item:2838} for {spell:3967}: {skill:186}: {object:1735} (skill 125) in {zone:1441} (25-35), {zone:1417} (30-40) and {zone:1434} (30-45); or the Auction House. The densest cluster of {object:1735} in {zone:1441} is marked.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 2838, count = 74, map = 1441, x = 8.9, y = 34.3, f = "e", spotsPacked = "8.9,34.3,,75,3;12.4,37.7,,86,4,1;14.9,34.5,,53,2,1;14.3,27.2,,53,1,1,29;12.2,24.3,,53,2,1;17.2,31,,53,1,1;16.5,40.6,,79,5,1;18.1,36.3,,53,2,1;16.7,26.1,,53,1,1;19.4,40.1,,53,1,1;15.8,18.9,,53,1,1;21.1,30.6,,53,1,1;22.1,40.9,,53,1,1;13.3,11.4,,53,1,1;24.6,29.1,,53,1,1;24.1,23.8,,53,2,1;27.5,41.9,,53,1,1;28.3,28.5,,53,2,1;27,46.6,,53,1,1;26.6,54,,80,15,1;29.3,50.1,,53,2,1;31.6,27.6,,53,1,1;32.3,47.2,,53,2,1;33.9,34.6,,53,1,1;32,52.6,,53,1,1;35.3,27.8,,53,3,1;38,37.3,,53,1,1;36.9,54.7,,105,4,1;40.2,50.8,,53,1,1;42.9,33.7,,95,10,1;40.1,57.7,,53,1,1;42.5,53.1,,53,2,1;45.3,39.3,,53,2,1;43.7,60.4,,53,2,1;48,41.2,,53,2,1;46.7,54.8,,53,1,1;48.1,58.7,,53,1,1;51.6,43.2,,53,1,1;52.7,47.1,,53,1,1;51.2,56.8,,53,1,1;55.2,52.3,,53,2,1;59.2,49.6,,53,2,1;58.5,55.2,,53,2,1;62,47.8,,53,1,1;63.3,60.3,,53,2,1,29;66.2,51.7,,53,3,1,29;66.6,60.8,,53,1,1,29;68.7,54.2,,53,1,1;69.8,69.2,,53,1,1;68.4,77.9,,53,1,1;66.3,84.5,,53,1,1;75.3,51,,53,1,1;77.7,62,,53,1,1;70,91.8,,56,3,1;80.1,63.5,,53,1,1;77.9,88.3,,66,3,1" },
+				{ t = "collect", item = 2838, count = 74, map = 1441, x = 8.9, y = 34.3, f = "e", fromNpcs = { { npc = 4120, npcName = "Thundering Boulderkin" } }, fromNpcsAt = ";;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1;1;1;;;;;;;;;", spotsPacked = "8.9,34.3,,75,3;12.4,37.7,,86,4,1;14.9,34.5,,53,2,1;14.3,27.2,,53,1,1,29;12.2,24.3,,53,2,1;17.2,31,,53,1,1;16.5,40.6,,79,5,1;18.1,36.3,,53,2,1;16.7,26.1,,53,1,1;19.4,40.1,,53,1,1;15.8,18.9,,53,1,1;21.1,30.6,,53,1,1;22.1,40.9,,53,1,1;13.3,11.4,,53,1,1;24.6,29.1,,53,1,1;24.1,23.8,,53,2,1;27.5,41.9,,53,1,1;28.3,28.5,,53,2,1;27,46.6,,53,1,1;26.6,54,,80,15,1;29.3,50.1,,53,2,1;31.6,27.6,,53,1,1;32.3,47.2,,53,2,1;33.9,34.6,,53,1,1;32,52.6,,53,1,1;35.3,27.8,,53,3,1;38,37.3,,53,1,1;36.9,54.7,,105,4,1;40.2,50.8,,53,1,1;42.9,33.7,,95,10,1;40.1,57.7,,53,1,1;42.5,53.1,,53,2,1;45.3,39.3,,53,2,1;43.7,60.4,,53,2,1;48,41.2,,53,2,1;46.7,54.8,,53,1,1;48.1,58.7,,53,1,1;51.6,43.2,,53,1,1;52.7,47.1,,53,1,1;51.2,56.8,,53,1,1;55.2,52.3,,53,2,1;59.2,49.6,,53,2,1;58.5,55.2,,53,2,1;62,47.8,,53,1,1;63.3,60.3,,53,2,1,29;66.2,51.7,,53,3,1,29;66.6,60.8,,53,1,1,29;68.7,54.2,,53,1,1;69.8,69.2,,53,1,1;68.4,77.9,,53,1,1;66.3,84.5,,53,1,1;75.3,51,,53,1,1;77.7,62,,53,1,1;70,91.8,,56,3,1;80.1,63.5,,53,1,1;77.9,88.3,,66,3,1" },
 			},
 		},
 		{
 			title = "{item:7912} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "62 {item:7912} for {item:10505}: {skill:186}: {object:2040} (skill 175) in {zone:1434} (30-45), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest cluster of {object:2040} in {zone:1434} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 7912, count = 62, map = 1434, x = 29.4, y = 60.1, f = "e", spotsPacked = "29.4,60.1,,55,1;27.8,63.4,,49,2,1;26.3,63,,49,2,1;33,62,,49,2,1;31.4,65.3,,49,1,1;25.4,61,,49,2,1;30.3,52.9,,49,1,1;27.7,67.3,,49,2,1;24.8,55.1,,49,2,1;35.4,60,,50,3,1;34.9,56.2,,49,2,1;29.5,69.5,,49,3,1;33.1,68,,49,2,1;25.3,52.6,,49,1,1;35.3,65.6,,66,4,1;36.9,63.8,,49,1,1;37.7,56.9,,49,3,1;37,54.1,,49,1,1;33,72,,49,1,1;36.4,68.7,,49,1,1;34.8,72.4,,49,2,1;32.3,75,,49,2,1;37.9,49.5,,49,3,1;40.8,57.1,,49,1,1;31.6,77.3,,49,2,1;40.4,52.2,,77,3,1;39.7,49.4,,49,1,1;33.3,42.2,,49,2,1;29.3,41.1,,49,2,1;28.6,81.1,,49,1,1;31,38.8,,49,2,1;40.1,45.5,,49,2,1;26.3,81.9,,49,1,1;42.4,49.3,,82,5,1;42.4,46.8,,76,5,1;44.3,48.1,,49,2,1;39.1,81.2,,60,4,1;42.2,42.8,,72,5,1;41.6,41.4,,49,1,1;39.4,36,,49,1,1;45.6,44.9,,79,4,1;41.9,37,,49,1,1;45,38.5,,49,1,1;47.6,38.3,,49,1,1;51,36.6,,49,1,1;49.9,33.8,,49,1,1;44.6,26.2,,49,2,1;27,18,,49,2,1;30,17.7,,49,1,1;32,17.7,,49,1,1;48,27.7,,49,2,1;29.3,15.3,,49,1,1;25.8,15.4,,49,1,1;48.1,24.5,,49,1,1;50.8,27.9,,120,10,1;34.3,14.2,,49,1,1;27.4,13.6,,49,1,1;52.3,28,,49,3,1;31.7,13.1,,49,3,1;47.6,21.4,,64,3,1;29.8,12.1,,49,1,1;38.2,13.9,,49,2,1;41.5,14.3,,49,1,1;46.2,17.1,,49,1,1;31.7,10.2,,49,2,1;45.2,13,,49,2,1;43.4,11.4,,49,1,1;28.9,7,,49,1,1;30.5,6.8,,49,2,1;40.7,9.5,,49,1,1;37.8,7.8,,49,1,1;33.1,6.4,,49,1,1;36.3,6.9,,49,1,1;42.4,8.4,,49,1,1;50.6,14.9,,49,1,1;39.8,6.6,,49,1,1;46.7,8,,49,2,1;49.2,7.8,,65,7,1;47.6,5.7,,65,5,1;50.1,4.1,,49,2,1" },
 			},
@@ -9906,6 +10200,7 @@ G(function() return {
 			title = "{item:7912} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "62 {item:7912} for {item:10505}: {skill:186}: {object:2040} (skill 175) in {zone:1443} (30-40), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest cluster of {object:2040} in {zone:1443} is marked.",
+			section = 3,
 			goals = {
 				{ t = "collect", item = 7912, count = 62, map = 1443, x = 31.5, y = 59.4, f = "e" },
 			},
@@ -9913,89 +10208,101 @@ G(function() return {
 		{
 			title = "{item:6533} to 166",
 			note = "{item:6533} is yellow at 150 (yellow 150, green 160, grey 170): about 31 crafts to 166. Each takes 2 {item:2841}, 1 {item:6530} and 1 {spell:3929} and makes 3. Make the 31 {spell:3929} first. {item:6530} come from trade and fishing suppliers; the attractors sell to fishermen. {item:2841} (100 for 150-225): {skill:186}: smelt {item:2840} and {item:3576}; or the Auction House.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 4364, spell = 3929, count = 31, reagents = { { item = 2836, count = 1, itemName = "Coarse Stone" } }, skillLine = 202 },
-				{ t = "craft", item = 6533, spell = 9271, reagents = { { item = 2841, count = 2, itemName = "Bronze Bar" }, { item = 6530, count = 1, itemName = "Nightcrawlers" }, { item = 4364, count = 1, itemName = "Coarse Blasting Powder" } }, skillLine = 202, untilSkill = 166 },
+				{ t = "craft", item = 6533, spell = 9271, grey = 170, reagents = { { item = 2841, count = 2, itemName = "Bronze Bar" }, { item = 6530, count = 1, itemName = "Nightcrawlers" }, { item = 4364, count = 1, itemName = "Coarse Blasting Powder" } }, skillLine = 202, untilSkill = 166, yellow = 150 },
 			},
 		},
 		{
 			title = "{spell:3953} to 175",
 			note = "{spell:3953} is yellow at 166 (yellow 145, green 170, grey 195): about 19 crafts to 175. Each takes 2 {item:2841}, 1 {item:2319} and 1 {item:2592}. Bronze Frameworks are parts for later gadgets; the extras sell to vendors.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 4382, spell = 3953, reagents = { { item = 2841, count = 2, itemName = "Bronze Bar" }, { item = 2319, count = 1, itemName = "Medium Leather" }, { item = 2592, count = 1, itemName = "Wool Cloth" } }, skillLine = 202, untilSkill = 175 },
+				{ t = "craft", item = 4382, spell = 3953, grey = 195, reagents = { { item = 2841, count = 2, itemName = "Bronze Bar" }, { item = 2319, count = 1, itemName = "Medium Leather" }, { item = 2592, count = 1, itemName = "Wool Cloth" } }, skillLine = 202, untilSkill = 175, yellow = 145 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 175",
 			note = "Back to an {skill:202} trainer: {spell:12585} (from 175).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 12585, candidates = { 5, 4, 6, 7 }, skillLine = 202 },
+				{ t = "learn", spell = 12585, candidates = { 111, 110 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{item:10505} to 191",
 			note = "{item:10505} is yellow at 175 (yellow 175, green 185, grey 195): about 31 crafts to 191. Each takes 2 {item:7912}. Two {item:7912} a craft (Mithril Deposits). Make plenty: the triggers, slugs and Gyro-Shot all use it.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 10505, spell = 12585, reagents = { { item = 7912, count = 2, itemName = "Solid Stone" } }, skillLine = 202, untilSkill = 191 },
+				{ t = "craft", item = 10505, spell = 12585, grey = 195, reagents = { { item = 7912, count = 2, itemName = "Solid Stone" } }, skillLine = 202, untilSkill = 191, yellow = 175 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 191",
 			note = "Back to an {skill:202} trainer: {spell:3967} (from 190).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 3967, candidates = { 5, 4, 6, 7 }, skillLine = 202 },
+				{ t = "learn", spell = 3967, candidates = { 111, 110 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{spell:3967} to 210",
 			note = "{spell:3967} is yellow at 191 (yellow 190, green 210, grey 230): about 27 crafts to 210. Each takes 3 {item:3575}, 3 {spell:3945} and 1 {spell:3973} and makes 2. Make the 74 {spell:3945} and 30 {spell:3973} (6 crafts) first. Use the 7 {spell:3945} you made earlier; the counts above leave them out. A {item:2842} makes five Silver Contacts (grey by now: no points, but no trip to a vendor either); the {spell:3945} comes from {item:2838}. Each craft makes two bombs. Specialisation (optional): at 200 and character level 30, {npc:5174} ({zone:1455}), {npc:5518} ({zone:1453}), {npc:4586} ({zone:1458}) or Tinkerwiz ({area:392}) sends you to {spell:20220} ({npc:7944}, {zone:1455}, or {npc:7406}, {area:35}: 6 Mithril Tubes, an {item:4407} and 2 Advanced Target Dummies) or Goblin Engineering ({npc:8126}, {area:976}: 20 Big Iron Bombs, 20 {item:10507} and 5 {npc:2675}). The {item:4407} schematic now binds when picked up, but the quest takes a scope someone else made. The membership card lasts 14 days of play; renewing it costs 2g. You can take only one; neither is needed for 300, and the beta never tested them (it stopped at level 30). Needs an anvil nearby. {item:2842} (6 for 150-225): {skill:186}: smelt {item:2775}; or the Auction House. {item:3575} (81 for 150-225): {skill:186}: smelt {item:2772}; or the Auction House.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 4377, spell = 3945, count = 74, reagents = { { item = 2838, count = 1, itemName = "Heavy Stone" } }, skillLine = 202 },
 				{ t = "craft", item = 4404, spell = 3973, count = 30, reagents = { { item = 2842, count = 1, itemName = "Silver Bar" } }, skillLine = 202 },
-				{ t = "craft", item = 4394, spell = 3967, reagents = { { item = 3575, count = 3, itemName = "Iron Bar" }, { item = 4377, count = 3, itemName = "Heavy Blasting Powder" }, { item = 4404, count = 1, itemName = "Silver Contact" } }, skillLine = 202, untilSkill = 210 },
+				{ t = "craft", item = 4394, spell = 3967, grey = 230, reagents = { { item = 3575, count = 3, itemName = "Iron Bar" }, { item = 4377, count = 3, itemName = "Heavy Blasting Powder" }, { item = 4404, count = 1, itemName = "Silver Contact" } }, skillLine = 202, untilSkill = 210, yellow = 190 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 210",
 			note = "Back to an {skill:202} trainer: {spell:12596} (from 210).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 12596, candidates = { 5, 4, 6, 7 }, skillLine = 202 },
+				{ t = "learn", spell = 12596, candidates = { 111, 141, 110 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{item:10512} to 225",
 			note = "{item:10512} is yellow at 210 (yellow 210, green 230, grey 250): about 19 crafts to 225. Each takes 1 {item:3860} and 1 {item:10505} and makes 200. Use the 19 {item:10505} you made earlier; the counts above leave them out. One {item:3860} and one {item:10505} a craft; hunters buy the slugs. Needs an anvil nearby. {item:3860} (19 for 150-225): {skill:186}: smelt {item:3858}; or the Auction House. {skill:202} 225 is a Legacy System milestone.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 10512, spell = 12596, reagents = { { item = 3860, count = 1, itemName = "Mithril Bar" }, { item = 10505, count = 1, itemName = "Solid Blasting Powder" } }, skillLine = 202, untilSkill = 225 },
+				{ t = "craft", item = 10512, spell = 12596, grey = 250, reagents = { { item = 3860, count = 1, itemName = "Mithril Bar" }, { item = 10505, count = 1, itemName = "Solid Blasting Powder" } }, skillLine = 202, untilSkill = 225, yellow = 210 },
 				{ t = "skill", level = 225, skill = "Engineering", skillLine = 202 },
 			},
 		},
 		{
 			title = "Artisan {skill:202}",
 			note = "Artisan raises the cap from 225 to 300 for 4g 50s (Classic's price; Forever's is not in the data); it needs {skill:202} 200 and character level 35, so you can take it on any visit from 200. Only a few trainers teach it: Alliance {npc:8736} ({zone:1446}); Horde {npc:8736} ({zone:1446}). The arrow picks the nearest of your faction. 225-300 takes about 2g 80s of recipes, plus 118 {item:3860}, 212 {item:7912}, 156 {item:12359} and 24 {item:14047} to gather or buy.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 35 },
-				{ t = "train", candidates = { 166 }, rank = 4, rankMax = 300, skill = "Engineering", skillLine = 202 },
+				{ t = "train", candidates = { 141 }, rank = 4, rankMax = 300, skill = "Engineering", skillLine = 202 },
 			},
 		},
 		{
 			title = "{item:16042}",
 			note = "{item:16042} teaches {item:15994} ({skill:202} 260) for 1g 20s. Sold by Alliance: {npc:5175} ({zone:1455}), limited stock; Horde: {npc:3413} ({zone:1454}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; the Auction House often has it too.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 16042, candidates = { 167, 168 } },
+				{ t = "buy", item = 16042, candidates = { 142, 143 } },
 			},
 		},
 		{
 			title = "{item:16047}",
-			note = "{item:16047} teaches {item:16000} ({skill:202} 275) for 1g 60s. Sold by Alliance: {npc:260565} ({zone:2548}) and {npc:11185} ({zone:1452}), limited stock; Horde: {npc:11185} ({zone:1452}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; it binds when picked up, so the Auction House never has it.",
+			note = "{item:16047} teaches {item:16000} ({skill:202} 275) for 1g 60s. Sold by {npc:260565} ({zone:2548}) and {npc:11185} ({zone:1452}), limited stock.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 16047, candidates = { 64, 83 } },
+				{ t = "buy", item = 16047, candidates = { 66, 85 } },
 			},
 		},
 		{
 			title = "{item:7912} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "212 {item:7912} for {item:10512} and {item:10513}: {skill:186}: {object:2040} (skill 175) in {zone:1425} (40-50), {zone:1444} (40-50) and {zone:1447} (45-55); or the Auction House. The densest cluster of {object:2040} in {zone:1425} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 7912, count = 212, map = 1425, x = 20.8, y = 58.8, f = "e", spotsPacked = "20.8,58.8,,53,2;23.3,59.8,,41,1,1;24.7,66.6,,60,6,1;28,58.9,,41,1,1;27.3,69.3,,41,2,1;30.1,55,,41,1,1;31.8,60,,61,4,1;30.5,68.6,,41,1,1;33.9,64.1,,41,1,1;33.5,41.2,,41,1,1;37.2,67.4,,41,3,1;35.5,74.8,,41,1,1;35.6,42.3,,41,1,1;38.8,50.2,,41,2,1;41.2,59,,45,4,1;40.6,66.5,,41,3,1;39.8,43.8,,41,1,1;43.5,70.8,,41,1,1;47.4,70.6,,41,1,1;46.3,37.8,,41,1,1;50,48.2,,41,1,1;50.4,70.6,,41,3,1;46.9,33.4,,41,1,1;52.4,59.7,,41,1,1;52.2,65.6,,94,7,1;54.9,55,,41,2,1;55.3,67.8,,41,4,1;56.5,43.8,,48,7,1;57.7,68.4,,41,2,1;58.1,49.5,,41,1,1;55.7,84.6,,41,3,1;56.6,35.6,,41,1,1;58.4,41.2,,67,4,1;60.2,58.1,,41,3,1;59.7,43.2,,41,2,1;58.4,82.5,,41,2,1;62.6,59.4,,41,2,1;62.5,64.2,,41,1,1;62.3,72.5,,41,1,1;60.7,34.4,,41,1,1;58.6,27.7,,41,1,1;63.6,41.7,,51,3,1;59,23.2,,41,1,1;57.9,19.6,,41,1,1;64.2,36.6,,41,1,1;66.8,52.4,,41,1,1;65.7,41.8,,41,1,1;68,55.3,,41,2,1;68.9,72.3,,41,1,1;68.4,77,,41,1,1;71.7,66.2,,41,1,1;72.2,52.4,,41,1,1;73.4,62.1,,41,3,1;68.2,19.8,,41,1,1;75.2,57.1,,41,1,1;74,87.3,,41,1,1;77.3,59.5,,41,1,1;77.3,56,,41,1,1;79.4,50,,41,1,1;79.5,74,,41,1,1;83,50.4,,41,1,1" },
 			},
@@ -10004,63 +10311,61 @@ G(function() return {
 			title = "{item:7912} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "212 {item:7912} for {item:10512} and {item:10513}: {skill:186}: {object:2040} (skill 175) in {zone:1443} (30-40), {zone:1425} (40-50) and {zone:1444} (40-50); or the Auction House. The densest cluster of {object:2040} in {zone:1443} is marked.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 7912, count = 212, map = 1443, x = 31.5, y = 59.4, f = "e" },
 			},
 		},
 		{
-			title = "{item:14047} (Alliance)",
-			only = { factions = { "Alliance" } },
-			note = "24 {item:14047} for {item:15994}: humanoids of level 45-60 drop it; or the Auction House. It drops from {npc:7027} (level 56-57) here.",
+			title = "{item:14047}",
+			note = "24 {item:14047} for {item:15994}: humanoids of level 45-60 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 14047, count = 24, map = 1428, x = 49.8, y = 54.7, f = "e", fromNpcs = { { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7026, npcName = "Blackrock Sorcerer" }, { npc = 7025, npcName = "Blackrock Soldier" }, { npc = 7028, npcName = "Blackrock Warlock" }, { npc = 8979, npcName = "Gruklash" } }, lvl = 55, spotsPacked = "49.8,54.7,,69,5,,57;48.9,58.1,,40,2,1,56;50.5,61.3,,40,3,1,57;55.2,53.8,,59,12,1,57;44.4,56.5,,40,4,1,59;44.8,50.8,,40,2,1,56;50.1,43,,40,2,1;45.9,43.5,,40,1,1;41.2,55,,74,8,1,59;42.1,45.6,,40,2,1;43,37,,40,5,1,57;43.6,34.4,,40,3,1,57;40.5,34.2,,42,12,1,59;63.6,37.8,,40,1,1;68.7,31.5,,40,2,1;17.1,29.7,,58,6,1,59" },
-			},
-		},
-		{
-			title = "{item:14047} (Horde)",
-			only = { factions = { "Horde" } },
-			note = "24 {item:14047} for {item:15994}: humanoids of level 45-60 drop it; or the Auction House. It drops from {npc:11880} (level 57-59) here.",
-			goals = {
-				{ t = "collect", item = 14047, count = 24, map = 1451, x = 23.7, y = 35.5, f = "e", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 11881, npcName = "Twilight Geolord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 14479, npcName = "Twilight Lord Everun" } }, lvl = 60, spotsPacked = "23.7,35.5,,156,25;27.5,32.8,,66,14,1;18,31.2,,40,1,1,59;38.3,44.2,,60,15,1;39,41.7,,40,5,1;39,46.5,,59,10,1;40.9,44.7,,54,13,1;22.8,68.7,,40,1,1,59;18.3,81.6,,47,6,1;20.7,83.6,,40,4,1;18,84.9,,65,15,1;20.5,87.1,,54,6,1;66.7,19.8,,58,5,1,61;67.7,15.4,,40,1,1,61" },
+				{ t = "collect", item = 14047, count = 24 },
 			},
 		},
 		{
 			title = "{item:10512} to 245",
 			note = "{item:10512} is yellow at 225 (yellow 210, green 230, grey 250): about 62 crafts to 245. Each takes 1 {item:3860} and 1 {item:10505} and makes 200. Make the 50 {item:10505} first. Use the 12 {item:10505} you made earlier; the counts above leave them out. One {item:3860} and one {item:10505} a craft; hunters buy the slugs. Needs an anvil nearby. {item:3860} (118 for 225-300): {skill:186}: smelt {item:3858}; or the Auction House.",
+			section = 4,
 			goals = {
 				{ t = "craft", item = 10505, spell = 12585, count = 50, reagents = { { item = 7912, count = 2, itemName = "Solid Stone" } }, skillLine = 202 },
-				{ t = "craft", item = 10512, spell = 12596, reagents = { { item = 3860, count = 1, itemName = "Mithril Bar" }, { item = 10505, count = 1, itemName = "Solid Blasting Powder" } }, skillLine = 202, untilSkill = 245 },
+				{ t = "craft", item = 10512, spell = 12596, grey = 250, reagents = { { item = 3860, count = 1, itemName = "Mithril Bar" }, { item = 10505, count = 1, itemName = "Solid Blasting Powder" } }, skillLine = 202, untilSkill = 245, yellow = 210 },
 			},
 		},
 		{
 			title = "{skill:202} recipes at 245",
 			note = "Back to an {skill:202} trainer: {spell:12621} (from 245).",
+			section = 4,
 			goals = {
-				{ t = "learn", spell = 12621, candidates = { 166 }, skillLine = 202 },
+				{ t = "learn", spell = 12621, candidates = { 141 }, skillLine = 202 },
 			},
 		},
 		{
 			title = "{item:10513} to 265",
 			note = "{item:10513} is yellow at 245 (yellow 245, green 265, grey 285): about 28 crafts to 265. Each takes 2 {item:3860} and 2 {item:10505} and makes 200. Make the 56 {item:10505} first. Two Mithril Bars and two {item:10505} a craft. Needs an anvil nearby.",
+			section = 4,
 			goals = {
 				{ t = "craft", item = 10505, spell = 12585, count = 56, reagents = { { item = 7912, count = 2, itemName = "Solid Stone" } }, skillLine = 202 },
-				{ t = "craft", item = 10513, spell = 12621, reagents = { { item = 3860, count = 2, itemName = "Mithril Bar" }, { item = 10505, count = 2, itemName = "Solid Blasting Powder" } }, skillLine = 202, untilSkill = 265 },
+				{ t = "craft", item = 10513, spell = 12621, grey = 285, reagents = { { item = 3860, count = 2, itemName = "Mithril Bar" }, { item = 10505, count = 2, itemName = "Solid Blasting Powder" } }, skillLine = 202, untilSkill = 265, yellow = 245 },
 			},
 		},
 		{
 			title = "{item:15994} to 287",
 			note = "{item:15994} is orange at 265 (yellow 280, green 290, grey 300): about 24 crafts to 287. Each takes 3 {item:12359} and 1 {item:14047}. Three Thorium Bars and a {item:14047} a craft; the widgets are parts for the later Thorium gadgets. Needs an anvil nearby. {item:12359} (156 for 225-300): {skill:186}: smelt {item:10620}; or the Auction House.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 16042, spell = 19791, note = "from the recipe in your bags", skillLine = 202 },
-				{ t = "craft", item = 15994, spell = 19791, reagents = { { item = 12359, count = 3, itemName = "Thorium Bar" }, { item = 14047, count = 1, itemName = "Runecloth" } }, skillLine = 202, untilSkill = 287 },
+				{ t = "craft", item = 15994, spell = 19791, grey = 300, reagents = { { item = 12359, count = 3, itemName = "Thorium Bar" }, { item = 14047, count = 1, itemName = "Runecloth" } }, skillLine = 202, untilSkill = 287, yellow = 280 },
 			},
 		},
 		{
 			title = "{item:16000} to 300",
 			note = "{item:16000} is orange at 287 (yellow 295, green 305, grey 315): about 14 crafts to 300. Each takes 6 {item:12359}. The schematic binds when picked up; six Thorium Bars a craft. Needs an anvil nearby. {skill:202} 300 is a Legacy System milestone.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 16047, spell = 19795, note = "from the recipe in your bags", skillLine = 202 },
-				{ t = "craft", item = 16000, spell = 19795, reagents = { { item = 12359, count = 6, itemName = "Thorium Bar" } }, skillLine = 202, untilSkill = 300 },
+				{ t = "craft", item = 16000, spell = 19795, grey = 315, reagents = { { item = 12359, count = 6, itemName = "Thorium Bar" } }, skillLine = 202, untilSkill = 300, yellow = 295 },
 				{ t = "skill", level = 300, skill = "Engineering", skillLine = 202 },
 			},
 		},
@@ -10074,335 +10379,210 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 1455,
+	sections = { { from = 1, skill = "First Aid", skillLine = 129, to = 40 }, { from = 40, skill = "First Aid", skillLine = 129, to = 50 }, { from = 50, skill = "First Aid", skillLine = 129, to = 80 }, { from = 80, skill = "First Aid", skillLine = 129, to = 115 }, { from = 115, skill = "First Aid", skillLine = 129, to = 125 }, { from = 125, skill = "First Aid", skillLine = 129, to = 150 }, { from = 150, skill = "First Aid", skillLine = 129, to = 180 }, { from = 180, skill = "First Aid", skillLine = 129, to = 210 }, { from = 210, skill = "First Aid", skillLine = 129, to = 225 }, { from = 225, skill = "First Aid", skillLine = 129, to = 240 }, { from = 240, skill = "First Aid", skillLine = 129, to = 260 }, { from = 260, skill = "First Aid", skillLine = 129, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "A", npc = 5150, map = 1455, x = 55.09, y = 58.26, z = 512.5, f = "e" },
 		{ faction = "A", npc = 2326, map = 1426, x = 47.18, y = 52.61, z = 399.7, f = "e" },
+		{ faction = "A", npc = 3181, map = 1437, x = 10.83, y = 61.4, z = 16.9, f = "e" },
 		{ faction = "A", npc = 2327, map = 1453, x = 53, y = 44.68, z = 106.6 },
 		{ faction = "A", npc = 2329, map = 1429, x = 43.39, y = 65.55, z = 63.9, f = "e" },
 		{ faction = "H", npc = 4591, map = 1458, x = 73.16, y = 55.15, z = -62.1, f = "e" },
 		{ faction = "H", npc = 5759, map = 1420, x = 61.82, y = 52.83, z = 34.3, f = "e" },
 		{ faction = "H", npc = 5943, map = 1411, x = 54.17, y = 41.93, z = 10.6, f = "e" },
+		{ faction = "H", npc = 5939, map = 1412, x = 46.08, y = 63.96, z = -8.9 },
 		{ faction = "A", npc = 6094, map = 1438, x = 55.29, y = 56.82, z = 1313.9, f = "e" },
 		{ faction = "H", npc = 3373, map = 1454, x = 34.18, y = 84.58, z = 43.9, f = "e" },
 		{ faction = "H", npc = 2798, map = 1456, x = 29.69, y = 21.18, z = 136.2, f = "e" },
-		{ faction = "A", npc = 1197, map = 1432, x = 35.3, y = 93.3, f = "e", lvl = { max = 16, min = 15 }, rate = 0.381, spawns = 11 },
-		{ faction = "H", npc = 1865, map = 1421, x = 46.5, y = 55, f = "e", lvl = { max = 13, min = 12 }, rate = 0.396, spawns = 9 },
-		{ faction = "A", npc = 1174, map = 1432, x = 35.8, y = 23.3, f = "e", lvl = { max = 13, min = 12 }, rate = 0.382, spawns = 9 },
-		{ faction = "A", npc = 1397, map = 1426, x = 42.1, y = 35.3, f = "e", lvl = { max = 9, min = 8 }, rate = 0.298, spawns = 11 },
-		{ faction = "H", npc = 1866, map = 1421, x = 47, y = 53.7, f = "e", lvl = { max = 12, min = 11 }, rate = 0.394, spawns = 8 },
-		{ faction = "AH", npc = 1537, map = 1422, x = 30.8, y = 28.3, f = "e", lvl = { max = 9, min = 8 }, rate = 0.296, spawns = 10 },
-		{ faction = "H", npc = 1941, map = 1420, x = 55.3, y = 42.3, f = "e", lvl = { max = 7, min = 6 }, rate = 0.296, spawns = 9 },
-		{ faction = "A", npc = 1211, map = 1426, x = 27, y = 36.6, f = "e", lvl = { max = 10, min = 8 }, rate = 0.293, spawns = 9 },
-		{ faction = "H", npc = 1520, map = 1420, x = 49.6, y = 43.3, f = "e", lvl = { max = 7, min = 6 }, rate = 0.297, spawns = 6 },
-		{ faction = "H", npc = 1973, map = 1421, x = 58.3, y = 71.3, f = "e", lvl = { max = 21, min = 20 }, rate = 0.203, spawns = 7 },
-		{ faction = "A", npc = 568, map = 1433, x = 71.7, y = 38.4, lvl = { max = 25, min = 24 }, rate = 0.126, spawns = 11 },
-		{ faction = "A", npc = 909, map = 1431, x = 22.2, y = 72.4, f = "e", lvl = { max = 26, min = 25 }, rate = 0.13, spawns = 10 },
-		{ faction = "AH", npc = 1529, map = 1422, x = 19.7, y = 48.8, f = "e", lvl = { max = 10, min = 9 }, rate = 0.293, spawns = 4 },
-		{ faction = "AH", npc = 1532, map = 1422, x = 20.3, y = 48.3, f = "e", lvl = { max = 11, min = 10 }, rate = 0.302, spawns = 3 },
-		{ faction = "AH", npc = 2260, map = 1424, x = 80.3, y = 45.5, f = "e", lvl = { max = 22, min = 21 }, rate = 0.129, spawns = 7 },
-		{ faction = "AH", npc = 435, map = 1428, x = 69.3, y = 84.5, f = "e", lvl = { max = 25, min = 24 }, rate = 0.129, spawns = 7 },
-		{ faction = "A", npc = 2190, map = 1439, x = 45.9, y = 39.1, f = "e", lvl = { max = 12, min = 11 }, rate = 0.378, spawns = 12 },
-		{ faction = "A", npc = 2324, map = 1439, x = 39.7, y = 53.6, f = "e", lvl = { max = 14, min = 13 }, rate = 0.391, spawns = 9 },
-		{ faction = "AH", npc = 11911, map = 1442, x = 81.9, y = 87, f = "e", lvl = { max = 15, min = 14 }, rate = 0.389, spawns = 8 },
-		{ faction = "H", npc = 3197, map = 1411, x = 52.2, y = 9.2, f = "e", lvl = { max = 10, min = 9 }, rate = 0.293, spawns = 10 },
-		{ faction = "H", npc = 3284, map = 1413, x = 56.1, y = 8.7, f = "e", lvl = { max = 15, min = 14 }, rate = 0.383, spawns = 7 },
-		{ faction = "H", npc = 2975, map = 1412, x = 51.9, y = 68.5, lvl = { max = 6, min = 5 }, rate = 0.301, spawns = 8 },
-		{ faction = "A", npc = 2152, map = 1438, x = 46, y = 53.8, f = "e", lvl = { max = 7, min = 6 }, rate = 0.3, spawns = 8 },
-		{ faction = "H", npc = 3383, map = 1413, x = 62.1, y = 45.8, f = "e", lvl = { max = 15, min = 12 }, rate = 0.393, spawns = 6 },
-		{ faction = "A", npc = 2003, map = 1438, x = 53.3, y = 51.1, f = "e", lvl = { max = 6, min = 5 }, rate = 0.307, spawns = 7 },
-		{ faction = "AH", npc = 2962, map = 1443, x = 85, y = 71.9, f = "e", lvl = { max = 8, min = 7 }, rate = 0.292, spawns = 7 },
-		{ faction = "AH", npc = 11911, map = 1442, x = 80.5, y = 89.5, f = "e", lvl = { max = 15, min = 14 }, rate = 0.389, spawns = 5 },
-		{ faction = "AH", npc = 2963, map = 1443, x = 86, y = 72.5, f = "e", lvl = { max = 9, min = 8 }, rate = 0.294, spawns = 5 },
-		{ faction = "H", npc = 3456, map = 1413, x = 43.9, y = 80.6, f = "e", lvl = { max = 21, min = 20 }, rate = 0.187, spawns = 6 },
-		{ faction = "AH", npc = 4026, map = 1442, x = 30.6, y = 62.9, f = "e", lvl = { max = 25, min = 24 }, rate = 0.133, spawns = 8 },
-		{ faction = "AH", npc = 4027, map = 1442, x = 27.1, y = 69.6, f = "e", lvl = { max = 27, min = 26 }, rate = 0.128, spawns = 8 },
-		{ faction = "A", npc = 2160, map = 1439, x = 36.4, y = 86.3, f = "e", lvl = { max = 21, min = 21 }, rate = 0.177, spawns = 1 },
-		{ faction = "A", npc = 568, map = 1433, x = 71.7, y = 38.4, lvl = { max = 25, min = 24 }, rate = 0.235, spawns = 11 },
-		{ faction = "A", npc = 909, map = 1431, x = 22.2, y = 72.4, f = "e", lvl = { max = 26, min = 25 }, rate = 0.242, spawns = 10 },
-		{ faction = "A", npc = 437, map = 1433, x = 72.3, y = 69.2, lvl = { max = 22, min = 21 }, rate = 0.241, spawns = 9 },
-		{ faction = "A", npc = 1727, map = 1436, x = 39.6, y = 77.7, f = "e", lvl = { max = 17, min = 16 }, rate = 0.189, spawns = 11 },
-		{ faction = "A", npc = 2103, map = 1437, x = 47.9, y = 75.7, f = "e", lvl = { max = 20, min = 19 }, rate = 0.254, spawns = 8 },
-		{ faction = "AH", npc = 2260, map = 1424, x = 80.3, y = 45.5, f = "e", lvl = { max = 22, min = 21 }, rate = 0.244, spawns = 7 },
-		{ faction = "AH", npc = 435, map = 1428, x = 69.3, y = 84.5, f = "e", lvl = { max = 25, min = 24 }, rate = 0.239, spawns = 7 },
-		{ faction = "AH", npc = 615, map = 1428, x = 70.4, y = 85.4, f = "e", lvl = { max = 24, min = 23 }, rate = 0.242, spawns = 6 },
-		{ faction = "H", npc = 1973, map = 1421, x = 58.3, y = 71.3, f = "e", lvl = { max = 21, min = 20 }, rate = 0.191, spawns = 7 },
-		{ faction = "H", npc = 1974, map = 1421, x = 58.6, y = 71, f = "e", lvl = { max = 20, min = 19 }, rate = 0.198, spawns = 4 },
-		{ faction = "H", npc = 1940, map = 1421, x = 65.8, y = 27, f = "e", lvl = { max = 18, min = 17 }, rate = 0.198, spawns = 4 },
-		{ faction = "AH", npc = 2557, map = 1417, x = 67.3, y = 80.8, f = "e", lvl = { max = 36, min = 35 }, rate = 0.039, spawns = 11 },
-		{ faction = "AH", npc = 2564, map = 1417, x = 32.2, y = 44.8, f = "e", lvl = { max = 34, min = 33 }, rate = 0.038, spawns = 11 },
-		{ faction = "A", npc = 771, map = 1431, x = 14.2, y = 34.7, f = "e", lvl = { max = 32, min = 32 }, rate = 0.072, spawns = 5 },
-		{ faction = "A", npc = 771, map = 1431, x = 17.2, y = 36.2, f = "e", lvl = { max = 32, min = 32 }, rate = 0.072, spawns = 5 },
-		{ faction = "AH", npc = 446, map = 1428, x = 60.8, y = 90.4, f = "e", lvl = { max = 20, min = 19 }, rate = 0.191, spawns = 1 },
-		{ faction = "AH", npc = 4027, map = 1442, x = 27.1, y = 69.6, f = "e", lvl = { max = 27, min = 26 }, rate = 0.252, spawns = 8 },
-		{ faction = "A", npc = 2336, map = 1439, x = 56.1, y = 27.1, f = "e", lvl = { max = 17, min = 16 }, rate = 0.199, spawns = 10 },
-		{ faction = "AH", npc = 4026, map = 1442, x = 30.6, y = 62.9, f = "e", lvl = { max = 25, min = 24 }, rate = 0.24, spawns = 8 },
-		{ faction = "AH", npc = 11918, map = 1442, x = 59.1, y = 92.2, f = "e", lvl = { max = 18, min = 17 }, rate = 0.213, spawns = 9 },
-		{ faction = "AH", npc = 11918, map = 1443, x = 86.2, y = 17.9, f = "e", lvl = { max = 18, min = 17 }, rate = 0.213, spawns = 9 },
-		{ faction = "A", npc = 2168, map = 1439, x = 52.4, y = 33.5, f = "e", lvl = { max = 17, min = 16 }, rate = 0.195, spawns = 9 },
-		{ faction = "H", npc = 3457, map = 1413, x = 43.1, y = 82.9, f = "e", lvl = { max = 23, min = 22 }, rate = 0.248, spawns = 6 },
-		{ faction = "H", npc = 3457, map = 1413, x = 44, y = 83.4, f = "e", lvl = { max = 23, min = 22 }, rate = 0.248, spawns = 5 },
-		{ faction = "H", npc = 3283, map = 1413, x = 59.9, y = 3.4, f = "e", lvl = { max = 17, min = 14 }, rate = 0.199, spawns = 5 },
-		{ faction = "H", npc = 3286, map = 1413, x = 59.7, y = 3.3, f = "e", lvl = { max = 18, min = 15 }, rate = 0.195, spawns = 5 },
-		{ faction = "AH", npc = 4104, map = 1441, x = 26.6, y = 53.2, f = "e", lvl = { max = 30, min = 30 }, rate = 0.096, spawns = 4 },
-		{ faction = "AH", npc = 4663, map = 1443, x = 56.6, y = 22.9, f = "e", lvl = { max = 31, min = 30 }, rate = 0.04, spawns = 8 },
-		{ faction = "A", npc = 2160, map = 1439, x = 36.4, y = 86.3, f = "e", lvl = { max = 21, min = 21 }, rate = 0.24, spawns = 1 },
-		{ faction = "A", npc = 2337, map = 1439, x = 56.3, y = 26.2, f = "e", lvl = { max = 29, min = 28 }, rate = 0.096, spawns = 2 },
-		{ faction = "H", npc = 7404, map = 1413, x = 48.4, y = 96.4, f = "e", lvl = { max = 30, min = 30 }, rate = 0.096, spawns = 1 },
-		{ faction = "A", npc = 3660, map = 1439, x = 56, y = 26.3, f = "e", lvl = { max = 31, min = 31 }, rate = 0.076, spawns = 1 },
+		{ faction = "A", npc = 4211, map = 1457, x = 51.71, y = 12.22, z = 1323.6, f = "e" },
+		{ faction = "AH", npc = 257007, map = 2521, x = 63.17, y = 72.56, z = 689.5 },
+		{ faction = "AH", npc = 257018, map = 2521, x = 43.08, y = 46.31, z = 826 },
 		{ faction = "A", npc = 2805, map = 1417, x = 26.97, y = 58.83, z = 68, f = "e" },
 		{ faction = "H", npc = 13476, map = 1445, x = 36.49, y = 30.36, z = 34.7, f = "e" },
-		{ faction = "AH", npc = 2739, map = 1418, x = 53.4, y = 32.5, f = "e", lvl = { max = 36, min = 35 }, rate = 0.304, spawns = 11 },
-		{ faction = "AH", npc = 2564, map = 1417, x = 32.2, y = 44.8, f = "e", lvl = { max = 34, min = 33 }, rate = 0.297, spawns = 11 },
-		{ faction = "AH", npc = 2743, map = 1418, x = 41.9, y = 28.6, f = "e", lvl = { max = 39, min = 38 }, rate = 0.297, spawns = 11 },
-		{ faction = "A", npc = 1158, map = 1437, x = 14.6, y = 24, f = "e", lvl = { max = 28, min = 27 }, rate = 0.251, spawns = 13 },
-		{ faction = "AH", npc = 674, map = 1434, x = 41.2, y = 43.2, f = "e", lvl = { max = 41, min = 40 }, rate = 0.29, spawns = 9 },
-		{ faction = "AH", npc = 2372, map = 1424, x = 63.1, y = 61.6, f = "e", lvl = { max = 27, min = 26 }, rate = 0.247, spawns = 8 },
-		{ faction = "A", npc = 1110, map = 1431, x = 15.3, y = 37.5, f = "e", lvl = { max = 28, min = 27 }, rate = 0.244, spawns = 8 },
-		{ faction = "A", npc = 1157, map = 1437, x = 13.8, y = 30.1, f = "e", lvl = { max = 27, min = 26 }, rate = 0.244, spawns = 8 },
-		{ faction = "AH", npc = 674, map = 1434, x = 41.8, y = 41.9, f = "e", lvl = { max = 41, min = 40 }, rate = 0.29, spawns = 6 },
-		{ faction = "AH", npc = 2894, map = 1418, x = 49.7, y = 68, f = "e", lvl = { max = 41, min = 40 }, rate = 0.314, spawns = 5 },
-		{ faction = "A", npc = 771, map = 1431, x = 14.2, y = 34.7, f = "e", lvl = { max = 32, min = 32 }, rate = 0.264, spawns = 5 },
-		{ faction = "A", npc = 771, map = 1431, x = 17.2, y = 36.2, f = "e", lvl = { max = 32, min = 32 }, rate = 0.264, spawns = 5 },
-		{ faction = "AH", npc = 2373, map = 1424, x = 63.2, y = 62.6, f = "e", lvl = { max = 28, min = 27 }, rate = 0.25, spawns = 5 },
-		{ faction = "AH", npc = 2372, map = 1424, x = 64.3, y = 64.3, f = "e", lvl = { max = 27, min = 26 }, rate = 0.247, spawns = 4 },
-		{ faction = "A", npc = 2103, map = 1437, x = 47.9, y = 75.7, f = "e", lvl = { max = 20, min = 19 }, rate = 0.047, spawns = 8 },
-		{ faction = "A", npc = 2103, map = 1437, x = 49.2, y = 79.1, f = "e", lvl = { max = 20, min = 19 }, rate = 0.047, spawns = 5 },
-		{ faction = "AH", npc = 4663, map = 1443, x = 56.6, y = 22.9, f = "e", lvl = { max = 31, min = 30 }, rate = 0.298, spawns = 8 },
-		{ faction = "AH", npc = 4094, map = 1441, x = 40.4, y = 35.7, f = "e", lvl = { max = 25, min = 24 }, rate = 0.249, spawns = 9 },
-		{ faction = "H", npc = 11697, map = 1413, x = 54.3, y = 1, f = "e", lvl = { max = 30, min = 29 }, rate = 0.249, spawns = 8 },
-		{ faction = "AH", npc = 11697, map = 1440, x = 79.4, y = 81.3, f = "e", lvl = { max = 30, min = 29 }, rate = 0.249, spawns = 8 },
-		{ faction = "AH", npc = 4634, map = 1443, x = 71.6, y = 44, f = "e", lvl = { max = 32, min = 31 }, rate = 0.304, spawns = 5 },
-		{ faction = "H", npc = 4094, map = 1413, x = 47.6, y = 98, f = "e", lvl = { max = 25, min = 24 }, rate = 0.249, spawns = 5 },
-		{ faction = "AH", npc = 7858, map = 1446, x = 75.4, y = 45.6, f = "e", lvl = { max = 45, min = 44 }, rate = 0.098, spawns = 10 },
-		{ faction = "AH", npc = 5616, map = 1446, x = 60, y = 23.2, f = "e", lvl = { max = 41, min = 40 }, rate = 0.099, spawns = 7 },
-		{ faction = "H", npc = 3502, map = 1413, x = 63.6, y = 38.7, f = "e", lvl = { max = 57, min = 57 }, rate = 0.667, spawns = 1 },
-		{ faction = "A", npc = 2337, map = 1439, x = 56.3, y = 26.2, f = "e", lvl = { max = 29, min = 28 }, rate = 0.244, spawns = 2 },
-		{ faction = "H", npc = 6072, map = 1413, x = 54, y = 2.9, f = "e", lvl = { max = 34, min = 34 }, rate = 0.298, spawns = 1 },
-		{ faction = "H", npc = 4705, map = 1412, x = 29.6, y = 49.7, f = "e", lvl = { max = 40, min = 39 }, rate = 0.294, spawns = 1 },
-		{ faction = "AH", npc = 3725, map = 1440, x = 30.7, y = 31.1, f = "e", lvl = { max = 19, min = 18 }, rate = 0.051, spawns = 5 },
-		{ faction = "A", npc = 3660, map = 1439, x = 56, y = 26.3, f = "e", lvl = { max = 31, min = 31 }, rate = 0.207, spawns = 1 },
-		{ faction = "AH", npc = 3730, map = 1440, x = 31.5, y = 31.3, f = "e", lvl = { max = 20, min = 19 }, rate = 0.049, spawns = 4 },
-		{ faction = "A", npc = 3715, map = 1439, x = 25.4, y = 95.6, f = "e", lvl = { max = 20, min = 19 }, rate = 0.02, spawns = 1 },
-		{ faction = "AH", npc = 1884, map = 1422, x = 44.7, y = 34.2, f = "e", lvl = { max = 56, min = 54 }, rate = 0.47, spawns = 8 },
-		{ faction = "AH", npc = 1884, map = 1422, x = 48.3, y = 32.1, f = "e", lvl = { max = 56, min = 54 }, rate = 0.47, spawns = 8 },
-		{ faction = "AH", npc = 6006, map = 1419, x = 64.4, y = 47.5, f = "e", lvl = { max = 53, min = 52 }, rate = 0.729, spawns = 4 },
-		{ faction = "AH", npc = 8917, map = 1427, x = 25.4, y = 88.4, f = "e", lvl = { max = 48, min = 46 }, rate = 0.344, spawns = 8 },
-		{ faction = "AH", npc = 2651, map = 1425, x = 31.8, y = 57.8, f = "e", lvl = { max = 43, min = 42 }, rate = 0.245, spawns = 10 },
-		{ faction = "A", npc = 3094, map = 1431, x = 53.6, y = 60.8, f = "e", lvl = { max = 51, min = 49 }, rate = 0.344, spawns = 7 },
-		{ faction = "AH", npc = 5974, map = 1419, x = 42.5, y = 14, f = "e", lvl = { max = 46, min = 45 }, rate = 0.338, spawns = 7 },
-		{ faction = "AH", npc = 5846, map = 1427, x = 43.6, y = 32.3, f = "e", lvl = { max = 48, min = 47 }, rate = 0.346, spawns = 6 },
-		{ faction = "AH", npc = 1884, map = 1422, x = 46.4, y = 33.7, f = "e", lvl = { max = 56, min = 54 }, rate = 0.47, spawns = 4 },
-		{ faction = "A", npc = 3094, map = 1431, x = 65.7, y = 68.2, f = "e", lvl = { max = 51, min = 49 }, rate = 0.344, spawns = 3 },
-		{ faction = "A", npc = 3094, map = 1431, x = 78.2, y = 35.8, f = "e", lvl = { max = 51, min = 49 }, rate = 0.344, spawns = 3 },
-		{ faction = "AH", npc = 2743, map = 1418, x = 41.9, y = 28.6, f = "e", lvl = { max = 39, min = 38 }, rate = 0.05, spawns = 11 },
-		{ faction = "AH", npc = 2739, map = 1418, x = 53.4, y = 32.5, f = "e", lvl = { max = 36, min = 35 }, rate = 0.05, spawns = 11 },
-		{ faction = "AH", npc = 2893, map = 1418, x = 51.3, y = 67, f = "e", lvl = { max = 40, min = 39 }, rate = 0.048, spawns = 9 },
-		{ faction = "AH", npc = 2742, map = 1418, x = 40.9, y = 27.8, f = "e", lvl = { max = 39, min = 37 }, rate = 0.048, spawns = 8 },
-		{ faction = "A", npc = 3094, map = 1431, x = 14.3, y = 67.1, f = "e", lvl = { max = 51, min = 49 }, rate = 0.344, spawns = 1 },
-		{ faction = "AH", npc = 7115, map = 1448, x = 38.2, y = 61.2, f = "e", lvl = { max = 52, min = 51 }, rate = 0.607, spawns = 7 },
-		{ faction = "AH", npc = 7110, map = 1448, x = 37.4, y = 68.9, f = "e", lvl = { max = 52, min = 51 }, rate = 0.747, spawns = 5 },
-		{ faction = "AH", npc = 7111, map = 1448, x = 39.5, y = 21.8, f = "e", lvl = { max = 54, min = 53 }, rate = 0.834, spawns = 4 },
-		{ faction = "A", npc = 7112, map = 1439, x = 50.7, y = 80.6, f = "e", lvl = { max = 52, min = 51 }, rate = 0.605, spawns = 5 },
-		{ faction = "AH", npc = 7112, map = 1448, x = 35.6, y = 60.9, f = "e", lvl = { max = 52, min = 51 }, rate = 0.605, spawns = 5 },
-		{ faction = "AH", npc = 7153, map = 1448, x = 48.7, y = 91, f = "e", lvl = { max = 49, min = 48 }, rate = 0.351, spawns = 8 },
-		{ faction = "AH", npc = 7858, map = 1446, x = 75.4, y = 45.6, f = "e", lvl = { max = 45, min = 44 }, rate = 0.244, spawns = 10 },
-		{ faction = "A", npc = 7115, map = 1439, x = 50.7, y = 80.7, f = "e", lvl = { max = 52, min = 51 }, rate = 0.607, spawns = 4 },
-		{ faction = "A", npc = 7110, map = 1439, x = 48.2, y = 85.5, f = "e", lvl = { max = 52, min = 51 }, rate = 0.747, spawns = 3 },
-		{ faction = "AH", npc = 6185, map = 1447, x = 32.4, y = 44.9, f = "e", lvl = { max = 48, min = 47 }, rate = 0.368, spawns = 6 },
-		{ faction = "AH", npc = 5366, map = 1444, x = 38.6, y = 13.5, f = "e", lvl = { max = 50, min = 49 }, rate = 0.35, spawns = 6 },
-		{ faction = "AH", npc = 4705, map = 1443, x = 79.9, y = 78.5, f = "e", lvl = { max = 40, min = 39 }, rate = 0.089, spawns = 3 },
-		{ faction = "AH", npc = 11561, map = 1443, x = 64.1, y = 91, f = "e", lvl = { max = 38, min = 37 }, rate = 0.049, spawns = 5 },
-		{ faction = "AH", npc = 11561, map = 1443, x = 64.4, y = 88.2, f = "e", lvl = { max = 38, min = 37 }, rate = 0.049, spawns = 5 },
-		{ faction = "H", npc = 4705, map = 1412, x = 29.6, y = 49.7, f = "e", lvl = { max = 40, min = 39 }, rate = 0.089, spawns = 1 },
-		{ faction = "H", npc = 4668, map = 1412, x = 29.1, y = 49.2, f = "e", lvl = { max = 39, min = 38 }, rate = 0.047, spawns = 1 },
-		{ faction = "AH", npc = 8561, map = 1423, x = 63.2, y = 8.8, lvl = { max = 59, min = 58 }, rate = 0.335, spawns = 12 },
-		{ faction = "AH", npc = 11291, map = 1423, x = 23.3, y = 73, lvl = { max = 55, min = 53 }, rate = 0.338, spawns = 9 },
-		{ faction = "AH", npc = 14564, map = 1423, x = 9.1, y = 21, lvl = { max = 60, min = 59 }, rate = 0.347, spawns = 8 },
-		{ faction = "AH", npc = 8527, map = 1423, x = 59.8, y = 31.8, lvl = { max = 58, min = 57 }, rate = 0.341, spawns = 7 },
-		{ faction = "AH", npc = 1883, map = 1422, x = 45.1, y = 12.7, f = "e", lvl = { max = 57, min = 55 }, rate = 0.249, spawns = 8 },
-		{ faction = "AH", npc = 1884, map = 1422, x = 44.7, y = 34.2, f = "e", lvl = { max = 56, min = 54 }, rate = 0.246, spawns = 8 },
-		{ faction = "AH", npc = 1884, map = 1422, x = 48.3, y = 32.1, f = "e", lvl = { max = 56, min = 54 }, rate = 0.246, spawns = 8 },
-		{ faction = "AH", npc = 7028, map = 1428, x = 17.5, y = 29.6, f = "e", lvl = { max = 57, min = 56 }, rate = 0.356, spawns = 5 },
-		{ faction = "AH", npc = 8562, map = 1423, x = 57.1, y = 17.1, lvl = { max = 59, min = 57 }, rate = 0.346, spawns = 5 },
-		{ faction = "AH", npc = 7027, map = 1428, x = 55.8, y = 53.7, f = "e", lvl = { max = 57, min = 56 }, rate = 0.346, spawns = 5 },
-		{ faction = "AH", npc = 11290, map = 1423, x = 23.2, y = 72.8, lvl = { max = 54, min = 52 }, rate = 0.24, spawns = 7 },
-		{ faction = "AH", npc = 8542, map = 1423, x = 61.5, y = 22.9, lvl = { max = 59, min = 57 }, rate = 0.335, spawns = 5 },
-		{ faction = "AH", npc = 1784, map = 1422, x = 54.2, y = 80.2, f = "e", lvl = { max = 52, min = 51 }, rate = 0.239, spawns = 7 },
-		{ faction = "AH", npc = 1883, map = 1422, x = 45.4, y = 9.9, f = "e", lvl = { max = 57, min = 55 }, rate = 0.249, spawns = 6 },
-		{ faction = "AH", npc = 12248, map = 1423, x = 62, y = 11.1, lvl = { max = 60, min = 60 }, rate = 0.303, spawns = 1 },
-		{ faction = "AH", npc = 1837, map = 1422, x = 42.2, y = 18.5, f = "e", lvl = { max = 60, min = 60 }, rate = 0.233, spawns = 1 },
-		{ faction = "AH", npc = 11882, map = 1451, x = 26.4, y = 32.9, f = "e", lvl = { max = 60, min = 59 }, rate = 0.327, spawns = 8 },
-		{ faction = "AH", npc = 11882, map = 1451, x = 39, y = 44.2, f = "e", lvl = { max = 60, min = 59 }, rate = 0.327, spawns = 8 },
-		{ faction = "AH", npc = 15201, map = 1451, x = 71.2, y = 14, f = "e", lvl = { max = 60, min = 60 }, rate = 0.339, spawns = 7 },
-		{ faction = "AH", npc = 15213, map = 1451, x = 66.2, y = 21.3, f = "e", lvl = { max = 61, min = 59 }, rate = 0.346, spawns = 6 },
-		{ faction = "AH", npc = 11882, map = 1451, x = 18.6, y = 84.4, f = "e", lvl = { max = 60, min = 59 }, rate = 0.327, spawns = 6 },
-		{ faction = "AH", npc = 7115, map = 1448, x = 38.2, y = 61.2, f = "e", lvl = { max = 52, min = 51 }, rate = 0.254, spawns = 7 },
-		{ faction = "AH", npc = 6189, map = 1447, x = 42.2, y = 20.2, f = "e", lvl = { max = 52, min = 51 }, rate = 0.253, spawns = 7 },
-		{ faction = "AH", npc = 15201, map = 1451, x = 73.1, y = 12.9, f = "e", lvl = { max = 60, min = 60 }, rate = 0.339, spawns = 4 },
-		{ faction = "A", npc = 7112, map = 1439, x = 50.7, y = 80.6, f = "e", lvl = { max = 52, min = 51 }, rate = 0.239, spawns = 5 },
-		{ faction = "A", npc = 7115, map = 1439, x = 50.7, y = 80.7, f = "e", lvl = { max = 52, min = 51 }, rate = 0.254, spawns = 4 },
-		{ faction = "A", npc = 7110, map = 1439, x = 48.2, y = 85.5, f = "e", lvl = { max = 52, min = 51 }, rate = 0.246, spawns = 3 },
-		{ faction = "A", npc = 7107, map = 1439, x = 57.3, y = 41.4, f = "e", lvl = { max = 53, min = 52 }, rate = 0.239, spawns = 3 },
-		{ faction = "A", npc = 7111, map = 1439, x = 54.4, y = 46.3, f = "e", lvl = { max = 54, min = 53 }, rate = 0.243, spawns = 2 },
-		{ faction = "AH", npc = 14479, map = 1451, x = 18.3, y = 85.8, f = "e", lvl = { max = 60, min = 60 }, rate = 0.32, spawns = 1 },
-		{ faction = "AH", npc = 14479, map = 1451, x = 27.3, y = 33.3, f = "e", lvl = { max = 60, min = 60 }, rate = 0.32, spawns = 1 },
-		{ faction = "AH", npc = 14479, map = 1451, x = 38.5, y = 45.9, f = "e", lvl = { max = 60, min = 60 }, rate = 0.32, spawns = 1 },
 	},
 	steps = {
 		{
 			title = "Learn {skill:129}",
-			note = "Any {skill:129} trainer of your faction teaches Apprentice {skill:129} (character level 5, 1s); the arrow picks the nearest. Forever teaches {item:118} with it: {item:2447}, {item:2678} and an {item:3371}, orange to 55. With {skill:182} it can replace the Linen Bandages below.",
+			note = "Any {skill:129} trainer of your faction teaches Apprentice {skill:129} (any character level, 1s); the arrow picks the nearest. Forever teaches {item:118} with it: {item:2447}, {item:2678} and an {item:3371}, orange to 55. With {skill:182} it can replace the Linen Bandages below.",
+			section = 1,
 			goals = {
-				{ t = "level", level = 5 },
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, rank = 1, rankMax = 75, skill = "First Aid", skillLine = 129 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, rank = 1, rankMax = 75, skill = "First Aid", skillLine = 129 },
 			},
 		},
 		{
 			title = "{item:1251}: cloth",
+			note = "{item:2589} drops from humanoids of level 5-20: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 1,
 			goals = {
-				{ t = "collect", item = 2589, count = 41, note = "humanoids of level 5-20 drop {item:2589} (or buy it at the Auction House).", candidates = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42 } },
+				{ t = "collect", item = 2589, count = 41 },
 			},
 		},
 		{
 			title = "{item:1251} (1-40)",
 			note = "{item:1251} is orange from 1 (yellow at 30, green at 45, grey at 60): about 41 crafts to 40. Bandages need no fire: craft them anywhere. At 20 the trainer also teaches {item:279968} (1s; the Camping 101: {skill:129} quest at your starting area's camp teaches it free), Forever's camping item for {skill:129}: three Linen Bandages and a {item:159}; it gives a few points until 25.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 1251, spell = 3275, reagents = { { item = 2589, count = 1, itemName = "Linen Cloth" } }, skillLine = 129, untilSkill = 40 },
+				{ t = "craft", item = 1251, spell = 3275, grey = 60, reagents = { { item = 2589, count = 1, itemName = "Linen Cloth" } }, skillLine = 129, untilSkill = 40, yellow = 30 },
 			},
 		},
 		{
 			title = "{item:2581}: cloth",
+			note = "{item:2589} drops from humanoids of level 5-20: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2589, count = 20, note = "humanoids of level 5-20 drop {item:2589} (or buy it at the Auction House).", candidates = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42 } },
+				{ t = "collect", item = 2589, count = 20 },
 			},
 		},
 		{
 			title = "{item:2581} (40-50)",
 			note = "{item:2581} is orange from 40 (yellow at 50, green at 75, grey at 100): about 10 crafts to 50. Bandages need no fire: craft them anywhere. Any {skill:129} trainer of your faction teaches it from skill 40 for 1s; the arrow picks the nearest.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3276, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 129 },
-				{ t = "craft", item = 2581, spell = 3276, reagents = { { item = 2589, count = 2, itemName = "Linen Cloth" } }, skillLine = 129, untilSkill = 50 },
+				{ t = "learn", spell = 3276, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, skillLine = 129 },
+				{ t = "craft", item = 2581, spell = 3276, grey = 100, reagents = { { item = 2589, count = 2, itemName = "Linen Cloth" } }, skillLine = 129, untilSkill = 50, yellow = 50 },
 			},
 		},
 		{
 			title = "Journeyman {skill:129}",
-			note = "Journeyman {skill:129} raises the cap to 150; it needs skill 50 and character level 10: the arrow picks the nearest {skill:129} trainer of your faction; training costs 5s.",
+			note = "Journeyman {skill:129} raises the cap to 150; it needs skill 50 and no character level: the arrow picks the nearest {skill:129} trainer of your faction; training costs 5s.",
+			section = 3,
 			goals = {
-				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, rank = 2, rankMax = 150, skill = "First Aid", skillLine = 129 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, rank = 2, rankMax = 150, skill = "First Aid", skillLine = 129 },
 			},
 		},
 		{
 			title = "{item:2581}: cloth",
+			note = "{item:2589} drops from humanoids of level 5-20: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 2589, count = 92, note = "humanoids of level 5-20 drop {item:2589} (or buy it at the Auction House).", candidates = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42 } },
+				{ t = "collect", item = 2589, count = 92 },
 			},
 		},
 		{
 			title = "{item:2581} (50-80)",
 			note = "{item:2581} is yellow from 50 (yellow at 50, green at 75, grey at 100): about 46 crafts to 80. Bandages need no fire: craft them anywhere. Herbalists: {item:858} (from 55, 1s 50c; {item:2450}, two {item:2678} and an {item:3371}) is orange to 85.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 2581, spell = 3276, reagents = { { item = 2589, count = 2, itemName = "Linen Cloth" } }, skillLine = 129, untilSkill = 80 },
+				{ t = "craft", item = 2581, spell = 3276, grey = 100, reagents = { { item = 2589, count = 2, itemName = "Linen Cloth" } }, skillLine = 129, untilSkill = 80, yellow = 50 },
 			},
 		},
 		{
 			title = "{spell:3277}: cloth",
+			note = "{item:2592} drops from humanoids of level 15-30: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 2592, count = 49, note = "humanoids of level 15-30 drop {item:2592} (or buy it at the Auction House).", candidates = { 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 } },
+				{ t = "collect", item = 2592, count = 49 },
 			},
 		},
 		{
 			title = "{spell:3277} (80-115)",
 			note = "{spell:3277} is yellow from 80 (yellow at 80, green at 115, grey at 150): about 49 crafts to 115. Bandages need no fire: craft them anywhere. Any {skill:129} trainer of your faction teaches it from skill 80 for 2s 50c; the arrow picks the nearest. {item:6452} ({item:1475}, from spiders) is taught at 80 too: Rogues need it for {spell:9810}, and it sells.",
+			section = 4,
 			goals = {
-				{ t = "learn", spell = 3277, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 129 },
-				{ t = "craft", item = 3530, spell = 3277, reagents = { { item = 2592, count = 1, itemName = "Wool Cloth" } }, skillLine = 129, untilSkill = 115 },
+				{ t = "learn", spell = 3277, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, skillLine = 129 },
+				{ t = "craft", item = 3530, spell = 3277, grey = 150, reagents = { { item = 2592, count = 1, itemName = "Wool Cloth" } }, skillLine = 129, untilSkill = 115, yellow = 80 },
 			},
 		},
 		{
 			title = "{spell:3278}: cloth",
+			note = "{item:2592} drops from humanoids of level 15-30: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 5,
 			goals = {
-				{ t = "collect", item = 2592, count = 22, note = "humanoids of level 15-30 drop {item:2592} (or buy it at the Auction House).", candidates = { 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 } },
+				{ t = "collect", item = 2592, count = 22 },
 			},
 		},
 		{
 			title = "{spell:3278} (115-125)",
 			note = "{spell:3278} is yellow from 115 (yellow at 115, green at 150, grey at 185): about 11 crafts to 125. Bandages need no fire: craft them anywhere. Any {skill:129} trainer of your faction teaches it from skill 115 for 10s; the arrow picks the nearest. Herbalists: {item:929} (from 110, 8s; {item:2453}, {item:2692} and a {item:3372}) is orange to 135.",
+			section = 5,
 			goals = {
-				{ t = "learn", spell = 3278, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 129 },
-				{ t = "craft", item = 3531, spell = 3278, reagents = { { item = 2592, count = 2, itemName = "Wool Cloth" } }, skillLine = 129, untilSkill = 125 },
+				{ t = "learn", spell = 3278, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, skillLine = 129 },
+				{ t = "craft", item = 3531, spell = 3278, grey = 185, reagents = { { item = 2592, count = 2, itemName = "Wool Cloth" } }, skillLine = 129, untilSkill = 125, yellow = 115 },
 			},
 		},
 		{
 			title = "Expert {skill:129}",
 			note = "Expert {skill:129} raises the cap to 225; it needs skill 125 and character level 20: it is a book, {item:16084} (1g); the arrow picks its nearest seller for your faction. Buy it and read it. The same vendor sells the Heavy Silk and {item:8544} manuals (22s and 50s): buy both now, you read them at 180 and 210.",
+			section = 6,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", text = "Buy and read {item:16084} (Expert {skill:129})", candidates = { 75, 76 }, rank = 3, rankMax = 225, skill = "First Aid", skillLine = 129 },
-				{ t = "buy", item = 16112, count = 1, candidates = { 75, 76 } },
-				{ t = "buy", item = 16113, count = 1, candidates = { 75, 76 } },
+				{ t = "train", text = "Buy and read {item:16084} (Expert {skill:129})", candidates = { 16, 17 }, rank = 3, rankMax = 225, skill = "First Aid", skillLine = 129 },
+				{ t = "buy", item = 16112, count = 1, candidates = { 16, 17 } },
+				{ t = "buy", item = 16113, count = 1, candidates = { 16, 17 } },
 			},
 		},
 		{
 			title = "{spell:3278}: cloth",
+			note = "{item:2592} drops from humanoids of level 15-30: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 6,
 			goals = {
-				{ t = "collect", item = 2592, count = 76, note = "humanoids of level 15-30 drop {item:2592} (or buy it at the Auction House).", candidates = { 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 } },
+				{ t = "collect", item = 2592, count = 76 },
 			},
 		},
 		{
 			title = "{spell:3278} (125-150)",
 			note = "{spell:3278} is yellow from 125 (yellow at 115, green at 150, grey at 185): about 38 crafts to 150. Bandages need no fire: craft them anywhere.",
+			section = 6,
 			goals = {
-				{ t = "craft", item = 3531, spell = 3278, reagents = { { item = 2592, count = 2, itemName = "Wool Cloth" } }, skillLine = 129, untilSkill = 150 },
+				{ t = "craft", item = 3531, spell = 3278, grey = 185, reagents = { { item = 2592, count = 2, itemName = "Wool Cloth" } }, skillLine = 129, untilSkill = 150, yellow = 115 },
 			},
 		},
 		{
 			title = "{item:6450}: cloth",
+			note = "{item:4306} drops from humanoids of level 25-45: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 7,
 			goals = {
-				{ t = "collect", item = 4306, count = 42, note = "humanoids of level 25-45 drop {item:4306} (or buy it at the Auction House).", candidates = { 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108 } },
+				{ t = "collect", item = 4306, count = 42 },
 			},
 		},
 		{
 			title = "{item:6450} (150-180)",
 			note = "{item:6450} is yellow from 150 (yellow at 150, green at 180, grey at 210): about 42 crafts to 180. Bandages need no fire: craft them anywhere. Any {skill:129} trainer of your faction teaches it from skill 150 for 50s; the arrow picks the nearest.",
+			section = 7,
 			goals = {
-				{ t = "learn", spell = 7928, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, skillLine = 129 },
-				{ t = "craft", item = 6450, spell = 7928, reagents = { { item = 4306, count = 1, itemName = "Silk Cloth" } }, skillLine = 129, untilSkill = 180 },
+				{ t = "learn", spell = 7928, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, skillLine = 129 },
+				{ t = "craft", item = 6450, spell = 7928, grey = 210, reagents = { { item = 4306, count = 1, itemName = "Silk Cloth" } }, skillLine = 129, untilSkill = 180, yellow = 150 },
 			},
 		},
 		{
 			title = "{item:6451}: cloth",
+			note = "{item:4306} drops from humanoids of level 25-45: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 8,
 			goals = {
-				{ t = "collect", item = 4306, count = 84, note = "humanoids of level 25-45 drop {item:4306} (or buy it at the Auction House).", candidates = { 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108 } },
+				{ t = "collect", item = 4306, count = 84 },
 			},
 		},
 		{
 			title = "{item:6451} (180-210)",
 			note = "{item:6451} is yellow from 180 (yellow at 180, green at 210, grey at 240): about 42 crafts to 210. Bandages need no fire: craft them anywhere.",
+			section = 8,
 			goals = {
 				{ t = "learn", item = 16112, spell = 7929, skillLine = 129 },
-				{ t = "craft", item = 6451, spell = 7929, reagents = { { item = 4306, count = 2, itemName = "Silk Cloth" } }, skillLine = 129, untilSkill = 210 },
+				{ t = "craft", item = 6451, spell = 7929, grey = 240, reagents = { { item = 4306, count = 2, itemName = "Silk Cloth" } }, skillLine = 129, untilSkill = 210, yellow = 180 },
 			},
 		},
 		{
 			title = "{item:8544}: cloth",
+			note = "{item:4338} drops from humanoids of level 35-50: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 9,
 			goals = {
-				{ t = "collect", item = 4338, count = 18, note = "humanoids of level 35-50 drop {item:4338} (or buy it at the Auction House).", candidates = { 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140 } },
+				{ t = "collect", item = 4338, count = 18 },
 			},
 		},
 		{
 			title = "{item:8544} (210-225)",
 			note = "{item:8544} is yellow from 210 (yellow at 210, green at 240, grey at 270): about 18 crafts to 225. Bandages need no fire: craft them anywhere.",
+			section = 9,
 			goals = {
 				{ t = "learn", item = 16113, spell = 10840, skillLine = 129 },
-				{ t = "craft", item = 8544, spell = 10840, reagents = { { item = 4338, count = 1, itemName = "Mageweave Cloth" } }, skillLine = 129, untilSkill = 225 },
+				{ t = "craft", item = 8544, spell = 10840, grey = 270, reagents = { { item = 4338, count = 1, itemName = "Mageweave Cloth" } }, skillLine = 129, untilSkill = 225, yellow = 210 },
 			},
 		},
 		{
 			title = "Trauma",
 			only = { factions = { "Alliance" } },
 			note = "Artisan {skill:129} comes from the {quest:6624} quest. It needs skill 225 and level 35; the {skill:129} trainer in {zone:1455} sends you to the doctor in Theramore. Bring the Mageweave (about 74) and {item:14047} (about 65) for 225-300 now: bandages need no fire, so you craft 225-300 beside the doctor, who teaches the Artisan bandages.",
+			section = 10,
 			goals = {
 				{ t = "skill", level = 225, skill = "First Aid", skillLine = 129 },
 				{ t = "level", level = 35 },
@@ -10413,6 +10593,7 @@ G(function() return {
 			title = "Trauma",
 			only = { factions = { "Horde" } },
 			note = "Artisan {skill:129} comes from the {quest:6622} quest. It needs skill 225 and level 35; the {skill:129} trainer in {zone:1454} sends you to the doctor in {area:321}. Bring the Mageweave (about 74) and {item:14047} (about 65) for 225-300 now: bandages need no fire, so you craft 225-300 beside the doctor, who teaches the Artisan bandages.",
+			section = 10,
 			goals = {
 				{ t = "skill", level = 225, skill = "First Aid", skillLine = 129 },
 				{ t = "level", level = 35 },
@@ -10423,6 +10604,7 @@ G(function() return {
 			title = "{quest:6624}",
 			only = { factions = { "Alliance" } },
 			note = "{quest:6624}: the doctor hands you Triage Bandages; use those, not your own. Fifteen wounded soldiers lie inside: bandage the critically injured first, then the badly injured, then the injured, before any die (show the health bars with Ctrl+V). Turn the quest in the moment fifteen are saved: the others keep dying, and too many deaths fail it even after it reads complete. If it fails, abandon it and take it again.",
+			section = 10,
 			goals = {
 				{ t = "turnin", quest = 6625, npc = 12939, map = 1445, x = 67.76, y = 48.97, z = 12, f = "e", note = "{npc:12939}, {area:513}", profLine = 129, profName = "First Aid", profRank = 225 },
 				{ t = "accept", minLevel = 35, quest = 6624, npc = 12939, map = 1445, x = 67.76, y = 48.97, z = 12, f = "e", profLine = 129, profName = "First Aid", profRank = 225, qlvl = 45 },
@@ -10434,6 +10616,7 @@ G(function() return {
 			title = "{quest:6622}",
 			only = { factions = { "Horde" } },
 			note = "{quest:6622}: the doctor hands you Triage Bandages; use those, not your own. Fifteen wounded soldiers lie on the floor inside: bandage the critically injured first, then the badly injured, then the injured, before any die (show the health bars with Ctrl+V). Turn the quest in the moment fifteen are saved: the others keep dying, and too many deaths fail it even after it reads complete. If it fails, abandon it and take it again.",
+			section = 10,
 			goals = {
 				{ t = "turnin", quest = 6623, npc = 12920, map = 1417, x = 73.41, y = 36.89, z = 63, f = "e", note = "{npc:12920}, {area:321}", profLine = 129, profName = "First Aid", profRank = 225 },
 				{ t = "accept", minLevel = 35, quest = 6622, npc = 12920, map = 1417, x = 73.41, y = 36.89, z = 63, f = "e", profLine = 129, profName = "First Aid", profRank = 225, qlvl = 45 },
@@ -10443,20 +10626,24 @@ G(function() return {
 		},
 		{
 			title = "{item:8544}: cloth",
+			note = "{item:4338} drops from humanoids of level 35-50: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 10,
 			goals = {
-				{ t = "collect", item = 4338, count = 24, note = "humanoids of level 35-50 drop {item:4338} (or buy it at the Auction House).", candidates = { 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140 } },
+				{ t = "collect", item = 4338, count = 24 },
 			},
 		},
 		{
 			title = "{item:8544} (225-240)",
 			note = "{item:8544} is yellow from 225 (yellow at 210, green at 240, grey at 270): about 24 crafts to 240. Bandages need no fire: craft them anywhere. {item:8544} turns green at 240: switch to Heavy Mageweave there, which costs less cloth than green Mageweave Bandages to 260.",
+			section = 10,
 			goals = {
-				{ t = "craft", item = 8544, spell = 10840, reagents = { { item = 4338, count = 1, itemName = "Mageweave Cloth" } }, skillLine = 129, untilSkill = 240 },
+				{ t = "craft", item = 8544, spell = 10840, grey = 270, reagents = { { item = 4338, count = 1, itemName = "Mageweave Cloth" } }, skillLine = 129, untilSkill = 240, yellow = 210 },
 			},
 		},
 		{
 			title = "{spell:10841}",
 			note = "{spell:10841} (skill 240) is an Artisan recipe: only the {quest:6622} doctor teaches it ({npc:12939} in Theramore, {npc:12920} in {area:321}).",
+			section = 11,
 			goals = {
 				{ t = "learn", only = { factions = { "Alliance" } }, npc = 12939, spell = 10841, map = 1445, x = 67.76, y = 48.97, z = 12, f = "e", skillLine = 129 },
 				{ t = "learn", only = { factions = { "Horde" } }, npc = 12920, spell = 10841, map = 1417, x = 73.41, y = 36.89, z = 63, f = "e", skillLine = 129 },
@@ -10464,20 +10651,24 @@ G(function() return {
 		},
 		{
 			title = "{item:8545}: cloth",
+			note = "{item:4338} drops from humanoids of level 35-50: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 11,
 			goals = {
-				{ t = "collect", item = 4338, count = 50, note = "humanoids of level 35-50 drop {item:4338} (or buy it at the Auction House).", candidates = { 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140 } },
+				{ t = "collect", item = 4338, count = 50 },
 			},
 		},
 		{
 			title = "{item:8545} (240-260)",
 			note = "{item:8545} is yellow from 240 (yellow at 240, green at 270, grey at 300): about 25 crafts to 260. Bandages need no fire: craft them anywhere.",
+			section = 11,
 			goals = {
-				{ t = "craft", item = 8545, spell = 10841, reagents = { { item = 4338, count = 2, itemName = "Mageweave Cloth" } }, skillLine = 129, untilSkill = 260 },
+				{ t = "craft", item = 8545, spell = 10841, grey = 300, reagents = { { item = 4338, count = 2, itemName = "Mageweave Cloth" } }, skillLine = 129, untilSkill = 260, yellow = 240 },
 			},
 		},
 		{
 			title = "{spell:18629}",
 			note = "{spell:18629} (skill 260) is an Artisan recipe: only the {quest:6622} doctor teaches it ({npc:12939} in Theramore, {npc:12920} in {area:321}).",
+			section = 12,
 			goals = {
 				{ t = "learn", only = { factions = { "Alliance" } }, npc = 12939, spell = 18629, map = 1445, x = 67.76, y = 48.97, z = 12, f = "e", skillLine = 129 },
 				{ t = "learn", only = { factions = { "Horde" } }, npc = 12920, spell = 18629, map = 1417, x = 73.41, y = 36.89, z = 63, f = "e", skillLine = 129 },
@@ -10485,15 +10676,18 @@ G(function() return {
 		},
 		{
 			title = "{item:14529}: cloth",
+			note = "{item:14047} drops from humanoids of level 45-60: keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 12,
 			goals = {
-				{ t = "collect", item = 14047, count = 65, note = "humanoids of level 45-60 drop {item:14047} (or buy it at the Auction House).", candidates = { 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172 } },
+				{ t = "collect", item = 14047, count = 65 },
 			},
 		},
 		{
 			title = "{item:14529} (260-300)",
 			note = "{item:14529} is yellow from 260 (yellow at 260, green at 290, grey at 320): about 65 crafts to 300. Bandages need no fire: craft them anywhere. {item:14529} turns green at 290, yet to 300 it takes about the same {item:14047} as switching to {item:14530} (the doctor teaches it at 290): one recipe is enough.",
+			section = 12,
 			goals = {
-				{ t = "craft", item = 14529, spell = 18629, reagents = { { item = 14047, count = 1, itemName = "Runecloth" } }, skillLine = 129, untilSkill = 300 },
+				{ t = "craft", item = 14529, spell = 18629, grey = 320, reagents = { { item = 14047, count = 1, itemName = "Runecloth" } }, skillLine = 129, untilSkill = 300, yellow = 260 },
 			},
 		},
 	},
@@ -10506,17 +10700,32 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 1455,
+	sections = { { from = 1, skill = "Fishing", skillLine = 356, to = 50 }, { from = 50, skill = "Fishing", skillLine = 356, to = 125 }, { from = 125, skill = "Fishing", skillLine = 356, to = 225 }, { from = 225, skill = "Fishing", skillLine = 356, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "A", npc = 5161, map = 1455, x = 48.07, y = 6.91, z = 511.7, f = "e" },
+		{ faction = "A", npc = 3179, map = 1437, x = 8.08, y = 58.59, z = 8.2, f = "e" },
 		{ faction = "A", npc = 1700, map = 1426, x = 35.48, y = 40.22, z = 385.8, f = "e" },
+		{ faction = "A", npc = 1683, map = 1432, x = 40.55, y = 39.7, z = 301.2, f = "e" },
+		{ faction = "A", npc = 2367, map = 1424, x = 50.78, y = 61.03, z = 7, f = "e" },
 		{ faction = "A", npc = 5493, map = 1453, x = 54.99, y = 69.65, z = 96.4 },
+		{ faction = "A", npc = 1680, map = 1433, x = 21.9, y = 51.13, z = 63.5 },
 		{ faction = "A", npc = 1651, map = 1429, x = 47.61, y = 62.32, z = 59, f = "e" },
+		{ faction = "H", npc = 14740, map = 1425, x = 80.33, y = 81.54, z = 6.5, f = "e" },
 		{ faction = "H", npc = 4573, map = 1458, x = 80.7, y = 31.26, z = -61.9, f = "e" },
 		{ faction = "H", npc = 5690, map = 1420, x = 67.17, y = 50.99, z = 23.3, f = "e" },
+		{ faction = "AH", npc = 2834, map = 1434, x = 27.46, y = 77.11, z = 15.4, f = "e" },
+		{ faction = "H", npc = 5941, map = 1411, x = 53.25, y = 81.59, z = 17.4, f = "e" },
+		{ faction = "H", npc = 5938, map = 1412, x = 44.16, y = 63.8, z = -8.3 },
+		{ faction = "A", npc = 3607, map = 1438, x = 55.88, y = 93.51, z = 2.1, f = "e" },
+		{ faction = "H", npc = 12961, map = 1440, x = 10.83, y = 33.66, z = 0.4, f = "e" },
+		{ faction = "H", npc = 12032, map = 1443, x = 22.7, y = 72.42, z = 4.4, f = "e" },
+		{ faction = "A", npc = 7946, map = 1444, x = 32.25, y = 41.61, z = 0.5, f = "e" },
 		{ faction = "H", npc = 3332, map = 1454, x = 69.8, y = 29.21, z = 26.5, f = "e" },
 		{ faction = "H", npc = 3028, map = 1456, x = 56.13, y = 46.38, z = 162.3, f = "e" },
 		{ faction = "A", npc = 4156, map = 1457, x = 47.89, y = 56.65, z = 1315.8, f = "e" },
+		{ faction = "AH", npc = 251992, map = 2521, x = 45.02, y = 48.44, z = 774.4 },
+		{ faction = "AH", npc = 257008, map = 2521, x = 63.27, y = 75.72, z = 662.5 },
 		{ faction = "A", npc = 5163, map = 1455, x = 46.4, y = 26.88, z = 502.9, f = "e" },
 		{ faction = "A", npc = 1692, map = 1426, x = 46.67, y = 53.49, z = 396.9, f = "e" },
 		{ faction = "A", npc = 3178, map = 1437, x = 8.02, y = 58.35, z = 8.2, f = "e" },
@@ -10530,7 +10739,6 @@ G(function() return {
 		{ faction = "A", npc = 1250, map = 1429, x = 83.31, y = 66.69, z = 47, f = "e" },
 		{ faction = "A", npc = 66, map = 1429, x = 41.82, y = 67.16, z = 56.7, f = "e" },
 		{ faction = "A", npc = 252020, map = 1416, x = 13.2, y = 71.48, f = "e" },
-		{ faction = "H", npc = 14740, map = 1425, x = 80.33, y = 81.54, z = 6.5, f = "e" },
 		{ faction = "AH", npc = 12958, map = 1425, x = 34.46, y = 38.59, z = 165.2, f = "e" },
 		{ faction = "AH", npc = 260487, map = 2548, x = 78.39, y = 54.98 },
 		{ faction = "A", npc = 260559, map = 2548, x = 79.74, y = 54.04 },
@@ -10575,7 +10783,6 @@ G(function() return {
 		{ faction = "A", npc = 4229, map = 1457, x = 60.96, y = 17.67, z = 1332.1, f = "e" },
 		{ faction = "H", npc = 2225, map = 1459, x = 50.08, y = 82.15, f = "e" },
 		{ faction = "A", npc = 5135, map = 1459, x = 42.82, y = 16.88, f = "e" },
-		{ faction = "AH", npc = 251992, map = 2521, x = 45.02, y = 48.44, z = 774.4 },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
 		{ faction = "H", npc = 12031, map = 1443, x = 22.64, y = 71.97, z = 8, f = "e" },
 		{ faction = "A", npc = 7947, map = 1444, x = 31.3, y = 43.46, z = 13.6, f = "e" },
@@ -10594,22 +10801,22 @@ G(function() return {
 		{ faction = "A", npc = 5100, map = 1455, x = 38.14, y = 73.7, z = 504, f = "e" },
 		{ faction = "A", npc = 5162, map = 1455, x = 48.18, y = 6.51, z = 505.1, f = "e" },
 		{ faction = "H", npc = 4561, map = 1458, x = 64.05, y = 37.37, z = -43, f = "e" },
-		{ faction = "AH", npc = 257008, map = 2521, x = 63.27, y = 75.72, z = 662.5 },
 	},
 	steps = {
 		{
 			title = "Learn {skill:356}",
-			note = "Any {skill:356} trainer of your faction teaches Apprentice {skill:356} (character level 5, 1s); the arrow picks the nearest, and every starting area has one on its lake or shore. Buy a {item:6256} (23c) from a trade goods or fishing vendor and equip it (you can only fish with a pole in your hands), and two or three Shiny Baubles (+25, 50c each): a lure adds its bonus to your skill for ten minutes, so fewer fish get away at the start. If you sat at your starting area's campfire for The Great Outdoors, the camping guide there also offers Camping 101: {skill:356}, handed in to the fishing trainer it names at skill 20 for the {spell:1229745} recipe.",
+			note = "Any {skill:356} trainer of your faction teaches Apprentice {skill:356} at any character level (1s); the arrow picks the nearest, and every starting area has one on its lake or shore. Buy a {item:6256} (23c) from a trade goods or fishing vendor and equip it (you can only fish with a pole in your hands), and two or three Shiny Baubles (+25, 50c each): a lure adds its bonus to your skill for ten minutes, so fewer fish get away at the start. If you sat at your starting area's campfire for The Great Outdoors, the camping guide there also offers Camping 101: {skill:356}, handed in to the fishing trainer it names at skill 20 for the {spell:1229745} recipe.",
+			section = 1,
 			goals = {
-				{ t = "level", level = 5 },
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, rank = 1, rankMax = 75, skill = "Fishing", skillLine = 356 },
-				{ t = "buy", item = 6256, count = 1, candidates = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 } },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 }, rank = 1, rankMax = 75, skill = "Fishing", skillLine = 356 },
+				{ t = "buy", item = 6256, count = 1, candidates = { 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 9, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 22, 81 } },
 			},
 		},
 		{
 			title = "{skill:356}: {zone:1429} (1-50)",
 			only = { races = { "HUMAN" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients. Fish get away here below skill 25; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1429, x = 47.6, y = 62.3, f = "e", r = 25, text = "{area:18}", area = 18 },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
@@ -10619,6 +10826,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1426} (1-50)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients. Fish get away here below skill 25; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1426, x = 35.5, y = 40.2, f = "e", r = 25, text = "{area:211}", area = 211 },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
@@ -10628,6 +10836,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1438} (1-50)",
 			only = { races = { "NIGHTELF" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients. Fish get away here below skill 25; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1438, x = 55.9, y = 93.5, f = "e", r = 25, text = "{area:702}", area = 702 },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
@@ -10637,8 +10846,9 @@ G(function() return {
 			title = "{skill:356}: {zone:2521} (1-50)",
 			only = { races = { "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients.",
+			section = 1,
 			goals = {
-				{ t = "goto", map = 2521, x = 62.5, y = 75.5, r = 25, text = "{area:16638} shore" },
+				{ t = "goto", map = 2521, x = 63.3, y = 75.7, r = 25, text = "{area:16638} shore" },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
 			},
 		},
@@ -10646,6 +10856,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1411} (1-50)",
 			only = { races = { "ORC", "TROLL" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients. Fish get away here below skill 25; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1411, x = 53.3, y = 81.6, f = "e", r = 25, text = "Sen'jin coast" },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
@@ -10655,6 +10866,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1412} (1-50)",
 			only = { races = { "TAUREN" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients. Fish get away here below skill 25; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1412, x = 44.5, y = 60.7, f = "e", r = 25, text = "{area:223}", area = 223 },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
@@ -10664,6 +10876,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1420} (1-50)",
 			only = { races = { "SCOURGE" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients. Fish get away here below skill 25; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1420, x = 67.2, y = 51, f = "e", r = 25, text = "{area:162}", area = 162 },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
@@ -10673,24 +10886,27 @@ G(function() return {
 			title = "{skill:356}: {zone:2521} (1-50)",
 			only = { races = { "SKYBORNE" }, factions = { "Horde" } },
 			note = "Fish here until skill 50, about 50 catches: below 75 every catch raises the skill. Cast {skill:356} from your spellbook, click the bobber when it splashes. Keep the fish: they are your first {skill:185} ingredients.",
+			section = 1,
 			goals = {
-				{ t = "goto", map = 2521, x = 62.5, y = 75.5, r = 25, text = "{area:16638} shore" },
+				{ t = "goto", map = 2521, x = 63.3, y = 75.7, r = 25, text = "{area:16638} shore" },
 				{ t = "skill", level = 50, skill = "Fishing", skillLine = 356 },
 			},
 		},
 		{
 			title = "Journeyman {skill:356}",
 			note = "Journeyman {skill:356} raises the cap to 150; it needs skill 50 and character level 10 (Forever's sniffed trainer lists ask for that level), and costs 5s. The arrow picks the nearest {skill:356} trainer of your faction. {spell:1229745}, Forever's camping item for {skill:356} (from skill 20, 1s or free from Camping 101: {skill:356}), is a {item:6291} in an {item:3371}: it gives no skill, but placed beside a campfire it gives everyone at the camp a buff for an hour.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 6, 2, 4, 3, 7, 1, 8, 9, 5 }, rank = 2, rankMax = 150, skill = "Fishing", skillLine = 356 },
-				{ t = "learn", spell = 1229745, candidates = { 6, 2, 4, 3, 7, 1, 8, 9, 5 }, skillLine = 356 },
+				{ t = "train", candidates = { 23, 22, 13, 14, 11, 5, 9, 3, 8, 4, 7, 12, 2, 15, 16, 17, 18, 6, 19, 1, 20, 21, 10 }, rank = 2, rankMax = 150, skill = "Fishing", skillLine = 356 },
+				{ t = "learn", spell = 1229745, candidates = { 23, 22, 13, 14, 11, 5, 9, 3, 8, 4, 7, 12, 2, 15, 16, 17, 18, 6, 19, 1, 20, 21, 10 }, skillLine = 356 },
 			},
 		},
 		{
 			title = "{skill:356}: {zone:1436} (50-125)",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Fish the pools and open water here until skill 125, about 120 catches: from 75 a catch raises the skill less often (about one in two by 100, one in three by 125). Pools (floating wreckage, schools of fish) also give extra loot. {item:6530} (+50 from skill 50, 1s each) are twice as strong as a {item:6529}. The {item:6365} (+5 from skill 10, 9s 1c) is in limited stock at fishing vendors: buy it when you see it. Fish get away here below skill 75; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1436, x = 34.6, y = 18.5, f = "e", r = 25, text = "{zone:1436} coast" },
 				{ t = "skill", level = 125, skill = "Fishing", skillLine = 356 },
@@ -10700,6 +10916,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1432} (50-125)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Fish the pools and open water here until skill 125, about 120 catches: from 75 a catch raises the skill less often (about one in two by 100, one in three by 125). Pools (floating wreckage, schools of fish) also give extra loot. {item:6530} (+50 from skill 50, 1s each) are twice as strong as a {item:6529}. The {item:6365} (+5 from skill 10, 9s 1c) is in limited stock at fishing vendors: buy it when you see it. Fish get away here below skill 75; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1432, x = 41.6, y = 37.8, f = "e", r = 25, text = "{area:556}", area = 556 },
 				{ t = "skill", level = 125, skill = "Fishing", skillLine = 356 },
@@ -10709,6 +10926,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1439} (50-125)",
 			only = { races = { "NIGHTELF" } },
 			note = "Fish the pools and open water here until skill 125, about 120 catches: from 75 a catch raises the skill less often (about one in two by 100, one in three by 125). Pools (floating wreckage, schools of fish) also give extra loot. {item:6530} (+50 from skill 50, 1s each) are twice as strong as a {item:6529}. The {item:6365} (+5 from skill 10, 9s 1c) is in limited stock at fishing vendors: buy it when you see it. Fish get away here below skill 75; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1439, x = 34.6, y = 42.9, f = "e", r = 25, text = "{zone:1439} coast" },
 				{ t = "skill", level = 125, skill = "Fishing", skillLine = 356 },
@@ -10718,6 +10936,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1413} (50-125)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Fish the pools and open water here until skill 125, about 120 catches: from 75 a catch raises the skill less often (about one in two by 100, one in three by 125). Pools (floating wreckage, schools of fish) also give extra loot. {item:6530} (+50 from skill 50, 1s each) are twice as strong as a {item:6529}. The {item:6365} (+5 from skill 10, 9s 1c) is in limited stock at fishing vendors: buy it when you see it. Fish get away here below skill 75; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1413, x = 46.3, y = 37.9, f = "e", r = 25, text = "{zone:1413} oasis" },
 				{ t = "skill", level = 125, skill = "Fishing", skillLine = 356 },
@@ -10727,6 +10946,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1421} (50-125)",
 			only = { races = { "SCOURGE" } },
 			note = "Fish the pools and open water here until skill 125, about 120 catches: from 75 a catch raises the skill less often (about one in two by 100, one in three by 125). Pools (floating wreckage, schools of fish) also give extra loot. {item:6530} (+50 from skill 50, 1s each) are twice as strong as a {item:6529}. The {item:6365} (+5 from skill 10, 9s 1c) is in limited stock at fishing vendors: buy it when you see it. Fish get away here below skill 75; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1421, x = 59.6, y = 34.6, f = "e", r = 25, text = "{area:1338}", area = 1338 },
 				{ t = "skill", level = 125, skill = "Fishing", skillLine = 356 },
@@ -10735,15 +10955,17 @@ G(function() return {
 		{
 			title = "Expert {skill:356}",
 			note = "Expert {skill:356} (cap 225) is a book, not a trainer rank: {npc:2626} sells {item:16083} (1g) on the lowest dock of {area:35}, at the south tip of {zone:1434}, to both factions. Buy it and read it; it needs skill 125 and level 20. At level 20 the safe way in is the boat from {area:392} in {zone:1413}, not the road through Stranglethorn. He also sells {item:6532} (+75 from skill 100, 2s 50c each), the lure for the rest of the way.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", text = "Buy and read {item:16083} (Expert {skill:356})", candidates = { 36 }, rank = 3, rankMax = 225, skill = "Fishing", skillLine = 356 },
+				{ t = "train", text = "Buy and read {item:16083} (Expert {skill:356})", candidates = { 49 }, rank = 3, rankMax = 225, skill = "Fishing", skillLine = 356 },
 			},
 		},
 		{
 			title = "{skill:356}: {zone:1437} (125-225)",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Fish the pools here until skill 225, about 500 catches: one in three raises the skill at 125, one in seven by 225, so this is the long stretch. Forever's second camping item, the {item:279965} (from skill 140), is a blueprint that drops from Gelihast in {area:2797}. Fish get away here below skill 150; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1437, x = 10.8, y = 63.1, f = "e", r = 25, text = "{zone:1437} coast" },
 				{ t = "skill", level = 225, skill = "Fishing", skillLine = 356 },
@@ -10753,6 +10975,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1440} (125-225)",
 			only = { races = { "NIGHTELF" } },
 			note = "Fish the pools here until skill 225, about 500 catches: one in three raises the skill at 125, one in seven by 225, so this is the long stretch. Forever's second camping item, the {item:279965} (from skill 140), is a blueprint that drops from Gelihast in {area:2797}. Fish get away here below skill 150; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1440, x = 35.8, y = 53.7, f = "e", r = 25, text = "{zone:1440} waters" },
 				{ t = "skill", level = 225, skill = "Fishing", skillLine = 356 },
@@ -10762,6 +10985,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1442} (125-225)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Fish the pools here until skill 225, about 500 catches: one in three raises the skill at 125, one in seven by 225, so this is the long stretch. Forever's second camping item, the {item:279965} (from skill 140), is a blueprint that drops from Gelihast in {area:2797}. Fish get away here below skill 150; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1442, x = 47.4, y = 40, f = "e", r = 25, text = "{area:464}", area = 464 },
 				{ t = "skill", level = 225, skill = "Fishing", skillLine = 356 },
@@ -10771,6 +10995,7 @@ G(function() return {
 			title = "{skill:356}: {zone:1424} (125-225)",
 			only = { races = { "SCOURGE" } },
 			note = "Fish the pools here until skill 225, about 500 catches: one in three raises the skill at 125, one in seven by 225, so this is the long stretch. Forever's second camping item, the {item:279965} (from skill 140), is a blueprint that drops from Gelihast in {area:2797}. Fish get away here below skill 150; a lure on the pole adds to your skill for ten minutes and closes the gap.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1424, x = 60.8, y = 32.1, f = "e", r = 25, text = "{area:287} coast" },
 				{ t = "skill", level = 225, skill = "Fishing", skillLine = 356 },
@@ -10780,6 +11005,7 @@ G(function() return {
 			title = "{quest:6607}",
 			only = { factions = { "Alliance" } },
 			note = "Artisan {skill:356} (cap 300) comes from {npc:12919} in {zone:1445}. The fishing trainer in {zone:1455} sends you to him; the quest needs skill 225 and level 35.",
+			section = 4,
 			goals = {
 				{ t = "skill", level = 225, skill = "Fishing", skillLine = 356 },
 				{ t = "level", level = 35 },
@@ -10790,6 +11016,7 @@ G(function() return {
 			title = "{quest:6607}",
 			only = { factions = { "Horde" } },
 			note = "Artisan {skill:356} (cap 300) comes from {npc:12919} in {zone:1445}. The fishing trainer in {zone:1454} sends you to him; the quest needs skill 225 and level 35.",
+			section = 4,
 			goals = {
 				{ t = "skill", level = 225, skill = "Fishing", skillLine = 356 },
 				{ t = "level", level = 35 },
@@ -10799,6 +11026,7 @@ G(function() return {
 		{
 			title = "{npc:12919}",
 			note = "{npc:12919} fishes from the shore of a small island off the east coast, south of Theramore; swim over from the coast.",
+			section = 4,
 			goals = {
 				{ t = "turnin", only = { factions = { "Alliance" } }, quest = 6609, npc = 12919, map = 1445, x = 58.61, y = 60.06, z = 1.5, f = "e", profLine = 356, profName = "Fishing", profRank = 225 },
 				{ t = "turnin", only = { factions = { "Horde" } }, quest = 6608, npc = 12919, map = 1445, x = 58.61, y = 60.06, z = 1.5, f = "e", profLine = 356, profName = "Fishing", profRank = 225 },
@@ -10809,6 +11037,7 @@ G(function() return {
 			title = "{item:16968}",
 			only = { factions = { "Alliance" } },
 			note = "Fish along the coast of {zone:1443} ({area:598} in the north-west, or the shore west of {area:2408}) until you catch a {item:16968}: about one catch in five there brings it up, and it bites nowhere else. At skill 225 nothing gets away here.",
+			section = 4,
 			goals = {
 				{ t = "collect", quest = 6607, item = 16968, count = 1, map = 1443, x = 39.5, y = 22.7, f = "e", fromId = 400008, fromKind = "object", oi = 3, profLine = 356, profName = "Fishing", profRank = 225, spotsPacked = "39.5,22.7,,49,2;35.8,33.1,,53,3,1;33,36.8,,49,1,1;27.2,42.9,,49,1,1;26,76.9,,55,4,1;22.8,76.8,,49,1,1;25.1,81.4,,57,5,1;22.2,87.6,,49,1,1" },
 			},
@@ -10817,6 +11046,7 @@ G(function() return {
 			title = "{item:16968}",
 			only = { factions = { "Horde" } },
 			note = "Fish along the coast of {zone:1443} ({area:598} in the north-west, or the shore west of {area:2408}) until you catch a {item:16968}: about one catch in five there brings it up, and it bites nowhere else. At skill 225 nothing gets away here.",
+			section = 4,
 			goals = {
 				{ t = "collect", quest = 6607, item = 16968, count = 1, map = 1443, x = 22.8, y = 76.8, f = "e", fromId = 400008, fromKind = "object", oi = 3, profLine = 356, profName = "Fishing", profRank = 225, spotsPacked = "22.8,76.8,,49,1;26,76.9,,55,4,1;25.1,81.4,,57,5,1;22.2,87.6,,49,1,1;27.2,42.9,,49,1,1;33,36.8,,49,1,1;35.8,33.1,,53,3,1;39.5,22.7,,49,2,1" },
 			},
@@ -10824,8 +11054,9 @@ G(function() return {
 		{
 			title = "{item:16967}",
 			note = "Fish along the {area:2521} in {zone:1444} (south-east of {area:2577}) until you catch a {item:16967}: about one catch in five there brings it up, and it bites nowhere else. This water loses fish below skill 300: at 225 most get away, so put {item:6532} (+75) on the pole first.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 6532, count = 2, candidates = { 70, 50, 52, 71, 72, 73, 54, 58, 48, 46, 47, 74, 75, 55, 76, 62, 77, 45, 56, 43, 57, 59, 60, 64, 65, 78, 22, 15, 19, 32, 35, 79, 24, 23, 13, 80, 81, 18, 34, 36, 29, 82, 83, 17, 84, 85, 86, 66, 67, 87, 25, 26, 28 } },
+				{ t = "buy", item = 6532, count = 2, candidates = { 82, 63, 65, 83, 84, 85, 67, 71, 61, 59, 60, 86, 87, 68, 88, 75, 89, 58, 69, 56, 70, 72, 73, 77, 78, 90, 36, 29, 33, 45, 48, 91, 37, 9, 27, 92, 93, 32, 47, 49, 42, 94, 95, 31, 96, 97, 98, 79, 80, 23, 38, 39, 41 } },
 				{ t = "collect", quest = 6607, item = 16967, count = 1, map = 1444, x = 63.7, y = 53.1, f = "e", fromId = 400006, fromKind = "object", oi = 1, profLine = 356, profName = "Fishing", profRank = 225, spotsPacked = "63.7,53.1,,33,3;62.7,52.1,,29,3,1;62.4,50.3,,56,5,1" },
 			},
 		},
@@ -10833,6 +11064,7 @@ G(function() return {
 			title = "{item:16969}",
 			only = { factions = { "Alliance" } },
 			note = "Fish along {zone:1434}'s {area:301} (the west shore) until you catch a {item:16969}: about one catch in five there brings it up, and it bites nowhere else. At skill 225 nothing gets away here.",
+			section = 4,
 			goals = {
 				{ t = "collect", quest = 6607, item = 16969, count = 1, map = 1434, x = 27.4, y = 68.9, f = "e", fromId = 400009, fromKind = "object", oi = 4, profLine = 356, profName = "Fishing", profRank = 225, spotsPacked = "27.4,68.9,,139,4;24.5,65.7,,45,1,1;25,58.3,,45,1,1;25.8,48.9,,45,2,1;25.3,45.2,,45,1,1;27.1,40.1,,45,2,1;34.7,34.9,,45,3,1;34.6,32.8,,45,3,1;32.8,32,,58,4,1;29.4,27.6,,45,2,1;29.4,24.4,,57,6,1;27.8,21.1,,65,3,1;19.5,20.9,,45,1,1;25,19.4,,47,2,1;22.2,19.8,,45,1,1;13.5,15.7,,45,1,1" },
 			},
@@ -10841,6 +11073,7 @@ G(function() return {
 			title = "{item:16969}",
 			only = { factions = { "Horde" } },
 			note = "Fish along {zone:1434}'s {area:301} (the west shore) until you catch a {item:16969}: about one catch in five there brings it up, and it bites nowhere else. At skill 225 nothing gets away here.",
+			section = 4,
 			goals = {
 				{ t = "collect", quest = 6607, item = 16969, count = 1, map = 1434, x = 33, y = 32.1, f = "e", fromId = 400009, fromKind = "object", oi = 4, profLine = 356, profName = "Fishing", profRank = 225, spotsPacked = "33,32.1,,72,4;34.6,32.8,,45,3,1;34.7,34.9,,45,3,1;29.4,27.6,,45,2,1;29.4,24.4,,57,6,1;27.1,40.1,,45,2,1;27.8,21.1,,65,3,1;25.3,45.2,,45,1,1;25,19.4,,47,2,1;25.8,48.9,,45,2,1;22.2,19.8,,45,1,1;19.5,20.9,,45,1,1;25,58.3,,45,1,1;13.5,15.7,,45,1,1;24.5,65.7,,45,1,1;26.7,67.9,,77,4,1" },
 			},
@@ -10848,12 +11081,14 @@ G(function() return {
 		{
 			title = "{item:16970}",
 			note = "Fish along the {area:300} (the east shore of {zone:1435}) until you catch a {item:16970}: about one catch in five there brings it up, and it bites nowhere else. At skill 225 nothing gets away here.",
+			section = 4,
 			goals = {
 				{ t = "collect", quest = 6607, item = 16970, count = 1, map = 1435, x = 76.2, y = 95.6, f = "e", fromId = 400007, fromKind = "object", oi = 2, profLine = 356, profName = "Fishing", profRank = 225, spotsPacked = "76.2,95.6,,115,7;83.4,92.9,,52,5,1;86.2,87.3,,40,4,1;87.5,81.1,,40,4,1;91.5,82.4,,40,3,1;90.1,73.6,,59,6,1;94.1,65.3,,40,3,1;95.3,56.2,,40,1,1;95.3,45.6,,40,4,1;94.2,39.4,,40,5,1;91.6,30.3,,40,2,1;89.7,21.8,,40,3,1;86.6,16.8,,40,1,1;78.1,4.8,,40,2,1;75.1,3.8,,40,3,1" },
 			},
 		},
 		{
 			title = "{npc:12919}",
+			section = 4,
 			goals = {
 				{ t = "turnin", quest = 6607, npc = 12919, map = 1445, x = 58.61, y = 60.06, z = 1.5, f = "e", note = "Artisan {skill:356}", profLine = 356, profName = "Fishing", profRank = 225 },
 			},
@@ -10861,6 +11096,7 @@ G(function() return {
 		{
 			title = "{skill:356}: {zone:1434} (225-300)",
 			note = "Fish the pools along the coast here (eels, snappers, wreckage) until skill 300, about 650 catches (one in seven raises the skill at 225, one in ten by 300). Harder water levels no faster: a catch counts the same anywhere. From skill 225 this water loses no fish, so no lure is needed. The {item:6533} (+100 from skill 100, 2s 50c) and {item:6532} are for harder water and rare fish, not for skill.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1434, x = 27.3, y = 75.3, f = "e", r = 25, text = "{area:35} coast" },
 				{ t = "skill", level = 300, skill = "Fishing", skillLine = 356 },
@@ -10876,12 +11112,15 @@ G(function() return {
 	minLevel = 1,
 	maxLevel = 60,
 	zone = 1455,
+	sections = { { from = 1, skill = "Herbalism", skillLine = 182, to = 50 }, { from = 50, skill = "Herbalism", skillLine = 182, to = 100 }, { from = 100, skill = "Herbalism", skillLine = 182, to = 125 }, { from = 125, skill = "Herbalism", skillLine = 182, to = 160 }, { from = 160, skill = "Herbalism", skillLine = 182, to = 185 }, { from = 185, skill = "Herbalism", skillLine = 182, to = 210 }, { from = 210, skill = "Herbalism", skillLine = 182, to = 230 }, { from = 230, skill = "Herbalism", skillLine = 182, to = 260 }, { from = 260, skill = "Herbalism", skillLine = 182, to = 285 }, { from = 285, skill = "Herbalism", skillLine = 182, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "A", npc = 5137, map = 1455, x = 55.9, y = 59.13, z = 505.9, f = "e" },
+		{ faction = "A", npc = 1458, map = 1437, x = 7.99, y = 55.84, z = 11.2, f = "e" },
 		{ faction = "A", npc = 267338, map = 1426, x = 28.95, y = 66.59, z = 392.8, f = "e" },
 		{ faction = "A", npc = 1473, map = 1432, x = 36.47, y = 48.54, z = 330.7, f = "e" },
 		{ faction = "A", npc = 247223, map = 1429, x = 52.41, y = 43.87, z = 75.7, f = "e" },
+		{ faction = "A", npc = 1218, map = 1429, x = 39.96, y = 48.41, z = 115.2, f = "e" },
 		{ faction = "A", npc = 812, map = 1433, x = 16.6, y = 45.77, z = 78.2 },
 		{ faction = "A", npc = 5502, map = 1453, x = 31.5, y = 62.61, z = 98.3 },
 		{ faction = "A", npc = 5566, map = 1453, x = 54.29, y = 84.1, z = 96 },
@@ -10889,30 +11128,42 @@ G(function() return {
 		{ faction = "H", npc = 4614, map = 1458, x = 54, y = 49.55, z = -62.1, f = "e" },
 		{ faction = "H", npc = 267326, map = 1420, x = 32.46, y = 65.14, z = 94.4, f = "e" },
 		{ faction = "H", npc = 2114, map = 1420, x = 59.79, y = 52.12, z = 35.2, f = "e" },
+		{ faction = "H", npc = 2856, map = 1434, x = 32.25, y = 27.43, z = 3.1, f = "e" },
+		{ faction = "AH", npc = 908, map = 1434, x = 27.72, y = 77.86, z = 30.7, f = "e" },
+		{ faction = "H", npc = 3185, map = 1411, x = 55.44, y = 75.08, z = 23.6, f = "e" },
 		{ faction = "H", npc = 267329, map = 1411, x = 42.66, y = 67.39, z = 41.7, f = "e" },
 		{ faction = "H", npc = 267332, map = 1412, x = 44.13, y = 77.97, z = 54 },
 		{ faction = "A", npc = 3604, map = 1438, x = 57.72, y = 60.64, z = 1297.8, f = "e" },
 		{ faction = "A", npc = 267335, map = 1438, x = 59.86, y = 41.31, f = "e" },
+		{ faction = "A", npc = 3965, map = 1440, x = 50.69, y = 67.17, z = 101.9, f = "e" },
+		{ faction = "H", npc = 8146, map = 1444, x = 75.98, y = 43.33, z = 25.6, f = "e" },
+		{ faction = "A", npc = 4898, map = 1445, x = 64.01, y = 47.53, z = 11.5, f = "e" },
+		{ faction = "AH", npc = 12025, map = 1450, x = 45.42, y = 46.97, z = 487.3, f = "e" },
 		{ faction = "H", npc = 3404, map = 1454, x = 55.62, y = 39.46, z = 53.3, f = "e" },
 		{ faction = "H", npc = 3013, map = 1456, x = 49.95, y = 40.41, z = 143.6, f = "e" },
 		{ faction = "A", npc = 4204, map = 1457, x = 47.95, y = 68.03, z = 1334, f = "e" },
+		{ faction = "AH", npc = 254345, map = 2521, x = 57.87, y = 75.54, z = 666.8 },
+		{ faction = "AH", npc = 257021, map = 2521, x = 42.96, y = 43.54, z = 829.4 },
 	},
 	steps = {
 		{
 			title = "Learn {skill:182}",
 			note = "Any {skill:182} trainer of your faction teaches Apprentice {skill:182} at any level (10c), and so does the Junior Herbalism Trainer in each starting area; the arrow picks the nearest. Turn on {spell:2383} (spellbook, General tab) so herbs show on the minimap. Forever's starting areas also have {object:656160} and {object:656161} (skill 1). The first-hour quest of each starting area (Rascally Rodents, Coldridge Valley Mail Delivery, The Woodland Protector, Galgar's {item:11584}, A Humble Task, Marla's Last Wish) offers {item:247841} as a reward: reading it gives 2 skill, up to 15. Trade goods vendors sell the {item:277113}, a four-slot bag for herbs (25c). If you sat at your starting area's campfire for The Great Outdoors, the camping guide there also offers Camping 101: {skill:182}: hand it in to the herbalism trainer it names once you reach skill 20, for the {spell:1229705} recipe.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 }, rank = 1, rankMax = 75, skill = "Herbalism", skillLine = 182 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 }, rank = 1, rankMax = 75, skill = "Herbalism", skillLine = 182 },
 			},
 		},
 		{
 			title = "{item:2447} & {item:765}: {zone:1429} (1-50)",
 			only = { races = { "HUMAN" } },
 			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {object:656161} (1, orange), {object:656160} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
-				{ t = "goto", map = 1429, x = 53.1, y = 38.6, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
+				{ t = "goto", map = 1429, x = 53.2, y = 38.6, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
 				{ t = "goto", map = 1429, x = 45.8, y = 32.9, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
 				{ t = "goto", map = 1429, x = 46.1, y = 42.9, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
+				{ t = "goto", map = 1429, x = 50.9, y = 46.2, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
 				{ t = "goto", map = 1429, x = 42.4, y = 56.6, f = "e", r = 30, text = "{item:2447}, {item:765}" },
 				{ t = "goto", map = 1429, x = 35.8, y = 59.4, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1429, x = 26.3, y = 85.5, f = "e", r = 30, text = "{item:2447}, {item:765}" },
@@ -10921,7 +11172,6 @@ G(function() return {
 				{ t = "goto", map = 1429, x = 87.6, y = 80, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1429, x = 62.6, y = 62.7, f = "e", r = 30, text = "{item:2447}, {item:765}" },
 				{ t = "goto", map = 1429, x = 56.9, y = 44.9, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
-				{ t = "goto", map = 1429, x = 50.9, y = 46.4, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
 				{ t = "skill", level = 50, skill = "Herbalism", skillLine = 182 },
 			},
 		},
@@ -10929,6 +11179,7 @@ G(function() return {
 			title = "{item:2447} & {item:765}: {zone:1426} (1-50)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {object:656161} (1, orange), {object:656160} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1426, x = 73.3, y = 54.1, f = "e", r = 30, text = "{item:2447}, {item:2449}" },
 				{ t = "goto", map = 1426, x = 62.9, y = 57, f = "e", r = 30, text = "{item:765}, {item:2449}" },
@@ -10949,13 +11200,14 @@ G(function() return {
 			title = "{item:2447} & {item:765}: {zone:1438} (1-50)",
 			only = { races = { "NIGHTELF" } },
 			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {object:656161} (1, orange, rare), {object:656160} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1438, x = 55.6, y = 73.7, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1438, x = 63.6, y = 71.6, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1438, x = 60.9, y = 62.4, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1438, x = 67.3, y = 60.5, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1438, x = 67.3, y = 51.6, f = "e", r = 30, text = "{item:765}, {item:2447}" },
-				{ t = "goto", map = 1438, x = 56, y = 44.1, f = "e", r = 30, text = "{object:656160}, {object:656161}" },
+				{ t = "goto", map = 1438, x = 56, y = 44.1, f = "e", r = 30, text = "{object:656160}" },
 				{ t = "goto", map = 1438, x = 45.8, y = 40.8, f = "e", r = 30, text = "{item:2447}, {item:765}" },
 				{ t = "goto", map = 1438, x = 37.2, y = 41.1, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1438, x = 38.6, y = 67.2, f = "e", r = 30, text = "{item:2447}, {item:2449}" },
@@ -10969,6 +11221,7 @@ G(function() return {
 			title = "{item:2447} & {item:765}: {zone:2521} (1-50)",
 			only = { races = { "SKYBORNE" } },
 			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-15. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 2521, x = 40.8, y = 44.8, r = 30, text = "{item:2447}, {item:765}" },
 				{ t = "goto", map = 2521, x = 37.3, y = 45.9, r = 30, text = "{item:2447}, {item:765}" },
@@ -10989,9 +11242,10 @@ G(function() return {
 			title = "{item:2447} & {item:765}: {zone:1411} (1-50)",
 			only = { races = { "ORC", "TROLL" } },
 			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {object:656161} (1, orange), {object:656160} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1411, x = 44.6, y = 64.6, f = "e", r = 30, text = "{object:656160}, {object:656161}" },
-				{ t = "goto", map = 1411, x = 45.1, y = 70.8, f = "e", r = 30, text = "{object:656160}, {object:656161}" },
+				{ t = "goto", map = 1411, x = 45, y = 70.9, f = "e", r = 30, text = "{object:656160}, {object:656161}" },
 				{ t = "goto", map = 1411, x = 55.3, y = 66.9, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1411, x = 52.1, y = 58.4, f = "e", r = 30, text = "{item:2447}, {item:765}" },
 				{ t = "goto", map = 1411, x = 49.5, y = 47.7, f = "e", r = 30, text = "{item:765}, {item:2447}" },
@@ -11008,7 +11262,8 @@ G(function() return {
 		{
 			title = "{item:2447} & {item:765}: {zone:1412} (1-50)",
 			only = { races = { "TAUREN" } },
-			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {object:656161} (1, orange, rare), {object:656160} (1, orange, rare), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1412, x = 34.2, y = 35, f = "e", r = 30, text = "{item:765}, {item:2447}" },
 				{ t = "goto", map = 1412, x = 34.7, y = 41.1, f = "e", r = 30, text = "{item:2447}, {item:765}" },
@@ -11029,6 +11284,7 @@ G(function() return {
 			title = "{item:2447} & {item:765}: {zone:1420} (1-50)",
 			only = { races = { "SCOURGE" } },
 			note = "Pick every {item:2447} (1, orange), {item:765} (1, orange), {object:656161} (1, orange), {object:656160} (1, orange), {item:2449} (from 15) you pass and circle the waypoints until {skill:182} 50. Zone level 1-10. Expect about 60 herbs for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1420, x = 34.3, y = 65.9, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
 				{ t = "goto", map = 1420, x = 37.6, y = 68.9, f = "e", r = 30, text = "{object:656161}, {object:656160}" },
@@ -11048,15 +11304,17 @@ G(function() return {
 		{
 			title = "Journeyman {skill:182}",
 			note = "Journeyman {skill:182} raises the cap to 150; it needs skill 50 and no character level, and costs 5s: train it as soon as you reach 50. The arrow picks the nearest {skill:182} trainer of your faction. {spell:1229705}, Forever's camping item for {skill:182}, is taught from skill 20 (1s, or free from Camping 101: {skill:182}): a {item:2447} and a {item:765} each, it gives points until 25; placed beside a campfire it gives everyone at the camp a buff for an hour.",
+			section = 2,
 			goals = {
-				{ t = "train", candidates = { 9, 11, 8, 1, 3, 6, 7, 5, 14, 16, 17, 18 }, rank = 2, rankMax = 150, skill = "Herbalism", skillLine = 182 },
-				{ t = "learn", spell = 1229705, candidates = { 10, 9, 11, 8, 1, 2, 3, 6, 7, 4, 5, 12, 13, 14, 15, 16, 17, 18 }, skillLine = 182 },
+				{ t = "train", candidates = { 11, 13, 10, 2, 1, 4, 8, 9, 6, 7, 14, 15, 16, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29 }, rank = 2, rankMax = 150, skill = "Herbalism", skillLine = 182 },
+				{ t = "learn", spell = 1229705, candidates = { 12, 11, 13, 10, 2, 1, 3, 4, 8, 9, 5, 6, 7, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 }, skillLine = 182 },
 			},
 		},
 		{
 			title = "{item:785} & {item:2450}: {zone:1436} (50-100)",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Pick every {item:2447} (1, yellow), {item:765} (1, yellow), {item:2449} (15, yellow), {item:785} (50, orange), {item:2450} (from 70), {item:3820} (from 85) you pass and circle the waypoints until {skill:182} 100. {item:785} and {item:2450} sometimes give a {item:2452} as well. {item:3820} grows underwater along the shore: watch your breath. Zone level 10-20. Expect about 130 herbs for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1436, x = 53.3, y = 65.1, f = "e", r = 30, text = "{item:2447}, {item:2450}" },
 				{ t = "goto", map = 1436, x = 39.9, y = 70.1, f = "e", r = 30, text = "{item:2450}, {item:785}" },
@@ -11077,6 +11335,7 @@ G(function() return {
 			title = "{item:785} & {item:2450}: {zone:1432} (50-100)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Pick every {item:2447} (1, yellow), {item:765} (1, yellow), {item:2449} (15, yellow), {item:785} (50, orange), {item:2450} (from 70) you pass and circle the waypoints until {skill:182} 100. {item:785} and {item:2450} sometimes give a {item:2452} as well. Zone level 10-20. Expect about 140 herbs for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1432, x = 33.1, y = 54.9, f = "e", r = 30, text = "{item:2449}, {item:765}" },
 				{ t = "goto", map = 1432, x = 26, y = 49.7, f = "e", r = 30, text = "{item:2449}, {item:785}" },
@@ -11097,6 +11356,7 @@ G(function() return {
 			title = "{item:785} & {item:2450}: {zone:1439} (50-100)",
 			only = { races = { "NIGHTELF" } },
 			note = "Pick every {item:2447} (1, yellow), {item:765} (1, yellow), {item:2449} (15, yellow), {item:785} (50, orange), {item:2450} (from 70), {item:3820} (from 85) you pass and circle the waypoints until {skill:182} 100. {item:785} and {item:2450} sometimes give a {item:2452} as well. {item:3820} grows underwater along the shore: watch your breath. Zone level 10-20. Expect about 130 herbs for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1439, x = 37.8, y = 35.5, f = "e", r = 30, text = "{item:785}, {item:3820}" },
 				{ t = "goto", map = 1439, x = 40.8, y = 34, f = "e", r = 30, text = "{item:765}, {item:2449}" },
@@ -11117,6 +11377,7 @@ G(function() return {
 			title = "{item:785} & {item:2450}: {zone:1413} (50-100)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Pick every {item:2447} (1, yellow), {item:765} (1, yellow), {item:2449} (15, yellow), {item:785} (50, orange), {item:2450} (from 70), {item:3820} (from 85) you pass and circle the waypoints until {skill:182} 100. {item:785} and {item:2450} sometimes give a {item:2452} as well. {item:3820} grows underwater along the shore: watch your breath. A quest here needs {skill:182}: Root Samples (level 16, {npc:3446}). Zone level 10-25. Expect about 110 herbs for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1413, x = 46, y = 37.2, f = "e", r = 30, text = "{item:765}, {item:2450}" },
 				{ t = "goto", map = 1413, x = 40.3, y = 22.2, f = "e", r = 30, text = "{item:2449}, {item:2450}" },
@@ -11137,6 +11398,7 @@ G(function() return {
 			title = "{item:785} & {item:2450}: {zone:1421} (50-100)",
 			only = { races = { "SCOURGE" } },
 			note = "Pick every {item:2447} (1, yellow), {item:765} (1, yellow), {item:2449} (15, yellow), {item:785} (50, orange), {item:2450} (from 70), {item:3820} (from 85) you pass and circle the waypoints until {skill:182} 100. {item:785} and {item:2450} sometimes give a {item:2452} as well. {item:3820} grows underwater along the shore: watch your breath. Zone level 10-20. Expect about 140 herbs for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1421, x = 48, y = 34.1, f = "e", r = 30, text = "{item:2450}, {item:2449}" },
 				{ t = "goto", map = 1421, x = 47.3, y = 28.4, f = "e", r = 30, text = "{item:2449}, {item:765}" },
@@ -11157,6 +11419,7 @@ G(function() return {
 			title = "{item:2450} & {item:2453}: {zone:1433} (100-125)",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Pick every {item:2449} (15, green), {item:785} (50, green), {item:2450} (70, yellow), {item:2453} (100, orange) you pass and circle the waypoints until {skill:182} 125. {item:785} and {item:2450} sometimes give a {item:2452} as well. Zone level 15-25. Expect about 60 herbs for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1433, x = 23.7, y = 62.4, f = "e", r = 30, text = "{item:2450}, {item:785}" },
 				{ t = "goto", map = 1433, x = 15.7, y = 61, f = "e", r = 30, text = "{item:2450}, {item:2449}" },
@@ -11177,6 +11440,7 @@ G(function() return {
 			title = "{item:2453} & {object:1623}: {zone:1442} (100-125)",
 			only = { races = { "NIGHTELF" } },
 			note = "Pick every {item:785} (50, green), {item:2450} (70, yellow), {item:2453} (100, orange), {object:1623} (from 115) you pass and circle the waypoints until {skill:182} 125. {item:785} and {item:2450} sometimes give a {item:2452} as well. Zone level 15-27. Expect about 40 herbs for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1442, x = 31.9, y = 12.1, f = "e", r = 30, text = "{item:785}, {item:2450}" },
 				{ t = "goto", map = 1442, x = 37.4, y = 19.3, f = "e", r = 30, text = "{item:2453}, {item:785}" },
@@ -11197,6 +11461,7 @@ G(function() return {
 			title = "{item:2453} & {object:1623}: {zone:1442} (100-125)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Pick every {item:785} (50, green), {item:2450} (70, yellow), {item:2453} (100, orange), {object:1623} (from 115) you pass and circle the waypoints until {skill:182} 125. {item:785} and {item:2450} sometimes give a {item:2452} as well. Zone level 15-27. Expect about 40 herbs for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1442, x = 35.9, y = 63.5, f = "e", r = 30, text = "{item:2453}, {item:2450}" },
 				{ t = "goto", map = 1442, x = 28.2, y = 70, f = "e", r = 30, text = "{item:2453}, {item:2450}" },
@@ -11217,6 +11482,7 @@ G(function() return {
 			title = "{item:3820} & {item:2453}: {zone:1424} (100-125)",
 			only = { races = { "SCOURGE" } },
 			note = "Pick every {item:765} (1, green, rare), {item:2449} (15, green, rare), {item:785} (50, green), {item:2450} (70, yellow), {item:3820} (85, orange), {item:2453} (100, orange), {object:1623} (from 115) you pass and circle the waypoints until {skill:182} 125. {item:785} and {item:2450} sometimes give a {item:2452} as well. {item:3820} grows underwater along the shore: watch your breath. Zone level 20-30. Expect about 40 herbs for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1424, x = 65, y = 13.4, f = "e", r = 30, text = "{item:2453}, {item:2450}" },
 				{ t = "goto", map = 1424, x = 71.5, y = 28.7, f = "e", r = 30, text = "{item:2453}, {object:1623}" },
@@ -11236,13 +11502,15 @@ G(function() return {
 		{
 			title = "Expert {skill:182}",
 			note = "Expert {skill:182} raises the cap to 225; it needs skill 125 and no character level, and costs 50s: train it as soon as you reach 125. The arrow picks the nearest {skill:182} trainer of your faction.",
+			section = 4,
 			goals = {
-				{ t = "train", candidates = { 8, 9, 11, 1, 3, 6, 7, 5, 14, 16, 17, 18 }, rank = 3, rankMax = 225, skill = "Herbalism", skillLine = 182 },
+				{ t = "train", candidates = { 10, 11, 13, 2, 1, 4, 8, 9, 6, 7, 14, 15, 16, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29 }, rank = 3, rankMax = 225, skill = "Herbalism", skillLine = 182 },
 			},
 		},
 		{
 			title = "{item:3820} & {item:3356}: {zone:1434} (125-160)",
 			note = "Pick every {item:3820} (85, yellow), {object:1623} (115, orange), {item:3356} (125, orange), {item:3357} (from 150) you pass and circle the waypoints until {skill:182} 160. {item:3820} grows underwater along the shore: watch your breath. Zone level 30-45. Expect about 70 herbs for these 35 points.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1434, x = 29, y = 87, f = "e", r = 30, text = "{item:3820}" },
 				{ t = "goto", map = 1434, x = 26.6, y = 84.2, f = "e", r = 30, text = "{item:3820}" },
@@ -11262,6 +11530,7 @@ G(function() return {
 		{
 			title = "{item:3357} & {item:3818}: {zone:1445} (160-185)",
 			note = "Pick every {item:2450} (70, green, rare), {item:3820} (85, green), {item:2453} (100, green, rare), {object:1623} (115, yellow, rare), {item:3356} (125, yellow), {item:3357} (150, orange), {item:3818} (160, orange), {item:3821} (from 170) you pass and circle the waypoints until {skill:182} 185. {item:785} and {item:2450} sometimes give a {item:2452} as well. {item:3820} grows underwater along the shore: watch your breath. Zone level 35-45. Expect about 40 herbs for these 25 points.",
+			section = 5,
 			goals = {
 				{ t = "goto", map = 1445, x = 44.2, y = 44.7, f = "e", r = 30, text = "{item:3357}, {item:3818}" },
 				{ t = "goto", map = 1445, x = 42.4, y = 52.4, f = "e", r = 30, text = "{item:3818}" },
@@ -11281,6 +11550,7 @@ G(function() return {
 		{
 			title = "{item:3357} & {object:2043}: {zone:1445} (185-200)",
 			note = "Pick every {item:2453} (100, green, rare), {object:1623} (115, green, rare), {item:3356} (125, green), {item:3357} (150, yellow), {item:3818} (160, yellow), {item:3821} (170, orange), {object:2043} (185, orange) you pass and circle the waypoints until {skill:182} 200. Zone level 35-45. Expect about 20 herbs for these 15 points.",
+			section = 6,
 			goals = {
 				{ t = "goto", map = 1445, x = 45.4, y = 43.7, f = "e", r = 30, text = "{item:3357}, {item:3821}" },
 				{ t = "goto", map = 1445, x = 41.2, y = 46.8, f = "e", r = 30, text = "{item:3357}, {item:3818}" },
@@ -11300,13 +11570,15 @@ G(function() return {
 		{
 			title = "Artisan {skill:182}",
 			note = "Artisan {skill:182} raises the cap to 300; it needs skill 200 and no character level, and costs 5g: train it as soon as you reach 200. The arrow picks the nearest {skill:182} trainer of your faction.",
+			section = 6,
 			goals = {
-				{ t = "train", candidates = { 17, 16, 14, 18, 8, 11, 3, 5, 6, 7, 1, 9 }, rank = 4, rankMax = 300, skill = "Herbalism", skillLine = 182 },
+				{ t = "train", candidates = { 23, 16, 22, 26, 25, 21, 24, 19, 27, 10, 13, 6, 4, 7, 15, 14, 2, 8, 9, 1, 11, 28, 29 }, rank = 4, rankMax = 300, skill = "Herbalism", skillLine = 182 },
 			},
 		},
 		{
 			title = "{item:3818} & {object:2043}: {zone:1445} (200-210) cont.",
 			note = "Pick every {object:1623} (115, green, rare), {item:3356} (125, green), {item:3357} (150, green), {item:3818} (160, yellow), {item:3821} (170, yellow), {object:2043} (185, orange) you pass and circle the waypoints until {skill:182} 210. Zone level 35-45. Expect about 20 herbs for these 10 points.",
+			section = 6,
 			goals = {
 				{ t = "goto", map = 1445, x = 45.4, y = 43.7, f = "e", r = 30, text = "{item:3357}, {item:3821}" },
 				{ t = "goto", map = 1445, x = 41.2, y = 46.8, f = "e", r = 30, text = "{item:3357}, {item:3818}" },
@@ -11326,6 +11598,7 @@ G(function() return {
 		{
 			title = "{item:8831}: {zone:1425} (210-230)",
 			note = "Pick every {object:1623} (115, green, rare), {item:3357} (150, green), {item:3818} (160, green, rare), {item:3821} (170, yellow), {object:2043} (185, yellow), {item:8831} (210, orange) you pass and circle the waypoints until {skill:182} 230. {item:8831} sometimes gives a {item:8153} as well. Zone level 40-50. Expect about 30 herbs for these 20 points.",
+			section = 7,
 			goals = {
 				{ t = "goto", map = 1425, x = 65.5, y = 67.8, f = "e", r = 30, text = "{item:8831}" },
 				{ t = "goto", map = 1425, x = 57.6, y = 40.7, f = "e", r = 30, text = "{item:8831}, {item:3821}" },
@@ -11345,9 +11618,10 @@ G(function() return {
 		{
 			title = "{item:8831} & {item:8838}: {zone:1425} (230-260)",
 			note = "Pick every {item:3357} (150, green, rare), {item:3818} (160, green, rare), {item:3821} (170, green), {object:2043} (185, yellow, rare), {item:8831} (210, orange), {item:8838} (230, orange), {item:8845} (from 245) you pass and circle the waypoints until {skill:182} 260. {item:8845} grows in caves and dark hollows: look inside as well. {item:8831} sometimes gives a {item:8153} as well. Zone level 40-50. Expect about 50 herbs for these 30 points.",
+			section = 8,
 			goals = {
 				{ t = "goto", map = 1425, x = 56.9, y = 42.2, f = "e", r = 30, text = "{item:8845}, {item:8831}" },
-				{ t = "goto", map = 1425, x = 63.8, y = 47.8, f = "e", r = 30, text = "{item:8838}, {object:2043}" },
+				{ t = "goto", map = 1425, x = 63.8, y = 47.8, f = "e", r = 30, text = "{item:8838}, {item:3821}" },
 				{ t = "goto", map = 1425, x = 65.5, y = 67.8, f = "e", r = 30, text = "{item:8831}" },
 				{ t = "goto", map = 1425, x = 68.1, y = 74.8, f = "e", r = 30, text = "{item:8831}" },
 				{ t = "goto", map = 1425, x = 49.8, y = 65.6, f = "e", r = 30, text = "{item:8831}, {item:8838}" },
@@ -11355,8 +11629,8 @@ G(function() return {
 				{ t = "goto", map = 1425, x = 18.1, y = 52.5, f = "e", r = 30, text = "{item:8838}" },
 				{ t = "goto", map = 1425, x = 24.2, y = 56.2, f = "e", r = 30, text = "{item:8838}, {item:8831}" },
 				{ t = "goto", map = 1425, x = 32.6, y = 59.9, f = "e", r = 30, text = "{item:8831}, {item:8838}" },
-				{ t = "goto", map = 1425, x = 37.8, y = 54.3, f = "e", r = 30, text = "{item:8838}, {item:3818}" },
-				{ t = "goto", map = 1425, x = 42, y = 45.9, f = "e", r = 30, text = "{item:8838}, {object:2043}" },
+				{ t = "goto", map = 1425, x = 37.8, y = 54.3, f = "e", r = 30, text = "{item:8838}" },
+				{ t = "goto", map = 1425, x = 42, y = 45.9, f = "e", r = 30, text = "{item:8838}" },
 				{ t = "goto", map = 1425, x = 46.6, y = 55.1, f = "e", r = 30, text = "{item:8838}, {item:8831}" },
 				{ t = "skill", level = 260, skill = "Herbalism", skillLine = 182 },
 			},
@@ -11364,6 +11638,7 @@ G(function() return {
 		{
 			title = "{item:8838} & {item:13464}: {zone:1425} (260-285)",
 			note = "Pick every {item:3821} (170, green), {object:2043} (185, green, rare), {item:8831} (210, green), {item:8838} (230, yellow), {item:8845} (245, orange), {item:13464} (260, orange) you pass and circle the waypoints until {skill:182} 285. {item:8845} grows in caves and dark hollows: look inside as well. {item:8831} sometimes gives a {item:8153} as well. Zone level 40-50. Expect about 70 herbs for these 25 points.",
+			section = 9,
 			goals = {
 				{ t = "goto", map = 1425, x = 56.9, y = 42.3, f = "e", r = 30, text = "{item:8845}, {item:8831}" },
 				{ t = "goto", map = 1425, x = 51.9, y = 40.4, f = "e", r = 30, text = "{item:8838}, {item:13464}" },
@@ -11374,15 +11649,16 @@ G(function() return {
 				{ t = "goto", map = 1425, x = 36.8, y = 59, f = "e", r = 30, text = "{item:8838}, {item:13464}" },
 				{ t = "goto", map = 1425, x = 58.2, y = 81.6, f = "e", r = 30, text = "{item:8831}, {item:8845}" },
 				{ t = "goto", map = 1425, x = 65.5, y = 67.8, f = "e", r = 30, text = "{item:8831}" },
-				{ t = "goto", map = 1425, x = 75.5, y = 53.4, f = "e", r = 30, text = "{item:13464}, {object:2043}" },
+				{ t = "goto", map = 1425, x = 75.5, y = 53.4, f = "e", r = 30, text = "{item:13464}, {item:8838}" },
 				{ t = "goto", map = 1425, x = 69.3, y = 48.6, f = "e", r = 30, text = "{item:13464}, {item:8838}" },
-				{ t = "goto", map = 1425, x = 63.8, y = 47.3, f = "e", r = 30, text = "{item:8838}, {object:2043}" },
+				{ t = "goto", map = 1425, x = 63.8, y = 47.3, f = "e", r = 30, text = "{item:8838}, {item:13464}" },
 				{ t = "skill", level = 285, skill = "Herbalism", skillLine = 182 },
 			},
 		},
 		{
 			title = "{item:13463} & {item:13466}: {zone:1422} (285-300)",
 			note = "Pick every {item:8836} (220, green), {item:8838} (230, green), {item:13463} (270, orange), {item:13465} (280, orange), {item:13466} (285, orange) you pass and circle the waypoints until {skill:182} 300. Zone level 51-58. Expect about 20 herbs for these 15 points.",
+			section = 10,
 			goals = {
 				{ t = "goto", map = 1422, x = 37.1, y = 55.1, f = "e", r = 30, text = "{item:13466}, {item:8836}" },
 				{ t = "goto", map = 1422, x = 47, y = 59, f = "e", r = 30, text = "{item:8836}, {item:13463}" },
@@ -11409,18 +11685,21 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 947,
+	sections = { { from = 1, skill = "Leatherworking", skillLine = 165, to = 75 }, { from = 75, skill = "Leatherworking", skillLine = 165, to = 150 }, { from = 150, skill = "Leatherworking", skillLine = 165, to = 225 }, { from = 225, skill = "Leatherworking", skillLine = 165, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "H", npc = 3069, map = 1412, x = 44.94, y = 61.46, z = -9.3 },
-		{ faction = "H", npc = 3703, map = 1413, x = 44.84, y = 59.46, z = 96.8, f = "e" },
+		{ faction = "H", npc = 3549, map = 1420, x = 65.43, y = 60.12, z = 35.5, f = "e" },
 		{ faction = "A", npc = 1632, map = 1429, x = 46.38, y = 62.05, z = 64.5, f = "e" },
-		{ faction = "H", npc = 1385, map = 1434, x = 31.74, y = 28.9, z = 2.4, f = "e" },
-		{ faction = "A", npc = 5564, map = 1453, x = 71.69, y = 63, z = 98.7 },
-		{ faction = "H", npc = 3365, map = 1454, x = 62.81, y = 44.15, z = 24.8, f = "e" },
-		{ faction = "A", npc = 5127, map = 1455, x = 40.24, y = 33.68, z = 504.5, f = "e" },
-		{ faction = "H", npc = 3007, map = 1456, x = 41.5, y = 42.57, z = 145.9, f = "e" },
-		{ faction = "A", npc = 4212, map = 1457, x = 64.43, y = 21.54, z = 1343.4, f = "e" },
-		{ faction = "H", npc = 4588, map = 1458, x = 70.18, y = 57.42, z = -62.1, f = "e" },
+		{ faction = "A", npc = 3605, map = 1438, x = 41.88, y = 49.44, z = 1326.1, f = "e" },
+		{ faction = "A", npc = 11096, map = 1453, x = 72.14, y = 62.85, z = 98.7 },
+		{ faction = "H", npc = 5811, map = 1454, x = 63.28, y = 44.75, z = 24.8, f = "e" },
+		{ faction = "A", npc = 1466, map = 1455, x = 38.81, y = 32.88, z = 504.5, f = "e" },
+		{ faction = "H", npc = 3008, map = 1456, x = 42.06, y = 43.45, z = 145.9, f = "e" },
+		{ faction = "A", npc = 11083, map = 1457, x = 64.44, y = 20.87, z = 1343.4, f = "e" },
+		{ faction = "H", npc = 223, map = 1458, x = 70.93, y = 58.41, z = -62.1, f = "e" },
+		{ faction = "AH", npc = 251993, map = 2521, x = 44.68, y = 44.52, z = 823.4 },
+		{ faction = "AH", npc = 252376, map = 2521, x = 63.73, y = 80.68, z = 648.6 },
 		{ faction = "H", npc = 3168, map = 1411, x = 52.98, y = 41.97, z = 12.6, f = "e" },
 		{ faction = "H", npc = 3187, map = 1411, x = 56.41, y = 73.79, z = 22.3, f = "e" },
 		{ faction = "H", npc = 267327, map = 1411, x = 40.78, y = 67.86, f = "e" },
@@ -11461,7 +11740,6 @@ G(function() return {
 		{ faction = "AH", npc = 11874, map = 1435, x = 26.46, y = 31.47, z = 22.4, f = "e" },
 		{ faction = "A", npc = 843, map = 1436, x = 57.64, y = 54.05, z = 33, f = "e" },
 		{ faction = "A", npc = 1454, map = 1437, x = 8.12, y = 55.84, z = 16.1, f = "e" },
-		{ faction = "A", npc = 3605, map = 1438, x = 41.88, y = 49.44, z = 1326.1, f = "e" },
 		{ faction = "A", npc = 3614, map = 1438, x = 55.27, y = 57.15, z = 1328, f = "e" },
 		{ faction = "A", npc = 267333, map = 1438, x = 59.39, y = 38.63, f = "e" },
 		{ faction = "A", npc = 4189, map = 1439, x = 38.15, y = 40.6, z = 9.1, f = "e" },
@@ -11499,11 +11777,19 @@ G(function() return {
 		{ faction = "H", npc = 2225, map = 1459, x = 50.08, y = 82.15, f = "e" },
 		{ faction = "A", npc = 5135, map = 1459, x = 42.82, y = 16.88, f = "e" },
 		{ faction = "AH", npc = 251991, map = 2521, x = 44.88, y = 44.18, z = 823.2 },
-		{ faction = "AH", npc = 252376, map = 2521, x = 63.73, y = 80.68, z = 648.6 },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
 		{ faction = "A", npc = 260559, map = 2548, x = 79.74, y = 54.04 },
 		{ faction = "AH", npc = 260570, map = 2548, x = 77.33, y = 51.47 },
-		{ faction = "A", npc = 11096, map = 1453, x = 72.14, y = 62.85, z = 98.7 },
+		{ faction = "H", npc = 4588, map = 1458, x = 70.18, y = 57.42, z = -62.1, f = "e" },
+		{ faction = "A", npc = 5127, map = 1455, x = 40.24, y = 33.68, z = 504.5, f = "e" },
+		{ faction = "A", npc = 5564, map = 1453, x = 71.69, y = 63, z = 98.7 },
+		{ faction = "H", npc = 1385, map = 1434, x = 31.74, y = 28.9, z = 2.4, f = "e" },
+		{ faction = "H", npc = 3703, map = 1413, x = 44.84, y = 59.46, z = 96.8, f = "e" },
+		{ faction = "A", npc = 3967, map = 1440, x = 35.98, y = 52.1, z = 110.8, f = "e" },
+		{ faction = "H", npc = 8153, map = 1443, x = 55.25, y = 56.34, z = 90.4, f = "e" },
+		{ faction = "H", npc = 3365, map = 1454, x = 62.81, y = 44.15, z = 24.8, f = "e" },
+		{ faction = "H", npc = 11084, map = 1456, x = 42.32, y = 42.61, z = 145.9, f = "e" },
+		{ faction = "A", npc = 11081, map = 1457, x = 64.77, y = 21.82, z = 1343.4, f = "e" },
 		{ faction = "H", npc = 4577, map = 1458, x = 70.59, y = 30.14, z = -62.1, f = "e" },
 		{ faction = "A", npc = 2816, map = 1417, x = 45.08, y = 46.83, z = 22.1, f = "e" },
 		{ faction = "H", npc = 2821, map = 1417, x = 74.09, y = 32.73, z = 72.8, f = "e" },
@@ -11515,41 +11801,50 @@ G(function() return {
 		{ faction = "A", npc = 8934, map = 1436, x = 52.23, y = 52.83, z = 35.3, f = "e" },
 		{ faction = "AH", npc = 2699, map = 1434, x = 28.49, y = 76.05, z = 23.1, f = "e" },
 		{ faction = "AH", npc = 252380, map = 2521, x = 64.41, y = 81.17, z = 648.2 },
+		{ faction = "H", npc = 3007, map = 1456, x = 41.5, y = 42.57, z = 145.9, f = "e" },
+		{ faction = "A", npc = 4212, map = 1457, x = 64.43, y = 21.54, z = 1343.4, f = "e" },
 		{ faction = "H", npc = 2394, map = 1416, x = 60.6, y = 82.9, z = 55.8, f = "e" },
 		{ faction = "A", npc = 252020, map = 1416, x = 13.2, y = 71.48, f = "e" },
 		{ faction = "H", npc = 4589, map = 1458, x = 70.07, y = 58.44, z = -62.1, f = "e" },
 		{ faction = "H", npc = 6574, map = 1417, x = 72.69, y = 36.45, z = 62.8, f = "e" },
+		{ faction = "A", npc = 1456, map = 1437, x = 10.38, y = 60.62, z = 9.6, f = "e" },
+		{ faction = "AH", npc = 14846, map = 1429, x = 41.2, y = 69.9, z = 59, f = "e" },
+		{ faction = "AH", npc = 14846, map = 1412, x = 37.39, y = 44.91, z = -7.7 },
+		{ faction = "A", npc = 6301, map = 1439, x = 38.11, y = 41.17, z = 7.1, f = "e" },
+		{ faction = "AH", npc = 12022, map = 1450, x = 48.24, y = 40.14, z = 489.4, f = "e" },
+		{ faction = "H", npc = 3366, map = 1454, x = 63.05, y = 45.53, z = 24.8, f = "e" },
+		{ faction = "A", npc = 4225, map = 1457, x = 63.69, y = 22.28, z = 1343.4, f = "e" },
 		{ faction = "H", npc = 3485, map = 1413, x = 52.25, y = 31.69, z = 95.9, f = "e" },
 		{ faction = "H", npc = 11098, map = 1444, x = 74.36, y = 43.12, z = 26.4, f = "e" },
 		{ faction = "A", npc = 11097, map = 1424, x = 98.7, y = 2.3, z = 113.9, f = "e" },
 		{ faction = "A", npc = 7947, map = 1444, x = 31.3, y = 43.46, z = 13.6, f = "e" },
 		{ faction = "H", npc = 8363, map = 1456, x = 40.64, y = 64, z = 129.8, f = "e" },
 		{ faction = "H", npc = 3367, map = 1454, x = 60.6, y = 48.93, z = 20, f = "e" },
-		{ faction = "A", npc = 6301, map = 1439, x = 38.11, y = 41.17, z = 7.1, f = "e" },
-		{ faction = "AH", npc = 12022, map = 1450, x = 48.24, y = 40.14, z = 489.4, f = "e" },
-		{ faction = "A", npc = 4225, map = 1457, x = 63.69, y = 22.28, z = 1343.4, f = "e" },
 		{ faction = "A", npc = 5128, map = 1455, x = 39.62, y = 34.49, z = 504.5, f = "e" },
 	},
 	steps = {
 		{
 			title = "Learn {skill:165}",
-			note = "Apprentice {skill:165} lets you craft up to 75 for 10c, at any character level. Any {skill:165} trainer of your faction teaches it; the arrow picks the nearest. Pair it with {skill:393}: {item:2318} comes from the beasts of every starting zone. {item:2320} and Salt are sold by leatherworking and trade supplies vendors. 1-75 takes about 1s 50c of recipes and 5s of vendor goods, plus 349 {item:2318} to gather or buy.",
+			note = "Apprentice {skill:165} lets you craft up to 75 for 10c, at any character level. Not every {skill:165} trainer teaches it: Alliance {npc:1632} ({zone:1429}), {npc:11083} ({zone:1457}), {npc:252376} ({zone:2521}), {npc:1466} ({zone:1455}), {npc:251993} ({zone:2521}), {npc:3605} ({zone:1438}) and {npc:11096} ({zone:1453}); Horde {npc:3069} ({zone:1412}), {npc:223} ({zone:1458}), {npc:252376} ({zone:2521}), {npc:251993} ({zone:2521}), {npc:5811} ({zone:1454}), {npc:3008} ({zone:1456}) and {npc:3549} ({zone:1420}). The arrow picks the nearest of your faction. Pair it with {skill:393}: {item:2318} comes from the beasts of every starting zone. {item:2320} and Salt are sold by leatherworking and trade supplies vendors. 1-75 takes about 1s 50c of recipes and 5s of vendor goods, plus 349 {item:2318} to gather or buy.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, rank = 1, rankMax = 75, skill = "Leatherworking", skillLine = 165 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, rank = 1, rankMax = 75, skill = "Leatherworking", skillLine = 165 },
 				{ t = "skill", level = 1, skill = "Leatherworking", skillLine = 165 },
 			},
 		},
 		{
 			title = "{skill:165} 1-75: vendor goods",
 			note = "Buy the whole bracket's share in one go: 50 {item:2320} (5s); about 5s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			section = 1,
 			goals = {
-				{ t = "buy", item = 2320, count = 50, candidates = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 } },
+				{ t = "buy", item = 2320, count = 50, candidates = { 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 4, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 12, 90, 91, 92 } },
 			},
 		},
 		{
 			title = "{item:2318} ({zone:1429})",
 			only = { races = { "HUMAN" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin {npc:1922}, {npc:525}, Prowler, {npc:524}, {npc:113} and {npc:822} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 1429, x = 55.5, y = 76.6, f = "e" },
 			},
@@ -11558,6 +11853,7 @@ G(function() return {
 			title = "{item:2318} ({zone:1426})",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin {npc:1125}, {npc:1127}, {npc:1196}, {npc:1199}, {npc:1126}, {npc:1689}, {npc:1201}, {npc:1138}, {npc:1131} and {npc:1128} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 1426, x = 32.7, y = 57.1, f = "e" },
 			},
@@ -11566,6 +11862,7 @@ G(function() return {
 			title = "{item:2318} ({zone:1438})",
 			only = { races = { "NIGHTELF" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin {npc:2033}, Nightsaber and {npc:2043} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 1438, x = 49.7, y = 77.1, f = "e" },
 			},
@@ -11574,6 +11871,7 @@ G(function() return {
 			title = "{item:2318} ({zone:2521})",
 			only = { races = { "SKYBORNE" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin Cloudrunner, Galestrider, {npc:250928}, {npc:251284}, {npc:251291}, {npc:251707}, Prideclaw, {npc:256092}, {npc:253282}, Vuldren, {npc:250874} and {npc:254588} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 2521, x = 49.2, y = 63.8 },
 			},
@@ -11582,6 +11880,7 @@ G(function() return {
 			title = "{item:2318} ({zone:1411})",
 			only = { races = { "ORC", "TROLL" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin {npc:3126}, {npc:3123}, {npc:3122}, {npc:3125}, {npc:3099}, {npc:3110}, {npc:3121}, {npc:3100}, {npc:3130} and {npc:3127} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 1411, x = 37, y = 31.7, f = "e" },
 			},
@@ -11590,6 +11889,7 @@ G(function() return {
 			title = "{item:2318} ({zone:1412})",
 			only = { races = { "TAUREN" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin {npc:2956}, {npc:2957}, {npc:3035}, {npc:3566}, {npc:2972}, {npc:2959}, {npc:2958} and {npc:2960} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 1412, x = 51.5, y = 34.4 },
 			},
@@ -11598,6 +11898,7 @@ G(function() return {
 			title = "{item:2318} ({zone:1420})",
 			only = { races = { "SCOURGE" } },
 			note = "349 {item:2318} for {spell:2152}, {spell:3756} and {spell:3763} (210 of them for 75-150: pick them all now): {skill:393}: beasts of level 5-20; or the Auction House. Skin {npc:1548}, {npc:1547}, {npc:1553}, {npc:1549} and {npc:1554} here (level 5-20); the {skill:393} guide routes this.",
+			section = 1,
 			goals = {
 				{ t = "collect", item = 2318, count = 349, map = 1420, x = 83.9, y = 44.2, f = "e" },
 			},
@@ -11605,47 +11906,53 @@ G(function() return {
 		{
 			title = "{spell:2152} to 51",
 			note = "{spell:2152} is orange at 1 (yellow 30, green 45, grey 60): about 64 crafts to 51. Each takes 1 {item:2318}. One {item:2318} a craft; the kits sell to vendors.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 2304, spell = 2152, reagents = { { item = 2318, count = 1, itemName = "Light Leather" } }, skillLine = 165, untilSkill = 51 },
+				{ t = "craft", item = 2304, spell = 2152, grey = 60, reagents = { { item = 2318, count = 1, itemName = "Light Leather" } }, skillLine = 165, untilSkill = 51, yellow = 30 },
 			},
 		},
 		{
 			title = "{skill:165} recipes at 51",
 			note = "Back to a {skill:165} trainer: {spell:3756} (from 40, 1s 50c). Also learn {spell:1229432} (1s): Forever's {skill:165} camp item, 5 {item:2318}, placed at a campsite beside a campfire. The Camping 101: {skill:165} quest from your starting area's camping guide (after The Great Outdoors) sends you to a leatherworking trainer who teaches it free.",
+			section = 1,
 			goals = {
-				{ t = "learn", spell = 3756, candidates = { 10, 7, 93, 3, 4, 1, 2, 6, 8, 9 }, skillLine = 165 },
-				{ t = "learn", spell = 1229432, candidates = { 10, 7, 93, 3, 4, 1, 2, 6, 8, 9 }, skillLine = 165 },
+				{ t = "learn", spell = 3756, candidates = { 2, 10, 7, 5, 3, 1, 4, 6, 8, 9, 11, 12 }, skillLine = 165 },
+				{ t = "learn", spell = 1229432, candidates = { 2, 10, 7, 5, 3, 1, 4, 6, 8, 9, 11, 12 }, skillLine = 165 },
 			},
 		},
 		{
 			title = "{spell:3756} to 75",
 			note = "{spell:3756} is orange at 51 (yellow 70, green 85, grey 100): about 25 crafts to 75. Each takes 3 {item:2318} and 2 {item:2320}. Forever teaches {spell:3756} from 40.",
+			section = 1,
 			goals = {
-				{ t = "craft", item = 4239, spell = 3756, reagents = { { item = 2318, count = 3, itemName = "Light Leather" }, { item = 2320, count = 2, itemName = "Coarse Thread" } }, skillLine = 165, untilSkill = 75 },
+				{ t = "craft", item = 4239, spell = 3756, grey = 100, reagents = { { item = 2318, count = 3, itemName = "Light Leather" }, { item = 2320, count = 2, itemName = "Coarse Thread" } }, skillLine = 165, untilSkill = 75, yellow = 70 },
 				{ t = "skill", level = 75, skill = "Leatherworking", skillLine = 165 },
 			},
 		},
 		{
 			title = "Journeyman {skill:165}",
-			note = "Journeyman raises the cap from 75 to 150 for 5s; it needs {skill:165} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:165} trainer teaches it: Alliance {npc:3967} ({zone:1440}), {npc:11097} ({zone:1425}), {npc:252376} ({zone:2521}), Faldron ({zone:1457}), {npc:5127} ({zone:1455}), {npc:5564} ({zone:1453}) and {npc:4212} ({zone:1457}); Horde {npc:4588} ({zone:1458}), {npc:1385} ({zone:1434}), {npc:252376} ({zone:2521}), {npc:11098} ({zone:1444}), {npc:3365} ({zone:1454}), {npc:3703} ({zone:1413}), {npc:8153} ({zone:1443}), Tarn ({zone:1456}) and {npc:3007} ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:3763} (from 55, 3s). 75-150 takes about 15s 50c of recipes and 57s of vendor goods, plus 144 {item:2319}, 24 {item:2457} and 308 {item:4234} to gather or buy.",
+			note = "Journeyman raises the cap from 75 to 150 for 5s; it needs {skill:165} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:165} trainer teaches it: Alliance {npc:3967} ({zone:1440}), {npc:252376} ({zone:2521}), {npc:11081} ({zone:1457}), {npc:5127} ({zone:1455}) and {npc:5564} ({zone:1453}); Horde {npc:4588} ({zone:1458}), {npc:1385} ({zone:1434}), {npc:252376} ({zone:2521}), {npc:3365} ({zone:1454}), {npc:3703} ({zone:1413}), {npc:8153} ({zone:1443}) and {npc:11084} ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:3763} (from 55, 3s). 75-150 takes about 15s 50c of recipes and 57s of vendor goods, plus 144 {item:2319}, 24 {item:2457} and 321 {item:4234} to gather or buy.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 10, 7, 93, 3, 4, 1, 2, 6, 8, 9 }, rank = 2, rankMax = 150, skill = "Leatherworking", skillLine = 165 },
-				{ t = "learn", spell = 3763, candidates = { 10, 7, 93, 3, 4, 1, 2, 6, 8, 9 }, skillLine = 165 },
+				{ t = "train", candidates = { 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 12 }, rank = 2, rankMax = 150, skill = "Leatherworking", skillLine = 165 },
+				{ t = "learn", spell = 3763, candidates = { 2, 10, 7, 5, 3, 96, 1, 97, 4, 98, 100, 8, 102, 11, 12 }, skillLine = 165 },
 			},
 		},
 		{
 			title = "{skill:165} 75-150: vendor goods",
 			note = "Buy the whole bracket's share in one go: 70 {item:2320} (7s) and 50 {item:2321} (50s); about 57s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 2320, count = 70, candidates = { 28, 24, 94, 27, 21, 25, 20, 32, 33, 26, 31, 30, 95, 96, 29, 50, 82, 81, 34, 97, 35, 98, 38, 99, 92, 100, 91, 37, 36, 42, 43, 48, 101, 47, 102, 44, 103, 46, 11, 12, 13, 14, 15, 16, 17, 18, 19, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 80, 83, 84, 86, 87, 88, 89, 90 } },
-				{ t = "buy", item = 2321, count = 50, candidates = { 28, 94, 27, 21, 20, 32, 33, 26, 31, 30, 95, 96, 29, 50, 82, 81, 97, 98, 99, 92, 100, 91, 42, 43, 48, 101, 47, 102, 44, 103, 46, 16, 17, 18, 19, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 80, 83, 84, 86, 87, 88, 104, 90 } },
+				{ t = "buy", item = 2320, count = 70, candidates = { 30, 26, 103, 29, 23, 27, 22, 34, 35, 28, 33, 32, 104, 105, 31, 52, 83, 82, 36, 106, 37, 107, 40, 108, 92, 109, 91, 39, 38, 44, 45, 50, 110, 49, 111, 46, 112, 48, 13, 14, 15, 16, 17, 18, 19, 20, 21, 4, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 81, 84, 85, 87, 88, 89, 12, 90 } },
+				{ t = "buy", item = 2321, count = 50, candidates = { 30, 103, 29, 23, 22, 34, 35, 28, 33, 32, 104, 105, 31, 52, 83, 82, 106, 107, 108, 92, 109, 91, 44, 45, 50, 110, 49, 111, 46, 112, 48, 18, 19, 20, 21, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 81, 84, 85, 87, 88, 89, 113, 90 } },
 			},
 		},
 		{
 			title = "{item:2319} ({zone:1424})",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "144 {item:2319} for {item:7285}: {skill:393}: beasts of level 18-30; or the Auction House. Skin {npc:2248}, {npc:2356}, {npc:2385}, {npc:2351}, Snapjaw, {npc:2384} and {npc:2354} here (level 18-30); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2319, count = 144, map = 1424, x = 45.4, y = 34.9, f = "e" },
 			},
@@ -11654,6 +11961,7 @@ G(function() return {
 			title = "{item:2319} ({zone:1439})",
 			only = { races = { "NIGHTELF" } },
 			note = "144 {item:2319} for {item:7285}: {skill:393}: beasts of level 18-30; or the Auction House. Skin {npc:3823} and {npc:2071} here (level 18-30); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2319, count = 144, map = 1439, x = 39.4, y = 91.8, f = "e" },
 			},
@@ -11662,6 +11970,7 @@ G(function() return {
 			title = "{item:2319} ({zone:1413})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "144 {item:2319} for {item:7285}: {skill:393}: beasts of level 18-30; or the Auction House. Skin {npc:3236} and Thunderhead here (level 18-30); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2319, count = 144, map = 1413, x = 45.7, y = 68.1, f = "e" },
 			},
@@ -11670,6 +11979,7 @@ G(function() return {
 			title = "{item:2319} ({zone:1424})",
 			only = { races = { "SCOURGE" } },
 			note = "144 {item:2319} for {item:7285}: {skill:393}: beasts of level 18-30; or the Auction House. Skin {npc:2248}, {npc:2356}, {npc:2385}, {npc:2351}, Snapjaw, {npc:2384} and {npc:2354} here (level 18-30); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
 				{ t = "collect", item = 2319, count = 144, map = 1424, x = 45.4, y = 34.9, f = "e" },
 			},
@@ -11677,239 +11987,289 @@ G(function() return {
 		{
 			title = "{item:4234} ({zone:1416})",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
-			note = "308 {item:4234} for {spell:3780} and {item:4304} (178 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:2248}, {npc:2249}, {npc:2251}, {npc:2407}, {npc:2406}, {npc:2250} and Snapjaw here (level 28-40); the {skill:393} guide routes this.",
+			note = "321 {item:4234} for {spell:3780}, {item:5964} and {item:5966} (191 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:2248}, {npc:2249}, {npc:2251}, {npc:2407}, {npc:2406}, {npc:2250} and Snapjaw here (level 28-40); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 4234, count = 308, map = 1416, x = 38.2, y = 91.9, f = "e" },
+				{ t = "collect", item = 4234, count = 321, map = 1416, x = 38.2, y = 91.9, f = "e" },
 			},
 		},
 		{
 			title = "{item:4234} ({zone:1441})",
 			only = { races = { "NIGHTELF" } },
-			note = "308 {item:4234} for {spell:3780} and {item:4304} (178 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:4107}, {npc:4147}, {npc:4140}, {npc:4139}, {npc:4143} and {npc:4142} here (level 28-40); the {skill:393} guide routes this.",
+			note = "321 {item:4234} for {spell:3780}, {item:5964} and {item:5966} (191 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:4107}, {npc:4147}, {npc:4140}, {npc:4139}, {npc:4143} and {npc:4142} here (level 28-40); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 4234, count = 308, map = 1441, x = 78.5, y = 59, f = "e" },
+				{ t = "collect", item = 4234, count = 321, map = 1441, x = 78.5, y = 59, f = "e" },
 			},
 		},
 		{
 			title = "{item:4234} ({zone:1441})",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
-			note = "308 {item:4234} for {spell:3780} and {item:4304} (178 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:4107}, {npc:4147}, {npc:4140}, {npc:4139}, {npc:4143} and {npc:4142} here (level 28-40); the {skill:393} guide routes this.",
+			note = "321 {item:4234} for {spell:3780}, {item:5964} and {item:5966} (191 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:4107}, {npc:4147}, {npc:4140}, {npc:4139}, {npc:4143} and {npc:4142} here (level 28-40); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 4234, count = 308, map = 1441, x = 78.5, y = 59, f = "e" },
+				{ t = "collect", item = 4234, count = 321, map = 1441, x = 78.5, y = 59, f = "e" },
 			},
 		},
 		{
 			title = "{item:4234} ({zone:1416})",
 			only = { races = { "SCOURGE" } },
-			note = "308 {item:4234} for {spell:3780} and {item:4304} (178 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:2248}, {npc:2249}, {npc:2251}, {npc:2407}, {npc:2406}, {npc:2250} and Snapjaw here (level 28-40); the {skill:393} guide routes this.",
+			note = "321 {item:4234} for {spell:3780}, {item:5964} and {item:5966} (191 of them for 150-225: pick them all now): {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:2248}, {npc:2249}, {npc:2251}, {npc:2407}, {npc:2406}, {npc:2250} and Snapjaw here (level 28-40); the {skill:393} guide routes this.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 4234, count = 308, map = 1416, x = 38.2, y = 91.9, f = "e" },
+				{ t = "collect", item = 4234, count = 321, map = 1416, x = 38.2, y = 91.9, f = "e" },
 			},
 		},
 		{
 			title = "{spell:3763} to 102",
 			note = "{spell:3763} is orange at 75 (yellow 85, green 100, grey 115): about 35 crafts to 102. Each takes 6 {item:2318} and 2 {item:2320}. Forever teaches {spell:3763} from 55.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 4246, spell = 3763, reagents = { { item = 2318, count = 6, itemName = "Light Leather" }, { item = 2320, count = 2, itemName = "Coarse Thread" } }, skillLine = 165, untilSkill = 102 },
+				{ t = "craft", item = 4246, spell = 3763, grey = 115, reagents = { { item = 2318, count = 6, itemName = "Light Leather" }, { item = 2320, count = 2, itemName = "Coarse Thread" } }, skillLine = 165, untilSkill = 102, yellow = 85 },
 			},
 		},
 		{
 			title = "{skill:165} recipes at 102",
 			note = "Back to a {skill:165} trainer: {spell:9074} (from 95, 5s).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 9074, candidates = { 10, 7, 93, 3, 4, 1, 2, 6, 8, 9 }, skillLine = 165 },
+				{ t = "learn", spell = 9074, candidates = { 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 12 }, skillLine = 165 },
 			},
 		},
 		{
 			title = "{item:7285} to 125",
 			note = "{item:7285} is orange at 102 (yellow 120, green 132, grey 145): about 24 crafts to 125. Each takes 1 {item:2457}, 6 {item:2319} and 1 {item:2321}. Each takes an {item:2457}: an alchemist makes it from a {item:2452} and a {item:765}, and the Auction House has it cheap. With no elixirs, take {spell:3763} on to 105 and {item:2316} (from 85: 8 {item:2319}, a {item:4340} and a {item:2321}) to 125: about 28 cloaks, 224 {item:2319} in all. {item:2457} (24 for 75-150): {skill:171}: {item:2457}; or the Auction House.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 7285, spell = 9074, reagents = { { item = 2457, count = 1, itemName = "Elixir of Minor Agility" }, { item = 2319, count = 6, itemName = "Medium Leather" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 125 },
+				{ t = "craft", item = 7285, spell = 9074, grey = 145, reagents = { { item = 2457, count = 1, itemName = "Elixir of Minor Agility" }, { item = 2319, count = 6, itemName = "Medium Leather" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 125, yellow = 120 },
 			},
 		},
 		{
 			title = "{skill:165} recipes at 125",
 			note = "Back to a {skill:165} trainer: {spell:3780} (from 125, 7s 50c).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3780, candidates = { 10, 7, 93, 3, 4, 1, 2, 6, 8, 9 }, skillLine = 165 },
+				{ t = "learn", spell = 3780, candidates = { 93, 94, 95, 96, 97, 98, 99, 100, 114, 115, 12 }, skillLine = 165 },
 			},
 		},
 		{
 			title = "{spell:3780} to 150",
 			note = "{spell:3780} is orange at 125 (yellow 145, green 155, grey 165): about 26 crafts to 150. Each takes 5 {item:4234} and 1 {item:2321}. Five {item:4234} a craft (beasts of level 28-40); the kits sell to vendors. {skill:165} 150 is a Legacy System milestone.",
+			section = 2,
 			goals = {
-				{ t = "craft", item = 4265, spell = 3780, reagents = { { item = 4234, count = 5, itemName = "Heavy Leather" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 150 },
+				{ t = "craft", item = 4265, spell = 3780, grey = 165, reagents = { { item = 4234, count = 5, itemName = "Heavy Leather" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 150, yellow = 145 },
 				{ t = "skill", level = 150, skill = "Leatherworking", skillLine = 165 },
 			},
 		},
 		{
 			title = "{skill:165} 150-225: vendor goods",
-			note = "Buy the whole bracket's share in one go: 8 {item:2321} (8s) and 32 {item:4291} (1g 60s); about 1g 68s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			note = "Buy the whole bracket's share in one go: 29 {item:2321} (29s), 66 Salt (33s) and 145 {item:4291} (7g 25s); about 7g 87s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 2321, count = 8, candidates = { 30, 105, 106, 31, 27, 107, 32, 28, 26, 95, 33, 108, 50, 82, 81, 29, 97, 98, 99, 100, 92, 91, 42, 43, 48, 101, 102, 47, 44, 103, 46, 16, 17, 18, 19, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 80, 83, 84, 86, 87, 88, 104, 90 } },
-				{ t = "buy", item = 4291, count = 32, candidates = { 30, 105, 106, 31, 27, 107, 32, 28, 95, 33, 108, 50, 82, 81, 29, 97, 98, 99, 100, 92, 91, 42, 43, 48, 101, 102, 47, 44, 103, 46, 109, 18, 19, 54, 56, 57, 58, 59, 60, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 80, 83, 84, 86, 87, 88, 104 } },
+				{ t = "buy", item = 2321, count = 29, candidates = { 32, 116, 117, 33, 29, 118, 34, 30, 28, 104, 35, 119, 52, 83, 82, 31, 106, 107, 108, 109, 92, 91, 44, 45, 50, 110, 111, 49, 46, 112, 48, 18, 19, 20, 21, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 81, 84, 85, 87, 88, 89, 113, 90 } },
+				{ t = "buy", item = 4289, count = 66, candidates = { 32, 22, 117, 33, 29, 118, 34, 30, 28, 104, 26, 35, 27, 105, 120, 83, 82, 36, 31, 42, 37, 107, 40, 43, 38, 39, 121, 91, 44, 50, 41, 111, 49, 46, 112, 13, 14, 15, 16, 122, 17, 18, 19, 20, 21, 4, 53, 54, 56, 123, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 72, 124, 75, 76, 77, 78, 125, 81, 84, 126, 87, 88, 11, 12, 90 } },
+				{ t = "buy", item = 4291, count = 145, candidates = { 32, 116, 117, 33, 29, 118, 34, 30, 104, 35, 119, 52, 83, 82, 31, 106, 107, 108, 109, 92, 91, 44, 45, 50, 110, 111, 49, 46, 112, 48, 127, 20, 21, 55, 57, 58, 59, 60, 61, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 81, 84, 85, 87, 88, 89, 113 } },
+			},
+		},
+		{
+			title = "{item:4235} (Alliance)",
+			only = { factions = { "Alliance" } },
+			note = "22 {item:4235} for {item:5964} and {item:5966}: {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:2248}, {npc:2249}, {npc:2251}, {npc:2407}, {npc:2406}, {npc:2250} and Snapjaw here (level 28-40); the {skill:393} guide routes this.",
+			section = 3,
+			goals = {
+				{ t = "collect", item = 4235, count = 22, map = 1416, x = 38.2, y = 91.9, f = "e" },
+			},
+		},
+		{
+			title = "{item:4235} (Horde)",
+			only = { factions = { "Horde" } },
+			note = "22 {item:4235} for {item:5964} and {item:5966}: {skill:393}: beasts of level 28-40; or the Auction House. Skin {npc:4107}, {npc:4147}, {npc:4140}, {npc:4139}, {npc:4143} and {npc:4142} here (level 28-40); the {skill:393} guide routes this.",
+			section = 3,
+			goals = {
+				{ t = "collect", item = 4235, count = 22, map = 1441, x = 78.5, y = 59, f = "e" },
 			},
 		},
 		{
 			title = "{item:4304} (Alliance)",
 			only = { factions = { "Alliance" } },
-			note = "257 {item:4304} for {item:8173} and {item:8170}: {skill:393}: beasts of level 38-50; or the Auction House. Skin {npc:2729}, {npc:2730}, {npc:2732} and {npc:2734} here (level 38-50); the {skill:393} guide routes this.",
+			note = "373 {item:4304} for {item:8176} and {item:8193}: {skill:393}: beasts of level 38-50; or the Auction House. Skin {npc:2729}, {npc:2730}, {npc:2732} and {npc:2734} here (level 38-50); the {skill:393} guide routes this.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 4304, count = 257, map = 1418, x = 35, y = 64.3, f = "e" },
+				{ t = "collect", item = 4304, count = 373, map = 1418, x = 35, y = 64.3, f = "e" },
 			},
 		},
 		{
 			title = "{item:4304} (Horde)",
 			only = { factions = { "Horde" } },
-			note = "257 {item:4304} for {item:8173} and {item:8170}: {skill:393}: beasts of level 38-50; or the Auction House. Skin {npc:5292}, {npc:5300}, {npc:5304}, {npc:5272}, {npc:5260}, {npc:5262}, {npc:5268}, {npc:5274}, {npc:5287}, {npc:5286} and {npc:5296} here (level 38-50); the {skill:393} guide routes this.",
+			note = "373 {item:4304} for {item:8176} and {item:8193}: {skill:393}: beasts of level 38-50; or the Auction House. Skin {npc:5292}, {npc:5300}, {npc:5304}, {npc:5272}, {npc:5260}, {npc:5262}, {npc:5268}, {npc:5274}, {npc:5287}, {npc:5286} and {npc:5296} here (level 38-50); the {skill:393} guide routes this.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 4304, count = 257, map = 1444, x = 54.9, y = 60.8, f = "e" },
+				{ t = "collect", item = 4304, count = 373, map = 1444, x = 54.9, y = 60.8, f = "e" },
 			},
 		},
 		{
 			title = "Expert {skill:165}",
-			note = "Expert raises the cap from 150 to 225; it needs {skill:165} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:11097} ({zone:1425}) and {npc:4212} ({zone:1457}); Horde {npc:11098} ({zone:1444}) and {npc:3007} ({zone:1456}). The arrow picks the nearest of your faction. 150-225 takes about 1g 68s of vendor goods, plus 257 {item:4304} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {item:4304} (from 155) and {item:8173} (from 175), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3. {item:8170} (from 205) takes a second trip, to other trainers (below).",
+			note = "Expert raises the cap from 150 to 225; it needs {skill:165} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:4212} ({zone:1457}); Horde {npc:3007} ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:3818} (from 125, 5s) and {spell:7151} (from 150). 150-225 takes about 5s of recipes and 7g 87s of vendor goods, plus 22 {item:4235} and 373 {item:4304} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {item:5966} (from 165), {item:8176} (from 180) and {item:8193} (from 210), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 4.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", candidates = { 8, 6, 9, 5, 7, 10 }, rank = 3, rankMax = 225, skill = "Leatherworking", skillLine = 165 },
+				{ t = "train", candidates = { 114, 115 }, rank = 3, rankMax = 225, skill = "Leatherworking", skillLine = 165 },
+				{ t = "learn", spell = 3818, candidates = { 99, 114, 97, 98, 100, 102, 96, 95, 94, 93, 12 }, skillLine = 165 },
+				{ t = "learn", spell = 7151, candidates = { 99, 114, 97, 98, 100, 102, 96, 95, 94, 93, 12 }, skillLine = 165 },
 			},
 		},
 		{
-			title = "{spell:3780} to 155",
-			note = "{spell:3780} is yellow at 150 (yellow 145, green 155, grey 165): about 8 crafts to 155. Each takes 5 {item:4234} and 1 {item:2321}. Five {item:4234} a craft (beasts of level 28-40); the kits sell to vendors.",
+			title = "{spell:3780} to 158",
+			note = "{spell:3780} is yellow at 150 (yellow 145, green 155, grey 165): about 15 crafts to 158. Each takes 5 {item:4234} and 1 {item:2321}. Five {item:4234} a craft (beasts of level 28-40); the kits sell to vendors.",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 4265, spell = 3780, reagents = { { item = 4234, count = 5, itemName = "Heavy Leather" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 155 },
+				{ t = "craft", item = 4265, spell = 3780, grey = 165, reagents = { { item = 4234, count = 5, itemName = "Heavy Leather" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 158, yellow = 145 },
 			},
 		},
 		{
-			title = "{skill:165} recipes at 155",
-			note = "Still at the Expert trainer: {spell:20650} (from 155).",
+			title = "{item:5964} to 165",
+			note = "{item:5964} is orange at 158 (yellow 170, green 180, grey 190): about 7 crafts to 165, a point every craft. Each takes 8 {item:4234}, 1 {spell:3818} and 2 {item:2321}. Make the 7 {spell:3818} first. The trainer teaches it, and it is the cheapest way through these points in the data.",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 20650, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 165 },
+				{ t = "craft", item = 4236, spell = 3818, count = 7, reagents = { { item = 4235, count = 1, itemName = "Heavy Hide" }, { item = 4289, count = 3, itemName = "Salt" } }, skillLine = 165 },
+				{ t = "craft", item = 5964, spell = 7151, grey = 190, reagents = { { item = 4234, count = 8, itemName = "Heavy Leather" }, { item = 4236, count = 1, itemName = "Cured Heavy Hide" }, { item = 2321, count = 2, itemName = "Fine Thread" } }, skillLine = 165, untilSkill = 165, yellow = 170 },
 			},
 		},
 		{
-			title = "{item:4304} to 177",
-			note = "{item:4304} is orange at 155 (yellow 175, green 177, grey 180): about 23 crafts to 177. Each takes 6 {item:4234}. Six {item:4234} make one {item:4304}, orange until 175: keep them, the Thick Armor Kits next use them.",
+			title = "{skill:165} recipes at 165",
+			note = "Still at the Expert trainer: {spell:7156} (from 165).",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 4304, spell = 20650, reagents = { { item = 4234, count = 6, itemName = "Heavy Leather" } }, skillLine = 165, untilSkill = 177 },
+				{ t = "learn", spell = 7156, candidates = { 114, 115 }, skillLine = 165 },
 			},
 		},
 		{
-			title = "{skill:165} recipes at 177",
-			note = "Still at the Expert trainer: {spell:10487} (from 175).",
+			title = "{item:5966} to 180",
+			note = "{item:5966} is orange at 165 (yellow 185, green 195, grey 205): about 15 crafts to 180, a point every craft. Each takes 4 {item:4234}, 1 {spell:3818} and 1 {item:4291}. Make the 15 {spell:3818} first. The trainer teaches it, and it is the cheapest way through these points in the data.",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 10487, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 165 },
+				{ t = "craft", item = 4236, spell = 3818, count = 15, reagents = { { item = 4235, count = 1, itemName = "Heavy Hide" }, { item = 4289, count = 3, itemName = "Salt" } }, skillLine = 165 },
+				{ t = "craft", item = 5966, spell = 7156, grey = 205, reagents = { { item = 4234, count = 4, itemName = "Heavy Leather" }, { item = 4236, count = 1, itemName = "Cured Heavy Hide" }, { item = 4291, count = 1, itemName = "Silken Thread" } }, skillLine = 165, untilSkill = 180, yellow = 185 },
 			},
 		},
 		{
-			title = "{item:8173} to 205",
-			note = "{item:8173} is orange at 177 (yellow 195, green 205, grey 215): about 32 crafts to 205. Each takes 5 {item:4304} and 1 {item:4291}. Use the 23 {item:4304} you made earlier; the counts above leave them out. Five {item:4304} a craft; the kits sell to vendors.",
+			title = "{skill:165} recipes at 180",
+			note = "Still at the Expert trainer: {spell:10507} (from 180).",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 8173, spell = 10487, reagents = { { item = 4304, count = 5, itemName = "Thick Leather" }, { item = 4291, count = 1, itemName = "Silken Thread" } }, skillLine = 165, untilSkill = 205 },
+				{ t = "learn", spell = 10507, candidates = { 114, 115 }, skillLine = 165 },
 			},
 		},
 		{
-			title = "{skill:165} recipes at 205",
-			note = "{spell:22331} (from 205) is taught only by the Artisan trainers: Alliance {npc:11097} ({zone:1425}); Horde {npc:11098} ({zone:1444}). You can train Artisan there now if you are level 35 (it needs {skill:165} 200), which saves the trip at 225.",
+			title = "{item:8176} to 213",
+			note = "{item:8176} is orange at 180 (yellow 200, green 210, grey 220): about 41 crafts to 213. Each takes 5 {item:4304} and 2 {item:4291}. The trainer teaches it, and it is the cheapest way through these points in the data.",
+			section = 3,
 			goals = {
-				{ t = "learn", only = { factions = { "Alliance" } }, npc = 11097, spell = 22331, map = 1425, x = 13.39, y = 43.49, z = 113.9, f = "e", skillLine = 165 },
-				{ t = "learn", only = { factions = { "Horde" } }, npc = 11098, spell = 22331, map = 1444, x = 74.36, y = 43.12, z = 26.4, f = "e", skillLine = 165 },
-				{ t = "train", optional = true, candidates = { 110, 111 }, rank = 4, rankMax = 300, skill = "Leatherworking", skillLine = 165 },
+				{ t = "craft", item = 8176, spell = 10507, grey = 220, reagents = { { item = 4304, count = 5, itemName = "Thick Leather" }, { item = 4291, count = 2, itemName = "Silken Thread" } }, skillLine = 165, untilSkill = 213, yellow = 200 },
 			},
 		},
 		{
-			title = "{item:8170} to 225",
-			note = "{item:8170} is orange at 205 (yellow 225, green 225, grey 225): about 20 crafts to 225, a point every craft. Each takes 6 {item:4304}. {item:8170} from {item:4304}: the points come cheap and you need the {item:8170} next. {skill:165} 225 is a Legacy System milestone.",
+			title = "{skill:165} recipes at 213",
+			note = "Still at the Expert trainer: {spell:10548} (from 210).",
+			section = 3,
 			goals = {
-				{ t = "craft", item = 8170, spell = 22331, reagents = { { item = 4304, count = 6, itemName = "Thick Leather" } }, skillLine = 165, untilSkill = 225 },
+				{ t = "learn", spell = 10548, candidates = { 128, 114, 115, 129 }, skillLine = 165 },
+			},
+		},
+		{
+			title = "{item:8193} to 225",
+			note = "{item:8193} is orange at 213 (yellow 225, green 235, grey 245): about 12 crafts to 225, a point every craft. Each takes 14 {item:4304} and 4 {item:4291}. The trainer teaches it, and it is the cheapest way through these points in the data. {skill:165} 225 is a Legacy System milestone.",
+			section = 3,
+			goals = {
+				{ t = "craft", item = 8193, spell = 10548, grey = 245, reagents = { { item = 4304, count = 14, itemName = "Thick Leather" }, { item = 4291, count = 4, itemName = "Silken Thread" } }, skillLine = 165, untilSkill = 225, yellow = 225 },
 				{ t = "skill", level = 225, skill = "Leatherworking", skillLine = 165 },
 			},
 		},
 		{
 			title = "Artisan {skill:165}",
-			note = "Artisan raises the cap from 225 to 300; it needs {skill:165} 200 and character level 35, so you can take it on any visit from 200. Only a few trainers teach it: Alliance {npc:11097} ({zone:1425}); Horde {npc:11098} ({zone:1444}). The arrow picks the nearest of your faction. Learn now: {spell:19058} (from 205). 225-300 takes about 3g 40s of recipes and 44g 90s of vendor goods, plus 1009 {item:8170} and 430 {item:14047} to gather or buy.",
+			note = "Artisan raises the cap from 225 to 300; it needs {skill:165} 200 and character level 35, so you can take it on any visit from 200. Only a few trainers teach it: Alliance {npc:11097} ({zone:1425}); Horde {npc:11098} ({zone:1444}). The arrow picks the nearest of your faction. Learn now: {spell:19058} (from 225). 225-300 takes about 3g 40s of recipes and 44g 90s of vendor goods, plus 1029 {item:8170} and 430 {item:14047} to gather or buy.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 35 },
-				{ t = "train", candidates = { 110, 111 }, rank = 4, rankMax = 300, skill = "Leatherworking", skillLine = 165 },
-				{ t = "learn", spell = 19058, candidates = { 8, 6, 9, 5, 7, 10 }, skillLine = 165 },
+				{ t = "train", candidates = { 128, 129 }, rank = 4, rankMax = 300, skill = "Leatherworking", skillLine = 165 },
+				{ t = "learn", spell = 19058, candidates = { 128, 114, 115, 129 }, skillLine = 165 },
 			},
 		},
 		{
 			title = "{skill:165} 225-300: vendor goods",
 			note = "Buy the whole bracket's share in one go: 39 {item:2325} (3g 90s) and 82 {item:14341} (41g); about 44g 90s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 2325, count = 39, candidates = { 66, 59, 74, 75, 19, 112, 113, 68, 62, 64, 63, 18, 67, 109, 69, 70, 57, 60, 56, 80, 114, 71, 115, 72, 77, 76, 116, 117, 105, 21, 22, 23, 27, 28, 29, 31, 32, 33, 101, 97, 42, 100, 43, 44, 45, 46, 47, 48, 102, 50, 78, 118, 85, 86, 87, 88, 104, 91, 92 } },
-				{ t = "buy", item = 14341, count = 82, candidates = { 66, 59, 74, 75, 19, 112, 113, 68, 64, 63, 18, 67, 109, 69, 70, 57, 60, 56, 80, 114, 71, 115, 72, 77, 76, 116, 117, 105, 21, 22, 23, 27, 28, 29, 31, 32, 33, 101, 97, 42, 100, 43, 44, 45, 46, 47, 48, 102, 50, 78, 118, 85, 86, 87, 88, 104, 92 } },
+				{ t = "buy", item = 2325, count = 39, candidates = { 67, 76, 130, 75, 60, 64, 63, 131, 65, 21, 69, 20, 70, 68, 127, 71, 61, 58, 57, 81, 132, 72, 123, 73, 78, 77, 124, 126, 116, 23, 24, 25, 29, 30, 31, 33, 34, 35, 110, 106, 44, 109, 45, 46, 47, 48, 49, 50, 111, 52, 79, 133, 86, 87, 88, 89, 113, 91, 92 } },
+				{ t = "buy", item = 14341, count = 82, candidates = { 67, 76, 130, 75, 60, 64, 131, 65, 21, 69, 20, 70, 68, 127, 71, 61, 58, 57, 81, 132, 72, 123, 73, 78, 77, 124, 126, 116, 23, 24, 25, 29, 30, 31, 33, 34, 35, 110, 106, 44, 109, 45, 46, 47, 48, 49, 50, 111, 52, 79, 133, 86, 87, 88, 89, 113, 92 } },
 			},
 		},
 		{
 			title = "{item:15725}",
 			note = "{item:15725} teaches {item:15083} ({skill:165} 235) for 1g 20s. Sold by Alliance: {npc:12942} ({zone:1422}), limited stock; Horde: {npc:12943} ({zone:1422}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; it binds when picked up, so the Auction House never has it.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 15725, candidates = { 27, 28 } },
+				{ t = "buy", item = 15725, candidates = { 29, 30 } },
 			},
 		},
 		{
 			title = "{item:15756}",
 			note = "{item:15756} teaches {item:15094} ({skill:165} 265) for 2g 20s. Sold by {npc:12941} ({zone:1423}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; it binds when picked up, so the Auction House never has it.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 15756, candidates = { 29 } },
+				{ t = "buy", item = 15756, candidates = { 31 } },
 			},
 		},
 		{
 			title = "{item:8170} (Alliance)",
 			only = { factions = { "Alliance" } },
-			note = "1009 {item:8170} for {item:15564}, {item:15083} and {item:15094}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:1815}, {npc:1816} and {npc:1817} here (level 48-60); the {skill:393} guide routes this.",
+			note = "1029 {item:8170} for {item:15564}, {item:15083} and {item:15094}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:8598}, Plaguehound and {npc:8596} here (level 48-60); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 8170, count = 1009, map = 1422, x = 34.2, y = 62.1, f = "e" },
+				{ t = "collect", item = 8170, count = 1029, map = 1423, x = 56, y = 46.8 },
 			},
 		},
 		{
 			title = "{item:8170} (Horde)",
 			only = { factions = { "Horde" } },
-			note = "1009 {item:8170} for {item:15564}, {item:15083} and {item:15094}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:6369}, {npc:8760}, {npc:6380}, {npc:6379}, {npc:6378} and {npc:6377} here (level 48-60); the {skill:393} guide routes this.",
+			note = "1029 {item:8170} for {item:15564}, {item:15083} and {item:15094}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:6369}, {npc:8760}, {npc:6380}, {npc:6379}, {npc:6378} and {npc:6377} here (level 48-60); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 8170, count = 1009, map = 1447, x = 58.8, y = 21.5, f = "e" },
+				{ t = "collect", item = 8170, count = 1029, map = 1447, x = 58.8, y = 21.5, f = "e" },
 			},
 		},
 		{
-			title = "{item:14047} (Alliance)",
-			only = { factions = { "Alliance" } },
-			note = "430 {item:14047} for {item:15094}: humanoids of level 45-60 drop it; or the Auction House. It drops from {npc:7027} (level 56-57) here.",
+			title = "{item:14047}",
+			note = "430 {item:14047} for {item:15094}: humanoids of level 45-60 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 14047, count = 430, map = 1428, x = 49.8, y = 54.7, f = "e", fromNpcs = { { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7026, npcName = "Blackrock Sorcerer" }, { npc = 7025, npcName = "Blackrock Soldier" }, { npc = 7028, npcName = "Blackrock Warlock" }, { npc = 8979, npcName = "Gruklash" } }, lvl = 55, spotsPacked = "49.8,54.7,,69,5,,57;48.9,58.1,,40,2,1,56;50.5,61.3,,40,3,1,57;55.2,53.8,,59,12,1,57;44.4,56.5,,40,4,1,59;44.8,50.8,,40,2,1,56;50.1,43,,40,2,1;45.9,43.5,,40,1,1;41.2,55,,74,8,1,59;42.1,45.6,,40,2,1;43,37,,40,5,1,57;43.6,34.4,,40,3,1,57;40.5,34.2,,42,12,1,59;63.6,37.8,,40,1,1;68.7,31.5,,40,2,1;17.1,29.7,,58,6,1,59" },
-			},
-		},
-		{
-			title = "{item:14047} (Horde)",
-			only = { factions = { "Horde" } },
-			note = "430 {item:14047} for {item:15094}: humanoids of level 45-60 drop it; or the Auction House. It drops from {npc:11880} (level 57-59) here.",
-			goals = {
-				{ t = "collect", item = 14047, count = 430, map = 1451, x = 23.7, y = 35.5, f = "e", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 11881, npcName = "Twilight Geolord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 14479, npcName = "Twilight Lord Everun" } }, lvl = 60, spotsPacked = "23.7,35.5,,156,25;27.5,32.8,,66,14,1;18,31.2,,40,1,1,59;38.3,44.2,,60,15,1;39,41.7,,40,5,1;39,46.5,,59,10,1;40.9,44.7,,54,13,1;22.8,68.7,,40,1,1,59;18.3,81.6,,47,6,1;20.7,83.6,,40,4,1;18,84.9,,65,15,1;20.5,87.1,,54,6,1;66.7,19.8,,58,5,1,61;67.7,15.4,,40,1,1,61" },
+				{ t = "collect", item = 14047, count = 430 },
 			},
 		},
 		{
 			title = "{item:15564} to 239",
-			note = "{item:15564} is yellow at 225 (yellow 225, green 235, grey 245): about 23 crafts to 239. Each takes 5 {item:8170}. Use the 20 {item:8170} you made earlier; the counts above leave them out. Five {item:8170} a craft. Specialisation (optional): at 225 and character level 40. Dragonscale: {npc:7866} ({zone:1447}) or {npc:7867} ({zone:1418}) wants 2 Tough Scorpid Breastplates, 2 {item:8204} (patterns drop from the Wastewander bandits in {zone:1446}) and 10 {item:8165}. Elemental: {npc:7868} ({zone:1427}) or {npc:7869} ({zone:1417}) wants 2 each of {item:7077}, {item:7079}, {item:7075} and {item:7081}. Tribal (from 235): {npc:7870} ({zone:1444}) or {npc:7871} ({zone:1434}) wants a {item:8211} and Helmet, after the Wild Leather quests from {npc:7852} or {npc:7854} in {zone:1444}. On Forever the specialisation patterns need a {item:279941}. You can take only one; none is needed for 300, and the beta never tested them (it stopped at level 30).",
+			note = "{item:15564} is yellow at 225 (yellow 225, green 235, grey 245): about 23 crafts to 239. Each takes 5 {item:8170}. Five {item:8170} a craft. Specialisation (optional): at 225 and character level 40. Dragonscale: {npc:7866} ({zone:1447}) or {npc:7867} ({zone:1418}) wants 2 Tough Scorpid Breastplates, 2 {item:8204} (patterns drop from the Wastewander bandits in {zone:1446}) and 10 {item:8165}. Elemental: {npc:7868} ({zone:1427}) or {npc:7869} ({zone:1417}) wants 2 each of {item:7077}, {item:7079}, {item:7075} and {item:7081}. Tribal (from 235): {npc:7870} ({zone:1444}) or {npc:7871} ({zone:1434}) wants a {item:8211} and Helmet, after the Wild Leather quests from {npc:7852} or {npc:7854} in {zone:1444}. On Forever the specialisation patterns need a {item:279941}. You can take only one; none is needed for 300, and the beta never tested them (it stopped at level 30).",
+			section = 4,
 			goals = {
-				{ t = "craft", item = 15564, spell = 19058, reagents = { { item = 8170, count = 5, itemName = "Rugged Leather" } }, skillLine = 165, untilSkill = 239 },
+				{ t = "craft", item = 15564, spell = 19058, grey = 245, reagents = { { item = 8170, count = 5, itemName = "Rugged Leather" } }, skillLine = 165, untilSkill = 239, yellow = 225 },
 			},
 		},
 		{
 			title = "{item:15083} to 269",
 			note = "{item:15083} is orange at 239 (yellow 255, green 265, grey 275): about 39 crafts to 269. Each takes 8 {item:8170}, 1 {item:2325} and 1 {item:14341}. Eight {item:8170} a craft; {item:2325} and {item:14341} from leatherworking or tailoring vendors.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 15725, spell = 19049, note = "from the recipe in your bags", skillLine = 165 },
-				{ t = "craft", item = 15083, spell = 19049, reagents = { { item = 8170, count = 8, itemName = "Rugged Leather" }, { item = 2325, count = 1, itemName = "Black Dye" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 165, untilSkill = 269 },
+				{ t = "craft", item = 15083, spell = 19049, grey = 275, reagents = { { item = 8170, count = 8, itemName = "Rugged Leather" }, { item = 2325, count = 1, itemName = "Black Dye" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 165, untilSkill = 269, yellow = 255 },
 			},
 		},
 		{
 			title = "{item:15094} to 300",
 			note = "{item:15094} is orange at 269 (yellow 285, green 295, grey 305): about 43 crafts to 300. Each takes 14 {item:8170}, 10 {item:14047} and 1 {item:14341}. 14 {item:8170} and 10 {item:14047} a craft: the dearest stretch. {skill:165} 300 is a Legacy System milestone.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 15756, spell = 19082, note = "from the recipe in your bags", skillLine = 165 },
-				{ t = "craft", item = 15094, spell = 19082, reagents = { { item = 8170, count = 14, itemName = "Rugged Leather" }, { item = 14047, count = 10, itemName = "Runecloth" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 165, untilSkill = 300 },
+				{ t = "craft", item = 15094, spell = 19082, grey = 305, reagents = { { item = 8170, count = 14, itemName = "Rugged Leather" }, { item = 14047, count = 10, itemName = "Runecloth" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 165, untilSkill = 300, yellow = 285 },
 				{ t = "skill", level = 300, skill = "Leatherworking", skillLine = 165 },
 			},
 		},
@@ -11923,14 +12283,17 @@ G(function() return {
 	minLevel = 1,
 	maxLevel = 60,
 	zone = 1455,
+	sections = { { from = 1, skill = "Mining", skillLine = 186, to = 65 }, { from = 65, skill = "Mining", skillLine = 186, to = 125 }, { from = 125, skill = "Mining", skillLine = 186, to = 155 }, { from = 155, skill = "Mining", skillLine = 186, to = 175 }, { from = 175, skill = "Mining", skillLine = 186, to = 230 }, { from = 230, skill = "Mining", skillLine = 186, to = 245 }, { from = 245, skill = "Mining", skillLine = 186, to = 275 }, { from = 275, skill = "Mining", skillLine = 186, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "A", npc = 4254, map = 1455, x = 50, y = 26.29, z = 504.5, f = "e" },
 		{ faction = "A", npc = 5392, map = 1426, x = 50.01, y = 50.31, z = 393.4, f = "e" },
+		{ faction = "A", npc = 1701, map = 1426, x = 69.32, y = 55.46, z = 383.4, f = "e" },
 		{ faction = "A", npc = 267337, map = 1426, x = 28.93, y = 67.72, z = 395.7, f = "e" },
 		{ faction = "A", npc = 1681, map = 1432, x = 37.02, y = 47.81, z = 319.6, f = "e" },
 		{ faction = "A", npc = 247226, map = 1429, x = 47.18, y = 32.16, z = 89.3, f = "e" },
 		{ faction = "A", npc = 5513, map = 1453, x = 59.25, y = 37.83, z = 103.4 },
+		{ faction = "A", npc = 3137, map = 1431, x = 74.05, y = 49.62, z = 27.1, f = "e" },
 		{ faction = "H", npc = 3555, map = 1421, x = 43.41, y = 40.45, z = 104.9, f = "e" },
 		{ faction = "H", npc = 4598, map = 1458, x = 56.03, y = 37.45, z = -62.1, f = "e" },
 		{ faction = "H", npc = 267325, map = 1420, x = 32.22, y = 65.82, z = 99.2, f = "e" },
@@ -11939,8 +12302,11 @@ G(function() return {
 		{ faction = "H", npc = 267331, map = 1412, x = 44.29, y = 78.36, z = 53.4 },
 		{ faction = "A", npc = 267334, map = 1438, x = 58.16, y = 41.42, f = "e" },
 		{ faction = "A", npc = 6297, map = 1439, x = 38.25, y = 41.01, z = 7.6, f = "e" },
+		{ faction = "AH", npc = 8128, map = 1446, x = 51.08, y = 28.1, z = 8.8, f = "e" },
 		{ faction = "H", npc = 3357, map = 1454, x = 73.12, y = 26.08, z = 26.9, f = "e" },
 		{ faction = "H", npc = 3001, map = 1456, x = 34.37, y = 57.9, z = 133.6, f = "e" },
+		{ faction = "AH", npc = 252388, map = 2521, x = 65.44, y = 80.47, z = 648.3 },
+		{ faction = "AH", npc = 257022, map = 2521, x = 44.77, y = 44.56, z = 823.2 },
 		{ faction = "A", npc = 4259, map = 1455, x = 51.74, y = 42.78, z = 498.9, f = "e" },
 		{ faction = "A", npc = 1694, map = 1426, x = 50.08, y = 49.42, z = 395.4, f = "e" },
 		{ faction = "A", npc = 1456, map = 1437, x = 10.38, y = 60.62, z = 9.6, f = "e" },
@@ -12019,22 +12385,23 @@ G(function() return {
 		{ faction = "A", npc = 243855, map = 2482, x = 69, y = 47.36 },
 		{ faction = "AH", npc = 251537, map = 2521, x = 42.75, y = 24.49, z = 977.7 },
 		{ faction = "AH", npc = 251913, map = 2521, x = 44.88, y = 44.37, z = 823.2 },
-		{ faction = "AH", npc = 252388, map = 2521, x = 65.44, y = 80.47, z = 648.3 },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
 	},
 	steps = {
 		{
 			title = "Learn {skill:186}",
 			note = "Any {skill:186} trainer of your faction teaches Apprentice {skill:186} at any level (10c), and so does the Junior Mining Trainer in each starting area; the arrow picks the nearest. Buy a {item:2901} from a trade goods or general vendor: keep it in your bags, you cannot mine without it. Turn on {spell:2580} (spellbook, General tab) so veins show on the minimap. Forever's starting areas also have Poor Copper Veins ({item:2770} and {item:2835}, from skill 1). The first-hour quest of each starting area (Rascally Rodents, Coldridge Valley Mail Delivery, The Woodland Protector, Galgar's {item:11584}, A Humble Task, Marla's Last Wish) offers {item:247840} as a reward: reading it gives 2 skill, up to 15. Trade goods vendors and the junior trainers sell the {item:277115}, a four-slot bag for ore and stone (25c). If you sat at your starting area's campfire for The Great Outdoors, the camping guide there also offers Camping 101: {skill:186}: hand it in to the mining trainer it names once you reach skill 20, for the {spell:1230161} recipe.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, rank = 1, rankMax = 75, skill = "Mining", skillLine = 186 },
-				{ t = "buy", item = 2901, count = 1, candidates = { 17, 18, 19, 20, 21, 22, 3, 23, 24, 25, 26, 27, 5, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 9, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 } },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 }, rank = 1, rankMax = 75, skill = "Mining", skillLine = 186 },
+				{ t = "buy", item = 2901, count = 1, candidates = { 22, 23, 24, 25, 26, 27, 4, 28, 29, 30, 31, 32, 6, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 11, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 20, 100 } },
 			},
 		},
 		{
 			title = "Copper: {zone:1429} (1-50)",
 			only = { races = { "HUMAN" } },
 			note = "Mine every Copper (1, orange), Poor Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1429, x = 40.2, y = 80.1, f = "e", r = 30, text = "Copper" },
 				{ t = "goto", map = 1429, x = 27.7, y = 68.7, f = "e", r = 30, text = "Copper" },
@@ -12055,6 +12422,7 @@ G(function() return {
 			title = "Copper & Poor Copper: {zone:1426} (1-50)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Mine every Copper (1, orange), Poor Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1426, x = 71.7, y = 52.2, f = "e", r = 30, text = "Copper" },
 				{ t = "goto", map = 1426, x = 69.9, y = 56.9, f = "e", r = 30, text = "Copper" },
@@ -12072,22 +12440,18 @@ G(function() return {
 			},
 		},
 		{
-			title = "Copper: {zone:1439} (1-50)",
+			title = "{object:656332} & {object:656333}: {zone:1438} (1-50)",
 			only = { races = { "NIGHTELF" } },
-			note = "Mine every Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 10-20. Expect about 60 nodes for these 49 points.",
+			note = "Mine every {object:656332} (1, orange), {object:656333} (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
-				{ t = "goto", map = 1439, x = 43.4, y = 45.8, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 44, y = 37, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 54.4, y = 33.7, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 44.3, y = 79.9, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 43.9, y = 85.7, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 35.6, y = 86, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 33, y = 89.2, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 30.4, y = 91.8, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 31.8, y = 86.7, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 33.5, y = 80.4, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 39.2, y = 72.6, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 44.8, y = 50.9, f = "e", r = 30, text = "Copper" },
+				{ t = "goto", map = 1438, x = 53, y = 79.3, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 44.2, y = 59.5, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 46.3, y = 51.8, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 37.3, y = 23.4, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 56.8, y = 27.8, f = "e", r = 30, text = "{object:656332}" },
+				{ t = "goto", map = 1438, x = 56.7, y = 31.9, f = "e", r = 30, text = "{object:656332}" },
+				{ t = "goto", map = 1438, x = 53, y = 50.6, f = "e", r = 30, text = "{object:656333}" },
 				{ t = "skill", level = 50, skill = "Mining", skillLine = 186 },
 			},
 		},
@@ -12095,6 +12459,7 @@ G(function() return {
 			title = "Copper: {zone:2521} (1-50)",
 			only = { races = { "SKYBORNE" } },
 			note = "Mine every Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-15. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 2521, x = 39.8, y = 48.9, r = 30, text = "Copper" },
 				{ t = "goto", map = 2521, x = 35.9, y = 49.4, r = 30, text = "Copper" },
@@ -12115,6 +12480,7 @@ G(function() return {
 			title = "Copper & Poor Copper: {zone:1411} (1-50)",
 			only = { races = { "ORC", "TROLL" } },
 			note = "Mine every Copper (1, orange), Poor Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1411, x = 44.3, y = 54.3, f = "e", r = 30, text = "Poor Copper" },
 				{ t = "goto", map = 1411, x = 42.4, y = 60.6, f = "e", r = 30, text = "Poor Copper" },
@@ -12134,7 +12500,8 @@ G(function() return {
 		{
 			title = "Copper: {zone:1412} (1-50)",
 			only = { races = { "TAUREN" } },
-			note = "Mine every Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			note = "Mine every Copper (1, orange), Poor Copper (1, orange, rare) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1412, x = 36.7, y = 15.4, f = "e", r = 30, text = "Copper" },
 				{ t = "goto", map = 1412, x = 54.7, y = 12.4, f = "e", r = 30, text = "Copper" },
@@ -12155,6 +12522,7 @@ G(function() return {
 			title = "Copper & Poor Copper: {zone:1420} (1-50)",
 			only = { races = { "SCOURGE" } },
 			note = "Mine every Copper (1, orange), Poor Copper (1, orange) node you pass and circle the waypoints until {skill:186} 50. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 60 nodes for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1420, x = 24.9, y = 59.5, f = "e", r = 30, text = "Poor Copper" },
 				{ t = "goto", map = 1420, x = 30.2, y = 67.3, f = "e", r = 30, text = "Poor Copper" },
@@ -12174,15 +12542,17 @@ G(function() return {
 		{
 			title = "Journeyman {skill:186}",
 			note = "Journeyman {skill:186} raises the cap to 150; it needs skill 50 and no character level, and costs 5s: train it as soon as you reach 50. The arrow picks the nearest {skill:186} trainer of your faction. {spell:1230161}, Forever's camping item for {skill:186}, is taught from skill 20 (1s, or free from Camping 101: {skill:186}): a {item:2835} and a {item:2840} each, it gives points until 25; placed beside a campfire it gives everyone at the camp a buff for an hour.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 8, 7, 1, 2, 4, 6, 10, 14, 15, 16 }, rank = 2, rankMax = 150, skill = "Mining", skillLine = 186 },
-				{ t = "learn", spell = 1230161, candidates = { 9, 8, 7, 1, 2, 3, 4, 6, 5, 10, 11, 12, 13, 14, 15, 16 }, skillLine = 186 },
+				{ t = "train", candidates = { 10, 9, 1, 2, 3, 5, 7, 8, 12, 16, 17, 18, 19, 20, 21 }, rank = 2, rankMax = 150, skill = "Mining", skillLine = 186 },
+				{ t = "learn", spell = 1230161, candidates = { 11, 10, 9, 1, 2, 4, 3, 5, 7, 6, 8, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 }, skillLine = 186 },
 			},
 		},
 		{
 			title = "Copper: {zone:1429} (50-65) cont.",
 			only = { races = { "HUMAN" } },
 			note = "Mine every Copper (1, yellow), Poor Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1429, x = 40.2, y = 80.1, f = "e", r = 30, text = "Copper" },
 				{ t = "goto", map = 1429, x = 27.7, y = 68.7, f = "e", r = 30, text = "Copper" },
@@ -12203,6 +12573,7 @@ G(function() return {
 			title = "Copper & Poor Copper: {zone:1426} (50-65) cont.",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Mine every Copper (1, yellow), Poor Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1426, x = 71.7, y = 52.2, f = "e", r = 30, text = "Copper" },
 				{ t = "goto", map = 1426, x = 69.9, y = 56.9, f = "e", r = 30, text = "Copper" },
@@ -12220,22 +12591,18 @@ G(function() return {
 			},
 		},
 		{
-			title = "Copper: {zone:1439} (50-65) cont.",
+			title = "{object:656332} & {object:656333}: {zone:1438} (50-65) cont.",
 			only = { races = { "NIGHTELF" } },
-			note = "Mine every Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 10-20. Expect about 80 nodes for these 15 points.",
+			note = "Mine every {object:656332} (1, yellow), {object:656333} (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
-				{ t = "goto", map = 1439, x = 43.4, y = 45.8, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 44, y = 37, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 54.4, y = 33.7, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 44.3, y = 79.9, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 43.9, y = 85.7, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 35.6, y = 86, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 33, y = 89.2, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 30.4, y = 91.8, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 31.8, y = 86.7, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 33.5, y = 80.4, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 39.2, y = 72.6, f = "e", r = 30, text = "Copper" },
-				{ t = "goto", map = 1439, x = 44.8, y = 50.9, f = "e", r = 30, text = "Copper" },
+				{ t = "goto", map = 1438, x = 53, y = 79.3, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 44.2, y = 59.5, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 46.3, y = 51.8, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 37.3, y = 23.4, f = "e", r = 30, text = "{object:656333}" },
+				{ t = "goto", map = 1438, x = 56.8, y = 27.8, f = "e", r = 30, text = "{object:656332}" },
+				{ t = "goto", map = 1438, x = 56.7, y = 31.9, f = "e", r = 30, text = "{object:656332}" },
+				{ t = "goto", map = 1438, x = 53, y = 50.6, f = "e", r = 30, text = "{object:656333}" },
 				{ t = "skill", level = 65, skill = "Mining", skillLine = 186 },
 			},
 		},
@@ -12243,6 +12610,7 @@ G(function() return {
 			title = "Copper: {zone:2521} (50-65) cont.",
 			only = { races = { "SKYBORNE" } },
 			note = "Mine every Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-15. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 2521, x = 39.8, y = 48.9, r = 30, text = "Copper" },
 				{ t = "goto", map = 2521, x = 35.9, y = 49.4, r = 30, text = "Copper" },
@@ -12263,6 +12631,7 @@ G(function() return {
 			title = "Copper & Poor Copper: {zone:1411} (50-65) cont.",
 			only = { races = { "ORC", "TROLL" } },
 			note = "Mine every Copper (1, yellow), Poor Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1411, x = 44.3, y = 54.3, f = "e", r = 30, text = "Poor Copper" },
 				{ t = "goto", map = 1411, x = 42.4, y = 60.6, f = "e", r = 30, text = "Poor Copper" },
@@ -12282,7 +12651,8 @@ G(function() return {
 		{
 			title = "Copper: {zone:1412} (50-65) cont.",
 			only = { races = { "TAUREN" } },
-			note = "Mine every Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			note = "Mine every Copper (1, yellow), Poor Copper (1, yellow, rare) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1412, x = 36.7, y = 15.4, f = "e", r = 30, text = "Copper" },
 				{ t = "goto", map = 1412, x = 54.7, y = 12.4, f = "e", r = 30, text = "Copper" },
@@ -12303,6 +12673,7 @@ G(function() return {
 			title = "Copper & Poor Copper: {zone:1420} (50-65) cont.",
 			only = { races = { "SCOURGE" } },
 			note = "Mine every Copper (1, yellow), Poor Copper (1, yellow) node you pass and circle the waypoints until {skill:186} 65. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70) gives points too. Zone level 1-10. Expect about 80 nodes for these 15 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1420, x = 24.9, y = 59.5, f = "e", r = 30, text = "Poor Copper" },
 				{ t = "goto", map = 1420, x = 30.2, y = 67.3, f = "e", r = 30, text = "Poor Copper" },
@@ -12322,15 +12693,17 @@ G(function() return {
 		{
 			title = "{spell:2659} & {spell:3304}",
 			note = "At 65 a {skill:186} trainer teaches {spell:2659} (2s; grey at 115) and {spell:3304} (50c; grey at 75): smelting at a forge raises {skill:186} too, so smelt what you mine.",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 2659, candidates = { 9, 8, 7, 1, 2, 3, 4, 6, 5, 10, 11, 12, 13, 14, 15, 16 }, skillLine = 186 },
-				{ t = "learn", spell = 3304, candidates = { 9, 8, 7, 1, 2, 3, 4, 6, 5, 10, 11, 12, 13, 14, 15, 16 }, skillLine = 186 },
+				{ t = "learn", spell = 2659, candidates = { 11, 10, 9, 1, 2, 4, 3, 5, 7, 6, 8, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 }, skillLine = 186 },
+				{ t = "learn", spell = 3304, candidates = { 11, 10, 9, 1, 2, 4, 3, 5, 7, 6, 8, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 }, skillLine = 186 },
 			},
 		},
 		{
 			title = "Incendicite & Tin: {zone:1437} (65-125)",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Mine every Copper (1, green), Incendicite (65, orange), Tin (65, orange), Silver (from 75, rare) node you pass and circle the waypoints until {skill:186} 125. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70), {spell:3304} (grey at 75), {spell:2659} (grey at 115) give points too. {spell:2659} takes a {item:2840} and a {item:3576} each: keep bars from the smelts before it. Zone level 20-30. Expect about 130 nodes for these 60 points. {spell:2658} (2s; orange to 100, grey at 125) is taught from 75: learn it if you pass a {skill:186} trainer, it is not worth a trip of its own.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1437, x = 26.5, y = 36.6, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1437, x = 32.6, y = 47.9, f = "e", r = 30, text = "Tin, Copper" },
@@ -12351,19 +12724,20 @@ G(function() return {
 			title = "Tin: {zone:1440} (65-125)",
 			only = { races = { "NIGHTELF" } },
 			note = "Mine every Copper (1, green), Tin (65, orange), Silver (from 75, rare) node you pass and circle the waypoints until {skill:186} 125. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70), {spell:3304} (grey at 75), {spell:2659} (grey at 115) give points too. {spell:2659} takes a {item:2840} and a {item:3576} each: keep bars from the smelts before it. Zone level 18-30. Expect about 130 nodes for these 60 points. {spell:2658} (2s; orange to 100, grey at 125) is taught from 75: learn it if you pass a {skill:186} trainer, it is not worth a trip of its own.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1440, x = 40.4, y = 37, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1440, x = 29.3, y = 33.4, f = "e", r = 30, text = "Tin, Copper" },
-				{ t = "goto", map = 1440, x = 13.7, y = 11.9, f = "e", r = 30, text = "Tin, Silver" },
+				{ t = "goto", map = 1440, x = 13.7, y = 11.9, f = "e", r = 30, text = "Tin" },
 				{ t = "goto", map = 1440, x = 5.5, y = 14.7, f = "e", r = 30, text = "Tin" },
-				{ t = "goto", map = 1440, x = 23.6, y = 34, f = "e", r = 30, text = "Tin, Silver" },
+				{ t = "goto", map = 1440, x = 23.6, y = 34, f = "e", r = 30, text = "Tin" },
 				{ t = "goto", map = 1440, x = 21.8, y = 43.5, f = "e", r = 30, text = "Tin, Copper" },
-				{ t = "goto", map = 1440, x = 64.8, y = 69, f = "e", r = 30, text = "Tin, Silver" },
-				{ t = "goto", map = 1440, x = 82.3, y = 79.6, f = "e", r = 30, text = "Tin, Silver" },
+				{ t = "goto", map = 1440, x = 64.8, y = 69, f = "e", r = 30, text = "Tin" },
+				{ t = "goto", map = 1440, x = 82.3, y = 79.6, f = "e", r = 30, text = "Tin" },
 				{ t = "goto", map = 1440, x = 89.5, y = 86.2, f = "e", r = 30, text = "Tin" },
-				{ t = "goto", map = 1440, x = 80.7, y = 62.7, f = "e", r = 30, text = "Tin, Silver" },
-				{ t = "goto", map = 1440, x = 75.7, y = 48.1, f = "e", r = 30, text = "Tin, Silver" },
-				{ t = "goto", map = 1440, x = 47.1, y = 45.7, f = "e", r = 30, text = "Tin, Silver" },
+				{ t = "goto", map = 1440, x = 80.7, y = 62.7, f = "e", r = 30, text = "Tin" },
+				{ t = "goto", map = 1440, x = 75.7, y = 48.1, f = "e", r = 30, text = "Tin" },
+				{ t = "goto", map = 1440, x = 47.1, y = 45.7, f = "e", r = 30, text = "Tin" },
 				{ t = "skill", level = 125, skill = "Mining", skillLine = 186 },
 			},
 		},
@@ -12371,8 +12745,9 @@ G(function() return {
 			title = "Copper & Tin: {zone:1413} (65-125)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Mine every Copper (1, green), Tin (65, orange), Silver (from 75, rare) node you pass and circle the waypoints until {skill:186} 125. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70), {spell:3304} (grey at 75), {spell:2659} (grey at 115) give points too. {spell:2659} takes a {item:2840} and a {item:3576} each: keep bars from the smelts before it. Zone level 10-25. Expect about 280 nodes for these 60 points. {spell:2658} (2s; orange to 100, grey at 125) is taught from 75: learn it if you pass a {skill:186} trainer, it is not worth a trip of its own.",
+			section = 2,
 			goals = {
-				{ t = "goto", map = 1413, x = 45.4, y = 36.1, f = "e", r = 30, text = "Tin, Silver" },
+				{ t = "goto", map = 1413, x = 45.4, y = 36.1, f = "e", r = 30, text = "Tin" },
 				{ t = "goto", map = 1413, x = 51.1, y = 57.8, f = "e", r = 30, text = "Copper, Tin" },
 				{ t = "goto", map = 1413, x = 48.7, y = 88, f = "e", r = 30, text = "Copper, Tin" },
 				{ t = "goto", map = 1413, x = 47.7, y = 85.2, f = "e", r = 30, text = "Copper, Tin" },
@@ -12391,6 +12766,7 @@ G(function() return {
 			title = "Tin: {zone:1424} (65-125)",
 			only = { races = { "SCOURGE" } },
 			note = "Mine every Copper (1, green), Tin (65, orange), Silver (from 75, rare) node you pass and circle the waypoints until {skill:186} 125. Smelt at a forge when your bags fill: {spell:2657} (orange to 25, grey at 70), {spell:3304} (grey at 75), {spell:2659} (grey at 115) give points too. {spell:2659} takes a {item:2840} and a {item:3576} each: keep bars from the smelts before it. Zone level 20-30. Expect about 140 nodes for these 60 points. {spell:2658} (2s; orange to 100, grey at 125) is taught from 75: learn it if you pass a {skill:186} trainer, it is not worth a trip of its own.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1424, x = 64.5, y = 14, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1424, x = 69.9, y = 31.3, f = "e", r = 30, text = "Tin, Copper" },
@@ -12399,7 +12775,7 @@ G(function() return {
 				{ t = "goto", map = 1424, x = 64.4, y = 51.6, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1424, x = 40.9, y = 53.5, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1424, x = 31.1, y = 54.2, f = "e", r = 30, text = "Tin, Copper" },
-				{ t = "goto", map = 1424, x = 28.6, y = 57.8, f = "e", r = 30, text = "Tin, Silver" },
+				{ t = "goto", map = 1424, x = 28.6, y = 57.8, f = "e", r = 30, text = "Tin" },
 				{ t = "goto", map = 1424, x = 17.1, y = 53, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1424, x = 51.2, y = 27.9, f = "e", r = 30, text = "Tin, Copper" },
 				{ t = "goto", map = 1424, x = 53.8, y = 16.6, f = "e", r = 30, text = "Tin, Copper" },
@@ -12410,21 +12786,23 @@ G(function() return {
 		{
 			title = "Expert {skill:186}",
 			note = "Expert {skill:186} raises the cap to 225; it needs skill 125 and no character level, and costs 50s: train it as soon as you reach 125. The arrow picks the nearest {skill:186} trainer of your faction. Learn {spell:3307} (5s; orange to 130, grey at 140) on the same visit: smelting at a forge raises {skill:186} too, so smelt what you mine.",
+			section = 3,
 			goals = {
-				{ t = "train", candidates = { 8, 7, 1, 2, 4, 6, 10, 14, 15, 16 }, rank = 3, rankMax = 225, skill = "Mining", skillLine = 186 },
-				{ t = "learn", spell = 3307, candidates = { 8, 7, 1, 2, 4, 6, 10, 14, 15, 16 }, skillLine = 186 },
+				{ t = "train", candidates = { 10, 9, 1, 2, 3, 5, 7, 8, 12, 16, 17, 18, 19, 20, 21 }, rank = 3, rankMax = 225, skill = "Mining", skillLine = 186 },
+				{ t = "learn", spell = 3307, candidates = { 10, 9, 1, 2, 3, 5, 7, 8, 12, 16, 17, 18, 19, 20, 21 }, skillLine = 186 },
 			},
 		},
 		{
 			title = "Iron: {zone:1417} (125-155)",
 			note = "Mine every Tin (65, green), Lesser Bloodstone (75, green), Silver (75, green, rare), Iron (125, orange) node you pass and circle the waypoints until {skill:186} 155. Smelt at a forge when your bags fill: {spell:3307} (orange to 130, grey at 140) gives points too. Zone level 30-40. Expect about 50 nodes for these 30 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1417, x = 68.3, y = 79.2, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 71.5, y = 67.8, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 72.5, y = 60.3, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 72.8, y = 49.9, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 80.4, y = 36.6, f = "e", r = 30, text = "Iron, Tin" },
-				{ t = "goto", map = 1417, x = 84.7, y = 31.6, f = "e", r = 30, text = "Lesser Bloodstone, Silver" },
+				{ t = "goto", map = 1417, x = 84.7, y = 31.6, f = "e", r = 30, text = "Lesser Bloodstone" },
 				{ t = "goto", map = 1417, x = 48.7, y = 34.1, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 33.1, y = 20.5, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 33.1, y = 44.7, f = "e", r = 30, text = "Iron, Tin" },
@@ -12437,13 +12815,14 @@ G(function() return {
 		{
 			title = "Iron: {zone:1417} (155-175)",
 			note = "Mine every Tin (65, green), Lesser Bloodstone (75, green), Silver (75, green, rare), Iron (125, yellow), Gold (155, orange, rare) node you pass and circle the waypoints until {skill:186} 175. Smelt at a forge when your bags fill: {spell:3308} (orange to 170, grey at 185) gives points too. Zone level 30-40. Expect about 40 nodes for these 20 points. {spell:3308} (25s; orange to 170, grey at 185) is taught from 155: learn it if you pass a {skill:186} trainer, it is not worth a trip of its own.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1417, x = 68.3, y = 79.2, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 71.5, y = 67.8, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 72.5, y = 60.3, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 72.8, y = 49.9, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 80.5, y = 36.6, f = "e", r = 30, text = "Iron, Tin" },
-				{ t = "goto", map = 1417, x = 84.7, y = 31.6, f = "e", r = 30, text = "Lesser Bloodstone, Gold" },
+				{ t = "goto", map = 1417, x = 84.7, y = 31.6, f = "e", r = 30, text = "Lesser Bloodstone" },
 				{ t = "goto", map = 1417, x = 48.7, y = 34.1, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 33.1, y = 20.5, f = "e", r = 30, text = "Iron, Tin" },
 				{ t = "goto", map = 1417, x = 33.1, y = 44.7, f = "e", r = 30, text = "Iron, Tin" },
@@ -12456,6 +12835,7 @@ G(function() return {
 		{
 			title = "Mithril: {zone:1418} (175-200)",
 			note = "Mine every Iron (125, green), Gold (155, orange), Mithril (175, orange) node you pass and circle the waypoints until {skill:186} 200. Smelt at a forge when your bags fill: {spell:3308} (orange to 170, grey at 185) gives points too. Zone level 35-45. Expect about 40 nodes for these 25 points.",
+			section = 5,
 			goals = {
 				{ t = "goto", map = 1418, x = 9.7, y = 89.3, f = "e", r = 30, text = "Iron, Mithril" },
 				{ t = "goto", map = 1418, x = 7.4, y = 77.4, f = "e", r = 30, text = "Iron, Mithril" },
@@ -12475,13 +12855,15 @@ G(function() return {
 		{
 			title = "Artisan {skill:186}",
 			note = "Artisan {skill:186} raises the cap to 300; it needs skill 200 and no character level, and costs 5g: train it as soon as you reach 200. The arrow picks the nearest {skill:186} trainer of your faction.",
+			section = 5,
 			goals = {
-				{ t = "train", candidates = { 4, 2, 1, 6, 7, 8, 10, 14, 15, 16 }, rank = 4, rankMax = 300, skill = "Mining", skillLine = 186 },
+				{ t = "train", candidates = { 3, 5, 2, 1, 7, 8, 9, 10, 12, 16, 17, 18, 19, 20, 21 }, rank = 4, rankMax = 300, skill = "Mining", skillLine = 186 },
 			},
 		},
 		{
 			title = "Mithril: {zone:1418} (200-230) cont.",
 			note = "Mine every Iron (125, green), Gold (155, yellow), Mithril (175, yellow) node you pass and circle the waypoints until {skill:186} 230. Smelting gives no points from here (the higher smelts are grey once learned): smelt to craft or sell, or sell the ore. Zone level 35-45. Expect about 90 nodes for these 30 points.",
+			section = 5,
 			goals = {
 				{ t = "goto", map = 1418, x = 9.7, y = 89.3, f = "e", r = 30, text = "Iron, Mithril" },
 				{ t = "goto", map = 1418, x = 7.4, y = 77.4, f = "e", r = 30, text = "Iron, Mithril" },
@@ -12501,6 +12883,7 @@ G(function() return {
 		{
 			title = "Mithril & {object:147516}: {zone:1427} (230-245)",
 			note = "Mine every Gold (155, green), Mithril (175, green), {object:147516} (230, orange), Truesilver (230, orange) node you pass and circle the waypoints until {skill:186} 245. Smelting gives no points from here (the higher smelts are grey once learned): smelt to craft or sell, or sell the ore. {item:11099} smelts only at the {object:174824} in {area:1584} (8 ore a bar). Zone level 43-50. Expect about 40 nodes for these 15 points.",
+			section = 6,
 			goals = {
 				{ t = "goto", map = 1427, x = 23.8, y = 37, f = "e", r = 30, text = "Mithril, {object:147516}" },
 				{ t = "goto", map = 1427, x = 16.9, y = 36.4, f = "e", r = 30, text = "Mithril, {object:147516}" },
@@ -12520,6 +12903,7 @@ G(function() return {
 		{
 			title = "Small Thorium: {zone:1448} (245-275)",
 			note = "Mine every Gold (155, green, rare), Mithril (175, green), Truesilver (230, orange), Small Thorium (245, orange) node you pass and circle the waypoints until {skill:186} 275. Smelting gives no points from here (the higher smelts are grey once learned): smelt to craft or sell, or sell the ore. Quests here that need {skill:186}: Salve via {skill:186} (level 55, {npc:9528}; Alliance), Salve via {skill:186} (level 55, {npc:9529}; Horde). Zone level 48-55. Expect about 50 nodes for these 30 points.",
+			section = 7,
 			goals = {
 				{ t = "goto", map = 1448, x = 37.4, y = 53.8, f = "e", r = 30, text = "Mithril, Small Thorium" },
 				{ t = "goto", map = 1448, x = 37.2, y = 68.4, f = "e", r = 30, text = "Small Thorium, Truesilver" },
@@ -12537,6 +12921,7 @@ G(function() return {
 		{
 			title = "Small Thorium & Rich Thorium: {zone:1452} (275-300)",
 			note = "Mine every Truesilver (230, yellow), Small Thorium (245, yellow), Rich Thorium (275, orange) node you pass and circle the waypoints until {skill:186} 300. Smelting gives no points from here (the higher smelts are grey once learned): smelt to craft or sell, or sell the ore. Zone level 55-60. Expect about 40 nodes for these 25 points.",
+			section = 8,
 			goals = {
 				{ t = "goto", map = 1452, x = 69.6, y = 38.7, f = "e", r = 30, text = "Rich Thorium, Small Thorium" },
 				{ t = "goto", map = 1452, x = 67.2, y = 38.4, f = "e", r = 30, text = "Rich Thorium, Truesilver" },
@@ -12563,6 +12948,7 @@ G(function() return {
 	minLevel = 1,
 	maxLevel = 60,
 	zone = 1455,
+	sections = { { from = 1, skill = "Skinning", skillLine = 393, to = 50 }, { from = 50, skill = "Skinning", skillLine = 393, to = 100 }, { from = 100, skill = "Skinning", skillLine = 393, to = 125 }, { from = 125, skill = "Skinning", skillLine = 393, to = 150 }, { from = 150, skill = "Skinning", skillLine = 393, to = 175 }, { from = 175, skill = "Skinning", skillLine = 393, to = 200 }, { from = 200, skill = "Skinning", skillLine = 393, to = 225 }, { from = 225, skill = "Skinning", skillLine = 393, to = 250 }, { from = 250, skill = "Skinning", skillLine = 393, to = 275 }, { from = 275, skill = "Skinning", skillLine = 393, to = 300 } },
 	version = 1,
 	pool = {
 		{ faction = "A", npc = 6291, map = 1455, x = 39.86, y = 32.5, z = 504.5, f = "e" },
@@ -12570,15 +12956,24 @@ G(function() return {
 		{ faction = "A", npc = 247227, map = 1429, x = 46.96, y = 39.92, z = 81.8, f = "e" },
 		{ faction = "A", npc = 1292, map = 1453, x = 72.14, y = 62.21, z = 98.7 },
 		{ faction = "A", npc = 6306, map = 1429, x = 46.24, y = 62.24, z = 64.5, f = "e" },
-		{ faction = "H", npc = 5748, map = 1421, x = 33, y = 17.85, z = 5.5, f = "e" },
+		{ faction = "A", npc = 6295, map = 1433, x = 83.74, y = 71.3, z = 122 },
+		{ faction = "H", npc = 7087, map = 1458, x = 70.16, y = 59.18, z = -62.1, f = "e" },
 		{ faction = "H", npc = 6289, map = 1420, x = 65.58, y = 60.03, z = 34.5, f = "e" },
 		{ faction = "H", npc = 267324, map = 1420, x = 32.6, y = 65.81, z = 99.2, f = "e" },
 		{ faction = "H", npc = 267327, map = 1411, x = 40.78, y = 67.86, f = "e" },
+		{ faction = "H", npc = 6290, map = 1412, x = 44.97, y = 61.4, z = -9.3 },
 		{ faction = "H", npc = 267330, map = 1412, x = 44.49, y = 76.69, z = 54 },
+		{ faction = "H", npc = 6387, map = 1413, x = 45.07, y = 59.1, z = 95.9, f = "e" },
 		{ faction = "A", npc = 6287, map = 1438, x = 42.09, y = 49.96, z = 1325.2, f = "e" },
 		{ faction = "A", npc = 267333, map = 1438, x = 59.39, y = 38.63, f = "e" },
+		{ faction = "A", npc = 6288, map = 1440, x = 49.98, y = 67.29, z = 101.8, f = "e" },
+		{ faction = "H", npc = 12030, map = 1443, x = 23.24, y = 69.72, z = 30, f = "e" },
+		{ faction = "H", npc = 8144, map = 1444, x = 74.47, y = 43.04, z = 26.4, f = "e" },
 		{ faction = "H", npc = 7088, map = 1454, x = 63.36, y = 45.42, z = 24.8, f = "e" },
 		{ faction = "H", npc = 7089, map = 1456, x = 44.44, y = 43.15, z = 144.9, f = "e" },
+		{ faction = "A", npc = 6292, map = 1457, x = 64.14, y = 22.26, z = 1343.4, f = "e" },
+		{ faction = "AH", npc = 257003, map = 2521, x = 59.63, y = 76.06, z = 668.7 },
+		{ faction = "AH", npc = 257024, map = 2521, x = 43.29, y = 43.37, z = 829.4 },
 		{ faction = "A", npc = 5128, map = 1455, x = 39.62, y = 34.49, z = 504.5, f = "e" },
 		{ faction = "A", npc = 1692, map = 1426, x = 46.67, y = 53.49, z = 396.9, f = "e" },
 		{ faction = "A", npc = 1465, map = 1432, x = 35.57, y = 49.15, z = 325.9, f = "e" },
@@ -12650,15 +13045,17 @@ G(function() return {
 		{
 			title = "Learn {skill:393}",
 			note = "Any {skill:393} trainer of your faction teaches Apprentice {skill:393} at any level (10c), and so does the Junior Skinning Trainer in each starting area; the arrow picks the nearest. Buy a {item:7005} from a trade goods or general vendor: keep it in your bags, you cannot skin without it. The first-hour quest of each starting area (Rascally Rodents, Coldridge Valley Mail Delivery, The Woodland Protector, Galgar's {item:11584}, A Humble Task, Marla's Last Wish) offers {item:247846} as a reward: reading it gives 2 skill, up to 15. Trade goods vendors and the junior trainers sell the {item:277114}, a four-slot bag for leather and hides (25c). If you sat at your starting area's campfire for The Great Outdoors, the camping guide there also offers Camping 101: {skill:393}: hand it in to the skinning trainer it names once you reach skill 20, for the {spell:1229517} recipe.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 }, rank = 1, rankMax = 75, skill = "Skinning", skillLine = 393 },
-				{ t = "buy", item = 7005, count = 1, candidates = { 15, 16, 2, 17, 18, 3, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 8, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 } },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 }, rank = 1, rankMax = 75, skill = "Skinning", skillLine = 393 },
+				{ t = "buy", item = 7005, count = 1, candidates = { 24, 25, 2, 26, 27, 3, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 9, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89 } },
 			},
 		},
 		{
 			title = "Beasts 1-9: {zone:1429} (1-50)",
 			only = { races = { "HUMAN" } },
-			note = "Kill and skin {npc:1922} (7), {npc:525} (5), Prowler (9), {npc:524} (7), {npc:113} (5), {npc:69} (2), {npc:822} (8), {npc:299} (1) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. A quest here needs {skill:393}: Rough Wolf Pelts (level 7, {npc:6306}). Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			note = "Kill and skin {npc:1922} (7), {npc:525} (5), Prowler (9), {npc:524} (7), {npc:113} (5), {npc:69} (2), {npc:822} (8), {npc:299} (1) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. A quest here needs {skill:393}: Rough Wolf Pelts (level 8, {npc:6306}). Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1429, x = 62.1, y = 77, f = "e", r = 30, text = "{npc:524}, {npc:822}" },
 				{ t = "goto", map = 1429, x = 54.7, y = 79.3, f = "e", r = 30, text = "{npc:524}, {npc:822}" },
@@ -12679,6 +13076,7 @@ G(function() return {
 			title = "Beasts 1-9: {zone:1426} (1-50)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Kill and skin {npc:1125} (5), {npc:1127} (7), {npc:1196} (7), {npc:1199} (5), {npc:1126} (6), {npc:704} (2), {npc:705} (1), {npc:1689} (9), {npc:708} (3), {npc:1201} (7), {npc:1138} (6), {npc:1131} (7), {npc:1128} (5) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1426, x = 60.1, y = 58, f = "e", r = 30, text = "{npc:1201}, {npc:1127}" },
 				{ t = "goto", map = 1426, x = 55.6, y = 56.2, f = "e", r = 30, text = "{npc:1201}, {npc:1127}" },
@@ -12699,6 +13097,7 @@ G(function() return {
 			title = "Beasts 1-8: {zone:1438} (1-50)",
 			only = { races = { "NIGHTELF" } },
 			note = "Kill and skin {npc:2033} (8), {npc:2032} (2), Nightsaber (5), {npc:2043} (7), {npc:1985} (2), {npc:2031} (1), {npc:1984} (1) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1438, x = 62.8, y = 72, f = "e", r = 30, text = "{npc:2043}" },
 				{ t = "goto", map = 1438, x = 61, y = 61.3, f = "e", r = 30, text = "Nightsaber" },
@@ -12719,19 +13118,20 @@ G(function() return {
 			title = "Beasts 1-10: {zone:2521} (1-50)",
 			only = { races = { "SKYBORNE" } },
 			note = "Kill and skin Cloudrunner (6), Galestrider (5), {npc:250928} (7), {npc:251284} (6), {npc:251291} (6), {npc:250873} (1), {npc:251707} (8), Prideclaw (5), {npc:250926} (3), {npc:256092} (10), {npc:253282} (8), {npc:250937} (4), Vuldren (6), {npc:250874} (10), {npc:254588} (8) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 1-15. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
-				{ t = "goto", map = 2521, x = 38.4, y = 53.9, r = 30, text = "{npc:251291}, {npc:251284}" },
-				{ t = "goto", map = 2521, x = 35.1, y = 55.1, r = 30, text = "{npc:251284}, {npc:251291}" },
-				{ t = "goto", map = 2521, x = 37, y = 47.1, r = 30, text = "Galestrider, Prideclaw" },
-				{ t = "goto", map = 2521, x = 40, y = 43.5, r = 30, text = "Galestrider, Prideclaw" },
-				{ t = "goto", map = 2521, x = 44.6, y = 39.1, r = 30, text = "Prideclaw, Galestrider" },
-				{ t = "goto", map = 2521, x = 44.8, y = 25.8, r = 30, text = "{npc:250873}" },
-				{ t = "goto", map = 2521, x = 57.5, y = 39.5, r = 30, text = "{npc:256092}" },
-				{ t = "goto", map = 2521, x = 59.4, y = 68.5, r = 30, text = "{npc:251707}, {npc:250874}" },
-				{ t = "goto", map = 2521, x = 54.9, y = 72.9, r = 30, text = "{npc:251707}, {npc:250874}" },
-				{ t = "goto", map = 2521, x = 50.3, y = 80.1, r = 30, text = "{npc:251707}, {npc:250874}" },
-				{ t = "goto", map = 2521, x = 46.4, y = 55.7, r = 30, text = "Vuldren, Galestrider" },
-				{ t = "goto", map = 2521, x = 42.1, y = 50, r = 30, text = "Prideclaw, Vuldren" },
+				{ t = "goto", map = 2521, x = 38.9, y = 54.3, r = 30, text = "{npc:251291}, Prideclaw" },
+				{ t = "goto", map = 2521, x = 35.7, y = 55.9, r = 30, text = "{npc:251284}, {npc:251291}" },
+				{ t = "goto", map = 2521, x = 45.5, y = 67.8, r = 30, text = "Prideclaw, Vuldren" },
+				{ t = "goto", map = 2521, x = 51.4, y = 78.6, r = 30, text = "{npc:251707}, {npc:250874}" },
+				{ t = "goto", map = 2521, x = 55, y = 72.4, r = 30, text = "{npc:251707}, {npc:250874}" },
+				{ t = "goto", map = 2521, x = 59.3, y = 67.3, r = 30, text = "{npc:251707}, {npc:250874}" },
+				{ t = "goto", map = 2521, x = 54.4, y = 60.4, r = 30, text = "Prideclaw, Galestrider" },
+				{ t = "goto", map = 2521, x = 50.1, y = 63.9, r = 30, text = "Prideclaw, Galestrider" },
+				{ t = "goto", map = 2521, x = 45.4, y = 59.2, r = 30, text = "Galestrider, Vuldren" },
+				{ t = "goto", map = 2521, x = 42.8, y = 49.7, r = 30, text = "Prideclaw, Vuldren" },
+				{ t = "goto", map = 2521, x = 44.2, y = 39.1, r = 30, text = "Prideclaw, Galestrider" },
+				{ t = "goto", map = 2521, x = 39.8, y = 45.3, r = 30, text = "Prideclaw, Galestrider" },
 				{ t = "skill", level = 50, skill = "Skinning", skillLine = 393 },
 			},
 		},
@@ -12739,6 +13139,7 @@ G(function() return {
 			title = "Beasts 1-9: {zone:1411} (1-50)",
 			only = { races = { "ORC", "TROLL" } },
 			note = "Kill and skin {npc:3126} (7), {npc:3123} (8), {npc:3122} (6), {npc:3125} (5), {npc:3099} (6), {npc:3110} (9), {npc:3121} (7), {npc:3100} (8), {npc:3098} (1), {npc:3124} (3), {npc:3130} (9), {npc:3127} (9) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1411, x = 44.6, y = 62.1, f = "e", r = 30, text = "{npc:3098}, {npc:3124}" },
 				{ t = "goto", map = 1411, x = 43.9, y = 71.3, f = "e", r = 30, text = "{npc:3098}, {npc:3124}" },
@@ -12759,19 +13160,20 @@ G(function() return {
 			title = "Beasts 1-9: {zone:1412} (1-50)",
 			only = { races = { "TAUREN" } },
 			note = "Kill and skin {npc:2956} (6), Battleboar (3), {npc:2957} (8), {npc:3035} (7), {npc:3566} (9), {npc:2972} (7), {npc:2961} (3), Plainstrider (1), {npc:2959} (7), {npc:2958} (5), {npc:2960} (9) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. A quest here needs {skill:393}: Gathering Leather (level 8, {npc:3050}). Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1412, x = 46.8, y = 29, f = "e", r = 30, text = "{npc:2960}, {npc:2957}" },
 				{ t = "goto", map = 1412, x = 45, y = 16.4, f = "e", r = 30, text = "{npc:3566}, {npc:2957}" },
 				{ t = "goto", map = 1412, x = 50.8, y = 14.1, f = "e", r = 30, text = "{npc:3566}, {npc:2960}" },
 				{ t = "goto", map = 1412, x = 53.6, y = 22.1, f = "e", r = 30, text = "{npc:3566}, {npc:2957}" },
-				{ t = "goto", map = 1412, x = 54, y = 35.7, f = "e", r = 30, text = "{npc:3035}, {npc:2957}" },
+				{ t = "goto", map = 1412, x = 54, y = 35.5, f = "e", r = 30, text = "{npc:3035}, {npc:2957}" },
 				{ t = "goto", map = 1412, x = 51.9, y = 42.6, f = "e", r = 30, text = "{npc:2959}, {npc:3035}" },
 				{ t = "goto", map = 1412, x = 54, y = 82.8, f = "e", r = 30, text = "Battleboar, Plainstrider" },
+				{ t = "goto", map = 1412, x = 56.9, y = 90.1, f = "e", r = 30, text = "Battleboar, {npc:2961}" },
 				{ t = "goto", map = 1412, x = 50.6, y = 89.2, f = "e", r = 30, text = "{npc:2961}, Plainstrider" },
 				{ t = "goto", map = 1412, x = 44.2, y = 87.4, f = "e", r = 30, text = "{npc:2961}, Plainstrider" },
-				{ t = "goto", map = 1412, x = 37.1, y = 69.5, f = "e", r = 30, text = "{npc:2958}, {npc:2956}" },
-				{ t = "goto", map = 1412, x = 37.8, y = 54.9, f = "e", r = 30, text = "{npc:2958}, {npc:2956}" },
-				{ t = "goto", map = 1412, x = 47.1, y = 37.8, f = "e", r = 30, text = "{npc:2959}, {npc:3035}" },
+				{ t = "goto", map = 1412, x = 48.7, y = 79.6, f = "e", r = 30, text = "Plainstrider" },
+				{ t = "goto", map = 1412, x = 47.2, y = 37.8, f = "e", r = 30, text = "{npc:2959}, {npc:3035}" },
 				{ t = "skill", level = 50, skill = "Skinning", skillLine = 393 },
 			},
 		},
@@ -12779,6 +13181,7 @@ G(function() return {
 			title = "Beasts 1-9: {zone:1420} (1-50)",
 			only = { races = { "SCOURGE" } },
 			note = "Kill and skin {npc:1548} (7), {npc:1547} (5), Duskbat (1), {npc:1553} (6), {npc:1513} (3), {npc:1549} (9), {npc:1554} (8) along the loop until {skill:393} 50; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 1-10. Expect about 60 beasts for these 49 points.",
+			section = 1,
 			goals = {
 				{ t = "goto", map = 1420, x = 44.3, y = 58.3, f = "e", r = 30, text = "{npc:1553}, {npc:1548}" },
 				{ t = "goto", map = 1420, x = 50.2, y = 62.1, f = "e", r = 30, text = "{npc:1548}, {npc:1554}" },
@@ -12798,15 +13201,17 @@ G(function() return {
 		{
 			title = "Journeyman {skill:393}",
 			note = "Journeyman {skill:393} raises the cap to 150; it needs skill 50 and no character level, and costs 5s: train it as soon as you reach 50. The arrow picks the nearest {skill:393} trainer of your faction. {spell:1229517}, Forever's camping item for {skill:393}, is taught from skill 20 (1s, or free from Camping 101: {skill:393}): three {item:2318} and two {item:4470} each, it gives points until 25; placed beside a campfire it gives everyone at the camp a buff for an hour.",
+			section = 2,
 			goals = {
-				{ t = "train", candidates = { 6, 7, 1, 4, 5, 11, 13, 14 }, rank = 2, rankMax = 150, skill = "Skinning", skillLine = 393 },
-				{ t = "learn", spell = 1229517, candidates = { 8, 6, 7, 1, 2, 4, 3, 5, 9, 10, 11, 12, 13, 14 }, skillLine = 393 },
+				{ t = "train", candidates = { 7, 8, 1, 4, 5, 6, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23 }, rank = 2, rankMax = 150, skill = "Skinning", skillLine = 393 },
+				{ t = "learn", spell = 1229517, candidates = { 9, 7, 8, 1, 2, 4, 3, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 }, skillLine = 393 },
 			},
 		},
 		{
 			title = "Beasts 10-16: {zone:1436} (50-100)",
 			only = { races = { "HUMAN", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Kill and skin Coyote (10), {npc:833} (11), {npc:454} (12), Goretusk (14), {npc:547} (16, needs 60) along the loop until {skill:393} 100; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 10-20. Expect about 130 beasts for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1436, x = 60.7, y = 45.8, f = "e", r = 30, text = "Goretusk, {npc:547}" },
 				{ t = "goto", map = 1436, x = 52.6, y = 41.9, f = "e", r = 30, text = "{npc:454}, Coyote" },
@@ -12827,6 +13232,7 @@ G(function() return {
 			title = "Beasts 10-16: {zone:1432} (50-100)",
 			only = { races = { "DWARF", "GNOME" } },
 			note = "Kill and skin {npc:1190} (10), {npc:1186} (11), {npc:1188} (13), {npc:1693} (14), {npc:1191} (14), {npc:1189} (16, needs 60), {npc:1192} (16, needs 60) along the loop until {skill:393} 100; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 10-20. Expect about 100 beasts for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1432, x = 35.6, y = 34.1, f = "e", r = 30, text = "{npc:1190}, {npc:1186}" },
 				{ t = "goto", map = 1432, x = 42.9, y = 62.6, f = "e", r = 30, text = "{npc:1188}, {npc:1191}" },
@@ -12845,14 +13251,15 @@ G(function() return {
 		{
 			title = "Beasts 11-19: {zone:1439} (50-100)",
 			only = { races = { "NIGHTELF" } },
-			note = "Kill and skin {npc:2163} (11), {npc:2164} (13), Moonstalker (14), {npc:2165} (16, needs 60), {npc:2070} (16, needs 60), {npc:2237} (17, needs 70), {npc:3823} (19, needs 90), {npc:2071} (19, needs 90) along the loop until {skill:393} 100; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 10-20. Expect about 100 beasts for these 50 points.",
+			note = "Kill and skin {npc:2070} (11), {npc:2163} (11), {npc:2164} (13), Moonstalker (14), {npc:2165} (16, needs 60), {npc:2237} (17, needs 70), {npc:3823} (19, needs 90), {npc:2071} (19, needs 90) along the loop until {skill:393} 100; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 10-20. Expect about 120 beasts for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1439, x = 39.9, y = 36.5, f = "e", r = 30, text = "{npc:2163}, {npc:2070}" },
-				{ t = "goto", map = 1439, x = 44.9, y = 26.2, f = "e", r = 30, text = "{npc:2163}, {npc:2070}" },
+				{ t = "goto", map = 1439, x = 44.7, y = 25.1, f = "e", r = 30, text = "{npc:2163}, {npc:2070}" },
 				{ t = "goto", map = 1439, x = 49.3, y = 28.9, f = "e", r = 30, text = "{npc:2164}, Moonstalker" },
-				{ t = "goto", map = 1439, x = 45.3, y = 32.6, f = "e", r = 30, text = "{npc:2163}, {npc:2164}" },
-				{ t = "goto", map = 1439, x = 43.4, y = 43, f = "e", r = 30, text = "{npc:2163}, {npc:2070}" },
-				{ t = "goto", map = 1439, x = 44.5, y = 56, f = "e", r = 30, text = "{npc:2070}, {npc:2163}" },
+				{ t = "goto", map = 1439, x = 53, y = 28.1, f = "e", r = 30, text = "{npc:2164}, Moonstalker" },
+				{ t = "goto", map = 1439, x = 49, y = 34.8, f = "e", r = 30, text = "{npc:2164}, {npc:2163}" },
+				{ t = "goto", map = 1439, x = 45, y = 31.9, f = "e", r = 30, text = "{npc:2163}, {npc:2164}" },
 				{ t = "goto", map = 1439, x = 43.2, y = 67.5, f = "e", r = 30, text = "{npc:2164}, Moonstalker" },
 				{ t = "goto", map = 1439, x = 43.3, y = 82, f = "e", r = 30, text = "{npc:2237}, {npc:2165}" },
 				{ t = "goto", map = 1439, x = 38.9, y = 80.4, f = "e", r = 30, text = "{npc:2165}, Moonstalker" },
@@ -12866,6 +13273,7 @@ G(function() return {
 			title = "Beasts 8-19: {zone:1413} (50-100)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Kill and skin {npc:3110} (9), {npc:2957} (8), {npc:2960} (9), {npc:3127} (9), {npc:3244} (11), {npc:3415} (11), {npc:3254} (11), {npc:3246} (12), {npc:3243} (12), {npc:3255} (13), {npc:3242} (13), {npc:3234} (14), {npc:3425} (14), {npc:3241} (15), {npc:3245} (16, needs 60), {npc:3256} (16, needs 60), {npc:3426} (17, needs 70), {npc:3236} (19, needs 90) along the loop until {skill:393} 100; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 10-25. Expect about 110 beasts for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1413, x = 53.2, y = 35.8, f = "e", r = 30, text = "{npc:3242}, {npc:3246}" },
 				{ t = "goto", map = 1413, x = 48.9, y = 37.6, f = "e", r = 30, text = "{npc:3242}, {npc:3246}" },
@@ -12886,6 +13294,7 @@ G(function() return {
 			title = "Beasts 10-16: {zone:1421} (50-100)",
 			only = { races = { "SCOURGE" } },
 			note = "Kill and skin Worg (10), {npc:1778} (11), {npc:1766} (11), {npc:1797} (12), {npc:1923} (16, needs 60) along the loop until {skill:393} 100; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 10-20. Expect about 160 beasts for these 50 points.",
+			section = 2,
 			goals = {
 				{ t = "goto", map = 1421, x = 45.3, y = 49.2, f = "e", r = 30, text = "{npc:1778}, Worg" },
 				{ t = "goto", map = 1421, x = 49.7, y = 78.3, f = "e", r = 30, text = "{npc:1923}" },
@@ -12906,6 +13315,7 @@ G(function() return {
 			title = "Beasts 19-20: {zone:1431} (100-125)",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Kill and skin {npc:213} (19), {npc:565} (20) along the loop until {skill:393} 125; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 18-30. Expect about 30 beasts for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1431, x = 64.1, y = 19, f = "e", r = 30, text = "{npc:565}, {npc:213}" },
 				{ t = "goto", map = 1431, x = 43.2, y = 19, f = "e", r = 30, text = "{npc:213}" },
@@ -12920,6 +13330,7 @@ G(function() return {
 			title = "Beasts 19-22: {zone:1440} (100-125)",
 			only = { races = { "NIGHTELF" } },
 			note = "Kill and skin {npc:3823} (19), {npc:3809} (21, needs 105), {npc:3817} (22, needs 110) along the loop until {skill:393} 125; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 18-30. Expect about 30 beasts for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1440, x = 40.8, y = 42.5, f = "e", r = 30, text = "{npc:3809}" },
 				{ t = "goto", map = 1440, x = 22.3, y = 30.1, f = "e", r = 30, text = "{npc:3823}" },
@@ -12940,6 +13351,7 @@ G(function() return {
 			title = "Beasts 19-22: {zone:1440} (100-125)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Kill and skin {npc:3823} (19), {npc:3809} (21, needs 105), {npc:3817} (22, needs 110) along the loop until {skill:393} 125; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 18-30. Expect about 30 beasts for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1440, x = 22.3, y = 30.1, f = "e", r = 30, text = "{npc:3823}" },
 				{ t = "goto", map = 1440, x = 18.1, y = 47.7, f = "e", r = 30, text = "{npc:3823}" },
@@ -12960,6 +13372,7 @@ G(function() return {
 			title = "Beasts 21-23: {zone:1424} (100-125)",
 			only = { races = { "SCOURGE" } },
 			note = "Kill and skin {npc:2351} (21, needs 105), {npc:2354} (22, needs 110), {npc:2384} (23, needs 115) along the loop until {skill:393} 125; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 20-30. Expect about 40 beasts for these 25 points.",
+			section = 3,
 			goals = {
 				{ t = "goto", map = 1424, x = 56, y = 13.3, f = "e", r = 30, text = "{npc:2351}" },
 				{ t = "goto", map = 1424, x = 66.8, y = 13.6, f = "e", r = 30, text = "{npc:2351}" },
@@ -12978,14 +13391,16 @@ G(function() return {
 		{
 			title = "Expert {skill:393}",
 			note = "Expert {skill:393} raises the cap to 225; it needs skill 125 and no character level, and costs 50s: train it as soon as you reach 125. The arrow picks the nearest {skill:393} trainer of your faction.",
+			section = 4,
 			goals = {
-				{ t = "train", candidates = { 7, 6, 1, 4, 5, 11, 13, 14 }, rank = 3, rankMax = 225, skill = "Skinning", skillLine = 393 },
+				{ t = "train", candidates = { 7, 8, 1, 4, 5, 6, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23 }, rank = 3, rankMax = 225, skill = "Skinning", skillLine = 393 },
 			},
 		},
 		{
 			title = "Beasts 21-27: {zone:1424} (125-150)",
 			only = { races = { "HUMAN", "DWARF", "GNOME", "SKYBORNE" }, factions = { "Alliance" } },
 			note = "Kill and skin {npc:2351} (21), {npc:2354} (22), {npc:2384} (23), {npc:2356} (25), {npc:2385} (27, needs 135) along the loop until {skill:393} 150; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 20-30. Expect about 30 beasts for these 25 points.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1424, x = 52.5, y = 46, f = "e", r = 30, text = "{npc:2354}, {npc:2384}" },
 				{ t = "goto", map = 1424, x = 53, y = 36.9, f = "e", r = 30, text = "{npc:2384}, {npc:2354}" },
@@ -13006,6 +13421,7 @@ G(function() return {
 			title = "Beasts 19-29: {zone:1440} (125-150)",
 			only = { races = { "NIGHTELF" } },
 			note = "Kill and skin {npc:3823} (19), {npc:3809} (21), {npc:3817} (22), {npc:3810} (25), {npc:3818} (26, needs 130), {npc:3811} (29, needs 145) along the loop until {skill:393} 150; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 18-30. Expect about 40 beasts for these 25 points.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1440, x = 41, y = 64.3, f = "e", r = 30, text = "{npc:3809}, {npc:3817}" },
 				{ t = "goto", map = 1440, x = 38.4, y = 69.5, f = "e", r = 30, text = "{npc:3817}, {npc:3809}" },
@@ -13026,6 +13442,7 @@ G(function() return {
 			title = "Beasts 19-29: {zone:1440} (125-150)",
 			only = { races = { "ORC", "TROLL", "TAUREN", "SKYBORNE" }, factions = { "Horde" } },
 			note = "Kill and skin {npc:3823} (19), {npc:3809} (21), {npc:3817} (22), {npc:3810} (25), {npc:3818} (26, needs 130), {npc:3811} (29, needs 145) along the loop until {skill:393} 150; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 18-30. Expect about 40 beasts for these 25 points.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1440, x = 41, y = 64.3, f = "e", r = 30, text = "{npc:3809}, {npc:3817}" },
 				{ t = "goto", map = 1440, x = 38.4, y = 69.5, f = "e", r = 30, text = "{npc:3817}, {npc:3809}" },
@@ -13046,6 +13463,7 @@ G(function() return {
 			title = "Beasts 21-27: {zone:1424} (125-150)",
 			only = { races = { "SCOURGE" } },
 			note = "Kill and skin {npc:2351} (21), {npc:2354} (22), {npc:2384} (23), {npc:2356} (25), {npc:2385} (27, needs 135) along the loop until {skill:393} 150; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 20-30. Expect about 30 beasts for these 25 points.",
+			section = 4,
 			goals = {
 				{ t = "goto", map = 1424, x = 61.9, y = 34.9, f = "e", r = 30, text = "{npc:2351}, {npc:2384}" },
 				{ t = "goto", map = 1424, x = 53, y = 36.9, f = "e", r = 30, text = "{npc:2384}, {npc:2354}" },
@@ -13065,6 +13483,7 @@ G(function() return {
 		{
 			title = "Beasts 21-33: {zone:1416} (150-175)",
 			note = "Kill and skin {npc:2351} (21), {npc:2356} (25), {npc:2248} (30), Snapjaw (30), {npc:2249} (31, needs 155), {npc:2406} (32, needs 160), {npc:2250} (32, needs 160), {npc:2251} (33, needs 165), {npc:2407} (33, needs 165) along the loop until {skill:393} 175; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 30-40. Expect about 30 beasts for these 25 points.",
+			section = 5,
 			goals = {
 				{ t = "goto", map = 1416, x = 40.2, y = 92.3, f = "e", r = 30, text = "{npc:2248}, {npc:2249}" },
 				{ t = "goto", map = 1416, x = 31.7, y = 82.3, f = "e", r = 30, text = "{npc:2406}, {npc:2356}" },
@@ -13083,6 +13502,7 @@ G(function() return {
 		{
 			title = "Beasts 30-39: {zone:1434} (175-200)",
 			note = "Kill and skin {npc:1150} (30), {npc:683} (30), {npc:855} (30), {npc:681} (30), {npc:688} (31), {npc:1108} (32), Panther (32), {npc:682} (32), {npc:685} (33), {npc:689} (34), {npc:1085} (34), {npc:686} (35), {npc:1151} (35), {npc:1152} (35), {npc:854} (36, needs 180), {npc:684} (37, needs 185), {npc:690} (39, needs 195) along the loop until {skill:393} 200; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 30-45. Expect about 30 beasts for these 25 points.",
+			section = 6,
 			goals = {
 				{ t = "goto", map = 1434, x = 29.6, y = 13.6, f = "e", r = 30, text = "Panther, {npc:682}" },
 				{ t = "goto", map = 1434, x = 23.8, y = 16.9, f = "e", r = 30, text = "{npc:685}, {npc:689}" },
@@ -13102,13 +13522,15 @@ G(function() return {
 		{
 			title = "Artisan {skill:393}",
 			note = "Artisan {skill:393} raises the cap to 300; it needs skill 200 and no character level, and costs 5g: train it as soon as you reach 200. The arrow picks the nearest {skill:393} trainer of your faction.",
+			section = 7,
 			goals = {
-				{ t = "train", candidates = { 5, 4, 1, 6, 7, 11, 13, 14 }, rank = 4, rankMax = 300, skill = "Skinning", skillLine = 393 },
+				{ t = "train", candidates = { 5, 4, 6, 1, 7, 8, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23 }, rank = 4, rankMax = 300, skill = "Skinning", skillLine = 393 },
 			},
 		},
 		{
 			title = "Beasts 35-41: {zone:1435} (200-225)",
 			note = "Kill and skin {npc:1084} (35), {npc:1082} (38), {npc:768} (39), {npc:1087} (41, needs 205) along the loop until {skill:393} 225; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 35-45. Expect about 30 beasts for these 25 points.",
+			section = 7,
 			goals = {
 				{ t = "goto", map = 1435, x = 82.3, y = 22.8, f = "e", r = 30, text = "{npc:768}, {npc:1087}" },
 				{ t = "goto", map = 1435, x = 79.9, y = 11.2, f = "e", r = 30, text = "{npc:768}, {npc:1087}" },
@@ -13124,6 +13546,7 @@ G(function() return {
 		{
 			title = "Beasts 42-49: {zone:1425} (225-250)",
 			note = "Kill and skin {npc:2927} (42), {npc:2924} (43), {npc:2928} (44), {npc:2929} (46, needs 230), {npc:2926} (47, needs 235), {npc:2505} (49, needs 245) along the loop until {skill:393} 250; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 40-50. Expect about 40 beasts for these 25 points.",
+			section = 8,
 			goals = {
 				{ t = "goto", map = 1425, x = 62, y = 51.1, f = "e", r = 30, text = "{npc:2929}, {npc:2926}" },
 				{ t = "goto", map = 1425, x = 51.1, y = 59.3, f = "e", r = 30, text = "{npc:2929}, {npc:2928}" },
@@ -13143,6 +13566,7 @@ G(function() return {
 		{
 			title = "Beasts 48-54: {zone:1449} (250-275)",
 			note = "Kill and skin {npc:9165} (48), Ravasaur (48), {npc:6507} (49), {npc:6506} (49), {npc:9162} (49), Pterrordax (50), {npc:6514} (50), {npc:6508} (50), Diemetradon (51, needs 255), {npc:9167} (51, needs 255), {npc:6513} (51, needs 255), {npc:6516} (52, needs 260), {npc:9164} (53, needs 265), {npc:11735} (54, needs 270) along the loop until {skill:393} 275; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 48-55. Expect about 30 beasts for these 25 points.",
+			section = 9,
 			goals = {
 				{ t = "goto", map = 1449, x = 66.2, y = 16.2, f = "e", r = 30, text = "{npc:6514}, {npc:6513}" },
 				{ t = "goto", map = 1449, x = 57.6, y = 11.1, f = "e", r = 30, text = "Pterrordax, {npc:6514}" },
@@ -13162,6 +13586,7 @@ G(function() return {
 		{
 			title = "Beasts 51-55: {zone:1422} (275-300)",
 			note = "Kill and skin {npc:1815} (51), {npc:1817} (53), {npc:1816} (55) along the loop until {skill:393} 300; loot each corpse, then skin it, and skin the highest-level beasts your skill allows. A beast of level L needs skill (L-10)x10 up to level 20 and Lx5 above. Zone level 51-58. Expect about 30 beasts for these 25 points.",
+			section = 10,
 			goals = {
 				{ t = "goto", map = 1422, x = 64.6, y = 49, f = "e", r = 30, text = "{npc:1816}" },
 				{ t = "goto", map = 1422, x = 60.3, y = 52.1, f = "e", r = 30, text = "{npc:1816}" },
@@ -13187,19 +13612,21 @@ G(function() return {
 	minLevel = 5,
 	maxLevel = 60,
 	zone = 947,
+	sections = { { from = 1, skill = "Tailoring", skillLine = 197, to = 75 }, { from = 75, skill = "Tailoring", skillLine = 197, to = 150 }, { from = 150, skill = "Tailoring", skillLine = 197, to = 225 }, { from = 225, skill = "Tailoring", skillLine = 197, to = 300 } },
 	version = 1,
 	pool = {
-		{ faction = "H", npc = 3704, map = 1413, x = 44.93, y = 59.39, z = 96.8, f = "e" },
+		{ faction = "H", npc = 3484, map = 1413, x = 52.2, y = 31.7, z = 95.9, f = "e" },
 		{ faction = "H", npc = 3523, map = 1420, x = 52.59, y = 55.52, z = 34.6, f = "e" },
 		{ faction = "A", npc = 1103, map = 1429, x = 79.22, y = 69.03, z = 48.2, f = "e" },
-		{ faction = "A", npc = 3605, map = 1438, x = 41.88, y = 49.44, z = 1326.1, f = "e" },
-		{ faction = "A", npc = 3612, map = 1438, x = 56.33, y = 59.59, z = 1308.9, f = "e" },
+		{ faction = "A", npc = 4193, map = 1439, x = 38.24, y = 40.53, z = 9.1, f = "e" },
 		{ faction = "A", npc = 1300, map = 1453, x = 53.48, y = 81.47, z = 91 },
 		{ faction = "H", npc = 2855, map = 1454, x = 62.93, y = 49.24, z = 22.9, f = "e" },
 		{ faction = "A", npc = 1703, map = 1455, x = 43.82, y = 27.86, z = 504.3, f = "e" },
 		{ faction = "H", npc = 11051, map = 1456, x = 44.26, y = 44.34, z = 145.9, f = "e" },
-		{ faction = "A", npc = 4159, map = 1457, x = 63.41, y = 22.38, z = 1333.1, f = "e" },
-		{ faction = "H", npc = 4578, map = 1458, x = 86.65, y = 22.08, z = -59.2, f = "e" },
+		{ faction = "A", npc = 11050, map = 1457, x = 63.55, y = 21.21, z = 1333.1, f = "e" },
+		{ faction = "H", npc = 11048, map = 1458, x = 70.08, y = 29.83, z = -62.1, f = "e" },
+		{ faction = "AH", npc = 251991, map = 2521, x = 44.88, y = 44.18, z = 823.2 },
+		{ faction = "AH", npc = 252380, map = 2521, x = 64.41, y = 81.17, z = 648.2 },
 		{ faction = "H", npc = 3168, map = 1411, x = 52.98, y = 41.97, z = 12.6, f = "e" },
 		{ faction = "H", npc = 3187, map = 1411, x = 56.41, y = 73.79, z = 22.3, f = "e" },
 		{ faction = "H", npc = 267327, map = 1411, x = 40.78, y = 67.86, f = "e" },
@@ -13240,6 +13667,7 @@ G(function() return {
 		{ faction = "AH", npc = 11874, map = 1435, x = 26.46, y = 31.47, z = 22.4, f = "e" },
 		{ faction = "A", npc = 843, map = 1436, x = 57.64, y = 54.05, z = 33, f = "e" },
 		{ faction = "A", npc = 1454, map = 1437, x = 8.12, y = 55.84, z = 16.1, f = "e" },
+		{ faction = "A", npc = 3605, map = 1438, x = 41.88, y = 49.44, z = 1326.1, f = "e" },
 		{ faction = "A", npc = 3614, map = 1438, x = 55.27, y = 57.15, z = 1328, f = "e" },
 		{ faction = "A", npc = 267333, map = 1438, x = 59.39, y = 38.63, f = "e" },
 		{ faction = "A", npc = 4189, map = 1439, x = 38.15, y = 40.6, z = 9.1, f = "e" },
@@ -13276,44 +13704,18 @@ G(function() return {
 		{ faction = "H", npc = 4561, map = 1458, x = 64.05, y = 37.37, z = -43, f = "e" },
 		{ faction = "H", npc = 2225, map = 1459, x = 50.08, y = 82.15, f = "e" },
 		{ faction = "A", npc = 5135, map = 1459, x = 42.82, y = 16.88, f = "e" },
-		{ faction = "AH", npc = 251991, map = 2521, x = 44.88, y = 44.18, z = 823.2 },
 		{ faction = "AH", npc = 252376, map = 2521, x = 63.73, y = 80.68, z = 648.6 },
 		{ faction = "AH", npc = 252449, map = 2521, x = 58.96, y = 75.55, z = 666.8 },
 		{ faction = "A", npc = 260559, map = 2548, x = 79.74, y = 54.04 },
 		{ faction = "AH", npc = 260570, map = 2548, x = 77.33, y = 51.47 },
-		{ faction = "A", npc = 1197, map = 1432, x = 35.3, y = 93.3, f = "e", lvl = { max = 16, min = 15 }, rate = 0.381, spawns = 11 },
-		{ faction = "H", npc = 1865, map = 1421, x = 46.5, y = 55, f = "e", lvl = { max = 13, min = 12 }, rate = 0.396, spawns = 9 },
-		{ faction = "A", npc = 1174, map = 1432, x = 35.8, y = 23.3, f = "e", lvl = { max = 13, min = 12 }, rate = 0.382, spawns = 9 },
-		{ faction = "A", npc = 1397, map = 1426, x = 42.1, y = 35.3, f = "e", lvl = { max = 9, min = 8 }, rate = 0.298, spawns = 11 },
-		{ faction = "H", npc = 1866, map = 1421, x = 47, y = 53.7, f = "e", lvl = { max = 12, min = 11 }, rate = 0.394, spawns = 8 },
-		{ faction = "AH", npc = 1537, map = 1422, x = 30.8, y = 28.3, f = "e", lvl = { max = 9, min = 8 }, rate = 0.296, spawns = 10 },
-		{ faction = "H", npc = 1941, map = 1420, x = 55.3, y = 42.3, f = "e", lvl = { max = 7, min = 6 }, rate = 0.296, spawns = 9 },
-		{ faction = "A", npc = 1211, map = 1426, x = 27, y = 36.6, f = "e", lvl = { max = 10, min = 8 }, rate = 0.293, spawns = 9 },
-		{ faction = "H", npc = 1520, map = 1420, x = 49.6, y = 43.3, f = "e", lvl = { max = 7, min = 6 }, rate = 0.297, spawns = 6 },
-		{ faction = "H", npc = 1973, map = 1421, x = 58.3, y = 71.3, f = "e", lvl = { max = 21, min = 20 }, rate = 0.203, spawns = 7 },
-		{ faction = "A", npc = 568, map = 1433, x = 71.7, y = 38.4, lvl = { max = 25, min = 24 }, rate = 0.126, spawns = 11 },
-		{ faction = "A", npc = 909, map = 1431, x = 22.2, y = 72.4, f = "e", lvl = { max = 26, min = 25 }, rate = 0.13, spawns = 10 },
-		{ faction = "AH", npc = 1529, map = 1422, x = 19.7, y = 48.8, f = "e", lvl = { max = 10, min = 9 }, rate = 0.293, spawns = 4 },
-		{ faction = "AH", npc = 1532, map = 1422, x = 20.3, y = 48.3, f = "e", lvl = { max = 11, min = 10 }, rate = 0.302, spawns = 3 },
-		{ faction = "AH", npc = 2260, map = 1424, x = 80.3, y = 45.5, f = "e", lvl = { max = 22, min = 21 }, rate = 0.129, spawns = 7 },
-		{ faction = "AH", npc = 435, map = 1428, x = 69.3, y = 84.5, f = "e", lvl = { max = 25, min = 24 }, rate = 0.129, spawns = 7 },
-		{ faction = "A", npc = 2190, map = 1439, x = 45.9, y = 39.1, f = "e", lvl = { max = 12, min = 11 }, rate = 0.378, spawns = 12 },
-		{ faction = "A", npc = 2324, map = 1439, x = 39.7, y = 53.6, f = "e", lvl = { max = 14, min = 13 }, rate = 0.391, spawns = 9 },
-		{ faction = "AH", npc = 11911, map = 1442, x = 81.9, y = 87, f = "e", lvl = { max = 15, min = 14 }, rate = 0.389, spawns = 8 },
-		{ faction = "H", npc = 3197, map = 1411, x = 52.2, y = 9.2, f = "e", lvl = { max = 10, min = 9 }, rate = 0.293, spawns = 10 },
-		{ faction = "H", npc = 3284, map = 1413, x = 56.1, y = 8.7, f = "e", lvl = { max = 15, min = 14 }, rate = 0.383, spawns = 7 },
-		{ faction = "H", npc = 2975, map = 1412, x = 51.9, y = 68.5, lvl = { max = 6, min = 5 }, rate = 0.301, spawns = 8 },
-		{ faction = "A", npc = 2152, map = 1438, x = 46, y = 53.8, f = "e", lvl = { max = 7, min = 6 }, rate = 0.3, spawns = 8 },
-		{ faction = "H", npc = 3383, map = 1413, x = 62.1, y = 45.8, f = "e", lvl = { max = 15, min = 12 }, rate = 0.393, spawns = 6 },
-		{ faction = "A", npc = 2003, map = 1438, x = 53.3, y = 51.1, f = "e", lvl = { max = 6, min = 5 }, rate = 0.307, spawns = 7 },
-		{ faction = "AH", npc = 2962, map = 1443, x = 85, y = 71.9, f = "e", lvl = { max = 8, min = 7 }, rate = 0.292, spawns = 7 },
-		{ faction = "AH", npc = 11911, map = 1442, x = 80.5, y = 89.5, f = "e", lvl = { max = 15, min = 14 }, rate = 0.389, spawns = 5 },
-		{ faction = "AH", npc = 2963, map = 1443, x = 86, y = 72.5, f = "e", lvl = { max = 9, min = 8 }, rate = 0.294, spawns = 5 },
-		{ faction = "H", npc = 3456, map = 1413, x = 43.9, y = 80.6, f = "e", lvl = { max = 21, min = 20 }, rate = 0.187, spawns = 6 },
-		{ faction = "AH", npc = 4026, map = 1442, x = 30.6, y = 62.9, f = "e", lvl = { max = 25, min = 24 }, rate = 0.133, spawns = 8 },
-		{ faction = "AH", npc = 4027, map = 1442, x = 27.1, y = 69.6, f = "e", lvl = { max = 27, min = 26 }, rate = 0.128, spawns = 8 },
-		{ faction = "A", npc = 2160, map = 1439, x = 36.4, y = 86.3, f = "e", lvl = { max = 21, min = 21 }, rate = 0.177, spawns = 1 },
-		{ faction = "AH", npc = 252380, map = 2521, x = 64.41, y = 81.17, z = 648.2 },
+		{ faction = "H", npc = 3704, map = 1413, x = 44.93, y = 59.39, z = 96.8, f = "e" },
+		{ faction = "AH", npc = 2627, map = 1434, x = 28.77, y = 76.84, z = 32.4, f = "e" },
+		{ faction = "A", npc = 5567, map = 1453, x = 52.17, y = 83.14, z = 109.5 },
+		{ faction = "H", npc = 3363, map = 1454, x = 63.65, y = 49.93, z = 22.9, f = "e" },
+		{ faction = "A", npc = 5153, map = 1455, x = 43.15, y = 29.36, z = 504.3, f = "e" },
+		{ faction = "H", npc = 3004, map = 1456, x = 44.52, y = 45.35, z = 145.9, f = "e" },
+		{ faction = "A", npc = 4159, map = 1457, x = 63.41, y = 22.38, z = 1333.1, f = "e" },
+		{ faction = "H", npc = 11049, map = 1458, x = 70.04, y = 30.56, z = -62.1, f = "e" },
 		{ faction = "H", npc = 6574, map = 1417, x = 72.69, y = 36.45, z = 62.8, f = "e" },
 		{ faction = "A", npc = 7947, map = 1444, x = 31.3, y = 43.46, z = 13.6, f = "e" },
 		{ faction = "H", npc = 8145, map = 1444, x = 74.49, y = 42.73, z = 26.4, f = "e" },
@@ -13321,344 +13723,302 @@ G(function() return {
 		{ faction = "A", npc = 1672, map = 1431, x = 75.71, y = 44.56, z = 28.1, f = "e" },
 		{ faction = "A", npc = 3091, map = 1433, x = 22.09, y = 45.54, z = 71.2 },
 		{ faction = "A", npc = 5128, map = 1455, x = 39.62, y = 34.49, z = 504.5, f = "e" },
-		{ faction = "H", npc = 3367, map = 1454, x = 60.6, y = 48.93, z = 20, f = "e" },
-		{ faction = "A", npc = 6301, map = 1439, x = 38.11, y = 41.17, z = 7.1, f = "e" },
-		{ faction = "AH", npc = 12022, map = 1450, x = 48.24, y = 40.14, z = 489.4, f = "e" },
+		{ faction = "A", npc = 1346, map = 1453, x = 53.08, y = 81.35, z = 91 },
+		{ faction = "H", npc = 4576, map = 1458, x = 70.76, y = 30.69, z = -62.1, f = "e" },
 		{ faction = "H", npc = 3485, map = 1413, x = 52.25, y = 31.69, z = 95.9, f = "e" },
 		{ faction = "A", npc = 1474, map = 1432, x = 35.95, y = 45.87, z = 325.3, f = "e" },
 		{ faction = "A", npc = 8934, map = 1436, x = 52.23, y = 52.83, z = 35.3, f = "e" },
-		{ faction = "A", npc = 3958, map = 1440, x = 34.79, y = 49.84, z = 120.6, f = "e" },
 		{ faction = "A", npc = 2816, map = 1417, x = 45.08, y = 46.83, z = 22.1, f = "e" },
+		{ faction = "A", npc = 3958, map = 1440, x = 34.79, y = 49.84, z = 120.6, f = "e" },
 		{ faction = "AH", npc = 251997, map = 1416, x = 15.97, y = 65.51, z = 106.8, f = "e" },
-		{ faction = "AH", npc = 2739, map = 1418, x = 53.4, y = 32.5, f = "e", lvl = { max = 36, min = 35 }, rate = 0.304, spawns = 11 },
-		{ faction = "AH", npc = 2564, map = 1417, x = 32.2, y = 44.8, f = "e", lvl = { max = 34, min = 33 }, rate = 0.297, spawns = 11 },
-		{ faction = "AH", npc = 2743, map = 1418, x = 41.9, y = 28.6, f = "e", lvl = { max = 39, min = 38 }, rate = 0.297, spawns = 11 },
-		{ faction = "A", npc = 1158, map = 1437, x = 14.6, y = 24, f = "e", lvl = { max = 28, min = 27 }, rate = 0.251, spawns = 13 },
-		{ faction = "AH", npc = 674, map = 1434, x = 41.2, y = 43.2, f = "e", lvl = { max = 41, min = 40 }, rate = 0.29, spawns = 9 },
-		{ faction = "AH", npc = 2372, map = 1424, x = 63.1, y = 61.6, f = "e", lvl = { max = 27, min = 26 }, rate = 0.247, spawns = 8 },
-		{ faction = "A", npc = 1110, map = 1431, x = 15.3, y = 37.5, f = "e", lvl = { max = 28, min = 27 }, rate = 0.244, spawns = 8 },
-		{ faction = "A", npc = 1157, map = 1437, x = 13.8, y = 30.1, f = "e", lvl = { max = 27, min = 26 }, rate = 0.244, spawns = 8 },
-		{ faction = "AH", npc = 674, map = 1434, x = 41.8, y = 41.9, f = "e", lvl = { max = 41, min = 40 }, rate = 0.29, spawns = 6 },
-		{ faction = "AH", npc = 2894, map = 1418, x = 49.7, y = 68, f = "e", lvl = { max = 41, min = 40 }, rate = 0.314, spawns = 5 },
-		{ faction = "A", npc = 771, map = 1431, x = 14.2, y = 34.7, f = "e", lvl = { max = 32, min = 32 }, rate = 0.264, spawns = 5 },
-		{ faction = "A", npc = 771, map = 1431, x = 17.2, y = 36.2, f = "e", lvl = { max = 32, min = 32 }, rate = 0.264, spawns = 5 },
-		{ faction = "AH", npc = 2373, map = 1424, x = 63.2, y = 62.6, f = "e", lvl = { max = 28, min = 27 }, rate = 0.25, spawns = 5 },
-		{ faction = "AH", npc = 2372, map = 1424, x = 64.3, y = 64.3, f = "e", lvl = { max = 27, min = 26 }, rate = 0.247, spawns = 4 },
-		{ faction = "A", npc = 2103, map = 1437, x = 47.9, y = 75.7, f = "e", lvl = { max = 20, min = 19 }, rate = 0.047, spawns = 8 },
-		{ faction = "A", npc = 2103, map = 1437, x = 49.2, y = 79.1, f = "e", lvl = { max = 20, min = 19 }, rate = 0.047, spawns = 5 },
-		{ faction = "AH", npc = 4663, map = 1443, x = 56.6, y = 22.9, f = "e", lvl = { max = 31, min = 30 }, rate = 0.298, spawns = 8 },
-		{ faction = "AH", npc = 4094, map = 1441, x = 40.4, y = 35.7, f = "e", lvl = { max = 25, min = 24 }, rate = 0.249, spawns = 9 },
-		{ faction = "H", npc = 11697, map = 1413, x = 54.3, y = 1, f = "e", lvl = { max = 30, min = 29 }, rate = 0.249, spawns = 8 },
-		{ faction = "AH", npc = 11697, map = 1440, x = 79.4, y = 81.3, f = "e", lvl = { max = 30, min = 29 }, rate = 0.249, spawns = 8 },
-		{ faction = "AH", npc = 4634, map = 1443, x = 71.6, y = 44, f = "e", lvl = { max = 32, min = 31 }, rate = 0.304, spawns = 5 },
-		{ faction = "H", npc = 4094, map = 1413, x = 47.6, y = 98, f = "e", lvl = { max = 25, min = 24 }, rate = 0.249, spawns = 5 },
-		{ faction = "AH", npc = 7858, map = 1446, x = 75.4, y = 45.6, f = "e", lvl = { max = 45, min = 44 }, rate = 0.098, spawns = 10 },
-		{ faction = "AH", npc = 5616, map = 1446, x = 60, y = 23.2, f = "e", lvl = { max = 41, min = 40 }, rate = 0.099, spawns = 7 },
-		{ faction = "H", npc = 3502, map = 1413, x = 63.6, y = 38.7, f = "e", lvl = { max = 57, min = 57 }, rate = 0.667, spawns = 1 },
-		{ faction = "A", npc = 2337, map = 1439, x = 56.3, y = 26.2, f = "e", lvl = { max = 29, min = 28 }, rate = 0.244, spawns = 2 },
-		{ faction = "H", npc = 6072, map = 1413, x = 54, y = 2.9, f = "e", lvl = { max = 34, min = 34 }, rate = 0.298, spawns = 1 },
-		{ faction = "H", npc = 4705, map = 1412, x = 29.6, y = 49.7, f = "e", lvl = { max = 40, min = 39 }, rate = 0.294, spawns = 1 },
-		{ faction = "AH", npc = 3725, map = 1440, x = 30.7, y = 31.1, f = "e", lvl = { max = 19, min = 18 }, rate = 0.051, spawns = 5 },
-		{ faction = "A", npc = 3660, map = 1439, x = 56, y = 26.3, f = "e", lvl = { max = 31, min = 31 }, rate = 0.207, spawns = 1 },
-		{ faction = "AH", npc = 3730, map = 1440, x = 31.5, y = 31.3, f = "e", lvl = { max = 20, min = 19 }, rate = 0.049, spawns = 4 },
-		{ faction = "A", npc = 3715, map = 1439, x = 25.4, y = 95.6, f = "e", lvl = { max = 20, min = 19 }, rate = 0.02, spawns = 1 },
-		{ faction = "H", npc = 3363, map = 1454, x = 63.65, y = 49.93, z = 22.9, f = "e" },
-		{ faction = "A", npc = 1346, map = 1453, x = 53.08, y = 81.35, z = 91 },
-		{ faction = "A", npc = 5153, map = 1455, x = 43.15, y = 29.36, z = 504.3, f = "e" },
-		{ faction = "A", npc = 11052, map = 1445, x = 66.18, y = 51.81, z = 17.3, f = "e" },
 		{ faction = "H", npc = 2399, map = 1416, x = 62.7, y = 82.7, z = 57, f = "e" },
-		{ faction = "H", npc = 8363, map = 1456, x = 40.64, y = 64, z = 129.8, f = "e" },
-		{ faction = "A", npc = 4225, map = 1457, x = 63.69, y = 22.28, z = 1343.4, f = "e" },
+		{ faction = "A", npc = 11052, map = 1445, x = 66.18, y = 51.81, z = 17.3, f = "e" },
 	},
 	steps = {
 		{
 			title = "Learn {skill:197}",
 			note = "Apprentice {skill:197} lets you craft up to 75 for 10c, at any character level. Any {skill:197} trainer of your faction teaches it; the arrow picks the nearest. Keep every {item:2589} you loot: humanoids of level 5-20 drop it. 1-75 takes about 50c of recipes and 7s 20c of vendor goods, plus 144 {item:2589} to gather or buy.",
+			section = 1,
 			goals = {
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, rank = 1, rankMax = 75, skill = "Tailoring", skillLine = 197 },
+				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, rank = 1, rankMax = 75, skill = "Tailoring", skillLine = 197 },
 				{ t = "skill", level = 1, skill = "Tailoring", skillLine = 197 },
 			},
 		},
 		{
 			title = "{skill:197} 1-75: vendor goods",
-			note = "Buy the whole bracket's share in one go: 72 {item:2320} (7s 20c); about 7s 20c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			note = "Buy the whole bracket's share in one go: 72 {item:2320} (7s 20c); about 7s 20c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, Felika and {npc:5817}).",
+			section = 1,
 			goals = {
-				{ t = "buy", item = 2320, count = 72, candidates = { 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 4, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 } },
+				{ t = "buy", item = 2320, count = 72, candidates = { 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 11, 90, 91, 92, 93 } },
 			},
 		},
 		{
 			title = "{item:2589}",
-			note = "144 {item:2589} for {spell:2387} and {item:7026}: humanoids of level 5-20 drop it; or the Auction House. The arrow picks a farm spot for your level and faction.",
+			note = "144 {item:2589} for {spell:2387} and {item:7026}: humanoids of level 5-20 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 1,
 			goals = {
-				{ t = "collect", item = 2589, count = 144, candidates = { 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124 } },
+				{ t = "collect", item = 2589, count = 144 },
 			},
 		},
 		{
 			title = "{spell:2387} to 15",
 			note = "{spell:2387} is orange at 1 (yellow 35, green 47, grey 60): about 7 crafts to 15, a point every craft. Each takes 1 {spell:2963} and 1 {item:2320}. Make the 7 {spell:2963} first: it gives points too while not grey. The trainer teaches it, and it is the cheapest way through these points in the data.",
+			section = 1,
 			goals = {
 				{ t = "craft", item = 2996, spell = 2963, count = 7, reagents = { { item = 2589, count = 2, itemName = "Linen Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 2570, spell = 2387, reagents = { { item = 2996, count = 1, itemName = "Bolt of Linen Cloth" }, { item = 2320, count = 1, itemName = "Coarse Thread" } }, skillLine = 197, untilSkill = 15 },
+				{ t = "craft", item = 2570, spell = 2387, grey = 60, reagents = { { item = 2996, count = 1, itemName = "Bolt of Linen Cloth" }, { item = 2320, count = 1, itemName = "Coarse Thread" } }, skillLine = 197, untilSkill = 15, yellow = 35 },
 			},
 		},
 		{
 			title = "{skill:197} recipes at 15",
 			note = "Back to a {skill:197} trainer: {spell:8776} (from 15, 50c).",
+			section = 1,
 			goals = {
-				{ t = "learn", spell = 8776, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, skillLine = 197 },
+				{ t = "learn", spell = 8776, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{item:7026} to 75",
 			note = "{item:7026} is orange at 15 (yellow 50, green 67, grey 85): about 65 crafts to 75. Each takes 1 {spell:2963} and 1 {item:2320}. Make the 65 {spell:2963} first: it gives points too while not grey. Each belt takes one bolt; the belts sell to vendors.",
+			section = 1,
 			goals = {
 				{ t = "craft", item = 2996, spell = 2963, count = 65, reagents = { { item = 2589, count = 2, itemName = "Linen Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 7026, spell = 8776, reagents = { { item = 2996, count = 1, itemName = "Bolt of Linen Cloth" }, { item = 2320, count = 1, itemName = "Coarse Thread" } }, skillLine = 197, untilSkill = 75 },
+				{ t = "craft", item = 7026, spell = 8776, grey = 85, reagents = { { item = 2996, count = 1, itemName = "Bolt of Linen Cloth" }, { item = 2320, count = 1, itemName = "Coarse Thread" } }, skillLine = 197, untilSkill = 75, yellow = 50 },
 				{ t = "skill", level = 75, skill = "Tailoring", skillLine = 197 },
 			},
 		},
 		{
 			title = "Journeyman {skill:197}",
-			note = "Journeyman raises the cap from 75 to 150 for 5s; it needs {skill:197} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:197} trainer teaches it: Alliance {npc:1346} ({zone:1453}), {npc:2627} ({zone:1434}), {npc:5153} ({zone:1455}), {npc:4159} ({zone:1457}), {npc:252380} (Zephras Isle), Sellandus ({zone:1453}), {npc:251991} (Zephras Isle) and {npc:11052} ({zone:1445}); Horde {npc:2399} ({zone:1424}), {npc:2627} ({zone:1434}), {npc:4576} ({zone:1458}), {npc:3363} ({zone:1454}), {npc:3704} ({zone:1413}), {npc:252380} (Zephras Isle), {npc:11049} ({zone:1458}), {npc:251991} (Zephras Isle) and Tepa ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:2964} (from 55, 1s) and {spell:2402} (from 55, 2s 50c). Also learn {spell:1229504} (1s): Forever's {skill:197} camp item, a {spell:2963} and a {item:2320}; each faction has its own. The Camping 101: {skill:197} quest from your starting area's camping guide (after The Great Outdoors) sends you to a tailoring trainer who teaches it free. 75-150 takes about 11s of recipes and 1g 65s 50c of vendor goods, plus 567 {item:2592} and 204 {item:4306} to gather or buy.",
+			note = "Journeyman raises the cap from 75 to 150 for 5s; it needs {skill:197} 50 and character level 10, so you can take it on any visit from 50. Not every {skill:197} trainer teaches it: Alliance {npc:2627} ({zone:1434}), {npc:5153} ({zone:1455}), {npc:4159} ({zone:1457}), {npc:252380} (Zephras Isle), {npc:5567} ({zone:1453}) and {npc:251991} (Zephras Isle); Horde {npc:2627} ({zone:1434}), {npc:3363} ({zone:1454}), {npc:3704} ({zone:1413}), {npc:252380} (Zephras Isle), {npc:11049} ({zone:1458}), {npc:251991} (Zephras Isle) and {npc:3004} ({zone:1456}). The arrow picks the nearest of your faction. Learn now: {spell:2964} (from 55, 1s) and {spell:2402} (from 55, 2s 50c). Also learn {spell:1229504} (1s): Forever's {skill:197} camp item, a {spell:2963} and a {item:2320}; each faction has its own. The Camping 101: {skill:197} quest from your starting area's camping guide (after The Great Outdoors) sends you to a tailoring trainer who teaches it free. 75-150 takes about 11s of recipes and 1g 65s 50c of vendor goods, plus 567 {item:2592} and 204 {item:4306} to gather or buy.",
+			section = 2,
 			goals = {
 				{ t = "level", level = 10 },
-				{ t = "train", candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, rank = 2, rankMax = 150, skill = "Tailoring", skillLine = 197 },
-				{ t = "learn", spell = 2964, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, skillLine = 197 },
-				{ t = "learn", spell = 2402, candidates = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, skillLine = 197 },
-				{ t = "learn", only = { factions = { "Alliance" } }, spell = 1263425, candidates = { 3, 4, 5, 6, 8, 10 }, skillLine = 197 },
-				{ t = "learn", only = { factions = { "Horde" } }, spell = 1229504, candidates = { 1, 2, 7, 9, 11 }, skillLine = 197 },
+				{ t = "train", candidates = { 94, 95, 96, 97, 98, 99, 100, 101, 11, 12 }, rank = 2, rankMax = 150, skill = "Tailoring", skillLine = 197 },
+				{ t = "learn", spell = 2964, candidates = { 1, 94, 2, 3, 95, 4, 5, 6, 7, 99, 100, 10, 11, 12 }, skillLine = 197 },
+				{ t = "learn", spell = 2402, candidates = { 1, 94, 2, 3, 95, 4, 5, 6, 7, 99, 100, 10, 11, 12 }, skillLine = 197 },
+				{ t = "learn", only = { factions = { "Alliance" } }, spell = 1263425, candidates = { 3, 4, 5, 7, 9, 11, 12 }, skillLine = 197 },
+				{ t = "learn", only = { factions = { "Horde" } }, spell = 1229504, candidates = { 1, 2, 6, 8, 10, 11, 12 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{skill:197} 75-150: vendor goods",
-			note = "Buy the whole bracket's share in one go: 108 {item:2321} (1g 8s), 34 {item:2324} (8s 50c) and 98 {item:2604} (49s); about 1g 65s 50c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			note = "Buy the whole bracket's share in one go: 108 {item:2321} (1g 8s), 34 {item:2324} (8s 50c) and 98 {item:2604} (49s); about 1g 65s 50c in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, Felika and {npc:5817}).",
+			section = 2,
 			goals = {
-				{ t = "buy", item = 2321, count = 108, candidates = { 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 31, 32, 33, 34, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 125, 90, 91, 92 } },
-				{ t = "buy", item = 2324, count = 34, candidates = { 12, 13, 15, 17, 18, 20, 21, 22, 126, 25, 27, 31, 35, 37, 38, 40, 41, 42, 44, 46, 47, 48, 50, 51, 52, 54, 55, 58, 59, 61, 62, 63, 127, 128, 67, 68, 69, 70, 72, 73, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 125, 90, 92 } },
-				{ t = "buy", item = 2604, count = 98, candidates = { 12, 13, 15, 17, 19, 20, 129, 22, 23, 24, 25, 28, 29, 30, 32, 33, 34, 35, 37, 38, 130, 41, 43, 131, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 59, 60, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 132, 83, 84, 85, 86, 87, 88, 125, 90, 91, 92 } },
+				{ t = "buy", item = 2321, count = 108, candidates = { 18, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 35, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 11, 12, 91, 92, 93 } },
+				{ t = "buy", item = 2324, count = 34, candidates = { 13, 14, 16, 18, 19, 21, 22, 23, 102, 26, 28, 32, 36, 38, 39, 41, 42, 43, 45, 47, 48, 49, 51, 52, 54, 56, 57, 60, 61, 63, 64, 65, 103, 104, 69, 70, 71, 72, 74, 75, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 11, 12, 91, 93 } },
+				{ t = "buy", item = 2604, count = 98, candidates = { 13, 14, 16, 18, 20, 21, 105, 23, 24, 25, 26, 29, 30, 31, 33, 34, 35, 36, 38, 39, 106, 42, 44, 107, 45, 46, 47, 48, 49, 50, 51, 52, 54, 56, 57, 58, 59, 61, 62, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 108, 85, 86, 87, 88, 89, 11, 12, 91, 92, 93 } },
 			},
 		},
 		{
-			title = "{item:2592} (Alliance)",
-			only = { factions = { "Alliance" } },
-			note = "567 {item:2592} for {spell:2402} and {spell:3866}: humanoids of level 15-30 drop it; or the Auction House. It drops from {npc:98} (level 17-18) here.",
+			title = "{item:2592}",
+			note = "567 {item:2592} for {spell:2402} and {spell:3866}: humanoids of level 15-30 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2592, count = 567, map = 1436, x = 59.4, y = 72.8, f = "e", fromNpcs = { { npc = 98, npcName = "Riverpaw Taskmaster" }, { npc = 452, npcName = "Riverpaw Bandit" }, { npc = 453, npcName = "Riverpaw Mystic" }, { npc = 125, npcName = "Riverpaw Overseer" }, { npc = 572, npcName = "Leprithus" } }, lvl = 18, spotsPacked = "59.4,72.8,,101,12,,19;60.6,70.2,,40,7,1;56.5,74.1,,40,7,1;56.4,70.1,,40,7,1;62.2,77,,55,20,1,19;63.5,73.2,,44,5,1,19;63.6,69.8,,60,8,1;65.2,75.8,,54,7,1,19;64.7,66.7,,40,1,1,19;52.3,73.3,,40,2,1;52.9,78.8,,40,3,1;51.6,75.9,,40,3,1;53.4,62.7,,40,4,1,17;60.6,58.2,,40,1,1;48.8,76.9,,40,2,1;48.9,61.2,,51,4,1,17;46.6,79.7,,40,2,1;42.7,80.1,,40,2,1;40,79.4,,40,2,1;37.4,81.6,,40,6,1,19;41.9,29.2,,40,1,1,19" },
+				{ t = "collect", item = 2592, count = 567 },
 			},
 		},
 		{
-			title = "{item:2592} (Horde)",
-			only = { factions = { "Horde" } },
-			note = "567 {item:2592} for {spell:2402} and {spell:3866}: humanoids of level 15-30 drop it; or the Auction House. It drops from {npc:3263} (level 19-20) here.",
+			title = "{item:4306}",
+			note = "204 {item:4306} for {spell:3871}: humanoids of level 25-45 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 2,
 			goals = {
-				{ t = "collect", item = 2592, count = 567, map = 1413, x = 40.4, y = 45.4, f = "e", fromNpcs = { { npc = 3263, npcName = "Bristleback Geomancer" }, { npc = 3258, npcName = "Bristleback Hunter" } }, lvl = 20, spotsPacked = "40.4,45.4,,72,7;41.3,46.1,,40,4,1;41.4,44.7,,40,3,1;43.1,47.3,,78,6,1;43.1,48.4,,40,6,1;43.7,48.1,,40,3,1;43.2,52.1,,54,6,1,19;44.4,51.8,,44,4,1,19;45.4,51.2,,40,1,1,19;43.1,55.2,,50,4,1,18;45.3,54.1,,50,5,1,18;45.1,54.7,,40,1,1,18;47.1,52.9,,40,2,1,18;46.8,53.9,,40,3,1,18;51,55.2,,40,3,1,19;51.7,54.3,,64,4,1,19;52.6,52.7,,44,4,1;51.1,57.3,,45,6,1;51.7,57.8,,40,2,1;53.5,53.4,,40,2,1;53.4,54.2,,40,4,1" },
-			},
-		},
-		{
-			title = "{item:4306} (Alliance)",
-			only = { factions = { "Alliance" } },
-			note = "204 {item:4306} for {spell:3871}: humanoids of level 25-45 drop it; or the Auction House. It drops from {npc:2240} (level 32-33) here.",
-			goals = {
-				{ t = "collect", item = 4306, count = 204, map = 1424, x = 58.3, y = 6.2, f = "e", fromNpcs = { { npc = 2240, npcName = "Syndicate Footpad" }, { npc = 2241, npcName = "Syndicate Thief" }, { npc = 2319, npcName = "Syndicate Wizard" }, { npc = 2252, npcName = "Crushridge Ogre" }, { npc = 2253, npcName = "Crushridge Brute" } }, lvl = 36, spotsPacked = "58.3,6.2,,128,26,,35;51.2,1.4,,40,3,1;49.2,2.5,,49,5,1;50.8,19.9,,47,19,1,34" },
-			},
-		},
-		{
-			title = "{item:4306} (Horde)",
-			only = { factions = { "Horde" } },
-			note = "204 {item:4306} for {spell:3871}: humanoids of level 25-45 drop it; or the Auction House. It drops from {npc:11697} (level 29-30) here.",
-			goals = {
-				{ t = "collect", item = 4306, count = 204, map = 1440, x = 81.3, y = 79.5, f = "e", fromNpcs = { { npc = 11697, npcName = "Mannoroc Lasher" }, { npc = 6115, npcName = "Felguard" }, { npc = 6072, npcName = "Diathorus the Seeker" }, { npc = 3799, npcName = "Severed Druid" } }, lvl = 30, spotsPacked = "81.3,79.5,,47,2;82.1,77,,40,1,1;79.3,81.6,,54,17,1,34;83.5,77.8,,40,1,1;78.4,75,,40,1,1,29;78,84,,42,14,1;84.7,75.1,,40,1,1;78.6,85,,40,4,1,34;85.9,78.5,,40,1,1;76.7,75.4,,48,4,1;81.3,70.9,,40,1,1;87.1,79.3,,40,1,1;84.6,71.1,,40,1,1;74.8,76.5,,40,1,1,29;75.5,73.6,,40,3,1,32;84,69.2,,40,2,1;82.7,67.4,,40,3,1;89.4,77.1,,40,4,1;81.4,66.8,,49,3,1" },
+				{ t = "collect", item = 4306, count = 204 },
 			},
 		},
 		{
 			title = "{spell:2402} to 104",
 			note = "{spell:2402} is orange at 75 (yellow 80, green 97, grey 115): about 42 crafts to 104. Each takes 1 {spell:2964} and 1 {item:2321}. Make the 42 {spell:2964} first: it gives points too while not grey. {spell:2964} is taught from 55 on Forever.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 2997, spell = 2964, count = 42, reagents = { { item = 2592, count = 3, itemName = "Wool Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 2584, spell = 2402, reagents = { { item = 2997, count = 1, itemName = "Bolt of Woolen Cloth" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 104 },
+				{ t = "craft", item = 2584, spell = 2402, grey = 115, reagents = { { item = 2997, count = 1, itemName = "Bolt of Woolen Cloth" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 104, yellow = 80 },
 			},
 		},
 		{
 			title = "{skill:197} recipes at 104",
 			note = "Back to a {skill:197} trainer: {spell:3866} (from 85, 2s 50c).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3866, candidates = { 7, 9, 1, 5, 4, 10, 2, 3, 6, 8, 11 }, skillLine = 197 },
+				{ t = "learn", spell = 3866, candidates = { 94, 95, 96, 97, 98, 99, 100, 101, 11, 12 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{spell:3866} to 135",
 			note = "{spell:3866} is orange at 104 (yellow 110, green 127, grey 145): about 49 crafts to 135. Each takes 3 {spell:2964}, 2 {item:2604} and 1 {item:2321}. Make the 147 {spell:2964} first. Three woolen bolts and two {item:2604} a shirt; {item:2592} drops from humanoids of level 15-30.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 2997, spell = 2964, count = 147, reagents = { { item = 2592, count = 3, itemName = "Wool Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 4330, spell = 3866, reagents = { { item = 2997, count = 3, itemName = "Bolt of Woolen Cloth" }, { item = 2604, count = 2, itemName = "Red Dye" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 135 },
+				{ t = "craft", item = 4330, spell = 3866, grey = 145, reagents = { { item = 2997, count = 3, itemName = "Bolt of Woolen Cloth" }, { item = 2604, count = 2, itemName = "Red Dye" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 135, yellow = 110 },
 			},
 		},
 		{
 			title = "{skill:197} recipes at 135",
 			note = "Back to a {skill:197} trainer: {spell:3839} (from 100, 5s) and {spell:3871} (from 135).",
+			section = 2,
 			goals = {
-				{ t = "learn", spell = 3839, candidates = { 7, 9, 1, 5, 4, 10, 2, 3, 6, 8, 11 }, skillLine = 197 },
-				{ t = "learn", spell = 3871, candidates = { 7, 9, 1, 5, 4, 10, 2, 3, 6, 8, 11 }, skillLine = 197 },
+				{ t = "learn", spell = 3839, candidates = { 94, 95, 96, 97, 98, 99, 100, 101, 11, 12 }, skillLine = 197 },
+				{ t = "learn", spell = 3871, candidates = { 94, 95, 109, 97, 98, 99, 100, 110, 11, 12 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{spell:3871} to 150",
 			note = "{spell:3871} is orange at 135 (yellow 145, green 150, grey 155): about 17 crafts to 150. Each takes 3 {spell:3839}, 2 {item:2324} and 1 {item:2321}. Make the 51 {spell:3839} first. Silk bolts from here on: {item:4306} drops from humanoids of level 25-45. {item:2324} from tailoring and trade supplies vendors. {skill:197} 150 is a Legacy System milestone.",
+			section = 2,
 			goals = {
 				{ t = "craft", item = 4305, spell = 3839, count = 51, reagents = { { item = 4306, count = 4, itemName = "Silk Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 4334, spell = 3871, reagents = { { item = 4305, count = 3, itemName = "Bolt of Silk Cloth" }, { item = 2324, count = 2, itemName = "Bleach" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 150 },
+				{ t = "craft", item = 4334, spell = 3871, grey = 155, reagents = { { item = 4305, count = 3, itemName = "Bolt of Silk Cloth" }, { item = 2324, count = 2, itemName = "Bleach" }, { item = 2321, count = 1, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 150, yellow = 145 },
 				{ t = "skill", level = 150, skill = "Tailoring", skillLine = 197 },
 			},
 		},
 		{
 			title = "{skill:197} 150-225: vendor goods",
-			note = "Buy the whole bracket's share in one go: 44 {item:2321} (44s), 90 {item:4291} (4g 50s), 44 {item:6260} (22s) and 80 {item:8343} (16g); about 21g 16s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			note = "Buy the whole bracket's share in one go: 44 {item:2321} (44s), 90 {item:4291} (4g 50s), 44 {item:6260} (22s) and 80 {item:8343} (16g); about 21g 16s in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, Felika and {npc:5817}).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 2321, count = 44, candidates = { 80, 133, 57, 17, 19, 71, 18, 56, 60, 61, 83, 20, 55, 68, 64, 77, 72, 76, 67, 62, 134, 135, 59, 128, 63, 58, 74, 127, 70, 69, 75, 84, 21, 22, 23, 24, 27, 28, 29, 30, 31, 32, 33, 34, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 78, 81, 82, 85, 86, 87, 88, 125, 90, 91, 92 } },
-				{ t = "buy", item = 4291, count = 90, candidates = { 80, 133, 57, 136, 19, 71, 56, 60, 83, 20, 68, 64, 77, 72, 76, 67, 62, 134, 135, 59, 128, 63, 58, 74, 127, 70, 69, 75, 84, 21, 22, 23, 24, 28, 29, 30, 31, 32, 33, 34, 40, 137, 43, 131, 44, 45, 46, 47, 48, 49, 138, 51, 78, 81, 82, 85, 86, 87, 88, 125, 91, 92 } },
-				{ t = "buy", item = 6260, count = 44, candidates = { 80, 133, 17, 12, 19, 139, 13, 60, 83, 20, 55, 15, 68, 72, 134, 73, 59, 66, 74, 65, 70, 69, 52, 84, 129, 22, 140, 24, 25, 28, 29, 32, 33, 35, 37, 38, 130, 41, 43, 131, 44, 46, 47, 49, 50, 51, 78, 132, 85, 86, 87, 88, 125, 90, 92 } },
-				{ t = "buy", item = 8343, count = 80, candidates = { 80, 133, 57, 136, 19, 71, 56, 60, 83, 20, 68, 64, 77, 72, 76, 67, 62, 134, 135, 59, 128, 63, 74, 127, 70, 69, 75, 84, 129, 22, 23, 24, 28, 29, 30, 32, 33, 34, 130, 137, 43, 131, 44, 45, 46, 47, 48, 49, 138, 51, 78, 132, 85, 86, 87, 88, 125, 91, 92 } },
+				{ t = "buy", item = 2321, count = 44, candidates = { 18, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 35, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 11, 12, 91, 92, 93 } },
+				{ t = "buy", item = 4291, count = 90, candidates = { 111, 20, 21, 22, 23, 24, 25, 29, 30, 31, 32, 33, 34, 35, 41, 112, 44, 107, 45, 46, 47, 48, 49, 50, 113, 52, 56, 58, 59, 60, 61, 62, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 11, 12, 92, 93 } },
+				{ t = "buy", item = 6260, count = 44, candidates = { 13, 14, 16, 18, 20, 21, 105, 23, 114, 25, 26, 29, 30, 33, 34, 36, 38, 39, 106, 42, 44, 107, 45, 47, 48, 50, 51, 52, 54, 56, 57, 115, 61, 62, 67, 68, 70, 71, 72, 74, 75, 76, 80, 81, 82, 108, 85, 86, 87, 88, 89, 11, 12, 91, 93 } },
+				{ t = "buy", item = 8343, count = 80, candidates = { 111, 20, 21, 105, 23, 24, 25, 29, 30, 31, 33, 34, 35, 106, 112, 44, 107, 45, 46, 47, 48, 49, 50, 113, 52, 56, 58, 59, 61, 62, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 108, 85, 86, 87, 88, 89, 11, 12, 92, 93 } },
 			},
 		},
 		{
 			title = "{item:7089}",
 			note = "{item:7089} teaches {item:7053} ({skill:197} 140) for 15s. Sold by Alliance: {npc:6576} ({zone:1444}), limited stock and {npc:251997} ({zone:1416}); Horde: {npc:6574} ({zone:1417}), limited stock and {npc:251997} ({zone:1416}).",
+			section = 3,
 			goals = {
-				{ t = "buy", item = 7089, candidates = { 59, 141, 126 } },
+				{ t = "buy", item = 7089, candidates = { 116, 102, 61 } },
 			},
 		},
 		{
 			title = "{item:4306}",
-			note = "264 {item:4306} for {item:7053}: humanoids of level 25-45 drop it; or the Auction House. The arrow picks a farm spot for your level and faction.",
+			note = "264 {item:4306} for {item:7053}: humanoids of level 25-45 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 4306, count = 264, candidates = { 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173 } },
+				{ t = "collect", item = 4306, count = 264 },
 			},
 		},
 		{
-			title = "{item:4338} (Alliance)",
-			only = { factions = { "Alliance" } },
-			note = "900 {item:4338} for {item:9998} and {item:10024}: humanoids of level 35-50 drop it; or the Auction House. It drops from {npc:4467} (level 46-47) here.",
+			title = "{item:4338}",
+			note = "900 {item:4338} for {item:9998} and {item:10024}: humanoids of level 35-50 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 3,
 			goals = {
-				{ t = "collect", item = 4338, count = 900, map = 1425, x = 44.6, y = 65.5, f = "e", fromNpcs = { { npc = 4467, npcName = "Vilebranch Soothsayer" }, { npc = 4466, npcName = "Vilebranch Scalper" }, { npc = 2639, npcName = "Vilebranch Axe Thrower" }, { npc = 2640, npcName = "Vilebranch Witch Doctor" }, { npc = 2653, npcName = "Witherbark Sadist" } }, lvl = 47, spotsPacked = "44.6,65.5,,113,7;43.5,66.9,,40,3,1;46.7,63.5,,58,6,1;48,68.3,,56,8,1;48.5,65.5,,45,4,1;40,66.1,,40,3,1,46;50,63.9,,56,6,1,48;36.1,64.6,,46,4,1,45;36.4,71.9,,61,6,1,46;32.2,67.5,,40,4,1,46;31.3,70.8,,40,2,1,45;32.6,75.8,,40,4,1,46;25.5,66.2,,40,2,1,45;63.5,60,,40,2,1;53.2,39.4,,41,6,1;66.6,68.7,,40,2,1;67.5,66.2,,40,2,1;68.7,69.8,,40,2,1;66.2,44.2,,40,6,1;71.1,48.1,,59,8,1" },
-			},
-		},
-		{
-			title = "{item:4338} (Horde)",
-			only = { factions = { "Horde" } },
-			note = "900 {item:4338} for {item:9998} and {item:10024}: humanoids of level 35-50 drop it; or the Auction House. It drops from {npc:5472} (level 46-47) here.",
-			goals = {
-				{ t = "collect", item = 4338, count = 900, map = 1446, x = 37.8, y = 56.6, f = "e", fromNpcs = { { npc = 5472, npcName = "Dunemaul Enforcer" }, { npc = 5474, npcName = "Dunemaul Brute" }, { npc = 8201, npcName = "Omgorn the Lost" }, { npc = 5475, npcName = "Dunemaul Warlock" }, { npc = 5473, npcName = "Dunemaul Ogre Mage" } }, lvl = 48, spotsPacked = "37.8,56.6,,60,5;38,59.3,,42,2,1;39.7,56.3,,42,2,1;39.7,54.3,,93,9,1,50;40.7,57.3,,66,6,1,49;38.8,52.1,,53,8,1;40.3,51.4,,66,7,1;42.2,55.3,,69,5,1;42.1,53.3,,43,4,1;39.4,71.2,,42,3,1;41.3,71.1,,60,5,1;47.1,63.6,,55,4,1;46.2,65.9,,63,7,1;40.6,72.9,,42,3,1,47;38.9,73.4,,42,3,1;42.2,73,,42,2,1;48.1,65.4,,42,3,1;40.1,74.8,,42,2,1;47.8,67.6,,42,2,1;41.8,74.5,,42,2,1" },
+				{ t = "collect", item = 4338, count = 900 },
 			},
 		},
 		{
 			title = "Expert {skill:197}",
-			note = "Expert raises the cap from 150 to 225; it needs {skill:197} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:1346} ({zone:1453}) and {npc:11052} ({zone:1445}); Horde {npc:2399} ({zone:1424}) and {npc:4576} ({zone:1458}). The arrow picks the nearest of your faction. Learn now: {spell:3865} (from 140). 150-225 takes about 15s of recipes and 21g 16s of vendor goods, plus 264 {item:4306} and 900 {item:4338} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {item:9998} (from 170) and {item:10024} (from 190), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3.",
+			note = "Expert raises the cap from 150 to 225; it needs {skill:197} 125 and character level 20, so you can take it on any visit from 125. Only a few trainers teach it: Alliance {npc:1346} ({zone:1453}); Horde {npc:4576} ({zone:1458}). The arrow picks the nearest of your faction. Learn now: {spell:3865} (from 140). 150-225 takes about 15s of recipes and 21g 16s of vendor goods, plus 264 {item:4306} and 900 {item:4338} to gather or buy. Come with all of it in your bags (the steps above, the rest from the Auction House): these trainers also teach {item:9998} (from 170) and {item:10024} (from 190), and the crafts need no station, so craft right here and learn each recipe as you reach its skill. One trip instead of 3.",
+			section = 3,
 			goals = {
 				{ t = "level", level = 20 },
-				{ t = "train", candidates = { 174, 10, 175, 176, 11 }, rank = 3, rankMax = 225, skill = "Tailoring", skillLine = 197 },
-				{ t = "learn", spell = 3865, candidates = { 1, 9, 174, 5, 4, 10, 2, 3, 6, 8, 11 }, skillLine = 197 },
+				{ t = "train", candidates = { 109, 110 }, rank = 3, rankMax = 225, skill = "Tailoring", skillLine = 197 },
+				{ t = "learn", spell = 3865, candidates = { 94, 95, 109, 97, 98, 99, 100, 110, 11, 12 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{item:7053} to 170",
 			note = "{item:7053} is orange at 150 (yellow 160, green 175, grey 190): about 22 crafts to 170. Each takes 3 {spell:3839}, 2 {item:6260} and 2 {item:2321}. Make the 66 {spell:3839} first. Its recipe is the one bought above; it is the cheapest way through these points in the data.",
+			section = 3,
 			goals = {
 				{ t = "learn", item = 7089, spell = 8786, note = "from the recipe in your bags", skillLine = 197 },
 				{ t = "craft", item = 4305, spell = 3839, count = 66, reagents = { { item = 4306, count = 4, itemName = "Silk Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 7053, spell = 8786, reagents = { { item = 4305, count = 3, itemName = "Bolt of Silk Cloth" }, { item = 6260, count = 2, itemName = "Blue Dye" }, { item = 2321, count = 2, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 170 },
+				{ t = "craft", item = 7053, spell = 8786, grey = 190, reagents = { { item = 4305, count = 3, itemName = "Bolt of Silk Cloth" }, { item = 6260, count = 2, itemName = "Blue Dye" }, { item = 2321, count = 2, itemName = "Fine Thread" } }, skillLine = 197, untilSkill = 170, yellow = 160 },
 			},
 		},
 		{
 			title = "{skill:197} recipes at 170",
 			note = "Still at the Expert trainer: {spell:12048} (from 170).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 12048, candidates = { 174, 10, 175, 176, 11 }, skillLine = 197 },
+				{ t = "learn", spell = 12048, candidates = { 109, 110 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{item:9998} to 197",
 			note = "{item:9998} is orange at 170 (yellow 185, green 200, grey 215): about 30 crafts to 197. Each takes 2 {spell:3865} and 3 {item:4291}. Make the 60 {spell:3865} first. The trainer teaches it, and it is the cheapest way through these points in the data.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 4339, spell = 3865, count = 60, reagents = { { item = 4338, count = 5, itemName = "Mageweave Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 9998, spell = 12048, reagents = { { item = 4339, count = 2, itemName = "Bolt of Mageweave" }, { item = 4291, count = 3, itemName = "Silken Thread" } }, skillLine = 197, untilSkill = 197 },
+				{ t = "craft", item = 9998, spell = 12048, grey = 215, reagents = { { item = 4339, count = 2, itemName = "Bolt of Mageweave" }, { item = 4291, count = 3, itemName = "Silken Thread" } }, skillLine = 197, untilSkill = 197, yellow = 185 },
 			},
 		},
 		{
 			title = "{skill:197} recipes at 197",
 			note = "Still at the Expert trainer: {spell:12072} (from 190).",
+			section = 3,
 			goals = {
-				{ t = "learn", spell = 12072, candidates = { 174, 10, 175, 176, 11 }, skillLine = 197 },
+				{ t = "learn", spell = 12072, candidates = { 109, 110 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{item:10024} to 225",
 			note = "{item:10024} is orange at 197 (yellow 205, green 220, grey 235): about 40 crafts to 225. Each takes 3 {spell:3865} and 2 {item:8343}. Make the 120 {spell:3865} first. The trainer teaches it, and it is the cheapest way through these points in the data. {skill:197} 225 is a Legacy System milestone.",
+			section = 3,
 			goals = {
 				{ t = "craft", item = 4339, spell = 3865, count = 120, reagents = { { item = 4338, count = 5, itemName = "Mageweave Cloth" } }, skillLine = 197 },
-				{ t = "craft", item = 10024, spell = 12072, reagents = { { item = 4339, count = 3, itemName = "Bolt of Mageweave" }, { item = 8343, count = 2, itemName = "Heavy Silken Thread" } }, skillLine = 197, untilSkill = 225 },
+				{ t = "craft", item = 10024, spell = 12072, grey = 235, reagents = { { item = 4339, count = 3, itemName = "Bolt of Mageweave" }, { item = 8343, count = 2, itemName = "Heavy Silken Thread" } }, skillLine = 197, untilSkill = 225, yellow = 205 },
 				{ t = "skill", level = 225, skill = "Tailoring", skillLine = 197 },
 			},
 		},
 		{
 			title = "Artisan {skill:197}",
 			note = "Artisan raises the cap from 225 to 300; it needs {skill:197} 200 and character level 35, so you can take it on any visit from 200. Only a few trainers teach it: Alliance {npc:11052} ({zone:1445}); Horde {npc:2399} ({zone:1424}). The arrow picks the nearest of your faction. Learn now: {spell:18401} (from 205) and {spell:18402} (from 210). 225-300 takes about 1g 60s of recipes and 58g of vendor goods, plus 420 {item:8170}, 3195 {item:14047} and 124 {item:14227} to gather or buy.",
+			section = 4,
 			goals = {
 				{ t = "level", level = 35 },
-				{ t = "train", candidates = { 177, 178 }, rank = 4, rankMax = 300, skill = "Tailoring", skillLine = 197 },
-				{ t = "learn", spell = 18401, candidates = { 174, 10, 175, 176, 11 }, skillLine = 197 },
-				{ t = "learn", spell = 18402, candidates = { 174, 10, 175, 176, 11 }, skillLine = 197 },
+				{ t = "train", candidates = { 117, 118 }, rank = 4, rankMax = 300, skill = "Tailoring", skillLine = 197 },
+				{ t = "learn", spell = 18401, candidates = { 117, 118, 109, 110 }, skillLine = 197 },
+				{ t = "learn", spell = 18402, candidates = { 117, 118, 109, 110 }, skillLine = 197 },
 			},
 		},
 		{
 			title = "{skill:197} 225-300: vendor goods",
-			note = "Buy the whole bracket's share in one go: 116 {item:14341} (58g); about 58g in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, {npc:3367} and {npc:5817}).",
+			note = "Buy the whole bracket's share in one go: 116 {item:14341} (58g); about 58g in all. The arrow picks the nearest seller of your faction ({zone:1453}: {npc:1347}, {npc:1286} and {npc:5565}; {zone:1454}: {npc:3364}, Felika and {npc:5817}).",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 14341, count = 116, candidates = { 69, 70, 74, 75, 59, 67, 66, 68, 20, 127, 19, 179, 136, 64, 63, 80, 79, 57, 71, 60, 56, 77, 134, 72, 76, 135, 180, 129, 22, 23, 24, 28, 29, 30, 32, 33, 34, 130, 137, 43, 131, 44, 45, 46, 47, 48, 49, 138, 51, 78, 132, 85, 86, 87, 88, 125, 92 } },
+				{ t = "buy", item = 14341, count = 116, candidates = { 111, 20, 21, 105, 23, 24, 25, 29, 30, 31, 33, 34, 35, 106, 112, 44, 107, 45, 46, 47, 48, 49, 50, 113, 52, 56, 58, 59, 61, 62, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 108, 85, 86, 87, 88, 89, 11, 12, 93 } },
 			},
 		},
 		{
 			title = "{item:14481}",
 			note = "{item:14481} teaches {item:13863} ({skill:197} 230) for 1g 60s. Sold by {npc:11189} ({zone:1452}), limited stock. Its sellers keep one or two in stock that come back some time after a sale; it binds when picked up, so the Auction House never has it.",
+			section = 4,
 			goals = {
-				{ t = "buy", item = 14481, candidates = { 77 } },
+				{ t = "buy", item = 14481, candidates = { 79 } },
 			},
 		},
 		{
 			title = "{item:8170} (Alliance)",
 			only = { factions = { "Alliance" } },
-			note = "420 {item:8170} for {item:13863} and {item:13867}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:1815}, {npc:1816} and {npc:1817} here (level 48-60); the {skill:393} guide routes this.",
+			note = "420 {item:8170} for {item:13863} and {item:13867}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:8598}, Plaguehound and {npc:8596} here (level 48-60); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 8170, count = 420, map = 1422, x = 34.2, y = 62.1, f = "e" },
+				{ t = "collect", item = 8170, count = 420, map = 1423, x = 56, y = 46.8 },
 			},
 		},
 		{
 			title = "{item:8170} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "420 {item:8170} for {item:13863} and {item:13867}: {skill:393}: beasts of level 48-60; or the Auction House. Skin {npc:6369}, {npc:8760}, {npc:6380}, {npc:6379}, {npc:6378} and {npc:6377} here (level 48-60); the {skill:393} guide routes this.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 8170, count = 420, map = 1447, x = 58.8, y = 21.5, f = "e" },
 			},
 		},
 		{
-			title = "{item:14047} (Alliance)",
-			only = { factions = { "Alliance" } },
-			note = "3195 {item:14047} for {item:13856}, {item:13863} and {item:13867}: humanoids of level 45-60 drop it; or the Auction House. It drops from {npc:7027} (level 56-57) here.",
+			title = "{item:14047}",
+			note = "3195 {item:14047} for {item:13856}, {item:13863} and {item:13867}: humanoids of level 45-60 drop it. Keep what you loot as you level, take it from your bank, or buy it at the Auction House.",
+			section = 4,
 			goals = {
-				{ t = "collect", item = 14047, count = 3195, map = 1428, x = 49.8, y = 54.7, f = "e", fromNpcs = { { npc = 7027, npcName = "Blackrock Slayer" }, { npc = 7026, npcName = "Blackrock Sorcerer" }, { npc = 7025, npcName = "Blackrock Soldier" }, { npc = 7028, npcName = "Blackrock Warlock" }, { npc = 8979, npcName = "Gruklash" } }, lvl = 55, spotsPacked = "49.8,54.7,,69,5,,57;48.9,58.1,,40,2,1,56;50.5,61.3,,40,3,1,57;55.2,53.8,,59,12,1,57;44.4,56.5,,40,4,1,59;44.8,50.8,,40,2,1,56;50.1,43,,40,2,1;45.9,43.5,,40,1,1;41.2,55,,74,8,1,59;42.1,45.6,,40,2,1;43,37,,40,5,1,57;43.6,34.4,,40,3,1,57;40.5,34.2,,42,12,1,59;63.6,37.8,,40,1,1;68.7,31.5,,40,2,1;17.1,29.7,,58,6,1,59" },
-			},
-		},
-		{
-			title = "{item:14047} (Horde)",
-			only = { factions = { "Horde" } },
-			note = "3195 {item:14047} for {item:13856}, {item:13863} and {item:13867}: humanoids of level 45-60 drop it; or the Auction House. It drops from {npc:11880} (level 57-59) here.",
-			goals = {
-				{ t = "collect", item = 14047, count = 3195, map = 1451, x = 23.7, y = 35.5, f = "e", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 11881, npcName = "Twilight Geolord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 14479, npcName = "Twilight Lord Everun" } }, lvl = 60, spotsPacked = "23.7,35.5,,156,25;27.5,32.8,,66,14,1;18,31.2,,40,1,1,59;38.3,44.2,,60,15,1;39,41.7,,40,5,1;39,46.5,,59,10,1;40.9,44.7,,54,13,1;22.8,68.7,,40,1,1,59;18.3,81.6,,47,6,1;20.7,83.6,,40,4,1;18,84.9,,65,15,1;20.5,87.1,,54,6,1;66.7,19.8,,58,5,1,61;67.7,15.4,,40,1,1,61" },
+				{ t = "collect", item = 14047, count = 3195 },
 			},
 		},
 		{
 			title = "{item:14227} (Alliance)",
 			only = { factions = { "Alliance" } },
 			note = "124 {item:14227} for {item:13867}: it drops from {npc:1824} (level 54-55) at the marked spot, or buy it at the Auction House.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 14227, count = 124, map = 1422, x = 57.1, y = 53.5, f = "e", fromNpcs = { { npc = 1824, npcName = "Plague Lurker" } }, lvl = 55, spotsPacked = "57.1,53.5,,99,8;55.9,50.6,,40,4,1;60,53.9,,49,3,1;60,50.8,,52,6,1;56.5,59.1,,59,5,1;53.5,50.2,,62,6,1;52.2,54.3,,40,1,1;59.1,60.3,,40,2,1;57.6,61.4,,43,3,1;54.6,46.5,,40,2,1;53,59.2,,40,2,1;62.5,50.7,,42,3,1;54.2,61.8,,40,3,1;62.5,47.3,,43,3,1;55.5,64.1,,40,2,1;64.5,49.9,,40,3,1;64.4,46.6,,55,4,1;65.9,53.9,,46,5,1;66.7,56.4,,45,3,1;67,48.4,,48,5,1;66,44.9,,40,2,1;67.8,45.8,,40,2,1" },
 			},
@@ -13667,6 +14027,7 @@ G(function() return {
 			title = "{item:14227} (Horde)",
 			only = { factions = { "Horde" } },
 			note = "124 {item:14227} for {item:13867}: it drops from {npc:11739} (level 57-59) at the marked spot, or buy it at the Auction House.",
+			section = 4,
 			goals = {
 				{ t = "collect", item = 14227, count = 124, map = 1451, x = 24.7, y = 81.8, f = "e", fromNpcs = { { npc = 11739, npcName = "Rock Stalker" } }, lvl = 59, spotsPacked = "24.7,81.8,,54,2;23.1,78.2,,40,2,1;27.7,83.5,,40,2,1;26.9,76.4,,50,3,1;23.1,88.6,,40,1,1;29.5,77,,41,3,1;19.6,77.4,,40,1,1;30.8,82.1,,49,3,1;33.9,78.8,,53,4,1;33.3,74.2,,49,5,1;31.8,67.8,,40,1,1;35.8,89.8,,47,3,1;37.2,83.2,,78,7,1;36.3,73.8,,40,2,1;34.5,68.5,,40,2,1;38.9,75,,40,2,1;37.1,66.1,,40,1,1;41.1,84.6,,59,4,1;41.5,79.7,,43,4,1;39.5,68,,54,3,1;42.2,87.2,,40,1,1;42.6,76.3,,40,3,1;41.7,68.7,,40,3,1;44.3,83.8,,40,2,1;45.3,79.2,,40,2,1;45.5,87.2,,49,4,1;45.3,74,,40,4,1;48,68.5,,40,2,1;50.4,69.8,,40,1,1;63.4,72.5,,40,1,1;64.9,86.3,,40,1,1;66.3,75.6,,40,3,1" },
 			},
@@ -13674,27 +14035,30 @@ G(function() return {
 		{
 			title = "{item:13856} to 234",
 			note = "{item:13856} is yellow at 225 (yellow 225, green 240, grey 255): about 11 crafts to 234. Each takes 3 {item:14048} and 1 {item:14341}. Make the 33 {item:14048} first. {item:14341} from tailoring vendors.",
+			section = 4,
 			goals = {
 				{ t = "craft", item = 14048, spell = 18401, count = 33, reagents = { { item = 14047, count = 5, itemName = "Runecloth" } }, skillLine = 197 },
-				{ t = "craft", item = 13856, spell = 18402, reagents = { { item = 14048, count = 3, itemName = "Bolt of Runecloth" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 197, untilSkill = 234 },
+				{ t = "craft", item = 13856, spell = 18402, grey = 255, reagents = { { item = 14048, count = 3, itemName = "Bolt of Runecloth" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 197, untilSkill = 234, yellow = 225 },
 			},
 		},
 		{
 			title = "{item:13863} to 265",
 			note = "{item:13863} is orange at 234 (yellow 245, green 260, grey 275): about 43 crafts to 265. Each takes 4 {item:14048}, 4 {item:8170} and 1 {item:14341}. Make the 172 {item:14048} first. {npc:11189} in {area:2255} keeps one pattern at a time; the {area:1769} tunnel from {zone:1448} is the road in, so never kill Timbermaw furbolgs on the way.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 14481, spell = 18417, note = "from the recipe in your bags", skillLine = 197 },
 				{ t = "craft", item = 14048, spell = 18401, count = 172, reagents = { { item = 14047, count = 5, itemName = "Runecloth" } }, skillLine = 197 },
-				{ t = "craft", item = 13863, spell = 18417, reagents = { { item = 14048, count = 4, itemName = "Bolt of Runecloth" }, { item = 8170, count = 4, itemName = "Rugged Leather" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 197, untilSkill = 265 },
+				{ t = "craft", item = 13863, spell = 18417, grey = 275, reagents = { { item = 14048, count = 4, itemName = "Bolt of Runecloth" }, { item = 8170, count = 4, itemName = "Rugged Leather" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 197, untilSkill = 265, yellow = 245 },
 			},
 		},
 		{
 			title = "{item:13867} to 300",
 			note = "{item:13867} is orange at 265 (yellow 275, green 290, grey 305): about 62 crafts to 300. Each takes 7 {item:14048}, 2 {item:14227}, 4 {item:8170} and 1 {item:14341}. Make the 434 {item:14048} first. Its pattern ({item:14504}) drops from mobs all over the world and does not bind: buy it at the Auction House. Seven bolts, two {item:14227} and four {item:8170} a craft: the dearest stretch. The spiders of {zone:1422} and {zone:1451} drop the silk (the marked spots), or the Auction House. No pattern on the Auction House? {item:13863} still give a point now and then to 275, and {item:13864} ({npc:7940}, {zone:1450}) to 280, at 4 bolts a craft. {item:14342} (pattern from {npc:11189} or {npc:11188} in {area:2255}; 2 {item:14256} at a Moonwell) stays orange to 270 and yellow to 285, but it can be made once every four days. The {item:279943} patterns (Merchant's Favor sandals and waistcords from {npc:248202} or {npc:256735}; the wheel's blueprint drops from the {npc:246017} in the City of Dalaran) and {item:254123} (Pexmit in {zone:2482}, 10g; we could not confirm that vendor yet) are the other ways on. {skill:197} 300 is a Legacy System milestone.",
+			section = 4,
 			goals = {
 				{ t = "learn", item = 14504, spell = 18449, note = "from the pattern bought at the Auction House", skillLine = 197 },
 				{ t = "craft", item = 14048, spell = 18401, count = 434, reagents = { { item = 14047, count = 5, itemName = "Runecloth" } }, skillLine = 197 },
-				{ t = "craft", item = 13867, spell = 18449, reagents = { { item = 14048, count = 7, itemName = "Bolt of Runecloth" }, { item = 14227, count = 2, itemName = "Ironweb Spider Silk" }, { item = 8170, count = 4, itemName = "Rugged Leather" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 197, untilSkill = 300 },
+				{ t = "craft", item = 13867, spell = 18449, grey = 305, reagents = { { item = 14048, count = 7, itemName = "Bolt of Runecloth" }, { item = 14227, count = 2, itemName = "Ironweb Spider Silk" }, { item = 8170, count = 4, itemName = "Rugged Leather" }, { item = 14341, count = 1, itemName = "Rune Thread" } }, skillLine = 197, untilSkill = 300, yellow = 275 },
 				{ t = "skill", level = 300, skill = "Tailoring", skillLine = 197 },
 			},
 		},
@@ -13762,7 +14126,7 @@ G(function() return {
 			only = { factions = { "Alliance" } },
 			note = "Most of this happens on the way to {npc:11946}. Loot {quest:7223} from Horde players and guards you kill. Assault the {area:3301} or any Horde graveyard, burn a Horde tower (click its banner), and take {area:2963}. {npc:13154} stands at {area:2962}; the {npc:13597} at {area:2961}. {quest:7301} asks you to find where the three wing commanders landed. In Classic every tower, graveyard or mine paid 12 reputation, {npc:11947} 125 and {npc:11946} about 300.",
 			goals = {
-				{ t = "collect", quest = 7223, item = 17422, count = 20, map = 1459, x = 44.59, y = 45.57, f = "e", fromNpcs = { { npc = 13330, npcName = "Seasoned Warrior" }, { npc = 13359, npcName = "Frostwolf Bowman" }, { npc = 14185, npcName = "Najak Hexxen" }, { npc = 13329, npcName = "Seasoned Legionnaire" }, { npc = 12051, npcName = "Frostwolf Legionnaire" } }, lvl = 60, oi = 1, spotsPacked = "44.6,45.6,,40,6;46.5,56.9,,49,11,,58;48.9,58.8,,40,6;49.7,55.4,,44,6,,58;51.3,60.1,,40,8;52.5,63.7,,40,1,,57;50,76.9,,40,12;49.4,82.4,,72,5;49.3,88.2,,40,13;51.5,35.7,,40,6;48.8,14.8,,40,6;42.7,15.7,,40,6;50.5,65,,46,7,1;50.4,80.5,,40,3,1;48.7,84.8,,48,12,1", spread = true },
+				{ t = "collect", quest = 7223, item = 17422, count = 20, map = 1459, x = 44.59, y = 45.57, f = "e", fromNpcs = { { npc = 13330, npcName = "Seasoned Warrior" }, { npc = 13359, npcName = "Frostwolf Bowman" }, { npc = 14185, npcName = "Najak Hexxen" }, { npc = 13329, npcName = "Seasoned Legionnaire" }, { npc = 12051, npcName = "Frostwolf Legionnaire" }, { npc = 12053, npcName = "Frostwolf Guardian" }, { npc = 13328, npcName = "Seasoned Guardian" }, { npc = 13334, npcName = "Veteran Legionnaire" }, { npc = 13332, npcName = "Veteran Guardian" }, { npc = 13428, npcName = "Champion Warrior" }, { npc = 12052, npcName = "Frostwolf Warrior" }, { npc = 13425, npcName = "Champion Legionnaire" }, { npc = 14186, npcName = "Ravak Grimtotem" } }, fromNpcsAt = "1,4,7,8,9,6;5,10,11,6;2,10,11;10,11;1,4,7,8,9,10,6,11;5;1,4,7,8,9,6;6,2,3,5,13,12;6,1,4,7,8,9;1,4,7,8,9,6;1,4,7,8,9,6;1,4,7,8,9,6;2,5,10,11;6,12;6,2", lvl = 60, oi = 1, spotsPacked = "44.6,45.6,,40,6;46.5,56.9,,49,11,,58;48.9,58.8,,40,6;49.7,55.4,,44,6,,58;51.3,60.1,,40,8;52.5,63.7,,40,1,,57;50,76.9,,40,12;49.4,82.4,,72,5;49.3,88.2,,40,13;51.5,35.7,,40,6;48.8,14.8,,40,6;42.7,15.7,,40,6;50.5,65,,46,7,1;50.4,80.5,,40,3,1;48.7,84.8,,48,12,1", spread = true },
 				{ t = "kill", quest = 7081, npc = 13756, count = 1, map = 1459, x = 51.8, y = 36, f = "e", note = "assault a graveyard", lvl = 60, oi = 1, spotsPacked = "51.8,36,,15,1;51.6,57.1,,15,1;49.3,76.7,,15,1;49.3,88.5,,15,1;42.4,15.6,,15,1;49.2,14.8,,15,1", spread = true, target = "PvP Graveyard Credit Marker" },
 				{ t = "kill", quest = 7102, npc = 13778, count = 1, map = 1459, x = 48.2, y = 58.7, f = "e", note = "Iceblood Tower banner", oi = 1, target = "PvP Tower Credit Marker" },
 				{ t = "kill", quest = 7122, npc = 13796, count = 1, map = 1459, x = 44.3, y = 67.9, f = "e", note = "{area:2963}", lvl = 60, oi = 1, spotsPacked = "44.3,67.9,,15,1;52.5,7.6,,15,1,1", target = "PvP Mine Credit Marker" },
@@ -13903,7 +14267,7 @@ G(function() return {
 			only = { factions = { "Horde" } },
 			note = "Most of this happens on the way to {npc:11948}. Loot {item:17422} from Alliance players and guards you kill. Assault the {area:3301} or any Alliance graveyard, burn an Alliance bunker (click its banner), and take {area:2957}. {npc:13320} stands at {area:3304}; the {npc:13598} in {area:2959}. {quest:7302} asks you to find where the three wing commanders landed. In Classic every tower, graveyard or mine paid 12 reputation, {npc:11949} 125 and Vanndar about 300.",
 			goals = {
-				{ t = "collect", quest = 7224, item = 17422, count = 20, map = 1459, x = 49.39, y = 88.3, f = "e", fromNpcs = { { npc = 13331, npcName = "Veteran Defender" }, { npc = 13358, npcName = "Stormpike Bowman" }, { npc = 14188, npcName = "Dirk Swindle" }, { npc = 14187, npcName = "Athramanis" }, { npc = 13326, npcName = "Seasoned Defender" } }, lvl = 61, oi = 1, spotsPacked = "49.3,88.1,,40,18;50,76.9,,40,18;51.3,60,,40,9;44.6,45.6,,40,9;49.2,39.9,,49,5,,58;51.4,35.5,,60,11;51,31.2,,40,5,,60;51.6,22.7,,40,2,,57;48.6,15.2,,56,13;45.4,15.6,,57,5,,60;42.7,14.9,,60,22;52.3,13.7,,40,1,,57;52.4,44.1,,40,3,1,60;47.3,42.2,,40,3,1,56;48.9,37.7,,58,6,1,58;51.3,25.8,,40,1,1,57;51.5,19,,40,1,1,57;44,18.1,,40,2,1,60;49.8,16.8,,40,1,1,57", spread = true },
+				{ t = "collect", quest = 7224, item = 17422, count = 20, map = 1459, x = 49.39, y = 88.3, f = "e", fromNpcs = { { npc = 13331, npcName = "Veteran Defender" }, { npc = 13358, npcName = "Stormpike Bowman" }, { npc = 14188, npcName = "Dirk Swindle" }, { npc = 14187, npcName = "Athramanis" }, { npc = 13326, npcName = "Seasoned Defender" }, { npc = 12127, npcName = "Stormpike Guardsman" }, { npc = 12050, npcName = "Stormpike Defender" }, { npc = 13424, npcName = "Champion Guardsman" }, { npc = 13422, npcName = "Champion Defender" }, { npc = 12048, npcName = "Alliance Sentinel" }, { npc = 13324, npcName = "Seasoned Guardsman" }, { npc = 13333, npcName = "Veteran Guardsman" }, { npc = 13327, npcName = "Seasoned Sentinel" }, { npc = 13336, npcName = "Veteran Sentinel" }, { npc = 13325, npcName = "Seasoned Mountaineer" } }, fromNpcsAt = "1,5,8,11,12,9,7,13,14;1,5,8,11,12,9,7,13,14;1,5,8,11,12,9,7,13,14;1,5,8,11,12,9,7,13,14;7,10;15,1,5,8,11,12,9,7,13,14;2,6;6;6,1,5,8,11,12,9,7,13,14;6,2;1,6,8,9,3,4,5,11,12,7,13,14;6;2;10,15;10,7;6;6;2;6", lvl = 61, oi = 1, spotsPacked = "49.3,88.1,,40,18;50,76.9,,40,18;51.3,60,,40,9;44.6,45.6,,40,9;49.2,39.9,,49,5,,58;51.4,35.5,,60,11;51,31.2,,40,5,,60;51.6,22.7,,40,2,,57;48.6,15.2,,56,13;45.4,15.6,,57,5,,60;42.7,14.9,,60,22;52.3,13.7,,40,1,,57;52.4,44.1,,40,3,1,60;47.3,42.2,,40,3,1,56;48.9,37.7,,58,6,1,58;51.3,25.8,,40,1,1,57;51.5,19,,40,1,1,57;44,18.1,,40,2,1,60;49.8,16.8,,40,1,1,57", spread = true },
 				{ t = "kill", quest = 7082, npc = 13756, count = 1, map = 1459, x = 49.3, y = 88.5, f = "e", note = "assault a graveyard", lvl = 60, oi = 1, spotsPacked = "49.3,88.5,,15,1;49.3,76.7,,15,1;51.6,57.1,,15,1;51.8,36,,15,1;49.2,14.8,,15,1;42.4,15.6,,15,1", spread = true, target = "PvP Graveyard Credit Marker" },
 				{ t = "kill", quest = 7101, npc = 13778, count = 1, map = 1459, x = 52.5, y = 43.8, f = "e", note = "{area:3305} banner", oi = 1, target = "PvP Tower Credit Marker" },
 				{ t = "kill", quest = 7124, npc = 13796, count = 1, map = 1459, x = 52.5, y = 7.6, f = "e", note = "{area:2957}", lvl = 60, oi = 1, spotsPacked = "52.5,7.6,,15,1;44.3,67.9,,15,1,1", target = "PvP Mine Credit Marker" },
@@ -14315,12 +14679,11 @@ G(function() return {
 			goals = {
 				{ t = "talk", only = { factions = { "Alliance" } }, npc = 11056, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", optional = true, note = "{npc:11056}: ask for a {item:13370}" },
 				{ t = "talk", only = { factions = { "Horde" } }, npc = 11057, map = 1420, x = 83.28, y = 69.23, z = 60.2, f = "e", optional = true, note = "{npc:11057}, at the {area:152}: ask for a {item:13370}" },
-				{ t = "accept", minLevel = 50, quest = 5227, object = 176392, map = 1422, x = 62.54, y = 58.47, z = 58.9, f = "e", optional = true, note = "the cauldron at {area:201}", pre = { 5226, 5236 }, qlvl = 58 },
-				{ t = "collect", quest = 5227, item = 13354, count = 4, map = 1422, x = 62.66, y = 58.89, f = "e", optional = true, note = "Ectoplasmic Resonators: the ghosts around the cauldron", fromNpcs = { { npc = 4472, npcName = "Haunting Vision" }, { npc = 1804, npcName = "Wailing Death" }, { npc = 1802, npcName = "Hungering Wraith" } }, lvl = 58, oi = 2, spotsPacked = "62.1,58.5,,62,13;62.8,60.6,,30,10;63.8,56.7,,55,20;64.8,59,,38,15" },
-				{ t = "collect", quest = 5227, item = 14047, count = 4, map = 1422, x = 62.66, y = 58.89, f = "e", optional = true, fromNpcs = { { npc = 4472, npcName = "Haunting Vision" }, { npc = 1885, npcName = "Scarlet Smith" }, { npc = 1845, npcName = "High Protector Tarsen" }, { npc = 11613, npcName = "Huntsman Radley" }, { npc = 4494, npcName = "Scarlet Spellbinder" } }, lvl = 56, oi = 3, spotsPacked = "62.1,58.5,,62,13,,58;54.4,65.9,,44,7;48.1,63.3,,63,9;47.3,50.5,,60,34,,55;45,34.3,,67,10;54.9,34.6,,40,3,,58;54.9,23.5,,40,7,,58;45.5,10,,40,7,,57;36.6,56.1,,73,25,,54;39.3,70.2,,61,9;47.6,83,,40,3,,51;54.2,80.4,,40,16;62.8,60.6,,40,10,1,58;63.8,56.7,,55,20,1,58;64.8,59,,40,15,1,58;52.9,64.4,,62,10,1;53.1,67.3,,51,12,1;49.3,66,,73,11,1;51.9,44.3,,40,7,1,54;48.5,69,,57,11,1;47.4,53.2,,40,5,1,54;57.6,36.1,,40,4,1;50.7,75.7,,40,5,1,52;46,62,,56,8,1;50.6,40.9,,42,9,1,57;45.6,54.8,,48,7,1,54;53.1,37.2,,40,8,1,57;49.9,77,,52,11,1,52;45.6,65.2,,63,9,1;45.6,51.7,,76,18,1,54;46.7,71.3,,59,11,1;45,68.6,,62,23,1,60;50.2,80.5,,40,6,1,52;43.4,63.1,,75,10,1;45.6,74.3,,60,8,1;48.4,80.2,,49,7,1,52;49.3,82.3,,40,2,1,52;44,72.1,,50,8,1;48.9,34.8,,40,3,1,59;42,66.1,,59,9,1;42.1,69.4,,60,13,1;49.4,32.4,,40,3,1,58;40.6,52.1,,40,9,1,54;48.3,32.6,,40,7,1,59;42.4,74.2,,59,9,1;46.9,32.7,,62,6,1;40.9,72.4,,66,10,1;39.5,67.4,,69,10,1;38.5,55.2,,53,27,1,54;37.7,58,,56,13,1,54;46,16.7,,40,8,1,57;43.9,17.3,,40,4,1,57;42.2,18.5,,40,1,1,60;45,12.8,,49,9,1,59", spread = true },
+				{ t = "collect", item = 13354, count = 4, map = 1422, x = 63.38, y = 58.4, f = "e", optional = true, note = "Ectoplasmic Resonators: the ghosts around the cauldron", fromNpcs = { { npc = 1804, npcName = "Wailing Death" }, { npc = 4472, npcName = "Haunting Vision" }, { npc = 1802, npcName = "Hungering Wraith" } }, lvl = 58, spotsPacked = "63.8,56.7,,55,20;62.1,58.5,,62,13;64.8,59,,38,15;62.8,60.6,,30,10" },
+				{ t = "collect", item = 14047, count = 4, map = 1422, x = 63.64, y = 58.57, f = "e", optional = true, fromNpcs = { { npc = 4472, npcName = "Haunting Vision" }, { npc = 1885, npcName = "Scarlet Smith" }, { npc = 1845, npcName = "High Protector Tarsen" }, { npc = 11613, npcName = "Huntsman Radley" }, { npc = 4494, npcName = "Scarlet Spellbinder" }, { npc = 1789, npcName = "Skeletal Acolyte" }, { npc = 1783, npcName = "Skeletal Flayer" }, { npc = 1794, npcName = "Soulless Ghoul" }, { npc = 1795, npcName = "Searing Ghoul" }, { npc = 1787, npcName = "Skeletal Executioner" }, { npc = 1791, npcName = "Slavering Ghoul" }, { npc = 4474, npcName = "Rotting Cadaver" }, { npc = 1784, npcName = "Skeletal Sorcerer" }, { npc = 4475, npcName = "Blighted Zombie" }, { npc = 1884, npcName = "Scarlet Lumberjack" }, { npc = 1883, npcName = "Scarlet Worker" }, { npc = 1802, npcName = "Hungering Wraith" }, { npc = 1804, npcName = "Wailing Death" }, { npc = 1793, npcName = "Rotting Ghoul" }, { npc = 1785, npcName = "Skeletal Terror" }, { npc = 1833, npcName = "Scarlet Knight" }, { npc = 10801, npcName = "Jabbering Ghoul" }, { npc = 1796, npcName = "Freezing Ghoul" }, { npc = 1831, npcName = "Scarlet Hunter" }, { npc = 1835, npcName = "Scarlet Invoker" }, { npc = 10605, npcName = "Scarlet Medic" }, { npc = 1826, npcName = "Scarlet Mage" }, { npc = 4493, npcName = "Scarlet Avenger" }, { npc = 10580, npcName = "Fetid Zombie" }, { npc = 1844, npcName = "Foreman Marcrid" }, { npc = 11873, npcName = "Spectral Attendant" }, { npc = 11611, npcName = "Cavalier Durgen" } }, fromNpcsAt = "17,18,1;19,23;6,9,8,10;6,10,9,8;7,11;10,8,6;7,13,11,22;14,20,12,25,26,24;15,21;5,28;5,28,32;16;17,18,1;17,18,1;18,1,17;19,23,29;19,23,29;24,25,26;6,9,10,8;27,4,21;14,12;10,8,9,6;11,7;13,7,11;21,27,28;21,27,28;9,6,8,10;12,14;11,7;8,6,10;12,14,20,25,26,24;10,6,9;10,9,8,6,31,25,26,24;11,7;10,6,9,8;7,11;9,10,8,6;15,3,21;6,8,9;15,30,21;9,6,10,8;7;15,3,30;25,26,24;8,6,10,9;15,21;8,9,10,6;8,10,9,6;7,13,11,22,25,26,24;7,13,11,22;16;16;;16,2", lvl = 56, spotsPacked = "64.8,59,,40,15,,58;54.4,65.9,,44,7;48.1,63.3,,63,9;45.6,74.3,,60,8;49.3,82.3,,40,2,,52;39.3,70.2,,61,9;36.6,56.1,,73,25,,54;47.3,50.5,,60,34,,55;45,34.3,,67,10;54.9,34.6,,40,3,,58;54.9,23.5,,40,7,,58;45.5,10,,40,7,,57;63.8,56.7,,55,20,1,58;62.1,58.5,,62,13,1,58;62.8,60.6,,40,10,1,58;52.9,64.4,,62,10,1;53.1,67.3,,51,12,1;51.9,44.3,,40,7,1,54;49.3,66,,73,11,1;57.6,36.1,,40,4,1;47.4,53.2,,40,5,1,54;48.5,69,,57,11,1;50.7,75.7,,40,5,1,52;54.2,80.4,,40,16,1;50.6,40.9,,42,9,1,57;53.1,37.2,,40,8,1,57;46,62,,56,8,1;45.6,54.8,,48,7,1,54;49.9,77,,52,11,1,52;45.6,65.2,,63,9,1;45.6,51.7,,76,18,1,54;46.7,71.3,,59,11,1;45,68.6,,62,23,1,60;50.2,80.5,,40,6,1,52;43.4,63.1,,75,10,1;48.4,80.2,,49,7,1,52;44,72.1,,50,8,1;48.9,34.8,,40,3,1,59;42,66.1,,59,9,1;49.4,32.4,,40,3,1,58;42.1,69.4,,60,13,1;47.6,83,,40,3,1,51;48.3,32.6,,40,7,1,59;40.6,52.1,,40,9,1,54;42.4,74.2,,59,9,1;46.9,32.7,,62,6,1;40.9,72.4,,66,10,1;39.5,67.4,,69,10,1;38.5,55.2,,53,27,1,54;37.7,58,,56,13,1,54;46,16.7,,40,8,1,57;43.9,17.3,,40,4,1,57;42.2,18.5,,40,1,1,60;45,12.8,,49,9,1,59", spread = true },
 				{ t = "buy", only = { factions = { "Alliance" } }, npc = 11056, item = 13320, map = 1422, x = 42.66, y = 83.77, z = 66.6, f = "e", optional = true, note = "{item:13320}, 50 silver" },
 				{ t = "buy", only = { factions = { "Horde" } }, npc = 11057, item = 13320, map = 1420, x = 83.28, y = 69.23, z = 60.2, f = "e", optional = true, note = "{item:13320}, 50 silver" },
-				{ t = "turnin", quest = 5227, object = 176392, map = 1422, x = 62.54, y = 58.47, z = 58.9, f = "e", optional = true },
+				{ t = "turnin", quest = 5227, object = 176392, map = 1422, x = 62.54, y = 58.47, z = 58.9, f = "e", optional = true, note = "the cauldron at {area:201}: handed in from its window, never in the log", direct = true, qlvl = 58 },
 			},
 		},
 		{
@@ -14650,7 +15013,7 @@ G(function() return {
 			title = "{npc:15526}",
 			note = "The {object:180652} lies on the farther of two islands south of {area:987}, past the fatigue line. {npc:15526}, on the sea floor south of the beach's crashed gyrocopter, gives {quest:8599} and a three-minute swim-speed blessing that gets you across.",
 			goals = {
-				{ t = "accept", minLevel = 60, quest = 8599, npc = 15526, map = 1446, x = 59.43, y = 96.05, z = -37.3, f = "e", optional = true, qlvl = 60 },
+				{ t = "accept", minLevel = 60, quest = 8599, npc = 15526, map = 1446, x = 59.43, y = 96.05, z = -37.3, f = "e", optional = true, parent = 8597, qlvl = 60 },
 			},
 		},
 		{
@@ -14814,9 +15177,8 @@ G(function() return {
 			goals = {
 				{ t = "accept", minLevel = 60, quest = 8784, item = 21230, map = 1451, x = 29, y = 92.8, f = "e", optional = true, group = { map = 531, kind = "raid", name = "Ahn'Qiraj Temple" }, qlvl = 60 },
 				{ t = "turnin", quest = 8784, npc = 15502, map = 1451, x = 29, y = 92.8, f = "e", optional = true, note = "{npc:15502}: 1,000", group = { map = 531, kind = "raid", name = "Ahn'Qiraj Temple" } },
-				{ t = "accept", minLevel = 60, quest = 8579, npc = 15503, map = 1451, x = 29, y = 92.8, f = "e", optional = true, group = { map = 531, kind = "raid", name = "Ahn'Qiraj Temple" }, qlvl = 60 },
-				{ t = "collect", quest = 8579, item = 21229, count = 1, map = 1451, x = 29, y = 92.8, f = "e", optional = true, note = "{item:21229}, Temple bosses", group = { map = 531, kind = "raid", name = "Ahn'Qiraj Temple" }, oi = 1 },
-				{ t = "turnin", quest = 8579, npc = 15503, map = 1451, x = 29, y = 92.8, f = "e", optional = true, note = "500", group = { map = 531, kind = "raid", name = "Ahn'Qiraj Temple" } },
+				{ t = "collect", item = 21229, map = 1451, x = 29, y = 92.8, f = "e", optional = true, note = "{item:21229}, Temple bosses", group = { kind = "elite", lvl = 63, rank = 3 } },
+				{ t = "turnin", quest = 8579, npc = 15503, map = 1451, x = 29, y = 92.8, f = "e", optional = true, note = "{npc:15503}: 500, handed in from his window", direct = true, group = { map = 531, kind = "raid", name = "Ahn'Qiraj Temple" }, qlvl = 60 },
 				{ t = "rep", faction = 910, standing = 5 },
 			},
 		},
@@ -14917,16 +15279,24 @@ G(function() return {
 		{ faction = "AH", npc = 14479, map = 1451, x = 18.3, y = 85.8, f = "e", lvl = { max = 60, min = 60 }, rate = 0.229, spawns = 1 },
 		{ faction = "AH", npc = 14479, map = 1451, x = 27.3, y = 33.3, f = "e", lvl = { max = 60, min = 60 }, rate = 0.229, spawns = 1 },
 		{ faction = "AH", npc = 14479, map = 1451, x = 38.5, y = 45.9, f = "e", lvl = { max = 60, min = 60 }, rate = 0.229, spawns = 1 },
+		{ faction = "H", npc = 3067, map = 1412, x = 44.92, y = 61.67, z = -9.3 },
 		{ faction = "H", npc = 3026, map = 1456, x = 50.72, y = 53.11, z = 165.9, f = "e" },
 		{ faction = "H", npc = 8306, map = 1413, x = 55.29, y = 31.78, z = 93.1, f = "e" },
+		{ faction = "H", npc = 3191, map = 1411, x = 51.11, y = 42.45, z = 16.4, f = "e" },
 		{ faction = "H", npc = 3399, map = 1454, x = 57.4, y = 53.96, z = 45.5, f = "e" },
 		{ faction = "A", npc = 6286, map = 1438, x = 57.12, y = 61.3, z = 1295.6, f = "e" },
 		{ faction = "A", npc = 4210, map = 1457, x = 49.03, y = 21.24, z = 1321.7, f = "e" },
+		{ faction = "H", npc = 265944, map = 1420, x = 61.75, y = 51.44, z = 34.3, f = "e" },
+		{ faction = "A", npc = 1355, map = 1426, x = 68.38, y = 54.49, z = 383.2, f = "e" },
 		{ faction = "A", npc = 1699, map = 1426, x = 47.67, y = 52.31, z = 398.9, f = "e" },
 		{ faction = "A", npc = 1430, map = 1429, x = 44.37, y = 65.99, z = 57, f = "e" },
+		{ faction = "A", npc = 3087, map = 1433, x = 17.69, y = 43.47, z = 78.1 },
+		{ faction = "H", npc = 1382, map = 1434, x = 31.34, y = 27.97, z = 4.1, f = "e" },
 		{ faction = "A", npc = 5482, map = 1453, x = 78.17, y = 53.1, z = 99.7 },
 		{ faction = "A", npc = 5159, map = 1455, x = 60.08, y = 36.43, z = 509.5, f = "e" },
 		{ faction = "H", npc = 4552, map = 1458, x = 62.14, y = 44.91, z = -55.3, f = "e" },
+		{ faction = "AH", npc = 251905, map = 2521, x = 43.85, y = 43.84, z = 827.7 },
+		{ faction = "AH", npc = 257006, map = 2521, x = 60.64, y = 72.66, z = 672 },
 	},
 	steps = {
 		{
@@ -14960,7 +15330,7 @@ G(function() return {
 			title = "The cultist camp west of {area:3425}",
 			note = "The nearest Twilight's Hammer camp lies just south-west of the Hold. Avengers, Geolords and Stonecallers (level 57 to 59) each drop an {item:20404} about a third of the time, and every cultist kill is 1 reputation. {npc:11804} walks the edge of the camp. Keep every cultist robe, cowl and mantle you loot: they are the Twilight Trappings for the Wind Stones later.",
 			goals = {
-				{ t = "collect", quest = 8318, item = 20404, count = 10, map = 1451, x = 41.84, y = 44.13, f = "e", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 15213, npcName = "Twilight Overlord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 15201, npcName = "Twilight Flamereaver" }, { npc = 11881, npcName = "Twilight Geolord" } }, lvl = 60, oi = 1, spotsPacked = "40.9,44.7,,54,13;39,41.7,,40,5;27.5,32.8,,66,14;24.9,36.7,,51,9;18,31.2,,40,1,,59;22.8,68.7,,40,1,,59;18.4,81.7,,43,8;19.9,87.8,,45,5;57.1,17.5,,40,2,,59;66.1,16,,59,6,,61;66.4,20.9,,54,12,,61;73.6,12.5,,40,4,,61;39,46.5,,59,10,1;38.3,44.2,,60,15,1;25.7,33.6,,73,16,1;68,18,,40,5,1,61;20.6,84.5,,47,8,1;71.1,13.4,,54,9,1,61;18,84.8,,67,14,1;72.7,14.8,,40,4,1,61", spread = true },
+				{ t = "collect", quest = 8318, item = 20404, count = 10, map = 1451, x = 41.84, y = 44.13, f = "e", fromNpcs = { { npc = 11880, npcName = "Twilight Avenger" }, { npc = 15213, npcName = "Twilight Overlord" }, { npc = 11882, npcName = "Twilight Stonecaller" }, { npc = 15201, npcName = "Twilight Flamereaver" }, { npc = 11881, npcName = "Twilight Geolord" }, { npc = 11883, npcName = "Twilight Master" }, { npc = 14479, npcName = "Twilight Lord Everun" }, { npc = 15542, npcName = "Twilight Marauder" } }, fromNpcsAt = "1,5;5,1;5,3,1,7;1,5;1;1;1,5,6;5,1;8;2,1,6;2,1,6;4,2;1,3,5,7;3,1,5,7;1,3,5,7;2,6,1;5,1,6;4,2;3,1,5,6,7;4,2", lvl = 60, oi = 1, spotsPacked = "40.9,44.7,,54,13;39,41.7,,40,5;27.5,32.8,,66,14;24.9,36.7,,51,9;18,31.2,,40,1,,59;22.8,68.7,,40,1,,59;18.4,81.7,,43,8;19.9,87.8,,45,5;57.1,17.5,,40,2,,59;66.1,16,,59,6,,61;66.4,20.9,,54,12,,61;73.6,12.5,,40,4,,61;39,46.5,,59,10,1;38.3,44.2,,60,15,1;25.7,33.6,,73,16,1;68,18,,40,5,1,61;20.6,84.5,,47,8,1;71.1,13.4,,54,9,1,61;18,84.8,,67,14,1;72.7,14.8,,40,4,1,61", spread = true },
 				{ t = "kill", quest = 8320, npc = 11881, count = 10, map = 1451, x = 41.08, y = 44.03, z = 6.6, f = "e", optional = true, lvl = 60, oi = 1, spotsPacked = "40.4,45.7,2.9,54,8;37.8,43.7,9.2,65,4;38.7,41.6,,40,3;28,33.4,,55,7;25.6,34,,68,4;24.8,36.7,5.3,42,5;18.7,80.2,5.7,40,1;17.9,84.1,,48,5;21.1,83.5,,40,2;20.7,86.8,4.4,45,5", spread = true, target = "Twilight Geolord" },
 			},
 		},
@@ -15040,7 +15410,7 @@ G(function() return {
 				{ t = "collect", quest = 8278, item = 20374, count = 3, map = 1451, x = 49.65, y = 65.66, f = "e", fromId = 11736, fromKind = "npc", fromNpcs = { { npc = 11736, npcName = "Stonelash Pincer" } }, lvl = 56, oi = 2, spotsPacked = "49.6,64.2,,40,4;42.7,58,,40,2;40.3,66.7,,40,1;34.1,66.8,,40,1;34.7,54.8,,40,3;28.5,43.2,,40,1;34.3,35.1,,40,2;30.2,28.2,,52,3;20.7,35.3,,41,2;43.4,45.1,,40,1;56.5,56.1,,40,2;64.8,61.4,,46,3;51.8,62.6,,40,2,1;48.2,60.2,,41,3,1;45.9,63.6,,51,3,1;52.6,57.8,,59,4,1;55.9,62.8,,48,4,1;49.7,55.8,,40,2,1;45.7,57.4,,40,2,1;42.5,63.1,,40,2,1;56.1,58.9,,40,1,1;46.9,52.8,,40,1,1;58.8,64.5,,57,4,1;40.5,61.6,,42,3,1;42,54.2,,51,3,1;60.7,61.5,,44,3,1;43.5,51.1,,40,2,1;38.2,64.1,,43,4,1;39.5,54.2,,50,3,1;62.5,65,,40,2,1;36.1,58.5,,40,4,1;35.4,61.6,,62,5,1;37.3,51.7,,40,2,1;34,46.7,,80,5,1;36.4,40.7,,40,1,1;33.3,40.3,,60,5,1;31.9,35.7,,67,6,1;28.9,38.7,,40,1,1;26.1,43.7,,40,2,1;22.6,41.9,,66,7,1", spread = true },
 				{ t = "collect", quest = 8278, item = 20377, count = 3, map = 1451, x = 48.58, y = 67.17, f = "e", fromId = 11739, fromKind = "npc", fromNpcs = { { npc = 11739, npcName = "Rock Stalker" } }, lvl = 59, oi = 3, spotsPacked = "48,68.5,,40,2;38.9,75,,40,2;33.9,78.8,,53,4;27.7,83.5,,40,2;23.1,88.6,,40,1;19.6,77.4,,40,1;31.8,67.8,,40,1;37.1,66.1,,40,1;35.8,89.8,,47,3;45.5,87.2,,49,4;64.9,86.3,,40,1;63.4,72.5,,40,1;50.4,69.8,,40,1,1;45.3,74,,40,4,1;41.7,68.7,,40,3,1;42.6,76.3,,40,3,1;45.3,79.2,,40,2,1;39.5,68,,54,3,1;41.5,79.7,,43,4,1;44.3,83.8,,40,2,1;36.3,73.8,,40,2,1;41.1,84.6,,59,4,1;34.5,68.5,,40,2,1;42.2,87.2,,40,1,1;37.2,83.2,,78,7,1;33.3,74.2,,49,5,1;66.3,75.6,,40,3,1;29.5,77,,41,3,1;30.8,82.1,,49,3,1;26.9,76.4,,50,3,1;24.9,81.4,,40,2,1;23.1,78.2,,40,2,1", spread = true },
 				{ t = "kill", quest = 8281, npc = 11741, count = 20, map = 1451, x = 48.22, y = 62.91, z = -0.9, f = "e", optional = true, lvl = 58, oi = 1, spotsPacked = "48.2,62.9,-0.9,50,1;42.1,62.8,,50,2;38.5,55.9,,50,4;44,49.7,,50,2;35.1,39.1,,92,5;29.1,42.3,,135,10;21,36.8,0.4,50,1;20.1,47.3,-1,50,1;27.4,27.8,,50,2;33.1,62.4,,76,3;55.1,56.8,-0.3,50,1;63.3,62.5,,50,2;49.4,56.7,,89,7,1;52.8,65,,50,2,1;54,61.1,,50,5,1;57.8,59,4.5,50,1,1;37.8,62.6,1.2,97,4,1;40.1,50.8,,50,4,1;34.8,53.9,,50,2,1;32.7,45.7,,73,4,1;32.4,31.3,4.2,50,1,1;21,40.9,,50,2,1", spread = true, target = "Dredge Crusher" },
-				{ t = "learn", spell = 24801, optional = true, note = "{item:20452}, from the {object:180503}", candidates = { 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 }, skillLine = 185 },
+				{ t = "learn", spell = 24801, optional = true, note = "{item:20452}, from the {object:180503}", candidates = { 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }, skillLine = 185 },
 				{ t = "craft", item = 20452, spell = 24801, count = 10, optional = true, note = "{item:20452}, from {item:20424} and {item:3713}", reagents = { { item = 20424, count = 1, itemName = "Sandworm Meat" }, { item = 3713, count = 1, itemName = "Soothing Spices" } }, skillLine = 185 },
 			},
 		},
@@ -15329,24 +15699,53 @@ G(function() return {
 	maxLevel = 60,
 	zone = 1443,
 	keywords = { "Gelkis Clan Centaur", "Magram Clan Centaur", "centaur", "Desolace", "Uthek the Wise", "Warug", "Captain Pentigast", "Gurda Wildmane", "Molkar", "Gorhak", "Buying Friendship", "Economic Warfare", "Carved Centaur Totem", "Maraudine", "Valley of Bones", "Shen'dralas", "Nerlokh", "Orgrul", "Khan Jehn", "Ongeku", "Kolkar", "Centaur Banner Deployment Device", "A Conqueror's Crown", "Conqueror's Helm", "title" },
-	reward = { { item = 269901, itemName = "Schematic: Centaur Banner Deployment Device" }, { text = "12 recipes for Carved Centaur Totems at the clan quartermasters, no standing needed" }, { text = "{npc:5601}'s quest: a clan title and a choice of three rare level 35 weapons" } },
+	reward = { { item = 269901, itemName = "Schematic: Centaur Banner Deployment Device" }, { text = "12 recipes for {quest:93224} at the clan quartermasters, no standing needed" }, { text = "{npc:5601}'s quest: a clan title and a choice of three rare level 35 weapons" } },
 	version = 1,
 	why = "{zone:1443}'s feuding clans, reworked in Forever: pick one, buy its friendship, and trade totems for recipes.",
 	steps = {
 		{
 			title = "Pick your clan",
-			note = "The Gelkis (south-west {zone:1443}) and the Magram (south-east) are at war: every kill of one clan gives the other 20 and costs its own clan 100, so you can only climb with one. Both start Neutral. Forever's quests are worth far more than kills now, and the choice quests no longer cost the other clan anything. Alliance: {npc:5396} at {area:608} offers {quest:1382} (Gelkis) and {quest:1385} (Magram). Horde: {npc:5412}, east of Shadowprey, offers {quest:1368} and {quest:1367}. Take the one of your clan and its Buying Friendship (3,000 for carrying a tote of totems), then tick the task. The guide goes on with the Gelkis; take the Magram's quests instead and it jumps to the Magram half. Forever pays these quests in full at any level.",
+			note = "The Gelkis (south-west {zone:1443}) and the Magram (south-east) are at war: every kill of one clan gives the other 20 and costs its own clan 100, so you can only climb with one. Both start Neutral. Forever's quests are worth far more than kills now, and the choice quests no longer cost the other clan anything. Alliance: {npc:5396} at {area:608} offers {quest:1382} (Gelkis) and {quest:1385} (Magram). Horde: {npc:5412} offers {quest:1368} and {quest:1367}. Take the one of your clan, and {quest:93224}: each clan's Buying Friendship (3,000) is offered once you bring the totems back. Then tick the task. The guide goes on with the Gelkis; take the Magram's quests instead and it goes to the Magram half. Forever pays these quests in full at any level.",
 			goals = {
 				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 1382, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", optional = true, note = "{quest:1382}: Gelkis", qlvl = 35 },
-				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 93227, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", optional = true, note = "{quest:93227}", qlvl = 45 },
 				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 1368, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", optional = true, note = "{quest:1368}", qlvl = 33 },
-				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 94873, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", optional = true, note = "{quest:93227}", qlvl = 45 },
+				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 93224, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", note = "{quest:93224}", qlvl = 40 },
+				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 93225, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", note = "{quest:93224}", qlvl = 40 },
 				{ t = "task", text = "Take the quests of one clan" },
 			},
 		},
 		{
+			title = "{quest:93224}",
+			note = "The Kolkar centaurs (level 30-33) in the camps along the eastern road, south of {area:608}, drop the totems, and so do the Magram and the Maraudine. Bring five back, then take your clan's Buying Friendship (Gelkis below; the Magram's instead for the Magram).",
+			goals = {
+				{ t = "collect", only = { factions = { "Alliance" } }, quest = 93224, item = 254432, count = 5, map = 1443, x = 69.5, y = 44, f = "e", note = "{item:254432}: Kolkar centaurs", fromNpcs = { { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4637, npcName = "Kolkar Destroyer" }, { npc = 4635, npcName = "Kolkar Windchaser" } }, fromNpcsAt = "1,2,4,3,5;2,1;4,3,6,5;2,1,6;1,6,2;4,6,3;3,4,6,5;4,6;3,4,6,5;2,1;3,4,6;3,6,4,5;3,5,6", lvl = 33, oi = 1, spotsPacked = "69.5,44,,73,4;69,41.9,,28,2,1,31;71.2,42.8,,48,8,1;69.4,47.9,,34,4,1,32;69.7,40,,66,6,1,32;72.2,46,,62,6,1;73.3,43.1,,54,5,1;72.6,40.2,,16,2,1,32;71.3,49.6,,50,5,1;69.2,50.8,,51,4,1,31;74.3,46.8,,23,4,1;73.9,48.8,,48,5,1;73.9,50.8,,42,5,1" },
+				{ t = "collect", only = { factions = { "Horde" } }, quest = 93225, item = 254432, count = 5, map = 1443, x = 69.5, y = 44, f = "e", note = "{item:254432}: Kolkar centaurs", fromNpcs = { { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4637, npcName = "Kolkar Destroyer" }, { npc = 4635, npcName = "Kolkar Windchaser" } }, fromNpcsAt = "1,2,4,3,5;2,1;4,3,6,5;2,1,6;1,6,2;4,6,3;3,4,6,5;4,6;3,4,6,5;2,1;3,4,6;3,6,4,5;3,5,6", lvl = 33, oi = 1, spotsPacked = "69.5,44,,73,4;69,41.9,,28,2,1,31;71.2,42.8,,48,8,1;69.4,47.9,,34,4,1,32;69.7,40,,66,6,1,32;72.2,46,,62,6,1;73.3,43.1,,54,5,1;72.6,40.2,,16,2,1,32;71.3,49.6,,50,5,1;69.2,50.8,,51,4,1,31;74.3,46.8,,23,4,1;73.9,48.8,,48,5,1;73.9,50.8,,42,5,1" },
+				{ t = "turnin", only = { factions = { "Alliance" } }, quest = 93224, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e" },
+				{ t = "turnin", only = { factions = { "Horde" } }, quest = 93225, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e" },
+				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 93227, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", optional = true, note = "{quest:93227}", pre = { 93224 }, qlvl = 45 },
+				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 94873, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", optional = true, note = "{quest:93227}", pre = { 93225 }, qlvl = 45 },
+			},
+		},
+		{
+			title = "Gelkis or Magram",
+			skipto = { { when = { k = "onquest", q = { 1382, 93227, 1368, 94873 } }, to = "gelkis" }, { when = { k = "turnedin", q = 1382 }, to = "gelkis" }, { when = { k = "turnedin", q = 93227 }, to = "gelkis" }, { when = { k = "turnedin", q = 1368 }, to = "gelkis" }, { when = { k = "turnedin", q = 94873 }, to = "gelkis" }, { when = { k = "onquest", q = { 1385, 93226, 1367, 94872 } }, to = "magram" }, { when = { k = "turnedin", q = 1385 }, to = "magram" }, { when = { k = "turnedin", q = 93226 }, to = "magram" }, { when = { k = "turnedin", q = 1367 }, to = "magram" }, { when = { k = "turnedin", q = 94872 }, to = "magram" } },
+			note = "No clan's quests in your log: the guide goes on with the Gelkis. For the Magram, take their choice quest and Buying Friendship and the guide goes to the Magram half.",
+			goals = {
+				{ t = "goto", only = { factions = { "Alliance" } }, map = 1443, x = 66.7, y = 10.9, f = "e", text = "{npc:5396}" },
+				{ t = "goto", only = { factions = { "Horde" } }, map = 1443, x = 56.3, y = 59.7, f = "e", text = "{npc:5412}" },
+			},
+		},
+		{
+			title = "Gelkis: the choice quest",
+			label = "gelkis",
+			note = "The Gelkis half starts with the clan's choice quest from the giver you just handed the totems to: {npc:5397}'s quests in {area:606} follow from it, and Buying Friendship alone does not open them.",
+			goals = {
+				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 1382, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", note = "{quest:1382}, {npc:5396}", qlvl = 35 },
+				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 1368, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", note = "{quest:1368}, {npc:5412}", qlvl = 33 },
+			},
+		},
+		{
 			title = "{area:606}: {npc:5397} and {npc:253140}",
-			skipto = { { when = { k = "onquest", q = { 1385 } }, to = "magram" }, { when = { k = "onquest", q = { 1367 } }, to = "magram" } },
 			note = "{area:606} sits in the hills of south-west {zone:1443}; {npc:5397} stands at its heart. {npc:253140}, the Gelkis quartermaster, is at the south end of the village. Buying Friendship alone takes you from Neutral to Friendly.",
 			goals = {
 				{ t = "turnin", only = { factions = { "Alliance" } }, quest = 1382, npc = 5397, map = 1443, x = 36.22, y = 79.25, z = 64.9, f = "e", note = "{npc:5397}: 250" },
@@ -15362,7 +15761,7 @@ G(function() return {
 			only = { factions = { "Alliance" } },
 			note = "The Kolkar centaurs (level 30-33) hold the camps south of {area:608}, along the eastern road. About one in four drops a {item:6079}.",
 			goals = {
-				{ t = "collect", quest = 1384, item = 6079, count = 10, map = 1443, x = 69.5, y = 44, f = "e", note = "{item:6079}: Kolkar centaurs", fromNpcs = { { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4637, npcName = "Kolkar Destroyer" } }, lvl = 33, oi = 1, spotsPacked = "69.5,44,,132,13,,35;69,41.9,,28,2,1,31;71.6,41.9,,30,4,1;69.4,47.9,,34,4,1,32;69.7,40,,66,6,1,32;73.3,43.1,,54,5,1;72.6,40.2,,16,2,1,32;71.1,49.7,,56,6,1;73.6,47,,58,9,1;68.4,51.4,,45,5,1,35;74,50.2,,61,8,1" },
+				{ t = "collect", quest = 1384, item = 6079, count = 10, map = 1443, x = 69.5, y = 44, f = "e", note = "{item:6079}: Kolkar centaurs", fromNpcs = { { npc = 4633, npcName = "Kolkar Scout" }, { npc = 4632, npcName = "Kolkar Centaur" }, { npc = 4636, npcName = "Kolkar Battle Lord" }, { npc = 4634, npcName = "Kolkar Mauler" }, { npc = 4637, npcName = "Kolkar Destroyer" }, { npc = 4635, npcName = "Kolkar Windchaser" }, { npc = 12976, npcName = "Kolkar Waylayer" }, { npc = 12977, npcName = "Kolkar Ambusher" } }, fromNpcsAt = "4,1,2,6,3,5,7,8;1,2;3,6,4;2,1,6;1,6,2;3,6,4,5;6,4;3,1,6,4,5;6,3,4;2,1,7,8;3,5,6", lvl = 33, oi = 1, spotsPacked = "69.5,44,,132,13,,35;69,41.9,,28,2,1,31;71.6,41.9,,30,4,1;69.4,47.9,,34,4,1,32;69.7,40,,66,6,1,32;73.3,43.1,,54,5,1;72.6,40.2,,16,2,1,32;71.1,49.7,,56,6,1;73.6,47,,58,9,1;68.4,51.4,,45,5,1,35;74,50.2,,61,8,1" },
 				{ t = "turnin", quest = 1384, npc = 5397, map = 1443, x = 36.22, y = 79.25, z = 64.9, f = "e", note = "{npc:5397}: 500" },
 				{ t = "accept", minLevel = 30, quest = 1370, npc = 5397, map = 1443, x = 36.22, y = 79.25, z = 64.9, f = "e", pre = { 1368, 1384 }, qlvl = 35 },
 			},
@@ -15388,7 +15787,7 @@ G(function() return {
 		},
 		{
 			title = "Gelkis: totems and kills to Honored",
-			note = "Friendly to Honored is 6,000; after the clan's quests you are about 4,000 into it, so 2,000 to go. {npc:253140}'s {quest:92812} takes 5 Carved Centaur Totems for 750, again and again: three turn-ins, 15 totems. The Maraudine centaurs (level 36-40) of western {zone:1443} drop them; the totems do not bind, so the auction house is the other source. Magram kills add 20 each, but Forever's kill data stops them at the end of Friendly, 1 short of Honored. At Friendly the village also has three craft orders for 1,000 each: Halea wants 3 Greater Mystic Essences, {npc:253140} a {item:10008} (tailoring) and Talra a {item:5739} (leatherworking). Legacy Diplomat adds up to 10%.",
+			note = "Friendly to Honored is 6,000; after the clan's quests you are about 4,000 into it, so 2,000 to go. {npc:253140}'s {quest:92812} takes 5 {quest:93224} for 750, again and again: three turn-ins, 15 totems. The Maraudine centaurs (level 36-40) of western {zone:1443} drop them; the totems do not bind, so the auction house is the other source. Magram kills add 20 each, but Forever's kill data stops them at the end of Friendly, 1 short of Honored. At Friendly the village also has three craft orders for 1,000 each: Halea wants 3 Greater Mystic Essences, {npc:253140} a {item:10008} (tailoring) and Talra a {item:5739} (leatherworking). Legacy Diplomat adds up to 10%.",
 			goals = {
 				{ t = "collect", item = 254432, count = 5, map = 1443, x = 29.5, y = 58, f = "e", optional = true, note = "{item:254432}: Maraudine centaurs", fromNpcs = { { npc = 4657, npcName = "Maraudine Windchaser" }, { npc = 4656, npcName = "Maraudine Mauler" }, { npc = 4659, npcName = "Maraudine Marauder" }, { npc = 4654, npcName = "Maraudine Scout" }, { npc = 4655, npcName = "Maraudine Wrangler" } }, lvl = 38, spotsPacked = "29.5,58,,74,7,,40;29.8,61.3,,49,5,1,40;30,54.1,,68,7,1,39;31.9,60.2,,44,7,1,39;32.5,54.6,,46,7,1,39;31,51.6,,24,2,1,39;34.8,57.4,,25,2,1;34.3,54.5,,55,6,1,39;31,65.8,,17,2,1;33,65.9,,15,1,1;30,67.7,,44,3,1;36,59.1,,15,1,1;36.3,61.1,,50,4,1;39.7,61.4,,15,1,1" },
 				{ t = "accept", minLevel = 1, quest = 92812, npc = 253140, map = 1443, x = 35.6, y = 92, f = "e", optional = true, note = "{quest:92812}", qlvl = 60 },
@@ -15430,15 +15829,22 @@ G(function() return {
 			},
 		},
 		{
+			title = "Gelkis done",
+			skipto = { { when = { k = "onquest", q = { 1382, 93227, 1368, 94873 } }, to = "recipes" }, { when = { k = "turnedin", q = 1382 }, to = "recipes" }, { when = { k = "turnedin", q = 93227 }, to = "recipes" }, { when = { k = "turnedin", q = 1368 }, to = "recipes" }, { when = { k = "turnedin", q = 94873 }, to = "recipes" } },
+			note = "No Gelkis quests done: on to the Magram, south-east.",
+			goals = {
+				{ t = "goto", map = 1443, x = 75, y = 68.2, f = "e", text = "{area:604}", area = 604 },
+			},
+		},
+		{
 			title = "{area:604}: {npc:5398} and {npc:253139}",
 			label = "magram",
-			skipto = { { when = { k = "turnedin", q = 1382 }, to = "recipes" }, { when = { k = "turnedin", q = 1368 }, to = "recipes" } },
 			note = "{area:604} fills the valley of south-east {zone:1443}; {npc:5398} stands on its north side, {npc:253139}, the Magram quartermaster, near the lake. Buying Friendship alone takes you from Neutral to Friendly.",
 			goals = {
 				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 1385, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", note = "{quest:1385}, {npc:5396}", qlvl = 35 },
-				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 93226, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", note = "{quest:93226}, {npc:5396}", qlvl = 45 },
+				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 93226, npc = 5396, map = 1443, x = 66.66, y = 10.93, z = 163.1, f = "e", note = "{quest:93226}, {npc:5396}", pre = { 93224 }, qlvl = 45 },
 				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 1367, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", note = "{quest:1367}, {npc:5412}", qlvl = 33 },
-				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 94872, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", note = "{quest:93226}, {npc:5412}", qlvl = 45 },
+				{ t = "accept", minLevel = 30, only = { factions = { "Horde" } }, quest = 94872, npc = 5412, map = 1443, x = 56.29, y = 59.68, z = 90, f = "e", note = "{quest:93226}, {npc:5412}", pre = { 93225 }, qlvl = 45 },
 				{ t = "turnin", only = { factions = { "Alliance" } }, quest = 1385, npc = 5398, map = 1443, x = 74.97, y = 68.16, z = 113.7, f = "e", note = "{npc:5398}: 250" },
 				{ t = "accept", minLevel = 30, only = { factions = { "Alliance" } }, quest = 1386, npc = 5398, map = 1443, x = 74.97, y = 68.16, z = 113.7, f = "e", note = "{quest:1386}", pre = { 1385 }, qlvl = 32 },
 				{ t = "turnin", only = { factions = { "Horde" } }, quest = 1367, npc = 5398, map = 1443, x = 74.97, y = 68.16, z = 113.7, f = "e", note = "{npc:5398}: 250" },
@@ -15480,7 +15886,7 @@ G(function() return {
 		},
 		{
 			title = "Magram: totems and kills to Honored",
-			note = "Friendly to Honored is 6,000; after the clan's quests you are about 3,000 into it (4,000 with {quest:1371}), so 2,000 to 3,000 to go. {npc:253139}'s {quest:92811} takes 5 Carved Centaur Totems for 750, again and again; the Maraudine centaurs (level 36-40) of western {zone:1443} drop them, and the totems do not bind, so the auction house is the other source. Gelkis kills add 20 each, but Forever's kill data stops them at the end of Friendly, 1 short of Honored. At Friendly the village has two craft orders for 1,000 each: Mirda's 3 Greater Shadow Protection Potions and Grolkar's 2 Massive Iron Axes (blacksmithing). {npc:5398}'s {quest:92743} (1,000) is no craft order: he wants a {item:254392} from a crypt in the {zone:1418}, and Forever's quest pages put it in his chain before the {quest:92841}, so bring it before you reach Honored. Legacy Diplomat adds up to 10%.",
+			note = "Friendly to Honored is 6,000; after the clan's quests you are about 3,000 into it (4,000 with {quest:1371}), so 2,000 to 3,000 to go. {npc:253139}'s {quest:92811} takes 5 {quest:93224} for 750, again and again; the Maraudine centaurs (level 36-40) of western {zone:1443} drop them, and the totems do not bind, so the auction house is the other source. Gelkis kills add 20 each, but Forever's kill data stops them at the end of Friendly, 1 short of Honored. At Friendly the village has two craft orders for 1,000 each: Mirda's 3 Greater Shadow Protection Potions and Grolkar's 2 Massive Iron Axes (blacksmithing). {npc:5398}'s {quest:92743} (1,000) is no craft order: he wants a {item:254392} from a crypt in the {zone:1418}, and Forever's quest pages put it in his chain before the {quest:92841}, so bring it before you reach Honored. Legacy Diplomat adds up to 10%.",
 			goals = {
 				{ t = "accept", minLevel = 30, quest = 92743, npc = 5398, map = 1443, x = 74.97, y = 68.16, z = 113.7, f = "e", optional = true, note = "{quest:92743}: {npc:5398}", qlvl = 40 },
 				{ t = "turnin", quest = 92743, npc = 5398, map = 1443, x = 74.97, y = 68.16, z = 113.7, f = "e", optional = true, note = "{npc:5398}: 1,000" },
@@ -15524,7 +15930,7 @@ G(function() return {
 		{
 			title = "The totem recipes",
 			label = "recipes",
-			note = "Both quartermasters sell the same 12 recipes for Carved Centaur Totems, no standing needed: {item:273613} and - Lesser Healing Power; Greater Spellblasting and {item:250941}; {item:250538} and {item:250606} plans; {item:252462}, {item:253973}, {item:10011} and {item:274490} patterns; the {item:269900} and {item:269902} schematics. Keep the totems you need for them before you hand the rest in.",
+			note = "Both quartermasters sell the same 12 recipes for {quest:93224}, no standing needed: {item:273613} and - Lesser Healing Power; Greater Spellblasting and {item:250941}; {item:250538} and {item:250606} plans; {item:252462}, {item:253973}, {item:10011} and {item:274490} patterns; the {item:269900} and {item:269902} schematics. Keep the totems you need for them before you hand the rest in.",
 			goals = {
 				{ t = "talk", npc = 253139, map = 1443, x = 66.21, y = 79.36, f = "e", optional = true, note = "{npc:253139}, {area:604}" },
 				{ t = "talk", npc = 253140, map = 1443, x = 35.6, y = 92, f = "e", optional = true, note = "{npc:253140}, {area:606}" },
@@ -16379,7 +16785,7 @@ G(function() return {
 				{ t = "collect", quest = 94487, item = 265141, count = 10, map = 2521, x = 63.76, y = 36.06, fromNpcs = { { npc = 252664, npcName = "Al'Aketh Stormchaser" }, { npc = 252665, npcName = "Al'Aketh Footsoldier" } }, lvl = 11, oi = 1, spotsPacked = "63.8,35.9,,46,6;62.6,36.5,,83,12;64.4,38.2,,59,12;62.7,38.3,,70,14;65.6,36.5,,68,8;66.8,38.6,,15,1,1;59.4,35.9,,15,1,1" },
 				{ t = "collect", quest = 94486, item = 265140, count = 20, map = 2521, x = 63.91, y = 37.5, fromId = 256092, fromKind = "npc", fromNpcs = { { npc = 256092, npcName = "Shadowgale Shriekling" } }, lvl = 11, oi = 1, spotsPacked = "63.5,37.1,,40,4;64.4,41,,40,2;63.6,43.6,,40,1;59.4,42.9,,65,8;59.4,40.1,,61,10;60.5,38.1,,68,12;57.6,36.6,,65,6;55.4,39.4,,54,8;55.5,42,,52,6;57,41,,52,8;53.6,44.2,,40,4;59.9,33.5,,40,2;63.1,39.1,,60,8,1;62.2,37.1,,43,7,1;60.5,35.4,,68,7,1;58,38.6,,58,9,1;57.6,43.2,,40,2,1;55.7,37.4,,56,7,1;54.3,45.5,,64,7,1", spread = true },
 				{ t = "collect", quest = 94485, item = 265105, count = 8, map = 2521, x = 64.3, y = 39.3, fromId = 619450, fromKind = "object", oi = 1, spotsPacked = "63.5,39.4,,45,2;61.6,35.9,,32,2;60.2,38.8,,95,8" },
-				{ t = "collect", quest = 93165, item = 258771, count = 10, map = 2521, x = 65.32, y = 44.13, optional = true, note = "ears for {npc:254151}: keep every one", fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" } }, lvl = 11, oi = 1, spotsPacked = "65,44.8,,40,3;64.6,51,,66,12;61.8,49.9,,83,19;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;64.8,67.9,,67,10,,10;65.5,71.4,,40,2,,10;68.4,67.5,,40,3,,10;66.3,64.1,,40,9,,10;64.9,58.3,,57,7,,9;69.9,51,,44,8;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1;66.3,47.7,,40,5,1;62.9,48.2,,51,11,1;66,49.5,,58,12,1;68.1,50.4,,56,10,1;66.3,52,,59,12,1;70,49.3,,40,6,1;62.4,52.4,,65,29,1;64.2,54.3,,62,16,1;59.9,50.7,,95,21,1;65.4,56.5,,44,5,1;63.2,60.5,,48,9,1,9;66.1,62.4,,42,7,1,9;64.4,63,,50,11,1,9;60.2,62.1,,40,1,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;66.5,67.3,,44,7,1,10;65.5,69.5,,40,3,1,10;61,68.8,,56,12,1,9", spread = true },
+				{ t = "collect", quest = 93165, item = 258771, count = 10, map = 2521, x = 65.32, y = 44.13, optional = true, note = "ears for {npc:254151}: keep every one", fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" }, { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 252767, npcName = "Al'Aketh Honor Guard" } }, fromNpcsAt = "1,5;2,7,1;1,5,2,7;1,5;6,4;6,4;3,4,6;3;3;6,3,4;6,4;2,7;5,1;1,5;2,7;1,5;2,7;2,7;2,7;2,7;1,5,2,7;1,5,2,7;1,5;5,6,1;4,6;6,4;4,6;6;6,4;3,4,6;4,6,3;3;3;4,6", lvl = 11, oi = 1, spotsPacked = "65,44.8,,40,3;64.6,51,,66,12;61.8,49.9,,83,19;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;64.8,67.9,,67,10,,10;65.5,71.4,,40,2,,10;68.4,67.5,,40,3,,10;66.3,64.1,,40,9,,10;64.9,58.3,,57,7,,9;69.9,51,,44,8;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1;66.3,47.7,,40,5,1;62.9,48.2,,51,11,1;66,49.5,,58,12,1;68.1,50.4,,56,10,1;66.3,52,,59,12,1;70,49.3,,40,6,1;62.4,52.4,,65,29,1;64.2,54.3,,62,16,1;59.9,50.7,,95,21,1;65.4,56.5,,44,5,1;63.2,60.5,,48,9,1,9;66.1,62.4,,42,7,1,9;64.4,63,,50,11,1,9;60.2,62.1,,40,1,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;66.5,67.3,,44,7,1,10;65.5,69.5,,40,3,1,10;61,68.8,,56,12,1,9", spread = true },
 			},
 		},
 		{
@@ -16396,7 +16802,7 @@ G(function() return {
 			title = "The Nightfang Den and {npc:253622}",
 			note = "The Nightfang Den is the cave north across the clearing from {npc:257944}. Heal the seven injured druids inside ({npc:258134} among them) and find {npc:258130}. {npc:253622} stands east of the den: he drops his head and a {quest:94490}; right-click the missive to start its quest.",
 			goals = {
-				{ t = "kill", quest = 94489, npc = 258134, count = 1, map = 2521, x = 64.96, y = 34.95, z = 802.9, oi = 1, target = "Naaleos Leafwhisper" },
+				{ t = "kill", quest = 94489, npc = 258134, count = 1, map = 2521, x = 64.96, y = 34.95, z = 802.9, fromNpcs = { { npc = 258134, npcName = "Naaleos Leafwhisper" }, { npc = 258137, npcName = "Telenos Leafwhisper" }, { npc = 258138, npcName = "Nayeela Snarlfang" }, { npc = 258275, npcName = "Neyasteel Mossmender" }, { npc = 258277, npcName = "Bryaes Galechaser" } }, oi = 1, target = "Naaleos Leafwhisper" },
 				{ t = "talk", quest = 94489, npc = 258130, map = 2521, x = 64.48, y = 34.74, z = 804.3, oi = 2 },
 				{ t = "collect", quest = 94488, item = 265475, count = 1, map = 2521, x = 65.53, y = 36.32, fromId = 253622, fromKind = "npc", fromNpcs = { { npc = 253622, npcName = "Commander Haalien" } }, oi = 1 },
 				{ t = "accept", minLevel = 9, quest = 94490, item = 265476, note = "from {npc:253622}", preAll = { 94485, 94486, 94487 }, qlvl = 12 },
@@ -16415,7 +16821,7 @@ G(function() return {
 			title = "Ears at the {area:16629}",
 			note = "The best ears are south of the forest at the {area:16629}: Skypriests drop one in more than half their kills, Guardians in four of ten, Spiritcallers and Honor Guards in a third. The {area:16626} just north-west of {area:16638} are next best (Brawlers and Pillagers, about four in ten). All cultists are level 8 to 10.",
 			goals = {
-				{ t = "collect", quest = 93165, item = 258771, count = 10, map = 2521, x = 61.9, y = 45.11, fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" } }, lvl = 11, oi = 1, spotsPacked = "63.3,46.2,,88,11;66.3,47.7,,40,5;66.3,52,,59,12;62.4,52.4,,65,29;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;66.3,64.1,,40,9,,10;68.4,67.5,,40,3,,10;65.5,71.4,,40,2,,10;64.9,58.3,,57,7,,9;70,49.3,,40,6;62.9,48.2,,51,11,1;64.7,46.8,,40,6,1;65,44.8,,40,3,1;61.8,49.9,,83,19,1;59.9,50.7,,95,21,1;64.6,51,,66,12,1;66,49.5,,58,12,1;64.2,54.3,,62,16,1;68.1,50.4,,56,10,1;65.4,56.5,,44,5,1;69.9,51,,44,8,1;63.2,60.5,,48,9,1,9;60.2,62.1,,40,1,1,9;64.4,63,,50,11,1,9;66.1,62.4,,42,7,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;64.8,67.9,,67,10,1,10;66.5,67.3,,44,7,1,10;61,68.8,,56,12,1,9;65.5,69.5,,40,3,1,10", spread = true },
+				{ t = "collect", quest = 93165, item = 258771, count = 10, map = 2521, x = 61.9, y = 45.11, fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" }, { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 252767, npcName = "Al'Aketh Honor Guard" } }, fromNpcsAt = "1,5;2,7;2,7;1,5,2,7;1,5;6,4;6,4;6,3,4;3;3;6,4;2,7;1,5;5,1;1,5;1,5,2,7;1,5;2,7,1;2,7;1,5,2,7;2,7;5,6,1;2,7;4,6;6;4,6;6,4;6,4;3,4,6;4,6,3;3,4,6;3;4,6;3", lvl = 11, oi = 1, spotsPacked = "63.3,46.2,,88,11;66.3,47.7,,40,5;66.3,52,,59,12;62.4,52.4,,65,29;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;66.3,64.1,,40,9,,10;68.4,67.5,,40,3,,10;65.5,71.4,,40,2,,10;64.9,58.3,,57,7,,9;70,49.3,,40,6;62.9,48.2,,51,11,1;64.7,46.8,,40,6,1;65,44.8,,40,3,1;61.8,49.9,,83,19,1;59.9,50.7,,95,21,1;64.6,51,,66,12,1;66,49.5,,58,12,1;64.2,54.3,,62,16,1;68.1,50.4,,56,10,1;65.4,56.5,,44,5,1;69.9,51,,44,8,1;63.2,60.5,,48,9,1,9;60.2,62.1,,40,1,1,9;64.4,63,,50,11,1,9;66.1,62.4,,42,7,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;64.8,67.9,,67,10,1,10;66.5,67.3,,44,7,1,10;61,68.8,,56,12,1,9;65.5,69.5,,40,3,1,10", spread = true },
 			},
 		},
 		{
@@ -16423,7 +16829,6 @@ G(function() return {
 			note = "Back to {npc:254151} inside the den. Ten ears for 1000 reputation and a green piece: leather gloves, cloth pants or mail boots. {npc:254151} then takes ears five at a time, for 1000 each, as often as you like, up to level 18; in Classic the pay drops from level 19 and is 200 from level 22. The Legacy perk Diplomat adds up to 10% to every gain.",
 			goals = {
 				{ t = "turnin", quest = 93165, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, note = "1000 reputation", rewards = { choices = { { item = 263306, itemName = "Nightclaw Gloves" }, { item = 263307, itemName = "Shadowgale Pants" }, { item = 263308, itemName = "Cult Hunter's Boots" } } } },
-				{ t = "accept", minLevel = 8, quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, pre = { 93165 }, qlvl = 13 },
 			},
 		},
 		{
@@ -16438,9 +16843,8 @@ G(function() return {
 			note = "The storyline and {npc:254151}'s first quest leave you at Friendly with 2100 to spare. Honored is 3900 more: four turn-ins of five ears up to level 18, twenty from level 22. Friendly opens 32 of {npc:254151}'s patterns, in two colours, Cloudy and Azure: Blacksmithing Skyforged Wristguards and Chain (skill 50, 9s 50c), Gauntlets and Greaves (55, 11s); Leatherworking Gustwoven and Windraveled bracers and belts (50) and gloves and boots (55); Tailoring Stormsewn Cuffs and Cord (50), Handwraps and Shoes (55). They bind when you buy them, so buy them on the crafter.",
 			goals = {
 				{ t = "rep", faction = 2758, standing = 6 },
-				{ t = "collect", item = 258771, count = 5, map = 2521, x = 65.42, y = 71.96, optional = true, note = "five ears per turn-in", fromNpcs = { { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" } }, lvl = 11, spotsPacked = "65.5,71.4,,40,2,,10;64.8,67.9,,67,10,,10;66.3,64.1,,40,9,,10;68.4,67.5,,40,3,,10;64.9,58.3,,57,7,,9;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;59.3,53,,44,7;61.8,49.9,,83,19;64.6,51,,66,12;65,44.8,,40,3;69.9,51,,44,8;65.5,69.5,,40,3,1,10;66.5,67.3,,44,7,1,10;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;61,68.8,,56,12,1,9;63.2,64.1,,65,14,1,9;64.4,63,,50,11,1,9;66.1,62.4,,42,7,1,9;63.2,60.5,,48,9,1,9;60.2,62.1,,40,1,1,9;65.4,56.5,,44,5,1;64.2,54.3,,62,16,1;66.3,52,,59,12,1;62.4,52.4,,65,29,1;68.1,50.4,,56,10,1;66,49.5,,58,12,1;59.9,50.7,,95,21,1;70,49.3,,40,6,1;62.9,48.2,,51,11,1;66.3,47.7,,40,5,1;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1", spread = true },
-				{ t = "turnin", quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{quest:93459}: 1000 reputation" },
-				{ t = "accept", minLevel = 8, quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, pre = { 93165 }, qlvl = 13 },
+				{ t = "collect", item = 258771, count = 5, map = 2521, x = 65.42, y = 71.96, optional = true, note = "five ears per turn-in", fromNpcs = { { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" }, { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 252767, npcName = "Al'Aketh Honor Guard" } }, fromNpcsAt = "1;1,4,6;6,1,4;1;6,4;6,4;6,4;3,5;3,5,2,7;2,7,3;3,5;2,7;1;1;1,4,6;4,6,1;4,6;6,4;4,6;6,4;4,6;6;5,6,3;3,5,2,7;2,7;3,5,2,7;2,7;2,7;3,5;2,7;3,5;2,7;5,3;3,5", lvl = 11, spotsPacked = "65.5,71.4,,40,2,,10;64.8,67.9,,67,10,,10;66.3,64.1,,40,9,,10;68.4,67.5,,40,3,,10;64.9,58.3,,57,7,,9;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;59.3,53,,44,7;61.8,49.9,,83,19;64.6,51,,66,12;65,44.8,,40,3;69.9,51,,44,8;65.5,69.5,,40,3,1,10;66.5,67.3,,44,7,1,10;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;61,68.8,,56,12,1,9;63.2,64.1,,65,14,1,9;64.4,63,,50,11,1,9;66.1,62.4,,42,7,1,9;63.2,60.5,,48,9,1,9;60.2,62.1,,40,1,1,9;65.4,56.5,,44,5,1;64.2,54.3,,62,16,1;66.3,52,,59,12,1;62.4,52.4,,65,29,1;68.1,50.4,,56,10,1;66,49.5,,58,12,1;59.9,50.7,,95,21,1;70,49.3,,40,6,1;62.9,48.2,,51,11,1;66.3,47.7,,40,5,1;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1", spread = true },
+				{ t = "turnin", quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{quest:93459}: 1000 reputation, handed in from {npc:254151}'s window", direct = true, qlvl = 13 },
 				{ t = "vendor", npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{npc:254151}'s patterns" },
 			},
 		},
@@ -16449,9 +16853,8 @@ G(function() return {
 			note = "Honored opens the chest and leg patterns (skill 60, 12s 50c): Skyforged chainmail and legguards, Gustwoven harness and trousers, Windraveled jerkin and pants, Stormsewn vest and leggings. Revered is 12000 more: 12 turn-ins (60 ears, about 160 cultist kills at the Shrine) up to level 18, 60 turn-ins (300 ears) from level 22.",
 			goals = {
 				{ t = "rep", faction = 2758, standing = 7 },
-				{ t = "collect", item = 258771, count = 5, map = 2521, x = 65.32, y = 44.13, optional = true, note = "five ears per turn-in", fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" } }, lvl = 11, spotsPacked = "65,44.8,,40,3;64.6,51,,66,12;61.8,49.9,,83,19;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;64.8,67.9,,67,10,,10;65.5,71.4,,40,2,,10;68.4,67.5,,40,3,,10;66.3,64.1,,40,9,,10;64.9,58.3,,57,7,,9;69.9,51,,44,8;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1;66.3,47.7,,40,5,1;62.9,48.2,,51,11,1;66,49.5,,58,12,1;68.1,50.4,,56,10,1;66.3,52,,59,12,1;70,49.3,,40,6,1;62.4,52.4,,65,29,1;64.2,54.3,,62,16,1;59.9,50.7,,95,21,1;65.4,56.5,,44,5,1;63.2,60.5,,48,9,1,9;66.1,62.4,,42,7,1,9;64.4,63,,50,11,1,9;60.2,62.1,,40,1,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;66.5,67.3,,44,7,1,10;65.5,69.5,,40,3,1,10;61,68.8,,56,12,1,9", spread = true },
-				{ t = "turnin", quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{quest:93459}: 1000 reputation" },
-				{ t = "accept", minLevel = 8, quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, pre = { 93165 }, qlvl = 13 },
+				{ t = "collect", item = 258771, count = 5, map = 2521, x = 65.32, y = 44.13, optional = true, note = "five ears per turn-in", fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" }, { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 252767, npcName = "Al'Aketh Honor Guard" } }, fromNpcsAt = "1,5;2,7,1;1,5,2,7;1,5;6,4;6,4;3,4,6;3;3;6,3,4;6,4;2,7;5,1;1,5;2,7;1,5;2,7;2,7;2,7;2,7;1,5,2,7;1,5,2,7;1,5;5,6,1;4,6;6,4;4,6;6;6,4;3,4,6;4,6,3;3;3;4,6", lvl = 11, spotsPacked = "65,44.8,,40,3;64.6,51,,66,12;61.8,49.9,,83,19;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;64.8,67.9,,67,10,,10;65.5,71.4,,40,2,,10;68.4,67.5,,40,3,,10;66.3,64.1,,40,9,,10;64.9,58.3,,57,7,,9;69.9,51,,44,8;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1;66.3,47.7,,40,5,1;62.9,48.2,,51,11,1;66,49.5,,58,12,1;68.1,50.4,,56,10,1;66.3,52,,59,12,1;70,49.3,,40,6,1;62.4,52.4,,65,29,1;64.2,54.3,,62,16,1;59.9,50.7,,95,21,1;65.4,56.5,,44,5,1;63.2,60.5,,48,9,1,9;66.1,62.4,,42,7,1,9;64.4,63,,50,11,1,9;60.2,62.1,,40,1,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;66.5,67.3,,44,7,1,10;65.5,69.5,,40,3,1,10;61,68.8,,56,12,1,9", spread = true },
+				{ t = "turnin", quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{quest:93459}: 1000 reputation, handed in from {npc:254151}'s window", direct = true, qlvl = 13 },
 				{ t = "vendor", npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{npc:254151}'s patterns" },
 			},
 		},
@@ -16460,9 +16863,8 @@ G(function() return {
 			note = "Revered opens the {item:280347}, a companion pet, for 50s. Exalted is 21000 more: 21 turn-ins (105 ears, about 280 kills) up to level 18, 105 turn-ins (525 ears) from level 22.",
 			goals = {
 				{ t = "rep", faction = 2758, standing = 8 },
-				{ t = "collect", item = 258771, count = 5, map = 2521, x = 65.32, y = 44.13, optional = true, note = "five ears per turn-in", fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" } }, lvl = 11, spotsPacked = "65,44.8,,40,3;64.6,51,,66,12;61.8,49.9,,83,19;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;64.8,67.9,,67,10,,10;65.5,71.4,,40,2,,10;68.4,67.5,,40,3,,10;66.3,64.1,,40,9,,10;64.9,58.3,,57,7,,9;69.9,51,,44,8;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1;66.3,47.7,,40,5,1;62.9,48.2,,51,11,1;66,49.5,,58,12,1;68.1,50.4,,56,10,1;66.3,52,,59,12,1;70,49.3,,40,6,1;62.4,52.4,,65,29,1;64.2,54.3,,62,16,1;59.9,50.7,,95,21,1;65.4,56.5,,44,5,1;63.2,60.5,,48,9,1,9;66.1,62.4,,42,7,1,9;64.4,63,,50,11,1,9;60.2,62.1,,40,1,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;66.5,67.3,,44,7,1,10;65.5,69.5,,40,3,1,10;61,68.8,,56,12,1,9", spread = true },
-				{ t = "turnin", quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{quest:93459}: 1000 reputation" },
-				{ t = "accept", minLevel = 8, quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, pre = { 93165 }, qlvl = 13 },
+				{ t = "collect", item = 258771, count = 5, map = 2521, x = 65.32, y = 44.13, optional = true, note = "five ears per turn-in", fromNpcs = { { npc = 252762, npcName = "Al'Aketh Guardian" }, { npc = 252764, npcName = "Al'Aketh Skypriest" }, { npc = 270201, npcName = "Al'Aketh Brawler" }, { npc = 253511, npcName = "Al'Aketh Pillager" }, { npc = 252763, npcName = "Al'Aketh Spiritcaller" }, { npc = 253195, npcName = "Al'Aketh Preacher" }, { npc = 252767, npcName = "Al'Aketh Honor Guard" } }, fromNpcsAt = "1,5;2,7,1;1,5,2,7;1,5;6,4;6,4;3,4,6;3;3;6,3,4;6,4;2,7;5,1;1,5;2,7;1,5;2,7;2,7;2,7;2,7;1,5,2,7;1,5,2,7;1,5;5,6,1;4,6;6,4;4,6;6;6,4;3,4,6;4,6,3;3;3;4,6", lvl = 11, spotsPacked = "65,44.8,,40,3;64.6,51,,66,12;61.8,49.9,,83,19;59.3,53,,44,7;62.2,61.7,,66,16,,9;61.2,65.5,,89,17,,9;64.8,67.9,,67,10,,10;65.5,71.4,,40,2,,10;68.4,67.5,,40,3,,10;66.3,64.1,,40,9,,10;64.9,58.3,,57,7,,9;69.9,51,,44,8;64.7,46.8,,40,6,1;63.3,46.2,,88,11,1;66.3,47.7,,40,5,1;62.9,48.2,,51,11,1;66,49.5,,58,12,1;68.1,50.4,,56,10,1;66.3,52,,59,12,1;70,49.3,,40,6,1;62.4,52.4,,65,29,1;64.2,54.3,,62,16,1;59.9,50.7,,95,21,1;65.4,56.5,,44,5,1;63.2,60.5,,48,9,1,9;66.1,62.4,,42,7,1,9;64.4,63,,50,11,1,9;60.2,62.1,,40,1,1,9;63.2,64.1,,65,14,1,9;65.1,65.7,,55,18,1,10;62.6,66.9,,103,16,1,10;66.5,67.3,,44,7,1,10;65.5,69.5,,40,3,1,10;61,68.8,,56,12,1,9", spread = true },
+				{ t = "turnin", quest = 93459, npc = 254151, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{quest:93459}: 1000 reputation, handed in from {npc:254151}'s window", direct = true, qlvl = 13 },
 				{ t = "buy", npc = 254151, item = 280347, map = 2521, x = 63.81, y = 36.01, z = 806.2, optional = true, note = "{item:280347}, 50s" },
 			},
 		},
@@ -16582,8 +16984,7 @@ G(function() return {
 			note = "Neutral to Friendly is 3,000 reputation; the quests above pay 700 of it. Any {npc:6766} on the path takes {quest:6701}, 100 reputation each, until you reach Friendly: 23 emblems after the quests. Pick the pockets of Syndicate humans; they never drop emblems when killed. The Arathi camps pay best: Syndicate Prowlers and Conjurors carry one about a quarter of the time. Kill what you have robbed so the next ones respawn fresh.",
 			goals = {
 				{ t = "collect", item = 17124, count = 5, map = 1417, x = 30, y = 27, f = "e", optional = true, note = "{item:17124}: pickpocket Syndicate", fromNpcs = { { npc = 2586, npcName = "Syndicate Highwayman" }, { npc = 2589, npcName = "Syndicate Mercenary" }, { npc = 2587, npcName = "Syndicate Pathstalker" } }, lvl = 33, spotsPacked = "30,27,,124,22;33,31.2,,62,17,1;34.2,27.7,,56,7,1" },
-				{ t = "accept", minLevel = 24, quest = 6701, npc = 6766, map = 1416, x = 83.69, y = 77.93, f = "e", optional = true, pre = { 6681 }, qlvl = 60, spotsPacked = "85,79.2,195.5,17,4;81.7,77.5,173.9,15,2;82.4,73.8,168.5,15,1,1" },
-				{ t = "turnin", quest = 6701, npc = 6766, map = 1416, x = 84.59, y = 78.71, z = 193.2, f = "e", optional = true, note = "a {npc:6766}: 100 per emblem", spotsPacked = "85,79.2,195.5,17,4;81.7,77.5,173.9,15,2;82.4,73.8,168.5,15,1,1" },
+				{ t = "turnin", quest = 6701, npc = 6766, map = 1416, x = 83.69, y = 77.93, f = "e", optional = true, note = "a {npc:6766}: 100 per emblem, handed in from his window", direct = true, qlvl = 60, spotsPacked = "85,79.2,195.5,17,4;81.7,77.5,173.9,15,2;82.4,73.8,168.5,15,1,1" },
 				{ t = "rep", faction = 349, standing = 5 },
 			},
 		},
@@ -16624,8 +17025,7 @@ G(function() return {
 			goals = {
 				{ t = "level", level = 50 },
 				{ t = "collect", item = 16885, count = 5, map = 1427, x = 32.1, y = 94.7, f = "e", optional = true, note = "{item:16885}: pickpocket level 50+ humanoids, {area:1445}" },
-				{ t = "accept", minLevel = 50, quest = 8249, npc = 6707, map = 1416, x = 84.45, y = 80.32, z = 203.9, f = "e", optional = true, qlvl = 60 },
-				{ t = "turnin", quest = 8249, npc = 6707, map = 1416, x = 84.45, y = 80.32, z = 203.9, f = "e", optional = true, note = "{npc:6707}: 50 per five boxes" },
+				{ t = "turnin", quest = 8249, npc = 6707, map = 1416, x = 84.45, y = 80.32, z = 203.9, f = "e", optional = true, note = "{npc:6707}: 50 per five boxes, handed in from his window", direct = true, qlvl = 60 },
 				{ t = "rep", faction = 349, standing = 8 },
 			},
 		},
@@ -16689,7 +17089,7 @@ G(function() return {
 				{ t = "kill", quest = 8366, npc = 7856, count = 10, map = 1446, x = 70.95, y = 43.14, z = 6.7, f = "e", lvl = 45, oi = 2, spotsPacked = "71.1,43.3,6.7,15,2;72,44.6,3.9,28,3;71.3,46.6,6.1,49,5;73,45.2,0.7,24,2;72.4,48,1.6,36,3;73.4,47,,29,3;75.9,45.3,7.5,22,4,1", target = "Southsea Freebooter" },
 				{ t = "kill", quest = 8366, npc = 7857, count = 10, map = 1446, x = 73.32, y = 47.27, z = 0.7, f = "e", lvl = 45, oi = 3, spotsPacked = "74.1,47.7,7.8,81,11", target = "Southsea Dock Worker" },
 				{ t = "kill", quest = 8366, npc = 7858, count = 10, map = 1446, x = 73.29, y = 47.87, z = 0.7, f = "e", lvl = 45, oi = 4, spotsPacked = "72.7,47.3,,49,4;75.4,45.6,1.1,65,10", target = "Southsea Swashbuckler" },
-				{ t = "collect", quest = 8365, item = 20519, count = 20, map = 1446, x = 73.29, y = 47.87, f = "e", fromNpcs = { { npc = 7858, npcName = "Southsea Swashbuckler" }, { npc = 7855, npcName = "Southsea Pirate" }, { npc = 7856, npcName = "Southsea Freebooter" }, { npc = 7857, npcName = "Southsea Dock Worker" }, { npc = 7883, npcName = "Andre Firebeard" } }, lvl = 45, oi = 1, spotsPacked = "73,48,,63,15,,47;73.4,46.3,,63,9;74.5,47.4,,44,9;71.6,46.6,,68,12;72.2,44.6,,54,7;75.6,45.4,,65,13;71.1,43.1,,45,7,1" },
+				{ t = "collect", quest = 8365, item = 20519, count = 20, map = 1446, x = 73.29, y = 47.87, f = "e", fromNpcs = { { npc = 7858, npcName = "Southsea Swashbuckler" }, { npc = 7855, npcName = "Southsea Pirate" }, { npc = 7856, npcName = "Southsea Freebooter" }, { npc = 7857, npcName = "Southsea Dock Worker" }, { npc = 7883, npcName = "Andre Firebeard" }, { npc = 8203, npcName = "Kregg Keelhaul" } }, fromNpcsAt = "3,2,4,1,5,6;2,3,4,5;4,2,1;3,2,1;3,2;1,3;2,3", lvl = 45, oi = 1, spotsPacked = "73,48,,63,15,,47;73.4,46.3,,63,9;74.5,47.4,,44,9;71.6,46.6,,68,12;72.2,44.6,,54,7;75.6,45.4,,65,13;71.1,43.1,,45,7,1" },
 				{ t = "turnin", quest = 8366, npc = 7882, map = 1446, x = 67.06, y = 23.89, z = 8.1, f = "e" },
 				{ t = "turnin", quest = 8365, npc = 15165, map = 1446, x = 66.56, y = 22.27, z = 8.8, f = "e" },
 			},
@@ -16734,10 +17134,8 @@ G(function() return {
 				{ t = "level", level = 57 },
 				{ t = "goto", map = 1444, x = 59.2, y = 45.1, f = "e", text = "{area:2577}", area = 2577 },
 				{ t = "collect", item = 18250, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, note = "{item:18250}, Gordok ogres", group = { kind = "elite", lvl = 61, rank = 1 } },
-				{ t = "accept", minLevel = 56, quest = 5525, npc = 14338, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, note = "{quest:5525}: 150 to every town", group = { map = 429, kind = "dungeon", name = "Dire Maul" }, qlvl = 60 },
-				{ t = "turnin", quest = 5525, npc = 14338, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, group = { map = 429, kind = "dungeon", name = "Dire Maul" } },
-				{ t = "accept", minLevel = 56, quest = 7429, npc = 14338, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, note = "{quest:5525}, again on every later run: 150", group = { map = 429, kind = "dungeon", name = "Dire Maul" }, pre = { 5525 }, qlvl = 60 },
-				{ t = "turnin", quest = 7429, npc = 14338, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, group = { map = 429, kind = "dungeon", name = "Dire Maul" } },
+				{ t = "turnin", quest = 5525, npc = 14338, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, note = "{quest:5525}: 150 to every town, handed in from {npc:14338}'s window", direct = true, group = { map = 429, kind = "dungeon", name = "Dire Maul" }, qlvl = 60 },
+				{ t = "turnin", quest = 7429, npc = 14338, map = 1444, x = 59.2, y = 45.1, f = "e", optional = true, note = "{quest:5525}, again on every later run: 150", direct = true, group = { map = 429, kind = "dungeon", name = "Dire Maul" }, qlvl = 60 },
 			},
 		},
 		{
@@ -16987,7 +17385,7 @@ G(function() return {
 				{ t = "collect", item = 18944, count = 20, map = 1427, x = 48.43, y = 28.01, f = "e", optional = true, note = "{item:18944}, 2 per turn-in", fromId = 9318, fromKind = "npc", fromNpcs = { { npc = 9318, npcName = "Incendosaur" } }, lvl = 49, spotsPacked = "49.5,25.3,,30,3;50.8,31.9,,41,3;45.4,23.2,,88,5;50.8,38.2,,24,2" },
 				{ t = "buy", npc = 14624, item = 3857, count = 10, map = 1427, x = 38.8, y = 28.51, z = 309.3, f = "e", optional = true, note = "Coal, 1 per turn-in" },
 				{ t = "turnin", quest = 8241, npc = 14624, map = 1427, x = 38.8, y = 28.51, z = 309.3, f = "e", optional = true, note = "via Iron: 4 Iron Bars", direct = true, qlvl = 60 },
-				{ t = "collect", item = 3356, count = 4, map = 1427, x = 39.91, y = 27.83, f = "e", optional = true, note = "{item:3356}, 4 per turn-in", fromNpcs = { { npc = 5843, npcName = "Slave Worker" }, { npc = 2720, npcName = "Dustbelcher Ogre Mage" }, { npc = 2736, npcName = "Greater Rock Elemental" }, { npc = 5844, npcName = "Dark Iron Slaver" }, { npc = 5846, npcName = "Dark Iron Taskmaster" } }, lvl = 49, spotsPacked = "40.2,23.6,,64,8,,48;49.9,26.3,,52,4;47.2,46.4,,51,6,,47;51.7,59.3,,40,1;44.9,63.8,,40,1;36.1,60.4,,40,4;37.4,39.3,,60,15;58.2,43.8,,46,5,,48;62.6,60.5,,46,8,,47;58.3,77,,40,1,,47;87.1,81.4,,40,1,,44;69,32.8,,40,2,,47;37.8,31.7,,55,5,1,48;43.2,29.8,,63,14,1;41.8,35.8,,63,12,1,48;45.4,23.1,,59,9,1;45.3,39.7,,57,8,1;40.4,43.8,,79,12,1;50.7,33.2,,40,2,1;34.9,45.1,,55,11,1;50.2,38.9,,40,5,1;40.2,52.8,,69,18,1;44.2,53.9,,48,9,1;32.5,52.6,,40,1,1;41.6,63.4,,40,1,1;65.3,63.8,,40,1,1,47;81.7,74.1,,48,6,1,44;80.9,78.3,,40,3,1,44;84.7,76.9,,45,5,1,44", spread = true },
+				{ t = "collect", item = 3356, count = 4, map = 1427, x = 39.91, y = 27.83, f = "e", optional = true, note = "{item:3356}, 4 per turn-in", fromNpcs = { { npc = 5843, npcName = "Slave Worker" }, { npc = 2720, npcName = "Dustbelcher Ogre Mage" }, { npc = 2736, npcName = "Greater Rock Elemental" }, { npc = 5844, npcName = "Dark Iron Slaver" }, { npc = 5846, npcName = "Dark Iron Taskmaster" }, { npc = 5854, npcName = "Heavy War Golem" }, { npc = 9318, npcName = "Incendosaur" }, { npc = 5850, npcName = "Blazing Elemental" }, { npc = 5853, npcName = "Tempered War Golem" }, { npc = 8637, npcName = "Dark Iron Watchman" } }, fromNpcsAt = "1,5;7;1,4,8;6;6;6,4;1,4,5,6;8,4,5;9,10;8;2;9;1,4,5;5,1,4,7;1,5,4,8;7,1,4,5;6,5,4;1,6,4,5;7;1,6,5;5,7,6;1,4,5,6;1,4,5,6;6;6;9;3;3;3", lvl = 49, spotsPacked = "40.2,23.6,,64,8,,48;49.9,26.3,,52,4;47.2,46.4,,51,6,,47;51.7,59.3,,40,1;44.9,63.8,,40,1;36.1,60.4,,40,4;37.4,39.3,,60,15;58.2,43.8,,46,5,,48;62.6,60.5,,46,8,,47;58.3,77,,40,1,,47;87.1,81.4,,40,1,,44;69,32.8,,40,2,,47;37.8,31.7,,55,5,1,48;43.2,29.8,,63,14,1;41.8,35.8,,63,12,1,48;45.4,23.1,,59,9,1;45.3,39.7,,57,8,1;40.4,43.8,,79,12,1;50.7,33.2,,40,2,1;34.9,45.1,,55,11,1;50.2,38.9,,40,5,1;40.2,52.8,,69,18,1;44.2,53.9,,48,9,1;32.5,52.6,,40,1,1;41.6,63.4,,40,1,1;65.3,63.8,,40,1,1,47;81.7,74.1,,48,6,1,44;80.9,78.3,,40,3,1,44;84.7,76.9,,45,5,1,44", spread = true },
 				{ t = "turnin", quest = 7736, npc = 14624, map = 1427, x = 38.8, y = 28.51, z = 309.3, f = "e", optional = true, note = "via {item:3356}: 4 {item:3356}", direct = true, qlvl = 60 },
 				{ t = "turnin", quest = 8242, npc = 14624, map = 1427, x = 38.8, y = 28.51, z = 309.3, f = "e", optional = true, note = "via {item:4234}: 10 {item:4234}", direct = true, qlvl = 60 },
 				{ t = "rep", faction = 59, standing = 5 },
@@ -17236,7 +17634,7 @@ G(function() return {
 			title = "{quest:6031} for {npc:11557}",
 			note = "{quest:6031} drops from the humanoids of the level 50-60 zones, the Deadwood and Winterfall furbolgs among them.",
 			goals = {
-				{ t = "collect", quest = 6031, item = 14047, count = 30, map = 1448, x = 65.58, y = 2.82, f = "e", fromNpcs = { { npc = 11553, npcName = "Timbermaw Woodbender" }, { npc = 11180, npcName = "Bloodvenom Post Brave" }, { npc = 9518, npcName = "Rakaiah" }, { npc = 10916, npcName = "Winterfall Runner" }, { npc = 9517, npcName = "Shadow Lord Fel'dan" } }, lvl = 54, oi = 1, spotsPacked = "65.6,2.8,,40,1,,53;60.2,5.8,,40,1,,57;45.1,14.3,,40,1,,53;42,19.3,,40,4,,53;39.1,22.2,,40,2,,53;38.4,46.5,,46,5,,57;34.7,51.9,,41,6,,55;34.5,59.7,,40,1,,52;39.2,58.5,,40,1,,52;37.4,68.9,,40,5,,52;32.3,66.4,,40,4;47.7,93.1,,40,1,,51;64.6,4,,40,2,1;65.7,0.9,,40,2,1;68.1,5.3,,40,1,1;65.2,7.9,,40,1,1,53;42.5,14.4,,40,1,1,53;42.4,17.1,,40,1,1,53;40.3,48.3,,40,3,1;37.6,47.9,,40,1,1;38.2,50.5,,40,4,1,56;36.8,52.3,,40,4,1;37.6,54.7,,40,3,1;36.4,56.6,,40,2,1,55;38.2,61.2,,54,7,1,52;35.9,61.4,,40,2,1,52;37.4,66.9,,40,2,1,52;33.9,66.6,,40,1,1,52", spread = true },
+				{ t = "collect", quest = 6031, item = 14047, count = 30, map = 1448, x = 65.58, y = 2.82, f = "e", fromNpcs = { { npc = 11553, npcName = "Timbermaw Woodbender" }, { npc = 11180, npcName = "Bloodvenom Post Brave" }, { npc = 9518, npcName = "Rakaiah" }, { npc = 10916, npcName = "Winterfall Runner" }, { npc = 9517, npcName = "Shadow Lord Fel'dan" }, { npc = 7118, npcName = "Jaedenar Darkweaver" }, { npc = 7115, npcName = "Jaedenar Adept" }, { npc = 7110, npcName = "Jadefire Shadowstalker" }, { npc = 7108, npcName = "Jadefire Betrayer" }, { npc = 11552, npcName = "Timbermaw Mystic" }, { npc = 9877, npcName = "Prince Xavalis" }, { npc = 14342, npcName = "Ragepaw" }, { npc = 9861, npcName = "Moora" }, { npc = 9454, npcName = "Xavathras" } }, fromNpcsAt = "1;4;9;9;9;6,5,13;2;7;7;8;8,14;12;10;10,1;10;1;9;9;6;6;6,3;6;6;11,6;7;7;8;8", lvl = 54, oi = 1, spotsPacked = "65.6,2.8,,40,1,,53;60.2,5.8,,40,1,,57;45.1,14.3,,40,1,,53;42,19.3,,40,4,,53;39.1,22.2,,40,2,,53;38.4,46.5,,46,5,,57;34.7,51.9,,41,6,,55;34.5,59.7,,40,1,,52;39.2,58.5,,40,1,,52;37.4,68.9,,40,5,,52;32.3,66.4,,40,4;47.7,93.1,,40,1,,51;64.6,4,,40,2,1;65.7,0.9,,40,2,1;68.1,5.3,,40,1,1;65.2,7.9,,40,1,1,53;42.5,14.4,,40,1,1,53;42.4,17.1,,40,1,1,53;40.3,48.3,,40,3,1;37.6,47.9,,40,1,1;38.2,50.5,,40,4,1,56;36.8,52.3,,40,4,1;37.6,54.7,,40,3,1;36.4,56.6,,40,2,1,55;38.2,61.2,,54,7,1,52;35.9,61.4,,40,2,1,52;37.4,66.9,,40,2,1,52;33.9,66.6,,40,1,1,52", spread = true },
 				{ t = "turnin", quest = 6031, npc = 11557, map = 1448, x = 65.69, y = 2.81, z = 586.4, f = "e" },
 			},
 		},

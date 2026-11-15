@@ -1,0 +1,3 @@
+Suivez la route vers le sud depuis {area:1002} jusqu'en {zone:1431} ; {area:42} se trouve du côté est de la forêt.
+Pas de {item:4371} pour {quest:174} ? {npc:3133}, dans la maison à côté de celle de {npc:276}, est presque toujours en rupture. Sans lui, faites un clic droit sur la quête dans la fenêtre du guide et passez-la.
+{item:4371}, pour Le regard vers les étoiles à {area:42} : {npc:5175}, à côté de {npc:4081}, en a parfois un
