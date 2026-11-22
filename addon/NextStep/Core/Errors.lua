@@ -34,6 +34,23 @@ local function now()
     return (time or os.time)()
 end
 
+-- Pile d'appels sans les lignes du relevé lui-même : le gestionnaire d'erreurs est
+-- toujours dans la pile, il ne doit pas faire passer l'erreur d'un autre addon pour
+-- une erreur de NextStep.
+local function cleanStack(stack)
+    if type(stack) ~= "string" then
+        return nil
+    end
+    local lines = {}
+    for line in stack:gmatch("[^\n]+") do
+        if not line:find("NextStep[/\\]Core[/\\]Errors%.lua") then
+            lines[#lines + 1] = line
+        end
+    end
+    return table.concat(lines, "\n")
+end
+Errors.CleanStack = cleanStack
+
 local function trimStack(stack)
     if type(stack) ~= "string" then
         return nil
@@ -84,7 +101,7 @@ local function handler(message, ...)
     if not recording then
         recording = true
         pcall(function()
-            local stack = debugstack and debugstack(3)
+            local stack = cleanStack(debugstack and debugstack(3))
             if fromNextStep(message) or fromNextStep(stack) then
                 Errors.Record(message, stack, "error")
             end
