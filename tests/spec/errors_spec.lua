@@ -45,9 +45,21 @@ describe("Relevé des erreurs", function()
         end
         geterrorhandler()("Interface/AddOns/OtherAddon/Core.lua:3: boom")
         expect_eq(#ns.Errors.List(), 1, "pas d'erreur d'un autre addon")
-        expect_eq(#shown, 3)
+
+        -- Le relevé lui-même figure dans la pile : ça ne suffit pas à l'attribuer à NextStep
+        -- (erreurs de DropAtlas et d'Auctionator notées à tort, 2026-11-15).
+        _G.debugstack = function()
+            return "[Interface/AddOns/NextStep/Core/Errors.lua]:86: in function <...>\n[C]: ?\n"
+                .. "[Interface/AddOns/DropAtlas/Data/Store.lua]:131: in function 'SetSourceName'"
+        end
+        geterrorhandler()("Interface/AddOns/DropAtlas/Data/Store.lua:131: attempt to compare")
+        expect_eq(#ns.Errors.List(), 1, "erreur de DropAtlas ignorée")
+        expect_eq(#shown, 4, "le jeu les affiche toutes")
 
         -- Installer deux fois ne double pas l'enveloppe.
+        _G.debugstack = function()
+            return "Interface/AddOns/NextStep/Modules/Test.lua:12: in function <...>"
+        end
         ns.Errors.Install()
         ns.SafeCall(fail)
         expect_eq(ns.Errors.List()[1].count, 3)

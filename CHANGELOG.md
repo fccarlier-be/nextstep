@@ -6,6 +6,9 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+### Corrigé
+- Relevé des erreurs : les erreurs d'autres addons (DropAtlas, Auctionator…) n'y sont plus notées. Le relevé figurait lui-même dans leur pile d'appels, ce qui les faisait passer pour des erreurs de NextStep.
+
 ## [0.2.4] - 2026-11-15
 
 ### Ajouté
