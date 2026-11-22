@@ -158,6 +158,40 @@ function Guide:AdviceText(quest, withZone)
     return text
 end
 
+-- Où prendre une quête : l'acceptation qu'en donne le guide (PNJ, objet), sinon le
+-- donneur connu du mode conseil (forever-db). { map, x, y, f, npc } ou nil.
+function Guide:QuestGiverSpot(quest, guide)
+    for _, step in ipairs(guide and guide.steps or {}) do
+        for _, goal in ipairs(step.goals) do
+            if goal.t == "accept" and goal.quest == quest and goal.map and goal.x and goal.y then
+                return { map = goal.map, x = goal.x, y = goal.y, f = goal.f, npc = goal.npc, object = goal.object }
+            end
+        end
+    end
+    for _, entry in ipairs(Guide.AdviceQuestList()) do
+        if entry.id == quest and entry.map and entry.x and entry.y then
+            return { map = entry.map, x = entry.x, y = entry.y, npc = entry.kind == "n" and entry.giver or nil }
+        end
+    end
+end
+
+-- Pointe la flèche (et un repère sur la carte) vers le donneur d'une quête pas encore
+-- prise, et ouvre la carte du monde sur sa zone (hors combat).
+function Guide:PointToGiver(quest, guide)
+    local spot = self:QuestGiverSpot(quest, guide)
+    if not spot then
+        return false
+    end
+    local name = ns.DB:GetName("quest", quest, guide) or ("#" .. quest)
+    self:PointTo(spot, L["Take %s"]:format(name))
+    local giver = spot.npc and ns.DB:GetName("npc", spot.npc, guide)
+    ns:Print(L["The arrow points to %s. Right-click it to go back to the guide."]:format(giver or name))
+    if OpenWorldMap and not (InCombatLockdown and InCombatLockdown()) then
+        OpenWorldMap(spot.map)
+    end
+    return true
+end
+
 function Guide:PointToQuest(quest)
     self:PointTo({ map = quest.map, x = quest.x, y = quest.y }, Guide.AdviceTitle(quest))
     ns:Print(L["The arrow points to %s. Right-click it to go back to the guide."]:format(Guide.AdviceGiver(quest)))

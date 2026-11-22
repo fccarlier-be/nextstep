@@ -13,7 +13,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 
 | Élément | Ce qu'il fait |
 |---|---|
-| **Fenêtre du guide** | L'étape en cours et ses objectifs. Niveau des quêtes en couleur (gris, vert, jaune, orange, rouge), quêtes **élites**, de groupe, de donjon ou de raid signalées, récompense qui améliore ton équipement (« récompense +12 % »). Survol d'une quête : son texte ; clic : le journal de quêtes. |
+| **Fenêtre du guide** | L'étape en cours et ses objectifs. Niveau des quêtes en couleur (gris, vert, jaune, orange, rouge), quêtes **élites**, de groupe, de donjon ou de raid signalées, récompense qui améliore ton équipement (« récompense +12 % »). Survol d'une quête : son texte ; clic : le journal de quêtes, ou, si la quête n'est pas encore prise, la flèche et un repère sur la carte vers son donneur. |
 | **Modes** | *Strict* (une étape à la fois) ou *Libre* (les objectifs du même endroit, dans n'importe quel ordre ; conseillé en groupe). Bouton en bas de la fenêtre. |
 | **Flèche** | En haut de l'écran, vers l'objectif le plus proche, avec la distance. Objectif sur l'autre continent : elle mène au quai du bateau ou du zeppelin à prendre, nommé dans la fenêtre du guide. Un clic dans le journal la tourne vers un donneur de quête ; **clic droit dessus** (ou la ligne « Flèche : … », ou `/ns arrow`) pour la rendre au guide. |
 | **Carte et minimap** | Tous les points de l'étape ; la cible en doré. |

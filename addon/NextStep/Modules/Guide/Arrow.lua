@@ -127,7 +127,7 @@ end
 -- flèche au guide.
 function Guide:PointTo(point, label)
     if point then
-        self.pointTarget = { map = point.map, x = point.x, y = point.y, label = label }
+        self.pointTarget = { map = point.map, x = point.x, y = point.y, f = point.f, label = label }
     else
         self.pointTarget = nil
     end
