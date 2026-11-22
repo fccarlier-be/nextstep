@@ -107,6 +107,7 @@ files["addon/**"] = {
         "HideUIPanel",
         "hooksecurefunc",
         "InCombatLockdown",
+        "OpenWorldMap",
         "IsAltKeyDown",
         "IsIndoors",
         "IsInInstance",

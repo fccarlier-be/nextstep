@@ -484,6 +484,18 @@ local function addGoal(self, view, result, i, j, status)
             options.onClick = function()
                 self:OpenQuestLog(quest)
             end
+        elseif goal.t ~= "accept" and status ~= "done" and self.state and not self.state:TurnedIn(quest)
+            and self:QuestGiverSpot(quest, guide) then
+            -- Quête pas encore prise : le clic mène à son donneur.
+            options.onClick = function()
+                self:PointToGiver(quest, guide)
+            end
+            local questTooltip = options.tooltip
+            options.tooltip = function(tooltip)
+                questTooltip(tooltip)
+                tooltip:AddLine(L["Quest not taken yet: click for the arrow and a map marker to its giver."],
+                    1, 0.82, 0)
+            end
         end
     end
     -- Maître de classe : les sorts à apprendre et leur coût.

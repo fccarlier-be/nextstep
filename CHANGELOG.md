@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.3.1] - 2026-11-22
+
+### Ajouté
+- Fenêtre du guide : un clic sur un objectif dont la quête **n'est pas encore prise** (« Ramasser Clé primitive » avant d'avoir accepté « Où est la clé ? ») tourne la flèche vers son donneur, pose un repère sur la carte du monde et l'ouvre sur sa zone. L'infobulle le signale. Le donneur vient de l'étape du guide qui accepte la quête, sinon des données de quêtes (forever-db). Clic droit sur la flèche pour revenir au guide.
+
 ## [0.3.0] - 2026-11-22
 
 ### Modifié
@@ -183,7 +188,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.3.0...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/fccarlier-be/nextstep/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/fccarlier-be/nextstep/compare/v0.2.4...v0.3.0
 [0.2.4]: https://github.com/fccarlier-be/nextstep/compare/v0.2.3...v0.2.4
 [0.2.3]: https://github.com/fccarlier-be/nextstep/compare/v0.2.2...v0.2.3

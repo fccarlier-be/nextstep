@@ -505,6 +505,48 @@ describe("Guide en jeu", function()
         expect(label:find("class trainer", 1, true), "le maître de classe, pas la quête d'une autre race")
     end)
 
+    it("mène au donneur d'une quête pas encore prise, flèche et repère sur la carte", function()
+        local game, Guide = boot()
+        game.ns.DB.AddGuide(function() return {
+            id = "test/giver", title = "Giver", category = "Test", minLevel = 1, maxLevel = 10,
+            steps = {
+                { title = "Ruins", goals = {
+                    { t = "accept", quest = 784, npc = 823, map = MAP, x = 48.17, y = 42.94, f = "e" },
+                    { t = "collect", quest = 784, oi = 1, item = 1, count = 1, map = MAP, x = 40, y = 40, f = "e" },
+                } },
+            },
+        } end)
+        game:fire("QUEST_LOG_UPDATE")
+        Guide:Start("test/giver")
+        Guide:Refresh()
+        local line
+        for _, candidate in ipairs(Guide.window.lines) do
+            if rawget(candidate, "onClick") and type(rawget(candidate, "tooltip")) == "function" then
+                line = candidate
+            end
+        end
+        expect(line, "ligne de l'objectif cliquable")
+        local texts = {}
+        line.tooltip({ SetText = function(_, t) texts[#texts + 1] = t end,
+            AddLine = function(_, t) texts[#texts + 1] = t end })
+        expect(table.concat(texts, " "):find("Quest not taken yet", 1, true), "l'infobulle le dit")
+        local opened
+        _G.OpenWorldMap = function(map) opened = map end
+        line.onClick()
+        _G.OpenWorldMap = nil
+        local target = Guide.pointTarget
+        expect(target and target.map == MAP and target.x == 48.17 and target.y == 42.94, "flèche vers le donneur")
+        expect_eq(opened, MAP, "carte ouverte sur sa zone")
+        local marked
+        for _, pin in ipairs(Guide:PinPoints(Guide.result)) do
+            if pin.target and pin.label and pin.label:find("Take", 1, true) then
+                marked = pin
+            end
+        end
+        expect(marked, "repère du donneur sur la carte")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("montre le texte d'une quête au survol et l'ouvre dans le journal de quêtes", function()
         local game, Guide = boot()
         game:acceptQuest(783, { kill() })

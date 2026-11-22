@@ -77,6 +77,15 @@ function Guide:PinPoints(result)
     if not result.current then
         return list
     end
+    -- Lieu choisi (donneur d'une quête, vendeur...) : la flèche y mène, la carte le montre.
+    local chosen = self.pointTarget
+    if chosen then
+        local instance, north, west = Navigation.WorldPosition(chosen.map, chosen.x, chosen.y, chosen.f)
+        if instance then
+            target = { instance = instance, north = north, west = west, kind = "place", target = true,
+                label = chosen.label }
+        end
+    end
     local guide = result.guide
     for _, entry in ipairs(self:OpenGoals(result)) do
         local goal = guide.steps[entry.step].goals[entry.goal]
@@ -89,7 +98,7 @@ function Guide:PinPoints(result)
                 }
                 local isTarget = result.target and result.target.step == entry.step
                     and result.target.goal == entry.goal and sameSpot(point, result.target)
-                if isTarget and not target then
+                if isTarget and not target and not chosen then
                     pin.target = true
                     target = pin
                 elseif #list < MAX_POINTS then
@@ -104,6 +113,9 @@ end
 
 -- Libellé d'un repère (infobulle de la carte du monde).
 function Guide:PinLabel(pin)
+    if pin.label then
+        return pin.label
+    end
     if pin.quest then
         return self:AdviceText(pin.quest)
     end
