@@ -131,6 +131,27 @@ local function seenOrManual(goal, _, ctx)
 end
 
 -- Objectif lié à un objectif de quête (quest + oi), sinon vérifié autrement.
+-- Rang atteint auprès d'une faction : ce rang ou plus ; avec points (format 11), au
+-- moins ce nombre de points dans ce rang, ou un rang plus haut.
+function Goals.StandingReached(state, faction, standing, points)
+    local current, earned = state:Standing(faction)
+    current = current or 0
+    if current > standing then
+        return true
+    end
+    return current == standing and (not points or (earned or 0) >= points)
+end
+
+-- Objectif de quête à moitié (upto = N, format 11) : fait quand la ligne du journal
+-- compte N, ou qu'elle est remplie.
+local function uptoReached(state, q, oi, upto)
+    local objective = state.Objectives and (state:Objectives(q) or {})[oi]
+    if not objective then
+        return false
+    end
+    return objective.finished == true or (objective.numFulfilled or 0) >= upto
+end
+
 local function questObjective(otherwise)
     return function(goal, state, ctx)
         if not goal.quest then
@@ -144,6 +165,9 @@ local function questObjective(otherwise)
             return result("na", { kind = "skipped" })
         end
         if state:InLog(q) and goal.oi and state:Objective(q, goal.oi) then
+            return DONE
+        end
+        if state:InLog(q) and goal.oi and goal.upto and uptoReached(state, q, goal.oi, goal.upto) then
             return DONE
         end
         return TODO
@@ -278,11 +302,13 @@ local EVALUATORS = {
         return seenOrManual(goal, state, ctx)
     end,
     rep = function(goal, state)
-        if (state:Standing(goal.faction) or 0) >= goal.standing then
+        if Goals.StandingReached(state, goal.faction, goal.standing, goal.points) then
             return DONE
         end
         return TODO
     end,
+    -- Achat à l'hôtel des ventes (guides de métiers) : compté dans les sacs, comme un achat.
+    auction = itemCount,
     -- Raccourci par la mort : désactivé par défaut, comme dans Polestar.
     die = function()
         return result("na", { kind = "deathskip" })

@@ -36,6 +36,7 @@ local TYPE_ICONS = {
     talk = "Interface\\CURSOR\\Speak",
     vendor = "Interface\\CURSOR\\Buy",
     buy = "Interface\\CURSOR\\Buy",
+    auction = "Interface\\CURSOR\\Buy",
     train = "Interface\\CURSOR\\Trainer",
     cast = "Interface\\CURSOR\\Cast",
     ["goto"] = "Interface\\CURSOR\\Directions",

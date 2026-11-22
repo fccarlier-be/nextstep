@@ -303,6 +303,23 @@ function Engine.Evaluate(guide, ctx)
                 end
             end
         end
+        -- Objectifs au choix (either, format 11) : dès que l'un d'eux est fait, les autres
+        -- ne concernent plus le personnage. Une quête au choix non prise est mise de côté
+        -- (ses objectifs suivants ne s'appliquent pas), comme une acceptation facultative.
+        local chosen = false
+        for j, goal in ipairs(step.goals) do
+            if goal.either and list[j].status == "done" then
+                chosen = true
+            end
+        end
+        if chosen then
+            for j, goal in ipairs(step.goals) do
+                local status = list[j].status
+                if goal.either and status ~= "done" and status ~= "na" and status ~= "info" then
+                    list[j] = { status = "na", reason = { kind = "either" } }
+                end
+            end
+        end
         -- Un déplacement est accompli dès qu'un objectif suivant l'est.
         local laterDone = false
         for j = #step.goals, 1, -1 do

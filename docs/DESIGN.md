@@ -127,7 +127,7 @@ Les sources et licences sont détaillées dans [DATA_SOURCES.md](DATA_SOURCES.md
 
 Le format exact des fichiers, la couche d'accès `ns.DB` et la procédure d'import sont décrits dans [DATA_FORMAT.md](DATA_FORMAT.md). Les principes :
 
-- **Import, pas dépendance** : les guides compilés de Polestar sont convertis par `Tools/import/import.lua`, exécutés dans un environnement isolé. Le numéro de format est vérifié (`format = 8` au 2026-11-03) : un format inconnu est refusé plutôt que de produire des données fausses. L'import est reproductible et consigne la version source.
+- **Import, pas dépendance** : les guides compilés de Polestar sont convertis par `Tools/import/import.lua`, exécutés dans un environnement isolé. Le numéro de format est vérifié (`format = 11` au 2026-11-22) : un format inconnu est refusé plutôt que de produire des données fausses. L'import est reproductible et consigne la version source.
 - **Structure** : guide → étapes → objectifs. Chaque étape regroupe les objectifs à accomplir ensemble au même endroit. Le vocabulaire (types d'objectifs `accept`, `turnin`, `kill`, `collect`, `goto`…, conditions `when`, restrictions `only`, `along`, `label`, `skipto`) est celui de Polestar, pour que l'import reste quasi direct.
 - **Races et classes en jetons** (`HUMAN`, `SCOURGE`, `WARRIOR`…), jamais en masques de bits : les ID raciaux de Skyborne (95, 96) dépassent 32 bits, la limite de la bibliothèque `bit` de Lua 5.1.
 - **Pas de noms dans les guides** : les textes contiennent des emplacements `{genre:id}`, remplacés à l'affichage par le nom dans la langue du client (traduction importée, puis nom fourni par le client, puis anglais).
@@ -201,7 +201,9 @@ Sémantique de Polestar (voir [DATA_FORMAT.md](DATA_FORMAT.md#conditions-when)) 
 - `only` (race, classe, faction) est vérifié à chaque recalcul ; `when` est vérifié tant que l'étape n'est pas dépassée, puis son résultat est gardé. Une étape réactivée par le joueur s'applique ensuite quelles que soient ses conditions `when`.
 - `skipto` est vérifié **à l'arrivée** sur l'étape, si elle n'est pas déjà faite : le bloc jusqu'à l'étape nommée est sauté, une fois pour toutes. Réactiver l'étape qui a déclenché le saut annule ce saut définitivement.
 - `when done <label>` est vrai si l'étape nommée a été réellement faite (ni ignorée, ni sautée, ni hors sujet).
-- Quête de groupe sans réponse : la route attend à l'étape et pose la question ; une étape « en chemin » n'attend pas ; une quête déjà rendue ne demande rien.
+- Quête de groupe sans réponse : la route attend à l'étape et pose la question ; une étape « en chemin » n'attend pas ; une quête déjà rendue ne demande rien. Plusieurs quêtes de groupe sur une même étape : une question à la fois, pour la première sans réponse.
+- Format 10 et 11 de Polestar : `taxi` (point de vol connu, relevé à la carte des vols ; un point jamais vu compte comme inconnu, ce qui choisit entre l'étape « en vol » et l'étape « à pied ») et `rep` (rang auprès d'une faction, avec ses points éventuels). Les conditions `buff`, `equipped` et `indoors`, inutilisées par les guides importés, restent inconnues : l'étape s'affiche.
+- Objectifs du format 11 : `either` (au choix : dès que l'un est fait, les autres ne concernent plus le personnage, et une quête au choix non prise est mise de côté avec ses suites), `upto` (objectif fait quand la ligne du journal compte N), `rep` avec `points` (N points dans le rang, ou un rang plus haut), `auction` (achat à l'hôtel des ventes, compté dans les sacs comme un achat).
 
 ### Modes
 

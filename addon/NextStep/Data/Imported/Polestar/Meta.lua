@@ -1,13 +1,14 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.3.7.2 (19bd636e7d6f, 2026-11-12). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB
 
-DB:SetSource({ commit = "19bd636e7d6f33231770f6029c76d2d4dfc63798", date = "2026-11-12", format = 8, name = "Polestar", version = "0.3.7.2" })
+DB:SetSource({ commit = "4e1cd841c94d41348635d7c67a7280c8ad9960c5", date = "2026-11-21", format = 11, name = "Polestar", version = "0.4.2.1" })
 
 DB:RetireGuides({
+	"forever/alliance/50-60/05-silithus",
 	"forever/alliance/dwarf-gnome/01-dun-morogh",
 	"forever/horde/30-40/01-desolace",
 	"forever/horde/30-40/02-stranglethorn-vale",
@@ -16,6 +17,10 @@ DB:RetireGuides({
 	"forever/horde/orc-troll/02-the-barrens",
 	"forever/horde/orc/02-the-barrens",
 	"forever/horde/troll/02-the-barrens",
+	"polestar-experimental/hyjal-1",
+	"polestar-experimental/riverglades-alliance-1",
+	"polestar-experimental/riverglades-horde-1",
+	"polestar-experimental/shendralas",
 })
 
 -- Repères « era » des cartes, pour convertir en jeu les coordonnées marquées f = "e".
@@ -24,7 +29,6 @@ DB:AddMapFrames("era", function() return {
 	[1412] = { bottom = -3697.917, c = 1, left = 2047.917, right = -3089.583, top = -272.917 },
 	[1413] = { bottom = -5143.75, c = 1, left = 2622.917, right = -7510.417, top = 1612.5 },
 	[1414] = { bottom = -11733.3, c = 1, left = 17066.6, right = -19733.211, top = 12799.9 },
-	[1415] = { bottom = -16000, c = 0, left = 16000, right = -19199.9, top = 7466.6 },
 	[1416] = { bottom = -366.667, c = 0, left = 783.333, right = -2016.667, top = 1500 },
 	[1417] = { bottom = -2533.333, c = 0, left = -866.667, right = -4466.667, top = -133.333 },
 	[1418] = { bottom = -7547.917, c = 0, left = -2079.167, right = -4566.667, top = -5889.583 },

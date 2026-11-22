@@ -287,14 +287,20 @@ function State:Knows(spell)
 end
 
 -- Rang de réputation : 1 (Haï) à 8 (Exalté).
+-- Rang auprès d'une faction (1 Détesté .. 8 Exalté) et points gagnés dans ce rang.
 function State:Standing(faction)
     if C_Reputation and C_Reputation.GetFactionDataByID then
         local data = C_Reputation.GetFactionDataByID(faction)
-        return data and data.reaction
+        if not data then
+            return nil
+        end
+        local points = data.currentStanding and data.currentReactionThreshold
+            and data.currentStanding - data.currentReactionThreshold
+        return data.reaction, points
     end
     if GetFactionInfoByID then
-        local _, _, standing = GetFactionInfoByID(faction)
-        return standing
+        local _, _, standing, barMin, _, barValue = GetFactionInfoByID(faction)
+        return standing, barValue and barMin and barValue - barMin
     end
 end
 
