@@ -112,6 +112,15 @@ local PREDICATES = {
     knows = function(p, state)
         return state:Knows(p.spell) == true
     end,
+    -- Point de vol connu (format 10) : relevé à l'ouverture de la carte des vols. Un
+    -- point jamais vu compte comme inconnu, comme dans Polestar.
+    taxi = function(p, state)
+        return p.node ~= nil and state:KnowsTaxi(p.node) == true
+    end,
+    -- Rang auprès d'une faction (format 11), avec ses points éventuels.
+    rep = function(p, state)
+        return ns.GuideGoals.StandingReached(state, p.faction, p.standing, p.points)
+    end,
     skill = function(p, state)
         return (state:Skill(p.skillLine, p.name) or 0) >= (p.n or 1)
     end,

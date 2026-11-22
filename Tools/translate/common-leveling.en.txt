@@ -1,0 +1,256 @@
+New in Forever: if a step is wrong, tell us on Polestar's Discord or GitHub and name the step.
+The Outcast Necromancers and the Magram Necromancers of the valley drop a {quest:93644} whose writer lives in {zone:2652}: players got it within a few kills. Take it from the Outcast Necromancers and leave the Magram alone: the Magram centaurs leave you be until you attack, but once you have killed Magram the whole clan turns on you, and their Necrokhans (level 45, elites) stand around the western pylon you repair later.
+The Gelkis and Magram centaurs have {area:2657} quest chains of their own, worth about 20,000 to 30,000 more experience, but each chain asks for Honored with its clan. The two clans are rivals, so work for one of them: the Gelkis and Magram Centaur Reputation guide, under Reputation, shows how.
+East through the valley to the strange crystal on its pedestal: clicking it starts {quest:92914}. The Decrepit Pylon Protectors (levels 42-43) around it are the mana elementals that guard it. Corpsefeeders (level 45, elite) roam the valley east of here.
+Careful: click the crystal from the road on its west side and move on: the Protectors stand two and three together east and north-east of it, where Corpsefeeders and the Magram Necrokhans (elites, 45) walk too.
+The {item:255656} lies at the western edge of the village; Magram Guardians (levels 39-41) watch over it. They leave you be unless you have fought the Magram: pick the fragment up without a fight. Every Magram you kill turns the clan against you, and back in the valley that means the Necrokhans (level 45, elites) at the western pylon as well.
+Unstable Mana Rifts: mana for the western pylon
+Use the {item:255662} on the Unstable Mana Rifts, the floating sparks along the road north: each pylon takes four Coalesced Mana Crystals, and the repair uses them up.
+{item:255667}, from the Unstable Mana Rifts with the {item:255662}
+The road south of the western pylon
+North up the road to the first pylon, gathering mana from the Unstable Mana Rifts on the way. Stop where the arrow points, on the road just south of the pylon, keeping to its west edge: the quiet side, with no Protectors behind you. Pull one {npc:252711} at a time down to that spot, the one nearest the pylon's south side first, and kill it there; then step up to the pylon's west side and use {spell:1289727}, as players did to repair it.
+Careful: stay off the pylon's east and north-east side. The Protectors stand there two and three together, a Corpsefeeder (level 45, elite) walks among them and the Magram Necrokhans (elites, 45) stand just beyond: nearly every recorded death at this pylon happened east of it. If the Magram attack you (they do once you have killed Magram), wait at the arrow until any Necrokhan by the pylon walks off before you pull. Nascent Pylon Protectors (elites, 43) wander the road south of it: let them pass.
+If you die here, walk your ghost back to the arrow before you come back to life: players who rose beside the pylon died again within seconds.
+the road just south of the western pylon
+Pull a single Protector down to the road, then repair the pylon from its west side.
+{npc:252711}, pulled to the arrow's spot, then {spell:1289727} on the pylon's west side
+Unstable Mana Rifts: mana for the eastern pylon
+The western repair used up your crystals: on the way east, use the {item:255662} on the Unstable Mana Rifts again for four more Coalesced Mana Crystals.
+Use the west face of the western pylon, where you repaired it. Approach on the road from the south and pull one {npc:252711} back to you. Wait for the elite patrols to pass; do not follow a Protector around the east side.
+Take the {item:286647} to an {npc:264149} on the road north of the temple and throw it into the rift. The {npc:276401} is elite: grouping up is advised.
+{zone:2652} is done. Ride back north through the {area:2657} and west along {area:405}'s southern edge to {area:2408} and fly to {area:1637}: the next guide picks up there, with the {zone:1444} guide's hand-ins. Keep your hearthstone (bound at {area:1099}): the next guide uses it to get from {area:1637} back to {area:1099}.
+About 100 quests in Forever's new endgame zone, 57 to 59, then on to {zone:1451}.
+New in Forever: this guide follows what players did on {area:616}. If a step is wrong, tell us on Polestar's Discord or GitHub and name the step.
+{area:616} lies south of {zone:1452}. Fly to {area:2255} (from Theramore on the Alliance route; the Horde route already ends there), bind your Hearthstone at the inn (partway through this guide {npc:256222} sends you to {area:493}, and the way there starts in {area:2255}), then ride south down the road through {area:2249} and on through {area:2256}, which leads up into {area:616}.
+Careful: elites stand along the whole way in. Frostmaul Giants and Preservers (59-60) flank the road through {area:2249}, and Hederine Slayers, Initiates and Manastalkers (57-58) line {area:2256} from its mouth to the zone line, with {npc:10201} (61) on its east side. Follow the arrows' line at full speed, never stop or fight on the way, and don't turn off it.
+The road through {area:2249}
+The mouth of {area:2256}
+Turn west here
+The road in
+{npc:266803} (Alliance) and {npc:266802} (Horde) wait together by the road a little inside the zone.
+{quest:96833}: for {npc:256222}, the hermit
+{quest:96830}: for {npc:244512} in {area:16848}, later in this guide; keep it
+The cog lies by the path south-west of the camp, on your way to {npc:256222}.
+{npc:256222}, the hermit, lives at the Hermit's Abode a little further south-west. He takes the cog too.
+{quest:96796}: for {npc:249235}, on the way
+Seeds and owl eggs
+The seeds and the owl eggs lie on the slopes between the Hermit's Abode and the road you came in on: search north-east up towards {npc:266803} and {npc:266802}.
+{npc:249235}'s workshop
+North-west over the shrub field to {npc:249235}'s workshop on the slope above it. {quest:91923}, an elite (level 57), patrols the field, and {npc:248709}, an elite ancient (level 56), stands in its middle: give both room. Ghansurok, an elite chimaera (level 61), prowls around the workshop itself: see where he is before you ride up to {npc:249235}.
+{quest:92008}: for {npc:228216} in {area:2255}; you go there from {area:493} at the end of this guide
+The ancients' outpost
+South down the west side of the shrub field to the ancients' outpost: kill the {npc:248395} you pass for {npc:249235}. {npc:260626}, the flight mistress, waits by the outpost; {npc:248367} and {npc:265586} stand with the ancient {npc:248366}.
+{quest:91923} is elite (level 57) and patrols the shrub field: grouping up is advised.
+Soil and venison
+The untainted soil lies in the fields south and east of the outpost; Hyjal Stags graze there too, and their venison is for {npc:256222}'s stew.
+Careful: {npc:248709} (56), an elite treant, walks the fields to the south-east around 60,78: give him room.
+The three wrecks
+The three wrecks {npc:256222} named lie at the east end of the fields: use the {item:269944} beside each, the catapult and the flying machine first, then the ballista a little north of them.
+The shrub field
+North into the shrub field: the {npc:248395} drop the leaves, and the Scarlet Dart Tubers grow in the open ground, most of them in the field's western half. Keep clear of {quest:91923} and {npc:248709}, the field's elites.
+{quest:91923} is elite: grouping up is advised. He walks the shrub field.
+South-east back to the Hermit's Abode.
+{npc:256222}'s shrine
+The shrine is a pair of standing stones west of the Hermit's Abode, on the way back to the outpost: bury the remains there.
+West to the outpost.
+put the poultice on {npc:248366}
+{npc:248709} is an elite corrupted ancient (level 56) in the middle of the shrub field, back east: grouping up is advised.
+{npc:248709} is elite: grouping up is advised.
+plant the seed in his remains
+West of the outpost to {area:17050}: the {npc:257753} perches at its southern end.
+North to {npc:263757}, a demon caged in the middle of the scar. He stood at the spot marked here every time he was met in the recording, south of where the quest data puts him.
+The Ashen camp
+The Ashen Acolytes hold the camp at the north of the scar. Not every Acolyte carries notes: keep killing them after the twelve kills until you have all twelve notes.
+Careful: Awakened Fel Ash Slimes (58, elite) ooze about the scar: pull the Acolytes away from them.
+Fel-slime crystals
+The crystals grow in the scar west and south of {npc:263757}. The pristine one turned up at the scar's southern end, close to the {npc:257753}, at the spot marked.
+The Crow is just south of the pristine crystal.
+Slime ooze as you go
+The Noxious Slimes crawl all over the scar's southern half, and not every one leaves ooze: kill the ones you pass from here on.
+Careful: Awakened Fel Ash Slimes (elites, 58) ooze among the slimes: leave them be.
+The warlocks
+The three warlocks and {npc:260440} are in and around the Ashen camp at the north of the scar.
+Careful: Awakened Fel Ash Slimes (58, elite) ooze about the scar: keep clear of them.
+The bone pile
+West to the bone pile by the slime pools: throw the warlocks' bones on it, then hand the quest in at the pile itself. Handing it in wakes the {npc:264306}, an elite (level 58) that hits hard: unless you are grouped for it, hand in and ride clear at once.
+The bone pile wakes the {npc:264306}, an elite (level 58) that hits hard: grouping up is advised.
+Prickly pinecones
+The pinecones lie under the healthy trees just south of the bone pile, on the scar's south-western rim, and a few east of the Crow.
+{npc:263757}: decide his fate
+Finish the slime ooze
+The slimes are thickest in the scar's south-western corner.
+The Ashen workstations
+Four workstations stand in the Ashen camp: throw a pinecone at each, from the south up.
+Slime Workstation
+Alchemy Workstation
+Disease Workstation
+Vessel Workstation
+{quest:91881}: for {npc:244517} in {area:16848}, later in this guide; keep it
+{quest:91881}: for {npc:244511} in {area:16848}, later in this guide; keep it
+West across the slope from the scar: {npc:278305} waits alone.
+East across the foothills to the Hermit's Abode.
+Back west to {npc:260626} at the ancients' outpost and fly to {area:493}. Druids: {spell:18960} is quicker. (No flight path to {area:493} yet? The road in is {area:1769}'s tunnel, from {zone:1452} or {zone:1448}.)
+{npc:260626}, the flight mistress
+Fly to {area:493} from {area:2255}'s flight master. No flight path to {area:493} yet? The way in is the tunnel through {area:1769}, at the western end of {zone:1452}.
+North into {area:2361}: {npc:11802} stands in the north-east of the village, upstairs in his building: go up inside, the arrow cannot tell the floors apart.
+South-west to {npc:216289}, the ancient. Talk to him again when you are ready and watch what he shows you.
+{npc:216289}: ready to watch
+{npc:11802} stands upstairs in his building: go up inside, the arrow cannot tell the floors apart.
+{quest:93773}: for {npc:256222}
+{quest:1123}'s house stands in {area:2361}, a short walk from {npc:11802}: hand her the letter from {zone:1457} on the way to the flight master.
+For {npc:13220} in {zone:1451}, on the next guide: keep it
+South to {area:493}'s flight master (the Alliance's at the southern end of the valley, the Horde's at its south-western end) and fly to {area:2255} for {npc:249235}'s parts order.
+{npc:228216} stands between {area:2255}'s two flight masters. Her crate holds fragile cells that fizzle out in time and when knocked about: fly straight back to the {area:16853} and take it to {npc:249235} without detours or fights (about four minutes in the recording). If it fizzles out anyway, {npc:228216} fills it again.
+Fly to the {area:16853}
+North from {npc:260626} to the workshop, crate first. Watch for Ghansurok, the elite chimaera (level 61) that prowls around the workshop.
+deliver the crate before it fizzles
+{quest:92011}: in {area:16866}, later in this guide; keep it
+South-east to the Hermit's Abode.
+{quest:96930}: for the {npc:257753}, later in this guide
+{quest:92171}: for {npc:254131}, later in this guide
+West across the foothills, past the ancients' outpost, to the {npc:257753} at the southern end of {area:17050}.
+{quest:96931}: for the {area:17145}, later in this guide
+West along the southern slopes to {area:17144}: {npc:249549}, a gnome test pilot, hangs tangled up in a tree. A sturdy branch lies just south of him.
+{npc:254501}, above Fenwick's head
+Fenwick's survival pack
+His pack fell just north of the tree. Open it, then wait half a minute while its safety lock discharges before you open it again.
+North-west to Barkskin Burrow, the furbolgs' den in the hillside: {npc:256978} waits just north of its mouth. The Barkskin furbolgs show as hostile until your standing with them improves, but none of them attacked in the recording: the Deadwood furbolgs in the camps around are the ones to fight. {npc:256978} offers more only once this first quest is handed in.
+Deadwood Den Guardians
+The Deadwood furbolgs camp on the slopes north and east of {npc:256978}: kill their Den Guardians.
+Inside the burrow: {npc:256646} at the far end.
+Bear berries
+The bear berries grow on the slopes around the burrow: a few on the hill north of {npc:256978}, most of them east of the burrow.
+Careful: Grimroot, an elite treant (level 60), walks the slopes west of the burrow, around 16-20,58-66: give him room.
+Barkskin Burrow
+Back to Osi, then the two elders at the back of the burrow. {npc:260661} stands beside Osi, {npc:256660} a little north-west of them, where the recording met him. {npc:260661}'s moss grows around {area:16848}, later in this guide; {npc:256660}'s amulets come from the harpies at the {area:16867}, also later in this guide, and you bring both back here then.
+{quest:93826}: on your way back here later; keep it
+North up the valley to {area:16848}, where the Alliance outpost ({npc:244517}, {npc:249968}) and the Horde's ({npc:244511}, {npc:244512}) stand next to each other.
+North up the valley to {area:16848}, where the Horde outpost ({npc:244511}, {npc:244512}, {npc:265788}) and the Alliance's stand next to each other.
+The two outposts of {area:16848}.
+{npc:244512}: {quest:96616}, on the way back from {area:16868}
+{quest:92591}'s {npc:260148} is level 59-60: this guide burns its bone pile once you are 58, on one of its two passes through {area:16868}.
+{quest:92592}'s {npc:260148} is level 59-60: this guide burns its bone pile once you are 58, on one of its two passes through {area:16868}.
+A group choice at your level: the {npc:260148} that answers {quest:92591}'s bone pile is level 59-60.
+A group choice at your level: the {npc:260148} that answers {quest:92592}'s bone pile is level 59-60.
+The moss for {npc:260661} grows around {area:16848}: by the outposts and on the slopes north of them.
+South-east to {npc:264089} on the slope above {area:16868}.
+Owl feathers
+The Hyjal Owls roost on the slopes between {npc:264089} and Barkskin Burrow: their feathers are for {area:16848}.
+Careful: Death Wailers (61, rare elites) drift over the western slopes: give them a wide berth.
+Careful: Grimroot, an elite treant (level 60), walks the slopes beside {npc:264089}. He leaves you alone unless you hit him: don't, and pull the owls away from his path.
+At the northern end of {area:16868}: something has dug up the grave. The Fleshflay Raveners around it carry what was taken.
+The Scourge hold the ruins of {area:16868}, east of {area:16848}: Fleshflay Raveners and Forgotten Soldiers everywhere, Eternal Sentries among them.
+Careful: Death Wailers (61, rare elites) drift over {area:16868}: keep out of their way.
+Careful: Grimroot, the elite treant (level 60), walks the slopes on the way in. He leaves you alone unless you hit him: give him room.
+Burn the bone pile at the south-eastern end of {area:16868} with the {item:274411}: the {npc:260148} that answers carries the amulet.
+Careful: the {npc:260148} is level 59-60: burn the bone pile last, at full health, with the ruins around it cleared.
+A group choice below level 58: the {npc:260148} that answers the burnt bone pile is level 59-60. Grouping up is advised; alone, this guide comes back past the pile later.
+{npc:264089} and the veteran
+Back to {npc:264089}, then the ghostly {npc:255009} at {area:16868}'s western edge, where the recording met him, on your way west.
+North-east up the slope from the veteran, north of {area:16868}: {npc:244512}'s silphium grows in the meadows there, where the Horde players in our recordings picked it. Then ride west to {area:16848}.
+Careful: Death Wailers (61, rare elites) drift over these slopes: keep out of their way.
+West to the Alliance outpost.
+{quest:91688}: for {npc:254915}, later in this guide; keep it
+The worker {npc:244517} means is a peasant just north of her; {npc:264521} stands between them.
+{quest:94832}: {npc:2329} at the Lion's Pride Inn in {area:87}; take it only if you'll pass by
+West to the Horde outpost: {npc:244511}, then {npc:244512} and {npc:265788} beside him.
+{npc:265788}: {quest:91794}: the flag and the heraldry are in {area:16866}, later in this guide; keep it
+{npc:244512}'s poultice is for two of the outpost's wounded: {npc:265895} lies at the north end of {area:16848}, {npc:265862} just south of {npc:244512}.
+{quest:92446} is elite (level 60 in our data): grouping up is advised. {npc:244511}'s rabbit carcass lures him out in the woods by the Deadwood camps south-east of here, on part 3's way back to Barkskin Burrow; his claws come back here at the end of this guide.
+The overlook
+West to the overlook above the valley: the veteran's old scabbard lies there. Hand his quest in at the scabbard and take the next from it, then use the scabbard in your bags to call his spirit and listen to his story.
+East past {area:16868} into the {area:17145}: {npc:255683}, the great cat, waits by the path, and {npc:267109} rests in the ruins just south of her.
+East across the Cradle to {npc:268168}.
+{quest:96145}: for {npc:260825}, later in this guide; keep it
+North to the old bridge over the Cradle: touch the crow effigy on it and {npc:267158}, the crow wild god, appears.
+The falls and the first kitten
+Fill {npc:267109}'s gourd at the falls beside the bridge. {npc:255685}, one of {npc:255683}'s kittens, plays just west of the falls: walk up to her.
+fill the gourd
+{npc:249234}'s camp
+North to {npc:249234} and his crates. Drive the skunks out from behind the crates without attacking them.
+{npc:255773}, the second kitten, plays just west of {npc:249234}'s camp.
+Foxes
+The Rustleaf Foxes are thick in the woods around {npc:249234}'s camp.
+Careful: {npc:255183} (61, rare) walks the woods north of the camp, and a {npc:256830} (60, rare) can turn up there too: leave them be.
+West across the Cradle to {npc:255693}, another of the wild gods.
+The burnt buildings
+The burnt buildings stand in the meadows east of {npc:255693}: the nails and brackets lie among the rubble.
+Predatory stags
+The Predatory Hyjal Stags roam the same meadows, east of {npc:255693}.
+Careful: Spectral Frostwyrms (61, elites) circle over the western meadows: keep out from under them.
+South to {npc:267113}, another wild god, at {area:16868}'s eastern edge.
+{quest:92317}: for {npc:256222}, later in this guide; keep it
+Bones and stolen life
+The sun-bleached bones lie all over {area:16868}; the Fleshflay Raveners there carry the drop of stolen life.
+Careful: Death Wailers (61, rare elites) drift over {area:16868}: keep out of their way. Spectral Frostwyrms (61, elites) circle over the meadows around it: keep out from under them.
+Burn the bone pile at the south-eastern end of {area:16868} with the {item:274411}: the {npc:260148} that answers carries the amulet. The hand-in waits for the ride back to {area:16848} at the end of this guide.
+A group choice below level 58: the {npc:260148} that answers the burnt bone pile is level 59-60. Grouping up is advised. The hand-in waits for the ride back to {area:16848} at the end of this guide.
+A group choice below level 58: the {npc:260148} that answers the burnt bone pile is level 59-60. Grouping up is advised. {npc:244511} takes the amulet on the ride back to {area:16848} at the end of this guide.
+The last kitten, {npc:255771}, plays at the southern end of {area:16868}.
+North to {npc:255683}, then {npc:267109} in the ruins south of her.
+East from the Cradle towards the {area:16867}, where the Wormwing harpies nest: a corrupted growth on the shrine's western slope starts a quest for {npc:260825}.
+remove the corrupted knots on the trees just north-west of the shrine, on your way
+{npc:254131} and {npc:260825} stand together at the {area:16867}.
+{quest:92500}: for {npc:256222}, later in this guide
+The harpy grounds
+The Wormwing harpies nest on the slopes north-west of the shrine. They drop the pinfeathers and {npc:256660}'s amulets; the bangles lie in their nests, the {object:650219} in a nest on the western slope, and {npc:260826}, who has Omnuron's spear, is among them. The corrupted knots grow on the trees just north-west of the shrine.
+The Deadwood camps
+South-west back towards Barkskin Burrow: the Deadwood camps on the slopes east of the burrow hold the Totemics and Fel-Tenders. An elite named {quest:92446} (level 60) may roam the camps' eastern end.
+{quest:92446} is elite (level 60 in our data): grouping up is advised. Put {npc:244511}'s rabbit carcass down in the woods at the camps' eastern end, where the Horde players in our recordings fought him, and take his claws.
+Into the burrow for the elders, {npc:260661} and {npc:256660}.
+North-east into the {area:17145}: {npc:267109} rests in the ruins south of {npc:255683}, on your way.
+{quest:96991}: for {npc:264795} at the {area:16849}, later in this guide
+On to the old bridge over the Cradle: touch the crow effigy on it and {npc:267158} appears again.
+{quest:96964}: for {npc:259695} in {area:16866}, just ahead
+North-east across the Cradle to {npc:249234}'s camp at the edge of {area:16866}.
+{npc:263406}, {npc:249052} and {npc:267121}
+Into {area:16866}, north of the Cradle: the ruins of a Horde base, now held by demons. {npc:263406} and {npc:249052} camp at its western edge; {npc:267121}, a blademaster, waits a little east of them. Doomguards (elites, levels 58-59) walk among the demons: pull carefully.
+North-east to {npc:267097} at the northern ruins of {area:16866}: take {quest:97009} so the Defiling Hounds drop their spikes while you work the other errands here.
+Careful: Legion Hulks (60, rare elites) stomp through {area:16866}'s camps, and {npc:267439}, an elite (level 61), walks this corner: give them room.
+South-east across {area:16866} to {npc:259695}, the wild god, indoors at its south-eastern edge.
+{quest:92335}: for {npc:256222}, later in this guide
+Work west back through {area:16866}: the Felguard Sentinels and Defiling Hounds are everywhere, the hounds carry the essence, and the Horde base's rubble (wire, scrap and dung) lies all over it. Light the two bonfires on your way, scout the Horde tower in the middle, take Azgalor's ashes west of the tower, and pick up the abandoned supplies, a few just north-west of {npc:259695} and the rest in the western half: {npc:259695}'s tuft of fur, used on a demon, distracts it while you take them.
+Horde: the demons here also drop the Scraps of Horde Heraldry for {npc:265788}, the old {item:253249} stands in the camp north of the south bonfire, and the {object:656786} at the camp's eastern edge start {quest:96998}.
+Careful: Legion Hulks (60, rare elites) stomp through {area:16866}'s camps: give them room. {npc:255183} (61, rare) walks the camp north of the south bonfire: keep away from her.
+Careful: Doomguards (elites, 58-59) stand among the demons, and {npc:267439} (elite, 61) walks the camp: pull the hounds and sentinels to you, away from them.
+Southeast Bonfire
+South Bonfire
+scout the Horde tower
+{object:656786}: {quest:96998}, for {npc:244511} in {area:16848}; keep it
+A group choice: {npc:263394} and {npc:252457} are level 60 elites until {npc:263406}'s eye drains them. Drain each one first, then fight it; players in our recordings killed both once drained. Grouping up is advised.
+North-east to {npc:263394}. Drain him first: use {npc:263406}'s eye on him, and only then fight him. Undrained, he and {npc:252457} are level 60 elites. {npc:267439}, an elite (level 61), walks this corner of {area:16866}: keep out of his way.
+Careful: Legion Hulks (60, rare elites) stomp through {area:16866}'s camps: give them room.
+North-east back to {npc:267097}, in the corner of {area:16866} where {npc:263394} stands: the Defiling Hounds around him drop any spikes you still need.
+South-west to {npc:263426}, in the middle of {area:16866}: drain him with the eye first, as {npc:263394}, then kill him. Undrained, he is a level 60 elite.
+Careful: Doomguards (elites, 58-59) stand around him: pull him out to you.
+{quest:96025}: for {npc:254915} at the Summit
+South-east to {npc:259695}.
+East up to the {area:16849}, the druids' camp. {npc:41861}, the flight master, stands at its north end; {npc:264795}, {npc:243855} and {npc:254915} along the path south; {npc:40833} indoors next to Thisalee; {npc:243815}, the innkeeper, at the south-east end.
+{npc:41861}, at the flight point
+{npc:243815}: {quest:93197}: for {npc:11118} in {area:2255}, at the end
+{npc:254915}, at the Summit, for {npc:263406}'s message.
+The Summit's Blackthorne quests
+A group stop: the Blackthorne camps north-east of the Summit hold elite Outrunners, Priests and a Courier (60) as often as the Cultists and Adepts, with {npc:260674} (60, elite) in the middle and Ghansurok (61, elite) on the ridge. Grouping up is encouraged, look for people to do it with. Skip these if you are alone.
+Fly down to {npc:260626} for {npc:249235} and {npc:256222}.
+North to the workshop. Turn the two gears and connect the two battery terminals on both sides of her glaive thrower. Ghansurok, the elite chimaera (level 61), prowls around the workshop: watch for him while you work.
+South-east to the Hermit's Abode with what the wild gods and Omnuron gave you.
+{quest:92591}, still not done
+Still under 58 after the second pass through {area:16868}? Abandon {quest:92591}: the route doesn't come back for it.
+{quest:92592}, still not done
+Still under 58 after the second pass through {area:16868}? Abandon {quest:92592}: the route doesn't come back for it.
+Horde: ride west across the foothills and north up the valley to {area:16848}, about four minutes, for {npc:265788}'s flags, {npc:244511}'s amulet and his war paint wrap, then back up to the Summit.
+{npc:244511}: {quest:96999}, for {npc:3187} in {area:367}, {zone:1411}; take it only if you'll pass by
+Alliance: the amulet from the second pass goes to {npc:244517}: ride west across the foothills and north up the valley to {area:16848}, about four minutes, then back up to the Summit.
+{npc:244517}: for {npc:254915} at the Summit, next
+{npc:244511}: for {npc:254915} at the Summit, next
+{quest:92446}'s claws
+Up to the {area:16849}
+Back up to the {area:16849}: {npc:260626}, at the ancients' outpost, flies there, and your Hearthstone is bound there.
+Indoors at the Summit, next to {npc:254915}.
+{npc:254915}, next to {npc:40833} at the Summit.
+The Blackthorne camps
+The Blackthorne cultists camp on the slopes north-east of the Summit (level 60, with elite Outrunners, Priests and a Courier among them: pull carefully). {npc:260674}, an elite (level 60) who leads them, stands among them: leave him be. Ghansurok, an elite chimaera (level 61), also roams the ridge north of the camps.
+Use {npc:40833}'s staff on a Pact member to strip its ward, then kill it, ten times: pick Cultists and Adepts, whom Thisalee wants dead too. The Cultists carry the kris and the Adepts the staff; the thorn seeds lie in the woods there, and the hippogryphs and chimaeras roam the slopes all around. Not finished in our recordings yet: if something here is off, tell us.
+The Cultists carry the kris and the Adepts the staff; the thorn seeds lie in the woods there, and the hippogryphs and chimaeras roam the slopes all around. Not finished in our recordings yet: if something here is off, tell us.
+{npc:41861} flies you to {area:2255}.
+{npc:11118} is in {area:2255}'s inn. She has more mail for you in {zone:1452}, outside this guide.

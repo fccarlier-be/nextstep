@@ -61,6 +61,50 @@ describe("Moteur du guide", function()
         expect_eq(r.steps[2].status, "ahead")
     end)
 
+    it("comprend le format 11 de Polestar : vol connu, au choix, réputation en points, upto", function()
+        local Engine, progress = setup()
+        -- Vol connu (taxi) : l'étape « en vol » ou l'étape « à pied », pas les deux.
+        local fly = step({ { t = "fly", area = 1537, map = 1429, x = 1, y = 1 } },
+            { when = { { k = "taxi", name = "Ironforge", node = 6 } } })
+        local walk = step({ accept(1) }, { when = { { k = "taxi", name = "Ironforge", neg = true, node = 6 } } })
+        local g = guide({ fly, walk })
+        local r = run(Engine, g, Player.new(), progress)
+        expect_eq(r.steps[1].status, "na", "vol inconnu : pas l'étape en vol")
+        expect_eq(r.current, 2, "l'étape à pied")
+        r = run(Engine, g, Player.new({ taxi = { [6] = true } }), Engine.NewProgress())
+        expect_eq(r.current, 1, "vol connu : l'étape en vol")
+
+        -- Au choix (either) : une quête prise, l'autre est mise de côté avec ses suites.
+        g = guide({
+            step({ accept(1, { either = true }), accept(2, { either = true }) }),
+            step({ turnin(2) }),
+            step({ turnin(1) }),
+        })
+        r = run(Engine, g, Player.new():accept(1), Engine.NewProgress())
+        expect_eq(r.steps[1].goals[2].status, "na", "l'autre choix ne concerne plus")
+        expect_eq(r.current, 3, "le rendu de la quête non prise est passé")
+
+        -- Réputation avec points : 1500 points dans Neutre, ou un rang plus haut.
+        local rep = { t = "rep", faction = 576, standing = 4, points = 1500 }
+        g = guide({ step({ rep }), step({ accept(3) }) })
+        local player = Player.new({ standings = { [576] = 4 } })
+        player.standingPoints = { [576] = 900 }
+        expect_eq(run(Engine, g, player, Engine.NewProgress()).current, 1, "900 points : pas encore")
+        player.standingPoints[576] = 1500
+        expect_eq(run(Engine, g, player, Engine.NewProgress()).current, 2, "1500 points : fait")
+        expect_eq(run(Engine, g, Player.new({ standings = { [576] = 5 } }), Engine.NewProgress()).current, 2,
+            "rang plus haut : fait")
+
+        -- upto : fait quand la ligne du journal compte N, avant d'être remplie.
+        g = guide({ step({ accept(4) }), step({ kill(4, 1) }, {}), step({ turnin(4) }) })
+        g.steps[2].goals[1].upto = 4
+        player = Player.new():accept(4)
+        player.log[4].texts = { { text = "Kobolds : 2/10", finished = false, numFulfilled = 2 } }
+        expect_eq(run(Engine, g, player, Engine.NewProgress()).current, 2, "2 sur 4")
+        player.log[4].texts[1].numFulfilled = 4
+        expect_eq(run(Engine, g, player, Engine.NewProgress()).current, 3, "4 sur 4 : la suite")
+    end)
+
     it("pose les questions de groupe d'une étape une à une", function()
         local Engine, progress = setup()
         local when = { { k = "group", q = 7, neg = true }, { k = "group", q = 8, neg = true } }

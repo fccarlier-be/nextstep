@@ -6,6 +6,12 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.3.0] - 2026-11-22
+
+### Modifié
+- **Guides mis à jour vers Polestar 0.4.2.1** (au lieu de 0.3.7.2) : routes de 1 à 60 revues zone par zone pour les deux factions (moins d'allers-retours, quêtes rendues là où la route passe, entraînement de classe sur des arrêts déjà prévus), Riverglades et Shen'dralas dans la route vers 60, Mont Hyjal dans la route de 50-60. 266 guides. Toutes les nouvelles notes Alliance et communes sont traduites (920 paragraphes).
+- Le guide comprend le **format 11** de Polestar : étapes « en vol » ou « à pied » selon que vous connaissez le point de vol, objectifs au choix (une quête parmi deux), réputation avec un nombre de points, objectifs à moitié, achats à l'hôtel des ventes dans les guides de métiers.
+
 ### Corrigé
 - Relevé des erreurs : les erreurs d'autres addons (DropAtlas, Auctionator…) n'y sont plus notées. Le relevé figurait lui-même dans leur pile d'appels, ce qui les faisait passer pour des erreurs de NextStep.
 
@@ -177,7 +183,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.2.4...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/fccarlier-be/nextstep/compare/v0.2.4...v0.3.0
 [0.2.4]: https://github.com/fccarlier-be/nextstep/compare/v0.2.3...v0.2.4
 [0.2.3]: https://github.com/fccarlier-be/nextstep/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/fccarlier-be/nextstep/compare/v0.2.1...v0.2.2

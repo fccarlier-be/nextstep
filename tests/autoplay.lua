@@ -38,7 +38,7 @@ local function act(player, goal, seen, key)
                 player:complete(q)
             end
         end
-    elseif (t == "collect" or t == "buy") and goal.item then
+    elseif (t == "collect" or t == "buy" or t == "auction") and goal.item then
         player.items[goal.item] = goal.count or 1
     elseif t == "level" then
         player.level = goal.frac and goal.level + 1 or goal.level

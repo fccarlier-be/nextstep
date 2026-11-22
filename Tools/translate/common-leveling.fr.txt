@@ -1,0 +1,256 @@
+Nouveau dans Forever : si une étape est fausse, signalez-le sur le Discord ou le GitHub de Polestar en nommant l'étape.
+Les Nécromanciens parias et les Nécromanciens Magram de la vallée lâchent {quest:93644}, dont l'auteur vit en {zone:2652} : les joueurs l'ont eue en quelques victimes. Prenez-la sur les Nécromanciens parias et laissez les Magram tranquilles : les centaures Magram vous ignorent tant que vous ne les attaquez pas, mais dès que vous en avez tué, tout le clan se retourne contre vous, et leurs Nécrokhans (niveau 45, élites) se tiennent autour du pylône ouest que vous réparez plus tard.
+Les centaures Gelkis et Magram ont leurs propres chaînes de quêtes à {area:2657}, qui rapportent environ 20 000 à 30 000 points d'expérience de plus, mais chaque chaîne demande d'être Honoré auprès de son clan. Les deux clans sont rivaux : travaillez pour l'un d'eux. Le guide de réputation des centaures Gelkis et Magram, sous Réputation, montre comment.
+À l'est à travers la vallée jusqu'à l'étrange cristal sur son piédestal : cliquer dessus lance {quest:92914}. Les Protecteurs de pylône décrépits (niveaux 42-43) autour sont les élémentaires de mana qui le gardent. Des Dévoreurs de cadavres (niveau 45, élites) parcourent la vallée à l'est.
+Attention : cliquez sur le cristal depuis la route, de son côté ouest, et repartez : les Protecteurs se tiennent par deux ou trois à l'est et au nord-est, là où passent aussi les Dévoreurs de cadavres et les Nécrokhans Magram (élites, 45).
+{item:255656} se trouve au bord ouest du village ; des Gardiens Magram (niveaux 39-41) le surveillent. Ils vous ignorent si vous n'avez pas combattu les Magram : ramassez le fragment sans vous battre. Chaque Magram tué retourne le clan contre vous, et dans la vallée, cela veut dire aussi les Nécrokhans (niveau 45, élites) au pylône ouest.
+Failles de mana instables : du mana pour le pylône ouest
+Utilisez {item:255662} sur les Failles de mana instables, les étincelles flottantes le long de la route du nord : chaque pylône demande quatre cristaux de mana coalescé, et la réparation les consomme.
+{item:255667}, sur les Failles de mana instables avec {item:255662}
+La route au sud du pylône ouest
+Remontez la route vers le nord jusqu'au premier pylône, en récoltant du mana sur les Failles de mana instables en chemin. Arrêtez-vous là où pointe la flèche, sur la route juste au sud du pylône, en restant sur son bord ouest : le côté calme, sans Protecteurs derrière vous. Attirez un {npc:252711} à la fois jusqu'à cet endroit, d'abord le plus proche du côté sud du pylône, et tuez-le là ; puis montez du côté ouest du pylône et utilisez {spell:1289727}, comme les joueurs l'ont fait pour le réparer.
+Attention : restez à l'écart des côtés est et nord-est du pylône. Les Protecteurs s'y tiennent par deux ou trois, un Dévoreur de cadavres (niveau 45, élite) se promène parmi eux et les Nécrokhans Magram (élites, 45) se tiennent juste derrière : presque toutes les morts relevées à ce pylône ont eu lieu à l'est. Si les Magram vous attaquent (ce qu'ils font une fois que vous en avez tué), attendez sous la flèche qu'un Nécrokhan près du pylône s'éloigne avant d'attirer. Des Protecteurs de pylône naissants (élites, 43) errent sur la route au sud : laissez-les passer.
+Si vous mourez ici, ramenez votre fantôme jusqu'à la flèche avant de ressusciter : les joueurs revenus à la vie à côté du pylône sont morts de nouveau en quelques secondes.
+la route juste au sud du pylône ouest
+Attirez un seul Protecteur jusqu'à la route, puis réparez le pylône par son côté ouest.
+{npc:252711}, attiré à l'endroit de la flèche, puis {spell:1289727} du côté ouest du pylône
+Failles de mana instables : du mana pour le pylône est
+La réparation du pylône ouest a consommé vos cristaux : en allant vers l'est, utilisez de nouveau {item:255662} sur les Failles de mana instables pour quatre cristaux de mana coalescé de plus.
+Utilisez la face ouest du pylône ouest, là où vous l'avez réparé. Arrivez par la route du sud et attirez un {npc:252711} jusqu'à vous. Attendez que les patrouilles d'élites passent ; ne suivez pas un Protecteur du côté est.
+Portez {item:286647} jusqu'à {npc:264149}, sur la route au nord du temple, et jetez-la dans la faille. {npc:276401} est un élite : il est conseillé de se grouper.
+{zone:2652} est terminée. Revenez vers le nord à travers {area:2657} et vers l'ouest le long de la limite sud de {area:405} jusqu'à {area:2408}, puis volez jusqu'à {area:1637} : le guide suivant reprend là, avec les rendus du guide de {zone:1444}. Gardez votre pierre de foyer (liée à {area:1099}) : le guide suivant s'en sert pour revenir de {area:1637} à {area:1099}.
+Environ 100 quêtes dans la nouvelle zone de fin de jeu de Forever, niveaux 57 à 59, puis direction {zone:1451}.
+Nouveau dans Forever : ce guide suit ce que les joueurs ont fait sur {area:616}. Si une étape est fausse, signalez-le sur le Discord ou le GitHub de Polestar en nommant l'étape.
+{area:616} se trouve au sud de {zone:1452}. Volez jusqu'à {area:2255} (depuis Theramore sur la route de l'Alliance ; celle de la Horde y finit déjà), liez votre pierre de foyer à l'auberge (au milieu de ce guide, {npc:256222} vous envoie à {area:493}, et le chemin part de {area:2255}), puis chevauchez vers le sud par la route à travers {area:2249}, et continuez par {area:2256}, qui monte jusqu'à {area:616}.
+Attention : des élites se tiennent tout le long du chemin. Des Géants Frappe-givre et des Préservateurs (59-60) bordent la route à travers {area:2249}, et des Tueurs, Initiés et Traqueurs de mana Hederine (57-58) bordent {area:2256} de son entrée à la limite de la zone, avec {npc:10201} (61) de son côté est. Suivez la ligne des flèches à pleine vitesse, ne vous arrêtez jamais, ne combattez pas en chemin et n'en sortez pas.
+La route à travers {area:2249}
+L'entrée de {area:2256}
+Tournez vers l'ouest ici
+La route d'accès
+{npc:266803} (Alliance) et {npc:266802} (Horde) attendent ensemble au bord de la route, un peu à l'intérieur de la zone.
+{quest:96833} : pour {npc:256222}, l'ermite
+{quest:96830} : pour {npc:244512} à {area:16848}, plus loin dans ce guide ; gardez-la
+Le rouage se trouve au bord du chemin au sud-ouest du camp, sur le chemin de {npc:256222}.
+{npc:256222}, l'ermite, vit à la Demeure de l'ermite, un peu plus au sud-ouest. Il prend aussi le rouage.
+{quest:96796} : pour {npc:249235}, en chemin
+Graines et œufs de chouette
+Les graines et les œufs de chouette se trouvent sur les pentes entre la Demeure de l'ermite et la route par laquelle vous êtes arrivé : cherchez vers le nord-est, en remontant vers {npc:266803} et {npc:266802}.
+L'atelier de {npc:249235}
+Au nord-ouest, à travers le champ d'arbustes, jusqu'à l'atelier de {npc:249235}, sur la pente au-dessus. {quest:91923}, un élite (niveau 57), patrouille dans le champ, et {npc:248709}, un ancien élite (niveau 56), se tient en son centre : gardez vos distances avec les deux. Ghansurok, une chimère élite (niveau 61), rôde autour de l'atelier lui-même : repérez-le avant de monter voir {npc:249235}.
+{quest:92008} : pour {npc:228216} à {area:2255} ; vous y allez depuis {area:493} à la fin de ce guide
+L'avant-poste des anciens
+Au sud, par le côté ouest du champ d'arbustes, jusqu'à l'avant-poste des anciens : tuez les {npc:248395} que vous croisez pour {npc:249235}. {npc:260626}, la maîtresse de vol, attend près de l'avant-poste ; {npc:248367} et {npc:265586} se tiennent avec l'ancien {npc:248366}.
+{quest:91923} est un élite (niveau 57) qui patrouille dans le champ d'arbustes : il est conseillé de se grouper.
+Terre et venaison
+La terre non souillée se trouve dans les champs au sud et à l'est de l'avant-poste ; des Cerfs d'Hyjal y paissent aussi, et leur venaison est pour le ragoût de {npc:256222}.
+Attention : {npc:248709} (56), un tréant élite, parcourt les champs au sud-est, vers 60,78 : gardez vos distances.
+Les trois épaves
+Les trois épaves dont {npc:256222} a parlé se trouvent au bout est des champs : utilisez {item:269944} à côté de chacune, d'abord la catapulte et la machine volante, puis la baliste un peu plus au nord.
+Le champ d'arbustes
+Au nord, dans le champ d'arbustes : les {npc:248395} lâchent les feuilles, et les Tubercules de fléchette écarlate poussent en terrain découvert, surtout dans la moitié ouest du champ. Restez à l'écart de {quest:91923} et de {npc:248709}, les élites du champ.
+{quest:91923} est un élite : il est conseillé de se grouper. Il parcourt le champ d'arbustes.
+Revenez au sud-est jusqu'à la Demeure de l'ermite.
+Le sanctuaire de {npc:256222}
+Le sanctuaire est une paire de pierres levées à l'ouest de la Demeure de l'ermite, sur le chemin du retour vers l'avant-poste : enterrez-y les restes.
+À l'ouest jusqu'à l'avant-poste.
+appliquez le cataplasme sur {npc:248366}
+{npc:248709} est un ancien corrompu élite (niveau 56), au centre du champ d'arbustes, plus à l'est : il est conseillé de se grouper.
+{npc:248709} est un élite : il est conseillé de se grouper.
+plantez la graine dans ses restes
+À l'ouest de l'avant-poste jusqu'à {area:17050} : {npc:257753} est perché à son extrémité sud.
+Au nord jusqu'à {npc:263757}, un démon enfermé dans une cage au centre de la cicatrice. Il se tenait à l'endroit marqué ici à chaque rencontre enregistrée, au sud de l'endroit que donnent les données de quête.
+Le camp des Cendreux
+Les Acolytes cendreux tiennent le camp au nord de la cicatrice. Tous les Acolytes ne portent pas de notes : continuez à les tuer après les douze victimes jusqu'à avoir les douze notes.
+Attention : des Gelées de gangrecendre éveillées (58, élites) suintent dans la cicatrice : attirez les Acolytes loin d'elles.
+Cristaux de gangregelée
+Les cristaux poussent dans la cicatrice, à l'ouest et au sud de {npc:263757}. Le cristal intact a été trouvé à l'extrémité sud de la cicatrice, près de {npc:257753}, à l'endroit marqué.
+Le Corbeau est juste au sud du cristal intact.
+Suintement de gelée en chemin
+Les Gelées nocives rampent dans toute la moitié sud de la cicatrice, et toutes ne laissent pas de suintement : tuez celles que vous croisez à partir d'ici.
+Attention : des Gelées de gangrecendre éveillées (élites, 58) suintent parmi les gelées : laissez-les tranquilles.
+Les démonistes
+Les trois démonistes et {npc:260440} sont dans le camp des Cendreux et autour, au nord de la cicatrice.
+Attention : des Gelées de gangrecendre éveillées (58, élites) suintent dans la cicatrice : restez à l'écart.
+Le tas d'ossements
+À l'ouest jusqu'au tas d'ossements près des mares de gelée : jetez-y les ossements des démonistes, puis rendez la quête au tas lui-même. La rendre réveille {npc:264306}, un élite (niveau 58) qui frappe fort : à moins d'être en groupe pour lui, rendez la quête et éloignez-vous aussitôt.
+Le tas d'ossements réveille {npc:264306}, un élite (niveau 58) qui frappe fort : il est conseillé de se grouper.
+Pommes de pin piquantes
+Les pommes de pin se trouvent sous les arbres sains juste au sud du tas d'ossements, sur le bord sud-ouest de la cicatrice, et quelques-unes à l'est du Corbeau.
+{npc:263757} : décidez de son sort
+Terminez le suintement de gelée
+Les gelées sont les plus nombreuses dans l'angle sud-ouest de la cicatrice.
+Les postes de travail des Cendreux
+Quatre postes de travail se trouvent dans le camp des Cendreux : jetez une pomme de pin sur chacun, en remontant depuis le sud.
+Poste de travail de gelée
+Poste de travail d'alchimie
+Poste de travail de maladie
+Poste de travail des récipients
+{quest:91881} : pour {npc:244517} à {area:16848}, plus loin dans ce guide ; gardez-la
+{quest:91881} : pour {npc:244511} à {area:16848}, plus loin dans ce guide ; gardez-la
+À l'ouest, à travers la pente depuis la cicatrice : {npc:278305} attend seul.
+À l'est, à travers les contreforts, jusqu'à la Demeure de l'ermite.
+Revenez à l'ouest voir {npc:260626} à l'avant-poste des anciens et volez jusqu'à {area:493}. Druides : {spell:18960} est plus rapide. (Pas encore de trajet de vol vers {area:493} ? La route passe par le tunnel de {area:1769}, depuis {zone:1452} ou {zone:1448}.)
+{npc:260626}, la maîtresse de vol
+Volez jusqu'à {area:493} depuis le maître de vol de {area:2255}. Pas encore de trajet de vol vers {area:493} ? Le chemin passe par le tunnel de {area:1769}, à l'extrémité ouest de {zone:1452}.
+Au nord jusqu'à {area:2361} : {npc:11802} se tient au nord-est du village, à l'étage de son bâtiment : montez par l'intérieur, la flèche ne distingue pas les étages.
+Au sud-ouest jusqu'à {npc:216289}, l'ancien. Parlez-lui de nouveau quand vous êtes prêt et regardez ce qu'il vous montre.
+{npc:216289} : prêt à regarder
+{npc:11802} se tient à l'étage de son bâtiment : montez par l'intérieur, la flèche ne distingue pas les étages.
+{quest:93773} : pour {npc:256222}
+La maison de {quest:1123} se trouve à {area:2361}, à quelques pas de {npc:11802} : remettez-lui la lettre de {zone:1457} en allant au maître de vol.
+Pour {npc:13220} en {zone:1451}, dans le guide suivant : gardez-la
+Au sud jusqu'au maître de vol de {area:493} (celui de l'Alliance au bout sud de la vallée, celui de la Horde à son extrémité sud-ouest) et volez jusqu'à {area:2255} pour la commande de pièces de {npc:249235}.
+{npc:228216} se tient entre les deux maîtres de vol de {area:2255}. Sa caisse contient des cellules fragiles qui s'éteignent avec le temps et quand on les secoue : revolez directement jusqu'à {area:16853} et apportez-la à {npc:249235} sans détour ni combat (environ quatre minutes dans l'enregistrement). Si elle s'éteint quand même, {npc:228216} la remplit de nouveau.
+Volez jusqu'à {area:16853}
+Au nord de {npc:260626} jusqu'à l'atelier, la caisse d'abord. Méfiez-vous de Ghansurok, la chimère élite (niveau 61) qui rôde autour de l'atelier.
+livrez la caisse avant qu'elle ne s'éteigne
+{quest:92011} : à {area:16866}, plus loin dans ce guide ; gardez-la
+Au sud-est jusqu'à la Demeure de l'ermite.
+{quest:96930} : pour {npc:257753}, plus loin dans ce guide
+{quest:92171} : pour {npc:254131}, plus loin dans ce guide
+À l'ouest, à travers les contreforts et après l'avant-poste des anciens, jusqu'à {npc:257753}, à l'extrémité sud de {area:17050}.
+{quest:96931} : pour {area:17145}, plus loin dans ce guide
+À l'ouest le long des pentes sud jusqu'à {area:17144} : {npc:249549}, un pilote d'essai gnome, est pendu, emmêlé dans un arbre. Une branche solide se trouve juste au sud de lui.
+{npc:254501}, au-dessus de la tête de Fenwick
+Le sac de survie de Fenwick
+Son sac est tombé juste au nord de l'arbre. Ouvrez-le, puis attendez une demi-minute que son verrou de sécurité se décharge avant de l'ouvrir de nouveau.
+Au nord-ouest jusqu'au Terrier Peau-d'écorce, la tanière des furbolgs dans le flanc de la colline : {npc:256978} attend juste au nord de son entrée. Les furbolgs Peau-d'écorce apparaissent hostiles tant que votre réputation auprès d'eux ne s'améliore pas, mais aucun n'a attaqué dans l'enregistrement : ce sont les furbolgs Mort-bois des camps alentour qu'il faut combattre. {npc:256978} ne propose la suite qu'une fois cette première quête rendue.
+Gardiens de la tanière Mort-bois
+Les furbolgs Mort-bois campent sur les pentes au nord et à l'est de {npc:256978} : tuez leurs Gardiens de la tanière.
+Dans le terrier : {npc:256646} tout au fond.
+Baies d'ours
+Les baies d'ours poussent sur les pentes autour du terrier : quelques-unes sur la colline au nord de {npc:256978}, la plupart à l'est du terrier.
+Attention : Grimroot, un tréant élite (niveau 60), parcourt les pentes à l'ouest du terrier, vers 16-20,58-66 : gardez vos distances.
+Le Terrier Peau-d'écorce
+Retournez voir Osi, puis les deux anciens au fond du terrier. {npc:260661} se tient à côté d'Osi, {npc:256660} un peu au nord-ouest d'eux, là où l'enregistrement l'a rencontré. La mousse de {npc:260661} pousse autour de {area:16848}, plus loin dans ce guide ; les amulettes de {npc:256660} viennent des harpies de {area:16867}, plus loin dans ce guide aussi, et vous rapportez les deux ici à ce moment-là.
+{quest:93826} : en revenant ici plus tard ; gardez-la
+Au nord en remontant la vallée jusqu'à {area:16848}, où l'avant-poste de l'Alliance ({npc:244517}, {npc:249968}) et celui de la Horde ({npc:244511}, {npc:244512}) se tiennent côte à côte.
+Au nord en remontant la vallée jusqu'à {area:16848}, où l'avant-poste de la Horde ({npc:244511}, {npc:244512}, {npc:265788}) et celui de l'Alliance se tiennent côte à côte.
+Les deux avant-postes de {area:16848}.
+{npc:244512} : {quest:96616}, en revenant de {area:16868}
+{npc:260148} de {quest:92591} est de niveau 59-60 : ce guide brûle son tas d'ossements une fois que vous êtes niveau 58, lors de l'un de ses deux passages à {area:16868}.
+{npc:260148} de {quest:92592} est de niveau 59-60 : ce guide brûle son tas d'ossements une fois que vous êtes niveau 58, lors de l'un de ses deux passages à {area:16868}.
+Un choix de groupe à votre niveau : {npc:260148} qui répond au tas d'ossements de {quest:92591} est de niveau 59-60.
+Un choix de groupe à votre niveau : {npc:260148} qui répond au tas d'ossements de {quest:92592} est de niveau 59-60.
+La mousse pour {npc:260661} pousse autour de {area:16848} : près des avant-postes et sur les pentes au nord.
+Au sud-est jusqu'à {npc:264089}, sur la pente au-dessus de {area:16868}.
+Plumes de chouette
+Les Chouettes d'Hyjal se perchent sur les pentes entre {npc:264089} et le Terrier Peau-d'écorce : leurs plumes sont pour {area:16848}.
+Attention : des Gémisseurs de mort (61, élites rares) flottent au-dessus des pentes ouest : passez au large.
+Attention : Grimroot, un tréant élite (niveau 60), parcourt les pentes à côté de {npc:264089}. Il vous ignore tant que vous ne le frappez pas : ne le faites pas, et attirez les chouettes loin de son chemin.
+Au bout nord de {area:16868} : quelque chose a déterré la tombe. Les Dévoreurs écorchés alentour portent ce qui a été pris.
+Le Fléau tient les ruines de {area:16868}, à l'est de {area:16848} : des Dévoreurs écorchés et des Soldats oubliés partout, des Sentinelles éternelles parmi eux.
+Attention : des Gémisseurs de mort (61, élites rares) flottent au-dessus de {area:16868} : restez hors de leur chemin.
+Attention : Grimroot, le tréant élite (niveau 60), parcourt les pentes sur le chemin. Il vous ignore tant que vous ne le frappez pas : gardez vos distances.
+Brûlez le tas d'ossements à l'extrémité sud-est de {area:16868} avec {item:274411} : {npc:260148} qui répond porte l'amulette.
+Attention : {npc:260148} est de niveau 59-60 : brûlez le tas d'ossements en dernier, en pleine santé, avec les ruines autour dégagées.
+Un choix de groupe sous le niveau 58 : {npc:260148} qui répond au tas d'ossements brûlé est de niveau 59-60. Il est conseillé de se grouper ; seul, ce guide repasse devant le tas plus tard.
+{npc:264089} et le vétéran
+Retournez voir {npc:264089}, puis le fantôme {npc:255009} au bord ouest de {area:16868}, là où l'enregistrement l'a rencontré, sur le chemin de l'ouest.
+Au nord-est, en remontant la pente depuis le vétéran, au nord de {area:16868} : le silphium de {npc:244512} pousse dans les prés, là où l'ont cueilli les joueurs de la Horde de nos enregistrements. Puis chevauchez vers l'ouest jusqu'à {area:16848}.
+Attention : des Gémisseurs de mort (61, élites rares) flottent au-dessus de ces pentes : restez hors de leur chemin.
+À l'ouest jusqu'à l'avant-poste de l'Alliance.
+{quest:91688} : pour {npc:254915}, plus loin dans ce guide ; gardez-la
+L'ouvrier dont parle {npc:244517} est un paysan juste au nord d'elle ; {npc:264521} se tient entre eux.
+{quest:94832} : {npc:2329} à l'auberge de la Fierté du lion à {area:87} ; prenez-la seulement si vous passez par là
+À l'ouest jusqu'à l'avant-poste de la Horde : {npc:244511}, puis {npc:244512} et {npc:265788} à côté de lui.
+{npc:265788} : {quest:91794} : le drapeau et l'héraldique sont à {area:16866}, plus loin dans ce guide ; gardez-la
+Le cataplasme de {npc:244512} est pour deux blessés de l'avant-poste : {npc:265895} est allongé au bout nord de {area:16848}, {npc:265862} juste au sud de {npc:244512}.
+{quest:92446} est un élite (niveau 60 dans nos données) : il est conseillé de se grouper. La carcasse de lapin de {npc:244511} l'attire dans les bois près des camps Mort-bois, au sud-est d'ici, sur le chemin du retour de la partie 3 vers le Terrier Peau-d'écorce ; ses griffes reviennent ici à la fin de ce guide.
+Le belvédère
+À l'ouest jusqu'au belvédère au-dessus de la vallée : le vieux fourreau du vétéran s'y trouve. Rendez sa quête au fourreau et prenez la suivante, puis utilisez le fourreau dans vos sacs pour appeler son esprit et écouter son histoire.
+À l'est après {area:16868}, jusqu'à {area:17145} : {npc:255683}, le grand félin, attend au bord du chemin, et {npc:267109} se repose dans les ruines juste au sud d'elle.
+À l'est à travers le Berceau jusqu'à {npc:268168}.
+{quest:96145} : pour {npc:260825}, plus loin dans ce guide ; gardez-la
+Au nord jusqu'au vieux pont qui enjambe le Berceau : touchez l'effigie de corbeau qui s'y trouve, et {npc:267158}, le dieu sauvage corbeau, apparaît.
+Les chutes et le premier chaton
+Remplissez la gourde de {npc:267109} aux chutes à côté du pont. {npc:255685}, l'un des chatons de {npc:255683}, joue juste à l'ouest des chutes : approchez-vous d'elle.
+remplissez la gourde
+Le camp de {npc:249234}
+Au nord jusqu'à {npc:249234} et ses caisses. Chassez les mouffettes de derrière les caisses sans les attaquer.
+{npc:255773}, le deuxième chaton, joue juste à l'ouest du camp de {npc:249234}.
+Renards
+Les Renards Feuille-rouille sont nombreux dans les bois autour du camp de {npc:249234}.
+Attention : {npc:255183} (61, rare) parcourt les bois au nord du camp, et {npc:256830} (60, rare) peut aussi y apparaître : laissez-les tranquilles.
+À l'ouest à travers le Berceau jusqu'à {npc:255693}, un autre des dieux sauvages.
+Les bâtiments brûlés
+Les bâtiments brûlés se dressent dans les prés à l'est de {npc:255693} : les clous et les ferrures sont dans les décombres.
+Cerfs prédateurs
+Les Cerfs prédateurs d'Hyjal parcourent les mêmes prés, à l'est de {npc:255693}.
+Attention : des Wyrms de givre spectraux (61, élites) tournent au-dessus des prés de l'ouest : ne restez pas sous eux.
+Au sud jusqu'à {npc:267113}, un autre dieu sauvage, au bord est de {area:16868}.
+{quest:92317} : pour {npc:256222}, plus loin dans ce guide ; gardez-la
+Ossements et vie volée
+Les ossements blanchis par le soleil jonchent tout {area:16868} ; les Dévoreurs écorchés qui s'y trouvent portent la goutte de vie volée.
+Attention : des Gémisseurs de mort (61, élites rares) flottent au-dessus de {area:16868} : restez hors de leur chemin. Des Wyrms de givre spectraux (61, élites) tournent au-dessus des prés alentour : ne restez pas sous eux.
+Brûlez le tas d'ossements à l'extrémité sud-est de {area:16868} avec {item:274411} : {npc:260148} qui répond porte l'amulette. Le rendu attend le retour à {area:16848}, à la fin de ce guide.
+Un choix de groupe sous le niveau 58 : {npc:260148} qui répond au tas d'ossements brûlé est de niveau 59-60. Il est conseillé de se grouper. Le rendu attend le retour à {area:16848}, à la fin de ce guide.
+Un choix de groupe sous le niveau 58 : {npc:260148} qui répond au tas d'ossements brûlé est de niveau 59-60. Il est conseillé de se grouper. {npc:244511} prend l'amulette au retour à {area:16848}, à la fin de ce guide.
+Le dernier chaton, {npc:255771}, joue au bout sud de {area:16868}.
+Au nord jusqu'à {npc:255683}, puis {npc:267109} dans les ruines au sud d'elle.
+À l'est du Berceau vers {area:16867}, où nichent les harpies Aile-de-ver : une excroissance corrompue sur la pente ouest du sanctuaire lance une quête pour {npc:260825}.
+retirez les nœuds corrompus des arbres juste au nord-ouest du sanctuaire, en chemin
+{npc:254131} et {npc:260825} se tiennent ensemble à {area:16867}.
+{quest:92500} : pour {npc:256222}, plus loin dans ce guide
+Le territoire des harpies
+Les harpies Aile-de-ver nichent sur les pentes au nord-ouest du sanctuaire. Elles lâchent les plumules et les amulettes de {npc:256660} ; les bracelets se trouvent dans leurs nids, {object:650219} dans un nid sur la pente ouest, et {npc:260826}, qui a la lance d'Omnuron, est parmi elles. Les nœuds corrompus poussent sur les arbres juste au nord-ouest du sanctuaire.
+Les camps Mort-bois
+Au sud-ouest, en revenant vers le Terrier Peau-d'écorce : les camps Mort-bois, sur les pentes à l'est du terrier, abritent les Totémiques et les Gangre-soigneurs. Un élite nommé {quest:92446} (niveau 60) peut errer à l'extrémité est des camps.
+{quest:92446} est un élite (niveau 60 dans nos données) : il est conseillé de se grouper. Posez la carcasse de lapin de {npc:244511} dans les bois, à l'extrémité est des camps, là où l'ont combattu les joueurs de la Horde de nos enregistrements, et prenez ses griffes.
+Dans le terrier, pour les anciens, {npc:260661} et {npc:256660}.
+Au nord-est jusqu'à {area:17145} : {npc:267109} se repose dans les ruines au sud de {npc:255683}, sur votre chemin.
+{quest:96991} : pour {npc:264795} à {area:16849}, plus loin dans ce guide
+Continuez jusqu'au vieux pont qui enjambe le Berceau : touchez l'effigie de corbeau qui s'y trouve, et {npc:267158} réapparaît.
+{quest:96964} : pour {npc:259695} à {area:16866}, juste devant
+Au nord-est à travers le Berceau jusqu'au camp de {npc:249234}, en bordure de {area:16866}.
+{npc:263406}, {npc:249052} et {npc:267121}
+Dans {area:16866}, au nord du Berceau : les ruines d'une base de la Horde, tenues aujourd'hui par des démons. {npc:263406} et {npc:249052} campent à son bord ouest ; {npc:267121}, un maître-lame, attend un peu à l'est d'eux. Des Gardes funestes (élites, niveaux 58-59) se promènent parmi les démons : attirez avec prudence.
+Au nord-est jusqu'à {npc:267097}, dans les ruines du nord de {area:16866} : prenez {quest:97009} pour que les Molosses profanateurs lâchent leurs pointes pendant que vous faites les autres courses ici.
+Attention : des Mastodontes de la Légion (60, élites rares) traversent les camps de {area:16866}, et {npc:267439}, un élite (niveau 61), parcourt ce coin : gardez vos distances.
+Au sud-est à travers {area:16866} jusqu'à {npc:259695}, le dieu sauvage, à l'intérieur, au bord sud-est.
+{quest:92335} : pour {npc:256222}, plus loin dans ce guide
+Revenez vers l'ouest à travers {area:16866} : les Sentinelles gangregardes et les Molosses profanateurs sont partout, les molosses portent l'essence, et les décombres de la base de la Horde (fil de fer, ferraille et fumier) jonchent tout le camp. Allumez les deux feux de joie en chemin, faites la reconnaissance de la tour de la Horde au centre, prenez les cendres d'Azgalor à l'ouest de la tour, et ramassez les provisions abandonnées, quelques-unes juste au nord-ouest de {npc:259695} et le reste dans la moitié ouest : la touffe de poils de {npc:259695}, utilisée sur un démon, le distrait pendant que vous les prenez.
+Horde : les démons d'ici lâchent aussi les lambeaux d'héraldique de la Horde pour {npc:265788}, le vieux {item:253249} se dresse dans le camp au nord du feu de joie sud, et {object:656786}, au bord est du camp, lance {quest:96998}.
+Attention : des Mastodontes de la Légion (60, élites rares) traversent les camps de {area:16866} : gardez vos distances. {npc:255183} (61, rare) parcourt le camp au nord du feu de joie sud : restez loin d'elle.
+Attention : des Gardes funestes (élites, 58-59) se tiennent parmi les démons, et {npc:267439} (élite, 61) parcourt le camp : attirez les molosses et les sentinelles jusqu'à vous, loin d'eux.
+Feu de joie sud-est
+Feu de joie sud
+reconnaissance de la tour de la Horde
+{object:656786} : {quest:96998}, pour {npc:244511} à {area:16848} ; gardez-la
+Un choix de groupe : {npc:263394} et {npc:252457} sont des élites de niveau 60 tant que l'œil de {npc:263406} ne les a pas drainés. Drainez d'abord chacun d'eux, puis combattez-le ; les joueurs de nos enregistrements les ont tués tous les deux une fois drainés. Il est conseillé de se grouper.
+Au nord-est jusqu'à {npc:263394}. Drainez-le d'abord : utilisez l'œil de {npc:263406} sur lui, et seulement ensuite combattez-le. Sans être drainés, lui et {npc:252457} sont des élites de niveau 60. {npc:267439}, un élite (niveau 61), parcourt ce coin de {area:16866} : restez hors de son chemin.
+Attention : des Mastodontes de la Légion (60, élites rares) traversent les camps de {area:16866} : gardez vos distances.
+Retournez au nord-est voir {npc:267097}, dans le coin de {area:16866} où se tient {npc:263394} : les Molosses profanateurs autour de lui lâchent les pointes qu'il vous manque encore.
+Au sud-ouest jusqu'à {npc:263426}, au centre de {area:16866} : drainez-le d'abord avec l'œil, comme {npc:263394}, puis tuez-le. Sans être drainé, c'est un élite de niveau 60.
+Attention : des Gardes funestes (élites, 58-59) se tiennent autour de lui : attirez-le jusqu'à vous.
+{quest:96025} : pour {npc:254915} au Sommet
+Au sud-est jusqu'à {npc:259695}.
+À l'est, en montant jusqu'à {area:16849}, le camp des druides. {npc:41861}, le maître de vol, se tient à son extrémité nord ; {npc:264795}, {npc:243855} et {npc:254915} le long du chemin vers le sud ; {npc:40833} à l'intérieur, à côté de Thisalee ; {npc:243815}, l'aubergiste, à l'extrémité sud-est.
+{npc:41861}, au point de vol
+{npc:243815} : {quest:93197} : pour {npc:11118} à {area:2255}, à la fin
+{npc:254915}, au Sommet, pour le message de {npc:263406}.
+Les quêtes Épineuse du Sommet
+Un arrêt de groupe : les camps Épineuse au nord-est du Sommet abritent des Coureurs, des Prêtres et un Messager élites (60) aussi souvent que des Cultistes et des Adeptes, avec {npc:260674} (60, élite) au centre et Ghansurok (61, élite) sur la crête. Il est conseillé de se grouper, cherchez des joueurs pour les faire avec vous. Passez-les si vous êtes seul.
+Volez en bas jusqu'à {npc:260626} pour {npc:249235} et {npc:256222}.
+Au nord jusqu'à l'atelier. Tournez les deux engrenages et reliez les deux bornes de batterie de chaque côté de son lance-glaive. Ghansurok, la chimère élite (niveau 61), rôde autour de l'atelier : surveillez-le pendant que vous travaillez.
+Au sud-est jusqu'à la Demeure de l'ermite, avec ce que les dieux sauvages et Omnuron vous ont donné.
+{quest:92591}, toujours pas faite
+Toujours sous le niveau 58 après le deuxième passage à {area:16868} ? Abandonnez {quest:92591} : la route n'y revient pas.
+{quest:92592}, toujours pas faite
+Toujours sous le niveau 58 après le deuxième passage à {area:16868} ? Abandonnez {quest:92592} : la route n'y revient pas.
+Horde : chevauchez vers l'ouest à travers les contreforts, puis au nord en remontant la vallée jusqu'à {area:16848}, environ quatre minutes, pour les drapeaux de {npc:265788}, l'amulette de {npc:244511} et son étui de peinture de guerre, puis remontez au Sommet.
+{npc:244511} : {quest:96999}, pour {npc:3187} à {area:367}, {zone:1411} ; prenez-la seulement si vous passez par là
+Alliance : l'amulette du deuxième passage va à {npc:244517} : chevauchez vers l'ouest à travers les contreforts, puis au nord en remontant la vallée jusqu'à {area:16848}, environ quatre minutes, puis remontez au Sommet.
+{npc:244517} : pour {npc:254915} au Sommet, juste après
+{npc:244511} : pour {npc:254915} au Sommet, juste après
+Les griffes de {quest:92446}
+Montée jusqu'à {area:16849}
+Remontez jusqu'à {area:16849} : {npc:260626}, à l'avant-poste des anciens, y vole, et votre pierre de foyer y est liée.
+À l'intérieur, au Sommet, à côté de {npc:254915}.
+{npc:254915}, à côté de {npc:40833} au Sommet.
+Les camps Épineuse
+Les cultistes Épineuse campent sur les pentes au nord-est du Sommet (niveau 60, avec des Coureurs, des Prêtres et un Messager élites parmi eux : attirez avec prudence). {npc:260674}, un élite (niveau 60) qui les commande, se tient parmi eux : laissez-le tranquille. Ghansurok, une chimère élite (niveau 61), parcourt aussi la crête au nord des camps.
+Utilisez le bâton de {npc:40833} sur un membre du Pacte pour lui retirer sa protection, puis tuez-le, dix fois : choisissez des Cultistes et des Adeptes, que Thisalee veut morts aussi. Les Cultistes portent le kriss et les Adeptes le bâton ; les graines d'épine se trouvent dans les bois, et les hippogriffes et les chimères parcourent les pentes alentour. Pas encore terminé dans nos enregistrements : si quelque chose cloche ici, dites-le-nous.
+Les Cultistes portent le kriss et les Adeptes le bâton ; les graines d'épine se trouvent dans les bois, et les hippogriffes et les chimères parcourent les pentes alentour. Pas encore terminé dans nos enregistrements : si quelque chose cloche ici, dites-le-nous.
+{npc:41861} vous emmène en vol jusqu'à {area:2255}.
+{npc:11118} est dans l'auberge de {area:2255}. Elle a d'autres lettres pour vous en {zone:1452}, hors de ce guide.

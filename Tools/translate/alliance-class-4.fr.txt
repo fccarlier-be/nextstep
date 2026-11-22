@@ -1,0 +1,3 @@
+Le bout nord de {area:414}
+Les ruines inondées des nagas se trouvent juste après le bout nord de {area:414}, au sud de {zone:1439}, le long de la côte. La flèche ne sait pas y descendre seule : elle vous mène d'abord au bord de l'eau, et de là, nagez vers le nord jusqu'aux ruines.
+{quest:96264} vous envoie voir {npc:4421}, un élite de niveau 33 au fond de {area:1717} : la quête suivante de {npc:259023} attend le niveau 32.

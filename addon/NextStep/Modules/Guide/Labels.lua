@@ -108,6 +108,9 @@ local BUILDERS = {
     buy = function(goal, guide, state)
         return withCount(L["Buy %s"]:format(name("item", goal.item, guide)), goal, state)
     end,
+    auction = function(goal, guide, state)
+        return withCount(L["Buy %s at the Auction House"]:format(name("item", goal.item, guide)), goal, state)
+    end,
     use = function(goal, guide, state)
         return clientObjective(goal, state)
             or L["Use %s"]:format(name("item", goal.item, guide) or name("object", goal.object, guide) or "?")
@@ -174,6 +177,9 @@ local BUILDERS = {
     end,
     rep = function(goal, guide)
         local standing = _G["FACTION_STANDING_LABEL" .. tostring(goal.standing)] or tostring(goal.standing)
+        if goal.points then
+            standing = L["%s (%d points)"]:format(standing, goal.points)
+        end
         return L["Reach %s with %s"]:format(standing, name("faction", goal.faction, guide) or "?")
     end,
     money = function(goal)

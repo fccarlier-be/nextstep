@@ -1,0 +1,2 @@
+Depuis {object:424005}, marchez jusqu'au bord ouest du camp, là où la flèche pointe d'abord, et descendez prudemment la pente raide vers le nord jusqu'à {object:424012}, sur la corniche en contrebas. Un saut raté ne fait que vous faire glisser : longez la falaise et remontez à pied.
+La descente vers la corniche

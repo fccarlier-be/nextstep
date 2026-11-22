@@ -123,7 +123,7 @@ function Player:Knows(spell)
     return self.spells[spell] == true
 end
 function Player:Standing(faction)
-    return self.standings[faction]
+    return self.standings[faction], self.standingPoints and self.standingPoints[faction]
 end
 function Player:InArea(area)
     return area ~= nil and self.area == area
