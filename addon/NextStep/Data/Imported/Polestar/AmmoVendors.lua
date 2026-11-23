@@ -1,4 +1,4 @@
--- Généré par Tools/import/ammo.py depuis forever-db de Polestar 0.3.7.2 (19bd636e7d6f). Ne pas modifier.
+-- Généré par Tools/import/ammo.py depuis forever-db de Polestar 0.4.2.2 (bf2acf45dc63). Ne pas modifier.
 -- Vendeurs présumés de munitions, retenus sur leur titre :
 -- [PNJ] = "<a flèches, b balles> <faction A, H ou N> <carte monde> <nord> <ouest> <carte du client> <x> <y>|<nom anglais>"
 -- (positions monde en yards comme UnitPosition ; carte du client en pour cent).

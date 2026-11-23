@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -2634,6 +2634,7 @@ DB:AddNames("frFR", "item", function() return {
 DB:AddNames("frFR", "npc", function() return {
 	[3] = "Dévoreur",
 	[6] = "Vermine kobold",
+	[36] = "Golem des moissons",
 	[38] = "Nervi défias",
 	[40] = "Mineur kobold",
 	[43] = "Araignée minière",
@@ -2646,6 +2647,7 @@ DB:AddNames("frFR", "npc", function() return {
 	[97] = "Rivepatte chétif",
 	[113] = "Sanglier Brocheroc",
 	[114] = "Gardien des moissons",
+	[115] = "Moissonneur",
 	[116] = "Bandit défias",
 	[117] = "Gnoll Rivepatte",
 	[118] = "Rôdeur",
@@ -4630,11 +4632,11 @@ DB:AddNames("frFR", "npc", function() return {
 	[259377] = "Nécrogarde blessé",
 	[259433] = "Zélote terni",
 	[259434] = "Manoeuvre terni",
-	[259611] = "Nécrogarde Baldren",
-	[259620] = "Lumina Chantelevent",
 } end)
 
 DB:AddNames("frFR", "npc", function() return {
+	[259611] = "Nécrogarde Baldren",
+	[259620] = "Lumina Chantelevent",
 	[259649] = "Ulric Voile-de-givre",
 	[260157] = "Ancien léopard des neiges",
 	[260211] = "Maître-éclaireur Vargas",

@@ -1,6 +1,6 @@
 # Version de Polestar importée. Modifier ces valeurs puis relancer Tools\import\run.ps1.
 repository=https://github.com/fitzforge/polestar.git
-commit=4e1cd841c94d41348635d7c67a7280c8ad9960c5
-date=2026-11-21
-version=0.4.2.1
+commit=bf2acf45dc639adc4437405ce440b06437cc5342
+date=2026-11-22
+version=0.4.2.2
 format=11

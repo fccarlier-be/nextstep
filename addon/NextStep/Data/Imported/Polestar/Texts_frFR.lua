@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -713,7 +713,6 @@ DB:AddTexts("frFR", nil, function() return {
 	["Back north to {npc:8420} with the rune, then south-west along the road."] = "Retournez au nord auprès de {npc:8420} avec la rune, puis suivez la route vers le sud-ouest.",
 	["Back north up the road to the {area:228}: {npc:1938} stands just north of Allister."] = "Remontez la route vers le nord jusqu'au {area:228} : {npc:1938} se tient juste au nord d'Allister.",
 	["Back north up the road to {area:108}. {npc:467} waits at the foot of the tower ramp; if he is missing, someone is escorting him and he is back within minutes."] = "Remontez la route au nord jusqu'à {area:108}. {npc:467} attend au pied de la rampe de la tour ; s'il n'y est pas, quelqu'un l'escorte et il revient en quelques minutes.",
-	["Back north, just south of {area:976}, use the {item:8524} now: the two-hour timer starts. The Blisterpaw Hyenas, Glasshide Basilisks and Scorpid Hunters share the dunes here. Each can drop an untested sample: use it, and it either passes as an acceptable one or is lost. Keep killing until you have eight of each."] = "De retour au nord, juste au sud de {area:976}, utilisez maintenant la {item:8524} : le délai de deux heures commence. Les Hyènes Pattes-cloques, les Basilics Peau-de-verre et les Chasseurs scorpides se partagent les dunes ici. Chacun peut lâcher un échantillon non testé : utilisez-le, il se révèle soit acceptable, soit perdu. Continuez à tuer jusqu'à en avoir huit de chaque.",
 	["Back north-east into the mountains to the crystal."] = "Retournez au nord-est dans les montagnes jusqu'au cristal.",
 	["Back north-east to {area:251}."] = "Retournez au nord-est à la {area:251}.",
 	["Back north-east to {area:321}."] = "Retournez au nord-est à {area:321}.",
@@ -2010,10 +2009,10 @@ DB:AddTexts("frFR", nil, function() return {
 	["From the {area:2360} head north-east to the Warsong lumber camp on the road: {npc:12867} stands there."] = "Depuis {area:2360}, allez au nord-est jusqu'au camp de bûcherons chanteguerre, sur la route : {npc:12867} s'y tient.",
 	["From the {object:28027} south-west to {object:2098}: {npc:1646}'s compass is in his old house in {zone:1436}, on the way. The flight master and the {object:2096} are south of the square."] = "Depuis {object:28027}, au sud-ouest jusqu'à {object:2098} : la boussole de {npc:1646} est dans son ancienne maison en {zone:1436}, sur le chemin. Le maître de vol et {object:2096} sont au sud de la place.",
 	["From the {quest:2997} she gives you"] = "Grâce à {quest:2997} qu'elle vous donne",
+	["From western {zone:1446} take the path down into {zone:1449}. {area:541} in the north is a neutral camp."] = "Depuis l'ouest de {zone:1446}, prenez le chemin qui descend dans {zone:1449}. {area:541}, au nord, est un camp neutre.",
 } end)
 
 DB:AddTexts("frFR", nil, function() return {
-	["From western {zone:1446} take the path down into {zone:1449}. {area:541} in the north is a neutral camp."] = "Depuis l'ouest de {zone:1446}, prenez le chemin qui descend dans {zone:1449}. {area:541}, au nord, est un camp neutre.",
 	["From {area:1002} take the road south into {zone:1431}; {area:42} is east along its main road. Most of Duskwood is level 24-30: come with Redridge behind you."] = "Depuis {area:1002}, prenez la route vers le sud dans le {zone:1431} ; {area:42} est à l'est sur sa route principale. La majeure partie du bois de la Pénombre est de niveau 24-30 : venez-y après les Carmines.",
 	["From {area:144} ride south into the {zone:1418}, then west past the Horde town of {area:340} (give it room) and up the trail into {zone:1427}: the {area:247} is just inside, in the south-east. The prisoner in the wooden outhouse wants 15 {item:4306} and eight dead Dark Iron Geologists from the dig site around it. The outhouse also opens with the key, if you found one."] = "Depuis {area:144}, chevauchez vers le sud jusqu'aux {zone:1418}, puis vers l'ouest en passant la ville hordeuse de {area:340} (gardez vos distances) et montez le sentier jusqu'à la {zone:1427} : {area:247} se trouve juste à l'entrée, au sud-est. Le prisonnier dans les latrines en bois veut 15 {item:4306} et huit Géologues Sombrefer tués sur le site de fouilles alentour. Les latrines s'ouvrent aussi avec la clé, si vous en avez trouvé une.",
 	["From {area:1639}, take {zone:1456}'s north lift down: at its foot the way runs east along the ledge, then south-east across {zone:1412} to the {zone:1413}."] = "Depuis la {area:1639}, descendez par l'ascenseur nord des {zone:1456} : à son pied, le chemin longe la corniche vers l'est, puis traverse {zone:1412} vers le sud-est jusqu'aux {zone:1413}.",
@@ -2364,7 +2363,6 @@ DB:AddTexts("frFR", nil, function() return {
 	["In {area:279}."] = "Dans {area:279}.",
 	["In {area:279}. He gives this from level 34."] = "Dans {area:279}. Il donne ceci à partir du niveau 34.",
 	["In {area:35}. Both factions take his two quests, from level 34."] = "Dans {area:35}. Les deux factions acceptent ses deux quêtes, à partir du niveau 34.",
-	["In {area:35}: {npc:2494} on the docks, {npc:2486} by the inn, {npc:2498} inside it, MacKinley, {npc:737} and {npc:773} upstairs."] = "À {area:35} : {npc:2494} sur les quais, {npc:2486} près de l'Auberge, {npc:2498} à l'intérieur, MacKinley, {npc:737} et {npc:773} à l'étage.",
 	["Incendicite & Tin: {zone:1437} (65-125)"] = "Incendicite et étain : {zone:1437} (65-125)",
 	["Incendicite, Tin"] = "Incendicite, étain",
 	["Innkeeper {npc:255940}, by the west gate"] = "L'aubergiste {npc:255940}, près de la porte ouest",
@@ -3010,7 +3008,6 @@ DB:AddTexts("frFR", nil, function() return {
 	["On the way east, {npc:4983} waits in the {area:2302} east of the village. Follow him to Reethe and keep him alive through the fight that breaks out: {npc:5045} and Theramore Skirmishers (36) join it."] = "En allant vers l'est, {npc:4983} attend dans {area:2302}, à l'est du village. Suivez-le jusqu'à Reethe et gardez-le en vie pendant le combat qui éclate : le {npc:5045} et des Tirailleurs de Theramore (36) s'y joignent.",
 	["On the way north from Seereth's camp, keep east of the road to the Venture Co. tower north of the {area:382}. Before you go near Fizzule, use {item:8051} to fire two flares, then target him and /salute: he attacks anyone who comes in without signalling first."] = "En allant vers le nord depuis le camp de Seereth, restez à l'est de la route jusqu'à la tour de la KapitalRisk au nord du {area:382}. Avant de vous approcher de Fizzule, utilisez le {item:8051} pour tirer deux fusées éclairantes, puis ciblez-le et tapez /salute : il attaque quiconque s'approche sans avoir d'abord fait le signal.",
 	["On the way north to {area:442}, the last {quest:4728} lies on the shore west of the Grove."] = "Sur le chemin d'{area:442}, au nord, la dernière {quest:4728} gît sur le rivage à l'ouest du Bosquet.",
-	["On the way south from the {area:916} to {area:107}: Harvest Watchers (level 14-15) and Golems work the fields west of the road; they drop the isosprings, gyrostabilizers, {item:732} and sometimes a {item:255155}. {npc:573}, a level 20 rare, walks these fields: leave it alone."] = "En descendant au sud de {area:916} vers {area:107} : des Gardiens des moissons (niveau 14-15) et des Golems travaillent les champs à l'ouest de la route ; ils lâchent les isoressorts, les gyrostabiliseurs, du {item:732} et parfois un {item:255155}. {npc:573}, un rare de niveau 20, arpente ces champs : laissez-le tranquille.",
 	["On the way south to the Grove: the Lunar Fungal Blooms grow in the moonkin caves in the hills just east of {area:442}, a short way off the road; the moonkin there are irritable. {item:2449} needs {skill:182}: herbalists pick it all over {zone:1439}, anyone else brings it from {zone:1453} ({npc:1313}) or the Auction House."] = "Sur le chemin du sud vers le Bosquet : les Floraisons fongiques lunaires poussent dans les grottes des séléniens, dans les collines juste à l'est d'{area:442}, non loin de la route ; les Séléniens y sont irritables. La {item:2449} demande la compétence {skill:182} : les herboristes en cueillent partout en {zone:1439}, les autres l'apportent de {zone:1453} ({npc:1313}) ou de l'hôtel des ventes.",
 	["On the way south-east to {npc:3897}: the Foulweald furbolgs live in the woods south of the road, south-east of {area:415}. The Den Watcher and the Ursas guard the den."] = "En route vers le sud-est pour voir {npc:3897} : les furbolgs Mauvebois vivent dans les bois au sud de la route, au sud-est d'{area:415}. Le Guetteur de la tanière et les Ursas gardent la tanière.",
 	["On the way through {zone:1454} to the flight master, step into the Drag: {npc:7010} takes the insect report from {zone:1446}."] = "En traversant {zone:1454} vers le maître de vol, passez par la Herse : {npc:7010} prend le rapport sur les insectes de {zone:1446}.",
@@ -4013,12 +4010,12 @@ DB:AddTexts("frFR", nil, function() return {
 	["The Vile Fin murlocs lurk on the bluffs just east of the keep and in the camps around the lake to the south-west, on the way down to {area:16881}."] = "Les murlocs Aileron noir rôdent sur les falaises juste à l'est du donjon et dans les camps autour du lac au sud-ouest, en descendant vers {area:16881}.",
 	["The WANTED poster"] = "L'affiche AVIS DE RECHERCHE",
 	["The WANTED poster outside the inn"] = "L'affiche AVIS DE RECHERCHE devant l'auberge",
-} end)
-
-DB:AddTexts("frFR", nil, function() return {
 	["The Wanted poster beside Zygand"] = "L'avis de recherche à côté de Zygand",
 	["The Wanted poster beside him"] = "L'affiche Avis de recherche à côté de lui",
 	["The Wanted poster beside it"] = "L'avis de recherche à côté",
+} end)
+
+DB:AddTexts("frFR", nil, function() return {
 	["The Wanted poster beside {npc:10537}"] = "L'avis de recherche près de {npc:10537}",
 	["The Wanted poster by the inn"] = "L'avis de recherche près de l'auberge",
 	["The Wanted poster on the town hall doorway"] = "L'avis de recherche à l'entrée de l'hôtel de ville",
@@ -4188,7 +4185,6 @@ DB:AddTexts("frFR", nil, function() return {
 	["The gorillas live on the north-east plateau: {npc:9619} wants two pelts of each kind, and the Thunderers (52-53) are the biggest. Stay out of the deepest cave: {npc:9622} lives there."] = "Les gorilles vivent sur le plateau du nord-est : {npc:9619} veut deux peaux de chaque sorte, et les Tonnerres (52-53) sont les plus gros. N'entrez pas dans la grotte la plus profonde : {npc:9622} y vit.",
 	["The gorillas live on {area:1943}, east of {area:541}. Keep their pelts for {npc:9619}. Stay out of the deepest cave: {npc:9622} is level 55.\nCareful: Un'Goro Gorillas (level 50-51) call for help from allies within 20 yd once they drop to 25% health. There is a cave full of apes in the area, and fighting there brings many adds."] = "Les gorilles vivent sur le {area:1943}, à l'est de {area:541}. Gardez leurs peaux pour {npc:9619}. Évitez la grotte la plus profonde : {npc:9622} est de niveau 55.\nAttention : les Gorilles d'Un'Goro (niveau 50-51) appellent à l'aide leurs alliés à moins de 20 m dès qu'ils tombent à 25 % de vie. Il y a dans la zone une grotte pleine de singes, et y combattre attire beaucoup de renforts.",
 	["The gorillas live on {area:1943}, just east of the pylon: take the pelts for {npc:9619} now, while you are up here. Stay out of the deepest cave: {npc:9622} is level 55.\nCareful: Un'Goro Gorillas (level 50-51) call for help from allies within 20 yd once they drop to 25% health. There is a cave full of apes in the area, and fighting there brings many adds."] = "Les gorilles vivent sur le {area:1943}, juste à l'est du pylône : prenez dès maintenant les peaux pour {npc:9619}, tant que vous êtes là-haut. Évitez la grotte la plus profonde : {npc:9622} est de niveau 55.\nAttention : les Gorilles d'Un'Goro (niveau 50-51) appellent à l'aide leurs alliés à moins de 20 m dès qu'ils tombent à 25 % de vie. Il y a dans la zone une grotte pleine de singes, et y combattre attire beaucoup de renforts.",
-	["The gorillas roam the valley around Unbagwa. The elders drop the giblets; any of them can drop a fang: keep ten for Unbagwa, whose Mokk (44) waits for your Stranglethorn stop at about 45.\nCareful: the Elder Mistvale Gorillas (40-41) stand close together in the valley: pull one at a time."] = "Les gorilles parcourent la vallée autour d'Unbagwa. Les anciens lâchent les abats ; tous peuvent lâcher un croc : gardez-en dix pour Unbagwa, dont le Mokk (44) attend votre passage à Strangleronce vers le niveau 45.\nAttention : les Anciens gorilles de Valbrume (40-41) sont proches les uns des autres dans la vallée : attirez-les un par un.",
 	["The grave stands among the skeletons at the cemetery's north-west corner, on the way to {npc:311}. Its quest and the next are talk-only, to {npc:268} and Commander Althea in {area:42}: level 35 quests, but no fight."] = "La tombe se trouve parmi les squelettes, dans l'angle nord-ouest du cimetière, sur le chemin de {npc:311}. Sa quête et la suivante consistent uniquement à parler, à {npc:268} et à la commandante Althea à {area:42} : quêtes de niveau 35, mais sans combat.",
 	["The green shard: Eranikus"] = "Le fragment vert : Eranikus",
 	["The grells west of the tree"] = "Les grells à l'ouest de l'arbre",
@@ -6016,13 +6012,13 @@ DB:AddTexts("frFR", nil, function() return {
 	["{item:15877}, from a {object:177785} in the lake"] = "{item:15877}, dans un {object:177785} au fond du lac",
 	["{item:15878}, from the Drysnap crabs"] = "{item:15878}, sur les crabes Sèchepince",
 	["{item:15881}, from the Slitherblade naga"] = "{item:15881}, sur les nagas Ondulame",
-} end)
-
-DB:AddTexts("frFR", nil, function() return {
 	["{item:15882}, from the {object:177790}"] = "{item:15882}, dans le {object:177790}",
 	["{item:15882}, from the {object:177844}"] = "{item:15882}, dans la {object:177844}",
 	["{item:15882}: the {object:177790}"] = "{item:15882} : {object:177790}",
 	["{item:15883}, from the {object:177792}"] = "{item:15883}, dans le {object:177792}",
+} end)
+
+DB:AddTexts("frFR", nil, function() return {
 	["{item:15883}, from the {object:177794}"] = "{item:15883}, dans la {object:177794}",
 	["{item:15883}: the {object:177792} under the water off the north coast, west of the ruins"] = "{item:15883} : l'{object:177792} sous l'eau au large de la côte nord, à l'ouest des ruines",
 	["{item:15885}: join the halves at the shrine"] = "{item:15885} : assemblez les moitiés au sanctuaire",
@@ -8019,13 +8015,13 @@ DB:AddTexts("frFR", nil, function() return {
 	["{npc:3428}'s {quest:868} waits for this guide's last Crossroads stop: its eggs come on the next {zone:1413} guide's walk south, at about 25."] = "{quest:868} de {npc:3428} attend la dernière halte de ce guide à la Croisée : ses œufs viennent lors de la descente vers le sud du prochain guide des {zone:1413}, vers le niveau 25.",
 	["{npc:3428}, west of the north gate"] = "{npc:3428}, à l'ouest de la porte nord",
 	["{npc:3428}, west of the north gate: keep {quest:868}, its eggs lie on the next {zone:1413} guide's walk south from {area:378}, at about 25"] = "{npc:3428}, à l'ouest de la porte nord : gardez {quest:868}, ses œufs se trouvent sur le trajet vers le sud depuis le {area:378} du prochain guide de {zone:1413}, vers le niveau 25",
-} end)
-
-DB:AddTexts("frFR", nil, function() return {
 	["{npc:3428}: for {npc:4485} in {zone:1454}"] = "{npc:3428} : pour {npc:4485} à {zone:1454}",
 	["{npc:3429}, at the top of the tower"] = "{npc:3429}, en haut de la tour",
 	["{npc:3429}, by the wind rider tower"] = "{npc:3429}, près de la tour des coursiers du vent",
 	["{npc:3429}, on the tower, from level 17. Keep it: Kadrak at the {area:1703}, next guide"] = "{npc:3429}, sur la tour, dès le niveau 17. Gardez-la : Kadrak au {area:1703}, guide suivant",
+} end)
+
+DB:AddTexts("frFR", nil, function() return {
 	["{npc:342}'s garden is at the west end of town."] = "Le jardin de {npc:342} se trouve à l'extrémité ouest de la ville.",
 	["{npc:3430}, in the cage"] = "{npc:3430}, dans la cage",
 	["{npc:3432} offers {quest:95774} once {quest:4921} is handed in"] = "{npc:3432} propose {quest:95774} une fois {quest:4921} rendue",
