@@ -38,6 +38,33 @@ describe("Annonce au groupe", function()
         cleanup()
     end)
 
+    it("annonce chaque objectif terminé, sauf le dernier (la quête est alors prête)", function()
+        local game, sent = boot(true)
+        local first = { finished = false, text = "Guerrier tué : 7/8" }
+        local second = { finished = false, text = "Tête de murloc : 3/8" }
+        game:acceptQuest(783, { first, second })
+        game:fire("QUEST_LOG_UPDATE")
+        first.finished, first.text = true, "Guerrier tué : 8/8"
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#sent, 1)
+        expect(sent[1].text:find("{rt1} NextStep: |cffffff00|Hquest:783:30|h[Quest 783]|h|r - Guerrier tué : 8/8",
+            1, true), sent[1].text)
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#sent, 1, "une seule fois")
+        game:completeQuest(783)
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#sent, 2)
+        expect(sent[2].text:find("is ready to turn in", 1, true), "seul « prête à rendre » pour le dernier")
+        game.ns.Modules:Get("QuestAnnounce").db.objectives = false
+        game:acceptQuest(784, { { finished = false, text = "x" } })
+        game:fire("QUEST_LOG_UPDATE")
+        game:findQuest(784).objectives[1].finished = true
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#sent, 2, "option coupée")
+        expect_eq(#game.errors, 0)
+        cleanup()
+    end)
+
     it("se tait hors groupe, au /reload et pour une quête prise déjà prête", function()
         local game, sent = boot(false)
         game:acceptQuest(783, { { finished = false } })

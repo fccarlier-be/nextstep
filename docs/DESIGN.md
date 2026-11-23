@@ -511,7 +511,7 @@ Vente automatique **activée par défaut** : objets gris uniquement, résumé da
 
 ### Annonce au groupe
 
-**Réalisé** (`Modules/UI/QuestAnnounce.lua`, module `QuestAnnounce`, actif par défaut) : quand une quête du journal passe d'inachevée à prête à rendre (`C_QuestLog.IsComplete`, comparé au relevé précédent à chaque `QUEST_LOG_UPDATE`), « {rt1} NextStep : [Quête] est prête à rendre » part dans le chat du groupe (`PARTY`, ou `RAID` en raid), avec le lien de la quête (`GetQuestLink`). Rien hors groupe, rien au premier relevé (connexion, `/reload`, écran de chargement), rien pour une quête déjà prête en l'acceptant. **[À vérifier]** sur Forever : `GetQuestLink(questID)` et l'étoile de `{rt1}`.
+**Réalisé** (`Modules/UI/QuestAnnounce.lua`, module `QuestAnnounce`, actif par défaut) : quand une quête du journal passe d'inachevée à prête à rendre (`C_QuestLog.IsComplete`, comparé au relevé précédent à chaque `QUEST_LOG_UPDATE`), « {rt1} NextStep : [Quête] est prête à rendre » part dans le chat du groupe (`PARTY`, ou `RAID` en raid), avec le lien de la quête (`GetQuestLink`). En option (activée par défaut, case dans les options du module), chaque objectif rempli d'une quête pas encore prête est annoncé aussi (« NextStep : [Quête] - <texte de l'objectif> », `C_QuestLog.GetQuestObjectives`, passage de `finished` à vrai) ; le dernier objectif ne donne que « prête à rendre ». Rien hors groupe, rien au premier relevé (connexion, `/reload`, écran de chargement), rien pour une quête déjà prête en l'acceptant. **[À vérifier]** sur Forever : `GetQuestLink(questID)` et l'étoile de `{rt1}`.
 
 ### Minimap
 

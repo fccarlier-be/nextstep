@@ -225,7 +225,9 @@ L["Hide other add-ons' minimap buttons"] = "Masquer les boutons de minimap des a
 L["Group announcements"] = "Annonces au groupe"
 L["Tells your group in the chat when one of your quests is ready to turn in."] =
     "Prévient votre groupe dans le chat quand une de vos quêtes est prête à rendre."
-L["%s NextStep: %s is ready to turn in"] = "%s NextStep : %s est prête à rendre"
+L["NextStep: %s is ready to turn in"] = "NextStep : %s est prête à rendre"
+L["NextStep: %s - %s"] = "NextStep : %s - %s"
+L["Also announce each finished objective"] = "Annoncer aussi chaque objectif terminé"
 
 -- Modules/UI/QuestItems.lua
 L["Quest items"] = "Objets de quête"
