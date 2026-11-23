@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -576,7 +576,7 @@ G(function() return {
 		},
 		{
 			title = "Harvest Watchers north of {area:107}",
-			note = "On the way south from the {area:916} to {area:107}: Harvest Watchers (level 14-15) and Golems work the fields west of the road; they drop the isosprings, gyrostabilizers, {item:732} and sometimes a {item:255155}. {npc:573}, a level 20 rare, walks these fields: leave it alone.",
+			note = "On the way south from the {area:916} to {area:107}: Harvest Watchers (level 14-15) work the fields west of the road. Stick to them: they are the only mechanicals that count for {quest:9}, and they drop everything else here too: the isosprings, gyrostabilizers, {item:732} and sometimes a {item:255155}. Harvest Golems drop some of the parts but don't count, and the Harvest Reapers (17) are too high. {npc:573}, a level 20 rare, walks these fields: leave it alone.",
 			goals = {
 				{ t = "kill", quest = 9, npc = 114, count = 20, map = 1436, x = 52.99, y = 23.11, z = 41.7, f = "e", note = "Harvest Watchers", lvl = 15, oi = 1, spotsPacked = "52.2,23.8,42.7,40,3;50.7,21.8,,42,5;53.84,32.45,,55,4;45.9,34.4,,41,4;43.8,36.4,40.6,48,4;37.6,50.1,,55,6;39.5,52.8,,54,6", spread = true, target = "Harvest Watcher" },
 				{ t = "collect", quest = 92909, item = 255007, count = 14, map = 1436, x = 52.99, y = 23.11, z = 41.7, f = "e", fromNpcs = { { npc = 114, npcName = "Harvest Watcher" }, { npc = 36, npcName = "Harvest Golem" }, { npc = 115, npcName = "Harvest Reaper" }, { npc = 480, npcName = "Rusty Harvest Golem" } }, lvl = 15, oi = 1, spotsPacked = "54.1,24.8,43.5,56,8;51,22.5,,59,7;57.3,20,32.3,44,7,,10;58.7,17.4,,40,2,,10;53.5,32.5,,64,6;56.5,34.3,36.2,45,4;56.9,35.8,34.7,40,4,,12;49.1,33.3,36.7,46,5,,12;46.4,35.6,,40,2;45.3,33.2,40.6,40,2;43.8,36.4,40.6,48,4;38.5,48.6,,40,2;37.2,50.8,,40,4;39.5,52.8,,54,6;34.9,46.8,,48,6,,12;33.07,35.53,37,37,3,,12;46.7,65.9,42.2,40,1,,12;47,67.6,46,40,4,,12;65,61.3,34.4,48,6,,18;63,57.7,32.7,40,1,1,18;61.6,60.7,,43,3,1,18", spread = true },
@@ -5121,7 +5121,7 @@ G(function() return {
 		},
 		{
 			title = "{npc:2097}",
-			when = { { k = "turnedin", neg = true, q = 304 } },
+			when = { { k = "turnedin", neg = true, q = 304 }, { k = "onquest", neg = true, q = { 304 } } },
 			goals = {
 				{ t = "accept", minLevel = 25, quest = 472, npc = 2097, map = 1437, x = 10.77, y = 55.8, z = 11.2, note = "{npc:2097}, by the north gate: {npc:1071} takes it at {area:205}, at the north end of this visit's east loop", qlvl = 30 },
 			},
@@ -12479,7 +12479,7 @@ G(function() return {
 			note = "The little turtle {npc:5955} wanders the west edge of the {quest:3362}, most often where the arrow leads: take him from the edge and leave the Thistleshrubs (48-50) alone. Lead him home to his wife {npc:6015}, by the water just east of {area:977}: he walks slowly and the desert's beasts go for him, so keep him alive.",
 			goals = {
 				{ t = "accept", minLevel = 40, quest = 1560, npc = 5955, map = 1446, x = 30.2, y = 70.7, f = "e", escort = true, limit = 1800, qlvl = 50 },
-				{ t = "complete", quest = 1560, escort = true, objs = { { count = 1, text = "Lead Tooga to Torta" } } },
+				{ t = "complete", quest = 1560, map = 1446, x = 66.58, y = 25.67, f = "e", escort = true, objs = { { count = 1, text = "Lead Tooga to Torta" } } },
 				{ t = "turnin", quest = 1560, npc = 6015, map = 1446, x = 66.48, y = 25.73, z = 0.8 },
 				{ t = "accept", quest = 97540, npc = 5955, map = 1446, x = 66.38, y = 25.79, z = 0.7, note = "{npc:5955}, beside her: Oasis", qlvl = 50, spotsPacked = "67,25.4,,52,4;29.5,60.4,,40,1;30.3,64.6,,40,1;28.6,67.4,,40,1;30.2,70.7,,40,1;29.8,73.9,,40,2" },
 				{ t = "turnin", quest = 97540, npc = 5955, map = 1446, x = 66.38, y = 25.79, z = 0.7, spotsPacked = "67,25.4,,52,4;29.5,60.4,,40,1;30.3,64.6,,40,1;28.6,67.4,,40,1;30.2,70.7,,40,1;29.8,73.9,,40,2" },
@@ -12870,7 +12870,14 @@ G(function() return {
 				{ t = "accept", minLevel = 37, quest = 604, npc = 2487, map = 1434, x = 27.1, y = 76.89, z = 28.8, note = "{npc:2487}, top floor", pre = { 599 }, qlvl = 43 },
 				{ t = "accept", minLevel = 38, quest = 617, npc = 2494, map = 1434, x = 27.05, y = 76.84, qlvl = 43, spotsPacked = "27,76.7,,27,3" },
 				{ t = "accept", minLevel = 35, quest = 621, npc = 2498, map = 1434, x = 27.05, y = 77.15, z = 15.2, note = "{npc:2498}, inside", qlvl = 44 },
-				{ t = "accept", minLevel = 40, quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, qlvl = 45 },
+			},
+		},
+		{
+			title = "{npc:2486}",
+			when = { { k = "group", q = 348 } },
+			note = "Group quest: {quest:348} ends at {npc:1449} in Mistvale. Hand him ten gorilla fangs and he calls three waves of gorillas (41-42), one after another, then {npc:1514} (44). In players' recordings, 12 of the 27 people who started it died there. Take it if you have a friend or two along.",
+			goals = {
+				{ t = "accept", minLevel = 40, quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}, beside the inn", qlvl = 45 },
 			},
 		},
 		{
@@ -12945,6 +12952,7 @@ G(function() return {
 		},
 		{
 			title = "Gorilla hills",
+			when = { { k = "group", q = 348 } },
 			note = "Ride back south-east to the Mistvale gorilla hills above {area:35}. {npc:1449} sits among the gorillas: take ten Gorilla Fangs from the Elder Mistvale Gorillas first.",
 			goals = {
 				{ t = "collect", item = 2799, count = 10, map = 1434, x = 32.42, y = 57.97, z = 21.9, f = "e", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" }, { npc = 1511, npcName = "Enraged Silverback Gorilla" }, { npc = 1114, npcName = "Jungle Thunderer" }, { npc = 1108, npcName = "Mistvale Gorilla" }, { npc = 2521, npcName = "Skymane Gorilla" }, { npc = 1558, npcName = "Silverback Patriarch" }, { npc = 14491, npcName = "Kurmokk" } }, fromNpcsAt = "1,6,2,7;1,6,2,7;1,6,2,7;6,7,1,2;5;5;3;3;3;3;3;4;1,6,2,7;2,1,6,7;6,1,2,7;1,6,2,7;1,6,2,7;5;5;5;5;5;3;3;3;3;3;3;3;4;4", lvl = 38, spotsPacked = "32.4,58.6,,43,2,,41;33.7,63.3,,57,5,,41;31.6,67,,77,6,,41;37.8,61.3,,59,5,,43;41.2,77.7,4.6,52,3,,50;39.4,86.3,,56,3,,50;44.9,36.9,,53,3;47.9,37.6,,55,4;48.7,33.3,,51,4;45.5,29.2,,43,3;41.4,28.4,15.2,60,3;38.5,16.3,,43,2,,33;31.4,60.2,,43,3,1,41;35.1,60.8,,43,1,1,42;35.6,63.4,40.4,67,6,1,43;32.9,65.7,,46,5,1,41;33.9,66.8,,75,6,1,41;40.1,79.4,6.8,63,4,1,50;41.9,79.5,2.8,43,1,1,50;40.7,81.5,,43,3,1,50;41.9,81.8,,43,2,1,50;41.2,84.3,,57,3,1,50;42.2,31.6,24.3,47,4,1;46.2,35.1,,63,4,1;43.8,31.6,,43,3,1;48.6,35.8,,43,3,1;41.7,26.7,,68,4,1;43.9,27.7,,85,6,1;41.8,24.4,22.7,43,1,1;39,18,,43,2,1,33;37.3,17.4,,57,7,1,33", spread = true },
@@ -12952,7 +12960,7 @@ G(function() return {
 		},
 		{
 			title = "Unbagwa's ritual",
-			when = { { k = "has", item = 2799, n = 10 } },
+			when = { { k = "group", q = 348 }, { k = "has", item = 2799, n = 10 } },
 			note = "Hand in the fangs and stay: three waves of gorillas come, {npc:1514} last.\nCareful: three waves of gorillas come one after another with little rest between, then {npc:1514}. Start at full health and mana, and stay near Unbagwa. Some classes find it hard alone: a friend makes it easy.",
 			goals = {
 				{ t = "turnin", minLevel = 32, quest = 349, npc = 1449, map = 1434, x = 35.19, y = 60.47, z = 44.6, note = "{npc:1449}, inside {area:1742}", direct = true, parent = 348, qlvl = 45 },
@@ -12960,7 +12968,7 @@ G(function() return {
 		},
 		{
 			title = "Unbagwa's ritual",
-			when = { { k = "turnedin", q = 349 } },
+			when = { { k = "group", q = 348 }, { k = "turnedin", q = 349 } },
 			goals = {
 				{ t = "collect", quest = 348, item = 2797, count = 1, map = 1434, x = 35.05, y = 60.88, f = "e", fromId = 1514, fromKind = "npc", fromNpcs = { { npc = 1514, npcName = "Mokk the Savage" } }, oi = 1 },
 			},
@@ -12971,11 +12979,17 @@ G(function() return {
 			goals = {
 				{ t = "turnin", quest = 617, npc = 2494, map = 1434, x = 27.37, y = 76.96, z = 15.4, spotsPacked = "27,76.7,,27,3" },
 				{ t = "accept", minLevel = 38, quest = 623, npc = 2494, map = 1434, x = 27.37, y = 76.96, z = 15.4, note = "for {npc:2616} in Theramore: keep it, the Un'Goro guide lands there", pre = { 617 }, qlvl = 43, spotsPacked = "27,76.7,,27,3" },
-				{ t = "turnin", quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5 },
 				{ t = "note", text = "{npc:2498}'s next Zanzil errand starts in {zone:1441}: skip it." },
 				{ t = "turnin", quest = 621, npc = 2498, map = 1434, x = 27.05, y = 77.15, z = 15.2, note = "{npc:2498}, inside" },
 				{ t = "note", text = "MacKinley's next task sends you after elite ogres: skip it." },
 				{ t = "turnin", quest = 609, npc = 2501, map = 1434, x = 27.71, y = 77.1, z = 15.8, note = "\"Sea Wolf\" MacKinley, on the top floor" },
+			},
+		},
+		{
+			title = "{npc:2486}",
+			when = { { k = "complete", q = 348 } },
+			goals = {
+				{ t = "turnin", quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}, by the inn" },
 			},
 		},
 		{
@@ -14301,6 +14315,7 @@ G(function() return {
 		},
 		{
 			title = "{npc:7363}",
+			when = { { k = "has", item = 10593, n = 1 } },
 			note = "Kum'isha waits at the {area:2517}, the hill south-west of the keep. The {zone:1419} mobs on the way drop the Imperfect Draenethyst Fragments; bring her what you have. Come at her hill straight from the keep, along the road, and leave by the same way.\nCareful: Felcular, {npc:7664} and Ilifar are all level 60 elites. Razelikh casts {spell:2691}, {spell:8255} and Decimate, and as its health drops it adds {object:141891}, {spell:10854} and then Enrage at 15%.\nCareful: {npc:247015}, a level 55 elite, stands by Kum'isha's hill (about 50,35) and to the west (about 39,32), and the Dreadmaul and Shadowsworn camps around it are 53-55: take the fragments from the mobs on the way from the keep, not beside him.",
 			goals = {
 				{ t = "accept", minLevel = 45, quest = 3501, npc = 7363, map = 1419, x = 52.04, y = 35.54, z = 0.8, note = "{npc:7363} walks around here: look inside the circle on the map", qlvl = 55, spotsPacked = "51.9,35.6,0.8,15,4" },
@@ -20750,6 +20765,7 @@ G(function() return {
 		},
 		{
 			title = "Back at {area:256}",
+			note = "{npc:3595}'s quest, {quest:97979}, asks for your two night elf racial spells: open your spellbook (P), cast {spell:1259799} and Shadowmeld once each, then hand it back to her.",
 			goals = {
 				{ t = "turnin", quest = 459, npc = 1992, map = 1438, x = 57.63, y = 44.99, z = 1335.9 },
 				{ t = "turnin", quest = 97977, npc = 1992, map = 1438, x = 57.63, y = 44.99, z = 1335.9 },

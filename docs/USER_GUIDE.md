@@ -59,6 +59,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 | **Sacs et banque** | Améliorations et camelote marquées dans les sacs, places libres ; sacs et banque de tous tes personnages dans les infobulles et consultables de partout (`/ns bank`). |
 | **Camelote** | Les objets gris sont vendus à l'ouverture d'un marchand (Maj pour ne rien vendre ; `/ns keep <objet>` pour une exception). |
 | **Objets de quête** | Marqués dans les sacs, avec la quête dans leur infobulle. |
+| **Annonces au groupe** | En groupe, « NextStep : [Quête] est prête à rendre » dans le chat du groupe dès que vous terminez les objectifs d'une quête. |
 | **Fenêtres déplaçables** | Les fenêtres de Blizzard se déplacent en les faisant glisser ; Alt + clic droit les remet en place. |
 | **Horloge** | Clic droit sur l'horloge de la minimap (ou `/ns clock`) : alarmes, minuteurs, chronomètre. |
 

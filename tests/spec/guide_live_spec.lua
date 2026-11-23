@@ -520,12 +520,15 @@ describe("Guide en jeu", function()
         Guide:Start("test/giver")
         Guide:Refresh()
         local line
+        local clickable = 0
         for _, candidate in ipairs(Guide.window.lines) do
             if rawget(candidate, "onClick") and type(rawget(candidate, "tooltip")) == "function" then
                 line = candidate
+                clickable = clickable + 1
             end
         end
         expect(line, "ligne de l'objectif cliquable")
+        expect_eq(clickable, 2, "la ligne « Accepter » mène aussi au donneur")
         local texts = {}
         line.tooltip({ SetText = function(_, t) texts[#texts + 1] = t end,
             AddLine = function(_, t) texts[#texts + 1] = t end })

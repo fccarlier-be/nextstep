@@ -221,6 +221,12 @@ L["Drag: move the button"] = "Glisser : déplacer le bouton"
 L["Open the add-ons menu"] = "Ouvre le menu des addons"
 L["Hide other add-ons' minimap buttons"] = "Masquer les boutons de minimap des autres addons"
 
+-- Modules/UI/QuestAnnounce.lua
+L["Group announcements"] = "Annonces au groupe"
+L["Tells your group in the chat when one of your quests is ready to turn in."] =
+    "Prévient votre groupe dans le chat quand une de vos quêtes est prête à rendre."
+L["%s NextStep: %s is ready to turn in"] = "%s NextStep : %s est prête à rendre"
+
 -- Modules/UI/QuestItems.lua
 L["Quest items"] = "Objets de quête"
 L["Marks the items in your bags that a quest in your log needs, and names the quest "

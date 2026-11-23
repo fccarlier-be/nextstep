@@ -91,6 +91,8 @@ files["addon/**"] = {
         "UnitOnTaxi",
         "GetServerTime",
         "IsInRaid",
+        "GetQuestLink",
+        "SendChatMessage",
         "IsInGuild",
         "C_ChatInfo",
         "GetQuestItemLink",

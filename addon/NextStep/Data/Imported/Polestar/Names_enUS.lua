@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -3449,6 +3449,7 @@ DB:AddNames("enUS", "item", function() return {
 DB:AddNames("enUS", "npc", function() return {
 	[3] = "Flesh Eater",
 	[6] = "Kobold Vermin",
+	[36] = "Harvest Golem",
 	[38] = "Defias Thug",
 	[40] = "Kobold Miner",
 	[43] = "Mine Spider",
@@ -3466,6 +3467,7 @@ DB:AddNames("enUS", "npc", function() return {
 	[103] = "Garrick Padfoot",
 	[113] = "Stonetusk Boar",
 	[114] = "Harvest Watcher",
+	[115] = "Harvest Reaper",
 	[116] = "Defias Bandit",
 	[117] = "Riverpaw Gnoll",
 	[118] = "Prowler",
@@ -5445,11 +5447,11 @@ DB:AddNames("enUS", "npc", function() return {
 	[5089] = "Balos Jacken",
 	[5100] = "Fillius Fizzlespinner",
 	[5101] = "Bryllia Ironbrand",
-	[5102] = "Dolman Steelfury",
-	[5103] = "Grenil Steelfury",
 } end)
 
 DB:AddNames("enUS", "npc", function() return {
+	[5102] = "Dolman Steelfury",
+	[5103] = "Grenil Steelfury",
 	[5106] = "Bromiir Ormsen",
 	[5107] = "Mangorn Flinthammer",
 	[5108] = "Raena Flinthammer",
@@ -7448,11 +7450,11 @@ DB:AddNames("enUS", "npc", function() return {
 	[259052] = "Rog'mar Poacher",
 	[259054] = "Wildplains Patriarch",
 	[259057] = "Dunston Willis",
-	[259084] = "Denaaris Stargale",
-	[259118] = "Muln Earthfury",
 } end)
 
 DB:AddNames("enUS", "npc", function() return {
+	[259084] = "Denaaris Stargale",
+	[259118] = "Muln Earthfury",
 	[259119] = "Alaana Stormwalker",
 	[259158] = "Fuzzle",
 	[259190] = "Ephram Barbaro",

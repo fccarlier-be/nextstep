@@ -2,9 +2,9 @@ NextStep : données importées de Polestar
 ========================================
 
 Les fichiers de données de ce dossier sont générés par Tools/import/import.lua de
-NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar 0.4.2.1
+NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar 0.4.2.2
 (https://github.com/fitzforge/polestar), puis convertis au format de NextStep.
-Commit de Polestar : 4e1cd841c94d41348635d7c67a7280c8ad9960c5 (2026-11-21).
+Commit de Polestar : bf2acf45dc639adc4437405ce440b06437cc5342 (2026-11-22).
 
 Copyright (c) 2026 The Polestar authors
 Polestar est distribué sous la GNU General Public License, version 3

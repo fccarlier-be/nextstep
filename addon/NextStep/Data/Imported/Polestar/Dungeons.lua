@@ -1,4 +1,4 @@
--- Généré par Tools/import/dungeons.py depuis Polestar 0.3.7.2 (19bd636e7d6f, 2026-11-12). Ne pas modifier :
+-- Généré par Tools/import/dungeons.py depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1. Quêtes, PNJ et positions : forever-db de Polestar (GPL-3.0,
 -- ForeverDB-NOTICE.md). Butin des boss et provenance des objets : ForeverLevelingBiS (MIT),
 -- caractéristiques des objets : tables du client via Polestar_ItemDB (ItemDB-LICENSE-DATA.txt).

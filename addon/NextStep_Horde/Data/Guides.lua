@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
@@ -12021,9 +12021,9 @@ G(function() return {
 		{
 			title = "Mistvale gorillas",
 			when = { { k = "level", n = 40, op = ">=" }, { k = "onquest", q = { 571 } }, { k = "complete", neg = true, q = 571 } },
-			note = "The gorillas roam the valley around Unbagwa. The elders drop the giblets; any of them can drop a fang: keep ten for Unbagwa, whose Mokk (44) waits for your Stranglethorn stop at about 45.\nCareful: the Elder Mistvale Gorillas (40-41) stand close together in the valley: pull one at a time.",
+			note = "The gorillas roam the valley around Unbagwa. The elders drop the giblets; any of them can drop a fang: if you will take {quest:348} with a group, keep ten for Unbagwa, whose Mokk (44) waits for your Stranglethorn stop at about 45.\nCareful: the Elder Mistvale Gorillas (40-41) stand close together in the valley: pull one at a time.",
 			goals = {
-				{ t = "collect", npc = 1557, item = 2799, count = 10, map = 1434, x = 33.03, y = 66.12, f = "e", note = "Keep fangs from these same elders for Unbagwa.", spotsPacked = "33.03,66.12,,22;32.57,66.64,,22", spread = true },
+				{ t = "collect", npc = 1557, item = 2799, count = 10, map = 1434, x = 33.03, y = 66.12, f = "e", optional = true, note = "Keep fangs from these same elders for Unbagwa ({quest:348}, with a group).", spotsPacked = "33.03,66.12,,22;32.57,66.64,,22", spread = true },
 				{ t = "collect", quest = 571, item = 3862, count = 1, map = 1434, x = 33, y = 66.1, z = 14.8, f = "e", fromId = 1557, fromKind = "npc", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" } }, lvl = 41, oi = 1, spotsPacked = "33,66.1,14.8,118,12;34.5,64.8,,35,3,1;31.6,67.7,,62,4,1;33.7,63,,50,4,1;31.4,60.2,,43,3,1;32.4,58.6,,27,2,1" },
 				{ t = "collect", quest = 606, item = 3919, count = 5, map = 1434, x = 33.03, y = 66.12, z = 14.8, f = "e", fromId = 1557, fromKind = "npc", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" } }, lvl = 41, oi = 1, spotsPacked = "33.03,66.12,14.8,116,12;34.5,64.8,,35,3,1;31.6,67.7,,62,4,1;33.7,63,,50,4,1;31.4,60.2,,43,3,1;32.4,58.6,,27,2,1" },
 			},
@@ -12282,11 +12282,18 @@ G(function() return {
 		{
 			title = "{npc:2491} and {npc:2486}",
 			when = { { k = "level", n = 40, op = ">=" } },
-			note = "{npc:2491}, in the inn, {npc:2486}, beside it, and \"Sea Wolf\" MacKinley, on the top floor, offer these quests from level 40: pick them up now. Under 40, the {zone:1444} & {zone:1446} guide's {area:35} stop offers them again.",
+			note = "{npc:2491}, in the inn, and \"Sea Wolf\" MacKinley, on the top floor, offer these quests from level 40: pick them up now. Under 40, the {zone:1444} & {zone:1446} guide's {area:35} stop offers them again.",
 			goals = {
 				{ t = "accept", minLevel = 40, quest = 580, npc = 2491, map = 1434, x = 27.07, y = 77.36, z = 15.2, note = "{npc:2491}, in the inn: his bottles wash up on the {zone:1425} coast, around level 48", qlvl = 50 },
-				{ t = "accept", minLevel = 40, quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}: {quest:348}, Unbagwa's part on the {zone:1444} guide's {object:3202} stop", qlvl = 45 },
 				{ t = "accept", minLevel = 40, quest = 2872, npc = 2501, map = 1434, x = 27.71, y = 77.1, z = 15.8, note = "MacKinley, on the top floor: {quest:2872}, for Stoley in {zone:1446}", closedBy = { 2873 }, endNpcs = { 7881 }, qlvl = 45, xp = 390 },
+			},
+		},
+		{
+			title = "{npc:2486}",
+			when = { { k = "level", n = 40, op = ">=" }, { k = "group", q = 348 } },
+			note = "Group quest: {quest:348} ends at {npc:1449} in Mistvale. Hand him ten gorilla fangs and he calls three waves of gorillas (41-42), one after another, then {npc:1514} (44). In players' recordings, 12 of the 27 people who started it died there. Take it if you have a friend or two along.",
+			goals = {
+				{ t = "accept", minLevel = 40, quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}, beside the inn: Unbagwa's part on the {zone:1444} guide's {object:3202} stop", qlvl = 45 },
 			},
 		},
 		{
@@ -13741,7 +13748,7 @@ G(function() return {
 		},
 		{
 			title = "{npc:1449}",
-			when = { { k = "onquest", q = { 348 } } },
+			when = { { k = "onquest", q = { 348 } }, { k = "group", q = 348 } },
 			note = "West into Mistvale: {npc:1449} sits among the gorillas. Any gorilla can drop a fang: hand him ten and stay by him, he calls three waves of gorillas, then {npc:1514}.\nCareful: three waves of gorillas come one after another with little rest between, then {npc:1514}. Start at full health and mana, and stay near Unbagwa. Some classes find it hard alone: a friend makes it easy.",
 			goals = {
 				{ t = "collect", item = 2799, count = 10, map = 1434, x = 32.42, y = 57.97, z = 21.9, f = "e", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" }, { npc = 1511, npcName = "Enraged Silverback Gorilla" }, { npc = 1114, npcName = "Jungle Thunderer" }, { npc = 1108, npcName = "Mistvale Gorilla" }, { npc = 2521, npcName = "Skymane Gorilla" }, { npc = 1558, npcName = "Silverback Patriarch" }, { npc = 14491, npcName = "Kurmokk" } }, fromNpcsAt = "1,6,2,7;1,6,2,7;1,6,2,7;6,7,1,2;5;5;3;3;3;3;3;4;1,6,2,7;2,1,6,7;6,1,2,7;1,6,2,7;1,6,2,7;5;5;5;5;5;3;3;3;3;3;3;3;4;4", lvl = 38, spotsPacked = "32.4,58.6,,43,2,,41;33.7,63.3,,57,5,,41;31.6,67,,77,6,,41;37.8,61.3,,59,5,,43;41.2,77.7,4.6,52,3,,50;39.4,86.3,,56,3,,50;44.9,36.9,,53,3;47.9,37.6,,55,4;48.7,33.3,,51,4;45.5,29.2,,43,3;41.4,28.4,15.2,60,3;38.5,16.3,,43,2,,33;31.4,60.2,,43,3,1,41;35.1,60.8,,43,1,1,42;35.6,63.4,40.4,67,6,1,43;32.9,65.7,,46,5,1,41;33.9,66.8,,75,6,1,41;40.1,79.4,6.8,63,4,1,50;41.9,79.5,2.8,43,1,1,50;40.7,81.5,,43,3,1,50;41.9,81.8,,43,2,1,50;41.2,84.3,,57,3,1,50;42.2,31.6,24.3,47,4,1;46.2,35.1,,63,4,1;43.8,31.6,,43,3,1;48.6,35.8,,43,3,1;41.7,26.7,,68,4,1;43.9,27.7,,85,6,1;41.8,24.4,22.7,43,1,1;39,18,,43,2,1,33;37.3,17.4,,57,7,1,33", spread = true },
@@ -13794,26 +13801,39 @@ G(function() return {
 		},
 		{
 			title = "{area:35}",
-			note = "In {area:35}: {npc:2494} on the docks, {npc:2486} by the inn, {npc:2498} inside it, MacKinley, {npc:737} and {npc:773} upstairs.",
+			note = "In {area:35}: {npc:2494} on the docks, {npc:2498} inside the inn, MacKinley, {npc:737} and {npc:773} upstairs.",
 			goals = {
-				{ t = "turnin", quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5 },
 				{ t = "turnin", quest = 621, npc = 2498, map = 1434, x = 27.05, y = 77.15, z = 15.2, note = "{npc:2498}, inside" },
 				{ t = "turnin", quest = 609, npc = 2501, map = 1434, x = 27.71, y = 77.1, z = 15.8, note = "\"Sea Wolf\" MacKinley, on the top floor" },
 			},
 		},
 		{
+			title = "{npc:2486}",
+			when = { { k = "complete", q = 348 } },
+			goals = {
+				{ t = "turnin", quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}, by the inn" },
+			},
+		},
+		{
 			title = "{npc:2491} and {npc:2486}",
 			when = { { k = "onquest", neg = true, q = { 348 } }, { k = "turnedin", neg = true, q = 348 } },
-			note = "Under 40 on your first {area:35} visit? {npc:2491}, in the inn, {npc:2486}, beside it, and \"Sea Wolf\" MacKinley, on the top floor, have their quests for you now.",
+			note = "Under 40 on your first {area:35} visit? {npc:2491}, in the inn, and \"Sea Wolf\" MacKinley, on the top floor, have their quests for you now.",
 			goals = {
 				{ t = "accept", minLevel = 40, quest = 580, npc = 2491, map = 1434, x = 27.07, y = 77.36, z = 15.2, note = "{npc:2491}, in the inn: his bottles wash up on the {zone:1425} coast, around level 48", qlvl = 50 },
-				{ t = "accept", minLevel = 40, quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}: {quest:348}", qlvl = 45 },
 				{ t = "accept", minLevel = 40, quest = 2872, npc = 2501, map = 1434, x = 27.71, y = 77.1, z = 15.8, note = "MacKinley, on the top floor: {quest:2872}, for {npc:7881} in {zone:1446} on this guide", closedBy = { 2873 }, endNpcs = { 7881 }, qlvl = 45, xp = 390 },
 			},
 		},
 		{
+			title = "{npc:2486}",
+			when = { { k = "onquest", neg = true, q = { 348 } }, { k = "turnedin", neg = true, q = 348 }, { k = "group", q = 348 } },
+			note = "Group quest: {quest:348} ends at {npc:1449} in Mistvale. Hand him ten gorilla fangs and he calls three waves of gorillas (41-42), one after another, then {npc:1514} (44). In players' recordings, 12 of the 27 people who started it died there. Take it if you have a friend or two along.",
+			goals = {
+				{ t = "accept", minLevel = 40, quest = 348, npc = 2486, map = 1434, x = 27.62, y = 76.71, z = 15.5, note = "{npc:2486}, beside the inn: {quest:348}", qlvl = 45 },
+			},
+		},
+		{
 			title = "{npc:1449}",
-			when = { { k = "onquest", q = { 348 } }, { k = "complete", neg = true, q = 348 } },
+			when = { { k = "onquest", q = { 348 } }, { k = "group", q = 348 }, { k = "complete", neg = true, q = 348 } },
 			note = "North into Mistvale, a short ride from {area:35}: {npc:1449} sits among the gorillas. Hand him ten gorilla fangs and stay by him: three waves of gorillas, then {npc:1514}. Start at full health and mana.",
 			goals = {
 				{ t = "collect", item = 2799, count = 10, map = 1434, x = 31.15, y = 67.93, z = 13.4, f = "e", fromNpcs = { { npc = 1557, npcName = "Elder Mistvale Gorilla" }, { npc = 1511, npcName = "Enraged Silverback Gorilla" }, { npc = 1114, npcName = "Jungle Thunderer" }, { npc = 1108, npcName = "Mistvale Gorilla" }, { npc = 2521, npcName = "Skymane Gorilla" }, { npc = 1558, npcName = "Silverback Patriarch" }, { npc = 14491, npcName = "Kurmokk" } }, fromNpcsAt = "1,6,2,7;1,6,2,7;1,6,2,7;6,7,1,2;5;5;3;3;3;3;3;4;1,6,2,7;1,6,2,7;1,6,2,7;6,1,2,7;2,1,6,7;5;5;5;5;5;3;3;3;3;3;3;3;4;4", lvl = 38, spotsPacked = "31.6,67,,77,6,,41;33.7,63.3,,57,5,,41;32.4,58.6,,43,2,,41;37.8,61.3,,59,5,,43;41.2,77.7,4.6,52,3,,50;39.4,86.3,,56,3,,50;44.9,36.9,,53,3;47.9,37.6,,55,4;48.7,33.3,,51,4;45.5,29.2,,43,3;41.4,28.4,15.2,60,3;38.5,16.3,,43,2,,33;32.9,65.7,,46,5,1,41;33.9,66.8,,75,6,1,41;31.4,60.2,,43,3,1,41;35.6,63.4,40.4,67,6,1,43;35.1,60.8,,43,1,1,42;40.1,79.4,6.8,63,4,1,50;40.7,81.5,,43,3,1,50;41.9,79.5,2.8,43,1,1,50;41.9,81.8,,43,2,1,50;41.2,84.3,,57,3,1,50;46.2,35.1,,63,4,1;42.2,31.6,24.3,47,4,1;43.8,31.6,,43,3,1;48.6,35.8,,43,3,1;41.7,26.7,,68,4,1;43.9,27.7,,85,6,1;41.8,24.4,22.7,43,1,1;39,18,,43,2,1,33;37.3,17.4,,57,7,1,33", spread = true },
@@ -15083,7 +15103,7 @@ G(function() return {
 		},
 		{
 			title = "{quest:654}",
-			note = "Back north, just south of {area:976}, use the {item:8524} now: the two-hour timer starts. The Blisterpaw Hyenas, Glasshide Basilisks and Scorpid Hunters share the dunes here. Each can drop an untested sample: use it, and it either passes as an acceptable one or is lost. Keep killing until you have eight of each.",
+			note = "Back north, just south of {area:976}, use the {item:8524} now: the two-hour timer starts. The Blisterpaw Hyenas, Glasshide Basilisks and Scorpid Hunters share the dunes here. Each can drop an untested sample: use it, and it either passes as an acceptable one or is lost. Keep killing until you have eight of each. No power source in your bags, or its two hours ran out? Abandon {quest:654} if it is in your log, then take Another Power Source? from {npc:7407}: he gives a new one for ten more Wastewander Water Pouches, from the Wastewander camps east of {area:976}.",
 			goals = {
 				{ t = "accept", minLevel = 38, quest = 654, item = 8524, note = "Use the {item:8524}", limit = 7200, pre = { 379 }, qlvl = 46 },
 				{ t = "collect", quest = 654, item = 9441, count = 8, map = 1446, x = 52.6, y = 32.2, f = "e", oi = 2, spotsPacked = "52.6,32.2,,45;57.24,31.93,,15,,1;48.74,44.46,,64,,1" },

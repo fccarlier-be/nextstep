@@ -41,6 +41,7 @@ Modules\UI\Radar.lua
 Modules\UI\Minimap.lua
 Modules\UI\AddonsMenu.lua
 Modules\UI\QuestItems.lua
+Modules\UI\QuestAnnounce.lua
 Modules\UI\Junk.lua
 Modules\UI\Clock.lua
 Modules\UI\UnitText.lua

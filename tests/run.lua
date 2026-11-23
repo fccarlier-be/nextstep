@@ -19,6 +19,7 @@ local SPECS = {
     "radar",
     "minimap",
     "quest_items",
+    "quest_announce",
     "junk",
     "clock",
     "unit_text",

@@ -1,0 +1,2 @@
+Quête de groupe : {quest:348} se termine auprès de {npc:1449} à Val-Brumeux. Remettez-lui dix crocs de gorille et il appelle trois vagues de gorilles (41-42), l'une après l'autre, puis {npc:1514} (44). D'après les enregistrements de joueurs, 12 des 27 personnes qui l'ont commencée y sont mortes. Prenez-la si un ou deux amis vous accompagnent.
+{npc:2486}, près de l'auberge

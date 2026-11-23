@@ -1,4 +1,4 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.1 (4e1cd841c94d, 2026-11-21). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
