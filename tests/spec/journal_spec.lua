@@ -188,4 +188,18 @@ describe("Journal du guide", function()
         expect_eq(Guide.char.returnTo, nil)
         expect_eq(#game.errors, 0)
     end)
+
+    it("a une illustration pour chaque zone de guide, et chaque illustration existe", function()
+        local game = wow.boot({ faction = "Alliance" })
+        local Guide = game.ns.Modules:Get("Guide")
+        for key in pairs(Guide.ART_KEYS) do
+            local file = io.open("addon/NextStep/Media/Zones/" .. key .. ".blp", "rb")
+            expect(file, "illustration manquante : " .. key)
+            file:close()
+        end
+        for _, guide in game.ns.DB:IterateGuides() do
+            local _, key = Guide.GuideArt(guide)
+            expect(not guide.zone or key == tostring(guide.zone), "zone sans illustration : " .. tostring(guide.zone))
+        end
+    end)
 end)

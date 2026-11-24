@@ -6,6 +6,14 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.4.0] - 2026-11-24
+
+### Modifié
+- **Nouvel habillage** des fenêtres, dans l'esprit du Journal des donjons : fond de pierre sombre, bordure dorée ornée avec des coins à rivet, titres dans la police des titres de quête, bouton de fermeture rond, boutons plus en relief.
+- **Journal des guides illustré** : chaque guide est une carte avec une peinture de sa zone (ou de sa catégorie), son titre, ses niveaux, une coche verte quand il est fini et sa barre d'avancement. Le détail du guide choisi s'ouvre sur un grand bandeau illustré. 60 illustrations peintes pour l'addon.
+
+> Relancez complètement le jeu après la mise à jour : un `/reload` ne charge pas les nouvelles images.
+
 ## [0.3.3] - 2026-11-23
 
 ### Ajouté
@@ -204,7 +212,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.3.3...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/fccarlier-be/nextstep/compare/v0.3.3...v0.4.0
 [0.3.3]: https://github.com/fccarlier-be/nextstep/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/fccarlier-be/nextstep/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/fccarlier-be/nextstep/compare/v0.3.0...v0.3.1
