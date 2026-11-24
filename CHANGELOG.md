@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.4.5] - 2026-11-24
+
+### Corrigé
+- Annonces au groupe : plus d'erreur Lua « SendChatMessage(): Invalid escape code in chat message ». Le texte des objectifs est nettoyé des codes de couleur et d'accord que le serveur refuse ; un lien de quête mal formé est remplacé par le titre entre guillemets ; une ligne refusée par le jeu n'affiche plus jamais d'erreur.
+
 ## [0.4.4] - 2026-11-24
 
 ### Modifié
