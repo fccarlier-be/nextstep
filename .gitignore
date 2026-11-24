@@ -39,3 +39,4 @@ luacov.*.out
 
 # Archives construites en local par le BigWigs packager
 .release/
+Tools/theme/cache/

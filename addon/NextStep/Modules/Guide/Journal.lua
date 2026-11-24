@@ -26,7 +26,8 @@ local CATEGORY_WIDTH = 180
 local LIST_WIDTH = 330
 local DETAIL_WIDTH = WIDTH - CATEGORY_WIDTH - LIST_WIDTH - 3 * PADDING - 2
 local HEADER_HEIGHT = 26
-local CARD_HEIGHT = 46
+local CARD_HEIGHT = 74
+local BANNER_HEIGHT = 92
 local SPELL_HEIGHT = 26
 
 -- Icônes des catégories (icônes du jeu classique).
@@ -453,41 +454,103 @@ local function sectionHeader(parent)
     return frame
 end
 
--- Carte d'un guide : fond, tranche de niveaux, titre, sous-titre, barre d'avancement.
+-- Illustrations des cartes (Tools/theme/illustrations.py) : une par zone de guide,
+-- sinon une par catégorie. Media/Zones/<clé>.blp, 512 x 128.
+local ART_KEYS = {}
+for key in ("947 1411 1412 1413 1414 1415 1416 1417 1418 1419 1420 1421 1422 1423 1424 1425 1426 1427 "
+    .. "1428 1429 1430 1431 1432 1433 1434 1435 1436 1437 1438 1439 1440 1441 1442 1443 1444 1445 1446 "
+    .. "1447 1448 1449 1450 1451 1452 1453 1454 1455 1456 1457 1458 2482 2521 2548 2652 Class "
+    .. "Professions Reputation Collectibles Exploration Legacy Miscellaneous"):gmatch("%S+") do
+    ART_KEYS[key] = true
+end
+Guide.ART_KEYS = ART_KEYS
+
+-- Illustration d'un guide : chemin de la texture et clé.
+function Guide.GuideArt(guide)
+    local key = guide.zone and tostring(guide.zone)
+    if not (key and ART_KEYS[key]) then
+        key = ART_KEYS[guide.category or ""] and guide.category or "Miscellaneous"
+    end
+    return "Interface\\AddOns\\NextStep\\Media\\Zones\\" .. key, key
+end
+
+-- Image 4:1 recadrée pour une surface de width x height (centrée).
+local function cropArt(texture, width, height)
+    local ratio = (width or 4) / math.max(height or 1, 1)
+    if ratio >= 4 then
+        local h = 4 / ratio
+        texture:SetTexCoord(0, 1, (1 - h) / 2, (1 + h) / 2)
+    else
+        local w = ratio / 4
+        texture:SetTexCoord((1 - w) / 2, (1 + w) / 2, 0, 1)
+    end
+end
+
+-- Voile sombre qui s'efface (lisibilité du texte sur l'illustration).
+local function shade(parent, orientation, from, to, layer)
+    local texture = parent:CreateTexture(nil, "BACKGROUND", nil, layer or 2)
+    texture:SetTexture("Interface\\Buttons\\WHITE8X8")
+    texture:SetAllPoints()
+    Style.Gradient(texture, orientation, { 0, 0, 0 }, from, to)
+    return texture
+end
+
+local CHECK = "Interface\\RaidFrame\\ReadyCheck-Ready"
+local DIM, BRIGHT = 0.78, 1
+local EDGE_IDLE = { 0.35, 0.3, 0.18 }
+
+-- Carte d'un guide : illustration de la zone, titre, niveaux, état et avancement.
 local function guideCard(self, parent)
     local card = CreateFrame("Button", nil, parent)
     card:SetHeight(CARD_HEIGHT)
-    card.bg = Style.Fill(card, C.card)
-    card.bg:SetPoint("BOTTOMRIGHT", 0, 3)
-    card.edge = card:CreateTexture(nil, "ARTWORK")
-    card.edge:SetTexture("Interface\\Buttons\\WHITE8X8")
-    card.edge:SetPoint("TOPLEFT")
-    card.edge:SetPoint("BOTTOMLEFT", 0, 3)
-    card.edge:SetWidth(3)
-    card.range = Style.Text(card, "GameFontNormalSmall", C.gold)
-    card.range:SetPoint("TOPLEFT", 10, -6)
-    card.title = Style.Text(card, "GameFontHighlight", C.text)
-    card.title:SetPoint("LEFT", card.range, "RIGHT", 6, 0)
-    card.title:SetPoint("RIGHT", -70, 0)
+    local inner = CreateFrame("Frame", nil, card)
+    inner:SetPoint("TOPLEFT")
+    inner:SetPoint("BOTTOMRIGHT", 0, 4)
+    card.inner = inner
+    card.bg = Style.Fill(inner, C.card)
+    card.art = inner:CreateTexture(nil, "BACKGROUND", nil, 1)
+    card.art:SetAllPoints()
+    shade(inner, "HORIZONTAL", 0.85, 0.1)      -- sombre à gauche (minimum = gauche)
+    shade(inner, "VERTICAL", 0.6, 0, 3)        -- et en bas (minimum = bas)
+    card.edges = Style.Border(inner, EDGE_IDLE)
+    card.range = Style.Text(inner, "GameFontNormalSmall", C.gold)
+    card.range:SetPoint("BOTTOMLEFT", 10, 9)
+    card.title = Style.Text(inner, "GameFontNormalLarge", C.gold)
+    Style.TitleFont(card.title, 17)
+    card.title:SetPoint("TOPLEFT", 10, -8)
+    card.title:SetPoint("RIGHT", -60, 0)
     if card.title.SetWordWrap then
         card.title:SetWordWrap(false)
     end
-    card.badge = Style.Text(card, "GameFontNormalSmall", C.blue, "RIGHT")
-    card.badge:SetPoint("TOPRIGHT", -8, -6)
-    card.sub = Style.Text(card, "GameFontHighlightSmall", C.muted)
-    card.sub:SetPoint("BOTTOMLEFT", 10, 9)
-    card.sub:SetPoint("RIGHT", -70, 0)
-    card.bar = Style.Progress(card, 60, 4)
-    card.bar:SetPoint("BOTTOMRIGHT", -8, 11)
-    card:SetScript("OnEnter", function(button)
-        if button.guide and button.guide.id ~= self.journalSelected then
-            setFill(button.bg, C.cardHover)
-        end
-    end)
-    card:SetScript("OnLeave", function(button)
+    card.check = inner:CreateTexture(nil, "OVERLAY")
+    card.check:SetTexture(CHECK)
+    card.check:SetSize(18, 18)
+    card.check:SetPoint("TOPRIGHT", -8, -7)
+    card.badge = Style.Text(inner, "GameFontNormalSmall", C.blue, "RIGHT")
+    card.badge:SetPoint("TOPRIGHT", -8, -10)
+    card.sub = Style.Text(inner, "GameFontHighlightSmall", C.text)
+    card.sub:SetPoint("LEFT", card.range, "RIGHT", 8, 0)
+    card.sub:SetPoint("RIGHT", -8, 0)
+    if card.sub.SetWordWrap then
+        card.sub:SetWordWrap(false)
+    end
+    card.bar = Style.Progress(inner, 10, 3)
+    card.bar:ClearAllPoints()
+    card.bar:SetPoint("BOTTOMLEFT", 1, 1)
+    card.bar:SetPoint("BOTTOMRIGHT", -1, 1)
+    -- Choisie ou survolée : illustration éclairée et liseré doré.
+    local function paint(button, hover)
         local selected = button.guide and button.guide.id == self.journalSelected
-        setFill(button.bg, selected and C.cardSelected or C.card)
-    end)
+        local light = (selected or hover) and BRIGHT or DIM
+        button.art:SetVertexColor(light, light, light)
+        local edge = selected and C.gold or (hover and C.goldDim or EDGE_IDLE)
+        for _, texture in ipairs(button.edges or {}) do
+            texture:SetVertexColor(edge[1], edge[2], edge[3], 1)
+        end
+    end
+    card.paint = paint
+    card:SetScript("OnEnter", function(button) paint(button, true) end)
+    card:SetScript("OnLeave", function(button) paint(button, false) end)
     card:SetScript("OnClick", function(button)
         if button.guide then
             self.journalSelected = button.guide.id
@@ -497,28 +560,27 @@ local function guideCard(self, parent)
     return card
 end
 
-local function fillCard(self, card, row)
+local function fillCard(card, row)
     card.guide = row.guide
-    local selected = row.guide.id == self.journalSelected
-    setFill(card.bg, selected and C.cardSelected or C.card)
-    setFill(card.edge, selected and C.gold or (row.pick and C.goldDim or C.card))
+    card.art:SetTexture((Guide.GuideArt(row.guide)))
+    cropArt(card.art, card:GetWidth() or LIST_WIDTH, CARD_HEIGHT - 4)
+    card.paint(card, false)
     card.range:SetText(row.range)
     card.title:SetText(row.title)
     card.sub:SetText(row.sub or "")
     local status = row.status
+    card.check:SetShown(status == "done")
     if status == "active" then
         card.badge:SetText(L["Following"])
         setColor(card.badge, C.blue)
         card.bar:SetValue(row.progress or 0)
         card.bar:Show()
     elseif status == "done" then
-        card.badge:SetText(L["Finished"])
-        setColor(card.badge, C.green)
-        card.bar:SetValue(1)
-        card.bar:Show()
+        card.badge:SetText("")
+        card.bar:Hide()
     elseif status > 0 then
         card.badge:SetText(("%d %%"):format(math.floor(status * 100 + 0.5)))
-        setColor(card.badge, C.muted)
+        setColor(card.badge, C.text)
         card.bar:SetValue(status)
         card.bar:Show()
     else
@@ -739,14 +801,25 @@ function Guide:CreateJournal()
     local detail = CreateFrame("Frame", nil, frame)
     detail:SetPoint("TOPLEFT", list, "TOPRIGHT", PADDING, 0)
     detail:SetPoint("BOTTOMRIGHT", -PADDING, PADDING)
-    Style.Fill(detail, C.panel)
-    Style.Border(detail, { 0.3, 0.26, 0.15, 1 })
+    Style.Fill(detail, { 0, 0, 0, 0.45 })
+    Style.Border(detail, { 0.45, 0.38, 0.2, 1 })
     frame.detail = detail
-    detail.title = Style.Text(detail, "GameFontNormalLarge", C.gold)
-    detail.title:SetPoint("TOPLEFT", 12, -12)
+    -- Bandeau illustré, titre par-dessus.
+    local banner = CreateFrame("Frame", nil, detail)
+    banner:SetPoint("TOPLEFT", 1, -1)
+    banner:SetPoint("TOPRIGHT", -1, -1)
+    banner:SetHeight(BANNER_HEIGHT)
+    detail.banner = banner
+    detail.art = banner:CreateTexture(nil, "BACKGROUND", nil, 1)
+    detail.art:SetAllPoints()
+    shade(banner, "VERTICAL", 0.85, 0)
+    Style.FadeLine(banner, C.gold):Place(banner, 0)
+    detail.title = Style.Text(banner, "GameFontNormalLarge", C.gold)
+    Style.TitleFont(detail.title, 21)
+    detail.title:SetPoint("BOTTOMLEFT", 12, 10)
     detail.title:SetPoint("RIGHT", -12, 0)
     detail.range = Style.Text(detail, "GameFontNormal", C.text)
-    detail.range:SetPoint("TOPLEFT", detail.title, "BOTTOMLEFT", 0, -6)
+    detail.range:SetPoint("TOPLEFT", banner, "BOTTOMLEFT", 11, -10)
     detail.zone = Style.Text(detail, "GameFontHighlightSmall", C.muted)
     detail.zone:SetPoint("TOPLEFT", detail.range, "BOTTOMLEFT", 0, -4)
     detail.bar = Style.Progress(detail, DETAIL_WIDTH - 24, 6)
@@ -908,7 +981,7 @@ function Guide:UpdateJournalRoutes()
         cards = cards + 1
         local card = frame.cards[cards] or guideCard(self, frame.list)
         frame.cards[cards] = card
-        fillCard(self, card, row)
+        fillCard(card, row)
         return card, CARD_HEIGHT
     end, function()
         hidePool(frame.cards, cards + 1)
@@ -921,7 +994,7 @@ end
 function Guide:UpdateJournalDetail()
     local detail = self.journal.detail
     local guide = self.journalSelected and ns.DB:GetGuide(self.journalSelected)
-    local parts = { detail.title, detail.range, detail.zone, detail.bar, detail.progress, detail.why,
+    local parts = { detail.banner, detail.title, detail.range, detail.zone, detail.bar, detail.progress, detail.why,
         detail.rewardLabel, detail.nextText, detail.follow, detail.restart, detail.abandon }
     for _, region in ipairs(parts) do
         region:SetShown(guide ~= nil)
@@ -934,6 +1007,8 @@ function Guide:UpdateJournalDetail()
         return
     end
     local info = self:GuideInfo(guide)
+    detail.art:SetTexture((Guide.GuideArt(guide)))
+    cropArt(detail.art, DETAIL_WIDTH - 2, BANNER_HEIGHT)
     detail.title:SetText(info.title)
     detail.range:SetText(L["Levels %s"]:format(info.range))
     detail.zone:SetText(info.zone or "")
