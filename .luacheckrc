@@ -92,6 +92,7 @@ files["addon/**"] = {
         "GetServerTime",
         "IsInRaid",
         "GetQuestLink",
+        "GameFontNormal",
         "SendChatMessage",
         "IsInGuild",
         "C_ChatInfo",

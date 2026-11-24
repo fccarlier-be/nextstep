@@ -5,8 +5,9 @@
 
 Une peinture par zone de guide (identifiant de carte du client) et par catégorie de
 guides sans zone. Les originaux (1536 x 384) sont gardés dans Tools/theme/cache/
-(non versionnés) ; l'addon reçoit addon/NextStep/Media/Zones/<clé>.blp, 512 x 128,
-BLP2 en palette de 256 couleurs (environ 65 Ko chacune).
+(non versionnés) ; l'addon reçoit addon/NextStep/Media/Zones/<clé>.tga, 512 x 128,
+TGA 24 bits non compressé (192 Ko chacune). Le BLP en palette écrit par Pillow
+(v0.4.0) n'est pas lu par le client Forever : cartes vertes en jeu.
 
 Demande ComfyUI lancé en local (Tools/theme/comfy.py).
 """
@@ -106,15 +107,14 @@ def build(key):
         seed = sum(ord(c) for c in key) * 7919 + SEED_SHIFT.get(key, 0)
         generate(STYLE.format(SCENES[key]), width=1536, height=384, seed=seed).save(source)
     image = Image.open(source).convert("RGB").resize((512, 128), Image.LANCZOS)
-    palette = image.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG)
     os.makedirs(OUT, exist_ok=True)
-    palette.save(os.path.join(OUT, key + ".blp"))
+    image.save(os.path.join(OUT, key + ".tga"), format="TGA", compression=None)
     print("écrit", key)
 
 
 if __name__ == "__main__":
     keys = sys.argv[1:] or list(SCENES)
     for key in keys:
-        target = os.path.join(OUT, key + ".blp")
+        target = os.path.join(OUT, key + ".tga")
         if sys.argv[1:] or not os.path.exists(target):
             build(key)

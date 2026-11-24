@@ -193,7 +193,7 @@ describe("Journal du guide", function()
         local game = wow.boot({ faction = "Alliance" })
         local Guide = game.ns.Modules:Get("Guide")
         for key in pairs(Guide.ART_KEYS) do
-            local file = io.open("addon/NextStep/Media/Zones/" .. key .. ".blp", "rb")
+            local file = io.open("addon/NextStep/Media/Zones/" .. key .. ".tga", "rb")
             expect(file, "illustration manquante : " .. key)
             file:close()
         end

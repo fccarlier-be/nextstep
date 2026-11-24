@@ -419,6 +419,11 @@ local function layout(area, rows, offset, build, finish)
     local index = offset + 1
     while rows[index] and y < height do
         local frame, h = build(rows[index], index - offset)
+        -- Ligne qui dépasserait du bas : cachée, la molette la fera venir.
+        if y + h > height and y > 0 then
+            frame:Hide()
+            break
+        end
         frame:ClearAllPoints()
         frame:SetPoint("TOPLEFT", area, "TOPLEFT", 0, -y)
         frame:SetPoint("RIGHT", area, "RIGHT", 0, 0)
@@ -455,7 +460,7 @@ local function sectionHeader(parent)
 end
 
 -- Illustrations des cartes (Tools/theme/illustrations.py) : une par zone de guide,
--- sinon une par catégorie. Media/Zones/<clé>.blp, 512 x 128.
+-- sinon une par catégorie. Media/Zones/<clé>.tga, 512 x 128.
 local ART_KEYS = {}
 for key in ("947 1411 1412 1413 1414 1415 1416 1417 1418 1419 1420 1421 1422 1423 1424 1425 1426 1427 "
     .. "1428 1429 1430 1431 1432 1433 1434 1435 1436 1437 1438 1439 1440 1441 1442 1443 1444 1445 1446 "
@@ -472,6 +477,14 @@ function Guide.GuideArt(guide)
         key = ART_KEYS[guide.category or ""] and guide.category or "Miscellaneous"
     end
     return "Interface\\AddOns\\NextStep\\Media\\Zones\\" .. key, key
+end
+
+-- Pose l'illustration d'un guide ; si le client ne trouve pas le fichier (SetTexture
+-- renvoie false, par exemple après un simple /reload qui ne voit pas les nouveaux
+-- fichiers), l'image est cachée : le fond sombre de la carte reste, pas de carré vert.
+local function setArt(texture, guide)
+    local loaded = texture:SetTexture((Guide.GuideArt(guide)))
+    texture:SetShown(loaded ~= false)
 end
 
 -- Image 4:1 recadrée pour une surface de width x height (centrée).
@@ -516,7 +529,7 @@ local function guideCard(self, parent)
     card.range = Style.Text(inner, "GameFontNormalSmall", C.gold)
     card.range:SetPoint("BOTTOMLEFT", 10, 9)
     card.title = Style.Text(inner, "GameFontNormalLarge", C.gold)
-    Style.TitleFont(card.title, 17)
+    Style.TitleFont(card.title, 14)
     card.title:SetPoint("TOPLEFT", 10, -8)
     card.title:SetPoint("RIGHT", -60, 0)
     if card.title.SetWordWrap then
@@ -562,7 +575,7 @@ end
 
 local function fillCard(card, row)
     card.guide = row.guide
-    card.art:SetTexture((Guide.GuideArt(row.guide)))
+    setArt(card.art, row.guide)
     cropArt(card.art, card:GetWidth() or LIST_WIDTH, CARD_HEIGHT - 4)
     card.paint(card, false)
     card.range:SetText(row.range)
@@ -815,7 +828,7 @@ function Guide:CreateJournal()
     shade(banner, "VERTICAL", 0.85, 0)
     Style.FadeLine(banner, C.gold):Place(banner, 0)
     detail.title = Style.Text(banner, "GameFontNormalLarge", C.gold)
-    Style.TitleFont(detail.title, 21)
+    Style.TitleFont(detail.title, 17)
     detail.title:SetPoint("BOTTOMLEFT", 12, 10)
     detail.title:SetPoint("RIGHT", -12, 0)
     detail.range = Style.Text(detail, "GameFontNormal", C.text)
@@ -1007,7 +1020,7 @@ function Guide:UpdateJournalDetail()
         return
     end
     local info = self:GuideInfo(guide)
-    detail.art:SetTexture((Guide.GuideArt(guide)))
+    setArt(detail.art, guide)
     cropArt(detail.art, DETAIL_WIDTH - 2, BANNER_HEIGHT)
     detail.title:SetText(info.title)
     detail.range:SetText(L["Levels %s"]:format(info.range))

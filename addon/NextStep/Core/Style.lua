@@ -122,12 +122,17 @@ end
 local THEME = "Interface\\AddOns\\NextStep\\Media\\Theme\\"
 Style.THEME = THEME
 local EDGE_TILE = 64        -- largeur d'un motif de Edge.tga
-local TITLE_FONT = "Fonts\\MORPHEUS.TTF"
+local TITLE_FONT = "Fonts\\FRIZQT__.TTF"
 
--- Police des titres (celle des titres de quête du jeu) ; garde la police du modèle
--- si le client ne la trouve pas.
+-- Police des titres : la police dorée du jeu (celle de GameFontNormal, donc la bonne
+-- pour la langue du client), en plus grand, avec une ombre. Morpheus, essayée en
+-- v0.4.0, rendait mal (petites capitales décoratives, titres trop larges).
 function Style.TitleFont(fontString, size)
-    local ok = fontString.SetFont and pcall(fontString.SetFont, fontString, TITLE_FONT, size or 18, "")
+    local path = TITLE_FONT
+    if GameFontNormal and GameFontNormal.GetFont then
+        path = GameFontNormal:GetFont() or path
+    end
+    local ok = fontString.SetFont and pcall(fontString.SetFont, fontString, path, size or 16, "")
     if fontString.SetShadowOffset then
         fontString:SetShadowOffset(1, -1)
         fontString:SetShadowColor(0, 0, 0, 1)
@@ -293,7 +298,7 @@ function Style.Window(name, width, height, title)
     logo:SetSize(26, 26)
     logo:SetPoint("LEFT", 12, -1)
     local label = Style.Text(header, "GameFontNormalLarge", Style.COLORS.gold)
-    Style.TitleFont(label, 20)
+    Style.TitleFont(label, 17)
     label:SetPoint("LEFT", logo, "RIGHT", 8, 0)
     label:SetText(title)
     frame.title = label
