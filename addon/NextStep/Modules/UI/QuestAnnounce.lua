@@ -9,7 +9,9 @@
 -- (le premier relevé du journal sert de référence), rien pour une quête déjà prête au
 -- moment où on l'accepte. Hors groupe, rien n'est envoyé. Activé par défaut.
 --
--- [À vérifier] sur Forever : GetQuestLink(questID) ; « {rt1} » affiché en étoile.
+-- Le texte des objectifs est nettoyé de ses codes « | » (le serveur les refuse : erreur
+-- « Invalid escape code » en v0.3.3–v0.4.4) ; un lien de quête mal formé est remplacé par
+-- le titre entre guillemets, et l'envoi est protégé par pcall.
 
 local _, ns = ...
 local L = ns.L
@@ -55,12 +57,43 @@ local function groupChannel()
     return (IsInRaid and IsInRaid()) and "RAID" or "PARTY"
 end
 
+-- Texte envoyé tel quel : le serveur refuse tout code « | » hors d'un lien bien formé
+-- (« Invalid escape code in chat message ») et change les crochets en parenthèses.
+-- On garde le texte visible des codes (couleur, icône, accord singulier/pluriel).
+local function plain(text)
+    text = tostring(text or "")
+    text = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+    text = text:gsub("|T.-|t", ""):gsub("|A.-|a", "")
+    text = text:gsub("|H.-|h(.-)|h", "%1")
+    text = text:gsub("|4[^:;]*:([^;]*);", "%1")
+    text = text:gsub("|n", " "):gsub("|", "")
+    text = text:gsub("[%[%]]", "")
+    return (text:gsub("^%s+", ""):gsub("%s+$", ""))
+end
+QuestAnnounce.Plain = plain
+
+-- Lien de quête du client s'il a la forme attendue, sinon le titre entre guillemets.
+local LINK = "^|c%x%x%x%x%x%x%x%x|Hquest:[%-%d:]+|h%[[^|%[%]]+%]|h|r$"
 local function questLink(questID, title)
     local link = GetQuestLink and GetQuestLink(questID)
-    if type(link) == "string" and link ~= "" then
+    if type(link) == "string" and link:find(LINK) then
         return link
     end
-    return ("[%s]"):format(title or ("#" .. questID))
+    return ("\"%s\""):format(plain(title or ("#" .. questID)))
+end
+
+local MAX_BYTES = 255
+
+-- Envoi protégé : une ligne refusée par le client ne doit jamais faire d'erreur Lua.
+local function sendLine(text, channel)
+    if #text > MAX_BYTES then
+        return false
+    end
+    if C_ChatInfo and C_ChatInfo.InChatMessagingLockdown and C_ChatInfo.InChatMessagingLockdown() then
+        return false
+    end
+    local send = (C_ChatInfo and C_ChatInfo.SendChatMessage) or SendChatMessage
+    return send and pcall(send, text, channel) or false
 end
 
 -- Compare le journal au relevé précédent et annonce les quêtes devenues prêtes.
@@ -76,7 +109,7 @@ function QuestAnnounce:Scan()
     local channel = groupChannel()
     local function send(text)
         if channel then
-            SendChatMessage(("%s %s"):format(STAR, text), channel)
+            sendLine(("%s %s"):format(STAR, text), channel)
         end
     end
     for questID, entry in pairs(log) do
@@ -89,8 +122,9 @@ function QuestAnnounce:Scan()
             elseif not entry.complete and self.db.objectives ~= false then
                 for index, objective in ipairs(entry.objectives) do
                     local old = before.objectives[index]
-                    if objective.finished and old and not old.finished and objective.text then
-                        send(L["NextStep: %s - %s"]:format(link, objective.text))
+                    local text = objective.text and plain(objective.text)
+                    if objective.finished and old and not old.finished and text and text ~= "" then
+                        send(L["NextStep: %s - %s"]:format(link, text))
                         announced[#announced + 1] = questID .. ":" .. index
                     end
                 end

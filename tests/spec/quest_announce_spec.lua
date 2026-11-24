@@ -65,6 +65,38 @@ describe("Annonce au groupe", function()
         cleanup()
     end)
 
+    it("n'envoie aucun code « | » hors d'un lien de quête bien formé", function()
+        local game, sent = boot(true)
+        local first = { finished = false, text = "|cffffffff[Guerrier]|r tué|4:s; : 7/8" }
+        game:acceptQuest(783, { first, { finished = false, text = "x" } })
+        game:fire("QUEST_LOG_UPDATE")
+        first.finished, first.text = true, "|cffffffff[Guerrier]|r tué|4:s; : 8/8|n"
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#sent, 1)
+        expect(sent[1].text:find("|h|r - Guerrier tués : 8/8", 1, true), sent[1].text)
+        local rest = sent[1].text:gsub("|c%x+|Hquest:[%d:]+|h%[[^%]]+%]|h|r", "")
+        expect(not rest:find("|", 1, true), rest)
+        -- Lien du client mal formé : le titre entre guillemets, sans crochets.
+        _G.GetQuestLink = function() return "|Hquest:783|h[Quest 783]" end
+        game:completeQuest(783)
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#sent, 2)
+        expect(not sent[2].text:find("[|%[%]]"), sent[2].text)
+        expect_eq(#game.errors, 0)
+        cleanup()
+    end)
+
+    it("ne fait jamais d'erreur Lua quand le client refuse la ligne", function()
+        local game = boot(true)
+        _G.SendChatMessage = function() error("SendChatMessage(): Invalid escape code in chat message") end
+        game:acceptQuest(783, { { finished = false } })
+        game:fire("QUEST_LOG_UPDATE")
+        game:completeQuest(783)
+        game:fire("QUEST_LOG_UPDATE")
+        expect_eq(#game.errors, 0)
+        cleanup()
+    end)
+
     it("se tait hors groupe, au /reload et pour une quête prise déjà prête", function()
         local game, sent = boot(false)
         game:acceptQuest(783, { { finished = false } })
