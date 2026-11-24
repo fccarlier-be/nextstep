@@ -126,7 +126,7 @@ function Guide:CreateWindow()
     frame:SetMovable(true)
     frame:EnableMouse(true)
     -- Style sombre et doré, comme le journal.
-    frame.bg = Style.Frame(frame, nil, 12)
+    frame.bg = Style.Frame(frame, nil, 7)
 
     -- Barre de titre : déplacement, guide suivi, journal, options, réduction.
     local header = CreateFrame("Frame", nil, frame)
@@ -363,6 +363,10 @@ local function addLine(view, text, color, options)
     line.text:SetWidth(width - 2 * pad - (carded and 2 or 0))
     line.text:ClearAllPoints()
     line.text:SetPoint("TOPLEFT", pad + (carded and 2 or 0), -pad)
+    -- Texte replié (note) : au plus maxLines lignes, la fin en « ... ».
+    if line.text.SetMaxLines then
+        line.text:SetMaxLines(options.maxLines or 0)
+    end
     line.text:SetText(text)
     color = color or COLORS.text
     line.text:SetTextColor(color[1], color[2], color[3])
@@ -577,7 +581,110 @@ function Guide:OpenGoalMenu(owner, i, j)
     return entries
 end
 
--- Quêtes ignorées : une ligne, et un clic pour les reprendre.
+---------------------------------------------------------------------------
+-- Rangée d'icônes du bas : suite, détours, sorts, métier, récolte, quêtes ignorées.
+-- Chaque entrée : { icon, label (court, à droite de l'icône), color, text (phrase
+-- entière, en infobulle et pour les tests), tooltip, onClick, menu }.
+---------------------------------------------------------------------------
+
+local STRIP_ICON = 16
+local STRIP_GAP = 10
+local NOTE_LINES = 2
+
+local function addStripEntry(view, entry)
+    view.strip[#view.strip + 1] = entry
+    view.texts[#view.texts + 1] = entry.text
+end
+
+local stripPools = setmetatable({}, { __mode = "k" })   -- [fenêtre] = boutons
+
+local function acquireStripButton(frame, index)
+    stripPools[frame] = stripPools[frame] or {}
+    local button = stripPools[frame][index]
+    if button then
+        return button
+    end
+    button = CreateFrame("Button", nil, frame.body)
+    button:SetHeight(STRIP_ICON + 4)
+    button.icon = button:CreateTexture(nil, "ARTWORK")
+    button.icon:SetSize(STRIP_ICON, STRIP_ICON)
+    button.icon:SetPoint("LEFT", 0, 0)
+    button.label = Style.Text(button, "GameFontHighlightSmall", COLORS.muted)
+    button.label:SetPoint("LEFT", button.icon, "RIGHT", 3, 0)
+    button.glow = button:CreateTexture(nil, "BACKGROUND")
+    button.glow:SetTexture(Style.THEME .. "Glow")
+    button.glow:SetPoint("TOPLEFT", button.icon, "TOPLEFT", -6, 6)
+    button.glow:SetPoint("BOTTOMRIGHT", button.icon, "BOTTOMRIGHT", 6, -6)
+    button.glow:SetAlpha(0)
+    button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+    button:SetScript("OnClick", function(self, mouse)
+        if mouse == "RightButton" and self.menu then
+            self.menu(self)
+        elseif self.onClick then
+            self.onClick(self)
+        end
+    end)
+    button:SetScript("OnEnter", function(self)
+        self.glow:SetAlpha(0.6)
+        if not GameTooltip then
+            return
+        end
+        GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+        local entry = self.entry
+        if type(entry.tooltip) == "function" then
+            GameTooltip:SetText(entry.text, 1, 0.82, 0, 1, true)
+            entry.tooltip(GameTooltip)
+        else
+            GameTooltip:SetText(entry.text, 1, 0.82, 0, 1, true)
+            if entry.tooltip then
+                GameTooltip:AddLine(entry.tooltip, 1, 1, 1, true)
+            end
+        end
+        GameTooltip:Show()
+    end)
+    button:SetScript("OnLeave", function(self)
+        self.glow:SetAlpha(0)
+        if GameTooltip then
+            GameTooltip:Hide()
+        end
+    end)
+    stripPools[frame][index] = button
+    return button
+end
+
+local function renderStrip(view)
+    local frame = view.frame
+    local x = 0
+    for index, entry in ipairs(view.strip) do
+        local button = acquireStripButton(frame, index)
+        button.entry, button.onClick, button.menu = entry, entry.onClick, entry.menu
+        button.icon:SetTexture(entry.icon)
+        if entry.iconCoords then
+            button.icon:SetTexCoord(unpack(entry.iconCoords))
+        else
+            button.icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+        end
+        button.label:SetText(entry.label or "")
+        local color = entry.color or COLORS.muted
+        button.label:SetTextColor(color[1], color[2], color[3])
+        local labelWidth = (entry.label and entry.label ~= "") and (3 + (button.label:GetStringWidth() or 0)) or 0
+        local width = STRIP_ICON + labelWidth
+        button:SetWidth(width)
+        button:ClearAllPoints()
+        button:SetPoint("TOPLEFT", frame.body, "TOPLEFT", x, -view.height)
+        button:Show()
+        x = x + width + STRIP_GAP
+    end
+    local pool = stripPools[frame] or {}
+    for index = #view.strip + 1, #pool do
+        pool[index]:Hide()
+    end
+    if #view.strip > 0 then
+        view.height = view.height + STRIP_ICON + 6
+    end
+end
+
+-- Quêtes ignorées : une icône, et un clic pour les reprendre.
 local function addIgnored(self, view)
     local list = {}
     for quest in pairs(self.char.ignoredQuests or {}) do
@@ -599,8 +706,11 @@ local function addIgnored(self, view)
             end
         end)
     end
-    addLine(view, L["%d ignored quests (click to take them back)"]:format(#list), COLORS.muted,
-        { onClick = function() open(view.frame) end, menu = open })
+    addStripEntry(view, {
+        icon = "Interface\\Icons\\INV_Misc_Bag_10_Red", label = tostring(#list),
+        text = L["%d ignored quests (click to take them back)"]:format(#list),
+        onClick = function(button) open(button) end, menu = open,
+    })
 end
 
 local SHOWN_GOALS = { done = true, todo = true, manual = true, blocked = true }
@@ -630,7 +740,23 @@ local function addCurrentStep(self, view, result)
     local note = Labels.StepNote(step, guide)
     if note then
         addGap(view)
-        addLine(view, ICONS.note .. " " .. note, { 0.85, 0.8, 0.65 }, { card = "note", accent = Style.COLORS.goldDim })
+        -- Repliée sur deux lignes : le texte entier au survol, déplié d'un clic.
+        local key = guide.id .. ":" .. i
+        local open = self.noteOpen == key
+        local text = ICONS.note .. " " .. note
+        addLine(view, text, { 0.85, 0.8, 0.65 }, {
+            card = "note", accent = Style.COLORS.goldDim,
+            maxLines = not open and NOTE_LINES or nil,
+            onClick = function()
+                self.noteOpen = (self.noteOpen ~= key) and key or nil
+                self:Refresh()
+            end,
+            tooltip = not open and function(tooltip)
+                tooltip:SetText(L["Guide note"], 1, 0.82, 0)
+                tooltip:AddLine(note, 1, 1, 1, true)
+                tooltip:AddLine(L["Click to unfold it."], 0.6, 0.6, 0.6)
+            end or L["Click to fold it."],
+        })
     end
 end
 
@@ -699,11 +825,15 @@ end
 local function addFooterLines(view, result)
     local nextIndex = nextStepIndex(result)
     if nextIndex then
-        addGap(view)
-        addLine(view, L["Next: %s"]:format(Labels.Step(result.guide.steps[nextIndex], result.guide)), COLORS.muted)
+        addStripEntry(view, {
+            icon = "Interface\\Icons\\INV_Misc_Map_01",
+            text = L["Next: %s"]:format(Labels.Step(result.guide.steps[nextIndex], result.guide)),
+        })
     end
     if #result.detours > 0 then
-        addLine(view, L["Detours: %d quests off the route"]:format(#result.detours), COLORS.muted, {
+        addStripEntry(view, {
+            icon = "Interface\\Icons\\INV_Misc_Note_01", label = tostring(#result.detours),
+            text = L["Detours: %d quests off the route"]:format(#result.detours),
             tooltip = L["Quests in your log that this guide does not use."],
         })
     end
@@ -735,14 +865,26 @@ local function addProfessionHint(self, view)
         return
     end
     for _, due in ipairs(professions:TrainingDue(self.state:Level())) do
-        addLine(view, L["%s %d/%d: learn %s at the trainer"]:format(due.profession.name, due.rank, due.max,
-            due.tier.name), COLORS.warning, { onClick = function() self:ToggleJournal("professions") end })
+        local spell = due.profession.spells and due.profession.spells[1]
+        local texture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
+        local icon = spell and texture and texture(spell)
+        addStripEntry(view, {
+            icon = icon or "Interface\\Icons\\INV_Misc_Note_05",
+            label = ("%d/%d"):format(due.rank, due.max), color = COLORS.warning,
+            text = L["%s %d/%d: learn %s at the trainer"]:format(due.profession.name, due.rank, due.max,
+                due.tier.name),
+            onClick = function() self:ToggleJournal("professions") end,
+        })
     end
     -- Ressources de la zone où se trouve le personnage, pour ses métiers de récolte.
     local map = C_Map and C_Map.GetBestMapForUnit and C_Map.GetBestMapForUnit("player")
     if map and professions.ZoneResources then
-        for _, text in ipairs(professions:ZoneResources(map)) do
-            addLine(view, L["Here, to gather: %s"]:format(text), COLORS.muted)
+        local list = professions:ZoneResources(map)
+        if #list > 0 then
+            addStripEntry(view, {
+                icon = "Interface\\Icons\\INV_Misc_Herb_07",
+                text = L["Here, to gather: %s"]:format(table.concat(list, ", ")),
+            })
         end
     end
 end
@@ -758,18 +900,25 @@ local function addSpellsReminder(self, view, result)
         local short = (self.state:Money() or 0) < total
         -- En ville, près d'un maître de classe : un détour d'un clic.
         local trainer, distance = self:NearbyClassTrainer()
+        local _, list = self:SpellsSummary()
+        local count = tostring(list and #list or 0)
         if trainer and not short then
             local name = ns.DB:GetName("npc", trainer.npc) or L["your class trainer"]
-            addLine(view, L["Class trainer nearby (%s, %d yd): %s"]:format(name, math.floor(distance + 0.5), summary),
-                COLORS.action, {
-                    tooltip = self:SpellsTooltip(),
-                    onClick = function()
-                        self:PointTo(trainer, name)
-                    end,
-                })
+            addStripEntry(view, {
+                icon = "Interface\\Icons\\INV_Misc_Book_11", label = count, color = COLORS.action,
+                text = L["Class trainer nearby (%s, %d yd): %s"]:format(name, math.floor(distance + 0.5), summary),
+                tooltip = self:SpellsTooltip(),
+                onClick = function()
+                    self:PointTo(trainer, name)
+                end,
+            })
             return
         end
-        addLine(view, summary, short and COLORS.warning or COLORS.muted, { tooltip = self:SpellsTooltip() })
+        addStripEntry(view, {
+            icon = "Interface\\Icons\\INV_Misc_Book_11", label = count,
+            color = short and COLORS.warning or COLORS.muted,
+            text = summary, tooltip = self:SpellsTooltip(),
+        })
     end
 end
 
@@ -884,7 +1033,7 @@ function Guide:UpdateWindow(result)
     -- Grisé tant qu'il n'y a rien à annuler.
     frame.back:SetEnabled(self:CanGoBack())
 
-    local view = { frame = frame, count = 0, height = 4, texts = {} }
+    local view = { frame = frame, count = 0, height = 4, texts = {}, strip = {} }
     if not result then
         addSuggestions(self, view)
     elseif not result.ready then
@@ -922,6 +1071,10 @@ function Guide:UpdateWindow(result)
         addClassGuides(self, view)
         addIgnored(self, view)
     end
+    if #view.strip > 0 then
+        addGap(view)
+    end
+    renderStrip(view)
     for index = view.count + 1, #frame.lines do
         frame.lines[index]:Hide()
     end
