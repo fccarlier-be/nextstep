@@ -15,6 +15,8 @@ Les rapports de ce dossier sont produits par l'addon de développement **NextSte
 
 `/nsdiag show` affiche le dernier rapport dans une fenêtre, pour le copier si besoin.
 
+**Médias** (`/nsdiag media`, à lancer après chaque changement d'images ou de polices) : vérifie quels formats d'image le client lit, si chaque image de NextStep est trouvée, les polices et les API d'affichage. Une fenêtre montre les échantillons de formats côte à côte : en faire une capture d'écran (une image illisible y apparaît verte ou vide, ce que les API ne disent pas toujours), puis `/reload`. Les échantillons sont produits par `python Tools/diagnostic/samples.py` (même image en TGA, TGA RLE, BLP en palette de Pillow, BLP en palette avec mipmaps, BLP DXT1 avec et sans mipmaps, BLP BGRA ; plus un fichier absent pour savoir ce que `SetTexture` renvoie).
+
 ## Ce qui est vérifié
 
 | Section | Contenu |
@@ -31,6 +33,7 @@ Les rapports de ce dossier sont produits par l'addon de développement **NextSte
 | Journal des donjons | Présence de `Blizzard_EncounterJournal` et des fonctions `EJ_*`, premier donjon listé |
 | Maître de classe | À l'ouverture : filtres, nombre de services, nom, rang, catégorie, coût et niveau des 10 premiers, identifiant du sort |
 | Butins et récoltes | Aux 6 derniers butins : carte, position, instance, dernier sort lancé (récolte), objets et GUID de leur source |
+| Médias | Formats d'image lus (`SetTexture`, `GetTextureFileID`, `IsObjectLoaded` aussitôt puis 1,5 s plus tard), chaque image de NextStep et les illustrations du journal, polices (`FRIZQT__`, `MORPHEUS`, `ARIALN`, `SKURRI`, celle de `GameFontNormal`), méthodes de texture et de texte, `CreateColor`, `GetQuestLink`, `SendChatMessage`, `GetSpellTexture` |
 | Combat | Valeurs secrètes ou non (santé, ressource, nom, GUID), opérations permises (calcul, comparaison, `string.format`, `SetText`, barres, fonctions de formatage), nameplates |
 
 L'addon de diagnostic n'est jamais livré aux joueurs.
