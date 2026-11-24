@@ -693,3 +693,8 @@ L["the Forgotten Coast"] = "la Côte oubliée"
 L["Stormwind"] = "Hurlevent"
 L["Ironforge"] = "Forgefer"
 L["Boat and tram detection state"] = "État de la détection des bateaux et du tram"
+
+-- Modules/Guide/Window.lua : note repliée
+L["Guide note"] = "Note du guide"
+L["Click to unfold it."] = "Cliquez pour la déplier."
+L["Click to fold it."] = "Cliquez pour la replier."
