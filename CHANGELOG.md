@@ -6,6 +6,13 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.4.1] - 2026-11-24
+
+### Corrigé
+- Journal : les illustrations des cartes s'affichent (elles restaient vertes : le jeu ne lisait pas leur format, elles passent en TGA). Une image introuvable laisse un fond sombre au lieu d'un carré vert.
+- Titres dans la police dorée habituelle du jeu, en plus grand (la police décorative de la v0.4.0 rendait mal et le titre du journal passait sous les onglets).
+- La dernière carte de la liste ne déborde plus sous la fenêtre.
+
 ## [0.4.0] - 2026-11-24
 
 ### Modifié
@@ -212,7 +219,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.4.0...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/fccarlier-be/nextstep/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/fccarlier-be/nextstep/compare/v0.3.3...v0.4.0
 [0.3.3]: https://github.com/fccarlier-be/nextstep/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/fccarlier-be/nextstep/compare/v0.3.1...v0.3.2

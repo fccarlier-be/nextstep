@@ -154,7 +154,7 @@ function Guide:CreateWindow()
     logo:SetPoint("LEFT", 8, 0)
 
     local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    Style.TitleFont(title, 15)
+    Style.TitleFont(title, 13)
     title:SetPoint("LEFT", logo, "RIGHT", 6, 0)
     title:SetPoint("RIGHT", -106, 0)
     title:SetJustifyH("LEFT")
