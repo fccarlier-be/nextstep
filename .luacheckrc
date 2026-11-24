@@ -177,6 +177,8 @@ files["Tools/diagnostic/**"] = {
         "GetLootSlotType", "GetLootSourceInfo", "GetNumLootItems", "GetNumTrainerServices", "GetTime",
         "GetTrainerServiceCost", "GetTrainerServiceInfo", "GetTrainerServiceLevelReq", "GetTrainerServiceTypeFilter",
         "IsInInstance", "date", "LibStub", "SettingsPanel",
+        -- Médias (/nsdiag media).
+        "CreateColor", "GameFontNormal", "GetQuestLink",
     },
 }
 

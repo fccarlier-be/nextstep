@@ -42,6 +42,29 @@ describe("Addon de diagnostic", function()
         expect(game:chatText():find("/reload", 1, true), "explique comment enregistrer")
     end)
 
+    it("vérifie les formats d'image, les images de NextStep et les polices (/nsdiag media)", function()
+        local game = wow.boot({ locale = "frFR" })
+        loadDiagnostic(game)
+        local later
+        _G.C_Timer = { After = function(_, fn) later = fn end }
+        SlashCmdList.NEXTSTEPDIAG("media")
+        local report = NextStepDiagDB.reports.media
+        expect(report, "rapport médias enregistré")
+        local names = {}
+        for _, s in ipairs(report.sections) do
+            names[#names + 1] = s.name
+        end
+        local text = table.concat(names, " | ")
+        expect(text:find("échantillons de formats", 1, true), text)
+        expect(text:find("Images de NextStep", 1, true), text)
+        expect(text:find("Polices", 1, true), text)
+        expect(later, "seconde vérification programmée")
+        later()
+        expect(#NextStepDiagDB.reports.media.sections == #names + 1, "état après chargement ajouté")
+        expect(game:chatText():find("capture", 1, true), "demande la capture")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("refuse de tourner en combat et arme la capture", function()
         local game = wow.boot()
         loadDiagnostic(game)

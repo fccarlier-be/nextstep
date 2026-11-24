@@ -5,6 +5,8 @@
 --   /nsdiag          lance toutes les vérifications hors combat et résume dans le chat
 --   /nsdiag combat   arme la capture : attaquer ensuite un monstre (secret values)
 --   /nsdiag show     affiche le dernier rapport dans une fenêtre, pour le copier
+--   /nsdiag media    formats d'image lus par le client, images de NextStep, polices,
+--                    API d'affichage ; fenêtre des échantillons à capturer
 --
 -- Captures automatiques : la liste d'un maître à son ouverture, et les derniers
 -- butins (monstres, boss, récoltes) avec leur source et le dernier sort lancé.
@@ -845,6 +847,191 @@ local function show()
 end
 
 ---------------------------------------------------------------------------
+-- Médias : formats d'image, images de NextStep, polices, API d'affichage
+-- (/nsdiag media). Affiche aussi les échantillons dans une fenêtre, pour une
+-- capture d'écran si les API ne suffisent pas à dire qu'une image est illisible.
+---------------------------------------------------------------------------
+
+local SAMPLE_DIR = "Interface\\AddOns\\NextStep_Diagnostic\\Media\\"
+-- Références : tga_plain est lu (v0.4.1), blp_pillow ne l'est pas (v0.4.0),
+-- absent.tga n'existe pas.
+local SAMPLES = { "tga_plain.tga", "tga_rle.tga", "blp_pillow.blp", "blp_pal_mips.blp",
+    "blp_dxt1_mips.blp", "blp_dxt1.blp", "blp_argb_mips.blp", "absent.tga" }
+local NS_MEDIA = "Interface\\AddOns\\NextStep\\Media\\"
+local NS_FILES = { "Arrow", "Icon", "IconSmall", "Pin", "RadarMask", "RadarRing", "Theme\\Background",
+    "Theme\\Edge", "Theme\\Corner", "Theme\\Close", "Theme\\Glow", "Theme\\Ring" }
+local FONTS = { "Fonts\\FRIZQT__.TTF", "Fonts\\MORPHEUS.TTF", "Fonts\\ARIALN.TTF", "Fonts\\SKURRI.TTF" }
+
+local mediaFrame
+
+local function mediaWindow()
+    if mediaFrame then
+        return mediaFrame
+    end
+    local frame = CreateFrame("Frame", "NextStepDiagnosticMedia", UIParent, "BackdropTemplate")
+    frame:SetSize(560, 40 + math.ceil(#SAMPLES / 2) * 86)
+    frame:SetPoint("CENTER")
+    frame:SetFrameStrata("DIALOG")
+    if frame.SetBackdrop then
+        frame:SetBackdrop({ bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", edgeSize = 16,
+            insets = { left = 4, right = 4, top = 4, bottom = 4 } })
+        frame:SetBackdropColor(0, 0, 0, 0.9)
+    end
+    frame:EnableMouse(true)
+    frame:SetMovable(true)
+    frame:RegisterForDrag("LeftButton")
+    frame:SetScript("OnDragStart", frame.StartMoving)
+    frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+    local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    title:SetPoint("TOP", 0, -10)
+    title:SetText("NextStep Diagnostic : formats d'image (capture d'écran, puis /reload)")
+    frame.textures = {}
+    for index, name in ipairs(SAMPLES) do
+        local column, row = (index - 1) % 2, math.floor((index - 1) / 2)
+        local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        label:SetPoint("TOPLEFT", 14 + column * 272, -32 - row * 86)
+        label:SetText(name)
+        local texture = frame:CreateTexture(nil, "ARTWORK")
+        texture:SetSize(256, 64)
+        texture:SetPoint("TOPLEFT", label, "BOTTOMLEFT", 0, -3)
+        frame.textures[name] = texture
+    end
+    local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+    close:SetPoint("TOPRIGHT", 0, 0)
+    mediaFrame = frame
+    return frame
+end
+
+local function textureState(texture)
+    local parts = {}
+    local ok, path = pcall(texture.GetTexture, texture)
+    parts[#parts + 1] = "GetTexture=" .. describe(ok and path or nil)
+    if texture.GetTextureFileID then
+        local okID, id = pcall(texture.GetTextureFileID, texture)
+        parts[#parts + 1] = "FileID=" .. describe(okID and id or nil)
+    end
+    if texture.IsObjectLoaded then
+        local okLoaded, loaded = pcall(texture.IsObjectLoaded, texture)
+        parts[#parts + 1] = "IsObjectLoaded=" .. describe(okLoaded and loaded or nil)
+    end
+    return table.concat(parts, ", ")
+end
+
+-- SetTexture : ok si le client dit avoir trouvé l'image, missing s'il renvoie false.
+local function setTextureResult(texture, path)
+    local ok, result = pcall(texture.SetTexture, texture, path)
+    if not ok then
+        return "warn", "erreur : " .. describe(result)
+    end
+    if result == false then
+        return "missing", "SetTexture=false"
+    end
+    return result == true and "ok" or "info", "SetTexture=" .. describe(result)
+end
+
+local function checkMediaNow(frame)
+    section("Images : échantillons de formats")
+    for _, name in ipairs(SAMPLES) do
+        local status, note = setTextureResult(frame.textures[name], SAMPLE_DIR .. name)
+        add(name, status, nil, note .. ", " .. textureState(frame.textures[name]))
+    end
+
+    section("Images de NextStep")
+    local probeTexture = frame:CreateTexture(nil, "BACKGROUND")
+    probeTexture:Hide()
+    local files = {}
+    for _, file in ipairs(NS_FILES) do
+        files[#files + 1] = file
+    end
+    local NS = _G.NextStep
+    local guide = NS and NS.Modules and NS.Modules:Get("Guide")
+    local keys = {}
+    for key in pairs(guide and guide.ART_KEYS or {}) do
+        keys[#keys + 1] = key
+    end
+    table.sort(keys)
+    local missing = {}
+    for _, file in ipairs(files) do
+        local status, note = setTextureResult(probeTexture, NS_MEDIA .. file)
+        add(file, status, nil, note)
+    end
+    for _, key in ipairs(keys) do
+        local status = setTextureResult(probeTexture, NS_MEDIA .. "Zones\\" .. key)
+        if status ~= "ok" then
+            missing[#missing + 1] = key .. " (" .. status .. ")"
+        end
+    end
+    add("Illustrations du journal (" .. #keys .. ")", #missing == 0 and "ok" or "warn",
+        #missing == 0 and "toutes trouvées" or nil, #missing > 0 and table.concat(missing, ", ") or nil)
+
+    section("Polices")
+    local fontString = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    fontString:Hide()
+    local normal = GameFontNormal and GameFontNormal.GetFont and GameFontNormal:GetFont()
+    info("Police de GameFontNormal", normal)
+    for _, font in ipairs(FONTS) do
+        local ok, result = pcall(fontString.SetFont, fontString, font, 14, "")
+        local good = ok and result ~= false
+        add(font, good and "ok" or "missing", ok and result or nil, not ok and describe(result) or nil)
+    end
+
+    section("API d'affichage")
+    local texture = frame:CreateTexture(nil, "BACKGROUND")
+    texture:Hide()
+    for _, method in ipairs({ "SetGradient", "SetGradientAlpha", "SetHorizTile", "SetVertTile", "SetTexCoord",
+        "GetTextureFileID", "IsObjectLoaded" }) do
+        add("Texture:" .. method, texture[method] and "ok" or "missing")
+    end
+    for _, method in ipairs({ "SetMaxLines", "SetWordWrap", "GetStringWidth", "SetShadowOffset" }) do
+        add("FontString:" .. method, fontString[method] and "ok" or "missing")
+    end
+    for _, path in ipairs({ "CreateColor", "GetQuestLink", "SendChatMessage", "GetSpellTexture",
+        "C_Spell.GetSpellTexture", "IsInGroup", "IsInRaid", "OpenWorldMap" }) do
+        exists(path)
+    end
+    probe("SetGradient avec CreateColor", function()
+        return texture:SetGradient("VERTICAL", CreateColor(0, 0, 0, 0), CreateColor(0, 0, 0, 1)) ~= false
+    end)
+    probe("GetQuestLink(783)", function()
+        return GetQuestLink(783)
+    end, "nil : quête ni dans le journal ni en cache")
+end
+
+-- Une seconde et demie plus tard : état des échantillons une fois chargés.
+local function checkMediaLater(frame)
+    section("Images : échantillons après chargement")
+    for _, name in ipairs(SAMPLES) do
+        add(name, "info", nil, textureState(frame.textures[name]))
+    end
+end
+
+local function runMedia()
+    if InCombatLockdown() then
+        print("à lancer hors combat.")
+        return
+    end
+    report = newReport("media")
+    local frame = mediaWindow()
+    frame:Show()
+    local ok, err = pcall(checkMediaNow, frame)
+    if not ok then
+        section("Erreur")
+        add("Vérification interrompue", "warn", nil, describe(err))
+    end
+    store("media")
+    local c = count(report)
+    print(("médias : %d OK, %d à revoir, %d absents, %d infos."):format(c.ok, c.warn, c.missing, c.info))
+    local mediaReport = report
+    C_Timer.After(1.5, function()
+        report = mediaReport
+        pcall(checkMediaLater, frame)
+        store("media")
+        print("Faites une capture d'écran de la fenêtre des formats, puis /reload pour enregistrer.")
+    end)
+end
+
+---------------------------------------------------------------------------
 -- Événements et commande
 ---------------------------------------------------------------------------
 
@@ -893,6 +1080,8 @@ SlashCmdList.NEXTSTEPDIAG = function(input)
         print("capture armée : ciblez un monstre et attaquez-le.")
     elseif command == "show" then
         show()
+    elseif command == "media" then
+        runMedia()
     else
         runAll()
     end
