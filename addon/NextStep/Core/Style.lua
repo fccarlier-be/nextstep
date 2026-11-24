@@ -221,9 +221,9 @@ function Style.Frame(frame, borderColor, thickness)
     Style.Sheen(frame, 0.04)
     local shadow = frame:CreateTexture(nil, "BACKGROUND", nil, -8)
     shadow:SetTexture(WHITE)
-    shadow:SetVertexColor(0, 0, 0, 0.5)
-    shadow:SetPoint("TOPLEFT", -3, 3)
-    shadow:SetPoint("BOTTOMRIGHT", 3, -3)
+    shadow:SetVertexColor(0, 0, 0, 0.4)
+    shadow:SetPoint("TOPLEFT", -2, 2)
+    shadow:SetPoint("BOTTOMRIGHT", 2, -2)
     local chrome = Style.Ornate(frame, thickness or 10)
     if borderColor and borderColor ~= Style.COLORS.gold and borderColor ~= Style.COLORS.goldDim then
         -- Teinte : les textures dorées prennent la couleur demandée.

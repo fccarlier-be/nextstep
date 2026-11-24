@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.4.4] - 2026-11-24
+
+### Modifié
+- Ombre autour des fenêtres encore affinée (2 pixels, un peu plus légère).
+
 ## [0.4.3] - 2026-11-24
 
 ### Modifié
@@ -229,7 +234,8 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 - **Feuille de route** : la v0.1 devient le plus petit guide jouable (état du joueur, fenêtre, flèche simple, `/ns`) ; ses compléments (carte et minimap, sorts à apprendre, célébration de niveau, niveau des zones, journal) forment la phase 4b, publiés un par un en v0.1.x dès qu'ils sont prêts.
 - Version des addons : les TOC portent `@project-version@`, remplacé par le tag à l'empaquetage ; `dev` s'affiche quand l'addon tourne depuis le dépôt.
 
-[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.4.3...HEAD
+[Non publié]: https://github.com/fccarlier-be/nextstep/compare/v0.4.4...HEAD
+[0.4.4]: https://github.com/fccarlier-be/nextstep/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/fccarlier-be/nextstep/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/fccarlier-be/nextstep/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/fccarlier-be/nextstep/compare/v0.4.0...v0.4.1
