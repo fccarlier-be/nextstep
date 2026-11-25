@@ -15,7 +15,9 @@ Polestar installés ensemble ne partagent rien :
   les deux crochets facultatifs vers le module de danger et les trajets de Polestar
   (Polestar.Nav.danger, Polestar.Nav.travel) lisent NextStep_NavHooks, absent : le
   calculateur fait alors ce qu'il fait sans eux.
-Le contenu des cartes n'est pas touché. Les fichiers sont traités en octets.
+Le contenu des cartes garde sa valeur, mais leurs chaînes aux octets de contrôle bruts
+sont réécrites avec des échappements (escape_controls : l'empaqueteur les abîmait).
+Les fichiers sont traités en octets.
 """
 
 import os
@@ -118,6 +120,96 @@ def strip_comments(data):
     return b"\n".join(out)
 
 
+LONG_OPEN = re.compile(rb"\[(=*)\[")
+
+
+def needs_escape(byte):
+    return byte < 32 or byte == 127
+
+
+def quote(value):
+    """Chaîne Lua entre guillemets de même valeur : octets de contrôle en \\ddd."""
+    out = bytearray(b'"')
+    for byte in value:
+        if byte == 0x5C:
+            out += b"\\\\"
+        elif byte == 0x22:
+            out += b'\\"'
+        elif needs_escape(byte):
+            out += b"\\%03d" % byte
+        else:
+            out.append(byte)
+    out += b'"'
+    return bytes(out)
+
+
+def escape_controls(data):
+    """Réécrit les chaînes qui portent des octets de contrôle bruts.
+
+    Le BigWigs packager retire une partie des octets \\x01 des fichiers .lua et passe les
+    fins de ligne en CRLF : une chaîne longue [[...]] aux octets bruts en sort abîmée
+    (calculateur sans carte, « offmesh » partout). Chaque chaîne longue qui contient un
+    octet de contrôle devient une chaîne entre guillemets de même valeur, aux octets de
+    contrôle échappés ; dans une chaîne entre guillemets, seuls les octets de contrôle
+    bruts sont échappés. Le reste du fichier (code, commentaires) est copié tel quel.
+    """
+    out = bytearray()
+    i, n = 0, len(data)
+    while i < n:
+        c = data[i]
+        if c == 0x2D and data[i + 1:i + 2] == b"-":   # commentaire
+            m = LONG_OPEN.match(data, i + 2)
+            if m:
+                close = b"]" + m.group(1) + b"]"
+                end = data.index(close, m.end()) + len(close)
+            else:
+                end = data.find(b"\n", i)
+                end = n if end < 0 else end
+            out += data[i:end]
+            i = end
+        elif c in (0x22, 0x27):                        # chaîne entre guillemets
+            j = i + 1
+            piece = bytearray([c])
+            while data[j] != c:
+                if data[j] == 0x5C:
+                    piece += data[j:j + 2]
+                    if needs_escape(data[j + 1]) and data[j + 1] not in (0x0A, 0x0D):
+                        raise SystemExit("octet de contrôle après une barre oblique inverse")
+                    j += 2
+                    continue
+                if needs_escape(data[j]):
+                    if data[j] in (0x0A, 0x0D):
+                        raise SystemExit("fin de ligne dans une chaîne entre guillemets")
+                    piece += b"\\%03d" % data[j]
+                else:
+                    piece.append(data[j])
+                j += 1
+            piece.append(c)
+            out += piece
+            i = j + 1
+        elif c == 0x5B and LONG_OPEN.match(data, i):    # chaîne longue
+            m = LONG_OPEN.match(data, i)
+            close = b"]" + m.group(1) + b"]"
+            end = data.index(close, m.end())
+            value = data[m.end():end]
+            # Comme Lua : la fin de ligne qui suit l'ouverture n'en fait pas partie,
+            # et toute fin de ligne vaut « \n ».
+            if value[:2] in (b"\r\n", b"\n\r"):
+                value = value[2:]
+            elif value[:1] in (b"\n", b"\r"):
+                value = value[1:]
+            if any(needs_escape(b) for b in value):
+                value = re.sub(rb"\r\n|\n\r|\r", b"\n", value)
+                out += quote(value)
+            else:
+                out += data[i:end + len(close)]
+            i = end + len(close)
+        else:
+            out.append(c)
+            i += 1
+    return bytes(out)
+
+
 def main():
     cache, lock_path = sys.argv[1], sys.argv[2]
     lock = read_lock(lock_path)
@@ -142,6 +234,10 @@ def main():
                 if name.endswith((".lua", ".xml")):
                     for old, new in RENAMES:
                         data = data.replace(old, new)
+                if name.endswith(".lua"):
+                    data = escape_controls(data)
+                    if any(needs_escape(b) and b not in (0x09, 0x0A, 0x0D) for b in data):
+                        raise SystemExit(f"{rel} : octet de contrôle restant")
                     left = LEFTOVER.search(strip_comments(data))
                     if left:
                         raise SystemExit(f"{rel} : nom de Polestar restant : {left.group(0)!r}")
