@@ -218,8 +218,12 @@ function Guide:UpdateArrowDirection()
         frame.arrow:Hide()
         frame.check:Show()
     else
-        -- Chemin à pied connu : la flèche vise le chemin, la distance est celle à parcourir.
-        local aimNorth, aimWest, remaining = self:RouteAim()
+        -- Par défaut la flèche vise l'objectif tout droit ; sur option, elle suit le
+        -- chemin à pied connu, et la distance est celle à parcourir.
+        local aimNorth, aimWest, remaining
+        if self.db.arrowFollowsRoute then
+            aimNorth, aimWest, remaining = self:RouteAim()
+        end
         local aimAngle = aimNorth and select(2, Navigation.DirectionToWorld(aimNorth, aimWest))
         if aimAngle then
             angle, distance = aimAngle, math.max(distance, remaining)

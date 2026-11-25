@@ -859,10 +859,17 @@ function Guide:BuildOptions(panel, anchor)
     local map = Options.AddCheck(panel, minimap, ns.L["Show the step's points on the world map"],
         function() return self.db.mapPins end,
         function(value) self:SetMapPinsShown(value) end)
-    local route = Options.AddCheck(panel, map, ns.L["Draw the walking route on the maps (the arrow follows it)"],
+    local route = Options.AddCheck(panel, map, ns.L["Draw the walking route on the maps"],
         function() return self.db.routeLines ~= false end,
         function(value) self:SetRouteLinesShown(value) end)
-    local celebrate = Options.AddCheck(panel, route, ns.L["Celebrate each level"],
+    local follow = Options.AddCheck(panel, route,
+        ns.L["The arrow follows the walking route (otherwise it points straight at the objective)"],
+        function() return self.db.arrowFollowsRoute end,
+        function(value)
+            self.db.arrowFollowsRoute = value
+            self:SetArrowTarget(self.result and self.result.target)
+        end)
+    local celebrate = Options.AddCheck(panel, follow, ns.L["Celebrate each level"],
         function() return self.db.celebration end,
         function(value) self.db.celebration = value end)
     local sound = Options.AddCheck(panel, celebrate, ns.L["Play a sound for the celebration"],

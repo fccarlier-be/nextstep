@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.5.2] - 2026-11-25
+
+### Modifié
+- La flèche vise de nouveau l'objectif tout droit, au lieu de suivre le tracé du chemin à pied (qui reste sur les cartes). Option « La flèche suit le chemin à pied » pour retrouver l'ancien comportement.
+
 ## [0.5.1] - 2026-11-25
 
 ### Ajouté
