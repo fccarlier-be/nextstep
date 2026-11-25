@@ -1,5 +1,5 @@
 -- Chemin à pied jusqu'à la cible de la flèche (docs/DESIGN.md, « Chemins à pied ») :
--- tracé sur la minimap et la carte du monde, et la flèche qui le suit.
+-- tracé sur la minimap et la carte du monde, et la flèche qui le suit sur option.
 --
 -- Le chemin vient du calculateur de Polestar (addon NextStep_Nav, chargé à la demande ;
 -- ses cartes de marche dans NextStep_Nav_EK et NextStep_Nav_Kalimdor, chargées par lui
@@ -17,8 +17,9 @@
 --   - rien n'est demandé en combat (le chargement des cartes y est interdit) ;
 --   - sans chemin (pas de cartes, hors du maillage, en instance), la flèche pointe
 --     tout droit comme avant et rien n'est tracé ;
---   - la flèche vise le point du chemin LOOKAHEAD yards devant le joueur, et sa
---     distance est la longueur du chemin restant.
+--   - avec Guide.db.arrowFollowsRoute (coupé par défaut), la flèche vise le point du
+--     chemin LOOKAHEAD yards devant le joueur, et sa distance est la longueur du chemin
+--     restant ; sinon elle vise l'objectif tout droit.
 -- Réglage : Guide.db.routeLines (activé par défaut).
 
 local _, ns = ...

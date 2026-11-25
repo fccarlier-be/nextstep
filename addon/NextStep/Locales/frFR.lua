@@ -207,8 +207,9 @@ L["Guide resumed."] = "Guide repris."
 L["Pause or resume the guide"] = "Mettre en pause ou reprendre le guide"
 L["Pause or resume the guide (hides the arrow, the route and the map pins)"] =
     "Mettre en pause ou reprendre le guide (masque la flèche, le tracé et les repères)"
-L["Draw the walking route on the maps (the arrow follows it)"] =
-    "Tracer le chemin à pied sur les cartes (la flèche le suit)"
+L["Draw the walking route on the maps"] = "Tracer le chemin à pied sur les cartes"
+L["The arrow follows the walking route (otherwise it points straight at the objective)"] =
+    "La flèche suit le chemin à pied (sinon elle vise l'objectif tout droit)"
 L["Hide the Blizzard quest tracker while following a guide"] =
     "Masquer le suivi de quêtes de Blizzard pendant un guide"
 L["Lock the guide window"] = "Verrouiller la fenêtre du guide"

@@ -141,7 +141,12 @@ describe("Chemin à pied", function()
 
         answer(job)
         expect(Guide:CurrentRoute(), "chemin suivi")
-        -- La flèche vise le chemin (vers le détour à l'est), pas la cible tout droit.
+        -- Par défaut, la flèche vise l'objectif tout droit : 5 % de la carte.
+        Guide:UpdateArrowDirection()
+        local straight = math.abs(target[2] - game.player.position[2])
+        expect_eq(Guide.arrowFrame.distance.text, ("%d yd"):format(math.floor(straight + 0.5)), "tout droit")
+        -- Sur option, elle vise le chemin (vers le détour à l'est).
+        Guide.db.arrowFollowsRoute = true
         local aimNorth, aimWest, remaining = Guide:RouteAim()
         expect(aimWest < game.player.position[2], "le point visé est à l'est du joueur")
         Guide:UpdateArrowDirection()
