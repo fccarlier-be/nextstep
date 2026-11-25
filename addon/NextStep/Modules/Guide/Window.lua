@@ -112,6 +112,9 @@ local function smallButton(parent, text, width, onClick)
 end
 
 -- Petit bouton d'icône de la barre de titre (texte doré, éclairé au survol).
+local PAUSE_ICON = "Interface\\TimeManager\\PauseButton"
+local RESUME_ICON = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
+
 local function headerButton(parent, label, onClick)
     local button = Style.Button(parent, label, 22, 22, onClick)
     button.text:SetFontObject("GameFontNormal")
@@ -156,7 +159,7 @@ function Guide:CreateWindow()
     local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     Style.TitleFont(title, 13)
     title:SetPoint("LEFT", logo, "RIGHT", 6, 0)
-    title:SetPoint("RIGHT", -106, 0)
+    title:SetPoint("RIGHT", -131, 0)
     title:SetJustifyH("LEFT")
     if title.SetWordWrap then
         title:SetWordWrap(false)
@@ -201,6 +204,29 @@ function Guide:CreateWindow()
         end
     end)
     frame.back = back
+
+    -- Pause : flèche, tracé et repères masqués ; le même bouton reprend.
+    local pause = Style.IconButton(header, PAUSE_ICON, 22, function()
+        self:TogglePause()
+    end)
+    pause:SetPoint("RIGHT", back, "LEFT", -3, 0)
+    pause:HookScript("OnEnter", function(owner)
+        if GameTooltip then
+            local paused = self.char and self.char.paused
+            GameTooltip:SetOwner(owner, "ANCHOR_TOP")
+            GameTooltip:SetText(paused and L["Resume the guide"] or L["Pause the guide"])
+            GameTooltip:AddLine(paused and L["Shows the arrow, the route and the map pins again."]
+                or L["Hides the arrow, the route and the map pins; the guide keeps following your progress."],
+                1, 1, 1, true)
+            GameTooltip:Show()
+        end
+    end)
+    pause:HookScript("OnLeave", function()
+        if GameTooltip then
+            GameTooltip:Hide()
+        end
+    end)
+    frame.pause = pause
 
     -- Corps : lignes réutilisées d'une mise à jour à l'autre.
     local body = CreateFrame("Frame", nil, frame)
@@ -1033,7 +1059,19 @@ function Guide:UpdateWindow(result)
     -- Grisé tant qu'il n'y a rien à annuler.
     frame.back:SetEnabled(self:CanGoBack())
 
+    local paused = self.char and self.char.paused
+    -- Icône du bouton de pause : pause, ou lecture quand le guide est en pause (texte
+    -- en secours si le client n'a pas l'image).
+    if frame.pause.icon:SetTexture(paused and RESUME_ICON or PAUSE_ICON) == false then
+        frame.pause.icon:Hide()
+        frame.pause:SetLabel(paused and ">" or "II")
+    end
+
     local view = { frame = frame, count = 0, height = 4, texts = {}, strip = {} }
+    if paused then
+        addLine(view, L["Guide paused: arrow, route and map pins hidden (click to resume)."], COLORS.warning,
+            { onClick = function() self:SetPaused(false) end })
+    end
     if not result then
         addSuggestions(self, view)
     elseif not result.ready then

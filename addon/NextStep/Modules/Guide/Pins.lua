@@ -443,7 +443,7 @@ end
 
 -- Nouveau résultat ou nouvelle cible : points recalculés, repères redessinés.
 function Guide:UpdatePins()
-    self.pinPoints = self.enabled and self:PinPoints(self.result) or {}
+    self.pinPoints = self.enabled and not self:Paused() and self:PinPoints(self.result) or {}
     if self.minimapPins then
         self.minimapPins:SetShown(self.enabled and self.db.minimapPins)
         self:UpdateMinimapPins()
