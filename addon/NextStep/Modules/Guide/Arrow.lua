@@ -277,5 +277,8 @@ function Guide:HideInterface()
     if self.arrowFrame then
         self.arrowFrame:Hide()
     end
+    if self.tripButton then
+        self.tripButton:Hide()
+    end
     self:HidePins()
 end

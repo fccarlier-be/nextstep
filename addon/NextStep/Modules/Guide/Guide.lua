@@ -28,6 +28,8 @@ local Guide = ns.Modules:New("Guide", {
         arrowFollowsRoute = false, -- la flèche suit le chemin au lieu de viser l'objectif
         taxiNames = {},         -- [point de vol] = nom dans la langue du client (Trip.lua)
         flightTimes = {},       -- ["départ-arrivée"] = secondes : durée apprise des vols
+        tripButton = true,      -- bouton des voyages au bord de la minimap (TripMenu.lua)
+        tripButtonAngle = 200,  -- sa position autour de la minimap, en degrés
         hideTracker = true,     -- masque le suivi de quêtes Blizzard quand un guide est suivi
         celebration = true,     -- bandeau à chaque niveau gagné (Celebration.lua)
         celebrationSound = true,

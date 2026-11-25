@@ -875,7 +875,13 @@ function Guide:BuildOptions(panel, anchor)
     local route = Options.AddCheck(panel, map, ns.L["Draw the walking route on the maps"],
         function() return self.db.routeLines ~= false end,
         function(value) self:SetRouteLinesShown(value) end)
-    local follow = Options.AddCheck(panel, route,
+    local tripButton = Options.AddCheck(panel, route, ns.L["Show the trip button on the minimap"],
+        function() return self.db.tripButton ~= false end,
+        function(value)
+            self.db.tripButton = value
+            self:UpdateTripButton()
+        end)
+    local follow = Options.AddCheck(panel, tripButton,
         ns.L["The arrow follows the walking route (otherwise it points straight at the objective)"],
         function() return self.db.arrowFollowsRoute end,
         function(value)
