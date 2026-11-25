@@ -8,6 +8,8 @@ exclude_files = {
     "Tools/bin/**", "Tools/import/cache/**", "Tools/trainer/cache/**", "Tools/worldmap/cache/**", "addon/NextStep/Libs/**",
     ".lua/**", ".luarocks/**",
     -- Données générées par Tools/import/import.lua et Tools/worldmap/generate.lua
+    -- et le calculateur de chemins importé de Polestar par Tools/import/nav.py
+    "addon/NextStep_Nav/**", "addon/NextStep_Nav_EK/**", "addon/NextStep_Nav_Kalimdor/**",
     "addon/NextStep/Data/Imported/**", "addon/NextStep/Locales/GuideNotes_frFR.lua", "addon/NextStep_Alliance/Data/**", "addon/NextStep_Horde/Data/**",
 }
 
@@ -185,4 +187,11 @@ files["Tools/diagnostic/**"] = {
 -- Tests : la simulation du jeu définit et remplace des globales à volonté.
 files["tests/**"] = {
     ignore = { "11." },
+}
+
+-- Banc d'essai du calculateur de chemins : simule l'API du jeu par des globales.
+files["Tools/import/navcheck.lua"] = {
+    globals = { "C_EncodingUtil", "Enum", "C_Timer", "debugprofilestop", "GetTime", "InCombatLockdown",
+        "CreateFrame", "C_AddOns" },
+    read_globals = { "NextStep_NavEngine" },
 }

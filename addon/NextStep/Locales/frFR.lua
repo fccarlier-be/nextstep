@@ -193,6 +193,8 @@ L["Free mode shows the open objectives around you, in any order, instead of one 
 L["Back to: %s"] = "Reprendre : %s"
 L["Show the step's points on the minimap"] = "Afficher les points de l'étape sur la minimap"
 L["Show the step's points on the world map"] = "Afficher les points de l'étape sur la carte du monde"
+L["Draw the walking route on the maps (the arrow follows it)"] =
+    "Tracer le chemin à pied sur les cartes (la flèche le suit)"
 L["Hide the Blizzard quest tracker while following a guide"] =
     "Masquer le suivi de quêtes de Blizzard pendant un guide"
 L["Lock the guide window"] = "Verrouiller la fenêtre du guide"

@@ -7,7 +7,9 @@
     2. import.lua converts it and writes the data files and last-import.md;
        gear.lua writes the stat weights (Data/Imported/Polestar/Gear.lua);
        dungeons.py writes the dungeons, their quests and loot (Dungeons.lua);
-       ammo.py writes the ammunition vendors (AmmoVendors.lua).
+       ammo.py writes the ammunition vendors (AmmoVendors.lua);
+       nav.py copies the walking router and its maps (addon/NextStep_Nav*), and
+       navcheck.lua asks it for a few known walks (needs zlib1.dll, from Git for Windows).
     3. Tools\check.ps1 runs luacheck and the out-of-game tests.
     To import a newer Polestar, edit polestar.lock first.
 #>
@@ -27,6 +29,14 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "dungeons import failed" }
     & python -I Tools/import/ammo.py Tools/import/cache/polestar Tools/import/polestar.lock
     if ($LASTEXITCODE -ne 0) { throw "ammo import failed" }
+    & python -I Tools/import/nav.py Tools/import/cache/polestar Tools/import/polestar.lock
+    if ($LASTEXITCODE -ne 0) { throw "nav import failed" }
+    if (Test-Path "C:\Program Files\Git\mingw64\bin\zlib1.dll") {
+        & $luajit Tools/import/navcheck.lua
+        if ($LASTEXITCODE -ne 0) { throw "nav check failed" }
+    } else {
+        Write-Warning "zlib1.dll not found: walking router not checked (Tools/import/navcheck.lua)."
+    }
 
     & (Join-Path $PSScriptRoot "..\check.ps1")
     if ($LASTEXITCODE -ne 0) { throw "checks failed" }

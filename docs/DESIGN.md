@@ -79,7 +79,10 @@ addon/                       -- les dossiers d'addon, seuls livrés aux joueurs
 │       ├── Items/
 │       └── UI/
 ├── NextStep_Alliance/       -- données Alliance, chargées à la demande
-└── NextStep_Horde/          -- données Horde, chargées à la demande
+├── NextStep_Horde/          -- données Horde, chargées à la demande
+├── NextStep_Nav/            -- calculateur de chemins à pied (Polestar), chargé à la demande
+├── NextStep_Nav_EK/         -- cartes de marche des Royaumes de l'Est, chargées par lui
+└── NextStep_Nav_Kalimdor/   -- cartes de marche de Kalimdor, chargées par lui
 Tools/                       -- scripts de développement et d'import (non livrés)
 tests/                       -- tests hors jeu et simulation de l'API du jeu
 docs/
@@ -407,6 +410,18 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 - Waypoint natif (`C_Map.SetUserWaypoint`) en option. Ne pas utiliser `C_SuperTrack.SetSuperTrackedUserWaypoint`.
 - **Zoom à la molette** sur la minimap et sur la carte du monde. **[À vérifier]** zoom natif de la carte sur Forever.
 - **Niveau des zones** affiché sur la carte du monde (tranche de niveaux, couleur selon le niveau du joueur), en appui du conseil de zone suivante. Réalisé (module `ZoneLevels`) : tranche à droite du nom de la zone survolée sur la carte d'un continent, et en haut de la carte d'une zone ouverte ; tranches des guides de leveling (propres à Forever), sinon `C_Map.GetMapLevels`, sinon celles du Classic. **[À vérifier]** sur Forever : l'étiquette des zones de la carte (`Label:SetLabel`).
+
+### Chemins à pied
+
+**Réalisé (v0.5.0)** : la flèche et un trait doré sur la minimap et la carte du monde suivent le vrai chemin à pied jusqu'à la destination de la flèche (routes, cols, portes des villes), au lieu de la ligne droite.
+
+- **Calculateur** : celui de Polestar (Polestar_Nav), parti de Shortest Path Forever de Cillian Berragan, avec les cartes de navigation de Leffe (GPL-3.0-or-later, voir `CREDITS.md`). `Tools/import/nav.py` le copie depuis la version de Polestar de `polestar.lock` dans trois addons chargés à la demande : `NextStep_Nav` (le calculateur, environ 2,5 Mo), `NextStep_Nav_EK` et `NextStep_Nav_Kalimdor` (les cartes, environ 37 et 49 Mo, chargées par le calculateur sur le continent du joueur). Seuls les noms globaux changent (`NextStepPathData`, `NextStep_NavEngine`...), pour que NextStep et Polestar installés ensemble ne partagent rien. Les deux crochets facultatifs vers les modules de Polestar (politique de danger, trajets connus) restent vides : le calculateur fonctionne sans, en mode non strict (les villes de l'autre faction coûtent vingt fois plus, sans être interdites). `Tools/import/navcheck.lua` vérifie hors du jeu quelques trajets connus après chaque import (zlib par FFI).
+- **Demandes** (`Modules/Guide/Route.lua`) : `NextStep_Nav` est chargé à la première demande, hors combat. Destination : celle de la flèche (`Guide:ArrowGoal` : lieu choisi, cible de l'étape, ou quai de départ vers l'autre continent). Un chemin est demandé quand la destination change, puis quand le joueur s'écarte de plus de 25 yards du chemin (au plus toutes les 3 s), et 10 s après un échec ; jamais en combat, ni hors du continent de la destination. Vérification 4 fois par seconde.
+- **Flèche** : avec un chemin, elle vise le point du chemin 15 yards devant le joueur, et la distance affichée est celle du chemin restant. Sans chemin (pas de carte, hors du maillage, instance), elle pointe tout droit comme avant.
+- **Tracé** : un trait doré de 3 pixels (4 sur la carte du monde) sur un contour sombre, du joueur à la destination, sous les repères. Minimap : lignes (`CreateLine`) sur le cadre des repères, coupées au bord rond ou carré, redessinées avec eux (20 fois par seconde). Carte du monde : sur le canevas, coupées au bord de la carte, points à moins de 3 pixels fusionnés, redessinées 2 fois par seconde carte ouverte. Suit les options des repères (minimap, carte du monde).
+- **Option** : « Tracer le chemin à pied sur les cartes (la flèche le suit) », activée par défaut (`Guide.db.routeLines`).
+- **Taille** : l'archive passe d'environ 14 à 85 Mo, à cause des cartes de marche (déjà compressées). Leurs octets de contrôle sont échappés par `nav.py` (`escape_controls`) : le BigWigs packager retire une partie des octets `` des fichiers `.lua`, ce qui cassait les chaînes brutes des cartes (plus aucun chemin trouvé). `navcheck.lua` se lance aussi sur l'archive extraite.
+- Pas encore : trajets en vol, en bateau ou en zeppelin tracés de bout en bout (Polestar les planifie avec son module de trajets) ; tracé des étapes suivantes.
 
 ### Journal
 

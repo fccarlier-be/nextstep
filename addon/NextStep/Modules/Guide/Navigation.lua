@@ -99,6 +99,19 @@ function Navigation.Direction(map, x, y, frame)
     return math.sqrt(dn * dn + dw * dw), angle
 end
 
+-- Distance et angle d'un point monde (nord, ouest) du continent du joueur, comme
+-- Navigation.Direction.
+function Navigation.DirectionToWorld(north, west)
+    local _, myNorth, myWest = Navigation.PlayerPosition()
+    local facing = GetPlayerFacing()
+    if not myNorth or not usable(facing) then
+        return nil
+    end
+    local dn, dw = north - myNorth, west - myWest
+    local angle = (Navigation.Bearing(dn, dw) - facing) % (2 * math.pi)
+    return math.sqrt(dn * dn + dw * dw), angle
+end
+
 -- Zones d'apparition des mobs (spotsPacked) : « x,y,z,densité,nombre;… ».
 local spotsCache = setmetatable({}, { __mode = "k" })
 
