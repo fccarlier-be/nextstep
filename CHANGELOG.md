@@ -10,7 +10,7 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ### Ajouté
 - **Chemins à pied** : un trait doré sur la minimap et la carte du monde montre le vrai chemin jusqu'à la cible (routes, cols, portes des villes), et la flèche le suit, avec la distance à parcourir. Calculateur et cartes de marche de Polestar, issus de Shortest Path Forever de Cillian Berragan. Option « Tracer le chemin à pied sur les cartes ».
-- Trois addons chargés à la demande : NextStep - Nav et ses cartes des Royaumes de l'Est et de Kalimdor. L'archive passe d'environ 14 à 80 Mo.
+- Trois addons chargés à la demande : NextStep - Nav et ses cartes des Royaumes de l'Est et de Kalimdor. L'archive passe d'environ 14 à 85 Mo.
 
 ## [0.4.5] - 2026-11-24
 
