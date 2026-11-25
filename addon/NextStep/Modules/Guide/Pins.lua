@@ -437,6 +437,7 @@ function Guide:CreatePins()
     self:CreateMinimapPins()
     self:CreateRoute()
     self:CreateFlightTimer()
+    self:CreateTripButton()
     if self:AttachWorldMap() then
         self:AttachMapClicks()
     else

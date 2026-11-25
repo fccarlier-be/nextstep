@@ -6,6 +6,11 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.6.1] - 2026-11-25
+
+### Ajouté
+- **Bouton des voyages** au bord de la minimap : la liste des destinations, Kalimdor et les Royaumes de l'Est à part, rangées par zone (villes, points de vol connus ou à découvrir, quais, centre de la zone). Clic droit pour annuler le voyage, glisser pour déplacer le bouton ; une option le masque.
+
 ## [0.6.0] - 2026-11-25
 
 ### Ajouté

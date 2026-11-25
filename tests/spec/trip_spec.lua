@@ -147,6 +147,66 @@ describe("Voyages", function()
         expect_eq(#game.errors, 0)
     end)
 
+    it("propose les destinations par continent, puis par zone, et lance le voyage choisi", function()
+        local game, Guide = boot({ [2] = true, [4] = true })
+        game.player.position = { SENTINEL_HILL[1] + 60, SENTINEL_HILL[2], 0 }
+        local function zoneOf(list, map)
+            for _, zone in ipairs(list) do
+                if zone.map == map then
+                    return zone
+                end
+            end
+        end
+        local east, kalimdor = Guide:TripDestinations(0), Guide:TripDestinations(1)
+        local westfall = zoneOf(east, 1436)
+        expect(westfall, "Marche de l'Ouest dans les Royaumes de l'Est")
+        expect(zoneOf(kalimdor, 1436) == nil, "pas dans Kalimdor")
+        expect(zoneOf(kalimdor, 1439), "Sombrivage dans Kalimdor")
+        local texts = {}
+        for _, place in ipairs(westfall.places) do
+            texts[#texts + 1] = place.text
+        end
+        local all = table.concat(texts, " | ")
+        expect(all:find("Flight point: Sentinel Hill", 1, true), all)
+        expect(not all:find("not discovered", 1, true), "Colline des Sentinelles connue : " .. all)
+        local redridge = zoneOf(east, 1433)
+        expect(redridge and redridge.places[#redridge.places].kind == "unknown"
+            or (redridge and redridge.places[2] and redridge.places[2].kind == "unknown"), "Lakeshire à découvrir")
+
+        -- Menu : continents, zones, lieux ; un clic lance le voyage.
+        local function node(label, onClick)
+            local entry = { label = label, onClick = onClick, children = {} }
+            function entry.CreateButton(self, text, click)
+                local child = node(text, click)
+                self.children[#self.children + 1] = child
+                return child
+            end
+            function entry.CreateTitle() end
+            return entry
+        end
+        local root = node("root")
+        Guide:FillTripMenu(root)
+        expect_eq(#root.children, 2, "deux listes : Kalimdor et les Royaumes de l'Est")
+        local eastMenu = root.children[2]
+        local stormwind
+        for _, zone in ipairs(eastMenu.children) do
+            if zone.label == "Map1453" then
+                stormwind = zone
+            end
+        end
+        expect(stormwind, "Hurlevent dans la liste")
+        -- (lieux en repère « era » : la carte du client n'est pas simulée)
+        local entry
+        for _, child in ipairs(stormwind.children) do
+            if child.label:find("Flight point", 1, true) then
+                entry = child
+            end
+        end
+        entry.onClick()
+        expect(Guide.trip, "voyage lancé depuis la liste")
+        expect_eq(#game.errors, 0)
+    end)
+
     it("affiche le temps restant d'un vol et retient sa vraie durée", function()
         local game, Guide, world = boot({ [2] = true, [4] = true })
         game.player.position = { SENTINEL_HILL[1] + 5, SENTINEL_HILL[2], 0 }
