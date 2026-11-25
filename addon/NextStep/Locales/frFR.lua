@@ -193,6 +193,20 @@ L["Free mode shows the open objectives around you, in any order, instead of one 
 L["Back to: %s"] = "Reprendre : %s"
 L["Show the step's points on the minimap"] = "Afficher les points de l'étape sur la minimap"
 L["Show the step's points on the world map"] = "Afficher les points de l'étape sur la carte du monde"
+L["Pause the guide"] = "Mettre le guide en pause"
+L["Resume the guide"] = "Reprendre le guide"
+L["Hides the arrow, the route and the map pins; the guide keeps following your progress."] =
+    "Masque la flèche, le tracé du chemin et les repères des cartes ; le guide suit toujours votre progression."
+L["Shows the arrow, the route and the map pins again."] =
+    "Réaffiche la flèche, le tracé du chemin et les repères des cartes."
+L["Guide paused: arrow, route and map pins hidden (click to resume)."] =
+    "Guide en pause : flèche, tracé et repères masqués (clic pour reprendre)."
+L["Guide paused: no more arrow, route or map pins. /ns pause to resume."] =
+    "Guide en pause : plus de flèche, de tracé ni de repères. /ns pause pour reprendre."
+L["Guide resumed."] = "Guide repris."
+L["Pause or resume the guide"] = "Mettre en pause ou reprendre le guide"
+L["Pause or resume the guide (hides the arrow, the route and the map pins)"] =
+    "Mettre en pause ou reprendre le guide (masque la flèche, le tracé et les repères)"
 L["Draw the walking route on the maps (the arrow follows it)"] =
     "Tracer le chemin à pied sur les cartes (la flèche le suit)"
 L["Hide the Blizzard quest tracker while following a guide"] =

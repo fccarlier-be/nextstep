@@ -658,6 +658,7 @@ BINDING_NAME_NEXTSTEP_GUIDE = ns.L["Show or hide the guide window"]
 BINDING_NAME_NEXTSTEP_ARROW = ns.L["Show or hide the arrow"]
 BINDING_NAME_NEXTSTEP_DONE = ns.L["Mark the current step as done"]
 BINDING_NAME_NEXTSTEP_JOURNAL = ns.L["Open the guide journal"]
+BINDING_NAME_NEXTSTEP_PAUSE = ns.L["Pause or resume the guide"]
 
 local SUBCOMMANDS = {}
 
@@ -823,6 +824,9 @@ function Guide:AddCommands()
         end
         self:SetArrowShown(not self.db.arrow)
     end, ns.L["Show or hide the arrow (or point it back to the guide)"])
+    ns.Slash:Add("pause", function()
+        self:TogglePause()
+    end, ns.L["Pause or resume the guide (hides the arrow, the route and the map pins)"])
     ns.Slash:Add("journal", function()
         self:ToggleJournal("routes")
     end, ns.L["Open the guide journal"])

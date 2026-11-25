@@ -6,6 +6,14 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.5.1] - 2026-11-25
+
+### Ajouté
+- **Pause du guide** : bouton pause dans la barre de titre du guide, `/ns pause`, entrée du menu du bouton NextStep et raccourci clavier. Plus de flèche, de tracé ni de repères sur les cartes tant que la pause dure ; le guide suit toujours ta progression. Un clic sur un donneur de quête montre quand même le chemin jusqu'à lui.
+
+### Corrigé
+- Les repères des cartes suivent aussitôt un lieu choisi (clic sur un donneur) et le retour au guide.
+
 ## [0.5.0] - 2026-11-25
 
 ### Ajouté

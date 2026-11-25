@@ -39,6 +39,7 @@ local Guide = ns.Modules:New("Guide", {
         completed = {},    -- [identifiant du guide] = true : guides terminés
         returnTo = nil,    -- guide de leveling à reprendre après un guide annexe (classe, collection...)
         ignoredQuests = {}, -- [quête] = true : ignorée par le joueur, dans tous les guides
+        paused = false,     -- guide en pause : flèche, tracé et repères masqués (Arrow.lua)
         notOffered = {},    -- [quête] = niveau : le PNJ ne la proposait pas (Live.lua, ReadOffers)
         trainedLevel = nil, -- niveau du personnage à sa dernière visite au maître de classe
         trainerList = nil,  -- { level, spells, total } : sorts disponibles lus chez le maître (Spells.lua)

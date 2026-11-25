@@ -136,6 +136,12 @@ function Menu:Fill(root)
             guide:ToggleJournal("routes")
         end
     end)
+    local guideModule = ns.Modules:Get("Guide")
+    if guideModule and guideModule.enabled and guideModule.char then
+        root:CreateButton(guideModule.char.paused and L["Resume the guide"] or L["Pause the guide"], function()
+            guideModule:TogglePause()
+        end)
+    end
     root:CreateButton(L["Class spells"], function()
         local guide = ns.Modules:Get("Guide")
         if guide then

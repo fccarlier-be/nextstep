@@ -239,7 +239,7 @@ end
 
 -- Vérification périodique : destination, écart au chemin, nouvelle demande.
 function Guide:UpdateRoute()
-    if not (self.enabled and self.db.routeLines ~= false) then
+    if not (self.enabled and self.db.routeLines ~= false) or self:Paused() then
         if self.route then
             self:ClearRoute()
         end

@@ -388,6 +388,7 @@ Redimensionnement, échelle, transparence et estompage en combat viendront avec 
 ### Flèche
 
 - En haut au centre ; **désactivable**.
+- **Pause du guide** (v0.5.1, `Guide:SetPaused`, `char.paused` par personnage) : bouton de la barre de titre, `/ns pause`, menu du bouton NextStep, raccourci. En pause, la flèche, le tracé du chemin et les repères des cartes disparaissent ; le moteur suit toujours la progression et les annonces au groupe continuent. Un lieu choisi par le joueur (clic sur un donneur) passe outre le temps d'y aller (`Guide:Paused` est faux tant que `pointTarget` existe). Une ligne en tête de la fenêtre rappelle la pause (clic pour reprendre).
 - Dessin plat et épuré (chevron avec contour sombre), couleur passant du doré Blizzard au vert dans la bonne direction, rouge-orangé à l'opposé ; rotation fluide ; distance et temps estimé ; coche à l'arrivée.
 - Pour `kill` / `collect`, vise la zone de mobs la plus proche.
 - **[À vérifier]** Position et orientation du joueur indisponibles en instance : flèche masquée en donjon.

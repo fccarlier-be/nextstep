@@ -99,6 +99,34 @@ function Guide:CreateArrow()
     return frame
 end
 
+---------------------------------------------------------------------------
+-- Pause : le guide suit toujours la progression, mais la flèche, le tracé du chemin
+-- et les repères des cartes disparaissent. Un lieu choisi par le joueur (clic sur un
+-- donneur...) passe outre : la flèche y mène, puis la pause reprend.
+---------------------------------------------------------------------------
+
+function Guide:Paused()
+    return self.char ~= nil and self.char.paused == true and not self.pointTarget
+end
+
+function Guide:SetPaused(paused)
+    self.char.paused = paused and true or false
+    self:SetArrowTarget(self.result and self.result.target)
+    self:UpdatePins()
+    if self.UpdateRoute then
+        self:UpdateRoute()
+    end
+    if self.window then
+        self:UpdateWindow(self.result)
+    end
+    ns:Print(paused and L["Guide paused: no more arrow, route or map pins. /ns pause to resume."]
+        or L["Guide resumed."])
+end
+
+function Guide:TogglePause()
+    self:SetPaused(not (self.char and self.char.paused))
+end
+
 -- Nouvelle cible : libellé, puis direction.
 function Guide:SetArrowTarget(target)
     self.target = target
@@ -113,7 +141,7 @@ function Guide:SetArrowTarget(target)
         self:UpdateArrowDirection()
         return
     end
-    if not (target and self.enabled and self.db.arrow and self.result) then
+    if not (target and self.enabled and self.db.arrow and self.result) or self:Paused() then
         frame:Hide()
         return
     end
@@ -135,6 +163,8 @@ function Guide:PointTo(point, label)
         self:CreateArrow()
     end
     self:SetArrowTarget(self.target)
+    -- Repères du lieu choisi (et, en pause, leur retour ou leur disparition).
+    self:UpdatePins()
     if self.window and self.result then
         self:UpdateWindow(self.result)
     end
