@@ -715,3 +715,40 @@ L["Boat and tram detection state"] = "État de la détection des bateaux et du t
 L["Guide note"] = "Note du guide"
 L["Click to unfold it."] = "Cliquez pour la déplier."
 L["Click to fold it."] = "Cliquez pour la replier."
+
+-- Voyages (Modules/Guide/Trip.lua)
+L["Airship to %s"] = "Dirigeable pour %s"
+L["Cancel the trip"] = "Annuler le voyage"
+L["Cancel the trip: the guide resumes."] = "Annule le voyage : le guide reprend."
+L["Choose a destination on the world map (/ns trip stop to cancel the trip)"] =
+    "Choisir une destination sur la carte du monde (/ns voyage stop pour annuler le voyage)"
+L["Ctrl+click on the world map to choose your destination."] =
+    "Ctrl+clic sur la carte du monde pour choisir votre destination."
+L["Discover this flight point, then: %s"] = "Découvrir ce point de vol, puis : %s"
+L["Flight point not discovered yet: %s"] = "Point de vol pas encore découvert : %s"
+L["Flight points not discovered yet along the way: %s"] = "Points de vol à découvrir en chemin : %s"
+L["Flight to %s: %s"] = "Vol vers %s : %s"
+L["Flight: %s"] = "Vol : %s"
+L["Fly to %s (via %s)"] = "Vol vers %s (via %s)"
+L["Go to the dock: %s"] = "Rejoindre le quai : %s"
+L["Go to the flight master: %s"] = "Rejoindre le maître de vol : %s"
+L["Go to the portal: %s"] = "Rejoindre le portail : %s"
+L["No known flight point recorded yet: open a flight master's map once so NextStep learns yours."] =
+    "Aucun point de vol connu enregistré : ouvrez une fois la carte d'un maître de vol "
+    .. "pour que NextStep apprenne les vôtres."
+L["No way found to %s from here."] = "Aucun trajet trouvé d'ici vers %s."
+L["Same as /ns trip"] = "Comme /ns trip"
+L["Take the portal to %s"] = "Prendre le portail pour %s"
+L["The guide waits until you arrive."] = "Le guide attend votre arrivée."
+L["This place cannot be reached: pick it on a zone or continent map."] =
+    "Lieu impossible à situer : choisissez-le sur la carte d'une zone ou d'un continent."
+L["Trip cancelled. The guide resumes."] = "Voyage annulé. Le guide reprend."
+L["Trip to %s (about %s, click to cancel)"] = "Voyage vers %s (environ %s, clic pour annuler)"
+L["Trip to %s: about %s. The guide waits until you arrive (/ns trip stop to cancel)."] =
+    "Voyage vers %s : environ %s. Le guide attend votre arrivée (/ns voyage stop pour annuler)."
+L["Trip: choose a destination"] = "Voyage : choisir une destination"
+L["Trips need the NextStep - Nav addon: enable it, then restart the game."] =
+    "Les voyages ont besoin de l'addon NextStep - Nav : activez-le, puis relancez le jeu."
+L["You have arrived: %s. The guide resumes."] = "Vous êtes arrivé : %s. Le guide reprend."
+L["landing soon"] = "atterrissage imminent"
+L["your destination"] = "votre destination"

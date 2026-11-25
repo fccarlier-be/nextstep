@@ -141,6 +141,15 @@ function Menu:Fill(root)
         root:CreateButton(guideModule.char.paused and L["Resume the guide"] or L["Pause the guide"], function()
             guideModule:TogglePause()
         end)
+        if guideModule.trip then
+            root:CreateButton(L["Cancel the trip"], function()
+                guideModule:EndTrip(false)
+            end)
+        else
+            root:CreateButton(L["Trip: choose a destination"], function()
+                guideModule:ChooseTripDestination()
+            end)
+        end
     end
     root:CreateButton(L["Class spells"], function()
         local guide = ns.Modules:Get("Guide")

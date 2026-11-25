@@ -16,3 +16,5 @@ Routing\PathGrid.lua
 Routing\Path.lua
 Routing\PathJobs.lua
 API.lua
+Travel.lua
+FlightTracks.lua

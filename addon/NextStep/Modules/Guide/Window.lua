@@ -1049,6 +1049,39 @@ end
 -- Mise à jour
 ---------------------------------------------------------------------------
 
+-- Voyage en cours (Trip.lua) : ses étapes, l'étape en cours en évidence ; le guide attend.
+local function addTrip(self, view)
+    local trip = self.trip
+    local left = self:TripRemaining()
+    addLine(view, L["Trip to %s (about %s, click to cancel)"]:format(trip.label, ns.Trip.Minutes(left or trip.cost)),
+        COLORS.title, {
+            header = true,
+            onClick = function() self:EndTrip(false) end,
+            tooltip = L["Cancel the trip: the guide resumes."],
+        })
+    for k, leg in ipairs(trip.legs) do
+        local color = k < trip.index and COLORS.done or k == trip.index and COLORS.action or COLORS.text
+        local text = ("%d. %s"):format(k, self:TripLegText(leg))
+        if leg.kind == "fly" and leg.learn then
+            color = k == trip.index and COLORS.warning or color
+        end
+        addLine(view, text, color, { indent = 8 })
+    end
+    if trip.unknown and #trip.unknown > 0 then
+        local names = {}
+        for _, place in ipairs(trip.unknown) do
+            names[#names + 1] = self:TripPlaceName(place)
+        end
+        addLine(view, L["Flight points not discovered yet along the way: %s"]:format(table.concat(names, ", ")),
+            COLORS.warning)
+    end
+    if not next(self.char.taxi or {}) then
+        local text = "No known flight point recorded yet: open a flight master's map once so NextStep learns yours."
+        addLine(view, L[text], COLORS.warning)
+    end
+    addLine(view, L["The guide waits until you arrive."], COLORS.muted)
+end
+
 function Guide:UpdateWindow(result)
     local frame = self.window
     if not frame then
@@ -1068,11 +1101,13 @@ function Guide:UpdateWindow(result)
     end
 
     local view = { frame = frame, count = 0, height = 4, texts = {}, strip = {} }
-    if paused then
+    if paused and not self.trip then
         addLine(view, L["Guide paused: arrow, route and map pins hidden (click to resume)."], COLORS.warning,
             { onClick = function() self:SetPaused(false) end })
     end
-    if not result then
+    if self.trip and self.trip.legs then
+        addTrip(self, view)
+    elseif not result then
         addSuggestions(self, view)
     elseif not result.ready then
         addLine(view, L["Reading the quest log..."], COLORS.muted)

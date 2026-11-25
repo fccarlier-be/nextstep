@@ -153,9 +153,13 @@ end
 
 -- Pointe un lieu choisi : { map, x, y } (carte du client, pour cent) ; nil rend la
 -- flèche au guide.
-function Guide:PointTo(point, label)
+function Guide:PointTo(point, label, options)
     if point then
         self.pointTarget = { map = point.map, x = point.x, y = point.y, f = point.f, label = label }
+        -- Voyage (Trip.lua) : trip = étape d'un voyage, noRoute = pas de chemin à pied.
+        for key, value in pairs(options or {}) do
+            self.pointTarget[key] = value
+        end
     else
         self.pointTarget = nil
     end
@@ -209,7 +213,7 @@ function Guide:UpdateArrowDirection()
         frame.distance:SetText("")
         return
     end
-    if distance <= ARRIVED and self.pointTarget then
+    if distance <= ARRIVED and self.pointTarget and not self.pointTarget.trip then
         -- Lieu choisi atteint : la flèche revient au guide.
         self:PointTo(nil)
         return
