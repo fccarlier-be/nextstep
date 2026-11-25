@@ -4,7 +4,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 
 ## Pour commencer
 
-1. Installe NextStep (le dossier `NextStep` et celui de ta faction, `NextStep_Alliance` ou `NextStep_Horde`) dans `_forever_\Interface\AddOns\`, puis connecte-toi.
+1. Installe NextStep (tous les dossiers de l'archive : `NextStep`, `NextStep_Alliance`, `NextStep_Horde` et les trois `NextStep_Nav` des chemins à pied) dans `_forever_\Interface\AddOns\`, puis connecte-toi.
 2. La **fenêtre du guide** s'ouvre : choisis un guide de départ, ou suis les quêtes proposées près de toi.
 3. Le **bouton NextStep** de la minimap ouvre le menu : journal, donjons, équipement, métiers, zones, sacs et banque, horloge, radar, options.
 4. Tape **`/ns`** pour la liste des commandes.
@@ -16,7 +16,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 | **Fenêtre du guide** | L'étape en cours et ses objectifs. Niveau des quêtes en couleur (gris, vert, jaune, orange, rouge), quêtes **élites**, de groupe, de donjon ou de raid signalées, récompense qui améliore ton équipement (« récompense +12 % »). Survol d'une quête : son texte ; clic : le journal de quêtes, ou, si la quête n'est pas encore prise, la flèche et un repère sur la carte vers son donneur. |
 | **Modes** | *Strict* (une étape à la fois) ou *Libre* (les objectifs du même endroit, dans n'importe quel ordre ; conseillé en groupe). Bouton en bas de la fenêtre. |
 | **Flèche** | En haut de l'écran, vers l'objectif le plus proche, avec la distance. Objectif sur l'autre continent : elle mène au quai du bateau ou du zeppelin à prendre, nommé dans la fenêtre du guide. Un clic dans le journal la tourne vers un donneur de quête ; **clic droit dessus** (ou la ligne « Flèche : … », ou `/ns arrow`) pour la rendre au guide. |
-| **Carte et minimap** | Tous les points de l'étape ; la cible en doré. |
+| **Carte et minimap** | Tous les points de l'étape ; la cible en doré. Un trait doré montre le **chemin à pied** jusqu'à la cible (par les routes, les cols et les portes des villes), et la flèche le suit. |
 | **Ici aussi** | Près d'un PNJ, les quêtes que le guide prévoit plus loin chez lui et que tu peux faire tout de suite. |
 | **Ignorer** | Clic droit sur une ligne : ignorer cet objectif, ignorer toute la quête (dans tous les guides), ou la marquer faite. « N quêtes ignorées » en bas de la fenêtre pour les reprendre. **Passer l'étape** laisse de côté toute l'étape ; **Étape faite** coche ce que le guide ne voit pas (parler à, visiter) et passe à la suite. Un clic de trop ? La flèche **←** de la barre de titre (**Étape précédente**) annule le dernier « Passer l'étape » ou « Étape faite » et vous ramène à cette étape (jusqu'à cinq retours). |
 | **Détours** | Tu peux faire les quêtes dans un autre ordre : le guide se recale tout seul. Une quête abandonnée est signalée (clic pour la reprendre). |

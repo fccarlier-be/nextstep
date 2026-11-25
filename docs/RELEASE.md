@@ -4,7 +4,7 @@ NextStep est empaqueté par le [BigWigs packager](https://github.com/BigWigsMods
 
 ## Ce que contient l'archive
 
-`NextStep-<version>.zip` contient les trois dossiers à copier dans `Interface\AddOns` : `NextStep`, `NextStep_Alliance` et `NextStep_Horde`. Le reste du dépôt (outils, dont l'addon de diagnostic, tests, documentation, images) n'est jamais livré.
+`NextStep-<version>.zip` contient les six dossiers à copier dans `Interface\AddOns` : `NextStep`, `NextStep_Alliance`, `NextStep_Horde`, et le calculateur de chemins `NextStep_Nav` avec ses cartes `NextStep_Nav_EK` et `NextStep_Nav_Kalimdor`. Le reste du dépôt (outils, dont l'addon de diagnostic, tests, documentation, images) n'est jamais livré.
 
 Dans le dépôt, les TOC portent `## Version: @project-version@` ; le packager le remplace par le nom du tag. Lancé depuis le dépôt (jonctions de `Tools/deploy.ps1`), l'addon affiche la version `dev`.
 

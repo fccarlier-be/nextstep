@@ -155,15 +155,21 @@ function Guide:IsPointing(point)
         and target.y == point.y
 end
 
+-- Destination de la flèche : lieu choisi, cible de l'étape, ou quai de départ quand
+-- la cible est sur l'autre continent. Partagée avec le chemin à pied (Route.lua).
+function Guide:ArrowGoal()
+    local target = self.pointTarget or self.target
+    if not target then
+        return nil
+    end
+    local route = not self.pointTarget and self:Crossing(target)
+    return route and route.from or target
+end
+
 function Guide:UpdateArrowDirection()
-    local frame, target = self.arrowFrame, self.pointTarget or self.target
+    local frame, target = self.arrowFrame, self:ArrowGoal()
     if not (frame and target) then
         return
-    end
-    -- Cible sur l'autre continent : la flèche mène au quai de départ.
-    local route = not self.pointTarget and self:Crossing(target)
-    if route then
-        target = route.from
     end
     local distance, angle = Navigation.Direction(target.map, target.x, target.y, target.f)
     if not distance then
@@ -182,6 +188,12 @@ function Guide:UpdateArrowDirection()
         frame.arrow:Hide()
         frame.check:Show()
     else
+        -- Chemin à pied connu : la flèche vise le chemin, la distance est celle à parcourir.
+        local aimNorth, aimWest, remaining = self:RouteAim()
+        local aimAngle = aimNorth and select(2, Navigation.DirectionToWorld(aimNorth, aimWest))
+        if aimAngle then
+            angle, distance = aimAngle, math.max(distance, remaining)
+        end
         frame.check:Hide()
         frame.arrow:Show()
         frame.arrow:SetRotation(angle)

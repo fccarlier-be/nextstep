@@ -367,7 +367,8 @@ local function checkNextStep()
     section("NextStep")
     local NS = _G.NextStep
     add("NextStep chargé", NS and "ok" or "missing", NS and NS.version)
-    for _, name in ipairs({ "NextStep", "NextStep_Alliance", "NextStep_Horde" }) do
+    for _, name in ipairs({ "NextStep", "NextStep_Alliance", "NextStep_Horde", "NextStep_Nav", "NextStep_Nav_EK",
+        "NextStep_Nav_Kalimdor" }) do
         probe("Mémoire " .. name .. " (Ko)", function()
             if not C_AddOns.IsAddOnLoaded(name) then
                 return nil

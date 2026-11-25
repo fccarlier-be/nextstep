@@ -7,3 +7,7 @@
 *.ogg binary
 *.mp3 binary
 *.ttf binary
+
+# Calculateur de chemins et cartes de marche importés de Polestar (Tools/import/nav.py) :
+# octets gardés tels quels (chaînes brutes dans les cartes), repliés dans les diffs.
+addon/NextStep_Nav*/** -text linguist-generated

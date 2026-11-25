@@ -24,6 +24,7 @@ local Guide = ns.Modules:New("Guide", {
         arrow = true,
         minimapPins = true,     -- points de l'étape sur la minimap
         mapPins = true,         -- points de l'étape sur la carte du monde
+        routeLines = true,      -- chemin à pied tracé sur les cartes, suivi par la flèche (Route.lua)
         hideTracker = true,     -- masque le suivi de quêtes Blizzard quand un guide est suivi
         celebration = true,     -- bandeau à chaque niveau gagné (Celebration.lua)
         celebrationSound = true,

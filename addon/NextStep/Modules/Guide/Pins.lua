@@ -260,6 +260,17 @@ function Guide:UpdateMinimapPins()
             end
         end
     end
+    -- Chemin à pied (Route.lua), sous les repères.
+    if instance and self.db.minimapPins then
+        local half = (Minimap:GetWidth() or 0) / 2
+        local facing = minimapRotates() and GetPlayerFacing() or nil
+        if facing ~= nil and not usable(facing) then
+            facing = nil
+        end
+        self:DrawMinimapRoute(frame, half, half / minimapRadius(), minimapSquare(), facing, myNorth, myWest)
+    else
+        self:DrawMinimapRoute(frame, 0, 1, false, nil, 0, 0)
+    end
     for index = used + 1, #frame.textures do
         frame.textures[index]:Hide()
     end
@@ -295,15 +306,20 @@ local function mapBounds(mapID)
     return known or nil
 end
 
--- Position d'un point monde sur une carte (0 à 1), ou nil s'il n'y est pas.
-function Guide.MapPosition(mapID, instance, north, west)
+-- Position d'un point monde sur une carte (0 à 1 dedans), même hors de la carte ;
+-- nil si la carte n'est pas sur la même instance.
+function Guide.MapPositionUnclamped(mapID, instance, north, west)
     local box = mapBounds(mapID)
     if not box or box[1] ~= instance then
         return nil
     end
-    local x = (box[3] - west) / (box[3] - box[5])
-    local y = (box[2] - north) / (box[2] - box[4])
-    if x < 0 or x > 1 or y < 0 or y > 1 then
+    return (box[3] - west) / (box[3] - box[5]), (box[2] - north) / (box[2] - box[4])
+end
+
+-- Position d'un point monde sur une carte (0 à 1), ou nil s'il n'y est pas.
+function Guide.MapPosition(mapID, instance, north, west)
+    local x, y = Guide.MapPositionUnclamped(mapID, instance, north, west)
+    if not x or x < 0 or x > 1 or y < 0 or y > 1 then
         return nil
     end
     return x, y
@@ -366,6 +382,9 @@ function Guide:HideMapPins()
     for _, button in ipairs(self.mapButtons or {}) do
         button:Hide()
     end
+    if self.mapRouteFrame then
+        self:DrawMapRoute()
+    end
 end
 
 function Guide:UpdateMapPins()
@@ -402,6 +421,7 @@ function Guide:UpdateMapPins()
     for index = used + 1, #self.mapButtons do
         self.mapButtons[index]:Hide()
     end
+    self:DrawMapRoute()
 end
 
 ---------------------------------------------------------------------------
@@ -410,6 +430,7 @@ end
 
 function Guide:CreatePins()
     self:CreateMinimapPins()
+    self:CreateRoute()
     if not self:AttachWorldMap() then
         -- Carte du monde chargée à la demande : on attend son chargement.
         self:RegisterEvent("ADDON_LOADED", function(_, _, name)

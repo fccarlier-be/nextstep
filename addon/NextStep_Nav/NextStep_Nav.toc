@@ -1,0 +1,18 @@
+## Interface: 16001
+## Title: NextStep - Nav
+## Notes: NextStep walking routes: the arrow and the route lines follow real paths. Polestar's walking router, started from Shortest Path Forever by Cillian Berragan. Loaded on demand, do not disable.
+## Notes-frFR: Chemins à pied de NextStep : la flèche et le tracé suivent les vrais chemins. Calculateur de Polestar, issu de Shortest Path Forever de Cillian Berragan. Chargé à la demande, ne pas désactiver.
+## Author: fccarlier-be; walking router: Polestar, from Cillian Berragan's Shortest Path Forever; walking maps: Leffe
+## Version: @project-version@
+## X-License: GPL-3.0-or-later
+## Dependencies: NextStep
+## LoadOnDemand: 1
+# Écrit par Tools/import/nav.py depuis Polestar_Nav (Polestar 0.4.2.2).
+
+Nav\Nav.xml
+Trails\Trails.lua
+Routing\Costs.lua
+Routing\PathGrid.lua
+Routing\Path.lua
+Routing\PathJobs.lua
+API.lua

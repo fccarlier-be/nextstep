@@ -780,6 +780,10 @@ function Guide:PrintDebug()
     out("repères", self.pinPoints and #self.pinPoints, "minimap", self.minimapPins ~= nil,
         "carte du monde", self.mapProvider ~= nil,
         "rayon minimap", Minimap and Minimap.GetViewRadius and Minimap:GetViewRadius())
+    local route = self.route
+    out("chemin à pied", self.navEngine == nil and "non chargé" or self.navEngine and "calculateur prêt"
+        or "calculateur absent", route and (route.points and (#route.points .. " points") or route.job
+        and "en calcul" or route.reason) or "aucun", route and route.current and "suivi" or "")
     local frame = self.window
     if not frame then
         out("fenêtre absente")
@@ -851,7 +855,10 @@ function Guide:BuildOptions(panel, anchor)
     local map = Options.AddCheck(panel, minimap, ns.L["Show the step's points on the world map"],
         function() return self.db.mapPins end,
         function(value) self:SetMapPinsShown(value) end)
-    local celebrate = Options.AddCheck(panel, map, ns.L["Celebrate each level"],
+    local route = Options.AddCheck(panel, map, ns.L["Draw the walking route on the maps (the arrow follows it)"],
+        function() return self.db.routeLines ~= false end,
+        function(value) self:SetRouteLinesShown(value) end)
+    local celebrate = Options.AddCheck(panel, route, ns.L["Celebrate each level"],
         function() return self.db.celebration end,
         function(value) self.db.celebration = value end)
     local sound = Options.AddCheck(panel, celebrate, ns.L["Play a sound for the celebration"],
