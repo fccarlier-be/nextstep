@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     Sparse, shallow checkout into Tools\import\cache\polestar (ignored by git): only the
-    compiled guide packs, the French pack, the gear weights, the item and quest databases, the walking router and its maps (Polestar_Nav*) and the licence files are downloaded.
+    compiled guide packs, the French pack, the gear weights, the item and quest databases, the walking router and its maps (Polestar_Nav*), the flight and transport tables and the licence files are downloaded.
 #>
 $ErrorActionPreference = "Stop"
 
@@ -26,7 +26,8 @@ if (-not (Test-Path (Join-Path $dest ".git"))) {
 }
 # Anciens caches : ajoute les dossiers apparus depuis (poids de stats, phase 6).
 git -C $dest sparse-checkout add "/addon/Polestar/Gear/" "/addon/Polestar_ItemDB/" "/forever-db/" `
-    "/addon/Polestar_Nav/" "/addon/Polestar_Nav_EK/" "/addon/Polestar_Nav_Kalimdor/"
+    "/addon/Polestar_Nav/" "/addon/Polestar_Nav_EK/" "/addon/Polestar_Nav_Kalimdor/" `
+    "/addon/Polestar/Nav/TravelData.lua" "/addon/Polestar/Maps/FlightPaths.lua"
 
 Write-Host "Fetching Polestar $($lock.version) ($($lock.commit))..."
 # blob:none: only the files kept by the sparse checkout are downloaded.

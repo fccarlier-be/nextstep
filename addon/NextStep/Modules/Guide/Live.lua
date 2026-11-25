@@ -77,6 +77,7 @@ function Guide:OnEnable()
         local map = GetTaxiMapID and GetTaxiMapID() or C_Map.GetBestMapForUnit("player")
         if map then
             self.live:RecordTaxi(map)
+            self:RecordTaxiMap(map)
         end
         self:OnNpcWindow("getfp", ns.NpcID(UnitGUID("npc")))
     end)
@@ -824,6 +825,18 @@ function Guide:AddCommands()
         end
         self:SetArrowShown(not self.db.arrow)
     end, ns.L["Show or hide the arrow (or point it back to the guide)"])
+    local function trip(argument)
+        argument = (argument or ""):lower()
+        if argument == "stop" or argument == "cancel" or argument == "annuler" then
+            if self.trip then
+                self:EndTrip(false)
+            end
+        else
+            self:ChooseTripDestination()
+        end
+    end
+    ns.Slash:Add("trip", trip, ns.L["Choose a destination on the world map (/ns trip stop to cancel the trip)"])
+    ns.Slash:Add("voyage", trip, ns.L["Same as /ns trip"])
     ns.Slash:Add("pause", function()
         self:TogglePause()
     end, ns.L["Pause or resume the guide (hides the arrow, the route and the map pins)"])

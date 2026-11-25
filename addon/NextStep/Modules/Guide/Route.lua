@@ -37,6 +37,7 @@ local MAP_MIN_STEP = 3     -- pixels : points plus proches fusionnés sur la car
 
 local WHITE = "Interface\\Buttons\\WHITE8X8"
 local COLOR = { 1, 0.82, 0, 0.95 }
+local TRIP_COLOR = { 0.35, 0.75, 1, 0.9 }   -- suite d'un voyage (Trip.lua) : vols, bateaux, marches à venir
 local OUTLINE = { 0, 0, 0, 0.55 }
 local MINIMAP_WIDTH, MAP_WIDTH = 3, 4   -- pixels (le contour ajoute 2 de chaque côté)
 
@@ -194,8 +195,8 @@ end
 -- Destination de la flèche, en coordonnées monde : instance, nord, ouest.
 function Guide:RouteGoal()
     local goal = self:ArrowGoal()
-    if not goal then
-        return nil
+    if not goal or goal.noRoute then
+        return nil   -- étape d'un voyage en vol, en bateau... : pas de chemin à pied
     end
     return Navigation.WorldPosition(goal.map, goal.x, goal.y, goal.f)
 end
@@ -364,7 +365,6 @@ local function linePair(owner, pool, index)
         outline:SetVertexColor(OUTLINE[1], OUTLINE[2], OUTLINE[3], OUTLINE[4])
         local core = owner:CreateLine(nil, "ARTWORK", nil, 2)
         core:SetTexture(WHITE)
-        core:SetVertexColor(COLOR[1], COLOR[2], COLOR[3], COLOR[4])
         pair = { outline = outline, core = core }
         pool[index] = pair
     end
@@ -372,8 +372,10 @@ local function linePair(owner, pool, index)
 end
 
 -- Un segment du tracé, en pixels depuis le point d'ancrage relativePoint d'owner.
-local function drawSegment(owner, pool, index, relativePoint, x1, y1, x2, y2, width)
+local function drawSegment(owner, pool, index, relativePoint, x1, y1, x2, y2, width, color)
     local pair = linePair(owner, pool, index)
+    color = color or COLOR
+    pair.core:SetVertexColor(color[1], color[2], color[3], color[4])
     for _, line in ipairs({ pair.outline, pair.core }) do
         line:SetStartPoint(relativePoint, owner, x1, y1)
         line:SetEndPoint(relativePoint, owner, x2, y2)
@@ -445,19 +447,18 @@ function Guide:DrawMapRoute()
     local used = 0
     local mapID = map:GetMapID()
     local _, myNorth, myWest = Navigation.PlayerPosition()
-    local list = self.enabled and self.db.mapPins and mapID and myNorth and self:RouteRemaining(myNorth, myWest)
-    if list then
-        local width, height = canvas:GetWidth(), canvas:GetHeight()
-        local canvasScale = map.GetCanvasScale and map:GetCanvasScale() or 1
-        if not (canvasScale and canvasScale > 0) then
-            canvasScale = 1
-        end
-        local route = self.route
+    local width, height = canvas:GetWidth(), canvas:GetHeight()
+    local canvasScale = map.GetCanvasScale and map:GetCanvasScale() or 1
+    if not (canvasScale and canvasScale > 0) then
+        canvasScale = 1
+    end
+    -- Une ligne brisée (points { nord, ouest }) sur la carte affichée.
+    local function polyline(instance, list, color, lineWidth)
         local px, py
         for i = 1, #list do
-            local x, y = Guide.MapPositionUnclamped(mapID, route.instance, list[i][1], list[i][2])
+            local x, y = Guide.MapPositionUnclamped(mapID, instance, list[i][1], list[i][2])
             if not x then
-                break
+                return
             end
             x, y = x * width, y * height
             if not px then
@@ -466,11 +467,22 @@ function Guide:DrawMapRoute()
                 local ax, ay, bx, by = Guide.ClipBox(px, py, x, y, width, height)
                 if ax then
                     used = used + 1
-                    drawSegment(frame, frame.lines, used, "TOPLEFT", ax, -ay, bx, -by, MAP_WIDTH / canvasScale)
+                    drawSegment(frame, frame.lines, used, "TOPLEFT", ax, -ay, bx, -by, lineWidth / canvasScale, color)
                 end
                 px, py = x, y
             end
         end
+    end
+    local shown = self.enabled and self.db.mapPins and mapID
+    local list = shown and myNorth and self:RouteRemaining(myNorth, myWest)
+    -- La suite du voyage d'abord, sous le chemin à pied en cours.
+    if shown and self.trip and self.TripOverview then
+        for _, line in ipairs(self:TripOverview(myNorth, myWest, list ~= nil)) do
+            polyline(line.instance, line.points, TRIP_COLOR, MAP_WIDTH - 1)
+        end
+    end
+    if list then
+        polyline(self.route.instance, list, COLOR, MAP_WIDTH)
     end
     hideFrom(frame.lines, used + 1)
 end
@@ -489,6 +501,8 @@ function Guide:CreateRoute()
         elapsed = elapsed + (delta or 0)
         if elapsed >= CHECK_PERIOD then
             elapsed = 0
+            ns.SafeCall(self.UpdateTrip, self)
+            ns.SafeCall(self.UpdateFlightTimer, self)
             ns.SafeCall(self.UpdateRoute, self)
         end
     end)

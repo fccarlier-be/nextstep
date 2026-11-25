@@ -65,6 +65,7 @@ Modules\Guide\Window.lua
 Modules\Guide\Arrow.lua
 Modules\Guide\Pins.lua
 Modules\Guide\Route.lua
+Modules\Guide\Trip.lua
 Modules\Guide\Celebration.lua
 Modules\Items\Score.lua
 Modules\Items\Items.lua

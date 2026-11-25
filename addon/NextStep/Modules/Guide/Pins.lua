@@ -28,6 +28,7 @@ local COLORS = {
     target = { 1, 0.82, 0 },
     place = { 0.35, 0.75, 1 },
     zone = { 1, 0.35, 0.25 },
+    unknown = { 0.6, 0.6, 0.6 },   -- point de vol pas encore découvert (voyage)
 }
 
 -- Diamètre de la minimap en yards selon le zoom (0 à 5), dehors et en intérieur :
@@ -71,6 +72,10 @@ end
 
 function Guide:PinPoints(result)
     local list, target = {}, nil
+    -- Voyage en cours : ses étapes à la place de celles du guide.
+    if self.trip then
+        return self:TripPinPoints()
+    end
     if not result then
         return self:AdvicePinPoints()
     end
@@ -431,10 +436,14 @@ end
 function Guide:CreatePins()
     self:CreateMinimapPins()
     self:CreateRoute()
-    if not self:AttachWorldMap() then
+    self:CreateFlightTimer()
+    if self:AttachWorldMap() then
+        self:AttachMapClicks()
+    else
         -- Carte du monde chargée à la demande : on attend son chargement.
         self:RegisterEvent("ADDON_LOADED", function(_, _, name)
             if name == "Blizzard_WorldMap" and self:AttachWorldMap() then
+                self:AttachMapClicks()
                 self:UnregisterEvent("ADDON_LOADED")
             end
         end)

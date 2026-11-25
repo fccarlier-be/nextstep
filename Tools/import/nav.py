@@ -15,6 +15,10 @@ Polestar installés ensemble ne partagent rien :
   les deux crochets facultatifs vers le module de danger et les trajets de Polestar
   (Polestar.Nav.danger, Polestar.Nav.travel) lisent NextStep_NavHooks, absent : le
   calculateur fait alors ce qu'il fait sans eux.
+NextStep_Nav reçoit aussi les tables de voyage de Polestar (Polestar/Nav/TravelData.lua :
+points de vol, vols, bateaux et zeppelins, portails ; Polestar/Maps/FlightPaths.lua : le
+tracé de chaque vol), en globaux NextStepTravelData et NextStepFlightTracks, pour les
+voyages de NextStep (Modules/Guide/Trip.lua).
 Le contenu des cartes garde sa valeur, mais leurs chaînes aux octets de contrôle bruts
 sont réécrites avec des échappements (escape_controls : l'empaqueteur les abîmait).
 Les fichiers sont traités en octets.
@@ -85,6 +89,11 @@ Le calculateur de chemins à pied est celui de Polestar, parti de
 [Shortest Path Forever](https://github.com/cjber/shortest-path-forever) de
 Cillian Berragan (GPL-3.0-or-later) ; les cartes de marche viennent des cartes de
 navigation de Leffe. Voir `CREDITS.md` et `LICENSE` (repris sans modification).
+
+Dans `NextStep_Nav`, `Travel.lua` et `FlightTracks.lua` sont les tables de voyage de Polestar
+(`Polestar/Nav/TravelData.lua`, `Polestar/Maps/FlightPaths.lua`), même licence,
+exposées en `NextStepTravelData` et `NextStepFlightTracks` : points de vol, vols,
+bateaux, zeppelins et portails, pour les voyages de NextStep.
 
 Seul changement : les noms globaux et les noms d'addon (`PolestarPathData` devient
 `NextStepPathData`, `Polestar_NavEngine` devient `NextStep_NavEngine`, etc.), pour
@@ -210,6 +219,32 @@ def escape_controls(data):
     return bytes(out)
 
 
+def travel_files(cache):
+    """Tables de voyage de Polestar, en globaux : { nom du fichier : contenu }."""
+    path = os.path.join(cache, "addon", "Polestar", "Nav", "TravelData.lua")
+    with open(path, "rb") as f:
+        data = f.read().replace(b"\r\n", b"\n")
+    header = data.split(b"\n\n")[0] + b"\n"
+    opening = b"N.RegisterTravelData({\n"
+    start = data.index(opening) + len(opening)
+    end = data.index(b"\n})\n", start)
+    body = data[start:end + 1]
+    for key in (b"\ttaxi = {", b"\tflights = {", b"\ttransports = {", b"\tportals = {"):
+        if key not in body:
+            raise SystemExit(f"TravelData.lua : {key!r} absent")
+    travel = (header
+              + b"-- Copie par Tools/import/nav.py : la table de N.RegisterTravelData, en global.\n\n"
+              + b"NextStepTravelData = {\n" + body + b"}\n")
+    path = os.path.join(cache, "addon", "Polestar", "Maps", "FlightPaths.lua")
+    with open(path, "rb") as f:
+        tracks = f.read().replace(b"\r\n", b"\n")
+    for old, new in ((b"local ADDON, ns = ...\n", b""), (b"ns.FlightTracks = {", b"NextStepFlightTracks = {")):
+        if old not in tracks:
+            raise SystemExit(f"FlightPaths.lua : {old!r} absent")
+        tracks = tracks.replace(old, new, 1)
+    return {"Travel.lua": travel, "FlightTracks.lua": tracks}
+
+
 def main():
     cache, lock_path = sys.argv[1], sys.argv[2]
     lock = read_lock(lock_path)
@@ -219,6 +254,7 @@ def main():
         if not os.path.isdir(src):
             raise SystemExit(f"{src} absent : lancer Tools/import/fetch.ps1")
         files = toc_files(os.path.join(src, source + ".toc"))
+        extra_files = travel_files(cache) if target == "NextStep_Nav" else {}
         if os.path.isdir(dst):
             shutil.rmtree(dst)
         count = 0
@@ -244,6 +280,14 @@ def main():
                 with open(out, "wb") as f:
                     f.write(data)
                 count += 1
+        for name, data in extra_files.items():
+            data = escape_controls(data)
+            if any(needs_escape(b) and b not in (0x09, 0x0A, 0x0D) for b in data):
+                raise SystemExit(f"{name} : octet de contrôle restant")
+            with open(os.path.join(dst, name), "wb") as f:
+                f.write(data)
+            files.append(name)
+            count += 1
         meta = TOC[target]
         lines = [
             "## Interface: 16001",

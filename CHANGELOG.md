@@ -6,6 +6,12 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+## [0.6.0] - 2026-11-25
+
+### Ajouté
+- **Voyages** : Ctrl+clic sur la carte du monde (ou `/ns voyage`, ou le menu du bouton NextStep) pour choisir une destination. NextStep calcule le trajet le plus rapide (marche, vols, bateaux, zeppelins, tram, portails) et y guide étape par étape : flèche, tracé sur les cartes (vols en bleu), étapes dans la fenêtre du guide. Le guide attend l'arrivée, puis reprend. Les vols n'arrivent qu'aux points de vol connus du personnage ; un point inconnu peut servir de départ, et ceux à découvrir en chemin sont signalés.
+- **Durée des vols** : pendant un vol, le temps restant s'affiche en haut de l'écran. La vraie durée de chaque vol est retenue pour les suivants.
+
 ## [0.5.2] - 2026-11-25
 
 ### Modifié
