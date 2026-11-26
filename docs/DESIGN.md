@@ -676,7 +676,7 @@ Aide au farm des ressources, sur le principe de FarmHud (code propre à NextStep
 **Étapes** (chacune sa version) :
 
 1. **Import** des cartes de DungeonJournal (hors jeu), avec son rapport et ses tests : **réalisé**.
-2. **Diagnostic en donjon** (section « Donjon » de `/nsdiag`, à lancer en groupe dans un donjon classique) : carte renvoyée par `C_Map.GetBestMapForUnit("player")` et ses textures ; membres du groupe dessinés par la carte native après `SetMapID` sur l'étage ; `UnitPosition` et `C_Map.GetPlayerMapPosition` pour le joueur et pour `party1` ; `GetInstanceInfo` ; `ENCOUNTER_START` / `ENCOUNTER_END` pour un boss classique ; cartes du client pour les donjons propres à Forever.
+2. **Diagnostic en donjon** (**prêt** : `/nsdiag donjon`, et combats de boss notés automatiquement ; à lancer en groupe dans un donjon classique) : carte renvoyée par `C_Map.GetBestMapForUnit("player")` et ses textures ; membres du groupe dessinés par la carte native après `SetMapID` sur l'étage ; `UnitPosition` et `C_Map.GetPlayerMapPosition` pour le joueur et pour `party1` ; `GetInstanceInfo` ; `ENCOUNTER_START` / `ENCOUNTER_END` pour un boss classique ; cartes du client pour les donjons propres à Forever.
 3. Carte native sur l'étage du donjon, bouton de bascule, message de cohabitation : **réalisé**.
 4. Repères des boss, boss tués grisés, rares, entrée et passages d'étage : **réalisé**.
 5. Repères des quêtes (PNJ de quêtes du donjon, boss visés par une quête du journal) : **réalisé**.

@@ -25,6 +25,7 @@ local TITLES = {
     trainer = "Maître de classe (à l'ouverture)",
     loot = "Derniers butins et récoltes",
     media = "Médias : formats d'image, images, polices",
+    dungeon = "Donjon : cartes du client, positions du groupe, combats de boss",
 }
 
 local function cell(text)
@@ -38,7 +39,7 @@ local lines = {
     "",
 }
 
-for _, kind in ipairs({ "general", "media", "combat", "trainer", "loot" }) do
+for _, kind in ipairs({ "general", "media", "combat", "trainer", "loot", "dungeon" }) do
     local report = db[kind]
     if report then
         local client = report.client
