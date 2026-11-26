@@ -3,16 +3,18 @@
 -- passages d'étage et les PNJ de quêtes (positions de DungeonJournal, importées dans
 -- DB.dungeonMaps).
 --
--- La carte native reste en place : sur un étage qui a une carte du client, le client y
--- dessine lui-même les membres du groupe, et NextStep ajoute ses repères par un
--- fournisseur de données, sous ceux du groupe. Un étage sans carte du client (donjons
--- propres à Forever) s'affiche sur un panneau posé sur la carte, avec l'image de
--- DungeonJournal (lue dans son dossier, s'il est installé) : le groupe n'y apparaît pas.
+-- Sur un étage dont le client a la carte, NextStep la montre sur la carte native et y
+-- ajoute ses repères par un fournisseur de données. Sinon l'étage s'affiche sur un
+-- panneau posé sur la carte, avec l'image de DungeonJournal (lue dans son dossier, s'il
+-- est installé) ou les tuiles du client.
 --
--- [À vérifier] sur Forever : membres du groupe dessinés par la carte native en donjon ;
--- SetMapID sans souillure à l'ouverture de la carte ; chemins des images de
--- DungeonJournal lisibles par un autre addon ; ENCOUNTER_END (numéro de rencontre)
--- pour les boss classiques et ceux de Forever.
+-- Limite mesurée en jeu (diagnostic du 2026-11-26, Zul'Farrak, groupe de 5) : en
+-- donjon, le client de Forever n'a aucune carte de donjon et ne donne aucune position,
+-- pas même celle du joueur (GetBestMapForUnit et UnitPosition à nil). Le groupe ne
+-- peut donc pas apparaître sur la carte du donjon : ni par le client, ni par un addon.
+--
+-- [À vérifier] sur Forever : chemins des images de DungeonJournal lisibles par un autre
+-- addon ; ENCOUNTER_END (numéro de rencontre) pour les boss classiques et de Forever.
 
 local _, ns = ...
 local L = ns.L
@@ -20,7 +22,7 @@ local L = ns.L
 local DungeonMap = ns.Modules:New("DungeonMap", {
     title = L["Dungeon map"],
     description = L["In a dungeon, the world map opens on the dungeon's map, with bosses, rare bosses, "
-        .. "quest NPCs, the entrance and the ways between levels. Group members stay on the map."],
+        .. "quest NPCs, the entrance and the ways between levels."],
     defaults = {
         autoOpen = true,   -- carte du donjon à l'ouverture de la carte du monde
         rares = true,      -- boss rares
@@ -43,7 +45,7 @@ local COLORS = {
     boss = { 1, 0.82, 0.2 }, killed = { 0.45, 0.45, 0.45 }, rare = { 0.85, 0.9, 1 },
     entrance = { 0.3, 1, 0.3 }, transition = { 0.3, 1, 0.3 },
 }
-local PIN_LEVEL = 1500        -- au-dessus de la carte, sous les membres du groupe
+local PIN_LEVEL = 1500        -- au-dessus de la carte, sous les repères natifs les plus hauts
 local IMAGE_ASPECT = 1002 / 668
 
 ---------------------------------------------------------------------------
@@ -636,7 +638,7 @@ function DungeonMap:WarnOverlay()
     local db = _G.ForeverDungeonJournalDB
     if type(db) == "table" and db.worldMapOverlay ~= false then
         self.warned = true
-        ns:Print(L["DungeonJournal shows its own dungeon map over the world map, which hides your group. "
+        ns:Print(L["DungeonJournal shows its own dungeon map over the world map, on top of NextStep's. "
             .. "Turn off its world map option to see NextStep's dungeon map."])
     end
 end
