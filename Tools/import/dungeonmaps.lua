@@ -9,7 +9,9 @@
 -- exécuter du reste de l'addon :
 --   - FDJ.DUNGEON_MAPS, découpée dans Core/Journal.lua (table littérale, évaluée sans
 --     aucune globale) ;
---   - FDJ.DB de Data/Dungeons.lua (PNJ des boss, drapeau rare).
+--   - FDJ.DB de Data/Dungeons.lua (PNJ des boss, drapeau rare) ;
+--   - FDJ.RUNLOG_ENCOUNTERS de Data/RunLogEncounters.lua (numéros de rencontre des boss,
+--     ceux d'ENCOUNTER_END, les mêmes dans toutes les langues du client).
 -- Les images des cartes ne sont pas copiées : le fichier généré garde leur chemin dans le
 -- dossier de DungeonJournal, que le jeu lit si l'addon est installé.
 --
@@ -107,6 +109,13 @@ setfenv(dbChunk, setmetatable({ _G = {} }, getmetatable(noGlobals("Dungeons.lua"
 dbChunk("ForeverDungeonJournal", FDJ)
 assert(type(FDJ.DB) == "table", "Dungeons.lua: FDJ.DB missing")
 
+-- Numéros de rencontre : numéro → { donjon du journal, nom anglais du boss }.
+local encounterChunk = assert(loadstring(readFile(SOURCE .. "/Data/RunLogEncounters.lua"), "=RunLogEncounters.lua"))
+local encounterNS = {}
+setfenv(encounterChunk, setmetatable({ _G = {} }, getmetatable(noGlobals("RunLogEncounters.lua"))))
+encounterChunk("ForeverDungeonJournal", encounterNS)
+assert(type(encounterNS.RUNLOG_ENCOUNTERS) == "table", "RunLogEncounters.lua: FDJ.RUNLOG_ENCOUNTERS missing")
+
 -- Donjons de NextStep (Polestar / forever-db).
 local NS = { DB = {} }
 local nsChunk = assert(loadstring(readFile(DUNGEONS), "=" .. DUNGEONS))
@@ -197,9 +206,45 @@ end
 -- Conversion
 ---------------------------------------------------------------------------
 
+-- Numéros de rencontre par donjon du journal et nom de boss (normalisé).
+local encountersOf = {}
+for _, id in ipairs(sortedKeys(encounterNS.RUNLOG_ENCOUNTERS)) do
+    local entry = encounterNS.RUNLOG_ENCOUNTERS[id]
+    local byBoss = encountersOf[entry[1]] or {}
+    encountersOf[entry[1]] = byBoss
+    local key = norm(entry[2])
+    byBoss[key] = byBoss[key] or {}
+    table.insert(byBoss[key], id)
+end
+local usedEncounters = {}
+
+-- Numéros d'un boss de la carte : par son nom, ses alias, ou chaque nom d'un « A / B ».
+local function bossEncounters(name, boss, known)
+    local byBoss = encountersOf[name] or {}
+    local names = { boss.name }
+    for _, alias in ipairs(known and known.aliases or {}) do
+        names[#names + 1] = alias
+    end
+    for part in boss.name:gmatch("[^/]+") do
+        names[#names + 1] = part
+    end
+    local ids, seen = {}, {}
+    for _, candidate in ipairs(names) do
+        for _, id in ipairs(byBoss[norm(candidate)] or {}) do
+            if not seen[id] then
+                seen[id] = true
+                ids[#ids + 1] = id
+                usedEncounters[id] = true
+            end
+        end
+    end
+    table.sort(ids)
+    return #ids > 0 and ids or nil
+end
+
 local result = {}        -- clé NextStep → liste d'ailes
 local stats = { dungeons = 0, bosses = 0, rares = 0, floors = 0, nativeFloors = 0, images = 0, reyes = 0,
-    turnins = 0, transitions = 0, entrances = 0 }
+    turnins = 0, transitions = 0, entrances = 0, encounters = 0 }
 local credited = {}      -- étages de Santiago Reyes
 
 for _, name in ipairs(sortedKeys(maps)) do
@@ -274,8 +319,13 @@ for _, name in ipairs(sortedKeys(maps)) do
                 quests = { quests }
             end
             local rare = known and known.rare == true or nil
+            local encounters = bossEncounters(name, boss, known)
+            if encounters then
+                stats.encounters = stats.encounters + #encounters
+            end
             wing.bosses[#wing.bosses + 1] = { npc = npc, name = boss.name, f = boss.floor or 1,
-                x = round(boss.x), y = round(boss.y), rare = rare, alt = boss.alt or nil, quests = quests }
+                x = round(boss.x), y = round(boss.y), rare = rare, alt = boss.alt or nil, quests = quests,
+                encounters = encounters }
             stats.bosses = stats.bosses + 1
             if rare and not boss.alt then
                 stats.rares = stats.rares + 1
@@ -301,6 +351,12 @@ for _, name in ipairs(sortedKeys(FDJ.DB)) do
                 warn(("« %s » : boss rare « %s » sans position sur la carte"):format(name, boss.name))
             end
         end
+    end
+end
+for _, id in ipairs(sortedKeys(encounterNS.RUNLOG_ENCOUNTERS)) do
+    if not usedEncounters[id] then
+        local entry = encounterNS.RUNLOG_ENCOUNTERS[id]
+        warn(("Rencontre %d (« %s », « %s ») : aucun boss placé sur la carte"):format(id, entry[1], entry[2]))
     end
 end
 for _, dungeon in ipairs(NS.DB.dungeons) do
@@ -343,8 +399,9 @@ end
 
 add(("-- Généré par Tools/import/dungeonmaps.lua depuis DungeonJournal %s (Exehn). Ne pas modifier :"):format(version))
 add("-- relancer l'import. Positions sur la carte des donjons (boss, boss rares, entrées, passages,")
-add("-- PNJ de quêtes), reprises de DungeonJournal. Les images restent dans le dossier de DungeonJournal")
-add("-- (chemins ci-dessous) ; étages marqués « reyes » : cartographie de Santiago Reyes")
+add("-- PNJ de quêtes) et numéros de rencontre des boss, repris de DungeonJournal. Les images restent")
+add("-- dans le dossier de DungeonJournal (chemins ci-dessous) ; étages marqués « reyes » :")
+add("-- cartographie de Santiago Reyes")
 add("-- (https://sreyesmaps.com). Format : docs/DATA_FORMAT.md, « Cartes des donjons ».")
 add("")
 add("local DB = NextStep.DB")
@@ -397,6 +454,7 @@ for _, key in ipairs(sortedKeys(result)) do
             if boss.rare then fields[#fields + 1] = "rare = true" end
             if boss.alt then fields[#fields + 1] = "alt = true" end
             if boss.quests then fields[#fields + 1] = "quests = " .. list(boss.quests) end
+            if boss.encounters then fields[#fields + 1] = "encounters = " .. list(boss.encounters) end
             add("\t\t\t\t{ " .. table.concat(fields, ", ") .. " },")
         end
         add("\t\t\t},")
@@ -444,6 +502,7 @@ local report = {
     ("| Entrées | %d |"):format(stats.entrances),
     ("| Passages d'étage | %d |"):format(stats.transitions),
     ("| PNJ de quêtes | %d |"):format(stats.turnins),
+    ("| Numéros de rencontre | %d sur %d |"):format(stats.encounters, #sortedKeys(encounterNS.RUNLOG_ENCOUNTERS)),
     "",
     "## Étages de Santiago Reyes",
     "",

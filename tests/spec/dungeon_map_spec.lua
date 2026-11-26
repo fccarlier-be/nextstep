@@ -135,6 +135,18 @@ describe("Carte des donjons", function()
         expect_eq(dungeonMap:IsKilled(boss), false, "autre instance")
     end)
 
+    it("reconnaît un boss tué par son numéro de rencontre, quelle que soit la langue", function()
+        local game, dungeonMap = boot({ instance = { id = 36 } })
+        local boss = bossNamed(game, "deadmines", "Rhahk'Zor")
+        expect(boss.encounters and #boss.encounters > 0, "numéro importé")
+        game:fire("ENCOUNTER_END", boss.encounters[1], "Rhahk'Zor (nom traduit)", 1, 5, 1)
+        expect_eq(dungeonMap:IsKilled(boss), true)
+        local other = bossNamed(game, "deadmines", "Sneed")
+        expect_eq(dungeonMap:IsKilled(other), false, "les autres boss restent")
+        game:fire("ENCOUNTER_END", other.encounters[1], "Sneed", 1, 5, 0)
+        expect_eq(dungeonMap:IsKilled(other), false, "combat perdu")
+    end)
+
     it("cache les boss rares et les PNJ de quêtes sur option", function()
         local game, dungeonMap = boot()
         local wing = game.ns.DB.dungeonMaps.deadmines[1]
