@@ -173,6 +173,7 @@ Ces éléments sont indépendants du guide et peuvent être avancés si besoin.
 
 ## Après la v1.0 *(à l'étude)*
 
+- **Carte des donjons** : en donjon, la carte du monde montre la carte du donjon avec les membres du groupe, les boss, les quêtes et les boss rares. Conçue (voir [DESIGN.md](DESIGN.md#carte-des-donjons)), positions reprises de DungeonJournal ; d'abord l'import de ces positions, puis un diagnostic en groupe dans un donjon, qui décide de la suite.
 - **Prix de l'hôtel des ventes** : prix mémorisés lors des visites, utilisés pour les récompenses de quête, l'objectif « or » des métiers et les infobulles (voir [DESIGN.md](DESIGN.md#10-idées-à-létude)).
 
 ---
