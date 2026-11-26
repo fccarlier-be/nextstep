@@ -5,7 +5,7 @@ local wow = require("wow")
 
 local function boot(options)
     options = options or {}
-    local world = { mapID = options.mapID or 1436, set = {}, instance = options.instance }
+    local world = { mapID = options.mapID or 1436, set = {}, instance = options.instance, unknown = options.unknown }
     local game = wow.boot({
         faction = "Alliance",
         loaded = options.loaded,
@@ -27,6 +27,9 @@ local function boot(options)
                 return instance.name, "party", 1, "", 5, 0, false, instance.id
             end
             _G.C_Map.GetMapInfo = function(map)
+                if world.unknown and world.unknown[map] then
+                    return nil
+                end
                 return { mapID = map, parentMapID = map == 291 and 1436 or 0 }
             end
             local canvas = CreateFrame("Frame")
@@ -107,6 +110,16 @@ describe("Carte des donjons", function()
         expect_eq(kinds.transition, 1, "passage vers l'étage 2")
         expect(rare and rare.kind == "rare", "Miner Johnson est un boss rare")
         expect_eq(dungeonMap.toggle.text, "World map", "bouton de bascule")
+        expect_eq(#game.errors, 0, tostring(game.errors[1]))
+    end)
+
+    it("garde la carte du monde intacte si le client n'a pas la carte de l'étage", function()
+        local game, dungeonMap, world = boot({ instance = { id = 36 }, unknown = { [291] = true } })
+        world.open()
+        expect_eq(world.set, {}, "aucune carte inconnue donnée à la carte du monde")
+        expect(dungeonMap.panel, "étage montré sur le panneau")
+        expect(dungeonMap.panel.title.text, "titre de l'étage")
+        expect(#shownPins(dungeonMap.panel.pins) >= 3, "boss sur le panneau")
         expect_eq(#game.errors, 0, tostring(game.errors[1]))
     end)
 

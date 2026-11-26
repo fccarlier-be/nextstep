@@ -428,6 +428,13 @@ function DungeonMap:CreatePanel()
     back:SetAllPoints()
     back:SetColorTexture(0, 0, 0, 1)
     panel.art = CreateFrame("Frame", nil, panel)
+    if panel.art.SetClipsChildren then
+        panel.art:SetClipsChildren(true)
+    end
+    panel.tiles = {}
+    for index = 1, 12 do
+        panel.tiles[index] = panel.art:CreateTexture(nil, "BORDER")
+    end
     panel.image = panel.art:CreateTexture(nil, "ARTWORK")
     panel.image:SetAllPoints()
     panel.title = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
@@ -485,7 +492,20 @@ function DungeonMap:UpdatePanel()
     end
     panel.image:SetTexCoord(0, floor.right or 1, 0, floor.bottom or 1)
     panel.image:SetShown(loaded and true or false)
-    panel.missing:SetShown(not loaded)
+    -- Sans image de DungeonJournal, les tuiles du client (4 × 3 de 256 pixels, dont
+    -- 1002 × 668 utiles) quand la carte elle-même lui manque.
+    local tiled = not loaded and floor.tiles ~= nil
+    for index, tile in ipairs(panel.tiles) do
+        if tiled then
+            local column, row = (index - 1) % 4, math.floor((index - 1) / 4)
+            tile:SetTexture(floor.tiles .. index)
+            tile:ClearAllPoints()
+            tile:SetPoint("TOPLEFT", panel.art, "TOPLEFT", column * 256 / 1002 * width, -row * 256 / 668 * height)
+            tile:SetSize(256 / 1002 * width, 256 / 668 * height)
+        end
+        tile:SetShown(tiled)
+    end
+    panel.missing:SetShown(not loaded and not tiled)
     local title = wing.name
     local dungeon = dungeonOf(shown.key)
     if dungeon and dungeonName(dungeon) then
@@ -505,7 +525,27 @@ end
 -- Choix de l'étage, bouton de bascule, mention de l'auteur
 ---------------------------------------------------------------------------
 
--- Affiche un étage : sur la carte native s'il a une carte du client, sinon sur le panneau.
+-- Le client connaît-il cette carte ? DungeonJournal donne les numéros de WoW Classic :
+-- une carte absente du client de Forever (sans infos ou sans couches d'image) casse la
+-- carte du monde si on la lui donne (erreurs « layers » et « mapInfo »).
+function DungeonMap.ClientHasMap(mapID)
+    if not (mapID and C_Map and C_Map.GetMapInfo) then
+        return false
+    end
+    local ok, info = pcall(C_Map.GetMapInfo, mapID)
+    if not (ok and type(info) == "table") then
+        return false
+    end
+    if C_Map.GetMapArtLayers then
+        local okLayers, layers = pcall(C_Map.GetMapArtLayers, mapID)
+        if not (okLayers and type(layers) == "table" and layers[1]) then
+            return false
+        end
+    end
+    return true
+end
+
+-- Affiche un étage : sur la carte native si le client a sa carte, sinon sur le panneau.
 function DungeonMap:ShowFloor(key, wingIndex, floorIndex)
     local wing = ns.DB.dungeonMaps[key] and ns.DB.dungeonMaps[key][wingIndex]
     local floor = wing and wing.floors[floorIndex]
@@ -513,7 +553,7 @@ function DungeonMap:ShowFloor(key, wingIndex, floorIndex)
         return
     end
     self.shown = { key = key, wing = wingIndex, floor = floorIndex }
-    if floor.map then
+    if DungeonMap.ClientHasMap(floor.map) then
         if self.panel then
             self.panel:Hide()
         end
