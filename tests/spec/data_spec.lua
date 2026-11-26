@@ -155,6 +155,38 @@ describe("Données importées", function()
         end
         expect(maps > 50 and overlays > 1000, ("%d cartes, %d superpositions"):format(maps, overlays))
     end)
+
+    it("charge les cartes des donjons reprises de DungeonJournal", function()
+        local DB = wow.boot().ns.DB
+        local known = {}
+        for _, dungeon in ipairs(DB.dungeons) do
+            known[dungeon.key] = true
+        end
+        local bosses, rares, reyes = 0, 0, 0
+        for key, wings in pairs(DB.dungeonMaps) do
+            for _, wing in ipairs(wings) do
+                expect(known[key] or wing.extra, key .. " : donjon inconnu de NextStep sans marque « extra »")
+                expect(#wing.floors > 0, wing.name .. " : aucun étage")
+                for _, floor in ipairs(wing.floors) do
+                    expect(floor.map or floor.image, wing.name .. " : étage sans carte ni image")
+                    if floor.image then
+                        expect(floor.image:find("^Interface\\AddOns\\ForeverDungeonJournal\\"),
+                            wing.name .. " : image hors du dossier de DungeonJournal")
+                    end
+                    reyes = reyes + (floor.reyes and 1 or 0)
+                end
+                for _, boss in ipairs(wing.bosses) do
+                    bosses = bosses + 1
+                    rares = rares + (boss.rare and 1 or 0)
+                    expect(wing.floors[boss.f], wing.name .. " : étage inconnu pour " .. boss.name)
+                    expect(boss.x >= 0 and boss.x <= 1 and boss.y >= 0 and boss.y <= 1, boss.name .. " : hors carte")
+                end
+            end
+        end
+        expect(DB.dungeonMaps.deadmines and DB.dungeonMaps.deadmines[1].floors[1].map == 291, "Mortemines, étage 1")
+        expect(bosses > 200 and rares > 10 and reyes > 0, ("%d boss, %d rares, %d étages de Reyes"):format(bosses,
+            rares, reyes))
+    end)
 end)
 
 local function readText(path)

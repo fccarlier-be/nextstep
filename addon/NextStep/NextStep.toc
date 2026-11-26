@@ -30,6 +30,7 @@ Data\Imported\WhatsTraining\Spells.lua
 Data\Overrides\Guides.lua
 Data\Imported\Polestar\Gear.lua
 Data\Imported\Polestar\Dungeons.lua
+Data\Imported\DungeonJournal\Maps.lua
 Data\Imported\Polestar\QuestGroups.lua
 Data\Imported\Polestar\AdviceQuests.lua
 Data\Imported\Polestar\AmmoVendors.lua

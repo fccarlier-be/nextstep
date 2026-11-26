@@ -521,7 +521,7 @@ Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puis
 
 ## 9. Module UI
 
-Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Radar`, `Clock`, `Windows`, `MapReveal`.
+Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Radar`, `Clock`, `Windows`, `MapReveal`, `DungeonMap` (conçu).
 
 ### Valeurs de vie et de ressources
 
@@ -642,6 +642,49 @@ Aide au farm des ressources, sur le principe de FarmHud (code propre à NextStep
 - Ouverture et fermeture par `/ns radar`, un raccourci clavier, le clic milieu sur le bouton NextStep ; fermeture aussi par **Échap** (cadre dans `UISpecialFrames`) ou la **croix** en haut à droite de l'anneau, seul élément qui prend la souris (`Bindings.xml`, Raccourcis > NextStep). Si `Minimap` est protégée en combat, le changement est différé à la sortie du combat. L'option `rotateMinimap` est rendue à la déconnexion. Actif par défaut, désactivable, mis de côté si FarmHud est chargé.
 - Plus tard : ouverture automatique sur une étape « farmer ici » d'une route de métier ; points de récolte de la base (phase 9) dessinés sur le radar.
 - **[À vérifier]** En jeu : `Minimap` déplaçable et redimensionnable sur Forever, en combat compris ; points de suivi toujours visibles quand le terrain est masqué ; masque rond d'origine (`Textures\MinimapMask`) ; zoom 0 bien le plus large ; raccourci affiché dans le menu des raccourcis.
+
+### Carte des donjons
+
+**Conçu (2026-11-26) ; données importées, module pas encore écrit.** Demande de joueurs : DungeonJournal sert à se repérer en donjon, mais sa carte ne montre pas les membres du groupe. En donjon, la carte du monde (M) affiche la carte du donjon, avec le groupe, les boss, les quêtes et les boss rares. Module `DungeonMap` (`Modules/UI/DungeonMap.lua`), actif par défaut, désactivable.
+
+**Pourquoi DungeonJournal ne montre pas le groupe.** Sur le moteur moderne, un addon ne peut pas lire la position des autres joueurs en instance : `UnitPosition` et `C_Map.GetPlayerMapPosition` ne renvoient rien pour eux (seule celle du joueur reste lisible). La carte du monde native, elle, dessine les membres du groupe sans passer par Lua (fournisseur `GroupMembersDataProvider`, cadre `UnitPositionFrame`). DungeonJournal pose **sa propre image** du donjon au-dessus de la carte native (couche 9300 et plus, `Systems/WorldMapOverlay.lua`) : il cache ainsi les membres du groupe que la carte native aurait dessinés.
+
+**Principe retenu : garder la carte native, ne pas la recouvrir.**
+
+- En donjon (`IsInInstance`, type `party` ou `raid`), à l'ouverture de la carte, NextStep montre l'étage du donjon sur `WorldMapFrame` (`SetMapID`) au lieu de la zone extérieure. Le client a les cartes des donjons classiques (tuiles `Interface\WorldMap\<Nom>\<Nom><étage>_1..12`, `uiMapID` avec `C_Map.GetMapArtLayers`) ; si `C_Map.GetBestMapForUnit("player")` renvoie déjà la carte du donjon, il n'y a rien à faire.
+- Table `instanceID` (8e retour de `GetInstanceInfo`) → `uiMapID` des étages, dans les données ; à défaut, recherche des cartes au nom du donjon qui ont des textures (`C_Map.GetMapInfo`, `C_Map.GetMapArtLayerTextures`), une fois par donjon, mémorisée. Les étages se choisissent avec le menu natif de la carte (`C_Map.GetMapGroupMembersInfo`).
+- Les membres du groupe sont dessinés **par le client**, sans code NextStep. Un bouton en haut de la carte rebascule vers la zone extérieure (entrée du donjon, repères du guide), et inversement.
+- Repères ajoutés par un fournisseur de données, comme ceux du guide (`MapCanvasDataProviderMixin`, voir [Carte du monde et minimap](#carte-du-monde-et-minimap)) :
+  - **Boss** : crâne doré, grisé une fois tué dans cette instance (`ENCOUNTER_END` réussi, mémorisé jusqu'à la sortie ou la réinitialisation). Infobulle : nom, niveau, quêtes du journal qui le concernent, meilleure amélioration de son butin avec le gain. Clic : onglet **Donjons** du journal ouvert sur ce boss.
+  - **Quêtes** : point d'interrogation jaune pour les PNJ qui prennent ou rendent des quêtes dans le donjon ; sur un boss visé par une quête du journal, petite marque de quête (état : en cours, objectif rempli). Quêtes reprises de `Dungeons.lua` (forever-db), déjà rattachées aux donjons et aux boss.
+  - **Boss rares** : étoile argentée, avec le nom et, s'il est connu, le butin notable ; gris s'il a été vu mort dans cette instance.
+  - **Entrée** et **passages d'étage** : flèche verte ; un clic sur un passage affiche l'étage où il mène.
+- Cohabitation : si l'option « carte du donjon sur la carte du monde » de DungeonJournal est active (`ForeverDungeonJournalDB.worldMapOverlay ~= false`), son image passe par-dessus la nôtre. NextStep ne touche pas à ses réglages : un message unique explique comment couper cette option pour voir le groupe. Même chose pour FojjiCore (`InstanceMap.lua`) s'il recouvre la carte.
+
+**Données : cartes reprises de DungeonJournal** (décisions du porteur du projet, 2026-11-26 : les positions des boss sont des faits publiés partout ; les images des cartes sont utilisées en créditant leur auteur). Ni le code ni les textes de DungeonJournal ne sont repris.
+
+- **Source** : DungeonJournal 2.1.5 (Exehn), table `FDJ.DUNGEON_MAPS` de `Core/Journal.lua` : 34 ailes de donjon, par nom anglais. Pour chacune : les étages (`uiMapID` du client et ses tuiles, ou image de l'addon), l'entrée, les passages d'un étage à l'autre (`transitions`), les PNJ qui prennent des quêtes dans le donjon (`turnins`) et les boss (`name`, `floor`, `x`, `y`, coordonnées de 0 à 1 sur l'étage). Le drapeau `rare = true` des boss et leur PNJ viennent de `Data/Dungeons.lua`.
+- **Import** (**réalisé**) : `Tools/import/dungeonmaps.lua` découpe la table littérale dans `Core/Journal.lua` et l'évalue sans aucune globale, exécute `Data/Dungeons.lua` dans un environnement isolé, et n'exécute rien d'autre de l'addon. Chaque aile est rattachée à un donjon de `Dungeons.lua` par ses boss (PNJ, puis nom), ou à la main (donjons dont NextStep ne connaît pas les boss) ; les donjons de Forever absents des données de NextStep (prison d'Alcaz, Blackmaw Hold, Krol'dok, Terrasse du Façonneur, Cité engloutie) gardent une clé propre, marquée `extra`. Sortie : `Data/Imported/DungeonJournal/Maps.lua` (format : [DATA_FORMAT.md](DATA_FORMAT.md#cartes-des-donjons)) et le rapport `Tools/import/dungeonmaps-report.md`. Premier import : 34 ailes, 59 étages (39 cartes du client, 21 images), 241 positions de boss dont 18 rares, 34 entrées, 17 passages, 5 PNJ de quêtes. 20 boss rares du journal n'ont pas de position sur sa carte, 3 boss pas de PNJ connu : listés dans le rapport. À relancer à chaque mise à jour de DungeonJournal.
+- **Images** : les cartes des donjons de Forever et les retouches des cartes classiques (`MapPatches`, Grottes des Lamentations complètes) sont celles de DungeonJournal. Elles ne sont **pas copiées** dans NextStep, dont le dépôt est public et qui est publié sur CurseForge : le fichier généré garde leur chemin (`Interface\AddOns\ForeverDungeonJournal\Media\…`), et le jeu les lit dans le dossier de DungeonJournal s'il est installé. Sans DungeonJournal, seuls les étages qui ont une carte du client s'affichent. Elles sont dessinées sur le canevas de la carte native, **sous** les repères des membres du groupe.
+- **Crédits** : DungeonJournal (Exehn) et Santiago Reyes (cartographie de Blackmaw Hold et d'Atal'Byzal, étages marqués `reyes`) dans `CREDITS.md`, [DATA_SOURCES.md](DATA_SOURCES.md) et en tête du fichier généré ; l'infobulle d'un étage de Santiago Reyes le cite.
+- **Donjons propres à Forever** : leurs positions sont rapportées aux images de DungeonJournal. Le groupe n'y apparaît que si le client a aussi une carte de ce donjon (`uiMapID`) sur laquelle placer ses membres : à vérifier donjon par donjon. Sinon, la carte montre l'image, les boss et les quêtes, sans le groupe.
+- **Grottes des Lamentations** : la carte du client est celle d'après le patch 4.1, sans le dédale de l'est que Forever a gardé. Les positions sont les mêmes à l'ouest ; Pythas et Skum tombent sur une partie non dessinée de la carte. Ils sont affichés quand même.
+- **En complément, positions apprises** en jeu, au niveau du compte, comme le butin appris : position du joueur sur la carte du donjon (`C_Map.GetPlayerMapPosition`, qui reste lisible pour soi) quand un boss meurt (`ENCOUNTER_END`) ou que son butin est ouvert (`LOOT_OPENED`, `GetLootSourceInfo`). Elles ne servent qu'aux boss que la table n'a pas.
+
+**Repli si la carte native ne montre pas le groupe en donjon** (à trancher en jeu) : chaque joueur NextStep envoie sa propre position au groupe (message d'addon, deux fois par seconde au plus, seulement carte ouverte chez quelqu'un), et NextStep dessine les autres. Seuls les joueurs équipés de NextStep apparaîtraient : solution de second choix.
+
+**Étapes** (chacune sa version) :
+
+1. **Import** des cartes de DungeonJournal (hors jeu), avec son rapport et ses tests : **réalisé**.
+2. **Diagnostic en donjon** (section « Donjon » de `/nsdiag`, à lancer en groupe dans un donjon classique) : carte renvoyée par `C_Map.GetBestMapForUnit("player")` et ses textures ; membres du groupe dessinés par la carte native après `SetMapID` sur l'étage ; `UnitPosition` et `C_Map.GetPlayerMapPosition` pour le joueur et pour `party1` ; `GetInstanceInfo` ; `ENCOUNTER_START` / `ENCOUNTER_END` pour un boss classique ; cartes du client pour les donjons propres à Forever.
+3. Carte native sur l'étage du donjon, bouton de bascule, message de cohabitation.
+4. Repères des boss, boss tués grisés, rares, entrée et passages d'étage.
+5. Repères des quêtes (PNJ de quêtes du donjon, boss visés par une quête du journal).
+6. Si besoin : repli par messages d'addon.
+
+Plus tard : la flèche et les repères du guide à l'intérieur des donjons (aujourd'hui masqués en instance).
+
+- **[À vérifier]** sur Forever : tout le point 1 des étapes, en particulier les membres du groupe sur la carte native en donjon (condition de tout le module) ; absence de souillure (*taint*) en changeant la carte affichée à l'ouverture.
 
 ---
 

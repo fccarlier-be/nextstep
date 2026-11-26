@@ -6,6 +6,12 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), et le p
 
 ## [Non publié]
 
+### Documentation
+- Conception de la **carte des donjons** : en donjon, la carte du monde montrera la carte du donjon avec les membres du groupe, les boss, les quêtes et les boss rares.
+
+### Ajouté
+- Données de la carte des donjons, reprises de DungeonJournal (Exehn) : 34 ailes de donjon, leurs étages, entrées, passages, et 241 positions de boss, dont les boss rares. Les cartes des donjons de Forever restent dans le dossier de DungeonJournal, lues s'il est installé ; celles de Blackmaw Hold et d'Atal'Byzal sont de Santiago Reyes. Pas encore affichées en jeu.
+
 ## [0.6.1] - 2026-11-25
 
 ### Ajouté

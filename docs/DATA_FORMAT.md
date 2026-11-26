@@ -18,6 +18,7 @@ Ce document décrit les fichiers de données de NextStep et la couche d'accès q
 | `addon/NextStep/Data/Imported/Polestar/QuestGroups.lua` | Quêtes élites ou de groupe (`DB.questGroups[quête] = "e"` élite, `"g"` groupe, `"d"` donjon, `"r"` raid), d'après le type de la quête dans forever-db, sinon le rang des monstres visés ; affichées sur les lignes du guide quand il ne le dit pas | Toujours |
 | `addon/NextStep/Data/Imported/Polestar/AdviceQuests.lua` | Mode conseil : quêtes prises hors instance (`DB.adviceQuests[quête] = "niveau min faction races classes zone carte x y|tous|l'un|titre|n donneur"`, prérequis sans les quêtes d'introduction) et noms anglais des donneurs (`DB.adviceGivers`, objets en négatif) | Toujours |
 | `addon/NextStep/Data/Imported/Polestar/Dungeons.lua` | Donjons, leurs quêtes et suites de quêtes, butin des boss, provenance et caractéristiques des objets de leveling | Toujours |
+| `addon/NextStep/Data/Imported/DungeonJournal/Maps.lua` | [Cartes des donjons](#cartes-des-donjons) : étages, entrées, passages, PNJ de quêtes, boss et boss rares (positions de DungeonJournal) | Toujours |
 
 Tous sont **générés** et ne doivent jamais être modifiés à la main : ceux de Polestar par `Tools/import/import.lua` (voir [l'import](#import)), celui de la carte par `Tools/worldmap/generate.lua` (voir [l'extraction de la carte](#extraction-de-la-carte)). Les corrections iront dans `Data/Overrides/`.
 
@@ -249,6 +250,35 @@ DB.itemZones = { [1581] = "The Deadmines" }
 - `itemStats` : format de `Polestar_ItemDB` (emplacement, niveau d'objet, niveau requis, qualité, classe, sous-classe, puis stats ; `dmin`/`dmax`/`speed` pour les armes, `cls` masque de classes).
 - `itemSources` : `q<quête>`, `d<PNJ>x<taux pour mille>z<zone>`, `c<sort>p<métier>s<compétence>` (métier : rang dans la liste de ForeverLevelingBiS, 1 Alchimie… 13 Pêche), séparés par `|`.
 
+## Cartes des donjons
+
+`Data/Imported/DungeonJournal/Maps.lua`, généré par `Tools/import/dungeonmaps.lua` à partir de DungeonJournal installé (voir [DESIGN.md](DESIGN.md#carte-des-donjons)) :
+
+```lua
+DB.dungeonMaps = {
+	["deadmines"] = {
+		{ name = "The Deadmines",
+			floors = {
+				{ map = 291, tiles = "Interface\\WorldMap\\TheDeadmines\\TheDeadmines1_", patches = { { "Interface\\AddOns\\ForeverDungeonJournal\\Media\\MapPatches\\TheDeadmines1_s1", 0.3313, 0.5898, 0.3653, 0.6407 } } },
+				{ map = 292, tiles = "Interface\\WorldMap\\TheDeadmines\\TheDeadmines2_" },
+			},
+			entrances = { { 1, 0.295, 0.135 } },
+			transitions = { { 1, 2, 0.615, 0.61 } },
+			bosses = {
+				{ npc = 644, name = "Rhahk'Zor", f = 1, x = 0.365, y = 0.61 },
+				{ npc = 3586, name = "Miner Johnson", f = 1, x = 0.535, y = 0.52, rare = true },
+			},
+		},
+	},
+}
+```
+
+- Clé : celle de `DB.dungeons` ; un donjon de Forever absent de `DB.dungeons` garde une clé propre et ses ailes portent `extra = true`. Une clé a plusieurs ailes quand DungeonJournal les sépare (Monastère écarlate, Hache-Tripes, Stratholme) ; `name` est le nom anglais de l'aile dans DungeonJournal.
+- `floors` : un étage par page de DungeonJournal. `map` : `uiMapID` du client ; `tiles` : tuiles du client (`<préfixe>1..12`) ; `image` : image de DungeonJournal, avec la part utile de la texture (`right`, `bottom`, de 0 à 1) ; `reyes` : cartographie de Santiago Reyes, à créditer ; `label` : nom anglais de l'étage ; `patches` : retouches de DungeonJournal posées sur la carte du client, `{ image, x0, y0, x1, y1, opacité }`.
+- Positions de 0 à 1 sur l'étage, depuis le coin haut gauche. `entrances` : `{ étage, x, y }` ; `transitions` : `{ étage, étage d'arrivée, x, y }` ; `turnins` : `{ nom anglais du PNJ, étage, x, y }`.
+- `bosses` : `npc` (absent si DungeonJournal ne le donne pas), nom anglais, étage `f`, `x`, `y`, `rare`, `alt` (autre point d'apparition possible du même boss), `quests` (quêtes qui le visent).
+- Les images restent dans le dossier de DungeonJournal : elles ne s'affichent que s'il est installé.
+
 ## Vendeurs de munitions
 
 `Data/Imported/Polestar/AmmoVendors.lua`, généré par `Tools/import/ammo.py` :
@@ -273,6 +303,14 @@ DB.ammoVendors = {
 3. Le rapport [`Tools/import/last-import.md`](../Tools/import/last-import.md) donne les totaux, la couverture des noms et les avertissements.
 4. `gear.lua` exécute `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar dans un environnement isolé, écrit les [poids de stats](#poids-de-stats) et recopie la notice de ces données (MIT : ForeverLevelingBiS, wowsims) dans `Gear-LICENSE-DATA.txt`.
 5. `dungeons.py` (Python, lancé avec `-I`) lit forever-db (`forever-db/data/*.jsonl`) et `Polestar_ItemDB` (`Items.lua`, `Forever.lua`), écrit les [donjons](#donjons) et recopie les notices (`ForeverDB-NOTICE.md`, `ItemDB-LICENSE-DATA.txt`).
+
+Les cartes des donjons ont leur propre import, hors de `run.ps1` (il lit DungeonJournal installé, pas Polestar) :
+
+```powershell
+luajit Tools/import/dungeonmaps.lua    # dossier de DungeonJournal en argument, sinon celui de WoW Forever
+```
+
+Il découpe la table `FDJ.DUNGEON_MAPS` dans `Core/Journal.lua` et l'évalue sans aucune globale, exécute `Data/Dungeons.lua` dans un environnement isolé, écrit les [cartes des donjons](#cartes-des-donjons), les relit, et écrit le rapport [`Tools/import/dungeonmaps-report.md`](../Tools/import/dungeonmaps-report.md) (totaux, étages de Santiago Reyes, boss sans PNJ ou sans position). À relancer après chaque mise à jour de DungeonJournal, puis `Tools\check.ps1`.
 
 L'import est **reproductible** : deux exécutions sur le même commit produisent des fichiers identiques, ce qui rend les différences lisibles dans git.
 
