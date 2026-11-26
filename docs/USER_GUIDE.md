@@ -58,6 +58,7 @@ NextStep regroupe dans un seul addon tout ce qu'il faut pour monter un personnag
 | **Points de récolte** | Chaque herbe, filon et coffre récoltés sont retenus et affichés sur la minimap et la carte. |
 | **Carte sans brouillard** | Les zones inexplorées de la carte du monde, plus sombres. |
 | **Niveau des zones** | La tranche de niveaux des zones sur la carte du monde. |
+| **Carte des donjons** | En donjon, la carte du monde (M) s'ouvre sur la carte du donjon : boss (grisés une fois tués), boss rares, PNJ de quêtes, entrée et passages d'un étage à l'autre, avec les membres du groupe. Clic sur un boss : le donjon dans le journal. Bouton en haut à droite pour revenir à la carte du monde. Les cartes des donjons de Forever viennent de DungeonJournal, qui doit être installé (sa propre carte sur la carte du monde est à couper). |
 | **Valeurs de vie** | Vie et ressources en chiffres sur les cadres d'unité, vie sous les barres de nom. |
 | **Sacs et banque** | Améliorations et camelote marquées dans les sacs, places libres ; sacs et banque de tous tes personnages dans les infobulles et consultables de partout (`/ns bank`). |
 | **Camelote** | Les objets gris sont vendus à l'ouverture d'un marchand (Maj pour ne rien vendre ; `/ns keep <objet>` pour une exception). |

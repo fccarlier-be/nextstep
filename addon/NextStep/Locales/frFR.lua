@@ -487,6 +487,35 @@ L["Zone levels"] = "Niveau des zones"
 L["Shows each zone's level range on the world map."] =
     "Affiche la tranche de niveaux de chaque zone sur la carte du monde."
 
+-- Modules/UI/DungeonMap.lua
+L["Dungeon map"] = "Carte du donjon"
+L["In a dungeon, the world map opens on the dungeon's map, with bosses, rare bosses, "
+    .. "quest NPCs, the entrance and the ways between levels. Group members stay on the map."] =
+    "En donjon, la carte du monde s'ouvre sur la carte du donjon, avec les boss, les boss rares, "
+    .. "les PNJ de quêtes, l'entrée et les passages d'un étage à l'autre. Les membres du groupe "
+    .. "restent sur la carte."
+L["Entrance"] = "Entrée"
+L["Way to %s"] = "Passage vers %s"
+L["floor %d"] = "étage %d"
+L["%s (quests)"] = "%s (quêtes)"
+L["Rare boss"] = "Boss rare"
+L["Rare boss (one of its spawn points)"] = "Boss rare (l'un de ses points d'apparition)"
+L["Killed in this instance"] = "Tué dans cette instance"
+L["Click: open the dungeon in the journal"] = "Clic : ouvrir le donjon dans le journal"
+L["Install DungeonJournal to see this map's artwork."] =
+    "Installez DungeonJournal pour voir le dessin de cette carte."
+L["World map"] = "Carte du monde"
+L["Map: Santiago Reyes (sreyesmaps.com), via DungeonJournal"] =
+    "Carte : Santiago Reyes (sreyesmaps.com), via DungeonJournal"
+L["Map details: DungeonJournal (Exehn)"] = "Détails de la carte : DungeonJournal (Exehn)"
+L["DungeonJournal shows its own dungeon map over the world map, which hides your group. "
+    .. "Turn off its world map option to see NextStep's dungeon map."] =
+    "DungeonJournal pose sa propre carte du donjon sur la carte du monde, ce qui cache votre "
+    .. "groupe. Coupez son option de carte du monde pour voir la carte du donjon de NextStep."
+L["Open the dungeon map with the world map"] = "Ouvrir la carte du donjon avec la carte du monde"
+L["Show rare bosses"] = "Afficher les boss rares"
+L["Show quest NPCs and quest marks"] = "Afficher les PNJ de quêtes et les marques de quête"
+
 -- Sorts : maître de classe tout près
 L["your class trainer"] = "votre maître de classe"
 L["Class trainer nearby (%s, %d yd): %s"] = "Maître de classe tout près (%s, %d m) : %s"

@@ -521,7 +521,7 @@ Les textures du jeu sont des TGA 32 bits non compressés, aux dimensions en puis
 
 ## 9. Module UI
 
-Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Radar`, `Clock`, `Windows`, `MapReveal`, `DungeonMap` (conçu).
+Sous-modules indépendants, chacun activable : `UnitText`, `Bags`, `Junk`, `Minimap`, `Radar`, `Clock`, `Windows`, `MapReveal`, `DungeonMap`.
 
 ### Valeurs de vie et de ressources
 
@@ -645,7 +645,7 @@ Aide au farm des ressources, sur le principe de FarmHud (code propre à NextStep
 
 ### Carte des donjons
 
-**Conçu (2026-11-26) ; données importées, module pas encore écrit.** Demande de joueurs : DungeonJournal sert à se repérer en donjon, mais sa carte ne montre pas les membres du groupe. En donjon, la carte du monde (M) affiche la carte du donjon, avec le groupe, les boss, les quêtes et les boss rares. Module `DungeonMap` (`Modules/UI/DungeonMap.lua`), actif par défaut, désactivable.
+**Écrit et testé hors jeu (2026-11-26)** ; reste la vérification en jeu, en groupe. Demande de joueurs : DungeonJournal sert à se repérer en donjon, mais sa carte ne montre pas les membres du groupe. En donjon, la carte du monde (M) affiche la carte du donjon, avec le groupe, les boss, les quêtes et les boss rares. Module `DungeonMap` (`Modules/UI/DungeonMap.lua`), actif par défaut, désactivable.
 
 **Pourquoi DungeonJournal ne montre pas le groupe.** Sur le moteur moderne, un addon ne peut pas lire la position des autres joueurs en instance : `UnitPosition` et `C_Map.GetPlayerMapPosition` ne renvoient rien pour eux (seule celle du joueur reste lisible). La carte du monde native, elle, dessine les membres du groupe sans passer par Lua (fournisseur `GroupMembersDataProvider`, cadre `UnitPositionFrame`). DungeonJournal pose **sa propre image** du donjon au-dessus de la carte native (couche 9300 et plus, `Systems/WorldMapOverlay.lua`) : il cache ainsi les membres du groupe que la carte native aurait dessinés.
 
@@ -677,14 +677,26 @@ Aide au farm des ressources, sur le principe de FarmHud (code propre à NextStep
 
 1. **Import** des cartes de DungeonJournal (hors jeu), avec son rapport et ses tests : **réalisé**.
 2. **Diagnostic en donjon** (section « Donjon » de `/nsdiag`, à lancer en groupe dans un donjon classique) : carte renvoyée par `C_Map.GetBestMapForUnit("player")` et ses textures ; membres du groupe dessinés par la carte native après `SetMapID` sur l'étage ; `UnitPosition` et `C_Map.GetPlayerMapPosition` pour le joueur et pour `party1` ; `GetInstanceInfo` ; `ENCOUNTER_START` / `ENCOUNTER_END` pour un boss classique ; cartes du client pour les donjons propres à Forever.
-3. Carte native sur l'étage du donjon, bouton de bascule, message de cohabitation.
-4. Repères des boss, boss tués grisés, rares, entrée et passages d'étage.
-5. Repères des quêtes (PNJ de quêtes du donjon, boss visés par une quête du journal).
+3. Carte native sur l'étage du donjon, bouton de bascule, message de cohabitation : **réalisé**.
+4. Repères des boss, boss tués grisés, rares, entrée et passages d'étage : **réalisé**.
+5. Repères des quêtes (PNJ de quêtes du donjon, boss visés par une quête du journal) : **réalisé**.
 6. Si besoin : repli par messages d'addon.
+
+**Réalisé** (`Modules/UI/DungeonMap.lua`, module `DungeonMap`, actif par défaut ; diagnostic en donjon reporté) :
+
+- **Donjon en cours** : carte du client du personnage (`C_Map.GetBestMapForUnit`) retrouvée parmi les étages importés, sinon instance (`GetInstanceInfo`, `instance` de `DB.dungeons`), sinon nom du donjon (traduit par le client, ou nom anglais de l'aile pour les donjons `extra`). Hors donjon (`IsInInstance` autre que `party` ou `raid`), rien ne change.
+- **Ouverture** (`HookScript` sur `OnShow` de `WorldMapFrame`, option « Ouvrir la carte du donjon avec la carte du monde ») : si la carte ne montre pas déjà un étage du donjon, `SetMapID` sur l'étage du personnage, sinon le premier ; revérifié 0,1 s plus tard (la carte de Forever peut remettre la carte précédente, d'après DungeonJournal).
+- **Étage avec carte du client** : fournisseur de données (`MapCanvasDataProviderMixin`). Les retouches et l'image complète de DungeonJournal (Grottes des Lamentations) sur un cadre du canevas juste au-dessus du fond ; les repères à `PIN_LEVEL` (1500) au-dessus du canevas, sous les membres du groupe. Taille constante à l'écran (divisée par l'échelle du canevas).
+- **Étage sans carte du client** : panneau noir sur la zone de la carte (`ScrollContainer`), image de DungeonJournal centrée à ses proportions (1002 × 668), titre (donjon, étage), boutons < et > entre les étages. Sans DungeonJournal installé (`C_AddOns.DoesAddOnExist`), un message remplace l'image ; les repères restent.
+- **Repères** : crâne doré (boss), étoile argentée (rare ; les autres points d'apparition d'un même rare aussi), flèche verte (entrée, passages : un clic montre l'étage d'arrivée), point d'interrogation (PNJ de quêtes) ; petite marque de quête sur un boss visé par une quête du journal. Boss tué : grisé (`ENCOUNTER_END` réussi, nom du boss, mémorisé par personnage pour l'instance en cours, oublié dans une autre). Infobulle : nom traduit (`DB:GetName`), rare, tué, quêtes du journal ; clic sur un boss : onglet Donjons du journal sur ce donjon.
+- **Bouton** « Carte du monde » / « Carte du donjon » en haut à droite de la carte, en donjon seulement : carte parente de l'étage (`parentMapID`), ou retour à l'étage.
+- **Mention de l'auteur** en bas à droite : « Carte : Santiago Reyes (sreyesmaps.com), via DungeonJournal » sur ses étages, « Détails de la carte : DungeonJournal (Exehn) » sur les autres images et retouches.
+- **Cohabitation** : si DungeonJournal est chargé avec sa carte sur la carte du monde, un message (une fois par session) explique comment la couper.
+- **Options** : ouverture automatique, boss rares, PNJ de quêtes et marques de quête.
 
 Plus tard : la flèche et les repères du guide à l'intérieur des donjons (aujourd'hui masqués en instance).
 
-- **[À vérifier]** sur Forever : tout le point 1 des étapes, en particulier les membres du groupe sur la carte native en donjon (condition de tout le module) ; absence de souillure (*taint*) en changeant la carte affichée à l'ouverture.
+- **[À vérifier]** sur Forever : tout le point 2 des étapes (diagnostic), en particulier les membres du groupe sur la carte native en donjon (condition de tout le module) ; absence de souillure (*taint*) en changeant la carte affichée à l'ouverture.
 
 ---
 
