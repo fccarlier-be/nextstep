@@ -276,7 +276,7 @@ DB.dungeonMaps = {
 - Clé : celle de `DB.dungeons` ; un donjon de Forever absent de `DB.dungeons` garde une clé propre et ses ailes portent `extra = true`. Une clé a plusieurs ailes quand DungeonJournal les sépare (Monastère écarlate, Hache-Tripes, Stratholme) ; `name` est le nom anglais de l'aile dans DungeonJournal.
 - `floors` : un étage par page de DungeonJournal. `map` : `uiMapID` du client ; `tiles` : tuiles du client (`<préfixe>1..12`) ; `image` : image de DungeonJournal, avec la part utile de la texture (`right`, `bottom`, de 0 à 1) ; `reyes` : cartographie de Santiago Reyes, à créditer ; `label` : nom anglais de l'étage ; `patches` : retouches de DungeonJournal posées sur la carte du client, `{ image, x0, y0, x1, y1, opacité }`.
 - Positions de 0 à 1 sur l'étage, depuis le coin haut gauche. `entrances` : `{ étage, x, y }` ; `transitions` : `{ étage, étage d'arrivée, x, y }` ; `turnins` : `{ nom anglais du PNJ, étage, x, y }`.
-- `bosses` : `npc` (absent si DungeonJournal ne le donne pas), nom anglais, étage `f`, `x`, `y`, `rare`, `alt` (autre point d'apparition possible du même boss), `quests` (quêtes qui le visent).
+- `bosses` : `npc` (absent si DungeonJournal ne le donne pas), nom anglais, étage `f`, `x`, `y`, `rare`, `alt` (autre point d'apparition possible du même boss), `quests` (quêtes qui le visent), `encounters` (numéros de rencontre d'`ENCOUNTER_END`, les mêmes dans toutes les langues du client ; plusieurs quand le jeu en a ajouté de nouveaux).
 - Les images restent dans le dossier de DungeonJournal : elles ne s'affichent que s'il est installé.
 
 ## Vendeurs de munitions
@@ -310,7 +310,7 @@ Les cartes des donjons ont leur propre import, hors de `run.ps1` (il lit Dungeon
 luajit Tools/import/dungeonmaps.lua    # dossier de DungeonJournal en argument, sinon celui de WoW Forever
 ```
 
-Il découpe la table `FDJ.DUNGEON_MAPS` dans `Core/Journal.lua` et l'évalue sans aucune globale, exécute `Data/Dungeons.lua` dans un environnement isolé, écrit les [cartes des donjons](#cartes-des-donjons), les relit, et écrit le rapport [`Tools/import/dungeonmaps-report.md`](../Tools/import/dungeonmaps-report.md) (totaux, étages de Santiago Reyes, boss sans PNJ ou sans position). À relancer après chaque mise à jour de DungeonJournal, puis `Tools\check.ps1`.
+Il découpe la table `FDJ.DUNGEON_MAPS` dans `Core/Journal.lua` et l'évalue sans aucune globale, exécute `Data/Dungeons.lua` et `Data/RunLogEncounters.lua` (numéros de rencontre des boss) dans un environnement isolé, écrit les [cartes des donjons](#cartes-des-donjons), les relit, et écrit le rapport [`Tools/import/dungeonmaps-report.md`](../Tools/import/dungeonmaps-report.md) (totaux, étages de Santiago Reyes, boss sans PNJ ou sans position, numéros de rencontre sans boss sur la carte). À relancer après chaque mise à jour de DungeonJournal, puis `Tools\check.ps1`.
 
 L'import est **reproductible** : deux exécutions sur le même commit produisent des fichiers identiques, ce qui rend les différences lisibles dans git.
 

@@ -1,15 +1,16 @@
 # Dernier import des cartes des donjons
 
-Source : DungeonJournal 2.1.5 (`ForeverDungeonJournal`). Généré par `Tools/import/dungeonmaps.lua`.
+Source : DungeonJournal 2.1.7 (`ForeverDungeonJournal`). Généré par `Tools/import/dungeonmaps.lua`.
 
 | | Nombre |
 |---|---|
 | Ailes de donjon | 34 |
-| Étages | 59 (carte du client : 39 ; image de DungeonJournal : 21, dont 7 de Santiago Reyes) |
-| Boss (positions) | 241, dont 18 rares |
-| Entrées | 34 |
-| Passages d'étage | 17 |
+| Étages | 61 (carte du client : 40 ; image de DungeonJournal : 25, dont 8 de Santiago Reyes) |
+| Boss (positions) | 251, dont 20 rares |
+| Entrées | 35 |
+| Passages d'étage | 24 |
 | PNJ de quêtes | 5 |
+| Numéros de rencontre | 254 sur 266 |
 
 ## Étages de Santiago Reyes
 
@@ -19,6 +20,7 @@ Source : DungeonJournal 2.1.5 (`ForeverDungeonJournal`). Généré par `Tools/im
 - Blackmaw Hold, étage 4
 - Blackmaw Hold, étage 5
 - Blackmaw Hold, étage 6
+- Blackmaw Hold, étage 7
 - The Drowned City, étage 2
 
 ## Avertissements
@@ -31,10 +33,10 @@ Source : DungeonJournal 2.1.5 (`ForeverDungeonJournal`). Généré par `Tools/im
 - « The Drowned City » : absent des donjons de NextStep, gardé sous la clé « drowned »
 - « The Drowned City » : boss « Primeval Elemental » sans PNJ connu (nom seul)
 - « The Drowned City » : boss « Deathless Marrow » sans PNJ connu (nom seul)
-- « Blackmaw Hold » : boss rare « Moontouched Wanderer » sans position sur la carte
 - « Blackmaw Hold » : boss rare « Gortek the Apprentice » sans position sur la carte
 - « Blackmaw Hold » : boss rare « Tunnelweb Matriarch » sans position sur la carte
 - « Blackmaw Hold » : boss rare « Sabella No-Eyes » sans position sur la carte
+- « Blackmaw Hold » : boss rare « Mopes » sans position sur la carte
 - « Blackrock Depths » : boss rare « Theldren » sans position sur la carte
 - « Blackrock Depths » : boss rare « Panzor the Invincible » sans position sur la carte
 - « Dire Maul: East » : boss rare « Isalien » sans position sur la carte
@@ -49,6 +51,23 @@ Source : DungeonJournal 2.1.5 (`ForeverDungeonJournal`). Généré par `Tools/im
 - « Scarlet Monastery: Graveyard » : boss rare « Ironspine » sans position sur la carte
 - « Scholomance » : boss rare « Death Knight Darkreaver » sans position sur la carte
 - « Scholomance » : boss rare « Kormok » sans position sur la carte
+- « Shaper's Terrace » : boss rare « King Op » sans position sur la carte
 - « Stratholme: Living » : boss rare « Jarien and Sothos » sans position sur la carte
-- « The Drowned City » : boss rare « Gill » sans position sur la carte
 - « Zul'Farrak » : boss rare « Dustwraith » sans position sur la carte
+- Rencontre 230 (« Blackrock Depths », « Ring of Law ») : aucun boss placé sur la carte
+- Rencontre 240 (« Blackrock Depths », « Ribbly Screwspigot ») : aucun boss placé sur la carte
+- Rencontre 267 (« Lower Blackrock Spire », « Highlord Omokk ») : aucun boss placé sur la carte
+- Rencontre 268 (« Lower Blackrock Spire », « Shadow Hunter Vosh'gajin ») : aucun boss placé sur la carte
+- Rencontre 269 (« Lower Blackrock Spire », « War Master Voone ») : aucun boss placé sur la carte
+- Rencontre 270 (« Lower Blackrock Spire », « Mother Smolderweb ») : aucun boss placé sur la carte
+- Rencontre 271 (« Lower Blackrock Spire », « Urok Doomhowl ») : aucun boss placé sur la carte
+- Rencontre 272 (« Lower Blackrock Spire », « Quartermaster Zigris ») : aucun boss placé sur la carte
+- Rencontre 273 (« Lower Blackrock Spire », « Gizrul the Slavener ») : aucun boss placé sur la carte
+- Rencontre 274 (« Lower Blackrock Spire », « Halycon ») : aucun boss placé sur la carte
+- Rencontre 275 (« Lower Blackrock Spire », « Overlord Wyrmthalak ») : aucun boss placé sur la carte
+- Rencontre 476 (« Stratholme: Living », « Malor the Zealous ») : aucun boss placé sur la carte
+- Rencontre 598 (« Zul'Farrak », « Nekrum Gutchewer ») : aucun boss placé sur la carte
+- Rencontre 2781 (« Razorfen Downs », « Plaguemaw the Rotting ») : aucun boss placé sur la carte
+- Rencontre 2783 (« Razorfen Downs », « Ragglesnout ») : aucun boss placé sur la carte
+- Rencontre 2804 (« Scholomance », « Jandice Barov ») : aucun boss placé sur la carte
+- Rencontre 3055 (« Scholomance », « Kormok ») : aucun boss placé sur la carte

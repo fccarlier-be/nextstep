@@ -11,7 +11,8 @@
 --
 -- [À vérifier] sur Forever : membres du groupe dessinés par la carte native en donjon ;
 -- SetMapID sans souillure à l'ouverture de la carte ; chemins des images de
--- DungeonJournal lisibles par un autre addon ; ENCOUNTER_END pour les boss classiques.
+-- DungeonJournal lisibles par un autre addon ; ENCOUNTER_END (numéro de rencontre)
+-- pour les boss classiques et ceux de Forever.
 
 local _, ns = ...
 local L = ns.L
@@ -132,11 +133,41 @@ function DungeonMap:IsKilled(boss)
     return names[boss.name] or names[DungeonMap.BossName(boss)] or false
 end
 
-function DungeonMap:OnEncounterEnd(_, _, name, _, _, success)
-    if success == 1 and ns.Usable(name) and name then
-        self:Killed()[name] = true
-        self:Refresh()
+-- Boss de la carte par numéro de rencontre (DungeonJournal) : liste de boss.
+local byEncounter
+function DungeonMap.BossesOfEncounter(encounterID)
+    if not byEncounter then
+        byEncounter = {}
+        for _, wings in pairs(ns.DB.dungeonMaps or {}) do
+            for _, wing in ipairs(wings) do
+                for _, boss in ipairs(wing.bosses) do
+                    for _, id in ipairs(boss.encounters or {}) do
+                        byEncounter[id] = byEncounter[id] or {}
+                        table.insert(byEncounter[id], boss)
+                    end
+                end
+            end
+        end
     end
+    return byEncounter[encounterID] or {}
+end
+
+-- Un boss tué est reconnu par son numéro de rencontre, le même dans toutes les langues
+-- du client ; le nom donné par l'événement sert pour les boss sans numéro connu.
+function DungeonMap:OnEncounterEnd(_, encounterID, name, _, _, success)
+    if success ~= 1 then
+        return
+    end
+    local names = self:Killed()
+    if ns.Usable(encounterID) then
+        for _, boss in ipairs(DungeonMap.BossesOfEncounter(encounterID)) do
+            names[boss.name] = true
+        end
+    end
+    if ns.Usable(name) and name then
+        names[name] = true
+    end
+    self:Refresh()
 end
 
 -- Quêtes du journal qui visent un boss (d'après DungeonJournal).
