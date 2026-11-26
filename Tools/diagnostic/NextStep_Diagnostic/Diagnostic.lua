@@ -7,9 +7,12 @@
 --   /nsdiag show     affiche le dernier rapport dans une fenêtre, pour le copier
 --   /nsdiag media    formats d'image lus par le client, images de NextStep, polices,
 --                    API d'affichage ; fenêtre des échantillons à capturer
+--   /nsdiag donjon   en groupe dans un donjon : cartes du client, positions du joueur
+--                    et du groupe, carte du monde (docs/DESIGN.md, « Carte des donjons »)
 --
--- Captures automatiques : la liste d'un maître à son ouverture, et les derniers
--- butins (monstres, boss, récoltes) avec leur source et le dernier sort lancé.
+-- Captures automatiques : la liste d'un maître à son ouverture, les derniers
+-- butins (monstres, boss, récoltes) avec leur source et le dernier sort lancé, et
+-- en donjon le début et la fin de chaque combat de boss, avec les positions.
 --
 -- Le rapport est écrit dans NextStepDiagDB (sauvegardé au /reload ou à la
 -- déconnexion), puis converti par Tools/diagnostic/report.ps1.
@@ -779,6 +782,183 @@ local function captureLoot()
 end
 
 ---------------------------------------------------------------------------
+-- Donjon : cartes du client et positions du groupe
+---------------------------------------------------------------------------
+
+local MAX_ENCOUNTERS = 12
+local GROUP = { "player", "party1", "party2", "party3", "party4" }
+
+-- Carte du client : nom, type, parent, couches d'image.
+local function mapText(map)
+    if not map then
+        return "nil"
+    end
+    local okInfo, mapInfo = pcall(C_Map.GetMapInfo, map)
+    local okLayers, layers = pcall(C_Map.GetMapArtLayers, map)
+    local text = ("%s : "):format(tostring(map))
+    if okInfo and type(mapInfo) == "table" then
+        text = text .. ("%s (type %s, parent %s)"):format(describe(mapInfo.name), describe(mapInfo.mapType),
+            describe(mapInfo.parentMapID))
+    else
+        text = text .. "GetMapInfo nil"
+    end
+    if okLayers and type(layers) == "table" then
+        local first = layers[1]
+        text = text .. (", %d couche(s)"):format(#layers)
+        if first then
+            text = text .. (" %sx%s"):format(describe(first.layerWidth), describe(first.layerHeight))
+        end
+    else
+        text = text .. ", GetMapArtLayers nil"
+    end
+    return text
+end
+
+-- Position d'une unité : carte du client et position sur elle, position monde.
+local function unitPositions(unit)
+    if not UnitExists(unit) then
+        info(unit, nil, "absent")
+        return
+    end
+    local map = C_Map.GetBestMapForUnit(unit)
+    local onMap = "?"
+    if map then
+        local ok, position = pcall(C_Map.GetPlayerMapPosition, map, unit)
+        if ok and position then
+            local x, y = position:GetXY()
+            onMap = ("%.2f, %.2f"):format(x * 100, y * 100)
+        else
+            onMap = "nil"
+        end
+    end
+    add(unit .. " : carte du client", map and "ok" or "warn", map and ("%s, position %s"):format(map, onMap),
+        map and nil or "GetBestMapForUnit nil")
+    probe(unit .. " : UnitPosition", function()
+        local y, x, _, instance = UnitPosition(unit)
+        if y == nil or isSecret(y) then
+            return y
+        end
+        return ("%.1f, %.1f (instance %s)"):format(y, x, describe(instance))
+    end, "monde, en yards ; nil si le jeu la cache en instance")
+end
+
+local function checkDungeon()
+    section("Donjon : instance")
+    local inside, kind = IsInInstance()
+    info("IsInInstance", ("%s, %s"):format(describe(inside), describe(kind)))
+    local name, instanceType, difficulty, _, maxPlayers, _, _, instanceID = GetInstanceInfo()
+    info("GetInstanceInfo", ("%s, %s, difficulté %s, %s joueurs, instanceID %s"):format(describe(name),
+        describe(instanceType), describe(difficulty), describe(maxPlayers), describe(instanceID)))
+    info("Membres du groupe", GetNumGroupMembers())
+    local NS = _G.NextStep
+    local DungeonMap = NS and NS.Modules and NS.Modules.Get and NS.Modules:Get("DungeonMap")
+    local key, wing, floor
+    if DungeonMap then
+        key, wing, floor = DungeonMap:Current()
+        info("Donjon reconnu par NextStep", key and ("%s, aile %s, étage %s"):format(key, describe(wing),
+            describe(floor)), not key and "aucun" or nil)
+    end
+
+    section("Donjon : positions")
+    for _, unit in ipairs(GROUP) do
+        unitPositions(unit)
+    end
+
+    section("Donjon : cartes du client")
+    local map = C_Map.GetBestMapForUnit("player")
+    info("Carte du joueur", mapText(map))
+    local okGroup, group = pcall(C_Map.GetMapGroupID, map)
+    if okGroup and group then
+        local okMembers, members = pcall(C_Map.GetMapGroupMembersInfo, group)
+        for _, member in ipairs(okMembers and members or {}) do
+            info("Étage du groupe de cartes", mapText(member.mapID), describe(member.name))
+        end
+    end
+    local maps = NS and NS.DB and NS.DB.dungeonMaps
+    for _, w in ipairs(key and maps and maps[key] or {}) do
+        for index, f in ipairs(w.floors) do
+            if f.map then
+                local known = DungeonMap and DungeonMap.ClientHasMap and DungeonMap.ClientHasMap(f.map)
+                add(("%s, étage %d (DungeonJournal)"):format(w.name, index), known and "ok" or "warn",
+                    mapText(f.map), known and "connue du client" or "inconnue du client : panneau de NextStep")
+            end
+        end
+    end
+    -- Le client a-t-il des cartes de donjon ? Quelques étages classiques.
+    local found = {}
+    for _, id in ipairs({ 213, 279, 280, 291, 300, 306, 310, 690 }) do
+        local ok, mapInfo = pcall(C_Map.GetMapInfo, id)
+        if ok and mapInfo then
+            found[#found + 1] = ("%d %s"):format(id, describe(mapInfo.name))
+        end
+    end
+    info("Étages classiques connus du client", #found > 0 and table.concat(found, " ; ") or "aucun")
+
+    section("Donjon : carte du monde")
+    local world = WorldMapFrame
+    info("Carte affichée", world and world:GetMapID() and mapText(world:GetMapID()))
+    probe("Membres du groupe dessinés", function()
+        local pins = 0
+        for _ in world:EnumeratePinsByTemplate("GroupMembersPinTemplate") do
+            pins = pins + 1
+        end
+        return pins
+    end, "repères du groupe sur la carte affichée (ouvrir la carte avant /nsdiag donjon)")
+end
+
+-- Début et fin d'un combat de boss : numéro, nom, position du joueur.
+local function encounterSection(r, event, encounterID, name, success)
+    local text = ("%s du %s : %s %s"):format(event == "ENCOUNTER_START" and "Début" or "Fin", date("%H:%M:%S"),
+        describe(encounterID), describe(name))
+    if event == "ENCOUNTER_END" then
+        text = text .. (success == 1 and " (tué)" or " (échec)")
+    end
+    current = { name = text, results = {} }
+    r.sections[#r.sections + 1] = current
+    local _, _, _, _, _, _, _, instanceID = GetInstanceInfo()
+    info("instanceID", instanceID)
+    unitPositions("player")
+end
+
+local function captureEncounter(event, ...)
+    NextStepDiagDB = NextStepDiagDB or {}
+    NextStepDiagDB.reports = NextStepDiagDB.reports or {}
+    local r = NextStepDiagDB.reports.dungeon or newReport("dungeon")
+    report = r
+    local ok, err = pcall(encounterSection, r, event, ...)
+    if not ok then
+        section("Erreur")
+        add("Capture du combat interrompue", "warn", nil, describe(err))
+    end
+    -- Garde la vérification « Donjon » et les derniers combats.
+    local first = 1
+    while r.sections[first] and r.sections[first].name:find("^Donjon") do
+        first = first + 1
+    end
+    while #r.sections - first + 1 > MAX_ENCOUNTERS do
+        table.remove(r.sections, first)
+    end
+    NextStepDiagDB.reports.dungeon = r
+end
+
+local function runDungeon()
+    if InCombatLockdown() then
+        print("à lancer hors combat.")
+        return
+    end
+    report = newReport("dungeon")
+    local ok, err = pcall(checkDungeon)
+    if not ok then
+        section("Erreur")
+        add("Vérification interrompue", "warn", nil, describe(err))
+    end
+    store("dungeon")
+    local c = count(report)
+    print(("donjon : %d OK, %d à revoir, %d absents, %d infos."):format(c.ok, c.warn, c.missing, c.info))
+    print("Les combats de boss sont notés. /reload pour enregistrer, /nsdiag show pour voir.")
+end
+
+---------------------------------------------------------------------------
 -- Fenêtre d'export
 ---------------------------------------------------------------------------
 
@@ -786,7 +966,7 @@ local exportFrame
 
 local function reportText()
     local lines = {}
-    for _, kind in ipairs({ "general", "combat", "trainer", "loot" }) do
+    for _, kind in ipairs({ "general", "combat", "trainer", "loot", "dungeon" }) do
         local r = NextStepDiagDB and NextStepDiagDB.reports and NextStepDiagDB.reports[kind]
         if r then
             lines[#lines + 1] = ("== %s (%s, build %s)"):format(kind, tostring(r.client.version),
@@ -1042,12 +1222,18 @@ events:RegisterEvent("PLAYER_REGEN_DISABLED")
 events:RegisterEvent("TRAINER_SHOW")
 events:RegisterEvent("LOOT_OPENED")
 events:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+events:RegisterEvent("ENCOUNTER_START")
+events:RegisterEvent("ENCOUNTER_END")
 events:SetScript("OnEvent", function(_, event, name, ...)
     if event == "TRAINER_SHOW" then
         pcall(captureTrainer)
         return
     elseif event == "LOOT_OPENED" then
         captureLoot()
+        return
+    elseif event == "ENCOUNTER_START" or event == "ENCOUNTER_END" then
+        local encounterName, _, _, success = ...
+        captureEncounter(event, name, encounterName, event == "ENCOUNTER_END" and success or nil)
         return
     elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
         if name == "player" then
@@ -1083,6 +1269,8 @@ SlashCmdList.NEXTSTEPDIAG = function(input)
         show()
     elseif command == "media" then
         runMedia()
+    elseif command == "donjon" or command == "dungeon" then
+        runDungeon()
     else
         runAll()
     end

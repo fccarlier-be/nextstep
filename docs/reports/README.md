@@ -17,6 +17,8 @@ Les rapports de ce dossier sont produits par l'addon de développement **NextSte
 
 **Médias** (`/nsdiag media`, à lancer après chaque changement d'images ou de polices) : vérifie quels formats d'image le client lit, si chaque image de NextStep est trouvée, les polices et les API d'affichage. Une fenêtre montre les échantillons de formats côte à côte : en faire une capture d'écran (une image illisible y apparaît verte ou vide, ce que les API ne disent pas toujours), puis `/reload`. Les échantillons sont produits par `python Tools/diagnostic/samples.py` (même image en TGA, TGA RLE, BLP en palette de Pillow, BLP en palette avec mipmaps, BLP DXT1 avec et sans mipmaps, BLP BGRA ; plus un fichier absent pour savoir ce que `SetTexture` renvoie).
 
+**Donjon** (`/nsdiag donjon`, en groupe dans un donjon, carte du monde ouverte puis refermée) : instance, carte du client et `UnitPosition` du joueur et de chaque membre du groupe, cartes des étages repris de DungeonJournal connues ou non du client, étages classiques connus du client, membres du groupe dessinés sur la carte du monde. Ensuite, chaque début et fin de combat de boss est noté automatiquement (numéro de rencontre, nom, position du joueur) : tuer deux ou trois boss, puis `/reload`.
+
 ## Ce qui est vérifié
 
 | Section | Contenu |
