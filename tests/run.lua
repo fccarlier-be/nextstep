@@ -16,6 +16,7 @@ local SPECS = {
     "names",
     "map_reveal",
     "zone_levels",
+    "dungeon_map",
     "radar",
     "minimap",
     "quest_items",
