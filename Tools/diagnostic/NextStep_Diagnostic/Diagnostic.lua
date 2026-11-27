@@ -12,7 +12,8 @@
 --
 -- Captures automatiques : la liste d'un maître à son ouverture, les derniers
 -- butins (monstres, boss, récoltes) avec leur source et le dernier sort lancé, et
--- en donjon le début et la fin de chaque combat de boss, avec les positions.
+-- en donjon le début et la fin de chaque combat de boss, avec les positions, et
+-- chaque changement de sous-zone.
 --
 -- Le rapport est écrit dans NextStepDiagDB (sauvegardé au /reload ou à la
 -- déconnexion), puis converti par Tools/diagnostic/report.ps1.
@@ -785,7 +786,7 @@ end
 -- Donjon : cartes du client et positions du groupe
 ---------------------------------------------------------------------------
 
-local MAX_ENCOUNTERS = 12
+local MAX_CAPTURES = 20
 local GROUP = { "player", "party1", "party2", "party3", "party4" }
 
 -- Carte du client : nom, type, parent, couches d'image.
@@ -842,6 +843,60 @@ local function unitPositions(unit)
     end, "monde, en yards ; nil si le jeu la cache en instance")
 end
 
+-- Sous-zone du joueur : seul repère de lieu que le jeu pourrait encore donner en instance.
+local function zoneText()
+    local function text(fn)
+        local ok, value = pcall(fn)
+        return ok and describe(value) or "erreur"
+    end
+    return ("zone %s, sous-zone %s, minicarte %s"):format(text(GetRealZoneText), text(GetSubZoneText),
+        text(GetMinimapZoneText))
+end
+
+-- Indices qui remplaceraient une position absente : sous-zone, direction et vitesse
+-- du joueur, distance de chaque membre, cible de chacun (docs/DESIGN.md, « Carte des
+-- donjons »). Relevé à faire en marchant, membres du groupe à des distances variées.
+local function positionHints()
+    section("Donjon : indices de position")
+    for _, name in ipairs({ "GetRealZoneText", "GetZoneText", "GetSubZoneText", "GetMinimapZoneText" }) do
+        probe(name, _G[name], "chaîne vide : pas de sous-zone ici")
+    end
+    probe("GetPlayerFacing", GetPlayerFacing, "radians ; nil si le jeu la cache en instance")
+    probe("GetUnitSpeed", function()
+        local speed, run = GetUnitSpeed("player")
+        return ("%s (course %s)"):format(describe(speed), describe(run))
+    end, "yards par seconde")
+    probe("IsFalling", IsFalling)
+    exists("C_ChatInfo.SendAddonMessage", "envoi des indices au groupe")
+
+    for _, unit in ipairs(GROUP) do
+        if unit ~= "player" and UnitExists(unit) then
+            probe(unit .. " : distances", function()
+                local parts = {}
+                local inRange, checked = UnitInRange(unit)
+                parts[#parts + 1] = ("à 40 m %s (vérifié %s)"):format(describe(inRange), describe(checked))
+                for index, label in ipairs({ "28 m", "11 m", "10 m", "28 m suivre" }) do
+                    local ok, near = pcall(CheckInteractDistance, unit, index)
+                    parts[#parts + 1] = ("%s %s"):format(label, ok and describe(near) or "erreur")
+                end
+                parts[#parts + 1] = "visible " .. describe(UnitIsVisible(unit))
+                return table.concat(parts, ", ")
+            end)
+        end
+    end
+    for _, unit in ipairs(GROUP) do
+        local target = unit == "player" and "target" or unit .. "target"
+        if UnitExists(unit) then
+            probe(unit .. " : cible", function()
+                if not UnitExists(target) then
+                    return "aucune"
+                end
+                return ("%s, %s"):format(describe(UnitName(target)), describe(UnitGUID(target)))
+            end, "cibler un PNJ avant le relevé ; le numéro du PNJ est dans le GUID")
+        end
+    end
+end
+
 local function checkDungeon()
     section("Donjon : instance")
     local inside, kind = IsInInstance()
@@ -863,6 +918,8 @@ local function checkDungeon()
     for _, unit in ipairs(GROUP) do
         unitPositions(unit)
     end
+
+    positionHints()
 
     section("Donjon : cartes du client")
     local map = C_Map.GetBestMapForUnit("player")
@@ -917,25 +974,40 @@ local function encounterSection(r, event, encounterID, name, success)
     r.sections[#r.sections + 1] = current
     local _, _, _, _, _, _, _, instanceID = GetInstanceInfo()
     info("instanceID", instanceID)
+    info("Lieu", zoneText())
     unitPositions("player")
 end
 
-local function captureEncounter(event, ...)
+-- Changement de sous-zone en instance : montre si le donjon a des salles nommées.
+local lastZone
+local function zoneSection(r)
+    local text = zoneText()
+    if text == lastZone then
+        return false
+    end
+    lastZone = text
+    current = { name = ("Lieu du %s : %s"):format(date("%H:%M:%S"), text), results = {} }
+    r.sections[#r.sections + 1] = current
+    probe("GetPlayerFacing", GetPlayerFacing, "radians ; nil si le jeu la cache en instance")
+end
+
+-- Ajoute au rapport « dungeon » une section construite par build, en gardant la
+-- vérification « Donjon » et les dernières captures.
+local function captureDungeon(build, ...)
     NextStepDiagDB = NextStepDiagDB or {}
     NextStepDiagDB.reports = NextStepDiagDB.reports or {}
     local r = NextStepDiagDB.reports.dungeon or newReport("dungeon")
     report = r
-    local ok, err = pcall(encounterSection, r, event, ...)
+    local ok, err = pcall(build, r, ...)
     if not ok then
         section("Erreur")
-        add("Capture du combat interrompue", "warn", nil, describe(err))
+        add("Capture interrompue", "warn", nil, describe(err))
     end
-    -- Garde la vérification « Donjon » et les derniers combats.
     local first = 1
     while r.sections[first] and r.sections[first].name:find("^Donjon") do
         first = first + 1
     end
-    while #r.sections - first + 1 > MAX_ENCOUNTERS do
+    while #r.sections - first + 1 > MAX_CAPTURES do
         table.remove(r.sections, first)
     end
     NextStepDiagDB.reports.dungeon = r
@@ -955,7 +1027,7 @@ local function runDungeon()
     store("dungeon")
     local c = count(report)
     print(("donjon : %d OK, %d à revoir, %d absents, %d infos."):format(c.ok, c.warn, c.missing, c.info))
-    print("Les combats de boss sont notés. /reload pour enregistrer, /nsdiag show pour voir.")
+    print("Les combats de boss et les sous-zones sont notés. /reload pour enregistrer, /nsdiag show pour voir.")
 end
 
 ---------------------------------------------------------------------------
@@ -1224,6 +1296,9 @@ events:RegisterEvent("LOOT_OPENED")
 events:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 events:RegisterEvent("ENCOUNTER_START")
 events:RegisterEvent("ENCOUNTER_END")
+events:RegisterEvent("ZONE_CHANGED")
+events:RegisterEvent("ZONE_CHANGED_INDOORS")
+events:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 events:SetScript("OnEvent", function(_, event, name, ...)
     if event == "TRAINER_SHOW" then
         pcall(captureTrainer)
@@ -1233,7 +1308,14 @@ events:SetScript("OnEvent", function(_, event, name, ...)
         return
     elseif event == "ENCOUNTER_START" or event == "ENCOUNTER_END" then
         local encounterName, _, _, success = ...
-        captureEncounter(event, name, encounterName, event == "ENCOUNTER_END" and success or nil)
+        captureDungeon(encounterSection, event, name, encounterName, event == "ENCOUNTER_END" and success or nil)
+        return
+    elseif event == "ZONE_CHANGED" or event == "ZONE_CHANGED_INDOORS" or event == "ZONE_CHANGED_NEW_AREA" then
+        if IsInInstance() then
+            captureDungeon(zoneSection)
+        else
+            lastZone = nil
+        end
         return
     elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
         if name == "player" then

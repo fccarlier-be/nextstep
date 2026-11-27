@@ -182,7 +182,9 @@ files["Tools/diagnostic/**"] = {
         "C_MapExplorationInfo", "EJ_GetInstanceByIndex", "EJ_GetNumTiers", "EJ_SelectTier", "GetLootSlotLink",
         "GetLootSlotType", "GetLootSourceInfo", "GetNumLootItems", "GetNumTrainerServices", "GetTime",
         "GetTrainerServiceCost", "GetTrainerServiceInfo", "GetTrainerServiceLevelReq", "GetTrainerServiceTypeFilter",
-        "IsInInstance", "UnitPosition", "GetInstanceInfo", "GetNumGroupMembers", "date", "LibStub", "SettingsPanel",
+        "IsInInstance", "UnitPosition", "GetInstanceInfo", "GetNumGroupMembers",
+        "GetRealZoneText", "GetMinimapZoneText", "GetUnitSpeed", "IsFalling",
+        "UnitInRange", "CheckInteractDistance", "UnitIsVisible", "date", "LibStub", "SettingsPanel",
         -- Médias (/nsdiag media).
         "CreateColor", "GameFontNormal", "GetQuestLink",
     },
