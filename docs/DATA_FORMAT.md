@@ -292,6 +292,18 @@ DB.ammoVendors = {
 - Une chaîne par PNJ : munitions présumées (`a` flèches, `b` balles, `ab` les deux), faction (`A`, `H`, `N` pour les deux), carte monde, nord, ouest (yards, comme `UnitPosition`), carte du client, x, y (pour cent), puis le nom anglais après `|`.
 - forever-db ne dit pas ce que vend un marchand : il est retenu sur son titre (« Bowyer », « Gunsmith », « General Supplies »…). Ce qu'il vend vraiment est appris en jeu à l'ouverture du marchand et gardé dans les réglages du module `Ammo` (`vendors`), qui l'emportent sur l'import.
 
+## Expérience des quêtes
+
+`Data/Imported/Polestar/QuestXP.lua`, généré par `Tools/import/questxp.py` depuis forever-db (`quest.jsonl`) :
+
+```lua
+DB.questXP = { [2] = 245030 }        -- [quête] = xp * 100 + niveau de la quête
+DB.questXPByLevel = { [30] = 2450 }  -- médiane de l'expérience des quêtes de ce niveau
+```
+
+- `xp` : expérience du rendu au niveau de la quête ; 0 quand forever-db ne la donne pas (la médiane du niveau en tient lieu).
+- Sert à la prévision de niveau du guide (`Modules/Guide/Pace.lua`) : l'expérience est réduite comme dans le jeu quand le personnage dépasse la quête de 6 niveaux ou plus (80, 60, 40, 20, puis 10 %).
+
 ## Import
 
 ```powershell
@@ -303,6 +315,7 @@ DB.ammoVendors = {
 3. Le rapport [`Tools/import/last-import.md`](../Tools/import/last-import.md) donne les totaux, la couverture des noms et les avertissements.
 4. `gear.lua` exécute `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar dans un environnement isolé, écrit les [poids de stats](#poids-de-stats) et recopie la notice de ces données (MIT : ForeverLevelingBiS, wowsims) dans `Gear-LICENSE-DATA.txt`.
 5. `dungeons.py` (Python, lancé avec `-I`) lit forever-db (`forever-db/data/*.jsonl`) et `Polestar_ItemDB` (`Items.lua`, `Forever.lua`), écrit les [donjons](#donjons) et recopie les notices (`ForeverDB-NOTICE.md`, `ItemDB-LICENSE-DATA.txt`).
+6. `questxp.py` lit `forever-db/data/quest.jsonl` et écrit l'[expérience des quêtes](#expérience-des-quêtes).
 
 Les cartes des donjons ont leur propre import, hors de `run.ps1` (il lit DungeonJournal installé, pas Polestar) :
 

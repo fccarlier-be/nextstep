@@ -30,6 +30,7 @@ local SPECS = {
     "transports",
     "windows",
     "engine",
+    "pace",
     "guide",
     "guide_live",
     "pins",
