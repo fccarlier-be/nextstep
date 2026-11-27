@@ -174,6 +174,22 @@ describe("Moteur du guide", function()
         expect_eq(r.steps[3].goals[2].status, "todo")
     end)
 
+    it("numérote l'étape en cours parmi celles du personnage, sans les étapes en chemin", function()
+        local Engine, progress = setup()
+        local g = guide({
+            step({ accept(1) }, { only = { classes = { "WARRIOR" } } }),
+            step({ accept(2) }),
+            step({ kill(2) }, { along = true }),
+            step({ accept(3) }),
+            step({ turnin(2), turnin(3) }),
+        })
+        local player = Player.new({ class = "MAGE" }):accept(2)
+        local r = run(Engine, g, player, progress)
+        expect_eq(r.current, 4)
+        expect_eq(r.stepNumber, 2, "le guerrier et l'étape en chemin ne comptent pas")
+        expect_eq(r.stepCount, 3)
+    end)
+
     it("bloque sur une quête de niveau trop élevé, en donnant la raison", function()
         local Engine, progress = setup()
         local g = guide({ step({ accept(1, { minLevel = 5 }) }) })

@@ -452,6 +452,17 @@ function Engine.Evaluate(guide, ctx)
 
     result.current = current
     result.finished = current == nil
+    -- Numéro de l'étape en cours parmi celles du personnage (faction, race, classe),
+    -- sans les étapes « en chemin » : « étape 14 sur 52 ».
+    result.stepCount = 0
+    for i, step in ipairs(guide.steps) do
+        if not step.along and Conditions.Matches(step.only, state) then
+            result.stepCount = result.stepCount + 1
+            if i == current then
+                result.stepNumber = result.stepCount
+            end
+        end
+    end
     if result.finished then
         result.next = guide.next
     end

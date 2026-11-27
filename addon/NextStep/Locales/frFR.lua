@@ -131,6 +131,7 @@ L["Click to mark it as done."] = "Cliquez pour le valider."
 L["Along the way:"] = "En chemin :"
 L["Abandoned quest: %s. Click to take it again."] = "Quête abandonnée : %s. Cliquez pour la reprendre."
 L["Next: %s"] = "Ensuite : %s"
+L["Step %d of %d"] = "Étape %d sur %d"
 L["Detours: %d quests off the route"] = "Détours : %d quêtes hors route"
 L["Quests in your log that this guide does not use."] =
     "Quêtes de votre journal que ce guide n'utilise pas."
