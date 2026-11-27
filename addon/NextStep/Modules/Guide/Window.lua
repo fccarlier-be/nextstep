@@ -745,6 +745,9 @@ local function addCurrentStep(self, view, result)
     local guide, i = result.guide, result.current
     local step = guide.steps[i]
     addLine(view, Labels.Step(step, guide), COLORS.title, { header = true })
+    if result.stepNumber then
+        addLine(view, L["Step %d of %d"]:format(result.stepNumber, result.stepCount), COLORS.muted)
+    end
     addGap(view)
     if result.mode == "free" then
         for _, entry in ipairs(result.free) do
