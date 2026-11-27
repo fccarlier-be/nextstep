@@ -26,6 +26,7 @@ local Guide = ns.Modules:New("Guide", {
         mapPins = true,         -- points de l'étape sur la carte du monde
         routeLines = true,      -- chemin à pied tracé sur les cartes (Route.lua)
         arrowFollowsRoute = false, -- la flèche suit le chemin au lieu de viser l'objectif
+        alongDetour = 30,       -- secondes de marche en plus pour une quête en chemin (Live.lua)
         taxiNames = {},         -- [point de vol] = nom dans la langue du client (Trip.lua)
         flightTimes = {},       -- ["départ-arrivée"] = secondes : durée apprise des vols
         tripButton = true,      -- bouton des voyages au bord de la minimap (TripMenu.lua)

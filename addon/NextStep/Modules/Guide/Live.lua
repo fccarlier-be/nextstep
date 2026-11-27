@@ -179,11 +179,29 @@ function Guide:RequestRefresh()
     end)
 end
 
--- Ici aussi : ce que le guide prévoit plus loin auprès d'un PNJ tout proche et qu'on
--- peut faire tout de suite (accepter une quête désormais disponible, rendre une
--- quête terminée). Évite les allers-retours quand on ne suit pas le guide à la
--- lettre, ou qu'on a rendu une quête plus tôt faute de place dans les sacs.
+-- En chemin : ce que le guide prévoit plus loin auprès d'un PNJ et qu'on peut faire
+-- tout de suite (accepter une quête désormais disponible, rendre une quête terminée),
+-- quand le PNJ est tout proche, ou que passer le voir en allant vers l'objectif en
+-- cours coûte peu de marche (au plus db.alongDetour secondes, à la course). Évite les
+-- allers-retours, comme les quêtes « en chemin » de Polestar.
 local NEARBY_YARDS = 40
+local RUN_SPEED = 7 -- yards par seconde, à pied
+
+-- Yards de marche en plus pour passer par le point en allant vers l'objectif, ou nil.
+local function detourYards(goal, target)
+    local d = Navigation.DistanceTo(goal.map, goal.x, goal.y, goal.f)
+    if not (d and target) then
+        return d and math.huge
+    end
+    local instance, north, west = Navigation.WorldPosition(goal.map, goal.x, goal.y, goal.f)
+    local tInstance, tNorth, tWest = Navigation.WorldPosition(target.map, target.x, target.y, target.f)
+    local direct = Navigation.DistanceTo(target.map, target.x, target.y, target.f)
+    if not (instance and tInstance == instance and direct) then
+        return math.huge
+    end
+    local dn, dw = tNorth - north, tWest - west
+    return d + math.sqrt(dn * dn + dw * dw) - direct
+end
 
 function Guide:NearbyActions(result)
     result = result or self.result
@@ -194,6 +212,8 @@ function Guide:NearbyActions(result)
     local guide, state = result.guide, self.state
     local ctx = { droppedQuests = {}, notOffered = self:NotOffered(), seen = function() return false end }
     local seen = {}
+    local target = self:ArrowGoal()
+    local budget = (self.db.alongDetour or 30) * RUN_SPEED
     for i = result.current + 1, #guide.steps do
         for j, goal in ipairs(guide.steps[i].goals) do
             local q = goal.quest
@@ -208,9 +228,13 @@ function Guide:NearbyActions(result)
                 end
                 if ready then
                     local distance = Navigation.DistanceTo(goal.map, goal.x, goal.y, goal.f)
-                    if distance and distance <= NEARBY_YARDS then
+                    local detour = distance and distance > NEARBY_YARDS and detourYards(goal, target)
+                    if distance and (distance <= NEARBY_YARDS or detour <= budget) then
                         seen[q .. goal.t] = true
-                        list[#list + 1] = { step = i, goal = j, kind = goal.t }
+                        list[#list + 1] = {
+                            step = i, goal = j, kind = goal.t,
+                            seconds = detour and detour / RUN_SPEED or 0,
+                        }
                     end
                 end
             end
@@ -925,7 +949,16 @@ function Guide:BuildOptions(panel, anchor)
             self.db.arrowFollowsRoute = value
             self:SetArrowTarget(self.result and self.result.target)
         end)
-    local celebrate = Options.AddCheck(panel, follow, ns.L["Celebrate each level"],
+    local detour = Options.AddSlider(panel, follow, 0, 120, 10,
+        function(value)
+            return ns.L["Quests along the way: up to %d seconds of extra walking"]:format(value)
+        end,
+        function() return self.db.alongDetour or 30 end,
+        function(value)
+            self.db.alongDetour = value
+            self:RequestRefresh()
+        end)
+    local celebrate = Options.AddCheck(panel, detour, ns.L["Celebrate each level"],
         function() return self.db.celebration end,
         function(value) self.db.celebration = value end)
     local sound = Options.AddCheck(panel, celebrate, ns.L["Play a sound for the celebration"],

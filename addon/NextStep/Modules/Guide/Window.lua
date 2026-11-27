@@ -831,8 +831,9 @@ local function addCurrentStep(self, view, result)
     end
 end
 
--- Ici aussi : quêtes à prendre ou à rendre tout de suite auprès d'un PNJ proche,
--- que le guide prévoit plus loin.
+-- En chemin : quêtes à prendre ou à rendre tout de suite auprès d'un PNJ proche ou
+-- sur la route, que le guide prévoit plus loin ; avec l'étape où il les prévoit et le
+-- détour qu'elles coûtent.
 local function addNearby(self, view, result)
     local list = self:NearbyActions(result)
     if #list == 0 then
@@ -840,8 +841,18 @@ local function addNearby(self, view, result)
     end
     addGap(view)
     addLine(view, L["Here too (planned later in the guide):"], COLORS.title)
+    local numbers = result.stepNumbers or {}
     for _, entry in ipairs(list) do
         addGoal(self, view, result, entry.step, entry.goal, "todo")
+        local planned = numbers[entry.step]
+        local text = planned and L["Planned at step %d"]:format(planned)
+        if entry.seconds and entry.seconds >= 1 then
+            local detour = L["%d s detour"]:format(math.floor(entry.seconds + 0.5))
+            text = text and (text .. " · " .. detour) or detour
+        end
+        if text then
+            addLine(view, text, COLORS.muted, { indent = INDENT })
+        end
     end
 end
 

@@ -192,7 +192,11 @@ L["Undoes the last \"Skip\" or \"Done\" and takes you back to that step."] =
 L["Nothing to undo in this guide."] = "Rien à annuler dans ce guide."
 L["Show the arrow"] = "Afficher la flèche"
 L["Class quest: %s"] = "Quête de classe : %s"
-L["Here too (planned later in the guide):"] = "Ici aussi (prévu plus loin dans le guide) :"
+L["Here too (planned later in the guide):"] = "Sur ta route (prévu plus loin dans le guide) :"
+L["Planned at step %d"] = "Prévu à l'étape %d"
+L["%d s detour"] = "détour de %d s"
+L["Quests along the way: up to %d seconds of extra walking"] =
+    "Quêtes en chemin : jusqu'à %d secondes de marche en plus"
 L["Bags almost full: %d free slots."] = "Sacs presque pleins : %d places libres."
 L["Sell your grey items, or hand in finished quests nearby, before picking up more."] =
     "Vendez vos objets gris, ou rendez les quêtes terminées tout près, avant d'en ramasser d'autres."

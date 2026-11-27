@@ -633,7 +633,20 @@ describe("Guide en jeu", function()
         expect(hasText(Guide, "Here too"), "section « Ici aussi » dans la fenêtre")
 
         game.player.position = worldOf(game.ns, 20, 80)
-        expect_eq(#Guide:NearbyActions(), 0, "loin du PNJ : rien")
+        expect_eq(#Guide:NearbyActions(), 0, "loin du PNJ, à l'objectif : rien")
+
+        -- PNJ à l'opposé de l'objectif (20, 80) : grand détour, rien.
+        game.player.position = worldOf(game.ns, 80, 60)
+        expect_eq(#Guide:NearbyActions(), 0, "PNJ à l'écart de la route : rien")
+        -- PNJ (50, 40) entre le joueur et l'objectif : sur la route, presque sans détour.
+        game.player.position = worldOf(game.ns, 60, 26.7)
+        local list = Guide:NearbyActions()
+        expect_eq(#list, 2, "PNJ sur la route de l'objectif : proposé malgré la distance")
+        expect(list[1].seconds < 30, "petit détour")
+        Guide.db.alongDetour = 0
+        game.player.position = worldOf(game.ns, 61, 24)
+        expect_eq(#Guide:NearbyActions(), 0, "détour au-delà du réglage : rien")
+        Guide.db.alongDetour = 30
 
         local container = _G.C_Container
         _G.C_Container = { GetContainerNumFreeSlots = function() return 0 end }
