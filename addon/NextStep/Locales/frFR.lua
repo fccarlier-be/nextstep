@@ -132,6 +132,16 @@ L["Along the way:"] = "En chemin :"
 L["Abandoned quest: %s. Click to take it again."] = "Quête abandonnée : %s. Cliquez pour la reprendre."
 L["Next: %s"] = "Ensuite : %s"
 L["Step %d of %d"] = "Étape %d sur %d"
+L["%d min"] = "%d min"
+L["%d h %02d"] = "%d h %02d"
+L["Level %d around step %d"] = "Niveau %d vers l'étape %d"
+L["Level %d after this guide's quests"] = "Niveau %d après les quêtes de ce guide"
+L["about %s at your pace"] = "environ %s à ton rythme"
+L["Counts the experience of the quests the guide hands in; monsters killed on the way add more."] =
+    "Compte l'expérience des quêtes que le guide fait rendre ; les monstres tués en chemin en ajoutent."
+L["On pace for level %d by step %d"] = "En bonne voie pour le niveau %d à l'étape %d"
+L["Behind by %d bars for level %d by step %d: kill monsters on the way"] =
+    "En retard de %d barres pour le niveau %d à l'étape %d : tue des monstres en chemin"
 L["Detours: %d quests off the route"] = "Détours : %d quêtes hors route"
 L["Quests in your log that this guide does not use."] =
     "Quêtes de votre journal que ce guide n'utilise pas."

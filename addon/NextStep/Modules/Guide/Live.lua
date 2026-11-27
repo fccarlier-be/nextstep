@@ -38,7 +38,42 @@ local function now()
     return GetTime and GetTime() or 0
 end
 
+-- Niveau, expérience et expérience du niveau, ou nil si le jeu ne les donne pas.
+local function playerXP()
+    local level, xp, maxXP = UnitLevel("player"), UnitXP("player"), UnitXPMax("player")
+    if ns.Usable(level) and ns.Usable(xp) and ns.Usable(maxXP) and level and xp and maxXP then
+        return level, xp, maxXP
+    end
+end
+
+-- Expérience par heure, pour la prévision de niveau (Pace.lua).
+function Guide:UpdateXPSession()
+    local level, xp, maxXP = playerXP()
+    if not level then
+        return
+    end
+    if self.xpSession then
+        ns.GuidePace.Update(self.xpSession, level, xp, maxXP)
+    else
+        self.xpSession = ns.GuidePace.NewSession(now(), level, xp, maxXP)
+    end
+end
+
+-- Prévision de niveau pour le résultat affiché, et secondes avant le niveau suivant.
+function Guide:Forecast(result)
+    local level, xp, maxXP = playerXP()
+    if not level then
+        return nil
+    end
+    local forecast = ns.GuidePace.Forecast(result, level, xp / math.max(maxXP, 1), maxXP)
+    if forecast and self.xpSession then
+        forecast.seconds = ns.GuidePace.SecondsToLevel(self.xpSession, now(), xp, maxXP)
+    end
+    return forecast
+end
+
 function Guide:OnEnable()
+    self:UpdateXPSession()
     self.live = self.live or ns.GuideState.New(self.char.taxi)
     if not self.state then
         self:SetState(self.live)
@@ -50,6 +85,8 @@ function Guide:OnEnable()
             -- Une quête rendue peut en débloquer d'autres : les refus constatés ne valent plus.
             if event == "QUEST_TURNED_IN" then
                 self.char.notOffered = {}
+            elseif event == "PLAYER_XP_UPDATE" then
+                self:UpdateXPSession()
             end
             self:RequestRefresh()
         end)

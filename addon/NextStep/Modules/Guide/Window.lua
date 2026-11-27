@@ -741,6 +741,47 @@ end
 
 local SHOWN_GOALS = { done = true, todo = true, manual = true, blocked = true }
 
+local function duration(seconds)
+    local total = math.max(1, math.floor(seconds / 60 + 0.5))
+    if total < 60 then
+        return L["%d min"]:format(total)
+    end
+    return L["%d h %02d"]:format(math.floor(total / 60), total % 60)
+end
+
+-- Prévision de niveau (Pace.lua) : étape du prochain niveau, temps au rythme de la
+-- session, et avance ou retard sur la prochaine étape « atteindre le niveau X ».
+local function addForecast(self, view, result)
+    local forecast = self:Forecast(result)
+    if not forecast then
+        return
+    end
+    local numbers = result.stepNumbers or {}
+    local text
+    if forecast.step and numbers[forecast.step] then
+        text = L["Level %d around step %d"]:format(forecast.level, numbers[forecast.step])
+    else
+        text = L["Level %d after this guide's quests"]:format(forecast.level)
+    end
+    if forecast.seconds then
+        text = text .. " · " .. L["about %s at your pace"]:format(duration(forecast.seconds))
+    end
+    addLine(view, text, COLORS.muted, {
+        tooltip = L["Counts the experience of the quests the guide hands in; monsters killed on the way add more."],
+    })
+    local goal = forecast.goal
+    local goalStep = goal and numbers[goal.step]
+    if not goalStep then
+        return
+    end
+    if goal.missing <= 0 then
+        addLine(view, L["On pace for level %d by step %d"]:format(goal.level, goalStep), COLORS.muted)
+    else
+        addLine(view, L["Behind by %d bars for level %d by step %d: kill monsters on the way"]:format(
+            goal.bars, goal.level, goalStep), COLORS.warning)
+    end
+end
+
 local function addCurrentStep(self, view, result)
     local guide, i = result.guide, result.current
     local step = guide.steps[i]
@@ -748,6 +789,7 @@ local function addCurrentStep(self, view, result)
     if result.stepNumber then
         addLine(view, L["Step %d of %d"]:format(result.stepNumber, result.stepCount), COLORS.muted)
     end
+    addForecast(self, view, result)
     addGap(view)
     if result.mode == "free" then
         for _, entry in ipairs(result.free) do

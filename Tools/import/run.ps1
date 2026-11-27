@@ -8,6 +8,7 @@
        gear.lua writes the stat weights (Data/Imported/Polestar/Gear.lua);
        dungeons.py writes the dungeons, their quests and loot (Dungeons.lua);
        ammo.py writes the ammunition vendors (AmmoVendors.lua);
+       questxp.py writes each quest's experience (QuestXP.lua);
        nav.py copies the walking router and its maps (addon/NextStep_Nav*), and
        navcheck.lua asks it for a few known walks (needs zlib1.dll, from Git for Windows).
     3. Tools\check.ps1 runs luacheck and the out-of-game tests.
@@ -29,6 +30,8 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "dungeons import failed" }
     & python -I Tools/import/ammo.py Tools/import/cache/polestar Tools/import/polestar.lock
     if ($LASTEXITCODE -ne 0) { throw "ammo import failed" }
+    & python -I Tools/import/questxp.py Tools/import/cache/polestar Tools/import/polestar.lock
+    if ($LASTEXITCODE -ne 0) { throw "quest XP import failed" }
     & python -I Tools/import/nav.py Tools/import/cache/polestar Tools/import/polestar.lock
     if ($LASTEXITCODE -ne 0) { throw "nav import failed" }
     if (Test-Path "C:\Program Files\Git\mingw64\bin\zlib1.dll") {
