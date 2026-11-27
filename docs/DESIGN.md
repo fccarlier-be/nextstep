@@ -677,6 +677,8 @@ Ce qui suit est la conception d'origine, gardée pour mémoire ; les points rend
 
 **Repli si la carte native ne montre pas le groupe en donjon** (**impossible** : le joueur lui-même n'a pas de position en instance, il n'y a rien à envoyer) : chaque joueur NextStep envoie sa propre position au groupe (message d'addon, deux fois par seconde au plus, seulement carte ouverte chez quelqu'un), et NextStep dessine les autres. Seuls les joueurs équipés de NextStep apparaîtraient : solution de second choix.
 
+**Pistes pour une position approchée** (à mesurer : section « Donjon : indices de position » de `/nsdiag donjon`, et changements de sous-zone notés automatiquement) : faute de coordonnées, placer chaque membre à peu près, par message d'addon entre joueurs NextStep. (1) **Dernier repère connu** : un membre qui cible ou combat un PNJ placé (boss, rare, PNJ de quête, numéro tiré du GUID) est montré près de lui, avec l'âge de l'information. (2) **Sous-zone** : si le jeu nomme les salles en instance (`GetSubZoneText`), chaque membre est placé dans sa salle et son étage. (3) **Proximité** : `UnitInRange`, `CheckInteractDistance` et `UnitIsVisible` disent qui est près du joueur. (4) **Repère manuel** : « je suis ici » posé d'un clic sur la carte du donjon. (5) **Estime** depuis l'entrée (direction et vitesse) : peu probable, dérive vite, et `GetPlayerFacing` est sans doute caché en instance.
+
 **Étapes** (chacune sa version) :
 
 1. **Import** des cartes de DungeonJournal (hors jeu), avec son rapport et ses tests : **réalisé**.
