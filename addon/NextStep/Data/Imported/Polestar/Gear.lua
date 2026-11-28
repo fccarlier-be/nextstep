@@ -1,7 +1,7 @@
--- Généré par Tools/import/gear.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22), Gear/Weights.lua et
+-- Généré par Tools/import/gear.lua depuis Polestar 0.4.3.1 (efccd3c02732, 2026-11-26), Gear/Weights.lua et
 -- Gear/SpecData.lua. Ne pas modifier : relancer Tools\import\run.ps1.
 -- Polestar : Copyright (c) 2026 The Polestar authors, GPL-3.0-only. Poids mêlés aux
--- simulations de wowsims (MIT) et traits raciaux de ForeverLevelingBiS (MIT) :
+-- simulations de wowsims (MIT) ; traits raciaux tirés des sorts du client Forever :
 -- Gear-LICENSE-DATA.txt dans ce dossier. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB
@@ -592,10 +592,9 @@ DB.gear = {
 		},
 	},
 	racials = {
-		[1] = { statMult = { spi = 1.05 }, weaponCrit = { pct = 2, subclasses = { [7] = true, [8] = true } } },
-		[2] = { weaponCrit = { pct = 1, subclasses = { [0] = true, [1] = true } } },
-		[3] = { weaponCrit = { pct = 1, subclasses = { [4] = true, [5] = true } } },
-		[7] = { statMult = { int = 1.05 } },
+		[1] = { { statMult = { spi = 1.1 } } },
+		[6] = { { statMult = { sta = 1.05 } } },
+		[7] = { { classes = { MAGE = true, PRIEST = true, WARLOCK = true }, statMult = { int = 1.05 } } },
 	},
 	weights = {
 		DRUID = {

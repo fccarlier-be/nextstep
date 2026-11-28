@@ -1,11 +1,11 @@
--- Généré par Tools/import/import.lua depuis Polestar 0.4.2.2 (bf2acf45dc63, 2026-11-22). Ne pas modifier :
+-- Généré par Tools/import/import.lua depuis Polestar 0.4.3.1 (efccd3c02732, 2026-11-26). Ne pas modifier :
 -- relancer Tools\import\run.ps1.
 -- Copyright (c) 2026 The Polestar authors. Données sous licence GPL-3.0-only ; sources tierces :
 -- LICENSE-DATA.txt dans ce dossier, et CREDITS.md. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB
 
-DB:SetSource({ commit = "bf2acf45dc639adc4437405ce440b06437cc5342", date = "2026-11-22", format = 11, name = "Polestar", version = "0.4.2.2" })
+DB:SetSource({ commit = "efccd3c027327537746819a6e60ec689ca2e6a71", date = "2026-11-26", format = 11, name = "Polestar", version = "0.4.3.1" })
 
 DB:RetireGuides({
 	"forever/alliance/50-60/05-silithus",

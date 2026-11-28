@@ -214,7 +214,7 @@ DB.gear = {
 	weights = { WARRIOR = { arms = { str = 1, agi = 0.6, crit = 10, dps = 7, ... } } },
 	bands = { WARRIOR = { arms = { { upTo = 39, source = "polestar", weights = { ... } }, ... } } },
 	proficiency = { WARRIOR = { armor = 3, armorAt40 = 4, shield = true, dualWield = 20, weapons = { [0] = true, ... } } },
-	racials = { [1] = { weaponCrit = { pct = 2, subclasses = { [7] = true, [8] = true } }, statMult = { spi = 1.05 } } },
+	racials = { [1] = { { statMult = { spi = 1.1 } } }, [7] = { { classes = { MAGE = true, ... }, statMult = { int = 1.05 } } } },
 }
 ```
 
@@ -222,7 +222,7 @@ DB.gear = {
 - Clés de stats : `str agi sta int spi armor health mana ap rap sp spArcane spFire spFrost spHoly spNature spShadow heal crit hit spellCrit spellHit mp5 hp5 defense dodge parry block blockValue dps rdps` ; les pourcentages (crit, toucher, esquive…) valent pour 1 % ; `dps` est la DPS de l'arme de mêlée, `rdps` celle de l'arme à distance.
 - `bands` : une tranche s'applique jusqu'au niveau `upTo` inclus (la dernière au-delà) ; `source` vaut `polestar` ou `wowsims` (mélange des deux). Sans tranche, `weights` sert à tous les niveaux.
 - `proficiency` : sous-types d'armure (1 tissu, 2 cuir, 3 mailles, 4 plaques ; `armorAt40` : armure plus lourde apprise au niveau 40), `relic` (7 libram, 8 idole, 9 totem), sous-types d'armes autorisés, niveau de l'ambidextrie.
-- `racials` : par identifiant de race du client.
+- `racials` : par identifiant de race du client, la liste de ses traits : `statMult` (multiplicateur de caractéristique), `weaponCrit` (critique en plus avec certains sous-types d'armes), `classes` (seules ces classes en profitent ; sans elle, toutes). Valeurs de Forever, lues par Polestar dans les sorts raciaux du client.
 
 ## Donjons
 
@@ -310,11 +310,11 @@ DB.questXPByLevel = { [30] = 2450 }  -- médiane de l'expérience des quêtes de
 .\Tools\import\run.ps1    # télécharge, convertit, puis lance luacheck et les tests
 ```
 
-1. `fetch.ps1` télécharge le commit de Polestar indiqué dans `polestar.lock` (extraction partielle, en cache dans `Tools/import/cache/`, ignoré par git).
-2. `import.lua` exécute les fichiers compilés de Polestar dans un environnement isolé (sans accès aux fichiers ni au système, bytecode refusé), vérifie le numéro de format, convertit, écrit les fichiers, puis les relit pour comparer avec la source. Toute fonction `Polestar.*` inconnue arrête l'import : c'est le signe d'un changement de format. Une licence de pack autre que GPL-3.0-only l'arrête aussi. Chaque fichier généré rappelle le copyright et la licence de Polestar, et l'import recopie sans modification les notices de Polestar dans un `LICENSE-DATA.txt` à côté des données (voir [DATA_SOURCES.md](DATA_SOURCES.md#obligations)).
+1. `fetch.ps1` télécharge le commit de Polestar indiqué dans `polestar.lock` (extraction partielle, en cache dans `Tools/import/cache/`, ignoré par git). Il met aussi de côté, dans `cache/polestar-loot/`, le `Polestar_ItemDB/Forever.lua` et sa notice du commit `loot` (Polestar `lootversion`, 0.4.2.2) : Polestar a retiré en 0.4.3 le butin des boss et les objets fabriqués de ForeverLevelingBiS, que `dungeons.py` reprend de là.
+2. `import.lua` exécute les fichiers compilés de Polestar dans un environnement isolé (sans accès aux fichiers ni au système, bytecode refusé), vérifie le numéro de format, lit les étapes que les guides hors montée de niveau portent en une chaîne de code (`stepsSrc`, depuis Polestar 0.4.3 ; même environnement vide, bytecode refusé, nombre d'étapes vérifié), convertit, écrit les fichiers, puis les relit pour comparer avec la source. Toute fonction `Polestar.*` inconnue arrête l'import : c'est le signe d'un changement de format. Une licence de pack autre que GPL-3.0-only l'arrête aussi. Chaque fichier généré rappelle le copyright et la licence de Polestar, et l'import recopie sans modification les notices de Polestar dans un `LICENSE-DATA.txt` à côté des données (voir [DATA_SOURCES.md](DATA_SOURCES.md#obligations)).
 3. Le rapport [`Tools/import/last-import.md`](../Tools/import/last-import.md) donne les totaux, la couverture des noms et les avertissements.
-4. `gear.lua` exécute `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar dans un environnement isolé, écrit les [poids de stats](#poids-de-stats) et recopie la notice de ces données (MIT : ForeverLevelingBiS, wowsims) dans `Gear-LICENSE-DATA.txt`.
-5. `dungeons.py` (Python, lancé avec `-I`) lit forever-db (`forever-db/data/*.jsonl`) et `Polestar_ItemDB` (`Items.lua`, `Forever.lua`), écrit les [donjons](#donjons) et recopie les notices (`ForeverDB-NOTICE.md`, `ItemDB-LICENSE-DATA.txt`).
+4. `gear.lua` exécute `Gear/Weights.lua` et `Gear/SpecData.lua` de Polestar dans un environnement isolé, écrit les [poids de stats](#poids-de-stats) et recopie la notice de ces données (wowsims, MIT) dans `Gear-LICENSE-DATA.txt`.
+5. `dungeons.py` (Python, lancé avec `-I`) lit forever-db (`forever-db/data/*.jsonl`), `Polestar_ItemDB` (`Items.lua`, `Forever.lua`) et le butin mis de côté par `fetch.ps1`, écrit les [donjons](#donjons) et recopie les notices (`ForeverDB-NOTICE.md`, `ItemDB-LICENSE-DATA.txt`, qui reçoit aussi la notice MIT de ForeverLevelingBiS pour le butin).
 6. `questxp.py` lit `forever-db/data/quest.jsonl` et écrit l'[expérience des quêtes](#expérience-des-quêtes).
 
 Les cartes des donjons ont leur propre import, hors de `run.ps1` (il lit DungeonJournal installé, pas Polestar) :

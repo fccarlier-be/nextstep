@@ -174,15 +174,38 @@ overlay_end = forever.index("DB.RegisterLeveling")
 item_stats.update(lua_entries(forever, 0, overlay_end))
 
 
-def section(name):
-    start = forever.index("\n" + name + " = {", overlay_end)
-    stop = forever.index("\n}", start)
-    return lua_entries(forever, start, stop)
+def section(name, text=forever, after=overlay_end):
+    start = text.index("\n" + name + " = {", after)
+    stop = text.index("\n}", start)
+    return lua_entries(text, start, stop)
 
 
 flb_sources = section("src")
 flb_quests = section("quests")
 flb_npcs = section("npcs")
+
+# Depuis Polestar 0.4.3, Forever.lua vient du Codex de Polestar, sans le butin des boss
+# (d<PNJ>x<taux>z<zone>) ni les objets fabriqués. Ils sont repris du Forever.lua de la version `loot` de
+# polestar.lock (faits de ForeverLevelingBiS, MIT), que fetch.ps1 met en cache.
+LOOT_FILE = os.path.join(os.path.dirname(os.path.abspath(SOURCE)), "polestar-loot", "Forever.lua")
+loot_note, old_zones = None, {}
+if lock.get("loot"):
+    old = read(LOOT_FILE)
+    old_overlay = old.index("DB.RegisterLeveling")
+    for item, text in section("src", old, old_overlay).items():
+        # Butin des boss, et objets fabriqués (c<sort>p<métier>s<compétence>), que le Codex
+        # ne liste plus non plus.
+        drops = [s for s in text.split("|") if re.match(r"^(d\d+x\d+z\d+|c\d+p\d+s\d+)$", s)]
+        have = flb_sources.get(item, "")
+        for drop in drops:
+            if drop not in have.split("|"):
+                have = have + "|" + drop if have else drop
+        if have:
+            flb_sources[item] = have
+    for npc, name in section("npcs", old, old_overlay).items():
+        flb_npcs.setdefault(npc, name)
+    old_zones = section("zones", old, old_overlay)
+    loot_note = read(os.path.join(os.path.dirname(LOOT_FILE), "LICENSE-DATA.txt"))
 
 dungeon_by_area = {d[1]: d[0] for d in DUNGEONS}
 
@@ -360,8 +383,9 @@ out = [
     "-- Généré par Tools/import/dungeons.py depuis Polestar %s (%s, %s). Ne pas modifier :"
     % (lock.get("version", "?"), commit, lock.get("date", "?")),
     "-- relancer Tools\\import\\run.ps1. Quêtes, PNJ et positions : forever-db de Polestar (GPL-3.0,",
-    "-- ForeverDB-NOTICE.md). Butin des boss et provenance des objets : ForeverLevelingBiS (MIT),",
-    "-- caractéristiques des objets : tables du client via Polestar_ItemDB (ItemDB-LICENSE-DATA.txt).",
+    "-- ForeverDB-NOTICE.md). Butin des boss : ForeverLevelingBiS (MIT, via Polestar %s) ;"
+    % lock.get("lootversion", "?"),
+    "-- provenance et caractéristiques des objets : Polestar_ItemDB (ItemDB-LICENSE-DATA.txt).",
     "-- Format : docs/DATA_FORMAT.md, « Donjons ».",
     "",
     "local DB = NextStep.DB",
@@ -424,7 +448,10 @@ out.append("}")
 out.append("")
 out.append("-- Noms anglais des zones citées (repli quand le client ne les donne pas).")
 out.append("DB.itemZones = {")
-for area, name in sorted(section("zones").items()):
+zone_names = section("zones")
+for area, name in old_zones.items():
+    zone_names.setdefault(area, name)
+for area, name in sorted(zone_names.items()):
     out.append("\t[%d] = %s," % (area, lua_string(name)))
 out.append("}")
 
@@ -523,6 +550,10 @@ with open(OUT_DIR + "Dungeons.lua", "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(out) + "\n")
 with open(OUT_DIR + "ItemDB-LICENSE-DATA.txt", "w", encoding="utf-8", newline="\n") as f:
     f.write(read(os.path.join(ITEMDB, "LICENSE-DATA.txt")))
+    if loot_note:
+        f.write("\n\nDungeons.lua: boss loot and drop rates, from Polestar %s's Polestar_ItemDB/Forever.lua:\n\n"
+                % lock.get("lootversion", "?"))
+        f.write(loot_note)
 with open(OUT_DIR + "ForeverDB-NOTICE.md", "w", encoding="utf-8", newline="\n") as f:
     f.write(read(os.path.join(SOURCE, "forever-db", "NOTICE.md")))
 

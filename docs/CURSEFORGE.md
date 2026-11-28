@@ -186,7 +186,7 @@ NextStep builds on these open-source projects. Thanks to their authors! / NextSt
 - **[What's Training](https://github.com/fusionpit/WhatsTraining)** by Fusionpit: class trainer spells / sorts des maîtres de classe *(MIT)*
 - **[GatherMate2](https://github.com/Nevcairiel/GatherMate2)** by kagaro, Xinhuan and Nevcairiel: idea of the gathering detection / idée de la détection des récoltes *(GPL-2.0-or-later)*
 - **[forever-db](https://github.com/fitzforge/polestar/tree/next/forever-db)** (Polestar) and its sources: quests, quest chains and givers for the dungeon tab and the advice mode / quêtes, suites et donneurs pour l'onglet Donjons et le mode conseil *(GPL-3.0)*
-- **ForeverLevelingBiS** by Thunder, via Polestar: boss loot, where leveling gear comes from, racial gear traits / butin des boss, provenance de l'équipement, traits raciaux *(MIT)*
+- **ForeverLevelingBiS** by Thunder, via Polestar: boss loot, crafted leveling gear / butin des boss, équipement fabriqué *(MIT)*
 - **[wowsims](https://github.com/wowsims)**, via Polestar: stat weights / poids de stats *(MIT)*
 
 🎨 The logo was generated with AI (FLUX.2 [klein], background removed with BiRefNet). / Le logo a été généré par IA (FLUX.2 [klein], détourage avec BiRefNet).

@@ -236,6 +236,19 @@ local function readGuides()
     for _, pack in ipairs(GUIDE_PACKS) do
         runSandboxed(SOURCE .. "/addon/" .. pack.dir .. "/Guides.lua", {
             RegisterGuide = function(guide)
+                -- Depuis Polestar 0.4.3, les guides hors montée de niveau portent leurs
+                -- étapes en une chaîne de code Lua (« return { ... } »), lue à l'ouverture.
+                if guide.stepsSrc then
+                    assert(not guide.steps, guide.id .. ": both steps and stepsSrc")
+                    local src = guide.stepsSrc
+                    assert(src:byte(1) ~= 27, "precompiled steps refused: " .. guide.id)
+                    local chunk = assert(loadstring(src, "@" .. guide.id))
+                    setfenv(chunk, {})
+                    guide.steps = chunk()
+                    assert(type(guide.steps) == "table", guide.id .. ": stepsSrc returns no steps")
+                    assert(#guide.steps == guide.stepCount, guide.id .. ": stepCount differs")
+                    guide.stepsSrc, guide.stepCount = nil, nil
+                end
                 guides[#guides + 1] = { source = guide, out = pack.out }
             end,
             RetireGuides = function(_, list)

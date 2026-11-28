@@ -274,7 +274,7 @@ local function install(game, options)
         return player.maxXP
     end
     _G.UnitRace = function()
-        return player.race, player.race
+        return player.race, player.race, player.raceID
     end
     _G.UnitClass = function()
         return player.class, player.class

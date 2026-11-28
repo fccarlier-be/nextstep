@@ -1,7 +1,7 @@
 # NextStep - Nav
 
 Ce dossier est produit par `Tools/import/nav.py` à partir de Polestar_Nav_EK de
-[Polestar](https://github.com/fitzforge/polestar) 0.4.2.2 (commit `bf2acf45dc639adc4437405ce440b06437cc5342`),
+[Polestar](https://github.com/fitzforge/polestar) 0.4.3.1 (commit `efccd3c027327537746819a6e60ec689ca2e6a71`),
 GPL-3.0-or-later. Ne pas le modifier à la main : relancer l'import.
 
 Le calculateur de chemins à pied est celui de Polestar, parti de

@@ -2,9 +2,9 @@ NextStep : données importées de Polestar
 ========================================
 
 Les fichiers de données de ce dossier sont générés par Tools/import/import.lua de
-NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar 0.4.2.2
+NextStep (https://github.com/fccarlier-be/nextstep) à partir de Polestar 0.4.3.1
 (https://github.com/fitzforge/polestar), puis convertis au format de NextStep.
-Commit de Polestar : bf2acf45dc639adc4437405ce440b06437cc5342 (2026-11-22).
+Commit de Polestar : efccd3c027327537746819a6e60ec689ca2e6a71 (2026-11-26).
 
 Copyright (c) 2026 The Polestar authors
 Polestar est distribué sous la GNU General Public License, version 3
@@ -99,13 +99,13 @@ License: Polestar original work
 
 Quest XP for quests QuestieDB lacks: two Forever web quest databases (one from the beta client's quest cache)
 -------------------------------------------------------------------------------------------------------------
-Revision: 133 quests; cache data/sources/webxp/quest-xp.json
+Revision: 132 quests; cache data/sources/webxp/quest-xp.json
 License: Public web pages; facts (XP numbers) only, used locally with permission
 
 QuestieDB (Questie-Forever), baked Forever store and support data
 -----------------------------------------------------------------
 URL: https://github.com/Questie/QuestieDB
-Revision: 1.1.2 e1652ce62113c152da682baf2d6fb85f1396bcfb
+Revision: 1.1.5 47a4756b775e8c73687fd3066d6c13f0bc43a55e
 License: No license file in Questie/Questie or Questie/QuestieDB; CurseForge lists GPL-3.0, and the maintainers ask that it be treated as all rights reserved (https://github.com/Questie/Questie/issues/4447). Read from the local install; facts only (quest, NPC, object and item facts, no code or text) ship in Polestar's packs, credited here, and come out if the maintainers ask (data build --no-questie).
 Code: Logonz Data: Muehe/TheCrux(BreakBB)/Drejjmit/Dyaxler/Cheeq/TechnoHunter/Yttrium/Everyone else
 
