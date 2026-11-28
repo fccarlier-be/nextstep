@@ -110,6 +110,18 @@ describe("Items : score", function()
         expect(math.abs(result.old - (main + shield)) < 1e-6, "main droite + bouclier")
     end)
 
+    it("compte un trait racial seulement pour les classes qu'il vise", function()
+        local cloth = { loc = "INVTYPE_CHEST", class = ARMOR, sub = 1, stats = { ITEM_MOD_INTELLECT_SHORT = 10 } }
+        local function score(class, raceID)
+            local _, _, Score = boot({ items = { ["item:30"] = cloth } },
+                { level = 20, class = class, race = "Gnome", raceID = raceID })
+            return Score.With(Score.Info("item:30"), Score.Weights(), false)
+        end
+        -- Gnome (7) : Esprit vif, +5 % d'Intelligence pour les mages, prêtres et démonistes.
+        expect(score("MAGE", 7) > score("MAGE", 3), "mage gnome : l'Intelligence vaut plus")
+        expect_eq(score("WARRIOR", 7), score("WARRIOR", 3), "guerrier gnome : pas de bonus")
+    end)
+
     it("remplace la plus faible des deux bagues", function()
         local function ring(sta)
             return { loc = "INVTYPE_FINGER", class = ARMOR, sub = 0, stats = { ITEM_MOD_STAMINA_SHORT = sta } }

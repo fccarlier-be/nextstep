@@ -9,8 +9,8 @@
 -- RACIALS sont lues.
 --
 -- Produit addon/NextStep/Data/Imported/Polestar/Gear.lua (format : docs/DATA_FORMAT.md,
--- « Poids de stats ») et recopie la notice des données (MIT : ForeverLevelingBiS,
--- wowsims) dans Gear-LICENSE-DATA.txt, à côté.
+-- « Poids de stats ») et recopie la notice des données (wowsims, MIT ; traits raciaux :
+-- sorts du client Forever) dans Gear-LICENSE-DATA.txt, à côté.
 
 local SOURCE = assert(arg[1], "usage: gear.lua <Polestar checkout> [polestar.lock]")
 local LOCK_PATH = arg[2] or "Tools/import/polestar.lock"
@@ -167,14 +167,35 @@ for class, specs in pairs(Gear.WEIGHT_BANDS) do
     end
 end
 
--- Traits raciaux : sans les noms anglais des talents, inutiles en jeu.
+-- Traits raciaux : liste par race (depuis Polestar 0.4.3), sans les noms anglais des
+-- talents, inutiles en jeu. classMask (bit classID - 1) devient la liste des classes.
+local bit = require("bit")
+local CLASS_TOKENS = {
+    "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "DEATHKNIGHT", "SHAMAN", "MAGE", "WARLOCK", "MONK", "DRUID",
+}
 local racials = {}
-for race, traits in pairs(Gear.RACIALS) do
+for race, list in pairs(Gear.RACIALS) do
+    assert(list[1] or not next(list), "SpecData.lua: RACIALS[" .. race .. "] n'est pas une liste")
     local out = {}
-    if traits.weaponCrit then
-        out.weaponCrit = { pct = traits.weaponCrit.pct, subclasses = traits.weaponCrit.subclasses }
+    for _, trait in ipairs(list) do
+        for field in pairs(trait) do
+            assert(field == "name" or field == "statMult" or field == "weaponCrit" or field == "classMask",
+                "SpecData.lua: trait racial inconnu " .. field)
+        end
+        local kept = { statMult = trait.statMult }
+        if trait.weaponCrit then
+            kept.weaponCrit = { pct = trait.weaponCrit.pct, subclasses = trait.weaponCrit.subclasses }
+        end
+        if trait.classMask then
+            kept.classes = {}
+            for id, token in ipairs(CLASS_TOKENS) do
+                if bit.band(trait.classMask, bit.lshift(1, id - 1)) ~= 0 then
+                    kept.classes[token] = true
+                end
+            end
+        end
+        out[#out + 1] = kept
     end
-    out.statMult = traits.statMult
     racials[race] = out
 end
 
@@ -190,7 +211,7 @@ local header = ([[
 -- Généré par Tools/import/gear.lua depuis Polestar %s (%s, %s), Gear/Weights.lua et
 -- Gear/SpecData.lua. Ne pas modifier : relancer Tools\import\run.ps1.
 -- Polestar : Copyright (c) 2026 The Polestar authors, GPL-3.0-only. Poids mêlés aux
--- simulations de wowsims (MIT) et traits raciaux de ForeverLevelingBiS (MIT) :
+-- simulations de wowsims (MIT) ; traits raciaux tirés des sorts du client Forever :
 -- Gear-LICENSE-DATA.txt dans ce dossier. Format : docs/DATA_FORMAT.md.
 
 local DB = NextStep.DB

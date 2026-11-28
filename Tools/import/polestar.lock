@@ -1,6 +1,9 @@
 # Version de Polestar importée. Modifier ces valeurs puis relancer Tools\import\run.ps1.
 repository=https://github.com/fitzforge/polestar.git
-commit=bf2acf45dc639adc4437405ce440b06437cc5342
-date=2026-11-22
-version=0.4.2.2
+commit=efccd3c027327537746819a6e60ec689ca2e6a71
+date=2026-11-26
+version=0.4.3.1
 format=11
+# Butin des boss, retiré de Polestar en 0.4.3 : repris de cette version (fetch.ps1, dungeons.py).
+loot=bf2acf45dc639adc4437405ce440b06437cc5342
+lootversion=0.4.2.2

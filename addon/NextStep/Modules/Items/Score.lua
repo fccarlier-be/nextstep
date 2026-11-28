@@ -515,19 +515,25 @@ function Score.Usability(info)
     return true, nil, minLevel
 end
 
+-- Traits raciaux du personnage : liste de { statMult, weaponCrit, classes }.
 local function racialBonus(info, list, asOffhand)
-    local racial = gear().racials and gear().racials[Score.Player().raceID or 0]
-    if not racial then
+    local me = Score.Player()
+    local traits = gear().racials and gear().racials[me.raceID or 0]
+    if not traits then
         return 0
     end
     local bonus = 0
-    local crit = racial.weaponCrit
-    if crit and info.class == WEAPON and not asOffhand and crit.subclasses[info.subclass] then
-        bonus = bonus + ((list.crit or 0) + (list.spellCrit or 0)) * crit.pct
-    end
-    for stat, mult in pairs(racial.statMult or {}) do
-        if info.stats[stat] then
-            bonus = bonus + (list[stat] or 0) * info.stats[stat] * (mult - 1)
+    for _, racial in ipairs(traits) do
+        if not racial.classes or racial.classes[me.class] then
+            local crit = racial.weaponCrit
+            if crit and info.class == WEAPON and not asOffhand and crit.subclasses[info.subclass] then
+                bonus = bonus + ((list.crit or 0) + (list.spellCrit or 0)) * crit.pct
+            end
+            for stat, mult in pairs(racial.statMult or {}) do
+                if info.stats[stat] then
+                    bonus = bonus + (list[stat] or 0) * info.stats[stat] * (mult - 1)
+                end
+            end
         end
     end
     return bonus

@@ -7,7 +7,7 @@
 ## X-License: GPL-3.0-or-later
 ## Dependencies: NextStep
 ## LoadOnDemand: 1
-# Écrit par Tools/import/nav.py depuis Polestar_Nav (Polestar 0.4.2.2).
+# Écrit par Tools/import/nav.py depuis Polestar_Nav (Polestar 0.4.3.1).
 
 Nav\Nav.xml
 Trails\Trails.lua
